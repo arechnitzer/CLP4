@@ -1,0 +1,146 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<section xmlns:xi="http://www.w3.org/2001/XInclude" xml:id="sec_astroid">
+
+<!-- Copyright 2018-2020 Joel Feldman, Andrew Rechnitzer and Elyse Yeager -->
+<!-- This work is licensed under the Creative Commons Attribution-NonCommercial-ShareAlike 4.0 International License-->
+<!-- https://creativecommons.org/licenses/by-nc-sa/4.0 -->
+
+<title>Optional <mdash/> The Astroid</title>
+
+<p>
+Imagine a ball of radius <m>a/4</m> rolling around the inside of a circle of
+radius <m>a</m>. The curve traced by a point <m>P</m> painted on the inner circle
+(that's the blue curve in the figures below)
+is called an astroid
+<fn>The name <q>astroid</q> comes from the Greek word <q>aster</q>,
+meaning star, with the suffix <q>oid</q> meaning <q>having the shape of</q>. The curve was
+first discussed by Johann  Bernoulli in 1691<ndash/>92.</fn>.
+We shall find its equation.
+</p>
+
+<sbsgroup width="33%">
+<sidebyside>
+<image source="figs/astroid1AA"/>
+<image source="figs/astroid1BB"/>
+<image source="figs/astroid1CC"/>
+</sidebyside>
+<sidebyside>
+<image source="figs/astroid1DD"/>
+<image source="figs/astroid1EE"/>
+<image source="figs/astroid1FF"/>
+</sidebyside>
+</sbsgroup>
+
+<p>
+Define the angles <m>\theta</m> and <m>\phi</m> as
+in the figure in the left below.
+</p>
+
+<sidebyside>
+<image source="figs/astroid"/>
+<image source="figs/astroid3"/>
+</sidebyside>
+
+<p>
+That is
+<ul>
+<li>
+the vector from the centre, <m>O</m>, of the circle of radius
+<m>a</m> to the centre, <m>Q</m>, of the ball of radius <m>a/4</m> is
+<m>
+\frac{3}{4}a\big(\cos\theta,\sin\theta\big)
+</m>
+and
+</li>
+<li> the vector from the centre, <m>Q</m>, of the ball of radius <m>a/4</m> to
+the point <m>P</m> is
+<m>
+\frac{1}{4}a\big(\cos\phi,-\sin\phi\big)
+</m>
+</li>
+</ul>
+As <m>\theta</m> runs from 0 to <m>\frac{\pi}{2}</m>, the point of contact
+between the two circles travels through one quarter of the circumference
+of the circle of radius <m>a</m>, which is a distance <m>\frac{1}{4}(2\pi a)</m>,
+which, in turn, is exactly the circumference of the inner circle.
+Hence if <m>\phi=0</m> for <m>\theta=0</m> (i.e. if <m>P</m> starts on the <m>x</m>-axis),
+then for <m>\theta=\frac{\pi}{2}</m>, <m>P</m> is back in contact with the big
+circle at the north pole of both the inner and outer circles.
+That is, <m>\phi=\frac{3\pi}{2}</m> when <m>\theta=\frac{\pi}{2}</m>.
+(See the figure on the right above.)
+So <m>\phi=3\theta</m>  and <m>P</m> has coordinates
+<me>
+\frac{3}{4}a\big(\cos\theta,\sin\theta\big)
++\frac{1}{4}a\big(\cos\phi,\sin\phi\big)
+=\frac{a}{4}\big(3\cos\theta+\cos 3\theta,3\sin\theta-3\sin\theta\big)
+</me>
+As, recalling your double angle, or even better your triple angle,
+trig identities,
+<md>
+<mrow>
+\cos3\theta&amp;=\cos\theta\cos2\theta-\sin\theta\sin 2\theta
+</mrow><mrow>
+&amp;=\cos\theta[\cos^2\theta-\sin^2\theta]-2\sin^2\theta\cos\theta
+</mrow><mrow>
+&amp;=\cos\theta[\cos^2\theta-3\sin^2\theta]
+</mrow><mrow>
+\sin3\theta&amp;=\sin\theta\cos2\theta+\cos\theta\sin 2\theta
+</mrow><mrow>
+&amp;=\sin\theta[\cos^2\theta-\sin^2\theta]+2\sin\theta\cos^2\theta
+</mrow><mrow>
+&amp;=\sin\theta[3\cos^2\theta-\sin^2\theta]
+</mrow>
+</md>
+we have
+<md alignment="alignat">
+<mrow>
+3\cos\theta+\cos 3\theta
+   &amp;=\cos\theta[3+\cos^2\theta-3\sin^2\theta] &amp;
+   &amp;=\cos\theta[3+\cos^2\theta-3(1-\cos^2\theta)] &amp;
+   &amp;=4\cos^3\theta
+ </mrow><mrow>
+3\sin\theta-\sin 3\theta
+   &amp;=\sin\theta[3-3\cos^2\theta+\sin^2\theta] &amp;
+   &amp;=\sin\theta[3-3(1-\sin^2\theta)+\sin^2\theta] &amp;
+   &amp;=4\sin^3\theta
+ </mrow>
+</md>
+and the coordinates of <m>P</m> simplify to
+<me>
+x(\theta)= a\cos^3\theta\qquad y(\theta)=a\sin^3\theta
+</me>
+Oof! As
+<m>\
+x^{2/3}+y^{2/3}=a^{2/3}\cos^2\theta+a^{2/3}\sin^2\theta
+\ ,</m>
+the path traced by <m>P</m> obeys the equation
+<me>
+x^{2/3}+y^{2/3} =a^{2/3}
+</me>
+which is surprisingly simple, considering what we went through to get here.
+</p>
+
+<p>There remains the danger that there could exist points <m>(x,y)</m> obeying
+ the equation <m>x^{2/3}+y^{2/3}=a^{2/3}</m> that are not of the form
+<m>x= a\cos^3\theta,\ y=a\sin^3\theta</m> for any <m>\theta</m>. That is, there is a danger
+that the parametrized curve <m>x= a\cos^3\theta,\ y=a\sin^3\theta</m> covers only
+a portion of <m>x^{2/3}+y^{2/3}=a^{2/3}</m>. We now show that
+the parametrized curve <m>x= a\cos^3\theta,\ y=a\sin^3\theta</m> in fact covers all
+of <m>x^{2/3}+y^{2/3}=a^{2/3}</m> as <m>\theta</m> runs from <m>0</m> to <m>2\pi</m>.
+</p>
+
+<p>First, observe that <m>x^{2/3}=\big(\root 3\of x\big)^2\ge 0</m> and
+<m>y^{2/3}=\big(\root 3\of y\big)^2\ge 0</m>. Hence, if <m>(x,y)</m> obeys
+<m>x^{2/3}+y^{2/3}=a^{2/3}</m>, then necessarily <m>0\le x^{2/3}\le a^{2/3} </m>
+and so <m>-a\le x\le a</m>. As <m>\theta</m> runs from <m>0</m> to <m>2\pi</m>, <m>a\cos^3\theta</m>
+takes all values between <m>-a</m> and <m>a</m> and hence takes all possible values
+of <m>x</m>. For each <m>x\in[-a,a]</m>, <m>y</m> takes two values, namely <m>\pm{[a^{2/3}-x^{2/3}]}^{3/2}</m>.
+If <m>x=a\cos^3\theta_0=a\cos^3(2\pi-\theta_0)</m>, the two corresponding values
+of <m>y</m> are precisely
+<m>a\sin^3\theta_0</m> and <m>-a\sin^3\theta_0=a\sin^3(2\pi-\theta_0)</m>.
+</p>
+
+
+<!-- <xi:include href="../problems/prob_s1.11.ptx" /> -->
+
+</section>

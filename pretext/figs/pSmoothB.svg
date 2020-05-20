@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="76pt" height="108pt" viewBox="0 0 76 108" version="1.1">
+<defs>
+<clipPath id="clip1">
+  <path d="M 0 12 L 61 12 L 61 107.800781 L 0 107.800781 Z M 0 12 "/>
+</clipPath>
+<clipPath id="clip2">
+  <path d="M 17 12 L 76 12 L 76 107.800781 L 17 107.800781 Z M 17 12 "/>
+</clipPath>
+</defs>
+<g id="surface1">
+<g clip-path="url(#clip1)" clip-rule="nonzero">
+<path style="fill:none;stroke-width:15;stroke-linecap:butt;stroke-linejoin:miter;stroke:rgb(0%,0%,0%);stroke-opacity:1;stroke-miterlimit:10;" d="M 41.210938 745.742188 L 391.210938 23.515625 " transform="matrix(0.1,0,0,-0.1,0,108)"/>
+</g>
+<g clip-path="url(#clip2)" clip-rule="nonzero">
+<path style="fill:none;stroke-width:15;stroke-linecap:butt;stroke-linejoin:miter;stroke:rgb(0%,0%,0%);stroke-opacity:1;stroke-miterlimit:10;" d="M 741.210938 745.742188 L 391.210938 23.515625 " transform="matrix(0.1,0,0,-0.1,0,108)"/>
+</g>
+<path style="fill:none;stroke-width:15;stroke-linecap:butt;stroke-linejoin:miter;stroke:rgb(0%,0%,0%);stroke-opacity:1;stroke-miterlimit:10;" d="M 41.210938 745.742188 C 41.210938 699.726562 197.890625 662.382812 391.210938 662.382812 C 584.492188 662.382812 741.210938 699.726562 741.210938 745.742188 " transform="matrix(0.1,0,0,-0.1,0,108)"/>
+<path style="fill:none;stroke-width:15;stroke-linecap:butt;stroke-linejoin:miter;stroke:rgb(0%,0%,0%);stroke-opacity:1;stroke-miterlimit:10;" d="M 741.210938 745.742188 C 741.210938 899.140625 584.492188 1023.515625 391.210938 1023.515625 C 197.890625 1023.515625 41.210938 899.140625 41.210938 745.742188 " transform="matrix(0.1,0,0,-0.1,0,108)"/>
+<path style="fill:none;stroke-width:15;stroke-linecap:butt;stroke-linejoin:miter;stroke:rgb(0%,0%,0%);stroke-opacity:1;stroke-dasharray:30,30;stroke-dashoffset:15;stroke-miterlimit:10;" d="M 741.210938 745.742188 C 741.210938 791.757812 584.492188 829.0625 391.210938 829.0625 C 197.890625 829.0625 41.210938 791.757812 41.210938 745.742188 " transform="matrix(0.1,0,0,-0.1,0,108)"/>
+</g>
+</svg>

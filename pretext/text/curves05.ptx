@@ -1,13 +1,147 @@
 <?xml version="1.0" encoding="UTF-8" ?>
-<section xmlns:xi="http://www.w3.org/2001/XInclude" xml:id="">
+<section xmlns:xi="http://www.w3.org/2001/XInclude" xml:id="sec_CurveCompendium">
 
 <!-- Copyright 2018-2020 Joel Feldman, Andrew Rechnitzer and Elyse Yeager -->
 <!-- This work is licensed under the Creative Commons Attribution-NonCommercial-ShareAlike 4.0 International License-->
 <!-- https://creativecommons.org/licenses/by-nc-sa/4.0 -->
 
-<title></title>
+<title>A Compendium of Curve Formula</title>
 
 
-<!-- <xi:include href="../problems/prob_s1.1.ptx" /> -->
+<p>In the following <m>\vr(t)=\big(x(t)\,,\,y(t)\,,\,z(t)\big)</m>
+is a parametrization of some curve. The vectors <m>\hat\vT(t),\ \hat\vN(t),\ </m>
+and <m>\ \hat\vB(t)\ </m> are the unit tangent,
+normal and binormal vectors, respectively, at <m>\vr(t)</m>. The tangent
+vector points in the  direction of travel (i.e. direction of increasing
+<m>t</m>)  and the normal vector points toward the  centre of curvature.
+The arc length from time <m>0</m> to time <m>t</m> is denoted <m>s(t)</m>.
+The binormal <m>\ \hat\vB(t)=\hat\vT(t)\times \hat\vN(t)\ </m> is perpendicular to the plane that fits the curve best at <m>\vr(t)</m>.
+Some formulae use an arc length parametrization, which is denoted
+<m>\vr(s)</m>.
+<dl width="medium">
+<li><title>the velocity</title>
+<p><m>
+\vv(t)=\diff{\vr}{t}(t)=\diff{s}{t}(t)\,\hat\vT(t)
+</m></p>
+</li>
+<li><title>the unit tangent vector</title>
+<p><m>
+\hat\vT(t)=\frac{\vv(t)}{|\vv(t)|}
+</m> (general parametrization)
+</p>
+<p>
+<m>
+\hat\vT(s)=\diff{\vr}{s}(s)
+</m> (arc length parametrization)
+</p>
+</li>
+<li><title>the acceleration</title>
+<p><m>
+\va(t)=\difftwo{\vr}{t}(t)=\difftwo{s}{t}(t)\,\hat\vT(t)
+                             +\ka(t)\big(\diff{s}{t}(t)\big)^2\hat\vN(t)
+</m></p>
+</li>
+<li><title>the speed</title>
+<p><m>
+\diff{s}{t}(t) = |\vv(t)| = \big|\diff{\vr}{t}(t)\big|
+</m></p>
+</li>
+<li><title>the arc length</title>
+<p><m>
+s(T) = \int_0^T \diff{s}{t}(t)\ \dee{t}
+     = \int_0^T \sqrt{x'(t)^2+y'(t)^2+z'(t)^2}\ \dee{t}
+</m></p>
+</li>
+<li><title>the curvature</title>
+<p><m>
+\ka(t)
+= \big|\diff{\hat\vT}{t}(t)\big|/\diff{s}{t}(t)
+=\displaystyle{ \frac{|\vv(t)\times\va(t)|}{(\diff{s}{t}(t))^3} }
+</m></p>
+<p>
+<m>
+\ka(s)
+= \big|\diff{\phi}{s}(s)\big|
+= \big|\diff{\hat\vT}{s}(s)\big|
+</m></p>
+</li>
+<li><title>the unit normal vector</title>
+<p><m>
+\hat\vN(t) = \diff{\hat\vT}{t}(t)/\big|\diff{\hat\vT}{t}(t)\big|
+\qquad
+\hat\vN(s) = \diff{\hat\vT}{s}(s)/\ka(s)
+</m></p>
+</li>
+<li><title>the radius of curvature</title>
+<p><m>
+\rho(t)=\frac{1}{\ka(t)}
+</m></p>
+</li>
+<li><title>the centre of curvature</title>
+<p><m>
+\vr(t)+\rho(t)\hat\vN(t)
+</m></p>
+</li>
+<li><title>the torsion</title>
+<p><m>\displaystyle
+\tau(t)=\frac{\big(\vv(t)\times\va(t)\big) \cdot \diff{\va}{t}(t)}
+             {|\vv(t)\times\va(t)|^2}
+</m></p>
+</li>
+<li><title>the binormal</title>
+<p><m>\displaystyle
+\hat\vB(t)=\hat\vT(t)\times \hat\vN(t)=\frac{\vv(t)\times\va(t)}{|\vv(t)\times\va(t)|}
+</m></p>
+</li>
+</dl>
+</p>
+
+<p>
+Under arclength parametrization (i.e. if <m>t=s</m>) we have
+<m>\hat\vT(s)=\frac{d\vr}{ds}(s)</m> and the Frenet-Serret formulae
+<md>
+<mrow>
+\diff{\hat\vT}{s}(s)&amp;=\phantom{-}\ka(s)\ \hat\vN(s)\cr
+\diff{\hat\vN}{s}(s)&amp;=\phantom{-}\tau(s)\ \hat\vB(s)-\ka(s)\ \hat\vT(s)\cr
+\diff{\hat\vB}{s}(s)&amp;=-\tau(s)\ \hat\vN(s)\cr
+</mrow>
+</md>
+which in matrix form is
+<md>
+<mrow>
+\diff{}{s}
+\left[ \begin{matrix}\hat\vT(s) \\ \hat\vN(s)\\ \hat\vB(s)\end{matrix} \right]
+=\left[\begin{matrix} 0      &amp; \ka(s) &amp; 0 \\
+              -\ka(s) &amp;  0     &amp;\tau(s) \\
+              0       &amp;-\tau(s)  &amp; 0 \end{matrix}\right]
+\left[\begin{matrix}\hat\vT(s) \\ \hat\vN(s)\\ \hat\vB(s)\end{matrix}\right]
+</mrow>
+</md>
+When the curve lies entirely in the <m>xy</m>-plane the curvature is given by
+<md>
+<mrow>
+\ka(t)
+=\frac{\big|
+  \diff{x}{t}(t)\ \difftwo{y}{t}(t)-\diff{y}{t}(t)\ \difftwo{x}{t}(t)
+  \big|}{\Big[\big(\diff{x}{t}(t)\big)^2
+                +\big(\diff{y}{t}(t)\big)^2\Big]^{3/2}}
+</mrow>
+</md>
+When the curve lies entirely in the <m>xy</m>-plane and the
+<m>y</m>-coordinate is given as a function, <m>y(x)</m>, of the <m>x</m>-coordinate,
+the curvature is
+<md>
+<mrow>
+\ka(x)
+=\frac{\big|\difftwo{y}{x}(x)\big|}
+  {\Big[1+\big(\diff{y}{x}(x)\big)^2\Big]^{3/2}}
+</mrow>
+</md>
+Notice that this follows from the previous formula since
+<m>\diff{x}{x}=1</m> and <m>\difftwo{x}{x}=0</m>.
+</p>
+
+
+<!-- <xi:include href="../problems/prob_s1.5.ptx" /> -->
 
 </section>

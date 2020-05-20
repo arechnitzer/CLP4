@@ -1,0 +1,343 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<section xmlns:xi="http://www.w3.org/2001/XInclude" xml:id="sec_polar">
+
+<!-- Copyright 2018-2020 Joel Feldman, Andrew Rechnitzer and Elyse Yeager -->
+<!-- This work is licensed under the Creative Commons Attribution-NonCommercial-ShareAlike 4.0 International License-->
+<!-- https://creativecommons.org/licenses/by-nc-sa/4.0 -->
+
+<title>Optional <mdash/> Polar Coordinates</title>
+
+<p>So far we have always vectors in two dimensions using the basis vectors
+<m>\hi</m> and <m>\hj</m>. This is not always convenient. For example, when working in
+polar coordinates it is often convenient to use basis vectors
+<m>\hat\vr(\theta)</m>, <m>\hat\vth(\theta)</m> which depend on the value of the
+current polar coordinate <m>\theta</m> <mdash/> though one usually just writes
+<m>\hat\vr</m>, <m>\hat\vth</m>, suppressing the dependence on <m>\theta</m> from
+the notation. When one is at the point with polar coordinates
+<m>(r,\theta)</m>, these basis vectors are defined by
+</p>
+
+<fact xml:id="eqn_polarBasis">
+<statement>
+<sidebyside width="45%">
+<p>
+<md>
+<mrow>
+\hat\vr(\theta) &amp;= \cos\theta\,\hi + \sin\theta\,\hj
+</mrow><mrow>
+\hat\vth(\theta) &amp;= -\sin\theta\,\hi + \cos\theta\,\hj
+</mrow>
+</md>
+</p>
+<image source="figs/polar"/>
+</sidebyside>
+</statement>
+</fact>
+
+<p>
+Note that this basis has two very nice properties.
+<ol>
+<li>
+<m>|\hat\vr(\theta)| = |\hat\vth(\theta)| = 1</m>,
+   <m>\hat\vr(\theta) \perp \hat\vth(\theta)</m>  (orthonormality)
+</li>
+<li>
+<m>\diff{\hat\vr}{\theta}(\theta)= \hat\vth(\theta)</m>,
+<m>\diff{\hat\vth}{\theta}(\theta) = -\hat\vr(\theta)</m>
+</li>
+</ol>
+That <m>\diff{\hat\vr}{\theta}(\theta)</m> is some scalar multiple of
+<m>\hat\vth(\theta)</m> follows just from the fact that <m>|\hat\vr(\theta)| = 1</m>.
+<md>
+<mrow>
+|\hat\vr(\theta)| = 1 &amp;\implies \hat\vr(\theta)\cdot\hat\vr(\theta)=1
+</mrow><mrow>
+             &amp;\implies \hat\vr(\theta)\cdot \diff{\hat\vr}{\theta}(\theta)
+                                =\frac{1}{2}\diff{}{t}\big(
+                                   \hat\vr(\theta)\cdot\hat\vr(\theta)\big)
+                                =0
+</mrow><mrow>
+         &amp;\implies  \diff{\hat\vr}{\theta}(\theta)\perp \hat\vr(\theta)
+         \implies \diff{\hat\vr}{\theta}(\theta)\parallel \hat\vth(\theta)
+</mrow>
+</md>
+Similarly that <m>\diff{\hat\vth}{\theta}(\theta)</m> is some scalar
+multiple of <m>\hat\vr(\theta)</m> follows just from the fact
+that <m>|\hat\vth(\theta)| = 1</m>.
+</p>
+
+<lemma xml:id="lem_polar">
+<statement><p>
+If we parametrize a curve by giving its polar coordinates
+<fn>As usual <m>r</m> is the distance from the origin to the point and <m>\theta</m> is angle between the <m>x</m>-axis and the vector from the origin to the point.</fn>
+ <m>\big(r(t)\,,\,\theta(t)\big)</m>, then
+<ol label="a">
+<li> <m>\vr(t) = r(t)\ \hat\vr\big(\theta(t)\big)</m>
+</li>
+<li> <m>\vv(t) = \diff{r}{t}(t)\ \hat\vr\big(\theta(t)\big)
+             + r(t)\ \diff{\theta}{t}(t)\ \hat\vth\big(\theta(t)\big)</m>
+</li>
+<li> <m>\va(t) =
+\Big(\difftwo{r}{t}(t)-r(t)\big(\diff{\theta}{t}(t)\big)^2\Big)
+             \hat\vr\big(\theta(t)\big)
+   +\Big(r(t)\ \difftwo{\theta}{t}(t)
+          + 2 \diff{r}{t}(t)\diff{\theta}{t}(t)\Big)
+                  \hat\vth\big(\theta(t)\big)</m>
+</li>
+</ol>
+</p></statement>
+</lemma>
+
+<p>It is standard to suppress the arguments <m>t</m> and <m>\theta(t)</m>
+and write, for example,
+<me>
+\vv= \diff{r}{t}\ \hat\vr
+             + r\ \diff{\theta}{t}\ \hat\vth
+</me>
+But it is important to remember that the arguments really are there.
+</p>
+
+<proof>
+<p>The vector from the origin to the point whose
+polar coordinates are
+<m>(r,\theta)</m> is <m>\vr = r\,\hat\vr(\theta)</m>. So if we parametrize a curve by
+giving the polar coordinates at time <m>t</m>,
+<md>
+<mrow>
+\vr(t) &amp;= r(t)\ \hat\vr\big(\theta(t)\big)
+</mrow><mrow>
+\vv(t) &amp;= \diff{r}{t}(t)\ \hat\vr\big(\theta(t)\big) +
+              r(t)\ \diff{\hat\vr}{\theta}\big(\theta(t)\big)\
+              \diff{\theta}{t}(t) \notag
+</mrow><mrow>
+        &amp;= \diff{r}{t}(t)\ \hat\vr\big(\theta(t)\big)
+             + r(t)\ \diff{\theta}{t}(t)\ \hat\vth\big(\theta(t)\big)
+
+</mrow><mrow>
+
+\va(t) &amp; = \difftwo{r}{t}\ \hat\vr
+                + \diff{r}{t}\ \diff{\hat\vr}{\theta}\ \diff{\theta}{t}
+             + \diff{r}{t}\ \diff{\theta}{t}\ \hat\vth
+             + r\ \difftwo{\theta}{t}\ \hat\vth
+             + r\ \Big(\diff{\theta}{t}\Big)^2\ \diff{\hat\vth}{\theta}
+
+</mrow><mrow>
+       &amp;=\Big(\difftwo{r}{t}-r\ \Big(\diff{\theta}{t}\Big)^2\Big) \hat\vr
+   +\Big(r\ \difftwo{\theta}{t} + 2 \diff{r}{t}\ \diff{\theta}{t}\Big)\hat\vth
+</mrow>
+</md>
+</p></proof>
+
+<example xml:id="eg_beadToss">
+<p>
+As an example, consider a bead that is sliding on a frictionless rod
+that has one end fixed at the origin and that is rotating about the
+origin at a constant <m>\Omega\,</m>rad/sec.
+</p>
+
+<sidebyside>
+<image source="figs/beadRod"/>
+</sidebyside>
+
+<p>
+Because the rod is frictionless,
+it is incapable of applying to the bead any force parallel to the rod. So
+under Newton's law, <m>m\va=\vF</m>, the radial
+<fn>The <m>\hat\vth</m> component
+of the acceleration just tells us how much normal force the rod is applying
+to the bead to keep it on the rod.</fn>
+ component of the acceleration
+of the particle is exactly zero. So, if the polar coordinates of the bead
+at time <m>t</m> are <m>\big(r(t),\theta(t)\big)</m>, then,
+by Lemma <xref ref="lem_polar"/>.c,
+<me>
+\difftwo{r}{t}-r\ \Big(\diff{\theta}{t}\Big)^2 = 0
+</me>
+As the rod is rotating at <m>\Omega\,</m>rad/sec,
+<m>\diff{\theta}{t}=\Omega</m> and
+<me>
+\difftwo{r}{t}-\Omega^2\ r = 0
+</me>
+The general solution to this constant coefficient second order
+ordinary differential equation is
+<me>
+r(t)  = A e^{\Omega\,t} + B e^{-\Omega\,t}
+</me>
+where <m>A</m> and <m>B</m> are arbitrary constants that are determined by initial
+conditions.
+Just as an example, if <m>r(0)= 1</m> and <m>r'(0)= 0</m>,
+then <m>A+B=0</m> and <m>A-B=0</m>, so that <m>A=B=\frac{1}{2}</m> and
+<me>
+r(t)  = \frac{1}{2}\big(e^{\Omega\,t}+e^{-\Omega\,t}\big)\qquad
+</me>
+If, again for example, <m>\theta(0) = 0</m>, then <m>\theta(t) = \Omega t</m>
+and the bead follows the polar coordinate curve
+<me>
+r(\theta) = \frac{1}{2}\big(e^{\theta}+e^{-\theta}\big)
+</me>
+which is a spiral.
+</p>
+
+<sidebyside>
+<image source="figs/beadCurve"/>
+</sidebyside>
+</example>
+
+<example xml:id="eg_conicA"><title>Conic sections in polar coordinates</title>
+<p>
+In this example, we derive the equation of a general conic section in
+polar coordinates. A conic section is the intersection of a plane with a cone.
+This is illustrated in the figures below.
+</p>
+
+<sidebyside>
+<image source="figs/conePlaneCircle"/>
+<image source="figs/conePlaneEllipse"/>
+<image source="figs/conePlaneParabola"/>
+<image source="figs/conePlaneHyperbola"/>
+</sidebyside>
+
+<p>
+For our current purposes, it is convenient to use the equivalent
+<fn>It is outside our scope to prove this equivalence.</fn> (and often used) definition that a conic section is the set of points <m>P</m>
+in the <m>xy</m>-plane
+<ul>
+<li>
+whose distance from a fixed point <m>F</m> (called the <em>focus</em> of the conic)
+</li>
+<li>
+is a constant multiple <m>\veps\ge 0</m> (called the <em>eccentricity</em>
+of the conic)
+</li>
+<li>
+of the distance from <m>P</m> to a fixed line <m>L</m> (called the <em>directrix</em>
+of the conic).
+</li>
+</ul>
+Choose a coordinate system with the focus <m>F</m> of the conic being the origin
+and with the directrix <m>L</m> being <m>x=p</m> for some <m>p \gt 0</m>.
+</p>
+
+<sidebyside>
+<image source="figs/conic"/>
+</sidebyside>
+
+<p>
+If <m>P</m> has polar coordinates <m>(r,\theta)</m>, then <m>P</m> has <m>x</m>-coordinate
+<m>r\cos\theta</m>. The point <m>Q</m> on the line <m>L</m> in the figure above
+has <m>x</m>-coordinate <m>p</m>.
+So the distance from <m>P</m> to <m>L</m>, which is also the distance from <m>P</m> to
+<m>Q</m>, is <m>p-r\cos\theta</m>.  The distance from <m>P</m> to <m>F</m> is <m>r</m>. We require that
+the distance from <m>P</m> to <m>F</m> is <m>\veps</m> times the distance form <m>P</m> to <m>L</m>.
+So
+<me>
+r=\veps\big(p-r\cos\theta\big)
+\iff
+r=\frac{\veps p}{1+\veps\cos\theta}
+</me>
+The numerator <m>\veps p</m> is usually renamed to <m>\ell</m> giving the equation
+<me>
+r=\frac{\ell}{1+\veps\cos\theta}
+</me>
+</p></example>
+
+<example xml:id="conicB"><title>Conic sections in polar coordinates, again</title>
+<p>
+We'll now take the equation <m>r=\frac{\ell}{1+\veps\cos\theta}</m>
+for a conic section in polar coordinates, from the last example,
+and convert it to the more familiar Cartesian coordinates. Just by the
+definition of polar coordinates
+<md>
+<mrow>
+r\big(1+\veps\cos\theta\big)=\ell
+&amp;\iff r = \ell -\veps x
+</mrow><mrow>
+&amp;\iff x^2+y^2 = \ell^2-2\veps\ell x+\veps^2 x^2
+</mrow><mrow>
+&amp;\iff (1-\veps^2) x^2  + 2\veps\ell x + y^2 = \ell^2
+\tag{C}
+</mrow>
+</md>
+Now consider separately four different cases, depending on the value of
+<m>\veps \ge 0</m>.
+<ul>
+<li><p>
+If <m>\veps=0</m>, (C) reduces to
+</p>
+
+<sidebyside width="45%">
+<p><me>
+x^2+y^2 = \ell^2
+</me></p>
+<image source="figs/conicCircle"/>
+</sidebyside>
+<p>
+which is of course a circle of radius <m>\ell</m>.
+</p>
+</li>
+<li>
+<p>
+If <m>0 \lt \veps \lt 1</m>, completing the square in (C)
+gives
+<me>
+(1-\veps^2)\Big(x+\frac{\veps\ell}{1-\veps^2}\Big)^2 + y^2
+   = \ell^2 + \frac{\veps^2\ell^2}{1-\veps^2}
+   =  \frac{\ell^2}{1-\veps^2}
+</me>
+which is equivalent to
+</p>
+
+<sidebyside width="45%">
+<p>
+  <me>
+  \frac{\big(x+\frac{\veps\ell}{1-\veps^2}\big)^2}
+                { \frac{\ell^2}{{(1-\veps^2)}^2}}
+  +\frac{y^2}{\frac{\ell^2}{1-\veps^2}}
+  =1
+</me></p>
+ <image source="figs/conicEllipse"/>
+</sidebyside>
+
+<p>
+and is of course an ellipse with semi-major axis <m>r_M=\frac{\ell}{1-\veps^2}</m>
+and semi-minor axis <m>r_m=\frac{\ell}{\sqrt{1-\veps^2}}</m>.
+</p>
+</li>
+<li><p>
+If <m>\veps=1</m>, (C) reduces to
+</p>
+<sidebyside width="45%">
+<p><me>
+y^2 = \ell^2-2\ell x
+</me></p>
+<image source="figs/conicParabola"/>
+</sidebyside>
+<p>
+which is of course a parabola.
+</p>
+</li>
+<li><p>
+If <m>\veps \gt 1</m>, the same computation as in the <m>0 \lt \veps \lt 1</m> case
+gives
+</p>
+<sidebyside width="45%">
+  <p><me>
+  \frac{\big(x-\frac{\veps\ell}{\veps^2-1}\big)^2}
+                { \frac{\ell^2}{{(\veps^2-1)}^2}}
+  -\frac{y^2}{\frac{\ell^2}{\veps^2-1}}
+  =1
+  </me></p>
+  <image source="figs/conicHyperbola"/>
+</sidebyside>
+<p>
+and is of course a hyperbola.
+</p>
+</li>
+</ul>
+</p>
+</example>
+
+
+<!-- <xi:include href="../problems/prob_s1.1.ptx" /> -->
+
+</section>

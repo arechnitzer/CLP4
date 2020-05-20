@@ -1,0 +1,190 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<section xmlns:xi="http://www.w3.org/2001/XInclude" xml:id="sec_planet">
+
+<!-- Copyright 2018-2020 Joel Feldman, Andrew Rechnitzer and Elyse Yeager -->
+<!-- This work is licensed under the Creative Commons Attribution-NonCommercial-ShareAlike 4.0 International License-->
+<!-- https://creativecommons.org/licenses/by-nc-sa/4.0 -->
+
+<title>Optional <mdash/> Planetary Motion</title>
+
+<p>
+We now return to the claim, made in §<xref ref="sec_central_forces"/> on central
+forces, that if <m>\vr(t)</m> obeys Newton's inverse square law
+<me>
+\difftwo{\vr}{t} = -\frac{GM}{r^3}\vr = -\frac{GM}{r^2}\hat\vr
+</me>
+then the curve obeys Kepler's laws
+<ol>
+<li>
+<m>\vr(t)</m> runs over an ellipse having one focus at the origin and
+</li>
+<li>
+<m>\vr(t)</m> sweeps out equal areas in equal times and
+</li>
+<li>
+the square of the period is proportional to the cube of the major axis of the
+ellipse.
+</li>
+</ol>
+We just showed, in §<xref ref="sec_central_forces"/>, that the fact that
+<m>-\frac{GM}{r^3}\vr</m> is parallel to <m>\vr</m> implies that <m>\vr(t)</m>
+lies in a plane through the origin and sweeps out equal area in equal times.
+We now verify the remaining Kepler laws.
+</p>
+
+<p>We start by just rewriting Newton's laws above in polar coordinates.
+We saw in Lemma <xref ref="lem_polar"/>.c, that if we write <m>\vr(t) = r(t)\,\hat\vr(t)</m>,
+then
+<md>
+<mrow>
+\difftwo{\vr}{t} =
+  \Big(\difftwo{r}{t}-r\ \Big(\diff{\theta}{t}\Big)^2\Big) \hat\vr
+   +\Big(r\ \difftwo{\theta}{t} + 2 \diff{r}{t}\ \diff{\theta}{t}\Big)\hat\vth
+= -\frac{GM}{r^3}\vr
+= -\frac{GM}{r^2}\hat\vr
+</mrow>
+</md>
+The <m>\hat\vr</m> and <m>\hat\vth</m> components of this equation are
+<md>
+<mrow>
+\difftwo{r}{t}-r\ \Big(\diff{\theta}{t}\Big)^2 &amp;= -\frac{GM}{r^2}
+</mrow><mrow>
+r\ \difftwo{\theta}{t} + 2 \diff{r}{t}\ \diff{\theta}{t} &amp;= 0
+</mrow>
+</md>
+The second of these two equations only tells us that
+<me>
+\diff{\ }{t}\Big\{r^2\,\diff{\theta}{t}\Big\}
+= r\Big\{
+     r\ \difftwo{\theta}{t} + 2 \diff{r}{t}\ \diff{\theta}{t}\Big\} = 0
+\implies
+r^2\,\diff{\theta}{t} = h,\quad\text{a constant}
+</me>
+which we already knew. Substituting <m>\diff{\theta}{t} =\frac{h}{r^2}</m>
+into the first equation gives
+</p>
+
+<fact xml:id="eqn_planetRadialR">
+<statement><p>
+<me>
+  \difftwo{r}{t}-\frac{h^2}{r^3} = -\frac{GM}{r^2}
+</me></p>
+</statement></fact>
+
+<p>
+This equations contains a lot of <m>\frac{1}{r}</m>'s. So let's set <m>u=\frac{1}{r}</m>.
+Furthermore, for the first of Kepler's laws, we really want <m>r</m> as a function of
+<m>\theta</m> rather than <m>t</m>. So let's make <m>u</m> a function of <m>\theta</m> and write
+<me>
+r(t) = \frac{1}{u(\theta(t))}
+</me>
+Then
+<md>
+<mrow>
+\diff{r}{t}(t) &amp;= -\frac{1}{u^2}
+        \diff{u}{\theta}\big(\theta(t)\big)\diff{\theta}{t}(t)
+   = - h\diff{u}{\theta}\big(\theta(t)\big)\qquad
+\text{since } \diff{\theta}{t} = \frac{h}{r^2}=hu^2
+</mrow><mrow>
+\difftwo{r}{t}(t)
+   &amp;= -h\difftwo{u}{\theta}\big(\theta(t)\big)\diff{\theta}{t}(t)
+     = -h^2 u\big(\theta(t)\big)^2 \difftwo{u}{\theta}\big(\theta(t)\big)
+</mrow>
+</md>
+and our equation becomes
+</p>
+
+
+<fact xml:id="eqn_planetRadialU">
+<statement><p>
+<me>
+-h^2u^2\difftwo{u}{\theta} -h^2u^3= -GM u^2\qquad\text{or}\qquad
+\difftwo{u}{\theta} + u = \frac{GM}{h^2}
+</me>
+</p></statement>
+</fact>
+
+<p>
+This is a second order, linear, ordinary differential equation
+with constant coefficients.  Recall that the general solution of such an
+equation is the sum of a <q>particular solution</q> (i.e. any one solution,
+which in this case we can take to be the constant function <m>\frac{GM}{h^2}</m>)
+plus the general solution of the homogeneous equation
+<m>u'+u=0</m>, which one often writes as
+<me>
+A\cos\theta +B\sin\theta
+</me>
+with <m>A</m> and <m>B</m>  arbitrary constants. In this particular application it is
+more convenient to write the solution in a different, standard but less
+commonly used, form. Namely, we can use the triangle
+</p>
+
+<sidebyside>
+<image source="figs/trianglePl.pdf"/>
+</sidebyside>
+
+<p>to write <m>A= C\cos\alpha</m> and <m>B=C\sin\alpha</m> so that
+the general solution of the homogeneous equation <m>u'+u=0</m> becomes
+<me>
+C\cos\alpha\cos\theta +C\sin\alpha\sin\theta
+=C\cos(\theta-\alpha)
+</me>
+with <m>C</m> and <m>\alpha</m> being arbitrary constants. So the general solution
+to <xref ref="eqn_planetRadialU"/> is
+<me>
+u(\theta) = \frac{GM}{h^2} + C\cos(\theta-\alpha)
+</me>
+and the general solution to <xref ref="eqn_planetRadialR"/> is
+<me>
+r(t) = \frac{1}{\frac{GM}{h^2} + C\cos(\theta(t)-\alpha)}
+</me>
+The angle <m>\alpha</m> just shifts the zero point of our coordinate <m>\theta</m>.
+By rotating our coordinate system by <m>\alpha</m>, we can arrange that <m>\alpha=0</m>
+and then
+<me>
+r(t) = \frac{1}{\frac{GM}{h^2} + C\cos(\theta(t))}
+     = \frac{\ell}{1+\veps\cos\theta}
+\qquad\text{with}\quad
+\ell=\frac{h^2}{GM},\
+\veps=\frac{Ch^2}{GM}
+</me>
+As we saw in Example <xref ref="eg_conicA"/>, this is exactly the equation
+of a conic section with eccentricity <m>\veps</m>.
+</p>
+
+<p>That leaves only the last of Kepler's laws, relating the period
+to the semi-major axis. As we are talking about planets, whose orbits
+remain bounded, our conic section must be a circle or ellipse, rather
+than a parabola or hyperbola.
+Looking back at Example <xref ref="conicB"/>, we see that the semi-major
+and semi-minor axes of our ellipse are
+<md>
+<mrow>
+a=\frac{\ell}{1-\veps^2}
+\qquad
+b=\frac{\ell}{\sqrt{1-\veps^2}}
+</mrow>
+</md>
+The period <m>T</m> of our orbit is just the length of time it takes
+the radius vector <m>\vr(t)</m> to sweep out the area of the ellipse
+<fn>You
+probably computed the area of an ellipse in first year calculus. If not,
+you should be able to do it now in a few lines.</fn>
+,
+which is <m>\pi ab</m>.  As the rate at which the radius vector is sweeping out
+area is <m>\frac{1}{2} r^2\diff{\theta}{t} = \frac{h}{2}</m>, we have
+<md>
+<mrow>
+T^2 = \Big(\frac{\pi a b}{h/2}\Big)^2
+    =\frac{4\pi^2 a^2 b^2}{h^2}
+    =\frac{4\pi^2 a^2 b^2}{GM\ell}
+    =\frac{4\pi^2}{GM}\ a^3\qquad
+\text{since }\ell=\frac{b^2}{a}
+</mrow>
+</md>
+</p>
+
+
+<!-- <xi:include href="../problems/prob_s1.10.ptx" /> -->
+
+</section>

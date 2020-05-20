@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="92pt" height="95pt" viewBox="0 0 92 95" version="1.1">
+<g id="surface1">
+<path style="fill:none;stroke-width:10;stroke-linecap:butt;stroke-linejoin:miter;stroke:rgb(13.729858%,12.159729%,12.548828%);stroke-opacity:1;stroke-miterlimit:10;" d="M 182.8125 462.8125 L 758.789062 462.8125 " transform="matrix(0.1,0,0,-0.1,0,95)"/>
+<path style="fill:none;stroke-width:10;stroke-linecap:butt;stroke-linejoin:miter;stroke:rgb(13.729858%,12.159729%,12.548828%);stroke-opacity:1;stroke-miterlimit:10;" d="M 470.820312 174.804688 L 470.820312 750.820312 " transform="matrix(0.1,0,0,-0.1,0,95)"/>
+<path style="fill:none;stroke-width:40;stroke-linecap:butt;stroke-linejoin:miter;stroke:rgb(13.729858%,12.159729%,12.548828%);stroke-opacity:1;stroke-miterlimit:10;" d="M 182.8125 462.8125 L 38.789062 462.8125 " transform="matrix(0.1,0,0,-0.1,0,95)"/>
+<path style="fill:none;stroke-width:40;stroke-linecap:butt;stroke-linejoin:miter;stroke:rgb(13.729858%,12.159729%,12.548828%);stroke-opacity:1;stroke-miterlimit:10;" d="M 758.789062 462.8125 L 902.8125 462.8125 " transform="matrix(0.1,0,0,-0.1,0,95)"/>
+<path style="fill:none;stroke-width:40;stroke-linecap:butt;stroke-linejoin:miter;stroke:rgb(13.729858%,12.159729%,12.548828%);stroke-opacity:1;stroke-miterlimit:10;" d="M 470.820312 174.804688 L 470.820312 30.820312 " transform="matrix(0.1,0,0,-0.1,0,95)"/>
+<path style="fill:none;stroke-width:40;stroke-linecap:butt;stroke-linejoin:miter;stroke:rgb(13.729858%,12.159729%,12.548828%);stroke-opacity:1;stroke-miterlimit:10;" d="M 470.820312 750.820312 L 470.820312 894.804688 " transform="matrix(0.1,0,0,-0.1,0,95)"/>
+<path style=" stroke:none;fill-rule:nonzero;fill:rgb(13.729858%,12.159729%,12.548828%);fill-opacity:1;" d="M 50.679688 48.71875 C 50.679688 46.730469 49.066406 45.121094 47.082031 45.121094 C 45.09375 45.121094 43.480469 46.730469 43.480469 48.71875 C 43.480469 50.707031 45.09375 52.320312 47.082031 52.320312 C 49.066406 52.320312 50.679688 50.707031 50.679688 48.71875 "/>
+</g>
+</svg>

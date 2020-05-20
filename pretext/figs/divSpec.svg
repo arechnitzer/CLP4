@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="99pt" height="75pt" viewBox="0 0 99 75" version="1.1">
+<defs>
+<g>
+<symbol overflow="visible" id="glyph0-0">
+<path style="stroke:none;" d=""/>
+</symbol>
+<symbol overflow="visible" id="glyph0-1">
+<path style="stroke:none;" d="M 7.40625 -6.84375 C 7.8125 -7.484375 8.171875 -7.765625 8.78125 -7.8125 C 8.90625 -7.828125 9 -7.828125 9 -8.046875 C 9 -8.09375 8.984375 -8.15625 8.875 -8.15625 C 8.65625 -8.15625 8.140625 -8.140625 7.921875 -8.140625 C 7.578125 -8.140625 7.21875 -8.15625 6.890625 -8.15625 C 6.796875 -8.15625 6.671875 -8.15625 6.671875 -7.9375 C 6.671875 -7.828125 6.78125 -7.8125 6.828125 -7.8125 C 7.265625 -7.78125 7.3125 -7.5625 7.3125 -7.421875 C 7.3125 -7.25 7.140625 -6.96875 7.140625 -6.953125 L 3.375 -1 L 2.546875 -7.453125 C 2.546875 -7.796875 3.171875 -7.8125 3.296875 -7.8125 C 3.484375 -7.8125 3.578125 -7.8125 3.578125 -8.046875 C 3.578125 -8.15625 3.453125 -8.15625 3.421875 -8.15625 C 3.21875 -8.15625 2.96875 -8.140625 2.765625 -8.140625 L 2.109375 -8.140625 C 1.234375 -8.140625 0.875 -8.15625 0.859375 -8.15625 C 0.78125 -8.15625 0.640625 -8.15625 0.640625 -7.953125 C 0.640625 -7.8125 0.734375 -7.8125 0.921875 -7.8125 C 1.53125 -7.8125 1.5625 -7.703125 1.609375 -7.40625 L 2.5625 -0.03125 C 2.59375 0.21875 2.59375 0.25 2.765625 0.25 C 2.90625 0.25 2.96875 0.21875 3.078125 0.03125 Z M 7.40625 -6.84375 "/>
+</symbol>
+</g>
+</defs>
+<g id="surface1">
+<path style=" stroke:none;fill-rule:nonzero;fill:rgb(90.039062%,90.039062%,90.039062%);fill-opacity:1;" d="M 4.800781 37.917969 C 13.828125 47.128906 26.183594 52.320312 39.082031 52.320312 C 51.976562 52.320312 64.332031 47.128906 73.359375 37.917969 "/>
+<path style=" stroke:none;fill-rule:nonzero;fill:rgb(90.039062%,90.039062%,90.039062%);fill-opacity:1;" d="M 73.359375 37.917969 C 64.332031 28.710938 51.976562 23.519531 39.082031 23.519531 C 26.183594 23.519531 13.828125 28.710938 4.800781 37.917969 "/>
+<path style="fill:none;stroke-width:15;stroke-linecap:butt;stroke-linejoin:miter;stroke:rgb(0%,0%,0%);stroke-opacity:1;stroke-miterlimit:10;" d="M 48.007812 370.820312 C 138.28125 278.710938 261.835938 226.796875 390.820312 226.796875 C 519.765625 226.796875 643.320312 278.710938 733.59375 370.820312 " transform="matrix(0.1,0,0,-0.1,0,75)"/>
+<path style="fill:none;stroke-width:15;stroke-linecap:butt;stroke-linejoin:miter;stroke:rgb(0%,0%,0%);stroke-opacity:1;stroke-miterlimit:10;" d="M 733.59375 370.820312 C 643.320312 462.890625 519.765625 514.804688 390.820312 514.804688 C 261.835938 514.804688 138.28125 462.890625 48.007812 370.820312 " transform="matrix(0.1,0,0,-0.1,0,75)"/>
+<path style="fill:none;stroke-width:5;stroke-linecap:butt;stroke-linejoin:miter;stroke:rgb(0%,0%,0%);stroke-opacity:1;stroke-miterlimit:10;" d="M 517.578125 10.820312 L 517.578125 730.820312 " transform="matrix(0.1,0,0,-0.1,0,75)"/>
+<path style="fill:none;stroke-width:5;stroke-linecap:butt;stroke-linejoin:miter;stroke:rgb(0%,0%,0%);stroke-opacity:1;stroke-miterlimit:10;" d="M 733.59375 10.820312 L 733.59375 730.820312 " transform="matrix(0.1,0,0,-0.1,0,75)"/>
+<path style="fill:none;stroke-width:5;stroke-linecap:butt;stroke-linejoin:miter;stroke:rgb(0%,0%,0%);stroke-opacity:1;stroke-miterlimit:10;" d="M 949.609375 10.820312 L 949.609375 730.820312 " transform="matrix(0.1,0,0,-0.1,0,75)"/>
+<path style=" stroke:none;fill-rule:nonzero;fill:rgb(92.939758%,10.978699%,14.118958%);fill-opacity:1;" d="M 75.757812 37.917969 C 75.757812 36.59375 74.683594 35.519531 73.359375 35.519531 C 72.035156 35.519531 70.960938 36.59375 70.960938 37.917969 C 70.960938 39.246094 72.035156 40.320312 73.359375 40.320312 C 74.683594 40.320312 75.757812 39.246094 75.757812 37.917969 "/>
+<path style="fill:none;stroke-width:15;stroke-linecap:butt;stroke-linejoin:miter;stroke:rgb(92.939758%,10.978699%,14.118958%);stroke-opacity:1;stroke-miterlimit:10;" d="M 517.578125 497.773438 L 517.578125 243.867188 " transform="matrix(0.1,0,0,-0.1,0,75)"/>
+<g style="fill:rgb(0%,0%,0%);fill-opacity:1;">
+  <use xlink:href="#glyph0-1" x="27.8" y="42"/>
+</g>
+</g>
+</svg>

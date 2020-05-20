@@ -1,0 +1,162 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<section xmlns:xi="http://www.w3.org/2001/XInclude" xml:id="sec_lineIntegral">
+
+<!-- Copyright 2018-2020 Joel Feldman, Andrew Rechnitzer and Elyse Yeager -->
+<!-- This work is licensed under the Creative Commons Attribution-NonCommercial-ShareAlike 4.0 International License-->
+<!-- https://creativecommons.org/licenses/by-nc-sa/4.0 -->
+
+<title>Integrating Along a Curve</title>
+
+
+<p>
+Suppose that we have a curve <m>\cC</m> that is parametrized as <m>\vr(t)</m>
+with <m>a\le t\le b</m>. Suppose further that <m>\cC</m> is actually a piece of wire
+and that the density (i.e. mass per unit length) of the wire at the point <m>\vr</m>
+is <m>\rho(\vr)</m>. How do we figure out the mass of <m>\cC</m>? Of course
+we use the standard Calculus divide and conquer strategy. We select a
+natural number <m>n</m> and
+<ul>
+<li>
+divide the interval <m>a\le t\le b</m> into <m>n</m> equal subintervals,
+each of length <m>\De t=\frac{b-a}{n}</m>. We denote by
+<m>t_\ell = a + \ell\De t</m> the right hand end of interval number <m>\ell</m>.
+</li>
+<li><p>
+Then we approximate the length of the part of the curve between
+<m>\vr\big(t_{\ell-1}\big)</m> and <m>\vr\big(t_\ell\big)</m> by
+<m>\big|\vr\big(t_{\ell-1}\big)-\vr\big(t_\ell\big)\big|</m> and the mass
+of the part of the curve between <m>\vr\big(t_{\ell-1}\big)</m>
+and <m>\vr\big(t_\ell\big)</m> by <m>\rho\big(\vr(t_\ell)\big)
+\big|\vr\big(t_{\ell-1}\big)-\vr\big(t_\ell\big)\big|</m>.
+</p>
+
+<sidebyside>
+<image source="figs/parCurveL"/>
+</sidebyside>
+</li>
+<li>
+This gives us, as an approximate mass for <m>\cC</m> of
+<me>
+\sum_{\ell=1}^n \rho\big(\vr(t_\ell)\big)
+    \big|\vr\big(t_{\ell-1}\big)-\vr\big(t_\ell\big)\big|
+=\sum_{\ell=1}^n \rho\big(\vr(t_\ell)\big)
+   \bigg|\frac{\vr\big(t_{\ell-1}\big)-\vr\big(t_\ell\big)}
+                          {t_\ell-t_{\ell-1}}\bigg|\De t
+</me>
+</li>
+</ul>
+Then we take the limit as <m>n\rightarrow\infty</m>.
+Assuming
+<fn>We could
+relax these conditions somewhat by instead assuming that <m>\vr'(t)</m>
+and <m>\rho(t)</m> are bounded and are continuous except at a finite number
+of points. (<m>\vr'(t)</m> need not exist at all at those points.)</fn>
+</p>
+
+<p> that <m>\vr(t)</m> is continuously differentiable and that <m>\rho(\vr)</m>
+is continuous we get
+<me>
+\text{Mass of } \cC = \int_a^b \rho\big(\vr(t)\big) \Big|\diff{\vr}{t}(t)\Big|\,\dee{t}
+</me>
+which we take to be a definition.
+</p>
+
+<definition xml:id="def_lineIntegral">
+<statement><p>
+<ol label="a">
+<li>
+For a parametrized curve <m>\big(x(t),y(t), z(t)\big)</m>, <m>a\le t\le b</m>,
+in <m>\bbbr^3</m> that we call <m>\cC</m>, and for a function <m>f(x,y,z)</m>, we define
+<me>
+\int_\cC f(x,y,z)\,\dee{s}
+ =\int_a^b f\big(x(t), y(t) , z(t) \big)\sqrt{x'(t)^2+y'(t)^2+z'(t)^2}\
+       \dee{t}
+</me>
+In this notation the subscript <m>\cC</m> specifies the curve, and <m>\dee{s}</m>
+signifies arc length.
+</li>
+<li>
+For a curve <m>y=f(x)</m>, <m>a\le x\le b</m>, in <m>\bbbr^2</m> that we call <m>C</m>,
+and for a function <m>g(x,y)</m>, we define
+<me>
+\int_C g(x,y)\,\dee{s}
+ =\int_a^b g\big(x, f(x) \big)\sqrt{1+f'(x)^2}\
+       \dee{x}
+</me>
+</li>
+</ol>
+</p></statement>
+</definition>
+
+<example xml:id="eg_CofMass">
+<p>
+Suppose that we have a helical wire
+<fn>For example, your favourite
+solenoid or spring or slinky.</fn>
+<me>
+\vr(t) = \big(x(t)\,,\,y(t)\,,\,z(t)\big)
+       =\big(a\cos t\,,\,a\sin t\,,\, bt\big)\qquad 0\le t\le 2\pi
+</me>
+and that this wire has constant mass density <m>\rho</m>.
+Let's find the centre of mass of the wire. Recall that the centre of mass
+is <m>\big(\bar x,\bar y,\bar z)</m> with, for example, <m>\bar x</m> being the
+weighted average
+<me>
+\bar x = \frac{\int x\rho \dee{s}}{\int \rho\dee{s}}
+= \frac{\int x \dee{s}}{\int \dee{s}}
+\qquad\text{(since $\rho$ is constant)}
+</me>
+of <m>x</m> over the wire. Similarly
+<m>
+\bar y = \frac{\int y \dee{s}}{\int \dee{s}}
+</m>
+and
+<m>
+\bar z = \frac{\int z \dee{s}}{\int \dee{s}}
+</m>.
+For the given curve
+<md>
+<mrow>
+ \big(x(t)\,,\,y(t)\,,\,z(t)\big) &amp;=\big(a\cos t\,,\,a\sin t\,,\, bt\big)
+</mrow><mrow>
+ \big(x'(t)\,,\,y'(t)\,,\,z'(t)\big) &amp;=\big(-a\sin t\,,\,a\cos t\,,\, b\big)
+</mrow><mrow>
+\diff{s}{t}(t) &amp;=\sqrt{x'(t)^2+y'(t)^2+z'(t)^2}
+                  =\sqrt{a^2\sin^2t+a^2\cos^2t+b^2}
+                  =\sqrt{a^2+b^2}
+</mrow>
+</md>
+so that
+<md>
+<mrow>
+\bar x
+&amp;= \frac{\int x \dee{s}}{\int \dee{s}}
+= \frac{\int_0^{2\pi} x(t) \sqrt{a^2+b^2}\,\dee{t}}
+          {\int_0^{2\pi} \sqrt{a^2+b^2}\,\dee{t}}
+= \frac{\int_0^{2\pi} a\cos(t) \,\dee{t}}{2\pi}
+=0
+</mrow><mrow>
+\bar y
+&amp;= \frac{\int y \dee{s}}{\int \dee{s}}
+= \frac{\int_0^{2\pi} y(t) \sqrt{a^2+b^2}\,\dee{t}}
+       {\int_0^{2\pi} \sqrt{a^2+b^2}\,\dee{t}}
+= \frac{\int_0^{2\pi} a\sin(t) \,\dee{t}}{2\pi}
+=0
+</mrow><mrow>
+\bar z
+&amp;= \frac{\int z \dee{s}}{\int \dee{s}}
+= \frac{\int_0^{2\pi} z(t) \sqrt{a^2+b^2}\,\dee{t}}
+      {\int_0^{2\pi} \sqrt{a^2+b^2}\,\dee{t}}
+= \frac{\int_0^{2\pi} bt \,\dee{t}}{2\pi}
+=\frac{b}{2\pi}\Big[\frac{t^2}{2}\Big]_0^{2\pi}
+=b\pi
+</mrow>
+</md>
+So the centre of mass is right on the axis of the helix, half way up,
+which makes perfect sense.
+</p></example>
+
+
+<!-- <xi:include href="../problems/prob_s1.6.ptx" /> -->
+
+</section>

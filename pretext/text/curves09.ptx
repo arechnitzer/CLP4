@@ -1,0 +1,170 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<section xmlns:xi="http://www.w3.org/2001/XInclude" xml:id="sec_central_forces">
+
+<!-- Copyright 2018-2020 Joel Feldman, Andrew Rechnitzer and Elyse Yeager -->
+<!-- This work is licensed under the Creative Commons Attribution-NonCommercial-ShareAlike 4.0 International License-->
+<!-- https://creativecommons.org/licenses/by-nc-sa/4.0 -->
+
+<title>Optional <mdash/> Central Forces</title>
+
+
+
+<p>One of the great triumphs of Newtonian mechanics was the explanation
+of Kepler's laws
+<fn>The German astronomer Johannes Kepler (1571<ndash/>1630)
+developed these laws during the course of an attempt to relate the five extraterrestrial planets then known to the five Platonic solids. He based
+the laws on a great number of careful measurements
+made by the Danish Astronomer Tycho Brahe (1546<ndash/>1601). Then
+Isaac Newton (English, 1642<ndash/>1727) provided the explanation in 1687.
+Kepler also wrote a paper entitled <q>On the Six-Cornered Snowflake</q>.
+Tycho Brahe lost his nose in a sword duel and wore a prosthetic nose
+from then on. The story is that Brahe died from a burst bladder that resulted
+from his refusing to leave the dinner table before his host.</fn>, which said
+<ol>
+<li>
+The planets trace out ellipses about the sun as focus.
+</li>
+<li>
+The radius vector <m>\vr</m> sweeps out equal areas in equal times.
+</li>
+<li>
+The square of the period of each planet is proportional to the cube of the major axis of the planet's orbit.
+</li>
+</ol>
+Newton showed that all of these behaviours follow from the assumption
+that the acceleration <m>\va(t)</m> of each planet  obeys the law of
+motion <m>m\va =\vF</m> where <m>m</m> is the mass of the planet and
+<me>
+\vF = -\frac{GMm}{r^3}\vr
+</me>
+is the <q>gravitational force</q> applied on the planet by the sun. Here
+<m>G</m> is a constant
+<fn>Its value is about <m>6.67408\times10^{-11} \text{m}^3\,\text{kg}^{-1}\,\text{sec}^{-2}</m>.</fn>,
+called the <q>gravitational constant</q> or the
+<q>universal gravitational constant</q>, <m>M</m> is the mass of the
+sun, <m>\vr</m> is the vector from the sun to the planet and <m>r=|\vr|</m>.
+</p>
+
+<p>In this section, we'll show that some of these properties follow from the
+weaker assumption that the acceleration <m>\va(t)</m> of each planet
+obeys the law of motion <m>m\va =\vF</m> with <m>\vF</m> being a central force.
+That is, the assumption that <m>\vF</m> is parallel to <m>\vr</m>. The verification that
+the other properties follow from the specific form of the gravitational
+force, proportional to <m>r^{-2}</m>, will be delayed until the
+optional §<xref ref="sec_planet"/>.
+</p>
+
+<p>So, in this section, we assume that we have a parametrized curve <m>\vr(t)</m> and that this curve obeys
+<me>
+m\difftwo{\vr}{t}(t) = \vF\big(\vr(t)\big)
+</me>
+where, for all <m>\vr\in\bbbr^3</m>, <m>\vF(\vr)</m> is parallel to <m>\vr</m>. We shall show that
+<ol>
+<li>
+The path <m>\vr(t)</m> lies in a plane through the origin and that
+</li>
+<li>
+the radius vector <m>\vr</m> sweeps out equal areas in equal times.
+</li>
+</ol>
+We'll start by trying to guess what the plane is. Pretend that we know that
+<m>\vr(t)</m> lies in a fixed plane through the origin. Then
+<m>\vv(t)=\diff{\vr}{t}(t)</m> lies in the same plane and
+<m>\vr(t)\times\vv(t)</m> is perpendicular to the plane. If our path really does
+lie in a fixed plane, <m>\vr(t)\times\vv(t)</m> cannot change direction <mdash/> it must
+always be parallel to the normal vector to the plane. So let's define
+<me>
+\vOm(t) = \vr(t)\times\vv(t)
+</me>
+and check how it depends on time. By the product rule,
+<me>
+\diff{\vOm}{t}(t) =\diff{\ }{t}\big(\vr(t)\times\vv(t)\big)
+=\vv(t)\times\vv(t) + \vr(t)\times\va(t)
+=\frac{1}{m}\vr(t)\times\vF\big(\vr(t))\big)
+=\vZero
+\tag{A}
+</me>
+because <m>\vr(t)</m> and <m>\vF\big(\vr(t))\big)</m> are parallel.
+So <m>\vOm(t)</m> is
+<fn>Physicists call <m>m\,\vOm(t)</m> the angular momentum at time <m>t</m> and refer to (A) as (an example of) conservation of angular momentum. Conservation of angular momentum is exploited in gyro-compasses and by ice skaters (to spin faster/slower).</fn>
+in fact independent of <m>t</m>. It is a constant vector that we'll just denote <m>\vOm</m>.
+</p>
+
+<p>As <m>\vr(t)\times\vv(t)=\vOm</m>, we have that
+<m>\vr(t)</m> is always perpendicular to <m>\vOm</m> and
+<me>
+\vr(t)\cdot\vOm =0
+</me>
+<ul>
+<li>
+If <m>\vOm\ne \vZero</m>, this is exactly the statement that <m>\vr(t)</m> always
+lies in the plane through the origin with normal vector <m>\vOm</m>.
+</li>
+<li>
+If <m>\vOm=\vZero</m>, then <m>\vr(t)</m> is always parallel to <m>\vv(t)</m> and there
+is some function <m>\alpha(t)</m> such that
+<me>
+\diff{\vr}{t}(t) = \vv(t) = \alpha(t)\,\vr(t)
+</me>
+This is a first order, linear, ordinary differential equation that we can solve
+by using an integrating factor. Set
+<me>
+\beta(t) = \int_0^t\alpha(t)\ \dee{t}
+</me>
+Then
+<md>
+<mrow>
+\diff{\vr}{t}(t) = \alpha(t)\,\vr(t)
+&amp;\iff e^{-\beta(t)} \diff{\vr}{t}(t) -\alpha(t)e^{-\beta(t)}\,\vr(t)=0
+</mrow><mrow>
+&amp;\iff \diff{\ }{t}\big[e^{-\beta(t)}\vr(t)\big] = 0
+</mrow><mrow>
+&amp;\iff e^{-\beta(t)}\vr(t) = \vr(0)
+</mrow><mrow>
+&amp;\iff \vr(t) =  e^{\beta(t)}\vr(0)
+</mrow>
+</md>
+so that <m>\vr(t)</m> lies on a line through the origin. This makes sense <mdash/>
+the particle is always moving parallel to its radius vector.
+</li>
+</ul>
+This completes the verification that <m>\vr(t)</m> lies in a plane through
+the origin.
+</p>
+
+<p>Now we show that the radius vector <m>\vr(t)</m> sweeps out equal areas in
+equal times. In other words, we now verify that the rate at which
+<m>\vr(t)</m> sweeps out area is independent of time. To do so we rewrite the
+statement that <m>|\vr(t)\times\vv(t)\big|</m> is constant in polar coordinates.
+Writing <m>\vr(t) = r(t)\hat\vr\big(\theta(t)\big)</m> and then applying
+Lemma <xref ref="lem_polar"/>.b gives that
+<md>
+<mrow>
+\text{constant} = \big|\vr\times\vv\big|
+   = \Big|r\hat\vr\times\Big(\diff{r}{t}\ \hat\vr
+             + r\ \diff{\theta}{t}\ \hat\vth\Big)\Big|
+   =r^2\diff{\theta}{t}
+\qquad\text{since}\quad |\hat\vr\times\hat\vr|=0,\
+                        |\hat\vr\times\hat\vth|=1
+</mrow>
+</md>
+is constant. It now suffices to observe that <m>r(t)^2\diff{\theta}{t}(t)</m>
+is exactly twice the rate at which <m>\vr(t)</m> sweeps out area. To see this,
+just look at the figure below. The shaded area is essentially a wedge of
+a circular disk of radius <m>r</m>. (If <m>r(t)</m> were independent of <m>t</m>, it would be exactly a wedge of a circular disk.) Its area is the
+fraction <m>\frac{\dee{\theta}}{2\pi}</m> of the area of the full disk, which is
+</p>
+
+<sidebyside width="45%">
+<p>
+<me>
+\frac{\dee{\theta}}{2\pi}\ \pi r^2 = \frac{1}{2}r^2\,\dee{\theta}
+</me>
+</p>
+<image source="figs/equalArea"/>
+</sidebyside>
+
+
+<!-- <xi:include href="../problems/prob_s1.9.ptx" /> -->
+
+</section>

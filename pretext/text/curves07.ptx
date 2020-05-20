@@ -1,0 +1,297 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<section xmlns:xi="http://www.w3.org/2001/XInclude" xml:id="sec_Sliding">
+
+<!-- Copyright 2018-2020 Joel Feldman, Andrew Rechnitzer and Elyse Yeager -->
+<!-- This work is licensed under the Creative Commons Attribution-NonCommercial-ShareAlike 4.0 International License-->
+<!-- https://creativecommons.org/licenses/by-nc-sa/4.0 -->
+
+<title>Sliding on a Curve</title>
+
+<introduction>
+<p>We are going to investigate the motion of a particle of mass
+<m>m</m> sliding on a frictionless
+<fn>We are mathematicians <mdash/> we like idealized situations.</fn>, smooth curve that lies in a vertical
+plane. We will consider three scenarios:
+<ul>
+<li>
+First, to set things up we'll look at a bead sliding on a stiff wire.
+</li>
+<li>
+Then, we will imagine that we are skiing straight
+downhill and ask <q>Where on the hill can we become airborne?</q>.
+</li>
+<li>
+Then we will imagine that we are skateboarding in a
+culvert (a large pipe) and ask <q>When is it safe?</q>.
+</li>
+</ul>
+</p>
+
+</introduction>
+
+<subsection><title>The Sliding Bead</title>
+<p>
+First, consider a bead of mass <m>m</m> that is sliding, without friction,
+on a stiff wire. According to Newton's law of motion
+<me>
+m\va = \vF
+</me>
+where <m>\vF</m> is the net force being applied to the bead. The bead is
+subject to two forces. The gravitational force is <m>-mg\hj</m>. By
+definition, absence of friction means that the wire is does not apply
+any force that is in the direction tangential to the wire. But, because
+it is stiff, the wire never changes shape and instead applies just the right
+amount of force, in the direction normal to the wire, that is needed
+to keep the bead on the wire
+<fn>This force is required to keep
+the bead from either passing through the wire or flying off the wire.</fn>
+</p>
+
+<p>without bending the wire. Call this normal force <m>W\hat\vN</m>.
+</p>
+
+<sidebyside>
+<image source="figs/wireC"/>
+</sidebyside>
+
+<p>
+So, by Newton's law,
+<md>
+<mrow  xml:id="eq_normalComp">
+m\,\va=-mg\,\hj+W\,\hat\vN
+</mrow>
+</md>
+We'll analyse this equation by splitting it into its tangential and
+normal components.
+</p>
+
+<p>To extract the tangential component of Newton's law, we dot it with
+<m>\vv=|\vv|\hat\vT</m>. Since <m>\hat\vT\cdot\hat\vN=0</m> this kills all normal
+components.
+<md>
+<mrow>
+m\vv\cdot\diff{\vv}{t}
+&amp;=-mg\hj\cdot\vv+W\hat\vN\cdot\vv
+</mrow><mrow>
+\frac{1}{2}m\diff{\ }{t}(\vv\cdot\vv)&amp;=-mg\diff{y}{t}
+</mrow>
+</md>
+Here we have used
+<ul>
+<li>
+Theorem <xref ref="thm_DIFFalgebra"/>.c on the left hand side and
+</li>
+<li>
+that <m>\hj\cdot\vv</m> is just the <m>y</m> component of <m>\vv</m> and
+</li>
+<li>
+that <m>\hat\vN</m> and <m>\vv=|\vv|\hat\vT</m> are perpendicular.
+</li>
+</ul>
+Moving everything to the left hand side of the equation gives
+<md>
+<mrow>
+\diff{\ }{t}\left(\frac{1}{2}m|\vv|^2+mgy\right)&amp;=0
+</mrow>
+</md>
+and we conclude that the quantity
+</p>
+
+<fact xml:id="eqn_consEnergy"><title>Conservation of Energy</title>
+<statement><p>
+<me>
+E=\frac{1}{2}m|\vv|^2+mgy
+</me>
+</p>
+</statement>
+</fact>
+
+<p>
+is a constant, independent of time. This is, of course, the
+principle of conservation of
+energy. It determines the speed <m>|\vv|=\sqrt{\frac{2E}{m}-2gy}</m> of
+the bead as a function of the height <m>y</m> (and of the energy <m>E</m>,
+which is determined by the initial conditions).
+</p>
+
+<p>To extract the normal component of Newton's law,
+we dot it with <m>\hat\vN</m>:
+<me>
+m\va\cdot \hat\vN=-mg\hj\cdot \hat\vN+W
+</me>
+Since
+<me>
+\va=\difftwo{s}{t}\,\hat\vT+\ka\Big(\diff{s}{t}\Big)^2\hat\vN
+=\difftwo{s}{t}\,\hat\vT+\ka|\vv|^2\hat\vN
+</me>
+and <m>\hat\vT</m> and <m>\hat\vN</m> are perpendicular, this gives, after a little
+rearrangement,
+</p>
+
+<fact xml:id="eqn_normalForce"><title>Normal Force</title>
+<statement><p>
+<me>
+W=m\ka|\vv|^2+mg\hj\cdot \hat\vN
+=2\ka(E-mgy)+mg\hj\cdot \hat\vN
+</me>
+</p>
+</statement>
+</fact>
+
+</subsection>
+
+<subsection><title>The Skier</title>
+
+<p>
+The difference between the bead on the wire and the skier on
+the hill is that while the hill is capable of applying an upward normal
+force (i.e. it can push you upward to keep you from falling to
+the centre of the Earth), it is not capable of applying a downward
+normal force. That is the hill cannot pull down on you to keep you
+on the hill. Only gravity can keep you grounded. There are two
+main possibilities.
+</p>
+
+<sidebyside>
+<image source="figs/wireD"/>
+<image source="figs/wireU"/>
+</sidebyside>
+
+<p><ul>
+<li>
+If the hill is concave downward as in the figure
+on the left above, then <m>\hat\vN</m> points downward and the hill is
+allowed to have
+<m>W\le 0</m> (which corresponds to the normal force <m>W\hat\vN</m> pushing upward).
+If ever <m>W \gt 0</m>, the hill would have to pull on you to keep you on hill.
+It can't, so you become airborne. Since <m>\hj\cdot \hat\vN \lt 0</m>, this happens
+whenever
+<md>
+<mrow>
+W \gt 0 &amp;\iff m\ka|\vv|^2+mg\hj\cdot \hat\vN  \gt 0
+    \iff |\vv|  \gt  \sqrt{\frac{g}{\ka}|\hj\cdot \hat\vN|}
+</mrow>
+</md>
+</li>
+<li>
+If the hill is concave upward as in the figure
+on the right above, then <m>\hat\vN</m> points upward and the hill is
+allowed to have <m>W\ge 0</m> (which corresponds to the normal force
+<m>W\hat\vN</m> pushing upward). Since <m>\hj\cdot \hat\vN \gt 0</m> we always
+have <m>W=m\ka|\vv|^2+mg\hj\cdot \hat\vN  \gt  0</m>.
+You never become airborne. On the other hand your knees may complain.
+</li>
+</ul>
+</p>
+
+</subsection>
+
+<subsection><title>The Skate Boarder</title>
+
+<p>
+So far, Equations <xref ref="eqn_consEnergy"/> and <xref ref="eqn_normalForce"/>
+apply to any stiff frictionless <q>wire</q>. We now
+specialize  to the special case of a skateboarder inside a circular culvert
+of radius <m>a</m>. Let's put the bottom of the circle at the origin <m>(0,0)</m>,
+so that the centre of the circle is at <m>(0,a)</m>.
+</p>
+
+<sidebyside>
+<image source="figs/circleC2"/>
+</sidebyside>
+
+<p>
+In this case the curvature is <m>\ \ka=\frac{1}{a}\ </m>
+and
+<m>
+\hj\cdot\hat\vN=\cos \phi=\frac{a-y}{a}
+</m>
+so <xref ref="eqn_consEnergy"/> and <xref ref="eqn_normalForce"/>  simplify to
+<md>
+<mrow>
+|\vv|&amp;=\sqrt{\frac{2}{m}(E-mgy)}=\sqrt{2g\Big(\frac{E}{mg}-y\Big)}
+</mrow><mrow>
+W&amp;=\frac{2}{a}(E-mgy)+\frac{mg}{a}(a-y)
+=\frac{3mg}{a}\Big(\frac{2}{3mg}E+\frac{a}{3}-y\Big)
+</mrow>
+</md>
+Imagine now that you start at the bottom of the culvert, that is at <m>y=0</m>,
+with energy <m>E \gt 0</m>. As time progresses, <m>y</m> increases and consequently <m>|\vv|</m>
+and <m>W</m> both decrease, as, of course, they should. This continues until one of the following three things happen.
+<ol label="(i)">
+<li>
+<m>|\vv|</m> hits 0, in which case you stop rising and start descending.
+The speed <m>|\vv|</m> is zero when <m>y=y_S=\frac{E}{mg}</m>.
+(The subscript <q><m>S</m></q> stands for <q>stop</q>.) Physicists say that
+when you reach <m>y_S</m> all of your kinetic energy (<m>\frac{1}{2}m|\vv|^2</m>)
+has been converted into potential energy (<m>mgy</m>).
+</li>
+<li>
+<m>W</m> hits zero. When you get higher than this, <m>W</m> becomes negative
+and the culvert would have to pull on you to keep your feet on the culvert.
+As the culvert can only push on you, you become airborne. The normal force
+<m>W</m> is zero  when <m>y=y_A=\frac{2}{3}\frac{E}{mg}+\frac{a}{3}</m>.
+(The subscript <q><m>A</m></q> stands for <q>airborne</q>.)
+</li>
+<li>
+<m>y</m> hits <m>2a</m>. This is the summit of the culvert. You descend on the other side.
+</li>
+</ol>
+Which case actually happens is determined by the relative sizes of <m>y_S,\ y_A</m> and <m>2a</m>.
+<ul>
+<li>
+Comparing
+<m>y_S=\frac{2}{3}\frac{E}{mg}+\frac{1}{3}\frac{E}{mg}</m> and
+<m>y_A=\frac{2}{3}\frac{E}{mg}+\frac{a}{3}</m>, we see that
+<m>y_S\le y_A\iff \frac{E}{mg}\le a </m>.
+</li>
+<li> Comparing
+<m>y_A=\frac{2}{3}\frac{E}{mg}+\frac{a}{3}</m> and
+<m>a=\frac{2}{3}a+\frac{a}{3}</m>, we see that
+<m>y_A\le a\iff \frac{E}{mg}\le a</m>.
+</li>
+<li>
+Comparing
+<m>y_A=\frac{2}{3}\frac{E}{mg}+\frac{a}{3}</m> and
+<m>2a=\frac{5}{3}a+\frac{a}{3}</m>, we see that
+<m>y_A\le 2a\iff \frac{E}{mg}\le \frac{5}{2}a</m>.
+</li>
+</ul>
+So the conclusions are:
+<ul>
+<li><em>If</em>  <m>\ {\bf 0\le\frac{E}{mg}\le a}\ </m> then
+           <m>\ 0\le y_S\le y_A\le a\ </m>.
+In this case you just oscillate between heights 0 and <m>y_S\le a</m> in
+the bottom half of the culvert, as in the figure on the left below.
+</li>
+<li><em>If</em> <m>\ {\bf a\le\frac{E}{mg}\le \frac{5}{2}a}\ </m> then
+<m>\ a\le y_A\le y_S,2a\ </m>.
+In this case you make it more than half way to the top. But you
+become airborne at <m>y=y_A</m> which is somewhere between the half way mark
+<m>y=a</m> and the top <m>y=2a</m>.
+At this point our model breaks down because you are no longer in
+contact with the culvert. You just freely follow a parabolic arc until
+you crash back into the culvert, as in the figure in the centre below.
+</li>
+<li><em>If</em> <m>\ {\bf \frac{5}{2}a  \lt  \frac{E}{mg}}\ </m> then
+<m>\ 2a  \lt  y_A  \lt  y_S\ </m>.
+In this case you
+successfully go all the way around the culvert, looping  the loop,
+as in the figure on the right below. Note that, as
+<m>\frac{E}{mg}  \gt  \frac{5}{2}a  \gt 2a</m>,  this requires significantly
+more energy than that required to reach the top, i.e. to reach height <m>2a</m>.
+</li>
+</ul>
+</p>
+
+<sidebyside>
+<image source="figs/skateA"/>
+<image source="figs/skateB"/>
+<image source="figs/skateC"/>
+</sidebyside>
+
+</subsection>
+
+<!-- <xi:include href="../problems/prob_s1.7.ptx" /> -->
+
+</section>
