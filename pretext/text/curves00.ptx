@@ -7,13 +7,10 @@
 <introduction>
   <p>We are now going to study vector-valued functions of one real variable.
   That is, we are going to study functions that assign to each real
-  number <m>t</m> (typically in some interval) a vector
-  <fn>We are going to use
+  number <m>t</m> (typically in some interval) a vector<fn>We are going to use
   boldface letters, like <m>\vr</m>, to designate vectors. When writing by hand,
   it is clearer to use arrows, like <m>\vec r</m>, instead.</fn>
-  </p>
-
-  <p><m>\vr(t)</m>. For example
+  <m>\vr(t)</m>. For example
   <me>
   \vr(t) = \big( x(t), y(t), z(t)\big)
   </me>
@@ -21,7 +18,7 @@
   <m>\vr(t)</m> sweeps out a curve.
   </p>
 
-  <sidebyside>
+  <sidebyside width="40%">
   <image source="figs/parCurve"/>
   </sidebyside>
 
@@ -41,7 +38,7 @@
   the point <m>\big(a\cos\theta\,,\,a\sin\theta\big)</m> on the circle.
   </p>
 
-  <sidebyside>
+  <sidebyside width="60%">
   <image source="figs/parCircle"/>
   </sidebyside>
 
@@ -77,7 +74,7 @@
   below.
   </p>
 
-  <sidebyside>
+  <sidebyside width="60%">
   <image source="figs/stokes6"/>
   </sidebyside>
 

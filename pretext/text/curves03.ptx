@@ -15,8 +15,7 @@ to the curve at the point. That's pretty crude. In particular tangent
 lines are straight <mdash/> they don't curve. We will get a much better idea
 of what the complicated curve looks like if we approximate it, locally,
 by a very simple <q>curvy curve</q> rather than by a straight line.
-Probably the simplest <q>curvy curve</q> is a circle
-<fn>Circles are good
+Probably the simplest <q>curvy curve</q> is a circle<fn>Circles are good
 for studying <q>curvature</q>, because, unlike parabolas for example, the rate
 at which a circle curves is uniform over the entire circle.</fn>
 and that's what we'll use.
@@ -28,8 +27,7 @@ and that's what we'll use.
 <li>
 The circle which best approximates a given curve near a given
 point is called the <term>circle of curvature</term> or the
-<term>osculating circle</term>
-<fn><q>Osculare</q> is the Latin verb <q>to kiss</q>.
+<term>osculating circle</term><fn><q>Osculare</q> is the Latin verb <q>to kiss</q>.
 The German mathematician Gottfried Wilhelm (von) Leibniz (1646--1716)
 named the circle the <q>circulus osculans</q>.</fn> at the point.
 </li>
@@ -54,7 +52,7 @@ the osculating circle at the point <m>P</m>. The point <m>C</m> is the centre of
 curvature.
 </p>
 
-<sidebyside>
+<sidebyside width="40%">
 <image source="figs/curvatureDef"/>
 </sidebyside>
 
@@ -67,17 +65,14 @@ curvature exactly zero.
 
 <p>We are now going to determine how to find the circle of curvature,
 starting by figuring out what its radius should be. We'll first look
-at curves
-<fn>We'll also assume that the curves of interest are smooth,
+at curves<fn>We'll also assume that the curves of interest are smooth,
 with no cusps for example, and not straight, so that the radius of
 curvature <m>0 \lt \rho \lt \infty</m>.</fn>
-</p>
-
-<p>that lie in the <m>xy</m>-plane and then move on to curves in 3d.
+that lie in the <m>xy</m>-plane and then move on to curves in 3d.
 Consider the black curve in the figure below.
 </p>
 
-<sidebyside>
+<sidebyside width="40%">
 <image source="figs/curvature"/>
 </sidebyside>
 <p>
@@ -138,16 +133,14 @@ dot.
 The angle <m>\phi</m> is the angle between <m>\hi</m> and <m>\hat\vT</m>.
 The vector <m>\hat\vT</m> is also tangent to the red circle. As
 the tangent and radius vectors for circles are perpendicular to
-each other
-<fn>We saw that in Example <xref ref="eg_paramCircleTan"/>.</fn>
-,
+each other<fn>We saw that in Example <xref ref="eg_paramCircleTan"/>.</fn>,
 we have that <m>\phi=\theta+\frac{\pi}{2}</m> and hence
 <m>\rho = \Big|\diff{s}{\phi}\Big|</m> too.
 </li>
 </ul>
 </p>
 
-<sidebyside width="32%">
+<sidebyside widths="30% 30% 40%" valign="middle">
 <image source="figs/curvatureB1"/>
 <image source="figs/curvatureB2"/>
 <image source="figs/curvatureB"/>
@@ -193,13 +186,11 @@ that points toward the centre of curvature.
 <statement>
 <p><ol label="a">
 <li>
-Given
-<fn>The equation <m>s=s(\phi)</m> is called the <q>intrinsic
+Given<fn>The equation <m>s=s(\phi)</m> is called the <q>intrinsic
 equation of the curve</q>.</fn>
  <m>s(\phi)</m>,
 i.e. if we know the arc length along the curve as a function of
-the angle
-<fn>The notation <m>\measuredangle(\hi,\hat\vT)</m>
+the angle<fn>The notation <m>\measuredangle(\hi,\hat\vT)</m>
 means <q>the angle between <m>\hi</m> and <m>\hat\vT</m></q>.</fn>
 <m>\phi=\measuredangle(\hi,\hat\vT)</m>, then
 <me>
@@ -285,8 +276,7 @@ Now up to a sign <m>\diff{\phi}{s}</m> is <m>\ka</m>, and just because
 \tag{$**$}
 </me>
 So <m>\diff{\hat\vT}{\phi}</m> is a unit vector that is
-perpendicular
-<fn>Think about why this should be the case. In particular,
+perpendicular<fn>Think about why this should be the case. In particular,
 sketch <m>\hat\vT</m> and <m>\phi</m> and think about what the sketch says about
 <m>\diff{\hat\vT}{\phi}</m>.</fn>
 to <m>\hat\vT</m>, and hence to the curve at <m>\vr(s)</m>, and
@@ -300,19 +290,18 @@ that points toward the centre of curvature.
 </p>
 
 <p>To see that,
-look at the figures below
-<fn>In each of the four figures, the arrow on the curve specifies the direction of increasing arc length <m>s</m> and the red dot is the centre of curvature for the curve at the blue dot.</fn>,
+look at the figures below<fn>In each of the four figures, the arrow on the curve specifies the direction of increasing arc length <m>s</m> and the red dot is the centre of curvature for the curve at the blue dot.</fn>,
 and note that substituting the sign information
 from each figure into (<m>*</m>) gives (<m>\dagger</m>).
 For example,
 </p>
 
-<sbsgroup width="45%">
-<sidebyside>
+<sbsgroup>
+<sidebyside widths="30% 30%"  valign="middle">
 <image source="figs/curvatureSignA"/>
 <image source="figs/curvatureSignC"/>
 </sidebyside>
-<sidebyside>
+<sidebyside widths="30% 30%"  valign="middle">
 <image source="figs/curvatureSignB"/>
 <image source="figs/curvatureSignD"/>
 </sidebyside>
@@ -410,7 +399,8 @@ will be either <m>+\hk</m> or <m>-\hk</m>. In both cases,
 =\left|\frac{\big[\diff{x}{t}\hi+\diff{y}{t}\hj\big]\times
         \big[\difftwo{x}{t}\hi+\difftwo{y}{t}\hj\big]}
            {\big(\diff{s}{t}\big)^3}\right|
-=\left|\frac{\big[\diff{x}{t}\difftwo{y}{t}-\diff{y}{t}\difftwo{x}{t}\big]\hk}
+</mrow><mrow>
+&amp;=\left|\frac{\big[\diff{x}{t}\difftwo{y}{t}-\diff{y}{t}\difftwo{x}{t}\big]\hk}
            {\big(\diff{s}{t}\big)^3}\right|
 
 </mrow><mrow>
@@ -487,20 +477,22 @@ As
 \diff{\hat\vT}{t}(t)= -\cos t\,\hi  -\sin t\,\hj
 </me>
 we have that
-<me>
-\hat\vN(t) = \frac{\diff{\hat\vT}{t}(t)}{\big|\diff{\hat\vT}{t}(t)\big|}
+<md>
+<mrow>
+\hat\vN(t) &amp;= \frac{\diff{\hat\vT}{t}(t)}{\big|\diff{\hat\vT}{t}(t)\big|}
            = -\cos t\,\hi  -\sin t\,\hj
-\quad
+</mrow><mrow>
 \ka(t)
-= \frac{\big|\diff{\hat\vT}{t}(t)\big|}{\diff{s}{t}(t)}
+&amp;= \frac{\big|\diff{\hat\vT}{t}(t)\big|}{\diff{s}{t}(t)}
 =\frac{1}{a}
-\quad
-\rho(t)=\frac{1}{\ka(t)} =a
-</me>
+</mrow><mrow>
+\rho(t)&amp;=\frac{1}{\ka(t)} =a
+</mrow>
+</md>
 Now look at the figure.
 </p>
 
-<sidebyside>
+<sidebyside width="30%">
 <image source="figs/circleCentreB"/>
 </sidebyside>
 
@@ -539,12 +531,15 @@ centre of the original circle.
 </md>
 Another alternative calculation of the curvature, using <m>y(x)
 =\sqrt{a^2-x^2}</m> (for the part of the circle with <m>y \gt 0</m>),
-<me>
-y'(x) = -\frac{x}{\sqrt{a^2-x^2}}=-\frac{x}{y(x)} \qquad
-y'(x) = -\frac{y(x) - xy'(x)}{y(x)^2}
+<md>
+<mrow>
+y'(x) &amp;= -\frac{x}{\sqrt{a^2-x^2}}=-\frac{x}{y(x)} 
+</mrow><mrow>
+y''(x) &amp;= -\frac{y(x) - xy'(x)}{y(x)^2}
        =  -\frac{y(x)^2 + x^2}{y(x)^3}
        =  -\frac{a^2}{y(x)^3}
-</me>
+</mrow>
+</md>
 is
 <md>
 <mrow>
@@ -554,7 +549,8 @@ is
 =\frac{\frac{a^2}{y(x)^3}}
   {\Big[1+\frac{x^2}{y(x)^2}\Big]^{3/2}}
 =\frac{a^2}{\big[y(x)^2+x^2\big]^{3/2}}
-=\frac{1}{a}
+</mrow><mrow>
+&amp;=\frac{1}{a}
 </mrow>
 </md>
 </p></example>

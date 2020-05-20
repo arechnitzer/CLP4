@@ -117,13 +117,12 @@ The equation of the plane is
 perpendicular unit vectors. They form an orthonormal basis
 for <m>\bbbr^3</m>, just as <m>\hi</m>, <m>\hj</m> and <m>\hk</m> form an orthonormal basis
 for <m>\bbbr^3</m>. Furthermore both <m>(\hat\vT(s)\,,\,\hat\vN(s)\,,\,\hat\vB(s))</m>
-and <m>(\hi\,,\,\hj\,,\,\hk)</m> are <q>right handed triples</q>
-<fn>We shall stick to <q>right handed triples</q> to make it easier to get various signs right.</fn>,
+and <m>(\hi\,,\,\hj\,,\,\hk)</m> are <q>right handed triples</q><fn>We shall stick to <q>right handed triples</q> to make it easier to get various signs right.</fn>,
 meaning that <m>\hat\vB(s) = \hat\vT(s)\times\hat\vN(s)</m> and <m>\hk=\hi\times\hj</m>.
 </p>
 
-<sidebyside>
-<image source="figs/cross.pdf"/>
+<sidebyside width="60%">
+<image source="figs/cross"/>
 </sidebyside>
 
 <p>We have already computed <m>\diff{\hat\vT}{s}</m> and <m>\diff{\hat\vB}{s}</m>.
@@ -198,16 +197,14 @@ and hence
 </md>
 </p>
 
-<p>If the curvature
-<fn>As in two dimensions, if <m>\ka(s)=0</m>, then
+<p>If the curvature<fn>As in two dimensions, if <m>\ka(s)=0</m>, then
 <m>\hat\vN(s)</m> is not defined. This makes even more sense in three dimensions
 than in two dimensions: if the curve is a straight line, there are
 infinitely many unit vectors perpendicular to it and there is no way to
 distinguish between them.</fn>
  <m>\ka(s) \gt 0</m>
 and the torsion <m>\tau(s)</m> are known,
-then the system of equations
-<fn>The equations are named after
+then the system of equations<fn>The equations are named after
 the two French mathematicians who independently discovered them:
 Jean Frédéric Frenet (1816<ndash/>1900, the son of a wig maker),
 in his thesis of 1847
@@ -312,17 +309,16 @@ The right circular helix is the curve
 with <m>a,b \gt 0</m> as in the figure on the left below.
 </p>
 
-<sidebyside>
-<image source="figs/helix5.pdf"/>
-<image source="figs/RHR.pdf"/>
+<sidebyside widths="50% 25%" valign="middle">
+<image source="figs/helix5"/>
+<image source="figs/RHR"/>
 </sidebyside>
 
 <p>
 Here is why it is called a <term>right</term> helix
 rather than a left helix. If the helix is the thread of a bolt that you
 are screwing into a nut, and you turn the bolt in the direction of the
-(curled) fingers of your right hand (as in the figure
-<fn>This figure is a variant of
+(curled) fingers of your right hand (as in the figure<fn>This figure is a variant of
 <url href="https://commons.wikimedia.org/wiki/File:Right_hand_rule_simple.png">this picture</url>.
 </fn>
 on the right above),
@@ -343,8 +339,9 @@ in the black arrow of the figure on the right above).
 From <m>\vv(t)</m> we read off
 <md>
 <mrow>
-\diff{s}{t}=\sqrt{a^2+b^2}\qquad
-\hat\vT(t)= -\frac{a}{\sqrt{a^2+b^2}}\sin t\,\hi
+\diff{s}{t}&amp;=\sqrt{a^2+b^2}
+</mrow><mrow>
+\hat\vT(t)&amp;= -\frac{a}{\sqrt{a^2+b^2}}\sin t\,\hi
            +\frac{a}{\sqrt{a^2+b^2}} \cos t\,\hj
            +\frac{b}{\sqrt{a^2+b^2}}\,\hk
 </mrow>
@@ -404,8 +401,8 @@ which is another helix. In the figure below, the red curve is the original
 helix and the blue curve is the helix traced by the centre of curvature.
 </p>
 
-<sidebyside>
-<image source="figs/helix6.pdf"/>
+<sidebyside width="50%">
+<image source="figs/helix6"/>
 </sidebyside>
 
 </example>
