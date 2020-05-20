@@ -1,0 +1,637 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<section xmlns:xi="http://www.w3.org/2001/XInclude" xml:id="sec_curve_derivs">
+
+<!-- Copyright 2018-2020 Joel Feldman, Andrew Rechnitzer and Elyse Yeager -->
+<!-- This work is licensed under the Creative Commons Attribution-NonCommercial-ShareAlike 4.0 International License-->
+<!-- https://creativecommons.org/licenses/by-nc-sa/4.0 -->
+
+<title>Derivatives, Velocity, Etc.</title>
+
+
+
+<p>This being a Calculus text, one of our main operations is differentiation.
+We are now interested in parametrizations <m>\vr(t)</m>.
+It is very easy and natural to extend our definition of derivative to <m>\vr(t)</m>
+as follows.
+</p>
+
+<definition xml:id="def__curve_deriv">
+<statement><p>
+The derivative of the vector valued function <m>\vr(t)</m> is defined to be
+</p>
+
+<sidebyside width="45%">
+<p>
+<me>
+\vr'(t) =  \diff{\vr}{t}(t)=\lim_{h\rightarrow 0}\frac{\vr(t+h)-\vr(t)}{h}
+</me>
+</p>
+<image source="figs/parCurveDerivA"/>
+</sidebyside>
+
+<p>
+when the limit exists. In particular, if
+<m>\vr(t)=\big(x(t)\,,\,y(t)\,,\,z(t)\big)</m>, then
+<me>
+\vr'(t)=\big(x'(t)\,,\,y'(t)\,,\,z'(t)\big)
+</me>
+That is, to differentiate a vector valued function of <m>t</m>, just differentiate
+each of its components.
+</p></statement>
+</definition>
+
+
+<p>And of course differentiation interacts with arithmetic operations,
+like addition, in the obvious way. Only a little more thought is required to
+see that differentiation interacts quite nicely with dot and cross
+products too.
+</p>
+
+<theorem xml:id="thm_DIFFalgebra"><title>Arithmetic of differentiation</title>
+<statement><p>
+Let
+<ul>
+<li>
+<m>\va(t),\vb(t)</m> be vector valued differentiable functions of <m>t\in\bbbr</m>
+that take values in <m>\bbbr^n</m> and
+</li>
+<li>
+ <m>\alpha,\beta \in \mathbb{R}</m> be constants and
+</li>
+<li>
+ <m>\ga(t)</m> and <m>s(t)</m> be real valued differentiable functions of <m>t\in\bbbr</m>
+</li>
+</ul>
+Then
+<md alignment="alignat">
+<mrow>
+&amp;\text{(a)}\quad &amp;&amp;\diff{}{t}\big[\alpha\,\va(t)+\beta\,\vb(t)\big]
+         =\alpha\,\va'(t)+\beta\,\vb'(t)
+           &amp;&amp;\text{(linear combination)}
+</mrow><mrow>
+&amp;\text{(b)} &amp;&amp;\diff{}{t}\big[\ga(t)\vb(t)\big]
+         =\ga'(t)\vb(t)+\ga(t)\vb'(t)
+           &amp;&amp;\text{(multiplication by scalar function)}
+
+</mrow><mrow>
+&amp;\text{(c)} &amp;&amp;\diff{}{t}\big[\va(t)\cdot\vb(t)\big]
+         =\va'(t)\cdot\vb(t)+\va(t)\cdot\vb'(t)
+           &amp;&amp;\text{(dot product)}
+
+</mrow><mrow>
+&amp;\text{(d)} &amp;&amp;\diff{}{t}\big[\va(t)\times\vb(t)\big]
+         =\va'(t)\times\vb(t)+\va(t)\times\vb'(t)
+           \ \ &amp;&amp;\text{(cross product)}
+</mrow><mrow>
+&amp;\text{(e)} &amp;&amp;\diff{}{t}\big[\va\big(s(t)\big)\big]
+         =\va'\big(s(t)\big)\,s'(t)
+           &amp;&amp;\text{(composition)}
+</mrow>
+</md>
+</p>
+
+</statement>
+</theorem>
+
+
+<p>Let's think about the geometric significance of <m>\vr'(t)</m>.
+In particular, let's think about the relationship between <m>\vr'(t)</m>
+and distances along the curve.
+The derivative <m>\vr'(t)</m> is the limit of   <m>\frac{\vr(t+h)-\vr(t)}{h}</m> as <m>h\rightarrow 0</m>.
+The numerator, <m>\vr(t+h)-\vr(t)</m>, is the vector with head at <m>\vr(t+h)</m>
+and tail at <m>\vr(t)</m>.
+</p>
+
+<sidebyside>
+<image source="figs/parCurveDeriv"/>
+</sidebyside>
+
+<p>
+  When <m>h</m> is very small this vector
+<ul>
+<li>
+has the essentially the same direction as the tangent vector to the curve at <m>\vr(t)</m> and
+</li>
+<li>
+has length being essentially the length of the part of the curve between
+<m>\vr(t)</m> and <m>\vr(t+h)</m>.
+</li>
+</ul>
+Taking the limit as <m>h\rightarrow 0</m> yields that
+<ul>
+<li>
+<m>\vr'(t)</m> is a tangent vector to the curve at <m>\vr(t)</m> that points in
+the direction of increasing <m>t</m> and
+</li>
+<li>
+if <m>s(t)</m> is the length of the part of the curve between
+<m>\vr(0)</m> and <m>\vr(t)</m>, then  <m>\diff{s}{t}(t)=\big|\diff{\vr}{t}(t)\big|</m>.
+</li>
+</ul>
+This is worth stating formally.
+</p>
+
+<lemma xml:id="lem_CVtanArclen">
+<statement><p>
+Let <m>\vr(t)</m> be a parametrized curve.
+<ol label="a">
+<li>
+Denote by <m>\hat\vT(t)</m> the unit tangent vector to the curve
+at <m>\vr(t)</m> pointing in the direction of increasing <m>t</m>. If
+<m>\vr'(t)\ne 0</m>
+then
+<me>
+\hat\vT(t) = \frac{\vr'(t)}{|\vr'(t)|}
+</me>
+</li>
+<li><p>
+Denote by <m>s(t)</m> the length of the part of the curve between
+<m>\vr(0)</m> and <m>\vr(t)</m>.Then
+</p>
+
+<sidebyside>
+<p><md>
+<mrow>
+\diff{s}{t}(t)&amp;=\Big|\diff{\vr}{t}(t)\Big|
+</mrow><mrow>
+s(T)-s(T_0)&amp;= \int_{T_0}^T \left|\diff{\vr}{t}(t)\right|\,\dee{t}
+</mrow>
+</md></p>
+  <image source="figs/parCurveDerivB"/>
+</sidebyside>
+</li>
+<li>
+In particular, if the parameter happens to be arc length, i.e. if <m>t=s</m>,
+so that <m>\diff{s}{s}=1</m>, then
+<me>
+\left|\diff{\vr}{s}(s)\right|=1\qquad
+\hat\vT(s) = \vr'(s)
+</me>
+</li>
+</ol>
+</p></statement>
+</lemma>
+
+<p>As an application, we have the
+</p>
+
+<lemma xml:id="lem_CVvelocityEtc">
+<statement><p>
+If <m>\vr(t)=\big(x(t)\,,\,y(t)\,,\,z(t)\big)</m> is the position of a
+particle at time <m>t</m>, then
+<md>
+<mrow>
+\text{position at time } t
+       &amp;=\vr(t)=\big(x(t)\,,\,y(t)\,,\,z(t)\big)
+</mrow><mrow>
+\text{velocity at time } t
+       &amp;=\vv(t)=\vr'(t)=\big(x'(t)\,,\,y'(t)\,,\,z'(t)\big)
+        = \diff{s}{t}(t)\,\hat\vT(t)
+</mrow><mrow>
+\text{speed at time } t
+       &amp;= \diff{s}{t}(t)=|\vv(t)|=|\vr'(t)|=\sqrt{(x'(t)^2+y'(t)^2+z'(t)^2}
+</mrow><mrow>
+\text{acceleration at time } t
+       &amp;=\va(t)=\vr'(t)=\vv'(t)=\big(x'(t)\,,\,y'(t)\,,\,z'(t)\big)
+</mrow><mrow>
+</mrow>
+<intertext>and the distance travelled between times <m>T_0</m> and <m>T</m> is</intertext><mrow>
+  s(T)-s(T_0)&amp;= \int_{T_0}^T \Big|\diff{\vr}{t}(t)\Big|\,\dee{t}
+       = \int_{T_0}^T \sqrt{(x'(t)^2+y'(t)^2+z'(t)^2}\,\dee{t}
+</mrow>
+</md>
+</p></statement>
+</lemma>
+
+<p>
+Note that the velocity <m>\vv(t) = \vr'(t)</m> is a vector quantity while the
+speed <m>\diff{s}{t}(t)=|\vr'(t)|</m> is a scalar quantity.
+</p>
+
+<example xml:id="eg_paramCircleTan">
+<p>
+In general it can be quite difficult to compute arc lengths.
+So, as an easy warmup example, we will compute the circumference of the circle
+<m>x^2+y^2=a^2</m>. We'll also find a unit tangent to the circle at any point on
+the circle. We'll use the parametrization
+<me>
+\vr(\theta) = \big(a\cos\theta\,,\,a\sin\theta\big)\qquad
+0\le \theta\le 2\pi
+</me>
+of Example <xref ref="eg_paramCircle"/>. Using Lemma <xref ref="lem_CVtanArclen"/>,
+but with the parameter <m>t</m> renamed to <m>\theta</m>
+<md>
+<mrow>
+\vr'(\theta) &amp;= a\big(-\sin\theta\,,\cos\theta\big)
+</mrow><mrow>
+\hat\vT(\theta) &amp;= \frac{\vr'(\theta)}{|\vr'(\theta)|}
+               =  \big(-\sin\theta\,,\cos\theta\big)
+</mrow><mrow>
+\diff{s}{\theta}(\theta)&amp;=\big|\vr'(\theta)\big| = a
+</mrow><mrow>
+s(\Theta)-s(0)&amp;= \int_{0}^\Theta \big|\vr'(\theta)\big|\,\dee{\theta}
+          =a\Theta
+</mrow>
+</md>
+As
+<fn>You might guess that <m>\Theta</m> is a capital Greek theta. You'd be right.</fn>
+ <m>s(\Theta)</m> is the arc length of the part of the circle with
+<m>0\le\theta\le\Theta</m>, the circumference of the whole circle is
+<me>
+s(2\pi) = 2\pi a
+</me>
+which is reassuring, since this formula has been known
+<fn>The earliest known written approximations of <m>\pi</m>, in Egypt and Babylon, date
+from 1900--1600BC. The first recorded algorithm for rigorously evaluating <m>\pi</m>
+was developed by Archimedes around 250 BC. The first use of the symbol <m>\pi</m>,
+for the ratio between the circumference of a circle and its diameter,
+in print was in 1706 by William Jones.</fn>
+for thousands of years.
+</p>
+
+<sidebyside>
+<image source="figs/parCircleT"/>
+</sidebyside>
+
+<p>
+The formula <m>s(\Theta)-s(0)=a\Theta</m> also makes sense <mdash/> the part of the
+circle with <m>0\le\theta\le\Theta</m> is the fraction <m>\frac{\Theta}{2\pi}</m>
+of the whole circle, and so should have length <m>\frac{\Theta}{2\pi}\times
+2\pi a</m>. Also note that
+<me>
+\vr(\theta)\cdot\hat\vT(\theta) = \big(a\cos\theta\,,\,a\sin\theta\big)
+\cdot \big(-\sin\theta\,,\cos\theta\big)
+=0
+</me>
+so that the tangent to the circle at any point is perpendicular
+to the radius vector of the circle at that point. This is another geometric fact
+that has been known
+<fn>It is Proposition 18 in Book 3 of Euclid's Elements. It was published around 300BC.</fn>
+ for thousands of years.
+</p></example>
+
+<example xml:id="eg_paramHelix">
+<p>
+Consider the curve
+<me>
+\vr(t) = 6\sin(2t)\hi + 6\cos(2t)\hj +5t\hk
+</me>
+where the standard basis vectors <m>\hi = (1,0,0)</m>, <m>\hj=(0,1,0)</m>
+and <m>\hk =(0,0,1)</m>.
+We'll first sketch it, by observing that
+<ul>
+<li> <m>x(t)=6\sin(2t)</m> and <m>y(t) =6\cos(2t)</m> obey
+<m>x(t)^2+y(t)^2 = 36 \sin^2(2t) + 36\cos^2(2t) = 36</m>. So all points of the
+curve lie on the cylinder <m>x^2+y^2=36</m> and
+</li>
+<li> as <m>t</m> increases, <m>\big(x(t),y(t)\big)</m> runs clockwise
+around the circle <m>x^2+y^2=36</m> and at the same time <m>z(t) = 5t</m>
+just increases linearly.
+</li>
+</ul>
+Our curve is the helix
+</p>
+
+<sidebyside>
+<image source="figs/helix4"/>
+</sidebyside>
+
+<p>
+We have marked three points of the curve on the above sketch. The first has
+<m>t=0</m> and is <m>0\hi+6\hj+0\hk</m>. The second has <m>t=\frac{\pi}{2}</m> and is <m>0\hi-6\hj+\frac{5\pi}{2}\hk</m>, and the third has <m>t=\pi</m> and is
+<m>0\hi+6\hj+5\pi\hk</m>.
+We'll now use Lemma <xref ref="lem_CVtanArclen"/> to find a unit tangent
+<m>\hat\vT(t)</m> to the curve at <m>\vr(t)</m> and also the arclength of the part of curve between <m>t=0</m> and <m>t=\pi</m>.
+<md>
+<mrow>
+\vr(t) &amp;= 6\sin(2t)\hi + 6\cos(2t)\hj +5t\hk
+</mrow><mrow>
+\vr'(t) &amp;= 12\cos(2t)\hi -12\sin(2t)\hj +5\hk
+</mrow><mrow>
+\diff{s}{t}(t)&amp;=\big|\vr'(t)\big|
+=\sqrt{12^2\cos^2(2t) +12^2\sin^2(2t)+5^2}
+= \sqrt{12^2+5^2}
+</mrow><mrow>
+&amp;= 13
+</mrow><mrow>
+\hat\vT(t) &amp;= \frac{\vr'(t)}{|\vr'(t))|}
+               =  \frac{12}{13}\cos(2t)\hi -\frac{12}{13}\sin(2t)\hj +\frac{5}{13}\hk
+</mrow><mrow>
+s(\pi)-s(0)&amp;= \int_{0}^\pi \big|\vr'(t)\big|\,\dee{t}
+          =13\pi
+</mrow>
+</md>
+</p></example>
+
+<example xml:id="eg_astroid">
+<p>
+In this example, we find the perimeter of the astroid
+<fn>
+Astroid should not be confused with asteroid, though both words derive
+from the Greek word for star.</fn>
+<me>
+x^{2/3}+y^{2/3} = a^{2/3}
+</me>
+A geometric construction of this curve, as well as a derivation of its equation is given in the optional section <xref ref="sec_astroid"/> later.  We'll start by finding a convenient
+parametrization.
+<ul>
+<li>
+To do so, notice that <m>x^{2/3}+y^{2/3} = a^{2/3}</m> looks somewhat like the
+equation of the circle <m>x^2+y^2=a^2</m>.
+</li>
+<li>
+The standard parametrization of the circle, namely
+<m>x=a\cos t</m>, <m>y=a \sin t</m> works because of the elementary trig identity <m>\cos^2t+\sin^2t=1</m>.
+</li>
+<li>
+If we can arrange that <m>x(t)^{2/3} = a^{2/3}\cos^2 t</m> and <m>y(t)^{2/3}=a^{2/3}\sin^2 t</m>, then the same elementary trig identity will give <m>x(t)^{2/3}+y(t)^{2/3} = a^{2/3}</m>, as desired.
+</li>
+<li>
+But
+of course its easy to arrange that: just solve  <m>x(t)^{2/3} = a^{2/3}\cos^2 t</m> for <m>x(t)</m>,
+namely <m>x(t) = a\cos^3t</m>, and solve <m>y(t)^{2/3}=a^{2/3}\sin^2 t</m> for <m>y(t)</m>,
+namely <m>y(t)=a\sin^3 t</m>.
+</li>
+</ul>
+Our parametrization is
+<me>
+\vr(t) = a\cos^3t\hi + a\sin^3 t\hj
+</me>
+By Lemma <xref ref="lem_CVtanArclen"/>
+<md>
+<mrow>
+\vr(t) &amp;= a\cos^3t\hi + a\sin^3 t\hj
+</mrow><mrow>
+\vr'(t) &amp;= -3a\sin t\cos^2t\hi + 3a\sin^2 t\cos t\hj
+</mrow><mrow>
+\diff{s}{t}(t)&amp;=\big|\vr'(t)\big|
+= \sqrt{9a^2\sin^2t\cos^4t + 9a^2\sin^4t\cos^2t}
+</mrow><mrow>
+&amp; = 3a \sqrt{\sin^2t\cos^2t(\cos^2t+\sin^2t)}
+</mrow><mrow>
+ &amp;=3a\big|\sin t\cos t\big|
+</mrow><mrow>
+\hat\vT(t) &amp;= \frac{\vr'(t)}{|\vr'(t))|}
+=  \frac{\sin t\cos t}{|\sin t\cos t|}\ \big(-\cos t\hi+\sin t\hj\big)
+
+</mrow><mrow>
+ &amp;=  \sgn\!\big(\!\sin t\cos t\big)\ \big(-\cos t\hi+\sin t\hj\big)
+</mrow>
+</md>
+Here <m>\sgn\!\big(\!\sin t\cos t\big)</m> means <q>the sign of <m>\sin t\cos t</m></q>, i.e <m>+1</m> when <m>\sin t\cos t \gt 0</m> and <m>-1</m> when <m>\sin t\cos t \lt 0</m>. So
+<md>
+<mrow>
+\hat\vT(t)
+ &amp;=\left.\begin{cases}1&amp;\text{if } \sin t \gt 0,\ \cos t \gt 0
+                              \text{ or } \sin t \lt 0,\ \cos t \lt 0
+</mrow><mrow>
+                           -1&amp;\text{if } \sin t \gt 0,\ \cos t \lt 0
+                              \text{ or } \sin t \lt 0,\ \cos t \gt 0
+                \end{cases}\right\}\big(-\cos t\hi+\sin t\hj\big)
+</mrow><mrow>
+ &amp;=\left.\begin{cases}1&amp;\text{if } 0 \lt  t \lt \frac{\pi}{2}
+                                            \text{ or }  \pi \lt  t \lt \frac{3\pi}{2}
+</mrow><mrow>
+                           -1&amp;\text{if }  \frac{\pi}{2} \lt t \lt \pi
+                                          \text{ or }  \frac{3\pi}{2} \lt t \lt 2\pi
+                \end{cases}\right\}\big(-\cos t\hi+\sin t\hj\big)
+</mrow>
+</md>
+</p>
+
+<p>Before we go on to sketch the astroid and compute its perimeter, we can
+make a few observations that will simplify our lives.
+<ul>
+<li><p>
+The signs of both components
+of <m>\vr(t)</m> are the same as the signs of the components of
+<m>\cos t\,\hi +\sin t\,\hj</m>; and the signs of both components
+of <m>\vr'(t)</m> are the same as the signs of the components of
+<m>-\sin t\,\hi +\cos t\,\hj</m>.
+Consequently the astroid looks somewhat like a circle in that
+<ul>
+<li>
+when <m>0\le t\le \frac{\pi}{2}</m>, <m>\vr(t)</m> lies in the first quadrant
+and moves upward and to the left as <m>t</m> increases and
+</li>
+<li>
+when <m>\frac{\pi}{2}\le t\le \pi</m>, <m>\vr(t)</m> lies in the second
+quadrant and moves downward and to the left as <m>t</m> increases and
+</li>
+<li>
+when <m>\pi\le t\le \frac{3\pi}{2}</m>, <m>\vr(t)</m> lies in the third quadrant
+and moves downward and to the right as <m>t</m> increases and
+</li>
+<li>
+when <m>\frac{3\pi}{2}\le t\le 2\pi</m>, <m>\vr(t)</m> lies in the fourth
+quadrant and moves upward and to the right as <m>t</m> increases and
+</li>
+<li>
+<m>\vr(2\pi)=\vr(0)</m> so that the astroid is a closed curve that
+circumnavigates the origin exactly once as <m>t</m> runs from <m>0</m> to <m>2\pi</m>.
+</li>
+</ul></p>
+</li>
+<li>
+  <p>
+Something weird happens at those values of <m>t</m> where <m>\sin t\cos t</m> changes sign
+<fn>Like a cross-walk sign.</fn>
+,
+i.e. at <m>t=0</m>, <m>\frac{\pi}{2}</m>, <m>\pi</m>, <m>\frac{3\pi}{2}</m>, etc. Namely <m>\hat T(t)</m>
+flips. To be precise
+<md>
+<mrow>
+\lim_{t\rightarrow 0-}\hat T(t) &amp;= \hi &amp;
+\lim_{t\rightarrow 0+}\hat T(t) &amp;= -\hi
+</mrow><mrow>
+\lim_{t\rightarrow \pi/2-}\hat T(t) &amp;= \hj &amp;
+\lim_{t\rightarrow \pi/2+}\hat T(t) &amp;= -\hj
+</mrow>
+</md>
+and so on. This signals cusps in the curve at <m>t=0</m>, i.e. at <m>\vr(0) = a\hi</m>,
+and at <m>t=\frac{\pi}{2}</m>, i.e. at <m>\vr(\frac{\pi}{2}) = a\hj</m>, and so on. So
+while the astroid looks somewhat like a circle, it has cusps at <m>\pm a\hi</m> and <m>\pm a\hj</m>. Here is the sketch.
+</p>
+
+<sidebyside>
+<image source="figs/astroid4"/>
+</sidebyside>
+</li>
+<li> The astroid is invariant under reflections in the <m>x</m>-axis and in the
+<m>y</m>-axis. That is, <m>x^{2/3}+y^{2/3} = a^{2/3}</m> is invariant under <m>x\rightarrow -x</m>
+and also under <m>y\rightarrow -y</m>. So to find the whole perimeter, it suffices to find the
+arc length of the part of the astroid in the first quadrant, and then multiply by <m>4</m>.
+<md>
+<mrow>
+\text{perimeter}
+&amp;=4\int_0^{\pi/2}\diff{s}{t}\ \dee{t}
+ = 4\int_0^{\pi/2}3a\sin t\cos t\ \dee{t}
+ = 6a\int_0^{\pi/2}\sin(2t)\ \dee{t}
+</mrow><mrow>
+ &amp;=6a\Big[-\frac{\cos(2t)}{2}\Big]_0^{\pi/2}
+=6a
+</mrow>
+</md>
+</li>
+</ul>
+</p>
+
+</example>
+
+
+<example xml:id="eg_zeroSpeed">
+<p>
+In the last example, we found that the astroid  had
+cusps at those points <m>\vr(t)</m> where the velocity <m>\vr'(t)</m> vanished.
+In this example, we will explore a little further what can happen when
+<m>\vr'(t)=\vZero</m>.
+</p>
+
+<p>Suppose that you are out for a walk and that your position
+at time <m>t</m> is <m>\vr(t)</m>. If at some time you have nonzero velocity,
+it is very hard for you to  change your direction of motion
+discontinuously
+<fn>For your velocity to jump
+discontinuously, your acceleration has to be infinite, which requires an
+infinite force. You might not look so healthy afterwards</fn>
+. On the other hand, when
+<m>\vr'(t)=0</m>, you are not moving at all and it is easy for you to turn and
+leave in any direction you choose. You could reverse direction completely,
+or make a sharp left turn, or not change direction at all. Here are examples
+of all of these. They all have <m>\vr'(t)=0</m>. They are sketched below.
+<md alignment="alignat">
+<mrow>
+\vr_1(t) &amp;= (t^5, t^2) &amp;
+\vr_1'(t)&amp;= (5t^4, 2t)
+</mrow><mrow>
+\vr_2(t) &amp;= \left.\begin{cases} (t^2, 0) &amp; \text{if }  t\le 0 \\
+                        (0 , t^2) &amp; \text{if } t\ge 0
+          \end{cases}\right\}\qquad &amp;
+\vr_2'(t)&amp;= \left.\begin{cases} (2t, 0) &amp; \text{if }  t\le 0 \\
+                        (0 , 2t) &amp; \text{if } t\ge 0
+          \end{cases} \right\}
+</mrow><mrow>
+\vr_3(t) &amp;= (t^3, 0) &amp;
+\vr_3'(t) &amp;= (3t^2, 0)
+</mrow>
+</md>
+</p>
+
+<sidebyside width="32%">
+<image source="figs/cuspA"/>
+<image source="figs/cuspB"/>
+<image source="figs/nocusp"/>
+</sidebyside>
+
+</example>
+
+<example xml:id="eg_corkscrew">
+<p>
+We'll find the arc length of
+<me>
+\vr(t) = t\cos t\,\hi + t\sin t\,\hj +t\,\hk\qquad
+0\le t\le\sqrt{2}
+</me>
+We'll first sketch it, by observing that
+<ul>
+<li> <m>x(t)=t\cos t </m>, <m>y(t) =t\sin t </m> and <m>z(t)=t</m> obey
+<m>x(t)^2+y(t)^2 = t^2 = z(t)^2</m>. So all points of the
+curve lie on the cone <m>x^2+y^2=z^2</m> and
+</li>
+<li> as <m>t</m> increases, <m>\big(x(t),y(t)\big)</m> runs
+counterclockwise around a <q>circle</q> whose radius increases linearly with <m>t</m>
+and at the same time <m>z(t)</m>  also increases linearly.
+</li>
+</ul>
+Our curve is the <q>corkscrew</q>
+</p>
+
+<sidebyside>
+<image source="figs/corkscrew"/>
+</sidebyside>
+
+<p>
+By Lemma <xref ref="lem_CVtanArclen"/>
+<md>
+<mrow>
+\vr(t) &amp;= t\cos t\,\hi + t\sin t\,\hj +t\,\hk
+</mrow><mrow>
+\vr'(t) &amp;= [\cos t -t\sin t ]\hi +[\sin t+t\cos t]\hj + \hk
+</mrow><mrow>
+\diff{s}{t}(t)&amp;=\big|\vr'(t)\big|
+</mrow><mrow>
+&amp;= \sqrt{\big(\cos^2t-2 t\sin t\cos t +t^2\sin^2 t\big)
+             +\big(\sin^2t+2 t\sin t\cos t +t^2\cos^2 t\big)+1}
+</mrow><mrow>
+&amp;=\sqrt{2+t^2}
+</mrow>
+</md>
+Our goal, stated at the beginning of this example, was to compute
+<me>
+s(\sqrt{2})-s(0)= \int_{0}^{\sqrt{2}} \big|\vr'(t)\big|\,\dee{t}
+          = \int_{0}^{\sqrt{2}} \sqrt{2+t^2}\,\dee{t}
+</me>
+To evaluate the integral, we'll use three techniques that you learned
+in your first integral calculus course. First,  motivated by the
+<m>\sqrt{2+t^2}</m>,  we'll use the trigonometric substitution
+<me>
+t=\sqrt{2}\tan u\qquad
+\dee{t} =\sqrt{2}\sec^2 u\,\dee{u}\qquad
+2+t^2=2\big[1+\tan^2u\big]=2\sec^2 u
+</me>
+When <m>t=0</m>, <m>u=0</m> and when <m>t=\sqrt{2}</m>, <m>\tan u=1</m> so that <m>u=\frac{\pi}{4}</m>
+and
+<md>
+<mrow>
+s(\sqrt{2})-s(0)&amp;= \int_{0}^{\pi/4} \sqrt{2\sec^2u}\,\sqrt{2}\sec^2 u\,\dee{u}
+= 2\int_{0}^{\pi/4} \sec^3 u\,\dee{u}
+</mrow>
+</md>
+You may have evaluated this integral in first year. There are several ways of doing so. Perhaps the most straight forward, but also most tedious,
+method is to rewrite the integral as
+<me>
+s(\sqrt{2})-s(0)= 2\int_{0}^{\pi/4} \frac{\cos u}{\cos^4 u}\,\dee{u}
+</me>
+We recognize that this is a trigonometric integral that contains an odd power
+of <m>\cos u</m>, so we substitute <m>w=\sin u</m>, <m>\dee{w}=\cos u\,\dee{u}</m>,
+<m>\cos^2 u= 1-w^2</m>. When <m>u=0</m>, <m>w=0</m> and when <m>u=\frac{\pi}{4}</m>,
+<m>w=\frac{1}{\sqrt{2}}</m> so that
+<me>
+s(\sqrt{2})-s(0)= 2\int_{0}^{1/\sqrt{2}}  \frac{\dee{w}}{{(1-w^2)}^2}
+</me>
+The integrand is now a rational function, i.e. a ratio of polynomials.
+So we apply partial fractions.
+<md>
+<mrow>
+s(\sqrt{2})-s(0)
+&amp;= 2\int_{0}^{1/\sqrt{2}}  \frac{\dee{w}}{{[(1-w)(1+w)]}^2}
+</mrow><mrow>
+&amp;= \frac{1}{2}\int_{0}^{1/\sqrt{2}}
+        \Big[\frac{1}{1-w}+\frac{1}{1+w}\Big]^2 \dee{w}
+</mrow><mrow>
+&amp;= \frac{1}{2}\int_{0}^{1/\sqrt{2}}
+        \Big[\frac{1}{(1-w)^2}+\frac{2}{(1-w)(1+w)}+\frac{1}{(1+w)^2}\Big]
+          \dee{w}
+</mrow><mrow>
+&amp;= \frac{1}{2}\int_{0}^{1/\sqrt{2}}
+        \Big[\frac{1}{(1-w)^2}+\frac{1}{1-w}+\frac{1}{1+w}
+             +\frac{1}{(1+w)^2}\Big]  \dee{w}
+</mrow><mrow>
+&amp;= \frac{1}{2}
+        \Big[\frac{1}{1-w}-\ln|1-w|+\ln|1+w|
+             -\frac{1}{1+w}\Big]_{0}^{1/\sqrt{2}}
+</mrow><mrow>
+&amp;= \frac{1}{2}
+        \Big[\frac{2w}{1-w^2}+\ln\frac{1+w}{1-w}\Big]_{0}^{1/\sqrt{2}}
+= \frac{1}{2}
+        \Big[2\sqrt{2}+\ln\frac{\sqrt{2}+1}{\sqrt{2}-1}\Big]
+\approx 2.2956
+</mrow>
+</md>
+Ooof!
+</p></example>
+
+
+<!-- <xi:include href="../problems/prob_s1.1.ptx" /> -->
+
+</section>

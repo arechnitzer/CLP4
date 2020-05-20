@@ -1,7 +1,7 @@
 import subprocess
 
 jingit = subprocess.run(
-    ["jing", "/home/andrew/Projects/mathbook/schema/pretext.rng", "./clp_4_vc.ptx"],
+    ["jing", "/home/andrew/Projects/mathbook/schema/pretext.rng", "clp_4_vc.ptx"],
     capture_output=True,
 )
 
