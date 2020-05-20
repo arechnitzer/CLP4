@@ -9,8 +9,7 @@
 
 <introduction>
 <p>We are going to investigate the motion of a particle of mass
-<m>m</m> sliding on a frictionless
-<fn>We are mathematicians <mdash/> we like idealized situations.</fn>, smooth curve that lies in a vertical
+<m>m</m> sliding on a frictionless<fn>We are mathematicians <mdash/> we like idealized situations.</fn>, smooth curve that lies in a vertical
 plane. We will consider three scenarios:
 <ul>
 <li>
@@ -42,15 +41,12 @@ definition, absence of friction means that the wire is does not apply
 any force that is in the direction tangential to the wire. But, because
 it is stiff, the wire never changes shape and instead applies just the right
 amount of force, in the direction normal to the wire, that is needed
-to keep the bead on the wire
-<fn>This force is required to keep
+to keep the bead on the wire<fn>This force is required to keep
 the bead from either passing through the wire or flying off the wire.</fn>
+without bending the wire. Call this normal force <m>W\hat\vN</m>.
 </p>
 
-<p>without bending the wire. Call this normal force <m>W\hat\vN</m>.
-</p>
-
-<sidebyside>
+<sidebyside width="45%">
 <image source="figs/wireC"/>
 </sidebyside>
 
@@ -152,7 +148,7 @@ on the hill. Only gravity can keep you grounded. There are two
 main possibilities.
 </p>
 
-<sidebyside>
+<sidebyside widths="25% 25%" valign="middle">
 <image source="figs/wireD"/>
 <image source="figs/wireU"/>
 </sidebyside>
@@ -196,7 +192,7 @@ of radius <m>a</m>. Let's put the bottom of the circle at the origin <m>(0,0)</m
 so that the centre of the circle is at <m>(0,a)</m>.
 </p>
 
-<sidebyside>
+<sidebyside width="45%">
 <image source="figs/circleC2"/>
 </sidebyside>
 
@@ -284,7 +280,7 @@ more energy than that required to reach the top, i.e. to reach height <m>2a</m>.
 </ul>
 </p>
 
-<sidebyside>
+<sidebyside width="20%">
 <image source="figs/skateA"/>
 <image source="figs/skateB"/>
 <image source="figs/skateC"/>
