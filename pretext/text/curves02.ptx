@@ -1,13 +1,145 @@
 <?xml version="1.0" encoding="UTF-8" ?>
-<section xmlns:xi="http://www.w3.org/2001/XInclude" xml:id="">
+<section xmlns:xi="http://www.w3.org/2001/XInclude" xml:id="sec_reparam">
 
 <!-- Copyright 2018-2020 Joel Feldman, Andrew Rechnitzer and Elyse Yeager -->
 <!-- This work is licensed under the Creative Commons Attribution-NonCommercial-ShareAlike 4.0 International License-->
 <!-- https://creativecommons.org/licenses/by-nc-sa/4.0 -->
 
-<title></title>
+<title>Reparametrization</title>
 
+<p>
+There are invariably many ways to parametrize a given curve. Kind of trivially,
+one can always replace <m>t</m> by, for example, <m>3u</m>. But there are also
+more substantial ways to reparametrize curves. It often pays to tailor the parametrization used to the application of interest. For example, we shall
+see in the next couple of sections that many curve formulae simplify a lot
+when arc length is used as the parameter.
+</p>
 
-<!-- <xi:include href="../problems/prob_s1.1.ptx" /> -->
+<example xml:id="eg_reparamCircle">
+<p>
+Here are three different parametrizations of the semi-circle
+<m>x^2+y^2=r^2</m>, <m>y\ge 0</m>.
+<ul>
+<li><p>
+The first uses the polar angle <m>\theta</m> as the parameter. We have already
+seen, in Example <xref ref="eg_paramCircle"/>, the parametrization
+</p>
+
+<sidebyside width="45%">
+<image source="figs/reparCircleA"/>
+<p><me>
+\vr_1(\theta) = \big(r\cos\theta\,,\,r\sin\theta\big)
+\qquad 0\le \theta\le \pi
+</me></p>
+</sidebyside>
+
+</li>
+<li><p>
+The second uses <m>x</m> as the parameter. Just solving <m>x^2+y^2=r^2</m>, <m>y\ge 0</m>
+for <m>y</m> as a function of <m>x</m>, gives <m>y(x) = \sqrt{r^2-x^2}</m> and
+so gives the parametrization
+</p>
+
+<sidebyside width="45%">
+  <image source="figs/reparCircleB"/>
+  <p>
+  <me>
+  \vr_2(x) = \big(x\,,\,\sqrt{r^2-x^2}\,\big)\qquad -r\le x\le r
+  </me>
+  </p>
+</sidebyside>
+</li>
+<li><p>
+The third uses arc length from <m>(r,0)</m> as the parameter. We have seen,
+in Example <xref ref="eg_paramCircleTan"/>, that the arc length from <m>(r,0)</m>
+to <m>\vr_2(\theta)</m> is just <m>s=r\theta</m>. So the point on the semicircle
+that is arc length <m>s</m> away from <m>(r,0)</m> is
+</p>
+
+<sidebyside width="45%">
+  <image source="figs/reparCircleC"/>
+  <p>
+  <me>
+  \vr_3(s) = \vr_2\Big(\frac{s}{r}\Big)
+  = \Big(r\cos\frac{s}{r}\,,\,r\sin\frac{s}{r}\Big)
+  </me>
+  </p>
+</sidebyside>
+<p>
+with <m>0\le s\le \pi r</m>.
+</p>
+</li>
+</ul>
+</p>
+</example>
+
+<p>We shall see that, for some purposes, it is convenient to use
+parametrization by arc length.
+Here is a messier example in which we reparametrize a curve so as to use
+the arc length as the parameter.
+</p>
+
+<example xml:id="eg_reparamAstroid">
+<p>
+We saw in Example <xref ref="eg_astroid"/>, that, as <m>t</m> runs from <m>0</m> to
+<m>\frac{\pi}{2}</m>, <m>\vr(t) = a \cos^3 t\,\hi+a\sin^3t\,\hj</m> runs from
+<m>(a,0)</m> to <m>(0,a)</m> along the astroid <m>x^{2/3}+y^{2/3}=a^{2/3}</m>.
+Suppose that we want a new parametrization <m>\vR(s)</m> chosen so that,
+as <m>s</m> runs from <m>0</m> to some appropriate value, <m>\vR(s)</m> runs from
+<m>(a,0)</m> to <m>(0,a)</m> along <m>x^{2/3}+y^{2/3}=a^{2/3}</m>, with <m>s</m> being
+the arc length from <m>(a,0)</m> to <m>\vR(s)</m> along <m>x^{2/3}+y^{2/3}=a^{2/3}</m>.
+</p>
+
+<sidebyside>
+<image source="figs/astroidS"/>
+</sidebyside>
+
+<p>
+We saw, in Example <xref ref="eg_astroid"/>, that, for <m>0\le t\le \frac{\pi}{2}</m>, <m>\diff{s}{t}=\frac{3a}{2}\sin(2t)</m> so that the arclength from <m>(a,0)=\vr(0)</m>
+to <m>\vr(t)</m> is
+<me>
+s(t) = \int_0^t\frac{3a}{2}\sin(2t')\,\dee{t'} =\frac{3a}{4}\big[1-\cos(2t)\big]
+</me>
+which runs from <m>0</m>, at <m>t=0</m>, to <m>\frac{3a}{2}</m>, at <m>t=\frac{\pi}{2}</m>.
+This is relatively clean and we can invert <m>s(t)</m> to find <m>t</m>
+as a function of <m>s</m>.
+The value, <m>T(s)</m>, of <m>t</m> that corresponds to any given
+<m>0\le s\le\frac{3a}{3}</m> is determined by
+<me>
+s=\frac{3a}{4}\big[1-\cos\big(2T(s)\big)\big]\qquad
+\iff\qquad
+T(s)=\frac{1}{2}\arccos\Big(1-\frac{4s}{3a}\Big)
+</me>
+and
+<me>
+\vR(s) = \vr\big(T(s)\big)
+       = a\cos^3\big(T(s)\big)\hi + a\sin^3 \big(T(s)\big)\hj
+</me>
+We can simplify <m>\cos^3\big(T(s)\big)</m> and <m>\sin^3\big(T(s)\big)</m>
+by just using trig identities to convert the  <m>\cos\big(2T(s)\big)</m>
+in <m>s=\frac{3a}{4}\big[1-\cos\big(2T(s)\big)\big]</m>
+into <m>\cos\big(T(s)\big)</m>'s and <m>\sin\big(T(s)\big)</m>'s.
+<md>
+<mrow>
+s=\frac{3a}{4}\big[1-\cos\big(2T(s)\big)\big]
+=\frac{3a}{4}\big[1-\big(2\cos^2\big(T(s)-1\big)\big]
+&amp;\iff \cos^2\big(T(s)\big)=1-\frac{2s}{3a}
+</mrow><mrow>
+s=\frac{3a}{4}\big[1-\cos\big(2T(s)\big)\big]
+=\frac{3a}{4}\big[1-\big(1-2\sin^2\big(T(s)\big)\big]
+&amp;\iff \sin^2\big(T(s)\big)=\frac{2s}{3a}
+</mrow>
+</md>
+Consequently the desired parametrization is
+<me>
+\vR(s) = a\Big[1-\frac{2s}{3a}\Big]^{3/2}\hi
+        + a\Big[\frac{2s}{3a}\Big]^{3/2}\hj
+\qquad
+0\le s \le \frac{3a}{2}
+</me>
+which is remarkably simple.
+</p></example>
+
+<!-- <xi:include href="../problems/prob_s1.2.ptx" /> -->
 
 </section>

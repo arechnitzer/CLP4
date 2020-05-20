@@ -1,13 +1,634 @@
 <?xml version="1.0" encoding="UTF-8" ?>
-<section xmlns:xi="http://www.w3.org/2001/XInclude" xml:id="">
+<section xmlns:xi="http://www.w3.org/2001/XInclude" xml:id="sec_curvature">
 
 <!-- Copyright 2018-2020 Joel Feldman, Andrew Rechnitzer and Elyse Yeager -->
 <!-- This work is licensed under the Creative Commons Attribution-NonCommercial-ShareAlike 4.0 International License-->
 <!-- https://creativecommons.org/licenses/by-nc-sa/4.0 -->
 
-<title></title>
+<title>Curvature</title>
 
 
-<!-- <xi:include href="../problems/prob_s1.1.ptx" /> -->
+<p>
+So far, when we have wanted to approximate a complicated curve by
+a simple curve near some point, we drew the tangent line
+to the curve at the point. That's pretty crude. In particular tangent
+lines are straight <mdash/> they don't curve. We will get a much better idea
+of what the complicated curve looks like if we approximate it, locally,
+by a very simple <q>curvy curve</q> rather than by a straight line.
+Probably the simplest <q>curvy curve</q> is a circle
+<fn>Circles are good
+for studying <q>curvature</q>, because, unlike parabolas for example, the rate
+at which a circle curves is uniform over the entire circle.</fn>
+and that's what we'll use.
+</p>
+
+<definition xml:id="def_curvature">
+<statement><p>
+<ol label="a">
+<li>
+The circle which best approximates a given curve near a given
+point is called the <term>circle of curvature</term> or the
+<term>osculating circle</term>
+<fn><q>Osculare</q> is the Latin verb <q>to kiss</q>.
+The German mathematician Gottfried Wilhelm (von) Leibniz (1646--1716)
+named the circle the <q>circulus osculans</q>.</fn> at the point.
+</li>
+<li>
+The radius of the circle of curvature is called the <term>radius of curvature</term>
+at the point and is normally denoted <m>\rho</m>.
+</li>
+<li>
+The <term>curvature</term> at the point is <m>\ka=\frac{1}{\rho}</m>.
+</li>
+<li>
+The centre of the circle of curvature is called <term>centre of curvature</term>
+at the point.
+</li>
+</ol>
+</p></statement>
+</definition>
+
+<p>
+These definitions are illustrated in the figure below. It shows (part of)
+the osculating circle at the point <m>P</m>. The point <m>C</m> is the centre of
+curvature.
+</p>
+
+<sidebyside>
+<image source="figs/curvatureDef"/>
+</sidebyside>
+
+<p>Note that when the curvature <m>\ka</m> is large, the radius of curvature <m>\rho</m>
+is small and we have a very curvy curve. On the other hand when the
+curvature <m>\ka</m> is small, the radius of curvature <m>\rho</m> is large and
+our curve  is almost straight. In particular, straight lines have
+curvature exactly zero.
+</p>
+
+<p>We are now going to determine how to find the circle of curvature,
+starting by figuring out what its radius should be. We'll first look
+at curves
+<fn>We'll also assume that the curves of interest are smooth,
+with no cusps for example, and not straight, so that the radius of
+curvature <m>0 \lt \rho \lt \infty</m>.</fn>
+</p>
+
+<p>that lie in the <m>xy</m>-plane and then move on to curves in 3d.
+Consider the black curve in the figure below.
+</p>
+
+<sidebyside>
+<image source="figs/curvature"/>
+</sidebyside>
+<p>
+That figure also contains a (portion of a) red circle that fits the
+curve really well between the two radial lines that are (a very small) angle
+<m>\dee{\theta}</m> apart. So the arclength <m>\dee{s}</m> of the part of the black
+curve between the two radial lines, should be (essentially) the same
+as the arc length of the circle between the two radial lines, which is
+<m>\rho\,|\dee{\theta}|</m>, where <m>\rho</m> is the radius of the circle.
+(We put in absolute values to take into account the
+possibility that <m>\dee{\theta}</m> could be negative.)
+Thus <m>\dee{s} = \rho\,|\dee{\theta}|</m>. When <m>\dee{\theta}</m> is a macroscopic
+angle, this is of course an approximation. But in the limit as
+<m>\dee{\theta}\rightarrow 0</m>, we should end up with
+<me>
+\rho = \Big|\diff{s}{\theta}\Big|
+</me>
+We now have a formula for the radius of curvature, but not in a very
+convenient form, because to evaluate it we would need to know the arc length
+along the curve as a function of the angle <m>\theta</m> in the rightmost
+figure below.
+We'll now spend some time developing more convenient formulae for <m>\rho</m>.
+First consider the three figures below. They all show the same curve
+as in the last figure. The leftmost figure just shows
+<ul>
+<li>
+the curve of interest, which is the black curve, and
+</li>
+<li>
+the (blue) point of interest on the black curve. We want to find the curvature
+at that point.
+</li>
+</ul>
+The middle figure shows the same curve and point of interest and also
+shows
+<ul>
+<li>
+the red circle of curvature (i.e. best fitting circle) for the black curve
+at the blue dot.
+</li>
+<li>
+The red dot is the centre of curvature.
+</li>
+</ul>
+The rightmost figure shows the same black curve, blue point of interest
+and red circle of curvature (at least part of it) somewhat enlarged.
+<ul>
+<li>
+The angle <m>\theta</m> is the angle between <m>\hi</m> and the radius
+vector from the red dot (the centre of curvature) to the blue dot
+(the point of interest).
+</li>
+<li>
+<m>\hat\vT</m> is the tangent vector to the black curve at the blue
+dot.
+</li>
+<li>
+The angle <m>\phi</m> is the angle between <m>\hi</m> and <m>\hat\vT</m>.
+The vector <m>\hat\vT</m> is also tangent to the red circle. As
+the tangent and radius vectors for circles are perpendicular to
+each other
+<fn>We saw that in Example <xref ref="eg_paramCircleTan"/>.</fn>
+,
+we have that <m>\phi=\theta+\frac{\pi}{2}</m> and hence
+<m>\rho = \Big|\diff{s}{\phi}\Big|</m> too.
+</li>
+</ul>
+</p>
+
+<sidebyside width="32%">
+<image source="figs/curvatureB1"/>
+<image source="figs/curvatureB2"/>
+<image source="figs/curvatureB"/>
+</sidebyside>
+
+<p>
+We are now in a position to develop a bunch of formulae for the radius
+of curvature <m>\rho</m> and the curvature <m>\ka=\frac{1}{\rho}</m>, that are more
+convenient than <m>\ka = \Big|\diff{s}{\phi}\Big|^{-1}</m>. These formulae
+will use the
+</p>
+
+<definition xml:id="notn_curveNotation">
+<statement><p>
+If <m>\vr(t)</m> is a parametrized curve, then
+<ul>
+<li>
+<m>\vv(t) = \diff{\vr}{t}(t)</m> is the velocity vector at <m>\vr(t)</m>
+</li>
+<li>
+<m>\va(t) = \difftwo{\vr}{t}(t) </m> is the acceleration vector at <m>\vr(t)</m>
+</li>
+<li>
+<m>\hat\vT(t)</m> is the unit tangent vector to the curve at <m>\vr(t)</m> that
+points in the direction of increasing <m>t</m>.
+</li>
+<li>
+<m>\hat\vN(t)</m> is the unit normal vector to the curve at <m>\vr(t)</m>
+that points toward the centre of curvature.
+</li>
+<li>
+<m>\ka(t)</m> is the curvature at <m>\vr(t)</m>
+</li>
+<li>
+<m>\rho(t)</m> is the radius of curvature at <m>\vr(t)</m>
+</li>
+</ul>
+</p></statement>
+</definition>
+
+
+<theorem xml:id="thm_curvatureFormulae">
+<statement>
+<p><ol label="a">
+<li>
+Given
+<fn>The equation <m>s=s(\phi)</m> is called the <q>intrinsic
+equation of the curve</q>.</fn>
+ <m>s(\phi)</m>,
+i.e. if we know the arc length along the curve as a function of
+the angle
+<fn>The notation <m>\measuredangle(\hi,\hat\vT)</m>
+means <q>the angle between <m>\hi</m> and <m>\hat\vT</m></q>.</fn>
+<m>\phi=\measuredangle(\hi,\hat\vT)</m>, then
+<me>
+\rho = \Big|\diff{s}{\phi}\Big|\qquad
+\ka = \Big|\diff{s}{\phi}\Big|^{-1}\qquad
+\ka = \Big|\diff{\phi}{s}\Big|
+</me>
+</li>
+<li xml:id="thm_curvatureFormulae_part_b">
+Given <m>\vr(s)</m>,
+i.e. if we have a parametrization of the curve in terms of arc length, then
+<me>
+\diff{\hat\vT}{s}(s) = \ka(s)\,\hat\vN(s)
+</me>
+where <m>\hat\vN(s)</m> is the unit normal vector to the curve at <m>\vr(s)</m>
+that points toward the centre of curvature.
+</li>
+<li xml:id="thm_curvatureFormulae_part_c">
+Given <m>\vr(t)</m>, i.e. if we have a general parametrized curve,
+then
+<md>
+<mrow>
+\diff{\hat\vT}{t} = \ka \diff{s}{t} \hat\vN\quad
+\vv(t) =  \diff{s}{t}(t)\,\hat\vT(t) \quad
+\va(t)
+       =  \difftwo{s}{t}\hat\vT
+                           + \ka\Big(\diff{s}{t}\Big)^2\hat\vN
+</mrow>
+</md>
+</li>
+<li>
+Given <m>\big(x(t)\,,\,y(t)\big)</m>, (for curves in the <m>xy</m>-plane)
+<me>
+\ka = \left|\frac{\vv(t)\times\va(t)}{\big(\diff{s}{t}\big)^3}\right|
+=\frac{\big|\diff{x}{t}\difftwo{y}{t}-\diff{y}{t}\difftwo{x}{t}\big|}
+{ {\big[\big(\diff{x}{t}\big)^2+\big(\diff{y}{t}\big)^2\big]}^{3/2} }
+</me>
+</li>
+<li xml:id="thm_curvatureFormulae_part_e">
+Given <m>y(x)</m>, (again for curves in the <m>xy</m>-plane)
+<me>
+\ka
+=\frac{\big|\difftwo{y}{x}\big|}
+{ {\big[1+\big(\diff{y}{x}\big)^2\big]}^{3/2} }
+</me>
+</li>
+</ol>
+</p></statement>
+</theorem>
+
+<proof>
+<p>
+(a)
+Given <m>s(\phi)</m>, then
+<me>
+\rho = \Big|\diff{s}{\phi}\Big|\qquad
+\ka = \Big|\diff{s}{\phi}\Big|^{-1}
+</me>
+As we are assuming that <m>0 \lt \rho=\Big|\diff{s}{\phi}\Big| \lt \infty</m>,
+the inverse function theorem says that we can
+invert the function <m>s(\phi)</m> (at least locally) to get <m>\phi</m> as a
+function of <m>s</m>, and that
+<me>
+\ka = \Big|\diff{\phi}{s}\Big|
+</me>
+</p>
+
+<p> (b)
+Given <m>\vr(s)</m>,
+then, by Lemma <xref ref="lem_CVtanArclen"/>.c, <m>\hat\vT(s) = \vr'(s)</m>
+is a unit tangent to the curve at <m>\vr(s)</m> and
+<me>
+\diff{\hat\vT}{s} = \diff{\hat\vT}{\phi} \diff{\phi}{s}
+\tag{$*$}
+</me>
+Now up to a sign <m>\diff{\phi}{s}</m> is <m>\ka</m>, and just because
+<m>\phi=\measuredangle(\hi,\hat\vT)</m>, with <m>\hat\vT</m> a unit vector,
+<me>
+\begin{split}
+\hat\vT&amp;=\cos\phi\,\hi + \sin\phi\,\hj \\
+\implies \diff{\hat\vT}{\phi}&amp;= -\sin\phi\,\hi + \cos\phi\,\hj
+\end{split}
+\tag{$**$}
+</me>
+So <m>\diff{\hat\vT}{\phi}</m> is a unit vector that is
+perpendicular
+<fn>Think about why this should be the case. In particular,
+sketch <m>\hat\vT</m> and <m>\phi</m> and think about what the sketch says about
+<m>\diff{\hat\vT}{\phi}</m>.</fn>
+to <m>\hat\vT</m>, and hence to the curve at <m>\vr(s)</m>, and
+<me>
+\diff{\hat\vT}{s}(s) = \ka(s)\,\hat\vN(s)
+\tag{$\dagger$}
+</me>
+with <m>\hat\vN(s)</m> a unit normal vector to the curve at <m>\vr(s)</m>.
+In fact, <m>\hat\vN(s)</m> is the unit normal vector to the curve at <m>\vr(s)</m>
+that points toward the centre of curvature.
+</p>
+
+<p>To see that,
+look at the figures below
+<fn>In each of the four figures, the arrow on the curve specifies the direction of increasing arc length <m>s</m> and the red dot is the centre of curvature for the curve at the blue dot.</fn>,
+and note that substituting the sign information
+from each figure into (<m>*</m>) gives (<m>\dagger</m>).
+For example,
+</p>
+
+<sbsgroup width="45%">
+<sidebyside>
+<image source="figs/curvatureSignA"/>
+<image source="figs/curvatureSignC"/>
+</sidebyside>
+<sidebyside>
+<image source="figs/curvatureSignB"/>
+<image source="figs/curvatureSignD"/>
+</sidebyside>
+</sbsgroup>
+
+<p>
+consider the figure on the lower left. In that figure,
+<ul>
+<li><p>
+the <m>x</m> component of <m>\hat\vT</m> is negative (<m>\hat\vT</m> is leftward pointing in the figure),
+<ul>
+<li>
+which makes <m>\cos\phi</m> negative (see (<m>**</m>)),
+</li>
+<li>
+which makes the <m>y</m> component of <m>\diff{\hat\vT}{\phi}</m> negative
+            (see (<m>**</m>) again),
+</li>
+<li>
+so <m>\diff{\hat\vT}{\phi}</m> is downward pointing,
+</li>
+</ul>
+so <m>\diff{\hat\vT}{\phi}=-\hat\vN</m> (the centre of curvature is the red dot
+above the curve) and
+</p></li>
+<li> as <m>s</m> increases (i.e. as you move in the direction of the
+arrow on the curve), <m>\phi</m> decreases (on the far right hand part of the curve <m>\phi\approx\frac{\pi}{2}</m>, while on the far left hand part of the curve <m>\phi\approx 0</m>), so <m>\diff{\phi}{s} \lt 0</m> and
+<m>\ka = \big|\diff{\phi}{s}\big| = - \diff{\phi}{s}</m>.
+</li>
+<li> So by (<m>*</m>),
+<m>\diff{\hat\vT}{s} = \diff{\hat\vT}{\phi} \diff{\phi}{s}
+=\big(-\hat\vN)(-\ka) = \ka\hat\vN</m>.
+</li>
+</ul>
+In each of the three other figures we also end up with
+<m>\diff{\hat\vT}{s} = \ka(s)\hat\vN(s)</m>.
+</p>
+
+
+<p>
+Note that if <m>\ka(s)=0</m>, then <m>\hat\vN(s)</m> is not defined. This makes sense:
+if the curve is (locally) a straight line, there is no <q>best fitting circle</q>.
+</p>
+
+<p> (c)
+Given <m>\vr(t)</m>,
+i.e. if we have a general parametrized curve, we can determine a unit
+tangent vector by using Lemma <xref ref="lem_CVtanArclen"/>:
+<me>
+\vv(t) = \diff{\vr}{t}(t) = \diff{s}{t}(t)\,\hat\vT(t)
+\quad\implies\quad
+\hat\vT(t) = \frac{\vr'(t)}{|\vr'(t)|}
+</me>
+Then we can determine <m>\ka</m> and <m>\hat\vN</m>  by differentiating
+<m>\hat\vT(t)</m> and using the chain rule:
+<me>
+\diff{\hat\vT}{t} = \diff{\hat\vT}{s}\diff{s}{t}
+ = \ka \diff{s}{t} \hat\vN
+\quad\implies\quad
+\ka(t) = \frac{|\hat\vT'(t)|}{|\vr'(t)|}
+</me>
+Also, if we differentiate <m>\vv(t) = \diff{s}{t}\hat\vT(t)</m>, we get
+that the acceleration
+<me>
+\va(t) = \difftwo{\vr}{t}
+       =  \difftwo{s}{t}\hat\vT + \diff{s}{t}\,\diff{\hat\vT}{t}
+       =  \difftwo{s}{t}\hat\vT
+                           + \ka\Big(\diff{s}{t}\Big)^2\hat\vN
+</me>
+</p>
+
+<p xml:id="clpcurvesthm_curvatureFormulae_partd">
+(d)
+Given <m>\big(x(t)\,,\,y(t)\big)</m>, (for curves in the <m>xy</m>-plane),
+we can read off the curvature from
+<md>
+<mrow>
+\vv(t)\times\va(t)
+&amp;=\Big(\diff{s}{t}(t)\,\hat\vT(t)\Big)\times
+    \Big(\difftwo{s}{t}\hat\vT
+                           + \ka\Big(\diff{s}{t}\Big)^2\hat\vN\Big)
+
+</mrow><mrow>
+&amp;= \ka\Big(\diff{s}{t}\Big)^3\hat\vT\times\hat\vN
+\qquad\text{(since }  \hat\vT\times\hat\vT=\vZero
+</mrow>
+</md>
+Think of <m>\hat\vT</m> and <m>\hat\vN</m> as 3d vectors that whose <m>z</m>-components happen to be zero. As <m>\hat\vT</m> and <m>\hat\vN</m> are mutually perpendicular
+unit vectors in the <m>xy</m>-plane, the cross-product <m>\hat\vT\times\hat\vN</m>
+will be either <m>+\hk</m> or <m>-\hk</m>. In both cases,
+<m>|\vv(t)\times\va(t)\big| = \ka\big|\diff{s}{t}\big|^3</m>. So
+<md>
+<mrow>
+\ka &amp;= \left|\frac{\vv(t)\times\va(t)}{\big(\diff{s}{t}\big)^3}\right|
+=\left|\frac{\big[\diff{x}{t}\hi+\diff{y}{t}\hj\big]\times
+        \big[\difftwo{x}{t}\hi+\difftwo{y}{t}\hj\big]}
+           {\big(\diff{s}{t}\big)^3}\right|
+=\left|\frac{\big[\diff{x}{t}\difftwo{y}{t}-\diff{y}{t}\difftwo{x}{t}\big]\hk}
+           {\big(\diff{s}{t}\big)^3}\right|
+
+</mrow><mrow>
+&amp;=\frac{\big|\diff{x}{t}\difftwo{y}{t}-\diff{y}{t}\difftwo{x}{t}\big|}
+{ {\big[\big(\diff{x}{t}\big)^2+\big(\diff{y}{t}\big)^2\big]}^{3/2} }
+</mrow>
+</md>
+</p>
+
+<p> (e)
+Given <m>y(x)</m>, again for curves in the <m>xy</m>-plane,
+we can parametrize the curve using <m>x</m> as the parameter:
+<me>
+\vr(t) = \big(X(t)\,,\,Y(t)\big) \qquad\text{with $X(t)=t$ and $Y(t) =y(t)$}
+</me>
+Then
+<me>
+\diff{X}{t} = 1 \qquad
+\difftwo{X}{t} = 0 \qquad
+\diff{Y}{t} = \diff{y}{x} \qquad
+\difftwo{Y}{t} = \difftwo{y}{x}
+</me>
+and
+<me>
+\ka
+=\frac{\big|\diff{X}{t}\difftwo{Y}{t}-\diff{Y}{t}\difftwo{X}{t}\big|}
+{ {\big[\big(\diff{X}{t}\big)^2+\big(\diff{Y}{t}\big)^2\big]}^{3/2} }
+=\frac{\big|\difftwo{y}{x}\big|}
+{ {\big[1+\big(\diff{y}{x}\big)^2\big]}^{3/2} }
+</me>
+</p></proof>
+
+<p>
+Take another look at Theorem <xref ref="thm_curvatureFormulae"/>
+and note that
+<ul>
+<li>
+the tangential component of acceleration, i.e. <m>\difftwo{s}{t}</m>,
+arises purely from change in speed while
+</li>
+<li>
+the normal component of acceleration, i.e. <m>\ka\big(\diff{s}{t}\big)^2</m>,
+arises from curvature and is proportional to the square of the speed
+<m>\diff{s}{t}</m>. Think about what you feel when you are driving.
+That's why velodromes and (car) race tracks often have banked corners.
+</li>
+</ul>
+</p>
+
+<example xml:id="eg_curveCircle">
+<p>
+As a warm up example, and also a check that our formulae make sense,
+we'll find the curvature <m>\ka</m>, radius of curvature, <m>\rho</m>, unit tangent
+vector, <m>\hat\vT</m>, unit normal vector, <m>\hat\vN</m>, and centre of curvature
+of the parametrized curve
+<me>
+\vr(t) = a\cos t\,\hi + a\sin t\,\hj
+</me>
+with the constant <m>a \gt 0</m>.
+This is, of course, the circle of radius <m>a</m> centred on the origin.
+As
+<me>
+\vv(t)=\diff{\vr}{t}(t)= -a\sin t\,\hi + a\cos t\,\hj
+\implies \diff{s}{t}(t) = |\vv(t)| = a
+</me>
+we have that the unit tangent vector
+<me>
+\vT(t) = \frac{\vv(t)}{|\vv(t)|} = -\sin t\,\hi + \cos t\,\hj
+</me>
+Note, as a check, that this is indeed a vector of length one and
+is perpendicular to the radius vector (as expected <mdash/> the curve is a circle).
+As
+<me>
+\diff{\hat\vT}{t}(t)= -\cos t\,\hi  -\sin t\,\hj
+</me>
+we have that
+<me>
+\hat\vN(t) = \frac{\diff{\hat\vT}{t}(t)}{\big|\diff{\hat\vT}{t}(t)\big|}
+           = -\cos t\,\hi  -\sin t\,\hj
+\quad
+\ka(t)
+= \frac{\big|\diff{\hat\vT}{t}(t)\big|}{\diff{s}{t}(t)}
+=\frac{1}{a}
+\quad
+\rho(t)=\frac{1}{\ka(t)} =a
+</me>
+Now look at the figure.
+</p>
+
+<sidebyside>
+<image source="figs/circleCentreB"/>
+</sidebyside>
+
+<p>
+To get to the centre of curvature we should start from
+<m>\vr(t)</m> and walk a distance <m>\rho(t)</m>, which after all is the radius
+of curvature, in the direction <m>\hat\vN(T)</m>, which is pointing towards the centre of curvature. So the centre of curvature is
+<me>
+\vr(t)+\rho(t)\hat\vN(t)
+=\big[a\cos t\,\hi  +a\sin t\,\hj\big]
++a\big[-\cos t\,\hi  -\sin t\,\hj\big]
+= \vZero
+</me>
+This makes perfectly good sense <mdash/> the radius of curvature is
+the radius of the original circle and the centre of curvature is the
+centre of the original circle.
+</p>
+
+<p>One alternative calculation of the curvature, using <m>x(t) = a\cos t </m>,
+<m>y(t)=a\sin t</m>, is
+<md>
+<mrow>
+\ka(t)
+&amp;=\frac{\big|
+  \diff{x}{t}(t)\difftwo{y}{t}(t)-\diff{y}{t}(t)\difftwo{x}{t}(t)
+  \big|}{\Big[\big(\diff{x}{t}(t)\big)^2
+                +\big(\diff{y}{t}(t)\big)^2\Big]^{3/2}}
+</mrow><mrow>
+&amp;=\frac{\big|
+  -a\sin t\big(-a\sin t\big)-a\cos t\big(-a\cos t\big)
+  \big|}{\big[\big(-a\sin t\big)^2
+                +\big(a\cos t\big)^2\big]^{3/2}}
+</mrow><mrow>
+&amp;=\frac{1}{a}
+</mrow>
+</md>
+Another alternative calculation of the curvature, using <m>y(x)
+=\sqrt{a^2-x^2}</m> (for the part of the circle with <m>y \gt 0</m>),
+<me>
+y'(x) = -\frac{x}{\sqrt{a^2-x^2}}=-\frac{x}{y(x)} \qquad
+y'(x) = -\frac{y(x) - xy'(x)}{y(x)^2}
+       =  -\frac{y(x)^2 + x^2}{y(x)^3}
+       =  -\frac{a^2}{y(x)^3}
+</me>
+is
+<md>
+<mrow>
+\ka(x)
+&amp;=\frac{\big|\difftwo{y}{x}(x)\big|}
+  {\Big[1+\big(\diff{y}{x}(x)\big)^2\Big]^{3/2}}
+=\frac{\frac{a^2}{y(x)^3}}
+  {\Big[1+\frac{x^2}{y(x)^2}\Big]^{3/2}}
+=\frac{a^2}{\big[y(x)^2+x^2\big]^{3/2}}
+=\frac{1}{a}
+</mrow>
+</md>
+</p></example>
+
+
+<example xml:id="eg_curvatureEtc">
+<p>
+As a more computationally involved example, we'll analyze
+<md>
+<mrow>
+\vr(t) &amp;= \big(\cos t + t\sin t\big)\hi +\big(\sin t-t\cos t\big)\hj
+\qquad t \gt 0
+</mrow><mrow>
+\vv(t) &amp;= t\cos t\,\hi + t\sin t\,\hj
+</mrow><mrow>
+\va(t) &amp;= \big(\cos t - t\sin t\big)\hi +\big(\sin t+t\cos t\big)\hj
+</mrow>
+</md>
+We can read off from <m>\vv(t)</m>, that
+<md>
+<mrow>
+\diff{s}{t}(t) &amp;= |\vv(t)| =t
+</mrow><mrow>
+\difftwo{s}{t}(t) &amp;= 1
+</mrow><mrow>
+\vT(t)&amp;=\frac{\vv(t)}{|\vv(t)|} = \cos t\,\hi + \sin t\,\hj
+</mrow>
+</md>
+Next, from <m>\va(t)</m>, we read off that
+<md>
+<mrow>
+\va(t) &amp;=\big(\cos t - t\sin t\big)\hi +\big(\sin t+t\cos t\big)\hj\qquad
+\text{and}
+</mrow><mrow>
+\va(t)&amp;=\difftwo{s}{t}(t)\,\hat\vT(t)
+                             +\ka(t)\big(\diff{s}{t}(t)\big)^2\hat\vN(t)
+</mrow>
+<intertext>(by Theorem <xref ref="thm_curvatureFormulae"/> .c)</intertext>
+<mrow>
+&amp;=\cos t\,\hi + \sin t\,\hj +t^2\ka(t) \hat\vN(t)
+</mrow><mrow>
+\implies
+t^2\ka(t) \hat\vN(t)&amp;= - t\sin t\,\hi + t\cos t\,\hj
+</mrow>
+</md>
+so that
+<md>
+<mrow>
+\ka(t) = \frac{1}{t} \quad\text{and}\quad
+\hat\vN(t)= -\sin t\,\hi + \cos t\,\hj
+</mrow>
+</md>
+As an alternative calculation of the curvature, we have
+<md>
+<mrow>
+\ka(t)
+&amp;=\frac{|\vv(t)\times\va(t)|}{(\diff{s}{t}(t))^3}
+</mrow><mrow>
+&amp;=\frac{\big|\big[t\cos t\,\hi + t\sin t\,\hj\big]\times
+      \big[\big(\cos t - t\sin t\big)\hi +\big(\sin t+t\cos t\big)\hj\big]\big|}
+{(\diff{s}{t}(t))^3}
+</mrow><mrow>
+&amp;=\frac{\big|\big[t\cos t\big(\sin t+t\cos t\big)
+                 -t\sin t\big(\cos t - t\sin t\big)\big]\hk\big|}
+{(\diff{s}{t}(t))^3}
+</mrow><mrow>
+&amp;=\frac{|t^2\hk|}{t^3}
+=\frac{1}{t}
+</mrow>
+</md>
+It pays to think before you calculate!
+</p></example>
+
+
+<!-- <xi:include href="../problems/prob_s1.3.ptx" /> -->
 
 </section>
