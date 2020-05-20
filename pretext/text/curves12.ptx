@@ -132,7 +132,6 @@ Substituting in <m>\vc=(0,0,0)</m>, <m>\rho=2</m>, <m>\hi'=(1,0,0)</m> and
 </mrow><mrow>
 &amp;=2\big(\cos t, \frac{\sin t}{\sqrt{2}},\frac{\sin t}{\sqrt{2}}\big)
 \qquad 0\le t\le 2\pi
-</mrow><mrow>
 </mrow>
 </md></p>
 </sidebyside>
