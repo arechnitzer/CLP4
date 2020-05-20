@@ -1,13 +1,416 @@
 <?xml version="1.0" encoding="UTF-8" ?>
-<section xmlns:xi="http://www.w3.org/2001/XInclude" xml:id="">
+<section xmlns:xi="http://www.w3.org/2001/XInclude" xml:id="sec_Curve3d">
 
 <!-- Copyright 2018-2020 Joel Feldman, Andrew Rechnitzer and Elyse Yeager -->
 <!-- This work is licensed under the Creative Commons Attribution-NonCommercial-ShareAlike 4.0 International License-->
 <!-- https://creativecommons.org/licenses/by-nc-sa/4.0 -->
 
-<title></title>
+<title>Curves in Three Dimensions</title>
 
 
-<!-- <xi:include href="../problems/prob_s1.1.ptx" /> -->
+<p>
+So far, we have developed formulae for the curvature, unit tangent vector,
+etc., at a point <m>\vr(t)</m> on a curve that lies in the <m>xy</m>-plane. We
+now extend our discussion to curves in <m>\bbbr^3</m>. Fix any <m>t</m>.
+For <m>t'</m> very close to <m>t</m>, <m>\vr(t')</m>, will, by the Taylor expansion
+to second order, be very close to <m>\vr(t) + \vr'(t)\,(t'-t)
++\frac{1}{2}\vr'(t)\,(t'-t)^2</m>, so that <m>\vr(t')</m> almost lies in the
+plane through <m>\vr(t)</m> that is determined by the two vectors <m>\vr'(t)</m> and
+<m>\vr'(t)</m>. Thus, if we restrict
+our attention to a very small part of the curve near the point of
+interest <m>\vr(t)</m>, the curve will, to a very good approximation lie in
+some plane. So we can still define, for example, the osculating circle
+to the curve at <m>\vr(t)</m> to be the circle in that plane that fits the
+curve best near <m>\vr(t)</m>. And we still have the formulae
+<md>
+<mrow>
+\vv&amp;=\diff{\vr}{t}=\diff{s}{t}\,\hat\vT
+</mrow><mrow>
+\diff{\hat\vT}{s} &amp;= \ka\hat\vN
+</mrow><mrow>
+\diff{\hat\vT}{t} &amp;= \ka\diff{s}{t}\hat\vN
+</mrow><mrow>
+\va&amp;=\difftwo{\vr}{t}=\difftwo{s}{t}\,\hat\vT
+                             +\ka\Big(\diff{s}{t}\Big)^2\hat\vN
+</mrow><mrow>
+\vv\times\va &amp;= \ka \Big(\diff{s}{t}\Big)^3\hat\vT\times\hat\vN
+</mrow>
+</md>
+The only <fn>However this can be a significant difference.</fn>
+difference is that <m>\vv, \va, \hat\vT</m> and <m>\hat\vN</m>
+are now three component vectors rather than two component vectors.
+</p>
+
+<p>If we are lucky and our curve happens to lie completely in a single plane,
+the vectors <m>\hat\vT(s)</m> and <m>\hat\vN(s)</m> are mutually perpendicular
+unit vectors that lie in the same plane, so that their cross product
+<m>\hat\vB(s) = \hat\vT(s)\times\hat\vN(s)</m>
+is a unit vector that is perpendicular to the plane.  By continuity,
+<m>\hat\vB(s)</m> has to be a constant vector, i.e. be independent of <m>s</m>.
+</p>
+
+<p>If, on the other hand, <m>\hat\vB(s)</m> is not constant, then our curve
+doesn't lie  in a single plane, and we can use the derivative
+<md>
+<mrow>
+\diff{\hat\vB}{s}
+&amp;=\diff{}{s}\big(\hat\vT\times\hat\vN\big)
+=\diff{\hat\vT}{s}\times\hat\vN + \hat\vT\times \diff{\hat\vN}{s}
+</mrow><mrow>
+&amp;=\hat\vT\times \diff{\hat\vN}{s}\qquad
+\text{$\Big($ since $\diff{\hat\vT}{s}$ is parallel to $\hat\vN \Big)$}
+</mrow>
+</md>
+as a measure
+<ul>
+<li>
+of how badly the curve fails to lie in a plane,
+</li>
+<li> i.e. how much the
+plane that fits the curve best near <m>\vr(s)</m> twists as <m>s</m> increases,
+</li>
+</ul>
+The cross product in <m>\diff{\hat\vB}{s}=\hat\vT\times \diff{\hat\vN}{s}</m>
+implies that <m>\diff{\hat\vB}{s}</m> is perpendicular to <m>\hat\vT</m>. In addition,
+<m>\diff{\hat\vB}{s}</m> must be perpendicular to <m>\hat\vB</m> because
+<me>
+|\hat\vB|=1
+\implies 1=\hat\vB\cdot\hat\vB
+\implies 0 = \diff{}{s}\left[\hat\vB\cdot\hat\vB\right]
+          = 2 \hat\vB\cdot\diff{\hat\vB}{s}
+</me>
+So <m>\diff{\hat\vB}{s}(s)</m> must be parallel to <m>\hat\vN(s)</m>.
+</p>
+
+<definition xml:id="def_torsion">
+<statement><p>
+<ol label="a">
+<li> The <term>binormal vector</term> at <m>\vr(s)</m> is
+<m>\hat\vB(s) = \hat\vT(s)\times \hat\vN(s)</m>.
+The normal vector <m>\hat\vN(s)</m> is sometimes called the unit
+<term>principal normal vector</term> to distinguish it from the
+binormal vector.
+</li>
+<li>
+ We define the <term>torsion</term>
+<m>\tau(s)</m> by
+<me>
+\diff{\hat\vB}{s}(s) = -\tau(s)\hat\vN(s)
+</me>
+The negative sign is included so that <m>\tau(s) \gt 0</m> indicates
+<q>right handed twisting</q>. There will be an explanation of what this means in Example <xref ref="eg_helixTwist"/> below.
+</li>
+<li>
+The <term>osculating plane</term> at <m>\vr(s)</m> (the plane that fits the curve best
+at <m>\vr(s)</m>) is the plane through <m>\vr(s)</m> with normal vector <m>\hat\vB(s)</m>.
+The equation of the plane is
+<me>
+\hat\vB(s)\cdot\big\{(x,y,z)-\vr(s)\big\}=0
+</me>
+</li>
+</ol>
+</p></statement>
+</definition>
+
+
+<p>For each <m>s</m>, <m>\hat\vT(s)</m>, <m>\hat\vN(s)</m> and <m>\hat\vB(s)</m> are mutually
+perpendicular unit vectors. They form an orthonormal basis
+for <m>\bbbr^3</m>, just as <m>\hi</m>, <m>\hj</m> and <m>\hk</m> form an orthonormal basis
+for <m>\bbbr^3</m>. Furthermore both <m>(\hat\vT(s)\,,\,\hat\vN(s)\,,\,\hat\vB(s))</m>
+and <m>(\hi\,,\,\hj\,,\,\hk)</m> are <q>right handed triples</q>
+<fn>We shall stick to <q>right handed triples</q> to make it easier to get various signs right.</fn>,
+meaning that <m>\hat\vB(s) = \hat\vT(s)\times\hat\vN(s)</m> and <m>\hk=\hi\times\hj</m>.
+</p>
+
+<sidebyside>
+<image source="figs/cross.pdf"/>
+</sidebyside>
+
+<p>We have already computed <m>\diff{\hat\vT}{s}</m> and <m>\diff{\hat\vB}{s}</m>.
+It is now an easy matter to compute
+<md>
+<mrow>
+\diff{\hat\vN}{s}
+&amp;= \diff{}{s}\big(\hat\vB(s)\times\hat\vT(s)\big)
+</mrow><mrow>
+&amp;= -\tau(s)\hat\vN(s)\times\hat\vT(s)
+  +\hat\vB(s)\times\big(\ka(s)\hat\vN(s)\big)
+</mrow><mrow>
+&amp;=\tau(s)\hat\vB(s)-\ka(s)\hat\vT(s)
+</mrow>
+</md>
+</p>
+
+<p>Now suppose that we have a curve that is parametrized by <m>t</m> rather than <m>s</m>.
+How do we find the torsion <m>\tau</m>? The most obvious method is to
+<ul>
+<li>
+recall that <m>\vv\times\va = \ka \big(\diff{s}{t}\big)^3\hat\vT\times\hat\vN
+                          = \ka \big(\diff{s}{t}\big)^3\hat\vB</m>
+and that <m>\vB(t)</m> is a unit vector. So
+<me>
+\hat\vB(t) = \frac{\vv(t)\times\va(t)}{|\vv(t)\times\va(t)|}
+</me>
+</li>
+<li> Having found <m>\vB(t)</m> we can differentiate it and use
+<m>\diff{\hat\vB}{s}(s) = -\tau(s)\hat\vN(s)</m> and the chain rule to give
+<me>
+\diff{\vB}{t} = -\tau\diff{s}{t} \hat\vN
+</me>
+from which we can read off <m>\tau</m>, provided we know <m>\diff{s}{t}</m> and
+<m>\hat\vN</m>.
+</li>
+</ul>
+</p>
+
+<p>There is another, often more efficient, method to find the torsion <m>\tau</m>
+that uses
+<md>
+<mrow>
+\diff{\va}{t} &amp;= \diff{}{t}\Big(\difftwo{s}{t}\,\hat\vT
+                             +\ka\Big(\diff{s}{t}\Big)^2\hat\vN\Big)
+</mrow><mrow>
+       &amp;= \ddiff{3}{s}{t}\,\hat\vT
+         +\difftwo{s}{t}\,\diff{s}{t}\,\ka\hat\vN
+         +\diff{}{t}\Big(\ka\Big(\diff{s}{t}\Big)^2\Big)\hat\vN
+         +\ka\Big(\diff{s}{t}\Big)^3
+               \big(\tau\hat\vB-\ka\hat\vT\big)
+</mrow>
+</md>
+While this looks a little complicated, notice that, with just
+one exception, namely
+<m>\ka\big(\diff{s}{t}\big)^3\tau(s)\hat\vB(s)</m>, every term on the right
+hand side is either in the direction <m>\hat\vT</m> or in the direction
+<m>\hat\vN</m> and so is perpendicular to <m>\hat\vB</m>. So, dotting with
+<m>\vv\times\va = \ka \big(\diff{s}{t}\big)^3\hat\vB</m> gives
+<md>
+<mrow>
+\big(\vv\times\va\big)\cdot \diff{\va}{t}
+   = \ka^2 \Big(\diff{s}{t}\Big)^6\,\tau
+   = |\vv\times\va|^2\,\tau
+</mrow>
+</md>
+and hence
+<md>
+<mrow>
+\tau = \frac{\big(\vv\times\va\big)\cdot \diff{\va}{t} }{|\vv\times\va|^2}
+</mrow>
+</md>
+</p>
+
+<p>If the curvature
+<fn>As in two dimensions, if <m>\ka(s)=0</m>, then
+<m>\hat\vN(s)</m> is not defined. This makes even more sense in three dimensions
+than in two dimensions: if the curve is a straight line, there are
+infinitely many unit vectors perpendicular to it and there is no way to
+distinguish between them.</fn>
+ <m>\ka(s) \gt 0</m>
+and the torsion <m>\tau(s)</m> are known,
+then the system of equations
+<fn>The equations are named after
+the two French mathematicians who independently discovered them:
+Jean Frédéric Frenet (1816<ndash/>1900, the son of a wig maker),
+in his thesis of 1847
+(actually he only gave two of the three equations), and
+Joseph Alfred Serret (1819<ndash/>1885) in 1851.
+</fn>
+</p>
+
+<fact xml:id="eqn_FrenetSerret"><title>Frenet<ndash/>Serret Formulae</title>
+<p>
+<md>
+<mrow>
+\diff{\hat\vT}{s}(s)&amp;=\phantom{-}\ka(s)\ \hat\vN(s)\cr
+\diff{\hat\vN}{s}(s)&amp;=\phantom{-}\tau(s)\ \hat\vB(s)-\ka(s)\ \hat\vT(s)\cr
+\diff{\hat\vB}{s}(s)&amp;=-\tau(s)\ \hat\vN(s)\cr
+</mrow>
+</md>
+</p>
+</fact>
+
+<p>
+is a first order linear system of ordinary differential equations
+<md>
+<mrow>
+\diff{}{s}
+\left[ \begin{matrix}\hat\vT(s) \\ \hat\vN(s)\\ \hat\vB(s)\end{matrix} \right]
+=\left[\begin{matrix} 0      &amp; \ka(s) &amp; 0 \\
+              -\ka(s) &amp;  0     &amp;\tau(s) \\
+              0       &amp;-\tau(s)  &amp; 0 \end{matrix}\right]
+\left[\begin{matrix}\hat\vT(s) \\ \hat\vN(s)\\ \hat\vB(s)\end{matrix}\right]
+</mrow>
+</md>
+for the <m>9</m> component vector valued function
+<m>(\hat\vT(s)\,,\,\hat\vN(s)\,,\,\hat\vB(s))</m>.
+</p>
+
+<p>Any first order linear initial value problem
+<me>
+\diff{}{s}\vx(s) = M(s) \vx(s)\qquad
+\vx(0)=\vx_0
+</me>
+where <m>\vx</m> is an <m>n</m>-component vector and <m>M(s)</m> is an <m>n\times n</m> matrix with continuous entries, has exactly one solution. If <m>n=1</m>, so that
+<m>\vx(s)</m> and <m>M(s)</m> are just functions, this is easy to see. Just
+let <m>\cM(s)</m> be the antiderivative of <m>M(s)</m> that obeys <m>\cM(0)=0</m>. Then
+<md>
+<mrow>
+\diff{}{s}\vx(s) = M(s) \vx(s)
+&amp;\iff e^{-\cM(s)}\diff{}{s}\vx(s) - M(s) e^{-\cM(s)} \vx(s)=0
+</mrow><mrow>
+&amp;\iff \diff{}{s}\Big(e^{-\cM(s)}\vx(s)\Big) = 0
+</mrow>
+</md>
+by the product rule. So <m>e^{-\cM(s)}\vx(s)</m> is a constant, which to satisfy
+the initial condition, must be <m>\vx_0</m>. That is <m>\vx(s) = \vx_0 e^{\cM(s)}</m>.
+This argument can be generalized to any natural number <m>n</m>. But that is
+beyond the scope of this book.
+</p>
+
+<p>Since the Frenet-Serret formulae constitute a first order system of ordinary
+differential equations for the vector
+<m>(\hat\vT(s)\,,\,\hat\vN(s)\,,\,\hat\vB(s))</m> and since any first order linear
+initial value problem has a exactly one solution,
+<ul>
+<li>
+the vector valued function <m>(\hat\vT(s)\,,\,\hat\vN(s)\,,\,\hat\vB(s))</m>
+is determined by the functions
+<m>\ka(s)</m> and <m>\tau(s)</m> (assuming that they are continuous) together with
+the initial condition <m>(\hat\vT(0)\,,\,\hat\vN(0)\,,\,\hat\vB(0))</m>.
+</li>
+<li> Furthermore, once you know <m>\hat\vT(s)</m>, then
+<m>\vr(s)</m> is determined by <m>\vr(0)</m> and <m>\diff{\vr}{s}(s)=\hat\vT(s)</m>.
+</li>
+<li> So any smooth curve <m>\vr(s)</m> is completely determined
+by <m>\vr(0)</m>, <m>(\hat\vT(0)\,,\,\hat\vN(0)\,,\,\hat\vB(0))</m>, <m>\ka(s)</m>
+and <m>\tau(s)</m>.
+</li>
+<li> That is, up to translations (you can move between any two
+possible choices of <m>\vr(0)</m> by  a translation) and rotations
+(you can move between any two possible choices of
+<m>(\hat\vT(0)\,,\,\hat\vN(0)\,,\,\hat\vB(0))</m> by  a rotation) a curve is       completely determined by the curvature <m>\ka(s) \gt 0</m> and the torsion
+<m>\tau(s)</m>. This result is called <q>The fundamental theorem of space curves</q>.
+</li>
+</ul>
+</p>
+
+<theorem><title>The Fundamental Theorem of Space Curves</title>
+<statement><p>
+Let <m>\ka(s) \gt 0</m> and <m>\tau(s)</m> be continuous. Then up to translations
+and rotations, there is a unique curve with curvature <m>\ka(s)</m> and
+torsion <m>\tau(s)</m>.
+</p></statement>
+</theorem>
+
+<example xml:id="eg_helixTwist"><title>Right circular helix</title>
+<p>
+The right circular helix is the curve
+<md>
+<mrow>
+\vr(t)= a\cos t\,\hi +a\sin t\,\hj + bt\,\hk
+</mrow>
+</md>
+with <m>a,b \gt 0</m> as in the figure on the left below.
+</p>
+
+<sidebyside>
+<image source="figs/helix5.pdf"/>
+<image source="figs/RHR.pdf"/>
+</sidebyside>
+
+<p>
+Here is why it is called a <term>right</term> helix
+rather than a left helix. If the helix is the thread of a bolt that you
+are screwing into a nut, and you turn the bolt in the direction of the
+(curled) fingers of your right hand (as in the figure
+<fn>This figure is a variant of
+<url href="https://commons.wikimedia.org/wiki/File:Right_hand_rule_simple.png">this picture</url>.
+</fn>
+on the right above),
+then it moves in the direction of your thumb (as
+in the black arrow of the figure on the right above).
+</p>
+
+<p>To determine the curvature and torsion of this curve we compute
+<md>
+<mrow>
+\vv(t)&amp;= -a\sin t\,\hi +a\cos t\,\hj + b\,\hk
+</mrow><mrow>
+\va(t)&amp;= -a\cos t\,\hi -a\sin t\,\hj
+</mrow><mrow>
+\diff{\va}{t}(t)&amp;= a\sin t\,\hi -a\cos t\,\hj
+</mrow>
+</md>
+From <m>\vv(t)</m> we read off
+<md>
+<mrow>
+\diff{s}{t}=\sqrt{a^2+b^2}\qquad
+\hat\vT(t)= -\frac{a}{\sqrt{a^2+b^2}}\sin t\,\hi
+           +\frac{a}{\sqrt{a^2+b^2}} \cos t\,\hj
+           +\frac{b}{\sqrt{a^2+b^2}}\,\hk
+</mrow>
+</md>
+From <m>\va(t)</m>, and the fact that <m>\difftwo{s}{t}=0</m>, we read off that
+<md>
+<mrow>
+\ka(t)=\frac{a}{a^2+b^2}\qquad
+\hat\vN(t) = -\cos t\,\hi-\sin t\,\hj
+</mrow>
+</md>
+From
+<md>
+<mrow>
+\vv(t)\times\va(t)  &amp;= \det\left[
+                \begin{matrix}  \hi   &amp; \hj     &amp; \hk
+</mrow><mrow>
+                             -a\sin t &amp; a\cos t &amp;  b
+</mrow><mrow>
+                             -a\cos t &amp;-a\sin t &amp; 0\end{matrix} \right]
+         = ab\sin t\,\hi -ab\cos t\,\hj +a^2\,\hk
+</mrow><mrow>
+|\vv(t)\times\va(t)|^2 &amp;=a^2b^2+a^4 = a^2(a^2+b^2)
+</mrow>
+</md>
+we read off
+<md>
+<mrow>
+\hat\vB &amp; = \frac{b}{\sqrt{a^2+b^2}}\sin t\,\hi
+           -\frac{b}{\sqrt{a^2+b^2}} \cos t\,\hj
+           +\frac{a}{\sqrt{a^2+b^2}}\,\hk
+</mrow>
+</md>
+and
+<md>
+<mrow>
+\tau(t) &amp; = \frac{\big(\vv\times\va\big)\cdot \diff{\va}{t} }{|\vv\times\va|^2}
+=\frac{a^2b}{a^2(a^2+b^2)}
+=\frac{b}{a^2+b^2}
+</mrow>
+</md>
+Note that, for the right handed helix, <m>\tau \gt 0</m>. Finally the centre of
+curvature is
+<md>
+<mrow>
+\vr(t) +\frac{1}{\ka(t)}\hat\vN(t)
+&amp;=\Big(a-\frac{a^2+b^2}{a}\Big)\cos t\,\hi
+ +\Big(a-\frac{a^2+b^2}{a}\Big)\sin t\,\hi
+ +bt\,\hk
+</mrow><mrow>
+&amp;=-\frac{b^2}{a}\cos t\,\hi
+  -\frac{b^2}{a}\sin t\,\hi
+ +bt\,\hk
+</mrow>
+</md>
+which is another helix. In the figure below, the red curve is the original
+helix and the blue curve is the helix traced by the centre of curvature.
+</p>
+
+<sidebyside>
+<image source="figs/helix6.pdf"/>
+</sidebyside>
+
+</example>
+
+
+<!-- <xi:include href="../problems/prob_s1.4.ptx" /> -->
 
 </section>
