@@ -1,0 +1,525 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<section xmlns:xi="http://www.w3.org/2001/XInclude" xml:id="sec_tangentPlanes">
+
+<!-- Copyright 2018-2020 Joel Feldman, Andrew Rechnitzer and Elyse Yeager -->
+<!-- This work is licensed under the Creative Commons Attribution-NonCommercial-ShareAlike 4.0 International License-->
+<!-- https://creativecommons.org/licenses/by-nc-sa/4.0 -->
+
+<title>Tangent Planes</title>
+<p>
+If you are confronted with a complicated surface and want to get some
+idea of what it looks like near a specific point, probably the first
+thing that you will do is find the plane that best approximates the
+surface near the point. That is, find the tangent plane to the surface at
+the point.
+In general, a good way to specify a plane is to supply
+<ul>
+<li>
+a nonzero vector <m>\vn</m> (called a normal vector) perpendicular to the
+plane<fn>
+Alternatively, you could find two vectors that are in the
+plane (and not parallel to each other), and then construct a normal vector
+by taking their cross product.
+</fn> (to determine the orientation of the plane)
+and
+</li>
+<li>
+one point <m>(x_0,y_0,z_0)</m> on the plane.
+</li>
+</ul>
+If <m>(x,y,z)</m> is any other point on the plane, then the vector
+<me>
+(x,y,z)-(x_0,y_0,z_0) = (x-x_0\,,\,y-y_0\,,\,z-z_0)
+</me>
+lies entirely in the plane and so is perpendicular to <m>\vn</m>. This gives
+the following very neat the equation for the plane.
+</p>
+
+<sidebyside width="45%">
+<p><me>
+\vn\cdot(x-x_0\,,\,y-y_0\,,\,z-z_0) = 0
+</me></p>
+<image source="figs/plane"/>
+</sidebyside>
+
+<p>
+The following theorem provides formulae for normal vectors <m>\vn</m> to
+general surfaces, assuming first that the surface is parametrized,
+second that the surface is a graph and finally the surface is given
+by an implicit equation. The formulae are developed in the proof of the
+theorem.
+</p>
+
+<theorem xml:id="thm_normalVectors"><title>Normal vectors to surfaces</title>
+<statement><p>
+<ol label="a">
+<li>
+Let
+<md>
+<mrow>
+\vr&amp;: \cD\subset\bbbr^2 \rightarrow \bbbr^3
+</mrow><mrow>
+   &amp;(u,v) \in\cD \mapsto \vr(u,v) =\big(x(u,v)\,,\,y(u,v)\,,\,z(u,v)\big)
+</mrow>
+</md>
+be a parametrized surface and let <m>(x_0,y_0,z_0)=\vr(u_0,v_0)</m>
+be a point on the surface. Set
+<md>
+<mrow>
+\vT_u &amp;= \frac{\partial\ }{\partial u}\vr(u,v_0)\Big|_{u=u_0}
+=\Big(\frac{\partial x}{\partial u}(u_0,v_0)\,,\,
+      \frac{\partial y}{\partial u}(u_0,v_0)\,,\,
+      \frac{\partial z}{\partial u}(u_0,v_0)\Big)
+</mrow><mrow>
+\vT_v &amp;= \frac{\partial\ }{\partial v}\vr(u_0,v)\Big|_{v=v_0}
+=\Big(\frac{\partial x}{\partial v}(u_0,v_0)\,,\,
+      \frac{\partial y}{\partial v}(u_0,v_0)\,,\,
+      \frac{\partial z}{\partial v}(u_0,v_0)\Big)
+</mrow>
+</md>
+Then
+<md>
+<mrow>
+\vn = \vT_u\times\vT_v
+=\det\left|\begin{matrix}
+            \hi &amp;  \hj &amp; \hk \\
+            \frac{\partial x}{\partial u}(u_0,v_0) &amp;
+                     \frac{\partial y}{\partial u}(u_0,v_0) &amp;
+                     \frac{\partial z}{\partial u}(u_0,v_0) \\
+           \frac{\partial x}{\partial v}(u_0,v_0) &amp;
+                     \frac{\partial y}{\partial v}(u_0,v_0) &amp;
+                     \frac{\partial z}{\partial v}(u_0,v_0)
+           \end{matrix}\right|
+</mrow>
+</md>
+is normal (i.e. perpendicular) to the surface at <m>(x_0,y_0,z_0)</m>.
+</li>
+<li>
+Let <m>(x_0,y_0,z_0)=f(x_0,y_0)</m> be a point on the
+the surface <m>z=f(x,y)</m>. Then,
+<md>
+<mrow>
+\vn =-f_x(x_0,y_0)\,\hi - f_y(x_0,y_0)\,\hj + \hk
+</mrow>
+</md>
+is normal to the surface at <m>(x_0,y_0,z_0)</m>.
+</li>
+<li>
+Consider the surface given implicitly by the equation <m>G(x,y,z) = K</m>,
+where <m>K</m> is a constant. Let <m>(x_0,y_0,z_0)</m> be a point on the surface and assume that the gradient <m>\vnabla G\big(x_0,y_0,z_0\big)\ne \vZero</m>. Then
+<md>
+<mrow>
+\vn= \vnabla G\big(x_0,y_0,z_0\big)
+</mrow>
+</md>
+is normal to the surface at <m>(x_0,y_0,z_0)</m>.
+</li>
+</ol>
+</p>
+
+<p>Note that none of the normal vectors <m>\vn</m> above need be of unit length.
+</p></statement>
+</theorem>
+
+<p>
+Note that if we apply part (c) to <m>G(x,y,z) = z - f(x,y)</m> we get
+the normal vector <m>\vn=\vnabla G\big(x_0,y_0,z_0\big)
+   =-f_x(x_0,y_0)\,\hi - f_y(x_0,y_0)\,\hj + \hk</m>, which is the same as the
+normal vector provided by part (b). Of course they had to be at least
+parallel.
+</p>
+
+<proof>
+<p> (a)
+First fix <m>v=v_0</m> and let <m>u</m> vary. Then
+<me>
+u\mapsto \vr(u,v_0) = \big(x(u,v_0)\,,\,y(u,v_0)\,,\,z(u,v_0)\big)
+</me>
+is a curve on the surface (the red curve in the figure on the right below) that
+passes through <m>(x_0,y_0,z_0)</m> (the black dot in the figure) when <m>u=u_0</m>.
+</p>
+
+<sidebyside>
+<image source="figs/surfaceSlice"/>
+<image source="figs/saddleA"/>
+</sidebyside>
+
+<p>
+The tangent vector to this curve at  <m>(x_0,y_0,z_0)</m>,
+which is also a tangent vector to the surface at <m>(x_0,y_0,z_0)</m>,
+is
+<me>
+\vT_u = \frac{\partial\ }{\partial u}\vr(u,v_0)\Big|_{u=u_0}
+=\Big(\frac{\partial x}{\partial u}(u_0,v_0)\,,\,
+      \frac{\partial y}{\partial u}(u_0,v_0)\,,\,
+      \frac{\partial z}{\partial u}(u_0,v_0)\Big)
+</me>
+It is the red arrow in the figure on the right above.
+</p>
+
+<p>Next fix <m>u=u_0</m> and let <m>v</m> vary. Then
+<me>
+v\mapsto \vr(u_0,v) = \big(x(u_0,v)\,,\,y(u_0,v)\,,\,z(u_0,v)\big)
+</me>
+is a curve on the surface (the blue curve in the figure on the right above)
+that passes through <m>(x_0,y_0,z_0)</m> when <m>v=v_0</m>.
+The tangent vector to this curve at  <m>(x_0,y_0,z_0)</m>,
+which is also a tangent vector to the surface at <m>(x_0,y_0,z_0)</m>,
+is
+<me>
+\vT_v = \frac{\partial\ }{\partial v}\vr(u_0,v)\Big|_{v=v_0}
+=\Big(\frac{\partial x}{\partial v}(u_0,v_0)\,,\,
+      \frac{\partial y}{\partial v}(u_0,v_0)\,,\,
+      \frac{\partial z}{\partial v}(u_0,v_0)\Big)
+</me>
+It is the blue arrow in the figure on the right above.
+</p>
+
+<p>We now have two vectors, namely <m>\vT_u</m> and <m>\vT_v</m>, that are tangent
+to the surface at <m>(x_0,y_0,z_0)</m>. So their cross product
+<md>
+<mrow>
+\vn = \vT_u\times\vT_v
+=\det\left|\begin{matrix}
+            \hi &amp;  \hj &amp; \hk \\
+            \frac{\partial x}{\partial u}(u_0,v_0) &amp;
+                     \frac{\partial y}{\partial u}(u_0,v_0) &amp;
+                     \frac{\partial z}{\partial u}(u_0,v_0) \\
+           \frac{\partial x}{\partial v}(u_0,v_0) &amp;
+                     \frac{\partial y}{\partial v}(u_0,v_0) &amp;
+                     \frac{\partial z}{\partial v}(u_0,v_0)
+           \end{matrix}\right|
+</mrow>
+</md>
+is normal (i.e. perpendicular) to the surface at <m>(x_0,y_0,z_0)</m>.
+Note however that this vector need not be normalized. That is, it need not
+be of unit length.
+</p>
+
+<p>(b)
+Next assume that the surface is given by the equation
+<m>z=f(x,y)</m>. Then, renaming <m>u</m> to <m>x</m> and <m>v</m> to <m>y</m>, we may reuse part (a):
+<me>
+\vr(x,y) = \big(x,y, f(x,y)\big)
+</me>
+parametrizes the surface and, at <m>\big(x_0,y_0,z_0=f(x_0,y_0)\big)</m>,
+<md>
+<mrow>
+\vT_x &amp;= \frac{\partial\vr }{\partial x}(x_0,y_0)
+=\big(1\,,\,
+      0\,,\,
+      f_x(x_0,y_0)\big)
+</mrow><mrow>
+\vT_y &amp;= \frac{\partial\vr }{\partial y}(x_0,y_0)
+=\big(0\,,\,
+      1\,,\,
+      f_y(x_0,y_0)\big)
+</mrow>
+</md>
+and
+<md>
+<mrow>
+\vn &amp;= \vT_x\times\vT_y
+=\det\left|\begin{matrix}
+            \hi &amp;  \hj &amp; \hk \\
+            1 &amp; 0 &amp; f_x(x_0,y_0) \\
+            0 &amp; 1 &amp; f_y(x_0,y_0)
+           \end{matrix}\right|
+=-f_x(x_0,y_0)\,\hi - f_y(x_0,y_0)\,\hj + \hk
+</mrow>
+</md>
+</p>
+
+<p> (c)
+Finally assume that the surface is given implicitly by the equation
+<m>G(x,y,z)=0</m> or, more generally by the equation, <m>G(x,y,z) = K</m>, where <m>K</m> is
+a constant. If <m>\vr(t)=\big(x(t)\,\,y(t)\,,\,z(t)\big)</m> is any curve
+with <m>\vr(0) = (x_0,y_0,z_0)</m> that lies on the surface, then
+<md alignment="alignat">
+<mrow>
+&amp; &amp; G\big(\vr(t)\big)&amp;=K &amp;\qquad &amp;\text{for all } t
+</mrow><mrow>
+&amp;\implies &amp; \diff{\ }{t} G\big(x(t),y(t),z(t)\big)&amp;=0 &amp; &amp;\text{for all } t
+</mrow>
+</md>
+Applying the chain rule gives
+<md>
+<mrow>
+\frac{\partial G}{\partial x}\big(x(t),y(t),z(t)\big)\diff{x}{t}(t)
++\frac{\partial G}{\partial y}\big(x(t),y(t),z(t)\big)\diff{y}{t}(t)
++\frac{\partial G}{\partial z}\big(x(t),y(t),z(t)\big)\diff{z}{t}(t)
+&amp;=0
+</mrow>
+</md>
+The left hand side is exactly the dot product
+of <m>\big(\frac{\partial G}{\partial x}
+\,,\,\frac{\partial G}{\partial y}
+\,,\,\frac{\partial G}{\partial z}\big)=\vnabla G</m>
+with
+<m>\big(\diff{x}{t}
+\,,\,\diff{y}{t}
+\,,\,\diff{z}{t}\big)
+=\diff{\vr}{t}</m>, so that
+<md>
+<mrow>
+\vnabla G\big(\vr(t)\big)\cdot\vr'(t)&amp;=0 \qquad
+          \text{for all } t
+</mrow><mrow>
+\implies  \vnabla G\big(x_0,y_0,z_0\big)\cdot\vr'(0)&amp;=0 &amp;
+</mrow>
+</md>
+This tell us that <m>\vnabla G\big(x_0,y_0,z_0\big)</m> is perpendicular
+to <m>\vr'(0)</m>, which is a tangent vector to <m>G=K</m> at <m>(x_0,y_0,z_0)</m>.
+This is true for all curves <m>\vr(t)</m> on <m>G=K</m> and so is true
+for all tangent vectors to <m>G=K</m> at <m>(x_0,y_0,z_0)</m>.
+So <m>\vnabla G\big(x_0,y_0,z_0\big)</m> is a normal vector to <m>G(x,y,z)=K</m>
+at <m>(x_0,y_0,z_0)</m>.
+</p>
+
+</proof>
+
+<example xml:id="eg_tangentPlaneA">
+<p>
+Consider the surface
+<md>
+<mrow>
+x &amp;= x(u,v) = u\cos v
+</mrow><mrow>
+y &amp;=y(u,v) = u\sin v
+</mrow><mrow>
+z &amp;=z(u,v) = u
+</mrow>
+</md>
+Observe that
+<me>
+x(u,v)^2 + y(u,v)^2 = u^2 = z(u,v)^2
+</me>
+So our surface is also
+<me>
+G(x,y,z) = x^2+y^2-z^2 = 0
+</me>
+We shall sketch it shortly. But first, let's find it's tangent plane
+at <m>(x_0,y_0,z_0)=\vr(u_0,v_0)</m>.
+In fact, let's do it twice. Once using the parametrization and once using its
+implicit equation. First, using the parametrization
+<m>\vr(u,v) = u\cos v\,\hi + u\sin v\,\hj + u\,\hk</m>, we have
+<md>
+<mrow>
+\vT_u &amp;= \frac{\partial\vr}{\partial u}(u_0,v_0)
+       =  \cos v_0\,\hi + \sin v_0\,\hj + \hk
+</mrow><mrow>
+\vT_v &amp;= \frac{\partial\vr}{\partial v}(u_0,v_0)
+       =  -u_0\sin v_0\,\hi + u_0\cos v_0\,\hj
+</mrow>
+</md>
+so that
+<md>
+<mrow>
+\vn &amp;= \big(\cos v_0\,\hi + \sin v_0\,\hj + \hk\big)\times
+      \big(-u_0\sin v_0\,\hi + u_0\cos v_0\,\hj\big)
+</mrow><mrow>
+    &amp;= \big(-u_0\cos v_0\,,\,-u_0\sin v_0\,,\, u_0)
+      = (-x_0,-y_0,z_0)
+</mrow>
+</md>
+Next using the implicit equation <m>G(x,y,z) = x^2+y^2-z^2=0</m>, we have
+the normal vector
+<me>
+\vnabla G\big(x_0,y_0,z_0\big) = (2x_0,2y_0,-2z_0) =-2(-x_0,-y_0,z_0)
+</me>
+Of course the two vectors <m>(-x_0,-y_0,z_0)</m> and <m>-2(-x_0,-y_0,z_0)</m>
+are parallel to each other. Either can be used as a normal vector and
+the tangent plane to <m>x^2+y^2-z^2=0</m> at <m>(x_0,y_0,z_0)</m> is
+<me>
+0=\vn\cdot(x-x_0,y-y_0,z-z_0)
+ = -x_0(x-x_0)-y_0(y-y_0) + z_0(z-z_0)
+</me>
+<em>provided</em> <m>(x_0,y_0,z_0)\ne \vZero</m>. In the event that
+<m>(x_0,y_0,z_0) = \vZero</m> the <q>tangent plane equation</q> reduces to <m>0=0</m>
+and there is clearly a problem.
+</p>
+
+<p>More generally, if
+<m>\vT_u\times\vT_v=\vZero</m> (or <m>\vnabla G(x_0,y_0,z_0)=\vZero</m>), then
+either
+<fn>We saw the same dichotomy when considering what happened
+for a curve when <m>\vr'(t)=0</m>. See Example <xref ref="eg_zeroSpeed"/>.
+</fn>
+<ul>
+<li>
+the surface fails to have a tangent plane at <m>(x_0,y_0,z_0)</m>, or
+</li>
+<li>
+our parametrization is screwy
+<fn>Of course <q>screwy</q> is not a mathematically precise word. One way a parametrization
+<m>\vr(u,v)</m> could be <q>screwy</q> is if it failed to give a
+one-to-one correspondence between parameter values <m>(u,v)</m> and points
+on (part of) the surface. For example, polar coordinates
+<m>\vr(u,v) = u\cos v\,\hi + u\sin v\,\hj</m> give <m>\vr(0,v)=(0,0)</m> for all
+values of <m>v</m>.
+</fn> there. For example, we can parametrize the
+<m>xy</m>-plane, <m>z=0</m>, by <m>\vr(u,v) = u\cos v\,\hi + u\sin v\,\hj</m>. (This is just
+polar coordinates.) Then
+<m>\vT_u =  \cos v_0\,\hi + \sin v_0\,\hj </m> and
+<m>\vT_v =  -u_0\sin v_0\,\hi + u_0\cos v_0\,\hj</m>, so that
+<m>\vT_u\times\vT_v = u_0\hk</m> is <m>\vZero</m> when <m>u_0=0</m>. But the plane <m>z=0</m>
+is its own tangent plane everywhere.
+</li>
+</ul>
+The surface of current interest is <m>x^2+y^2=z^2</m>. The intersection of
+this surface with the horizontal plane <m>z=z_0</m> is <m>x^2+y^2=z_0^2</m>, which is
+the circle of radius <m>|z_0|</m> centred on <m>x=y=0</m>. So our surface is a stack of
+circles. The radius of the circle in the <m>xy</m>-plane is zero. The radius
+increases linearly as we move away from the <m>xy</m>-plane. Our surface
+is a cone. It does not have a tangent plane at <m>(0,0,0)</m>.
+</p>
+
+<sidebyside>
+<image source="figs/cone"/>
+</sidebyside>
+
+</example>
+
+
+<example xml:id="eg_tangentPlaneB">
+<p>
+This time we shall find the tangent planes to the surface
+<me>
+x^2 + y^2 -z^2 = 1
+</me>
+As for the cone of the last example, the intersection of
+this surface with the horizontal plane <m>z=z_0</m> is a circle <mdash/>
+the circle of radius <m>\sqrt{1+z_0^2}</m>  centred on <m>x=y=0</m>.
+Our surface is again a stack of circles. The radius of the circle
+in the <m>xy</m>-plane is <m>1</m>. The radius increases as we move away from the <m>xy</m>-plane. Here is a sketch of the surface.
+</p>
+
+<sidebyside>
+<image source="figs/hyperboloid1"/>
+</sidebyside>
+
+<p>
+It is called a hyperboloid
+<fn>There are also hyperboloids of two sheets. See Appendix <xref ref="ap_quadric"/>.
+</fn> of one sheet.
+</p>
+
+<p>
+Using the implicit equation <m>G(x,y,z) = x^2+y^2-z^2=1</m>, we have
+<me>
+\vnabla G\big(x_0,y_0,z_0\big) = (2x_0,2y_0,-2z_0) =2(x_0,y_0,-z_0)
+</me>
+and we may take <m>(x_0,y_0,-z_0)</m> as a normal vector at <m>(x_0,y_0,z_0)</m>.
+So the tangent plane to <m>x^2+y^2-z^2=1</m> at <m>(x_0,y_0,z_0)</m> is
+<me>
+0=\vn\cdot(x-x_0,y-y_0,z-z_0)
+ = x_0(x-x_0)+y_0(y-y_0) - z_0(z-z_0)
+</me>
+This time <m>\vn=(x_0,y_0,-z_0)\ne \vZero</m>, so that we have a tangent plane, at
+every point of the surface. In particular, the vanishing of
+<m>\vn=(x_0,y_0,-z_0)</m> at <m>(x_0,y_0,z_0)=(0,0,0)</m> is not a problem because
+<m>(0,0,0)</m> is not on the surface.
+</p>
+
+</example>
+
+<example xml:id="eg_tangentPlaneBB">
+<title>Optional <mdash/> Parametrizing the Hyperboloid of One Sheet</title>
+
+
+<p>The hyperboloid of one sheet, <m>x^2+y^2-z^2=1</m>, has a symmetry. It is
+invariant under rotation about the <m>z</m>-axis.
+So it is natural to parametrize the surface using cylindrical coordinates.
+</p>
+
+<sidebyside width="45%">
+<p><md>
+<mrow>
+x &amp;= r\cos\theta
+</mrow><mrow>
+y &amp;= r\sin\theta
+</mrow><mrow>
+z &amp;= z
+</mrow>
+</md></p>
+<image source="figs/cylindrical"/>
+</sidebyside>
+
+<p>
+In cylindrical coordinates the surface <m>x^2+y^2-z^2=1</m> is <m>r^2-z^2=1</m>,
+and we could parametrize it by
+  <m>\vr(\theta,z) = \sqrt{1+z^2}\,\cos\theta\,\hi +\sqrt{1+z^2}\,\sin\theta\,\hj
+      +z\,\hk</m>. Alternatively, we can eliminate the square roots in the
+parametrization by exploiting the hyperbolic trig functions
+<me>
+\sinh u = \frac{1}{2}\big(e^u-e^{-u}\big) \qquad
+\cosh u = \frac{1}{2}\big(e^u+e^{-u}\big)
+</me>
+The functions have properties
+<fn>
+  This is no accident: <m>\cosh u = \cos(iu)</m> and <m>\sinh u = -i\sin(iu)</m>,
+  where <m>i</m> is the usual complex number that obeys <m>i^2=-1</m>.
+</fn> that are very
+similar to those of <m>\sin\theta</m> and <m>\cos\theta</m>.
+<md>
+<mrow>
+\diff{}{u} \cosh u= \sinh u \qquad
+\diff{}{u} \sinh u= \cosh u \qquad
+\cosh^2 u -\sinh^2 u =1
+</mrow>
+</md>
+We can set <m>r=\cosh u</m>, <m>z=\sinh u</m> to yield the parametrization
+<md>
+<mrow>
+\vr(\theta,u) = \cosh u\,\cos\theta\,\hi +\cosh u\,\sin\theta\,\hj
+      +\sinh u\,\hk
+</mrow>
+</md>
+As an exercise in working with hyperbolic trig functions, we'll use this
+parametrization to find <m>\hn</m>.
+<md>
+<mrow>
+x&amp;=  \cosh u\,\cos\theta &amp;
+x_u&amp;=  \sinh u\,\cos\theta &amp;
+x_\theta&amp;=  -\cosh u\,\sin\theta
+
+</mrow><mrow>
+
+y&amp;= \cosh u\,\sin\theta &amp;
+y_u&amp;= \sinh u\,\sin\theta &amp;
+y_\theta&amp;= \phantom{-}\cosh u\,\cos\theta
+
+</mrow><mrow>
+
+z&amp;=\sinh u &amp;
+z_u&amp;=\cosh u &amp;
+z_\theta&amp;=0
+</mrow>
+</md>
+So
+<md>
+<mrow>
+\vn = \vT_u\times\vT_\theta
+&amp;=\det\left|\begin{matrix}
+            \hi &amp;  \hj &amp; \hk
+            \\
+            \sinh u\,\cos\theta &amp;
+               \sinh u\,\sin\theta &amp;
+               \cosh u
+            \\
+           -\cosh u\,\sin\theta  &amp;
+            \cosh u\,\cos\theta &amp;
+             0
+           \end{matrix}\right|
+</mrow><mrow>
+&amp;=\big(-\cosh^2u\,\cos\theta\,,\,
+       -\cosh^2u\,\sin\theta\,,\,
+       \sinh u\cosh u\big)
+</mrow>
+</md>
+</p></example>
+
+
+<!-- <xi:include href="../problems/prob_s3.2.ptx" /> -->
+
+</section>
