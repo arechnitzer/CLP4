@@ -1,14 +1,739 @@
 <?xml version="1.0" encoding="UTF-8" ?>
-<section xmlns:xi="http://www.w3.org/2001/XInclude" xml:id="">
+<section xmlns:xi="http://www.w3.org/2001/XInclude" xml:id="sec_fluxIntegrals">
 
 <!-- Copyright 2018-2020 Joel Feldman, Andrew Rechnitzer and Elyse Yeager -->
 <!-- This work is licensed under the Creative Commons Attribution-NonCommercial-ShareAlike 4.0 International License-->
 <!-- https://creativecommons.org/licenses/by-nc-sa/4.0 -->
 
-<title></title>
+<title>Interpretation of Flux Integrals</title>
+
+<introduction>
+<p>We defined, in §<xref ref="sec_surfaceIntegrals"/>, two types of integrals
+over surfaces. We have seen, in §<xref ref="sec_rhodSexamples"/>, some
+applications that lead to integrals of the type
+<m>\dblInt_S \rho\,\dee{S}</m>. We now look at one application that leads
+to integrals of the type <m>\dblInt_S \vF\cdot\hn\,\dee{S}</m>. Recall
+that integrals of this type are called flux integrals. Imagine a fluid
+with
+<ul>
+<li>
+the density of the fluid (say in kilograms per cubic meter) at position
+<m>(x,y,z)</m> and time <m>t</m> being <m>\rho(x,y,z,t)</m> and with
+</li>
+<li>
+the velocity of the fluid  (say in meters per second) at position
+<m>(x,y,z)</m> and time <m>t</m> being <m>\vv(x,y,z,t)</m>.
+</li>
+</ul>
+We are going to determine the rate (say in kilograms per second)
+at which the fluid is flowing through a tiny piece <m>\dee{S}</m> of surface
+at <m>(x,y,z)</m>. During a tiny time interval of length <m>\dee{t}</m> about
+time <m>t</m>, fluid near <m>\dee{S}</m> moves <m>\vv(x,y,z,t)\dee{t}</m>. The green
+line in the figure below is a side view of <m>\dee{S}</m> and <m>\hn=\hn(x,y,z)</m> is a unit
+normal vector to <m>\dee{S}</m>.
+</p>
+
+<sidebyside>
+<image source="figs/fluxIntDeriv"/>
+</sidebyside>
+
+<p>
+So during that tiny time interval
+<ul>
+<li> the red line moves to the green line and
+</li>
+<li> the green line moves to the blue line so that
+</li>
+<li> the fluid filling the dark grey region below the green line
+crosses through <m>\dee{S}</m> and moves to light grey region above the green line.
+</li>
+</ul>
+If we denote by <m>\theta</m> the angle between <m>\hn</m> and <m>\vv\dee{t}</m>,
+<ul>
+<li>
+the volume of fluid that crosses through <m>\dee{S}</m> during the time
+interval <m>\dee{t}</m> is the volume  whose side view is the dark grey
+region below the green line. This region has base <m>\dee{S}</m> and
+height <m>|\vv\dee{t}|\cos\theta</m> and so has volume
+<me>
+|\vv(x,y,z,t)\dee{t}|\cos\theta\ \dee{S}
+   =\vv(x,y,z,t)\cdot\hn(x,y,z)\,\dee{t}\,\dee{S}
+</me>
+because <m>\hn(x,y,z)</m> has length one.
+</li>
+<li>
+ The mass of fluid that crosses <m>\dee{S}</m> during the time interval <m>\dee{t}</m>
+ is then
+<me>
+\rho(x,y,z,t)\vv(x,y,z,t)\cdot\hn(x,y,z)\,\dee{t}\,\dee{S}
+</me>
+</li>
+<li>
+and the rate at which fluid is crossing through <m>\dee{S}</m> is
+<me>
+\rho(x,y,z,t)\vv(x,y,z,t)\cdot\hn(x,y,z)\,\dee{S}
+</me>
+</li>
+</ul>
+Integrating <m>\dee{S}</m> over a surface <m>S</m>, we conclude that
+</p>
+
+<lemma xml:id="lem_fluxInterp">
+<statement><p>
+<md>
+<mrow>
+&amp;\text{The rate at which fluid is crossing through a surface $S$ is the flux integral}
+</mrow><mrow>
+&amp;\hskip1.2in
+\dblInt_S \rho(x,y,z,t)\vv(x,y,z,t)\cdot\hn(x,y,z)\,\dee{S}
+</mrow>
+</md>
+Here <m>\rho</m> is the density of the fluid, <m>\vv</m> is
+the velocity field of the fluid, and <m>\hn(x,y,z)</m> is a unit normal
+to <m>S</m> at <m>(x,y,z)</m>.
+If the flux integral is positive the fluid is crossing in the direction
+<m>\hn</m>. If it is negative the fluid is crossing opposite to the direction
+of<nbsp/><m>\hn</m>.
+</p></statement>
+</lemma>
+
+</introduction>
+
+<subsection xml:id="sec_fluxEexamples">
+  <title>Examples of Flux Integrals</title>
 
 
+<example xml:id="eg_fluxIntegralA"><title>Point Source</title>
+<p>
+In Example <xref ref="eg_ptSource"/>, we found that the vector field of
+a point source
+<fn>You can imagine that a very small pipe pumps water to
+the origin.</fn>
+ (in three dimensions) that creates <m>4\pi m</m> liters per second
+is
+<me>
+\vv(x,y,z) = \frac{m}{r(x,y,z)^2}\,\hat\vr(x,y,z)
+</me>
+where
+<me>
+r(x,y,z) = \sqrt{x^2+y^2+z^2}\qquad
+\hat\vr(x,y,z) = \frac{x\hi + y\hj + z\hk}{\sqrt{x^2+y^2+z^2}}
+</me>
+We sketched it in Figure <xref ref="fig_sourceField"/>.
+We'll now compute the flux of this vector field across a
+sphere centred on the origin. Suppose that the sphere has radius <m>R</m>.
+</p>
 
+<sidebyside>
+<image source="figs/sourceFlux"/>
+</sidebyside>
+
+<p>
+Then the outward
+<fn>It doesn't really matter which unit normal we pick here. We just have to be clear which one we're using. With the outward normal,
+the flux gives the rate at which fluid crosses the sphere in the outward
+direction. If we were to use the inward pointing normal, the flux
+would give the rate at which fluid crosses the sphere in the inward
+direction.
+</fn>
+ pointing Lemma <xref ref="lem_fluxInterp"/> normal at
+a point <m>(x,y,z)</m> on the sphere is
+<me>
+\hn(x,y,z) = \hat\vr(x,y,z) = \frac{x\hi + y\hj + z\hk}{\sqrt{x^2+y^2+z^2}}
+= \frac{x\hi + y\hj + z\hk}{R}
+</me>
+Note that <m>\hat\vr(x,y,z)\cdot \hat\vr(x,y,z)=1</m> and that, on the sphere,
+<m>r(x,y,z)=R</m>.
+So the flux of <m>\vv</m> outward through the sphere is
+<md>
+<mrow>
+ \dblInt_S\vv\cdot\hn\ \dee{S}
+&amp;= \dblInt_S \frac{m}{r(x,y,z)^2}\,\hat\vr(x,y,z) \cdot \hat\vr(x,y,z)\ \dee{S}
+
+</mrow><mrow>
+&amp;= \dblInt_S \frac{m}{R^2}\ \dee{S}
+=\frac{m}{R^2} 4\pi R^2
+
+</mrow><mrow>
+&amp;=4\pi m
+</mrow>
+</md>
+This is the rate at which fluid is exiting the sphere.
+In our derivation of the vector field we assumed that the fluid is
+incompressible, so it is also the rate at which the point source is
+creating fluid.
+</p>
+
+</example>
+
+<example xml:id="eg_fluxIntegralB"><title>Vortex</title>
+<p>
+In Figure <xref ref="fig_vortexField"/>, we sketched the vector field
+(in two dimensions)
+<me>
+\vv(x,y) = \Om\big(-y\hi +x\hj\big)
+</me>
+We'll now compute the flux of this vector field across a
+circle <m>C</m> centred on the origin. Suppose that the circle has radius <m>R</m>.
+</p>
+
+<sidebyside>
+<image source="figs/vortexFlux"/>
+</sidebyside>
+
+<p>
+By definition, in two dimensions, the flux of a vector field across a curve
+<m>C</m> is <m>\int_C\vv\cdot\hn\ \dee{s}</m>.
+</p>
+
+<p>This is the natural analog of the
+flux in three dimensions <mdash/> the surface <m>S</m> has been replaced by the
+curve <m>C</m>, and the surface area <m>\dee{S}</m> of a tiny piece of <m>S</m> has been
+replaced by the arc length <m>ds</m> of a tiny piece of <m>C</m>.
+</p>
+
+<p>The outward pointing unit normal at a point <m>(x,y)</m> on our circle <m>C</m> is
+<me>
+\hn(x,y) = \frac{x\hi + y\hj}{\sqrt{x^2+y^2}}
+= \frac{x\hi + y\hj}{R}
+</me>
+So
+<me>
+\vv(x,y)\cdot\hn(x,y)
+=\frac{\Om}{R}\big(-y\hi + x\hj\big)\cdot\big(x\hi + y\hj\big)
+=0
+</me>
+and the flux across <m>C</m> is
+<me>
+\int_C\vv\cdot\hn\ \dee{s}=0
+</me>
+This should not be a surprise <mdash/> no fluid is crossing <m>C</m> at all.
+This is exactly what we would expect from looking at the arrows in
+Figure <xref ref="fig_vortexField"/> or at the stream lines in Example
+<xref ref="eg_vortexStreamParallel"/>.
+</p></example>
+
+
+<example xml:id="eg_fluxIntegralC">
+<statement>
+<p>
+Evaluate
+<m>\ \dblInt_S\vF\cdot\hn\ dS\ </m> where
+<me>
+\vF(x,y,z) = (x+y)\,\hi + (y+z)\,\hj + (x+z)\,\hk
+</me>
+and <m>S</m> is the boundary of <m>V=\Set{(x,y,z)}{0\le x^2+y^2\le 9,\ 0\le z\le 5}</m>,
+and <m>\hn</m> is the outward normal
+<fn>It is necessary that the problem specify, one way or another, whether <m>\hn</m> is the inward pointing normal or the outward pointing normal. Without this, the meaning of
+<m>\ \dblInt_S\vF\cdot\hn\ dS\ </m> is ambiguous. Think about where the orientation of the normal vector gets used in your solution.</fn>
+ to <m>S</m>.
+</p>
+</statement>
+<solution>
+<p>
+The volume <m>V</m> looks like a tin can of radius <m>3</m> and height <m>5</m>.
+</p>
+
+<sidebyside>
+<image source="figs/cylinder1"/>
+</sidebyside>
+
+<p>
+It is natural to decompose its surface <m>S</m> into three parts
+<md>
+<mrow>
+S_t &amp;= \Set{(x,y,z)}{0\le x^2+y^2\le 9,\  z= 5} = \text{the top}
+</mrow><mrow>
+S_b &amp;= \Set{(x,y,z)}{0\le x^2+y^2\le 9,\  z= 0} = \text{the bottom}
+</mrow><mrow>
+S_s &amp;= \Set{(x,y,z)}{x^2+y^2 = 9,\  0\le z\le 5} = \text{the side}
+</mrow>
+</md>
+We'll compute the flux through each of the three parts separately and
+then add them together.
+</p>
+
+<p><em>The Top:</em> On the top, the outward pointing normal to
+<m>S</m> is <m>\hn=\hk</m> and <m>\dee{S} = \dee{x}\dee{y}</m>. This is probably
+intuitively obvious. But if it isn't, you can always derive it by parametrizing
+the top by <m>\vr(x,y) = x\,\hi +y\,\hj + 5\,\hk</m> with <m>x^2+y^2\le 9</m>.
+So the flux through the top is
+<md>
+<mrow>
+\dblInt_{S_t}\vF\cdot\hn\ \dee{S}
+&amp;= \dblInt_{\atp{x^2+y^2\le 9}{z=5}} (x+z)\ \dee{x}\dee{y}
+= \dblInt_{x^2+y^2\le 9} (x+5)\ \dee{x}\dee{y}
+</mrow>
+</md>
+The integral <m>\dblInt_{x^2+y^2\le 9} x\ \dee{x}\dee{y}=0</m> since <m>x</m>
+is odd and the domain of integration is symmetric about <m>x=0</m>.
+So
+<md>
+<mrow>
+\dblInt_{S_t}\vF\cdot\hn\ \dee{S}
+= \dblInt_{x^2+y^2\le 9} 5\ \dee{x}\dee{y}
+=5\pi(3)^2
+=45\pi
+</mrow>
+</md>
+</p>
+
+<p><em>The Bottom:</em> On the bottom, the outward pointing normal to
+<m>S</m> is <m>\hn=-\hk</m> and <m>\dee{S} = \dee{x}\dee{y}</m>.
+So the flux through the bottom is
+<md>
+<mrow>
+\dblInt_{S_b}\vF\cdot\hn\ \dee{S}
+&amp;= -\dblInt_{\atp{x^2+y^2\le 9}{z=0}} (x+z)\ \dee{x}\dee{y}
+= -\dblInt_{x^2+y^2\le 9} x\ \dee{x}\dee{y}
+=0
+</mrow>
+</md>
+again since <m>x</m> is odd and the domain of integration is symmetric about <m>x=0</m>.
+</p>
+
+<p><em>The Side:</em> We can parametrize the side by
+using cylindrical coordinates.
+<me>
+\vr(\theta,z) = \big(3\cos\theta\,,\,3\sin\theta\,,\,z\big)\qquad
+0\le\theta  \lt  2\pi,\ 0\le z\le 5
+</me>
+Then, using <xref ref="eq_SUdSparam"/>,
+</p>
+
+<sidebyside width="45%">
+<p><md>
+<mrow>
+\frac{\partial\vr}{\partial\theta}
+&amp;=(-3\sin\theta\,,\,3\cos\theta\,,\,0)
+</mrow><mrow>
+
+\frac{\partial\vr}{\partial z} &amp;=(0\,,\,0\,,\,1)
+</mrow><mrow>
+
+\hn\,\dee{S}&amp;=
+\frac{\partial\vr}{\partial\theta}
+\times\frac{\partial\vr}{\partial z}\ \dee{\theta}\,\dee{z}
+
+</mrow><mrow>
+&amp;=(3\cos\theta\,,\,3\sin\theta\,,\,0)\ \dee{\theta}\,\dee{z}
+</mrow>
+</md></p>
+<image source="figs/canTopView"/>
+</sidebyside>
+
+<p>
+Note that <m>\hn = (\cos\theta\,,\,\sin\theta\,,\,0)</m> is
+outward pointing
+<fn>To check, draw, in your head, a sketch of the top
+view of the can. <q>Top view</q> just means <q>ignore the <m>z</m>-coordinate</q>.
+The top view of the can is a circle of radius <m>3</m>. Then, at a generic point,
+<m>\vr=(\cos\theta,\sin\theta)</m>, on the can, draw the unit normal
+<m>\hn = (\cos\theta\,,\,\sin\theta)</m> with its tail at <m>\vr</m>. It is pointing
+away from the origin, just like <m>\vr</m> is. That is, <m>\hn</m> is pointing outward.</fn>
+,
+as desired.
+Continuing,
+<md>
+<mrow>
+\vF\big(x(\theta,z)\,,\,y(\theta,z)\,,\,z(\theta,z)\big)
+&amp;=3(\cos\theta+\sin\theta)\ \hi
+  +(3\sin\theta+z)\ \hj+(3\cos\theta+z)\ \hk
+</mrow><mrow>
+\vF\cdot\hn\,\dee{S}
+&amp;=\big\{9\cos^2\theta+3\sin\theta\cos\theta+9\sin^2\theta+3z\sin\theta\big\}\
+         \dee{\theta}\,\dee{z}
+</mrow><mrow>
+&amp;=\big\{9 +\frac{3}{2}\,\sin(2\theta)+3z\sin\theta\big\}\
+           \dee{\theta}\,\dee{z}
+</mrow>
+</md>
+ So the flux through the side is
+<md>
+<mrow>
+\dblInt_{S_s}\vF\cdot\hn\ \dee{S}
+&amp;=\int_0^{2\pi}\dee{\theta}\int_0^5\dee{z}\
+     \big\{9 +\frac{3}{2}\,\sin(2\theta)+3z\sin\theta\big\}
+</mrow><mrow>
+&amp;=9\int_0^{2\pi}\dee{\theta}\int_0^5\dee{z}
+\qquad\qquad\text{since }\int_0^{2\pi}\sin\theta\,\dee{\theta}
+                   =\int_0^{2\pi}\sin(2\theta)\,\dee{\theta}
+                   =0
+</mrow><mrow>
+&amp;=9\times 2\pi\times 5
+=90\pi
+</mrow>
+</md>
+and the total flux is
+<md>
+<mrow>
+\dblInt_{S}\vF\cdot\hn\ \dee{S}
+=\dblInt_{S_t}\vF\cdot\hn\ \dee{S}
+ +\dblInt_{S_b}\vF\cdot\hn\ \dee{S}
+ +\dblInt_{S_s}\vF\cdot\hn\ \dee{S}
+=45\pi+0+90\pi
+=135\pi
+</mrow>
+</md>
+</p>
+</solution>
+</example>
+
+
+<example xml:id="eg_fluxIntegralL">
+<statement>
+<p>
+Evaluate
+<m>\ \dblInt_S\vF\cdot\hn\ dS\ </m> where
+<m>\ \vF(x,y,z)=x^4\hi+2y^2\hj+z\hk,\ </m> <m>S</m> is the half of the surface
+<m>\ \frac{1}{4}x^2+\frac{1}{9}y^2+z^2=1\ </m> with <m>z\ge 0</m>, and <m>\hn</m> is the
+upward pointing unit normal.
+</p>
+
+<sidebyside>
+<image source="figs/ellipsoid"/>
+</sidebyside>
+</statement>
+
+
+<solution>
+<p>
+We start by parametrizing the surface,
+which is half of an ellipsoid. By way of motivation for the parametrization,
+recall that spherical coordinates, with <m>\rho=1</m>,  provide a natural way to
+parametrize the sphere <m>x^2+y^2+z^2=1</m>. Namely <m>x=\cos\theta\sin\varphi</m>,
+<m>y=\sin\theta\sin\varphi</m>, <m>z= \cos\varphi</m>. The reason that these spherical
+coordinates work is that the trig identity <m>\cos^2\alpha+\sin^2\alpha=1</m>
+implies
+<me>
+x^2+y^2 = \cos^2\theta\sin^2\varphi + \sin^2\theta\sin^2\varphi
+        =\sin^2\varphi
+</me>
+and then
+<me>
+\big(x^2+y^2\big) + z^2 = \sin^2\varphi +\cos^2\varphi = 1
+</me>
+The equation of our ellipsoid is
+<me>
+\Big(\frac{x}{2}\Big)^2 + \Big(\frac{y}{3}\Big)^2 + z^2 =1
+</me>
+so we can parametrize the ellipsoid by replacing <m>x</m> with <m>\frac{x}{2}</m>
+and <m>y</m> with <m>\frac{y}{3}</m> in our parametrization of the sphere.
+That is,  we choose the parametrization
+<md>
+<mrow>
+x(\theta,\varphi)&amp;=2\cos\theta\sin\varphi
+</mrow><mrow>
+y(\theta,\varphi)&amp;=3\sin\theta\sin\varphi
+</mrow><mrow>
+z(\theta,\varphi)&amp;=\cos\varphi
+</mrow>
+</md>
+with <m>(\theta,\varphi)</m> running over <m>0\le\theta\le 2\pi,\ 0\le\varphi\le\pi/2</m>.
+Note that
+<me>
+\frac{1}{4}x(\theta,\varphi)^2+\frac{1}{9}y(\theta,\varphi)^2
+   +z(\theta,\varphi)^2=1
+</me>
+as desired.
+</p>
+
+<p>Then, using <xref ref="eq_SUdSparam"/>,
+<md>
+<mrow>
+\Big(\frac{\partial x}{\partial\theta}\,,\,\frac{\partial y}{\partial\theta}
+             \,,\, \frac{\partial z}{\partial\theta}\Big)
+&amp;=(-2\sin\theta\sin\varphi\,,\,3\cos\theta\sin\varphi\,,\,0)
+</mrow><mrow>
+
+\Big(\frac{\partial x}{\partial\varphi}\,,\,\frac{\partial y}{\partial\varphi}\,,\,
+                     \frac{\partial z}{\partial\varphi}\Big)
+&amp;=(2\cos\theta\cos\varphi\,,\,3\sin\theta\cos\varphi\,,\,-\sin\varphi)
+</mrow><mrow>
+
+\hn\,\dee{S}&amp;=
+-\Big(\frac{\partial x}{\partial\theta}\,,\,\frac{\partial y}{\partial\theta}
+   \,,\, \frac{\partial z}{\partial\theta}\Big)
+\times\Big(\frac{\partial x}{\partial\varphi}\,,\,\frac{\partial y}{\partial\varphi}
+   \,,\,\frac{\partial z}{\partial\varphi}\Big)\ \dee{\theta} \dee{\varphi}
+</mrow><mrow>
+&amp;=-(-3\cos\theta\sin^2\varphi,-2\sin\theta\sin^2\varphi,-6\sin\varphi\cos\varphi)\dee{\theta} \dee{\varphi}
+</mrow>
+</md>
+The extra minus sign in <m>\hn\,\dee{S}</m> was put there to make the <m>z</m>
+component of <m>\hn</m> positive. (The problem specified that
+<m>\hn</m> is to be upward unit normal.)
+As
+<md>
+<mrow>
+\vF\big(x(\theta,\varphi)\,,\,y(\theta,\varphi)\,,\,z(\theta,\varphi)\big)
+&amp;=2^4\cos^4\theta\sin^4\varphi\ \hi
+  +2\times 3^2\sin^2\theta\sin^2\varphi\ \hj+\cos\varphi\ \hk
+</mrow>
+</md>
+we have
+<md>
+<mrow>
+\vF\cdot\hn\,\dee{S}
+&amp;=\Big[3\times 2^4\cos^5\theta\sin^6\varphi+2\times 2 \times 3^2
+\sin^3\theta\sin^4\varphi+6\sin\varphi\cos^2\varphi\Big]\,\dee{\theta}\,\dee{\varphi}
+</mrow>
+</md>
+and the desired integral
+<md>
+<mrow>
+ \dblInt_S\vF\cdot\hn\ \dee{S}
+&amp;=\int_0^{\frac{\pi}{2}}\dee{\varphi}\int_0^{2\pi}\dee{\theta}\
+\Big[3\times 2^4\cos^5\theta\sin^6\varphi+2\times 2\times 3^2
+\sin^3\theta\sin^4\varphi+6\sin\varphi\cos^2\varphi\Big]
+</mrow>
+</md>
+Since
+<m>\ \int_0^{2\pi} \cos^m\theta\,\dee{\theta}
+=\int_0^{2\pi} \sin^m\theta\,\dee{\theta}=0\ </m> for all
+odd
+<fn>Look at the graphs of <m>\cos^m\varphi</m> and
+<m>\sin^m\varphi</m>.</fn>
+ natural numbers <m>m</m>,
+<md>
+<mrow>
+\dblInt_S \vF\cdot\hn\, \dee{S}
+&amp;=\int_0^{\pi/2}\hskip-8pt \dee{\varphi}\int_0^{2\pi}\hskip-6pt\dee{\theta}\
+                  6\sin\varphi\cos^2\varphi
+=12\pi\int_0^{\pi/2}\hskip-8pt \dee{\varphi}\ \sin\varphi\cos^2\varphi
+=12\pi\Big[-\frac{1}{3}\cos^3\varphi\Big]_0^{\pi/2}
+</mrow><mrow>
+&amp;=4\pi
+</mrow>
+</md>
+The integral was evaluated by guessing (and checking) that
+<m>-\frac{1}{3}\cos^3\varphi</m> is an antiderivative of <m>\sin\varphi\cos^2\varphi</m>.
+It can also be done by substituting <m>u=\cos\varphi</m>,
+<m>\dee{u}=-\sin\varphi\,\dee{\varphi}</m>.
+</p>
+</solution>
+
+<solution>
+<p>
+  This time we'll parametrize the
+half-ellipsoid using a variant of cylindrical coordinates.
+<md>
+<mrow>
+x(r,\theta)&amp;=2r\cos\theta
+</mrow><mrow>
+y(r,\theta)&amp;=3r\sin\theta
+</mrow><mrow>
+z(r,\theta)&amp;=\sqrt{1-r^2}
+</mrow>
+</md>
+with <m>(r,\theta)</m> running over <m>0\le\theta\le 2\pi,\ 0\le r\le1</m>.
+Because we built the factors of <m>2</m> and <m>3</m> into <m>x(r,\theta)</m>
+and <m>y(r,\theta)</m>, we have
+<md>
+<mrow>
+&amp;\frac{x(r,\theta)^2}{4} + \frac{y(r,\theta)^2}{9}
+    =r^2\cos^2\theta+r^2\sin^2\theta = r^2
+</mrow><mrow>
+\implies  &amp;\frac{x(r,\theta)^2}{4} + \frac{y(r,\theta)^2}{9} +z(r,\theta)^2=1
+</mrow>
+</md>
+as desired. Further <m>z(r,\theta)\ge 0</m> by our choice of square root in the
+definition of <m>z(r,\theta)</m>.
+</p>
+
+<p>So, using <xref ref="eq_SUdSparam"/>,
+<md>
+<mrow>
+\Big(\frac{\partial x}{\partial \theta},\frac{\partial y}{\partial \theta},
+\frac{\partial z}{\partial \theta}\Big)
+&amp;=(-2r\sin\theta,3r\cos\theta,0)
+
+</mrow><mrow>
+\Big(\frac{\partial x}{\partial r},\frac{\partial y}{\partial r},
+\frac{\partial z}{\partial r}\Big)
+&amp;=\Big(2\cos\theta,3\sin\theta,-\frac{r}{\sqrt{1-r^2}}\Big)
+
+</mrow><mrow>
+\hn \dee{S}&amp;=
+-\Big(\frac{\partial x}{\partial\theta},\frac{\partial y}{\partial\theta},
+                 \frac{\partial z}{\partial\theta}\Big)
+\times\Big(\frac{\partial x}{\partial r},\frac{\partial y}{\partial r},
+            \frac{\partial z}{\partial r}\Big)dr\,\dee{\theta}
+</mrow><mrow>
+&amp;=-\Big(-\frac{3r^2\cos\theta}{\sqrt{1-r^2}},
+-\frac{2r^2\sin\theta}{\sqrt{1-r^2}},-6r\Big)\dee{r}\,\dee{\theta}
+</mrow>
+</md>
+Once again, the extra minus sign in <m>\hn \dee{S}</m> was put there to make
+the <m>z</m> component of <m>\hn</m> positive. Continuing,
+<md>
+<mrow>
+\vF\big(x(r,\theta)\,,\,y(r,\theta)\,,\,z(r,\theta)\big)
+ &amp;=2^4r^4\cos^4\theta\,\hi+2\times 3^2r^2\sin^2\theta\,\hj+\sqrt{1-r^2}\,\hk
+
+</mrow><mrow>
+\vF\cdot\hn\, \dee{S}&amp;=\Big[3\times2^4\frac{r^6}{\sqrt{1-r^2}}\cos^5\theta
++2^2 3^2\frac{r^4}{\sqrt{1-r^2}}
+\sin^3\theta+6r\sqrt{1-r^2}\Big]\,\dee{r}\,\dee{\theta}
+</mrow>
+</md>
+ Again using that
+<m>\ \int_0^{2\pi} \cos^m\theta\,\dee{\theta}
+  =\int_0^{2\pi} \sin^m\theta\,\dee{\theta}=0\ </m> for all
+odd natural numbers <m>m</m>,
+<md>
+<mrow>
+\int_S \vF\cdot\hn\, \dee{S}
+&amp;=\int_0^1 dr\int_0^{2\pi}\hskip-6pt\dee{\theta}\ 6r\sqrt{1-r^2}
+</mrow><mrow>
+&amp;=12\pi\int_0^1 dr\ r\sqrt{1-r^2}
+=12\pi\Big[-\frac{1}{3}(1-r^2)^{3/2}\Big]_0^1
+</mrow><mrow>
+&amp;=4\pi
+</mrow>
+</md>
+The integral was evaluated by guessing (and checking) that
+<m>-\frac{1}{3}(1-r^2)^{3/2}</m> is an antiderivative of <m>r\sqrt{1-r^2}</m>.
+It can also be done by substituting <m>u=1-r^2</m>,
+<m>\dee{u}=-2r\,\dee{r}</m>.
+</p>
+</solution>
+
+<solution>
+<p>
+The surface is of the form <m>G(x,y,z)=0</m> with
+<m>G(x,y,z)=\frac{1}{4}x^2+\frac{1}{9}y^2+z^2-1</m>. Hence, using
+ <xref ref="eq_SUdSimplicit"/>,
+<md>
+<mrow>
+\hn \dee{S}&amp;=\frac{\vnabla G}{\vnabla G\cdot\hk}\dee{x}\,\dee{y}
+=\frac{\frac{x}{2}\hi+\frac{2y}{9}\hj+2z\hk}{2z}\dee{x}\,\dee{y}
+=\Big(\frac{x}{4z}\hi+\frac{y}{9z}\hj+\hk\Big)\dee{x}\,\dee{y}\cr
+\implies \vF\cdot\hn\,\dee{S}
+&amp;=\Big(\frac{x^5}{4z}+\frac{2y^3}{9z}+z\Big)\dee{x}\,\dee{y}
+</mrow>
+</md>
+It is true that <m>\hn\dee{S}</m>, and consequently <m>\vF\cdot\hn\,\dee{S}</m>
+become infinite
+<fn>That's because the ellipsoid is becoming vertical as
+<m>z\rightarrow 0</m>, so that <m>x</m> and <m>y</m> are not really good parameters there.</fn>
+</p>
+
+<p>as <m>z\rightarrow 0</m>. So we should really treat the integral as
+an improper integral, first integrating over <m>z\ge \veps</m> and then taking the
+limit <m>\veps\rightarrow 0^+</m>. But, as we shall see, the singularity is
+harmless. So it is standard to gloss over this point.
+On <m>S</m>, <m>z=z(x,y)=\sqrt{1-\frac{x^2}{4}-\frac{y^2}{9}}</m>
+and <m>\frac{x^2}{4}+\frac{y^2}{9}\le 1</m>, so
+<md>
+<mrow>
+\int_S \vF\cdot\hn\, \dee{S}
+&amp;=\dblInt_{\frac{x^2}{4}+\frac{y^2}{9}\le 1}
+\Big(\frac{x^5}{4z(x,y)}+\frac{2y^3}{9z(x,y)}+z(x,y)\Big)\ \dee{x}\,\dee{y}
+</mrow>
+</md>
+Both <m>\frac{x^5}{4z(x,y)}</m> and <m>\frac{2y^3}{9z(x,y)}</m> are odd
+under <m>x\rightarrow-x,\ y\rightarrow -y</m> and the domain of integration
+is even under <m>x\rightarrow-x,\ y\rightarrow -y</m>, so their integrals are zero and
+<md>
+<mrow>
+\int_S \vF\cdot\hn\, \dee{S}
+&amp;=\dblInt_{\frac{x^2}{4}+\frac{y^2}{9}\le 1}z(x,y)\ \dee{x}\,\dee{y}
+</mrow><mrow>
+&amp;=\dblInt_{\frac{x^2}{4}+\frac{y^2}{9}\le 1}
+\sqrt{1-\frac{x^2}{4}-\frac{y^2}{9}}\ \dee{x}\,\dee{y}
+</mrow>
+</md>
+To evaluate this integral, first make the change of variables
+<fn>
+The reader interested in general changes of variables in multidimensional
+integrals should look up <q>Jacobian determinant</q>.</fn>
+</p>
+
+<p><m>x=2X</m>, <m>\dee{x}=2\dee{X}</m>, <m>y=3Y</m>, <m>\dee{y}=3\dee{Y}</m>
+to give
+<me>
+\int_S \vF\cdot\hn\, \dee{S}
+=\dblInt_{X^2+Y^2\le 1}
+\sqrt{1-X^2-Y^2}\ 6\,\dee{X}\,\dee{Y}
+</me>
+Then switch to polar coordinates, <m>X=r\cos\theta</m>, <m>Y=r\sin\theta</m>,
+<m>\dee{X}\dee{Y} = r\,\dee{r}\dee{\theta}</m> to give
+<!-- \intremark{
+To evaluate this integral, make the change of variables
+<me>
+x=2r\cos\theta\qquad y=3r\sin\theta
+</me>
+Then the domain of integration, <m>{\frac{x^2}{4}+\frac{y^2}{9}\le 1}</m>
+becomes <m>r^2\le 1</m>, the integrand <m>\sqrt{1-\frac{x^2}{4}-\frac{y^2}{9}}</m>
+becomes <m>\sqrt{1-r^2}</m> and <m>\,\dee{x}\,\dee{y}\,</m> becomes
+<md>
+<mrow>
+\left|\det\left[\begin{matrix}
+\frac{\partial x}{\partial r}&amp;\frac{\partial x}{\partial\theta}
+</mrow><mrow>
+\frac{\partial y}{\partial r}&amp;\frac{\partial y}{\partial\theta}
+\end{matrix}\right]\right|dr\,\dee{\theta}
+=\left|\det\left[\begin{matrix}
+2\cos\theta&amp;-2r\sin\theta
+</mrow><mrow>
+3\sin\theta&amp;3r\cos\theta
+\end{matrix}\right]\right|dr\,\dee{\theta}
+=6r\,dr\,\dee{\theta}
+</mrow>
+</md>
+} -->
+<md>
+<mrow>
+\int_S \vF\cdot\hn\, \dee{S}
+&amp;=\int_0^1 dr\int_0^{2\pi}\hskip-6pt\dee{\theta}\ 6r\sqrt{1-r^2}
+=12\pi\int_0^1 dr\ r\sqrt{1-r^2}
+=12\pi\Big[-\frac{1}{3}(1-r^2)^{3/2}\Big]_0^1
+</mrow><mrow>
+&amp;=4\pi
+</mrow>
+</md>
+</p>
+</solution>
+
+<solution>
+<p>
+  The surface is of the form <m>z=f(x,y)</m> with
+<m>f(x,y)=\sqrt{1-\frac{x^2}{4}-\frac{y^2}{9}}</m>. Hence, using
+<xref ref="eq_SUdSgraph"/>,
+<md>
+<mrow>
+\hn \dee{S}
+&amp;=\Big[-\frac{\partial f}{\partial x}\hi-\frac{\partial f}{\partial y}\hj
++\hk\Big]\,\dee{x}\,\dee{y}
+=\left[\frac{\frac{x}{4}\hi+\frac{y}{9}\hj}
+{\sqrt{1-\frac{x^2}{4}-\frac{y^2}{9}}}+\hk\right]\dee{x}\,\dee{y}\cr
+\implies
+\vF\cdot\hn\, \dee{S}&amp;=\left[\frac{\frac{x^5}{4}+\frac{2y^3}{9}}
+{\sqrt{1-\frac{x^2}{4}-\frac{y^2}{9}}}
++\sqrt{1-\frac{x^2}{4}-\frac{y^2}{9}}\right]\dee{x}\,\dee{y}
+</mrow>
+</md>
+Note that our unit normal is upward pointing, as required.
+As in Solution 3, by the oddness of the <m>x^5</m> and <m>y^3</m> terms in the integrand,
+<md>
+<mrow>
+\int_S \vF\cdot\hn\, \dee{S}
+&amp;=\dblInt_{\frac{x^2}{4}+\frac{y^2}{9}\le 1}
+     \left[\frac{\frac{x^5}{4}+\frac{2y^3}{9}}{\sqrt{\ \cdots\ }}
+    +\sqrt{1-\frac{x^2}{4}-\frac{y^2}{9}}\right]\dee{x}\,\dee{y}
+</mrow><mrow>
+&amp;=\dblInt_{\frac{x^2}{4}+\frac{y^2}{9}\le 1}
+             \sqrt{1-\frac{x^2}{4}-\frac{y^2}{9}}\ \dee{x}\,\dee{y}
+</mrow>
+</md>
+Now continue as in Solution 3.
+</p>
+</solution>
+</example>
+
+
+</subsection>
 
 <!-- <xi:include href="../problems/prob_s3.4.ptx" /> -->
 
