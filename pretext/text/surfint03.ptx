@@ -452,7 +452,7 @@ You probably know, from high school, that the answer is
 not seen a derivation of this answer.
 Note that, since <m>x^2+y^2 = a^2-z^2</m> on the hemisphere, the set
 of <m>(x,y)</m>'s for which there is a <m>z</m> with <m>(x,y,z)</m> on the  hemisphere
-is exactly <m>§et{(x,y)\in\bbbr^2}{x^2+y^2\le a^2}</m>.
+is exactly <m>\Set{(x,y)\in\bbbr^2}{x^2+y^2\le a^2}</m>.
 </p>
 
 <example xml:id="eg_SphereAreaCyl">
@@ -879,7 +879,6 @@ convert to polar coordinates.
 =\frac{\sqrt{2}}{32} \int_0^{2\pi}\dee{\theta}\ \sin^2(2\theta)
 </mrow><mrow>
 &amp;=\frac{\sqrt{2}}{64}  \int_0^{2\pi}\dee{\theta}\ \big[1-\cos(4\theta)\big]
-</mrow><mrow>
 </mrow>
 </md>
 Remembering
@@ -1091,7 +1090,6 @@ When <m>\varphi=0</m>, <m>u=(a-b)^2</m> and when <m>\varphi =\pi</m>, <m>u=(a+b)
       \Big(\frac{a^2-b^2}{2b}\Big)\frac{u^{-1/2}}{-1/2}
             -\frac{u^{1/2}}{1/2(2b)}
    \Big]_{(a-b)^2}^{(a+b)^2}
-</mrow><mrow>
 </mrow>
 </md>
 Recalling that <m>u^{1/2}</m> is the <em>positive</em> square root,
@@ -1225,7 +1223,7 @@ m\va = \vG +\vN
 </md>
 It is
 <me>
-m x'(t) = \vG\cdot\hi
+m x''(t) = \vG\cdot\hi
 </me>
 because the normal force <m>\vN</m> has no <m>\hi</m> component. Recall that
 Newton's law of gravity says that
@@ -1250,11 +1248,11 @@ M = \frac{4}{3}\pi |\vr|^3\rho
 </me>
 and
 <me>
-mx'(t) = -\frac{Gm}{|\vr|^3}\  \frac{4}{3}\pi |\vr|^3\rho\ \vr\cdot\hi
+mx''(t) = -\frac{Gm}{|\vr|^3}\  \frac{4}{3}\pi |\vr|^3\rho\ \vr\cdot\hi
 </me>
 so that
 <me>
-x'(t) + \frac{4\pi G\rho}{3} x(t) = 0
+x''(t) + \frac{4\pi G\rho}{3} x(t) = 0
 </me>
 This is exactly the differential equation of simple harmonic motion.
 We have seen it before in Example <xref ref="eg_vortexStreamEqual"/>.
