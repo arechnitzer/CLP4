@@ -1,0 +1,455 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<section xmlns:xi="http://www.w3.org/2001/XInclude" xml:id="sec_vfDefs">
+
+<!-- Copyright 2018-2020 Joel Feldman, Andrew Rechnitzer and Elyse Yeager -->
+<!-- This work is licensed under the Creative Commons Attribution-NonCommercial-ShareAlike 4.0 International License-->
+<!-- https://creativecommons.org/licenses/by-nc-sa/4.0 -->
+
+<title>Definitions and First Examples</title>
+
+
+<p>In the last chapter, we studied vector valued functions of a single variable,
+like, for example, the velocity <m>\vv(t)</m> of a particle at time <m>t</m>.
+Suppose however that we are interested in a fluid.
+There is a, possibly different, velocity at each point in the fluid.
+So the velocity of a fluid is really a vector valued function
+of several variables. Such a function is called a vector field.
+</p>
+
+<definition xml:id="def_vectorField">
+<statement><p>
+<ol label="a">
+<li>
+A vector field in the plane is a rule which assigns to each point <m>(x,y)</m>
+in a subset, <m>D</m>, of the <m>xy</m>-plane, a two component vector <m>\vv(x,y)</m>.
+</li>
+<li>
+A vector field in space is a rule which assigns to each point <m>(x,y,z)</m>
+in a subset of <m>\bbbr^3</m>, a three component vector <m>\vv(x,y,z)</m>.
+</li>
+</ol>
+</p></statement>
+</definition>
+
+
+<p>Here are two typical applications that naturally involve vector fields.
+<ul>
+<li>
+If <m>\vv(x,y,z)</m> is the velocity of a moving fluid at position <m>(x,y,z)</m>,
+then <m>\vv</m> is called a <term>velocity field</term>.
+</li>
+<li>
+If <m>\vF(x,y,z)</m> is the force at position <m>(x,y,z)</m>,
+then <m>\vF</m> is called
+<fn>No, force fields are not only a sci-fi trope. Gravity is an example of a force field.</fn>
+a <term>force field</term>.
+</li>
+</ul>
+</p>
+
+<example xml:id="eg_ptSource"><title>The Point Source</title>
+<p>
+Imagine
+<ul>
+<li>
+The whole world  is filled with an incompressible fluid. Call it water.
+</li>
+<li>
+Somehow you find a way to produce still more water at the origin. Say you
+create <m>4\pi m</m> litres per second.
+</li>
+<li> This forces the water to flow outward. Let's suppose that
+it flows symmetrically outward from the origin.
+</li>
+</ul>
+Let's find the resulting vector field <m>\vv(x,y,z)</m>. As the flow is to be
+symmetric, the velocity of the water at the point <m>(x,y,z)</m>
+<ul>
+<li>
+has to be pointing radially outward from the origin. That is, the
+direction of the velocity vector <m>\vv(x,y,z)</m> has to be the unit radial vector
+<me>
+\hat\vr(x,y,z) = \frac{x\hi + y\hj + z\hk}{\sqrt{x^2+y^2+z^2}}
+</me>
+</li>
+<li>
+The magnitude of the velocity, i.e. the speed <m>|\vv(x,y,z)|</m> of the water,
+has to depend only on the distance from the origin. That is, the
+speed can only be some function of
+<me>
+r(x,y,z) = \sqrt{x^2+y^2+z^2}
+</me>
+</li>
+</ul>
+Thus the velocity field is of the form
+<me>
+\vv(x,y,z) = v\big(r(x,y,z)\big)\,\hat\vr(x,y,z)
+</me>
+We just have to determine the function <m>v(r)</m>. Fix any <m>r \gt 0</m> and
+concentrate on the sphere <m>x^2+y^2+z^2=r^2</m>. It is sketched in red
+in the figure below.
+</p>
+
+<sidebyside>
+<image source="figs/waterField2"/>
+</sidebyside>
+
+<p>
+During a very short time interval <m>dt</m> seconds, <m>4\pi m\,dt</m> litres
+of water is created at the origin (which is the red dot). As the water
+is incompressible, <m>4\pi m\,dt</m> litres of water must exit through
+the sphere during the same time interval to make room for the newly
+created water.
+</p>
+
+<p>But, at the surface of the sphere the water is flowing radially outward
+with speed <m>v(r)</m>. So during the time interval in question the water near the surface of
+the sphere moves outward a distance <m>v(r)\,dt</m>, and in particular the water
+that was in the thin spherical shell
+<m>\ \ r-v(r)\,dt \le \sqrt{x^2+y^2+z^2} \le r\ \ </m> at the beginning of
+the time interval exits through the sphere <m>\sqrt{x^2+y^2+z^2} = r</m>
+during the time interval. The shell is sketched in gray in the figure
+above. The volume of water in the gray shell is essentially the surface
+area of the shell, which is <m>4\pi r^2</m>, times the thickness of the
+shell, which is <m>v(r)\,dt</m>. So, equating the volume of water created inside
+the sphere with the volume of water that exited the sphere,
+<me>
+4\pi m\,dt =  (4\pi r^2) \big(v(r)\,dt\big)
+\implies v(r) = \frac{4\pi m}{4\pi r^2} =\frac{m}{r^2}
+</me>
+Thus our vector field is
+<me>
+\vv(x,y,z) = \frac{m}{r(x,y,z)^2}\,\hat\vr(x,y,z)
+</me>
+If the world were two, rather than three dimensional
+<fn>You might want to think about what happens in <m>d</m> dimensions for general <m>d</m>.</fn>, and the source created <m>2\pi m</m> litres per second, the same argument leads to
+<me>
+2\pi m\,dt =  (2\pi r) \big(v(r)\,dt\big)
+\implies v(r) = \frac{2\pi m}{2\pi r} =\frac{m}{r}
+</me>
+and to the vector field
+<me>
+\vv(x,y) = \frac{m}{r(x,y)}\,\hat\vr(x,y)\qquad
+r(x,y) = \sqrt{x^2+y^2}\qquad
+\hat\vr(x,y) = \frac{x\hi + y\hj}{\sqrt{x^2+y^2}}
+</me>
+To get a mental image of what this field looks like, imagine
+sketching, for each point <m>(x,y)</m>, the vector
+<m>\frac{m}{r(x,y)}\,\hat\vr(x,y)</m> with its tail at
+<m>(x,y)</m>. Note that the vector  <m>\frac{m}{r(x,y)}\,\hat\vr(x,y)</m>
+<ul>
+<li>
+points radially outward and
+</li>
+<li><p>
+has length <m>\frac{m}{r(x,y)}</m> which
+<ul>
+<li>
+depends only on <m>r=|(x,y)|</m> and
+</li>
+<li>
+is very long when <m>(x,y)</m> is near the origin and
+</li>
+<li>
+decreases in length like <m>\frac{1}{r}</m> as <m>r=|(x,y)|</m> increases.
+</li>
+</ul></p>
+</li>
+</ul>
+Here is a sketch of a bunch of such vectors.
+</p>
+
+<figure xml:id="fig_sourceField">
+<caption></caption>
+<sidebyside>
+<image source="figs/waterField"/>
+</sidebyside>
+</figure>
+
+<p>Note that as <m>|(x,y)|\rightarrow 0</m>, the magnitude of the velocity
+<m>|\vv(x,y)|\rightarrow\infty</m>. This is a consequence of our idealized
+assumption that we are producing water at a single point (the origin).
+</p></example>
+
+<example xml:id="eg_Vortex"><title>The Vortex</title>
+<p>
+In this example, we sketch the vector field
+<me>
+\vv(x,y) = \Om\big(-y\hi +x\hj\big)
+</me>
+where <m>\Om</m> is just a strictly positive constant.
+We give an efficient procedure for getting a rough sketch, which still
+provides a pretty realistic picture of the vector field, and which also
+generalises to other vector fields.
+First concentrate
+on the horizontal component <m>\hi\cdot\vv(x,y)</m> of the vector field and
+determine in which part of the <m>xy</m>-plane it is zero, in which part
+it is positive and in which part it is negative.
+<me>
+\hi\cdot\vv(x,y)
+=-\Om y\ \
+\begin{cases}
+   =0 &amp;\text{if } y=0\\
+    \lt 0 &amp;\text{if } y \gt 0\\
+    \gt 0 &amp;\text{if } y \lt 0
+\end{cases}
+</me>
+Next repeat with the vertical component.
+<me>
+\hj\cdot\vv(x,y)
+= \Om x\ \
+\begin{cases}
+   =0 &amp;\text{if } x=0 \\
+    \lt 0 &amp;\text{if } x \lt 0 \\
+    \gt 0 &amp;\text{if } x \gt 0
+\end{cases}
+</me>
+This naturally divides the <m>xy</m>-plane into nine parts according to whether
+each of the components is positive, <m>0</m> or negative <mdash/>
+<ul>
+<li>
+<m>\hi\cdot\vv \gt 0</m> and <m>\hj\cdot\vv \gt 0</m>
+in <m>\big\{\ (x,y)\in\bbbr^2\ \big|\  y \lt 0,\ x \gt 0\ \big\}</m>
+</li>
+<li>
+<m>\hi\cdot\vv \gt 0</m> and <m>\hj\cdot\vv=0</m>
+in <m>\big\{\ (x,y)\in\bbbr^2\ \big|\  y \lt 0,\ x=0\ \big\}</m>
+</li>
+<li>
+<m>\hi\cdot\vv \gt 0</m> and <m>\hj\cdot\vv \lt 0</m>
+in <m>\big\{\ (x,y)\in\bbbr^2\ \big|\  y \lt 0,\ x \lt 0\ \big\}</m>
+</li>
+<li>
+<m>\hi\cdot\vv=0</m> and <m>\hj\cdot\vv \gt 0</m>
+in <m>\big\{\ (x,y)\in\bbbr^2\ \big|\  y=0,\ x \gt 0\ \big\}</m>
+</li>
+<li>
+and so on
+</li>
+</ul>
+Now think of <m>\vv(x,y)</m> as being the velocity at <m>(x,y)</m> of a flowing fluid.
+<ul>
+<li><p>
+Look at the first bullet point above. It says that in the first of the nine
+parts, namely <m>\big\{\ (x,y)\in\bbbr^2\ \big|\  y \lt 0,\ x \gt 0\ \big\}</m>,
+which is the fourth quadrant,
+the horizontal component  <m>\hi\cdot\vv \gt 0</m> signifying that the fluid is flowing
+rightwards. Indicate this in the sketch by drawing a rightward pointing
+horizontal arrow at some generic point in the middle of the fourth quadrant.
+(It's the blue arrow in the figure below.)
+The vertical component  <m>\hj\cdot\vv \gt 0</m> signifying that the fluid is
+also moving upwards. Indicate this in the sketch by drawing an upward
+pointing vertical arrow at the same generic point in the fourth quadrant.
+(It's the red arrow in the figure below.)
+</p>
+
+<sidebyside>
+<image source="figs/phaseVortex4"/>
+</sidebyside>
+
+</li>
+<li><p>
+Next, look at the second bullet point above. It says that on the second of the nine parts, namely <m>\big\{\ (x,y)\in\bbbr^2\ \big|\  y \lt 0,\ x=0\ \big\}</m>,
+which is the bottom half of the <m>y</m>-axis,
+the horizontal component  <m>\hi\cdot\vv \gt 0</m>, signifying that the fluid is moving
+rightwards. Indicate this in the sketch by drawing a rightward pointing
+horizontal arrow at some generic point in the middle of the bottom half
+of the <m>y</m>-axis. (It's the second blue arrow in the figure below.)
+The vertical component  <m>\hj\cdot\vv=0</m> signifying that the fluid has
+no vertical motion at all. Indicate this in the sketch by not drawing any
+vertical arrow on the bottom half of the <m>y</m>-axis.
+</p>
+
+<sidebyside>
+<image source="figs/phaseVortex5"/>
+</sidebyside>
+</li>
+<li>
+and so on
+</li>
+</ul>
+By the time we have looked at all nine regions we will have built up the
+following sketch.
+</p>
+
+<figure xml:id="fig_vortexCrude">
+  <caption></caption>
+<sidebyside>
+<image source="figs/phaseVortex1"/>
+</sidebyside>
+</figure>
+
+<p>
+From this sketch we see that, for example, in the first quadrant,
+the fluid is moving upwards and to the left. We also see that there is one
+point, namely <m>(0,0)</m>, where the vector field is exactly zero. It's the
+black dot in the centre of the figure above.
+Putting all of this
+accumulated wisdom together, and also noticing that <m>\vv(x,y)</m> is smaller
+when <m>(x,y)</m> is closer to the origin and <m>\vv(x,y)</m> is larger when
+<m>(x,y)</m> is farther from the origin, we come up with this better
+sketch of the vector field.
+</p>
+
+<figure xml:id="fig_vortexField">
+<caption></caption>
+<sidebyside>
+<image source="figs/vortexField"/>
+</sidebyside>
+</figure>
+
+<p>
+This shows the field swirling around the origin in a counterclockwise direction.
+Hence the name <q>vortex</q>.
+</p></example>
+
+<example xml:id="eg_Pendulum"><title>The Undamped Nonlinear Pendulum</title>
+<p>
+In this example, we illustrate another way in which  vector fields
+arise. Model a pendulum by a mass <m>m</m> that is connected to a hinge by
+an idealized rod that is massless
+<fn>While we are idealizing, let's put everything in a vacuum.</fn>
+ and of fixed length <m>\ell</m>. Denote by <m>\theta</m> the angle
+</p>
+
+<sidebyside>
+<image source="figs/pendulum3"/>
+</sidebyside>
+
+<p>
+between the rod and vertical. The forces acting on the mass are
+<ul>
+<li>
+gravity and
+</li>
+<li>
+the tension in the rod, whose magnitude, <m>\tau</m>, automatically adjusts
+itself so that the distance between the mass and the hinge is
+fixed at <m>\ell</m>.
+</li>
+</ul>
+In the optional
+<fn>In the optional Section <xref ref="sec_Pendulum"/> we also
+include frictional forces. In this example, we do not, so set the <m>\beta</m>
+of Section <xref ref="sec_Pendulum"/> to zero here.
+</fn>
+Section <xref ref="sec_Pendulum"/>,
+we show that the angle <m>\theta(t)</m> obeys the second order
+nonlinear
+<fn>It is common, when considering only small amplitude
+oscillations, to approximate <m>\sin\theta</m> by <m>\theta</m>. This converts our
+nonlinear differential equation into a linear differential equation.
+</fn>
+differential equation
+<me>
+\difftwo{\theta}{t} +\frac{g}{\ell}\sin\theta=0
+</me>
+It is often much more convenient to deal with first order, rather than
+second order, differential equations.
+The second order pendulum equation above may be
+reformulated
+<fn>This <q>hack</q> generalizes easily and is
+commonly used when generating, by computer, approximate solutions to higher order ordinary differential equations.
+</fn>
+as a system of first order ordinary differential equations, by the
+simple expedient of defining
+<me>
+x(t)=\theta(t)\qquad y(t)=\theta'(t)
+</me>
+So <m>x(t)</m> is the angle at time <m>t</m> and <m>y(t)</m> is the angular velocity at time <m>t</m>. Then,
+<md alignment="alignat">
+<mrow>
+x'(t)&amp;=&amp;\theta'(t)&amp;=y(t)\cr
+y'(t)&amp;=&amp;\ \theta'(t)&amp;=-\frac{g}{\ell}\sin x(t)
+</mrow>
+</md>
+Usually, one does not write in the <m>(t)</m> dependence explicitly.
+<md>
+<mrow>
+x'&amp;=y
+</mrow><mrow>
+y'&amp;=-\frac{g}{\ell}\sin x
+</mrow>
+</md>
+The right hand sides form the vector field
+<me>
+\vv\big((x,y)\big)=\Big(y\,,\,-\frac{g}{\ell}\sin x\Big)
+</me>
+We can sketch this vector field, just as we sketched the vector field
+of Example <xref ref="eg_Vortex"/>. Noting that the horizontal component
+<me>
+\hi\cdot\vv(x,y)
+= y\ \
+\begin{cases}
+   =0 &amp;\text{if } y=0 \\
+    \gt 0 &amp;\text{if } y \gt 0 \\
+    \lt 0 &amp;\text{if } y \lt 0
+\end{cases}
+</me>
+and the vertical component.
+<me>
+\hj\cdot\vv(x,y)
+= -\frac{g}{\ell}\sin x\ \
+\begin{cases}
+   =0 &amp;\text{if } x=0,\ \pm\pi, \pm2\pi, \cdots \\
+    \gt 0 &amp;\text{if } -\pi \lt x \lt 0,\ \  \pi \lt x \lt 2\pi,\text{ etc.}\\
+    \lt 0 &amp;\text{if } 0 \lt x \lt \pi, \ \ 2\pi \lt x \lt 3\pi,\text{ etc.}
+\end{cases}
+</me>
+we have
+<ul>
+<li>
+rightward motion
+<fn>Note that this is rightward motion of the point <m>(x,y)</m>, not of the pendulum itself.</fn>
+ when <m>y \gt 0</m>
+</li>
+<li>
+leftward motion when <m>y \lt 0</m>
+</li>
+<li>
+downward motion when <m>0 \lt x \lt \pi</m>,  <m>2\pi \lt x \lt 3\pi</m>, <m>\cdots</m> and
+</li>
+<li>
+upward motion when <m>-\pi \lt x \lt 0</m>,  <m>\pi \lt x \lt 2\pi</m>, <m>\cdots</m>.
+</li>
+</ul>
+This gives us the collection of arrows in the figure
+</p>
+
+<sidebyside>
+<image source="figs/phasePendulum1"/>
+</sidebyside>
+
+<p>
+Our full sketch will be less cluttered if we make all arrows the
+same length. This gives
+</p>
+
+<sidebyside>
+<image source="figs/pendulumField2"/>
+</sidebyside>
+
+<p>
+which is a sketch of what is called the direction field of our vector field
+(see below).
+</p>
+
+<p>In the next section, we'll learn how to use vector field sketches to sketch solution trajectories.
+</p></example>
+
+<definition xml:id="def_VFdirnFld">
+<statement><p>
+The direction field of a vector field <m>\vv(x,y,z)</m> is the vector field
+<me>
+\vV(x,y,z) =\begin{cases}
+   \frac{\vv(x,y,z)}{|\vv(x,y,z)|} &amp;\text{if } \vv(x,y,z)\ne\vZero \\
+     \vZero &amp; \text{if } \vv(x,y,z) = \vZero
+\end{cases}
+</me>
+</p></statement>
+</definition>
+
+
+<!-- <xi:include href="../problems/prob_s2.1.ptx" /> -->
+
+</section>
