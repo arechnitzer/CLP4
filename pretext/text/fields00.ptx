@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<chapter xmlns:xi="http://www.w3.org/2001/XInclude" xml:id="chap_vector_fields">
+<!-- Copyright 2018-2020 Joel Feldman, Andrew Rechnitzer and Elyse Yeager -->
+<!-- This work is licensed under the Creative Commons Attribution-NonCommercial-ShareAlike 4.0 International License-->
+<!-- https://creativecommons.org/licenses/by-nc-sa/4.0 -->
+<title>Vector Fields</title>
+
+<xi:include href="./fields01.ptx" />
+<xi:include href="./fields02.ptx" />
+<xi:include href="./fields03.ptx" />
+<xi:include href="./fields04.ptx" />
+<xi:include href="./fields05.ptx" />
+
+</chapter>

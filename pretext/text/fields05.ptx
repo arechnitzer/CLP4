@@ -1,0 +1,122 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<section xmlns:xi="http://www.w3.org/2001/XInclude" xml:id="sec_Pendulum">
+
+<!-- Copyright 2018-2020 Joel Feldman, Andrew Rechnitzer and Elyse Yeager -->
+<!-- This work is licensed under the Creative Commons Attribution-NonCommercial-ShareAlike 4.0 International License-->
+<!-- https://creativecommons.org/licenses/by-nc-sa/4.0 -->
+
+<title>Optional <mdash/> The Pendulum</title>
+
+<p>Model a pendulum by a mass <m>m</m> that is connected to a hinge by
+an idealized rod that is massless and of fixed length <m>\ell</m>. Denote
+by <m>\theta</m> the angle
+</p>
+
+<sidebyside>
+<image source="figs/pendulum2"/>
+<image source="figs/pendulum4"/>
+</sidebyside>
+
+<p>
+between the rod and vertical. The forces acting on the mass are
+<ul>
+<li>
+gravity, which has magnitude <m>mg</m> and direction <m>(0,-1)</m>,
+</li>
+<li>
+tension in the rod, whose magnitude, <m>\tau</m>, automatically adjusts
+itself so that the distance between the mass and the hinge is
+fixed at <m>\ell</m> and whose direction,
+<m>(-\sin\theta,\cos\theta)</m>, is always parallel to the rod and
+</li>
+<li>
+possibly some frictional forces, like friction in the hinge and
+air resistance. We shall assume that the total frictional force
+has magnitude proportional to the speed
+<fn>The dependence of air resistance (drag) on the speed <m>v</m> is relatively complex. At low speed drag tends to be approximately proportional to <m>v</m>, while at high speed
+it tends to be approximately proportional to <m>v^2</m>.</fn>
+of the mass and has direction opposite to the direction of motion of the mass.
+</li>
+</ul>
+If we use a coordinate system centered on the hinge, the <m>(x,y)</m>
+coordinates of the mass at time <m>t</m> are
+<m>\ell\big(\sin\theta(t),-\cos\theta(t)\big)</m>.
+Hence its  velocity vector is
+<me>
+\vv(t)
+ = \diff{\ }{t}\big[\ell\big(\sin\theta(t),-\cos\theta(t)\big) \big]
+  = \ell\big(\cos\theta(t),\sin\theta(t)\big)\diff{\theta}{t}(t)
+</me>
+and the  total frictional force is
+<m>-\be \ell(\cos\theta,\sin\theta)\diff{\theta}{t}</m>,
+for some constant <m>\be</m>.
+The acceleration vector of the mass is
+<me>
+\va(t)=\diff{\ }{t}\vv(t)
+=\ell(\cos\theta,\sin\theta)\difftwo{\theta}{t}
++\ell(-\sin\theta,\cos\theta)\Big(\diff{\theta}{t}\Big)^2
+</me>
+so that Newton's law of motion, <m>\vF=m\va</m>,  now tells us
+<md>
+<mrow>
+m\va(t) &amp;= m\ell(\cos\theta,\sin\theta)\difftwo{\theta}{t}
++m\ell(-\sin\theta,\cos\theta)\Big(\diff{\theta}{t}\Big)^2
+</mrow><mrow>
+&amp;=\vF=mg(0,-1)+\tau (-\sin\theta,\cos\theta)
+-\be \ell(\cos\theta,\sin\theta)\diff{\theta}{t}
+</mrow>
+</md>
+To eliminate the (unknown) coefficient <m>\tau</m> we dot this equation with
+<m>(\cos\theta,\sin\theta)</m>, which extracts
+the component parallel to the direction of motion of the
+mass. Dotting with <m>(\cos\theta,\sin\theta)</m> gives
+<m>\
+m\ell\difftwo{\theta}{t}=-mg\sin\theta-\be \ell\diff{\theta}{t}
+\ </m>
+or
+<me>
+\difftwo{\theta}{t}+\frac{\be}{m}\diff{\theta}{t}
+              +\frac{g}{\ell}\sin\theta=0
+</me>
+which is the equation of motion of the (nonlinear) pendulum.
+In general, it can be hard to analyse nonlinear differential
+equations. But if the amplitude of oscillation is small enough
+that we may approximate
+<m>\sin\theta</m> by <m>\theta</m> we get the equation of motion
+of the linear pendulum
+<fn>When <m>\be=0</m>, this equation reduces to the equation <m>\difftwo{\theta}{t}+\frac{g}{\ell}\theta=0</m>, which occurs
+in many different applications, and whose solutions exhibit simple
+harmonic motion.</fn> which is
+<md>
+<mrow>
+\difftwo{\theta}{t}+\frac{\be}{m}\diff{\theta}{t}
++\frac{g}{\ell}\theta=0
+</mrow>
+</md>
+These equations may be reformulated as systems of first order
+ordinary differential equation, that is as equations for the
+flow lines of a vector field, by the simple expedient of
+defining (as we did in Example <xref ref="eg_Pendulum"/>)
+<me>
+x(t)=\theta(t)\qquad y(t)=\theta'(t)
+</me>
+Then, for the full, nonlinear, equation
+<m> \difftwo{\theta}{t}+\frac{\be}{m}\diff{\theta}{t}
++\frac{g}{\ell}\sin\theta=0</m>
+<md alignment="alignat">
+<mrow>
+x'(t)&amp;=&amp;\theta'(t)&amp;=y(t)\cr
+y'(t)&amp;=&amp;\ \theta'(t)&amp;=-\frac{g}{\ell}\sin x(t)-\frac{\be}{m} y(t)
+</mrow>
+</md>
+The solutions of this first order system of ordinary differential equations
+are flow lines for the vector field
+<me>
+\vV\big((x,y)\big)=\Big(y\,,\,-\frac{g}{\ell}\sin x-\frac{\be}{m} y\Big)
+</me>
+When <m>\be=0</m>, this is exactly the vector field of Example <xref ref="eg_Pendulum"/>.
+</p>
+
+<!-- <xi:include href="../problems/prob_s2.5.ptx" /> -->
+
+</section>

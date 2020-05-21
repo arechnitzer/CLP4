@@ -1,0 +1,823 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<section xmlns:xi="http://www.w3.org/2001/XInclude" xml:id="sec_conservativeFields">
+
+<!-- Copyright 2018-2020 Joel Feldman, Andrew Rechnitzer and Elyse Yeager -->
+<!-- This work is licensed under the Creative Commons Attribution-NonCommercial-ShareAlike 4.0 International License-->
+<!-- https://creativecommons.org/licenses/by-nc-sa/4.0 -->
+
+<title>Conservative Vector Fields</title>
+
+<p>Not all vector fields are created equal. In particular, some vector
+fields are easier to work with than others. One important class
+of vector fields that are relatively easy to work with, at least sometimes,
+but that still arise in many applications are <q>conservative vector fields</q>.
+</p>
+
+<definition xml:id="def_conservative">
+<statement><p>
+<ol label="a">
+<li>
+The vector field <m>\vF</m> is said to be <term>conservative</term> if there
+exists a function <m>\varphi</m> such that <m>\vF = \vnabla\varphi</m>. Then
+<m>\varphi</m> is called a <term>potential</term> for <m>\vF</m>. Note that if <m>\varphi</m>
+is a potential for <m>\vF</m> and if <m>C</m> is a constant, then <m>\varphi+C</m>
+is also a potential for <m>\vF</m>.
+</li>
+<li> If <m>\vF=\vnabla\varphi</m> is a conservative field with potential
+<m>\varphi</m> and if <m>C</m> is a constant, then the set of points that
+obey <m>\varphi(x,y,z)=C</m> is called an equipotential surface.
+Similarly, in two dimensions, the set of points that
+obey <m>\varphi(x,y)=C</m> is called an equipotential curve.
+</li>
+</ol>
+</p></statement>
+</definition>
+
+<warning xml:id="warn_potential">
+<p>
+In physics,  when a vector field is of the form <m>\vF=-\vnabla\varphi</m>,
+then <m>\varphi</m> is called a potential for <m>\vF</m>.
+<em>Note</em> the minus
+<fn>Physicists introduce this minus sign in order to eliminate the minus sign in the next footnote.
+</fn>
+sign in
+<m>\vF=\underset{\uparrow}{-}\vnabla\varphi</m>.
+</p>
+</warning>
+
+<example xml:id="eg_potentialEnergy"><title>Potential energy</title>
+<p>
+The <q>conservative</q> in <q>conservative vector field</q> has nothing
+to do with politics. It comes from <q>conservation of energy</q>.
+Here is how. Suppose that you have a particle of mass <m>m</m> moving in
+a force field <m>\vF</m> that happens to be of the form <m>\vF=\vnabla\varphi</m>
+for some function <m>\varphi</m>.
+If the position of the particle a time <m>t</m> is <m>\big(x(t),y(t),z(t)\big)</m>,
+then, by Newton's law of motion,
+<md alignment="alignat">
+<mrow>
+ m\va = \vF \qquad
+&amp;\implies &amp; m\diff{\vv}{t}(t) &amp;= \vF\big(x(t),y(t),z(t)\big)
+</mrow><mrow>
+&amp;\implies &amp; m\diff{\vv}{t}(t) &amp;= \vnabla\varphi\big(x(t),y(t),z(t)\big)
+</mrow><mrow>
+</mrow>
+<intertext>Now dot both sides with <m>\vv(t)</m>.</intertext><mrow>
+&amp;\implies &amp; m\,\vv(t)\cdot\diff{\vv}{t}(t) &amp;= \vv(t)\cdot\vnabla\varphi\big(x(t),y(t),z(t)\big)
+</mrow><mrow>
+&amp; &amp; &amp;=x'(t)\frac{\partial\varphi}{\partial x}\big(x(t),y(t),z(t)\big)
++y'(t)\frac{\partial\varphi}{\partial y}\big(x(t),y(t),z(t)\big)
+</mrow><mrow>
+&amp; &amp; &amp; \hskip1in
++z'(t)\frac{\partial\varphi}{\partial z}\big(x(t),y(t),z(t)\big)
+</mrow><mrow>
+</mrow>
+<intertext>Next use <m>\diff{}{t}\vv\cdot\vv=2\vv\cdot\diff{\vv}{t}</m>
+on the left hand side and the chain rule on the right hand side.</intertext>
+<mrow>
+&amp;\implies &amp;\ \ \diff{\ }{t}\Big(\frac{1}{2} m \vv(t)\cdot\vv(t)\Big)
+    &amp;= \diff{\ }{t}\Big(\varphi\big(x(t),y(t),z(t)\big)\Big)
+</mrow><mrow>
+&amp;\implies &amp;  &amp;\hskip-1.3in\diff{\ }{t}\Big(\frac{1}{2} m \vv(t)\cdot\vv(t)
+    -\varphi\big(x(t),y(t),z(t)\big)\Big) =0
+</mrow><mrow>
+&amp;\implies &amp;  &amp;\hskip-1.0in\frac{1}{2} m |\vv(t)|^2
+    -\varphi\big(x(t),y(t),z(t)\big) = \text{const}
+</mrow>
+</md>
+So <m>\frac{1}{2} m |\vv(t)|^2
+    -\varphi\big(x(t),y(t),z(t)\big)</m>, which is called the
+energy
+<fn><m>\frac{1}{2} m |\vv(t)|^2</m> is the kinetic energy and
+<m>-\varphi</m> is the potential energy. See Warning <xref ref="warn_potential"/>.</fn>  of the
+particle at time <m>t</m>, does not actually depend on time <mdash/> it is conserved.
+Let's call the initial energy <m>E</m>. That is,
+<m>E=\frac{1}{2} m |\vv(0)|^2 -\varphi\big(x(0),y(0),z(0)\big)</m>.
+Then <m>\frac{1}{2} m |\vv(t)|^2 -\varphi\big(x(t),y(t),z(t)\big)=E</m>
+for all <m>t</m> and, in particular
+<me>
+\varphi\big(x(t),y(t),z(t)\big) = \frac{1}{2} m |\vv(t)|^2 -E \ge -E
+</me>
+So even without having to find <m>\big(x(t)\,,\,y(t)\,,\,z(t)\big)</m>,
+we know that our particle can never escape the region
+<m>\Set{(x,y,z)}{\varphi(x,y,z)\ge -E}</m>.
+</p></example>
+
+<example xml:id="eg_gravity"><title>Gravity</title>
+<p>
+The gravitational force that a body of mass <m>M</m> at the origin
+exerts on a body of mass <m>m</m> at <m>\vr=(x,y,z)</m> is
+<me>
+\vF(\vr) = -\frac{GMm}{r^3}\vr
+</me>
+where <m>r=|\vr|=\sqrt{x^2+y^2+z^2}</m> and <m>G</m> is the gravitational constant.
+This force is conservative, with potential <m>\varphi(\vr) = \frac{GMm}{r}</m>.
+To verify that this is correct, observe that
+<md alignment="alignat">
+<mrow>
+\frac{\partial\ }{\partial x}\varphi(\vr)
+   &amp;=\frac{\partial\ }{\partial x}\frac{GMm}{\sqrt{x^2+y^2+z^2}}
+   &amp;=-\frac{1}{2}\frac{GMm(2x)}{[x^2+y^2+z^2]^{3/2}}
+   &amp;=-\frac{GMm}{r^3}x
+</mrow><mrow>
+\frac{\partial\ }{\partial y}\varphi(\vr)
+   &amp;=\frac{\partial\ }{\partial y}\frac{GMm}{\sqrt{x^2+y^2+z^2}}
+   &amp;=-\frac{1}{2}\frac{GMm(2y)}{[x^2+y^2+z^2]^{3/2}}
+   &amp;=-\frac{GMm}{r^3}y
+</mrow><mrow>
+\frac{\partial\ }{\partial z}\varphi(\vr)
+   &amp;=\frac{\partial\ }{\partial z}\frac{GMm}{\sqrt{x^2+y^2+z^2}}
+   &amp;=-\frac{1}{2}\frac{GMm(2z)}{[x^2+y^2+z^2]^{3/2}}
+   &amp;=-\frac{GMm}{r^3}z
+</mrow>
+</md>
+</p></example>
+
+<p>We have already found conservation of energy very helpful
+a couple of times in Section <xref ref="sec_Sliding"/> (Sliding on a Curve).
+So, at this point, there are probably several questions gnawing away at you.
+<ul>
+<li>
+Is every vector field conservative?
+</li>
+<li>
+If not, is there an easy way to tell whether or not a vector field
+is conservative?
+</li>
+<li>
+If we know that a given vector field is conservative, how do find a potential
+for it?
+</li>
+</ul>
+Have no fear. We will consider those questions in some detail shortly.
+But first, a couple of more examples.
+</p>
+
+<example xml:id="eg_fieldlinesPotential">
+<p>
+In this example we will show that the vector field <m>\vF(x,y) = x\,\hi-y\,\hj</m>
+is conservative and find both its potential and its field lines.
+<ol label="a">
+<li> <em>The potential:</em> Our vector field <m>\vF(x,y) = x\,\hi-y\,\hj</m>
+is conservative if we can find a <m>\varphi</m> obeying
+<md>
+<mrow>
+\frac{\partial \varphi}{\partial x}(x,y) &amp;= x
+</mrow><mrow>
+\frac{\partial \varphi}{\partial y}(x,y) &amp;= -y
+</mrow>
+</md>
+Recall that, when taking the partial derivative <m>\frac{\partial\ }{\partial x}</m>
+the coordinate <m>y</m> is viewed as a constant. So the first of these equations
+is satisfied if and only if there is a <m>\psi(y)</m>, which does not depend on <m>x</m>,
+so that
+<me>
+\varphi(x,y) = \frac{x^2}{2} +\psi(y)
+</me>
+For this to also satisfy the second equation, we need
+<md>
+<mrow>
+-y=\frac{\partial \varphi}{\partial y}(x,y)
+=\frac{\partial\ }{\partial y}\Big(\frac{x^2}{2} +\psi(y)\Big)
+=\psi'(y)
+</mrow>
+</md>
+which is the case if and only if there is a constant <m>C</m> with
+<me>
+\psi(y) =-\frac{y^2}{2} +C
+</me>
+So, for any choice of the constant <m>C</m>,
+<me>
+\frac{x^2}{2} - \frac{y^2}{2} +C
+</me>
+is a potential. In particular, taking <m>C=0</m>, one possible potential is
+<me>
+\varphi(x,y) = \frac{x^2}{2} - \frac{y^2}{2}
+</me>
+Some equipotential curves for this potential are sketched in (c) below.
+They are the blue curves.
+</li>
+<li>
+<em>The field lines (Optional):</em>
+Recalling <xref ref="eq_VFstreamLineB"/>,
+the field lines of the vector field <m>\vF(x,y) = x\,\hi-y\,\hj</m>
+are determined by
+<md>
+<mrow>
+\frac{\dee{x}}{x} = \frac{\dee y}{-y}
+&amp;\iff -y\dee x = x\dee{y}
+</mrow><mrow>
+&amp;\iff x\dee{y} + y\dee x = 0
+</mrow><mrow>
+&amp;\iff \dee{(xy)} = 0 \qquad\text{by the product rule}
+</mrow><mrow>
+&amp;\iff xy = C
+</mrow>
+</md>
+for some constant <m>C</m>. If you are not comfortable with the use
+of the product rule above, here is another way to write the
+same computation.
+<md>
+<mrow>
+\diff{y}{x}=-\frac{y}{x}
+&amp;\iff  x\diff{y}{x} = -y
+</mrow><mrow>
+&amp;\iff x\diff{y}{x} +y = 0
+</mrow><mrow>
+&amp;\iff \diff{}{x}(xy) = 0 \qquad\text{by the product rule}
+</mrow><mrow>
+&amp;\iff xy = C
+</mrow>
+</md>
+Some field lines are sketched in (c) below.
+They are the red curves. Note that they appear to cross the equipotential
+curves, the blue curves, at right angles. We shall see in
+Lemma <xref ref="lem_equipotential"/>, below, that this is not a coincidence.
+Also note that, while the above computation tells what the field lines
+are, it does not give us the direction of motion along the field lines.
+We determine the direction of motion next.
+</li>
+<li><p>
+<em>Direction of motion (Optional):</em>
+The sign data
+<md>
+<mrow>
+\hi\cdot\vF(x,y) = x
+    \left.\begin{cases}
+              \gt 0 &amp;\text{if } x \gt 0 \\
+             =0 &amp;\text{if } x=0 \\
+              \lt 0 &amp;\text{if } x \lt 0
+       \end{cases}\right\}
+\qquad
+\hj\cdot\vF(x,y) = -y
+    \left.\begin{cases}
+              \gt 0 &amp;\text{if } y \lt 0 \\
+             =0 &amp;\text{if } y=0 \\
+              \lt 0 &amp;\text{if } y \gt 0
+       \end{cases}\right\}\qquad
+</mrow>
+</md>
+is visually displayed in the figure on the left below. The arrows in the
+figure on the left gives us the direction of motion along
+the field lines (in red) in the figure on the right below.
+Some equipotential curves are also sketched (in blue) in the figure
+on the right below.
+</p>
+
+<sidebyside>
+<image source="figs/phaseHyperbola"/>
+<image source="figs/phaseHyperbola3"/>
+</sidebyside>
+
+</li>
+</ol>
+</p></example>
+
+<p>We have just seen one example of a conservative vector field for which the
+field lines appear to cross the equipotential curves at right angles.
+Here is a result which says that that was no accident. The field lines of
+conservative fields always cross the equipotential surfaces
+at right angles.
+</p>
+
+<lemma xml:id="lem_equipotential"><title>Optional</title>
+<statement><p>
+If <m>\vF</m> is a conservative vector field, then the field lines of <m>\vF</m>
+are perpendicular to the equipotential surfaces of <m>\vF</m>.
+</p></statement>
+</lemma>
+
+<proof>
+<p>
+Let <m>\vF=\vnabla\varphi</m>.
+Pick any point <m>\vr_0</m> and any nonzero vector <m>\vT</m>
+that is tangent to the equipotential surface at <m>\vr_0</m>. That
+equipotential surface is  <m>\varphi\big(x,y,z\big)=\varphi(\vr_0)</m>.
+Consider any curve <m>\vr(t)=\big(x(t),y(t),z(t)\big)</m> that
+<ul>
+<li>
+lies in the equipotential surface of <m>\vF</m> through <m>\vr_0</m>,
+so that <m>\varphi\big(\vr(t)\big)=\varphi(\vr_0)</m> for all <m>t</m>,
+and also obeys
+</li>
+<li>
+<m>\vr(0)=\vr_0</m> and
+</li>
+<li>
+<m>\diff{\vr}{t}(0) = \vT</m>.
+</li>
+</ul>
+Differentiating <m>\varphi\big(\vr(t)\big)=\varphi(\vr_0)</m>
+with respect to <m>t</m> and applying the chain rule gives
+<md>
+<mrow>
+\diff{\ }{t}\big[\varphi\big(x(t),y(t),z(t)\big)\big] &amp;=0
+</mrow><mrow>
+\frac{\partial\varphi}{\partial x}\big(x(t),y(t),z(t)\big)\diff{x}{t}(t)
++\frac{\partial\varphi}{\partial y}\big(x(t),y(t),z(t)\big)\diff{y}{t}(t)
++\frac{\partial\varphi}{\partial z}\big(x(t),y(t),z(t)\big)\diff{z}{t}(t)
+&amp;=0
+</mrow>
+</md>
+Notice that the left hand side is exactly the dot product
+of <m>\big(\frac{\partial\varphi}{\partial x}
+\,,\,\frac{\partial\varphi}{\partial y}
+\,,\,\frac{\partial\varphi}{\partial z}\big)=\vnabla\varphi</m>
+with
+<m>\big(\diff{x}{t}
+\,,\,\diff{y}{t}
+\,,\,\diff{z}{t}\big)
+=\diff{\vr}{t}</m>.
+So
+<md>
+<mrow>
+\vnabla\varphi\big(\vr(t)\big)\cdot\diff{\vr}{t}(t) &amp;= 0
+</mrow><mrow>
+ \vF\big(\vr(t)\big)\cdot\diff{\vr}{t}(t) &amp;= 0
+</mrow>
+</md>
+Then set <m>t=0</m> to get
+<me>
+ \vF\big(\vr_0\big)\cdot\vT = 0
+</me>
+This says that the vector <m>\vT</m> (which is tangent to the equipotential
+surface at <m>\vr_0</m>) is perpendicular
+to the vector field at <m>\vr_0</m> (which is a tangent vector to the
+field line of <m>\vF</m> through <m>\vr_0</m>).
+</p></proof>
+
+<p>Here is another example in which we try to find a potential for a vector field.
+</p>
+
+<example xml:id="eg_potentialB">
+<p>
+Let's try to find a potential for the vortex vector field
+<m>\vv(x,y) = \Om\big(-y\hi +x\hj\big)</m> of Example <xref ref="eg_Vortex"/>.
+The potential would have to obey
+<md>
+<mrow>
+\frac{\partial \varphi}{\partial x}(x,y) &amp;= -\Om y
+</mrow><mrow>
+\frac{\partial \varphi}{\partial y}(x,y) &amp;= \Om x
+</mrow>
+</md>
+We proceed just as we did in Example <xref ref="eg_fieldlinesPotential"/>.
+The first of these equations is satisfied if and only if there is a
+<m>\psi(y)</m>, which does not depend on <m>x</m>, so that
+<me>
+\varphi(x,y) = -\Om xy +\psi(y)
+</me>
+For this to also satisfy the second equation, we need
+<md>
+<mrow>
+\Om x=\frac{\partial \varphi}{\partial y}(x,y)
+=\frac{\partial\ }{\partial y}\Big(-\Om xy +\psi(y)\Big)
+=-\Om x +\psi'(y)
+\iff \psi'(y) = 2\Om x
+</mrow>
+</md>
+If <m>\Om\ne 0</m>, the right hand side of this equation depends on <m>x</m>
+while the left hand side in independent of <m>x</m>, no matter what <m>\psi</m> is.
+So no <m>\psi</m> can work, and <m>\vv(x,y) = \Om\big(-y\hi +x\hj\big)</m> is not
+conservative.
+</p></example>
+
+
+<p>The previous example shows that not all vector fields are conservative.
+That answers the first of the questions that we posed just before Example
+<xref ref="eg_fieldlinesPotential"/>.
+The next theorem provides a simple screening test for conservativeness,
+which partially answers the second question. The easy way to remember the
+screening test uses the curl, which we now define.
+</p>
+
+<definition xml:id="def_curl">
+<statement><p>
+The curl of a vector field <m>\vF(x,y,z)</m> is denoted by <m>\vnabla\times\vF(x,y,z)</m>
+and is defined by
+<md>
+<mrow>
+\vnabla\times\vF
+&amp;=\Big(\frac{\partial F_3}{\partial y} -\frac{\partial F_2}{\partial z} \Big)\hi
++\Big(\frac{\partial F_1}{\partial z} -\frac{\partial F_3}{\partial x} \Big)\hj
++\Big(\frac{\partial F_2}{\partial x} -\frac{\partial F_1}{\partial y} \Big)\hk
+
+</mrow><mrow>
+&amp;=\det\left[\begin{matrix}
+                \hi &amp;\hj &amp; \hk \\
+                \frac{\partial\ }{\partial x} &amp; \frac{\partial\ }{\partial y}
+                      &amp; \frac{\partial\ }{\partial z} \\
+                F_1(x,y,z) &amp; F_2(x,y,z) &amp; F_3(x,y,z)
+            \end{matrix}\right]
+</mrow>
+</md>
+The determinant in the second row is really just a mnemonic device
+used to make it easy to remember the expression after the equals sign
+in the first row. One must be careful about the signs in this definition <mdash/>
+the determinant helps with that.
+</p>
+</statement>
+</definition>
+
+
+<theorem xml:id="thm_screen"><title>Screening test for conservative vector fields.</title>
+<statement><p>
+<ol label="a">
+<li>
+Assume that <m>F_1(x,y)</m> and <m>F_2(x,y)</m> are continuously differentiable.
+If the vector field <m>F_1(x,y)\hi + F_2(x,y)\hj</m> is conservative, then
+we must have
+<me>
+\frac{\partial F_1}{\partial y} =  \frac{\partial F_2}{\partial x}
+</me>
+</li>
+<li>
+Assume that <m>F_1(x,y,z)</m>, <m>F_2(x,y,z)</m> and <m>F_3(x,y,z)</m> are continuously differentiable.
+If the vector field <m>F_1(x,y,z)\hi + F_2(x,y,z)\hj + F_3(x,y,z)\hk</m> is conservative, then
+<me>
+\frac{\partial F_1}{\partial y} =  \frac{\partial F_2}{\partial x}\qquad
+\frac{\partial F_1}{\partial z} =  \frac{\partial F_3}{\partial x}\qquad
+\frac{\partial F_2}{\partial z} =  \frac{\partial F_3}{\partial y}
+</me>
+Equivalently,
+<me>
+\vnabla\times\vF
+=\Big(\frac{\partial F_3}{\partial y} -\frac{\partial F_2}{\partial z} \Big)\hi
++\Big(\frac{\partial F_1}{\partial z} -\frac{\partial F_3}{\partial x} \Big)\hj
++\Big(\frac{\partial F_2}{\partial x} -\frac{\partial F_1}{\partial y} \Big)\hk
+  =\vZero
+</me>
+That is, <m>\vF</m> is curl free.
+</li>
+</ol>
+</p></statement>
+</theorem>
+
+<proof>
+<p>
+(a)
+If the vector field <m>F_1(x,y)\hi + F_2(x,y)\hj</m> is conservative,
+then there is a potential <m>\varphi(x,y)</m> such that
+<md>
+<mrow>
+\frac{\partial \varphi}{\partial x}(x,y) &amp;= F_1(x,y)
+</mrow><mrow>
+\frac{\partial \varphi}{\partial y}(x,y) &amp;= F_2(x,y)
+</mrow>
+</md>
+Applying <m>\frac{\partial\ }{\partial y}</m> to the first equation and
+<m>\frac{\partial\ }{\partial x}</m> to the second equation gives
+<md>
+<mrow>
+\frac{\partial^2 \varphi}{\partial y\partial x}
+       &amp;= \frac{\partial F_1}{\partial y}
+</mrow><mrow>
+\frac{\partial^2 \varphi}{\partial x\partial y}
+       &amp;= \frac{\partial F_2}{\partial x}
+</mrow>
+</md>
+Recall that, for any twice continuously differentiable function,
+<m>\frac{\partial^2 \varphi}{\partial y\partial x} =
+\frac{\partial^2 \varphi}{\partial x\partial y}</m>.
+So the two left hand sides are equal,
+and the two right hand sides must also be equal.
+</p>
+
+<p> (b)
+If the vector field <m>F_1(x,y,z)\hi + F_2(x,y,z)\hj + F_3(x,y,z)\hk</m>
+is conservative, then there is a potential <m>\varphi(x,y,z)</m> such that
+<md>
+<mrow>
+\frac{\partial \varphi}{\partial x}(x,y,z) &amp;= F_1(x,y,z)
+</mrow><mrow>
+\frac{\partial \varphi}{\partial y}(x,y,z) &amp;= F_2(x,y,z)
+</mrow><mrow>
+\frac{\partial \varphi}{\partial z}(x,y,z) &amp;= F_3(x,y,z)
+</mrow>
+</md>
+We proceed just as in (a).
+<ul>
+<li> Applying
+<m>\frac{\partial\ }{\partial y}</m> to the first equation and
+<m>\frac{\partial\ }{\partial x}</m> to the second equation gives
+<md>
+<mrow>
+\left\{\atp{  \frac{\partial^2 \varphi}{\partial y\partial x}
+                    = \frac{\partial F_1}{\partial y}  }
+             {  \frac{\partial^2 \varphi}{\partial x\partial y}
+                  = \frac{\partial F_2}{\partial x} }\right\}
+\implies \frac{\partial F_1}{\partial y} = \frac{\partial F_2}{\partial x}
+</mrow>
+</md>
+</li>
+<li> Applying
+<m>\frac{\partial\ }{\partial z}</m> to the first equation and
+<m>\frac{\partial\ }{\partial x}</m> to the third equation gives
+<md>
+<mrow>
+\left\{\atp{  \frac{\partial^2 \varphi}{\partial z\partial x}
+                    = \frac{\partial F_1}{\partial z}  }
+             {  \frac{\partial^2 \varphi}{\partial x\partial z}
+                  = \frac{\partial F_3}{\partial x} }\right\}
+\implies \frac{\partial F_1}{\partial z} = \frac{\partial F_3}{\partial x}
+</mrow>
+</md>
+</li>
+<li> Applying
+<m>\frac{\partial\ }{\partial z}</m> to the second equation and
+<m>\frac{\partial\ }{\partial y}</m> to the third equation gives
+<md>
+<mrow>
+\left\{\atp{  \frac{\partial^2 \varphi}{\partial z\partial y}
+                    = \frac{\partial F_2}{\partial z}  }
+             {  \frac{\partial^2 \varphi}{\partial y\partial z}
+                  = \frac{\partial F_3}{\partial y} }\right\}
+\implies \frac{\partial F_2}{\partial z} = \frac{\partial F_3}{\partial y}
+</mrow>
+</md>
+</li>
+</ul>
+Combining the three bullet points gives <m>\vnabla\times\vF=\vZero</m>.
+</p></proof>
+
+<warning xml:id="warn_screening">
+<p>
+As always, we have to be careful with the flow of logic
+<fn>
+Use your favourite search engine to look up a list of common logical
+errors. One is <q>affirming the consequent</q>. An example would be concluding
+that because Shakespeare is dead, Elvis, who is also dead,
+must also be Shakespeare.</fn>
+.
+The screening test in Theorem <xref ref="thm_screen"/> is a one-way test.
+If, for example,
+<m>\frac{\partial F_1}{\partial y} \ne \frac{\partial F_2}{\partial x}</m>
+then the vector field <m>\vF</m> cannot be conservative. But if
+<m>\frac{\partial F_1}{\partial y} =  \frac{\partial F_2}{\partial x}</m>
+Theorem <xref ref="thm_screen"/> does <em>not</em> guarantee that
+<m>\vF</m> is conservative. In fact there are fields that are not conservative
+but do obey <m>\frac{\partial F_1}{\partial y}=\frac{\partial F_2}{\partial x}</m>.
+We'll see one in Example <xref ref="eg_screeningCounterexample"/>, below.
+We shall later find some additional regularity conditions which, when
+combined with <m>\frac{\partial F_1}{\partial y}=\frac{\partial F_2}{\partial x}</m>,
+do imply conservativeness. See Theorem <xref ref="thm_screenConserv"/>, below.
+</p>
+</warning>
+
+<example xml:id="eg_potentialBB"><title>Example <xref ref="eg_potentialB"/> revisited</title>
+<p>
+In Example <xref ref="eg_potentialB"/>, we attempted to find a potential
+for the vector field
+<me>
+\vv(x,y) = \Om\big(-y\hi +x\hj\big)
+</me>
+In the end we showed that, if <m>\Om\ne 0</m>, no potential could exist, i.e.
+<m>\vv(x,y)</m> is not conservative. Had we known
+the screening test of Theorem <xref ref="thm_screen"/>.a, we could have
+concluded that <m>\vv(x,y)</m> is not conservative by simply observing that
+<md alignment="alignat">
+<mrow>{3}
+\frac{\partial \vv_1}{\partial y}&amp;= \frac{\partial \ }{\partial y}\big(-\Om y) &amp;= -\Om
+</mrow><mrow>
+\frac{\partial \vv_2}{\partial x}&amp;= \ \ \frac{\partial \ }{\partial x}\big(\Om x) &amp;= +\Om
+</mrow>
+</md>
+are not equal, unless <m>\Om=0</m>. But <m>\Om=0</m> makes a rather boring vector
+field.
+</p></example>
+
+<example xml:id="eg_potentialC">
+<statement>
+<p>
+Determine whether or not the vector field
+<me>
+\vF(x,y,z) = y\hi -z\hj +x\hk
+</me>
+is conservative. If it is conservative, find a potential.
+</p>
+</statement>
+
+<solution>
+<p>
+Let's start by applying the screening test Theorem <xref ref="thm_screen"/>.b.
+Since
+<md>
+<mrow>
+\vnabla\times\vF
+&amp;=\det\left[\begin{matrix}
+                \hi &amp;\hj &amp; \hk
+</mrow><mrow>
+                \frac{\partial\ }{\partial x} &amp; \frac{\partial\ }{\partial y}
+                      &amp; \frac{\partial\ }{\partial z}
+</mrow><mrow>
+                y &amp; -z &amp; x
+            \end{matrix}\right]
+=\hi-\hj-\hk
+</mrow>
+</md>
+is not <m>\vZero</m>, the vector field <m>\vF</m> cannot be conservative.
+</p>
+</solution>
+</example>
+
+
+<example xml:id="eg_potentialD">
+<statement>
+<p>
+Determine whether or not the vector field
+<me>
+\vF(x,y,z) = (y^2+2xz^2-1)\hi +(2x+1)y\,\hj +(2x^2z+z^3)\hk
+</me>
+is conservative. If it is conservative, find a potential.
+</p>
+</statement>
+<solution>
+<p>
+Again start by applying the screening test Theorem <xref ref="thm_screen"/>.b.
+This time
+<md>
+<mrow>
+\vnabla\times\vF
+&amp;=\det\left[\begin{matrix}
+                \hi &amp;\hj &amp; \hk \\
+                \frac{\partial\ }{\partial x} &amp; \frac{\partial\ }{\partial y}
+                      &amp; \frac{\partial\ }{\partial z} \\
+                y^2+2xz^2-1 &amp; (2x+1)y &amp; 2x^2z+z^3
+            \end{matrix}\right]
+=0\hi-(4xz-4xz)\hj+(2y-2y)\hk
+</mrow><mrow>
+=\vZero
+</mrow>
+</md>
+So <m>\vF</m> passes the screening test. Let's look for a function
+<m>\varphi(x,y,z)</m> obeying
+<men xml:id="eqn_egPotentialD">
+\begin{split}
+\frac{\partial \varphi}{\partial x}(x,y,z) &amp;= y^2+2xz^2-1 \\
+\frac{\partial \varphi}{\partial y}(x,y,z) &amp;= (2x+1)y \\
+\frac{\partial \varphi}{\partial z}(x,y,z) &amp;= 2x^2z+z^3
+\end{split}
+</men>
+The partial derivative <m>\frac{\partial \ }{\partial x}</m> treats <m>y</m>
+and <m>z</m> as constants. So <m>\varphi(x,y,z)</m> obeys the first equation
+if and only if there is a function <m>\psi(y,z)</m> with
+<me>
+\varphi(x,y,z)
+=xy^2+x^2z^2-x
++\psi(y,z)
+</me>
+This <m>\varphi(x,y,z)</m> will also obey the second equation if and only if
+<md>
+<mrow>
+\frac{\partial \ }{\partial y}\big(xy^2+x^2z^2-x+\psi(y,z)\big) = (2x+1)y
+&amp;\iff 2xy +\frac{\partial\psi}{\partial y}(y,z) = (2x+1)y
+</mrow><mrow>
+&amp;\iff \frac{\partial\psi}{\partial y}(y,z) = y
+</mrow><mrow>
+&amp;\iff \psi(y,z) = \frac{y^2}{2} +\zeta(z)
+</mrow>
+</md>
+for some function <m>\zeta(z)</m> which depends only on <m>z</m>. At this stage
+we know that
+<me>
+\varphi(x,y,z)
+=xy^2+x^2z^2-x+\psi(y,z)
+=xy^2+x^2z^2-x+\frac{y^2}{2}+\zeta(z)
+</me>
+obeys the first two equations of <xref ref="eqn_egPotentialD"/>,
+for any function <m>\zeta(z)</m>. Finally to have the third equation of
+<xref ref="eqn_egPotentialD"/> also satisfied, we also need to chose <m>\zeta(z)</m>
+to obey
+<md>
+<mrow>
+\frac{\partial \ }{\partial z}\big(xy^2+x^2z^2-x+\frac{y^2}{2}+\zeta(z)\big)
+ = 2x^2z+z^3
+&amp;\iff 2x^2z +\zeta'(z) = 2x^2z + z^3
+</mrow><mrow>
+&amp;\iff \zeta'(z) = z^3
+</mrow><mrow>
+&amp;\iff \zeta(z) = \frac{z^4}{4} + C
+</mrow>
+</md>
+for any constant <m>C</m>. So one possible potential, namely that with <m>C=0</m> is
+<me>
+\varphi(x,y,z)
+=xy^2+x^2z^2-x+\frac{y^2}{2}+\frac{z^4}{4}
+</me>
+Note, as a check
+<fn>It is always worth doing this check.</fn>
+, that
+<me>
+\vnabla \varphi(x,y,z)
+=\big(y^2+2xz^2-1\big)\hi+\big(2xy+y)\hj+\big(2x^2z+z^3\big)\hk
+</me>
+as desired.
+</p>
+</solution>
+</example>
+
+<example xml:id="eg_screeningCounterexample"><title>Optional: First look at <m>-\frac{y}{x^2+y^2}\hi + \frac{x}{x^2+y^2}\hj</m></title>
+<p>
+Now is a good time to reread the Warning <xref ref="warn_screening"/>.
+In this example we will show that the vector field
+<me>
+\vF(x,y) = -\frac{y}{x^2+y^2}\hi + \frac{x}{x^2+y^2}\hj
+\qquad \text{defined for all $(x,y)$ in $\bbbr^2$ except $(x,y)=(0,0)$}
+</me>
+passes the screening test of Theorem <xref ref="thm_screen"/>.a. We will also
+begin to see why it is <em>not</em> conservative on the domain
+<m>\bbbr^2\setminus\{(0,0)\}</m>. To verify the screening test, we compute
+<md alignment="alignat">
+<mrow>{3}
+\frac{\partial\ }{\partial y}\Big(-\frac{y}{x^2+y^2}\Big)
+  &amp;= -\frac{(x^2+y^2) - y(2y)}{{(x^2+y^2)}^2}
+  &amp;&amp;= \frac{y^2-x^2}{{(x^2+y^2)}^2}
+</mrow><mrow>
+\frac{\partial\ }{\partial x}\Big(\frac{x}{x^2+y^2}\Big)
+  &amp;=\phantom{-} \frac{(x^2+y^2) - x(2x)}{{(x^2+y^2)}^2}
+  &amp;&amp;= \frac{y^2-x^2}{{(x^2+y^2)}^2}
+</mrow>
+</md>
+and observe that the two right hand sides are identical. So the
+screening test is passed.
+</p>
+
+<p>In order for <m>\vF</m> to be conservative on the domain
+<m>\bbbr^2\setminus\{(0,0\}</m>, there must exist a function
+<m>\varphi(x,y)</m>, that, together with both partial derivatives
+<m>\frac{\partial \varphi}{\partial x}(x,y)</m> and
+<m>\frac{\partial \varphi}{\partial y}(x,y)</m>, is defined for all <m>(x,y)</m>
+in <m>\bbbr^2</m> except <m>(x,y)=(0,0)</m>, and obeys
+<md alignment="alignat">
+<mrow>{3}
+\frac{\partial \varphi}{\partial x}(x,y) &amp;= -\frac{y}{x^2+y^2}
+&amp;&amp;= \frac{-\frac{y}{x^2}}{1+\big(\frac{y}{x}\big)^2}
+&amp;&amp;=\frac{\partial\ }{\partial x}\Big(\arctan\frac{y}{x}\Big)
+</mrow><mrow>
+\frac{\partial \varphi}{\partial y}(x,y) &amp;= \phantom{-} \frac{x}{x^2+y^2}
+&amp;&amp;= \frac{\frac{1}{x}}{1+\big(\frac{y}{x}\big)^2}
+&amp;&amp;=\frac{\partial\ }{\partial y}\Big(\arctan\frac{y}{x}\Big)
+</mrow>
+</md>
+by the chain rule, because
+<me>
+\frac{\partial\ }{\partial x}\Big(\frac{y}{x}\Big) =-\frac{y}{x^2}
+\qquad
+\frac{\partial\ }{\partial y}\Big(\frac{y}{x}\Big)=\frac{1}{x}
+</me>
+It looks like we have found a potential, namely <m>\arctan\frac{y}{x}</m>.
+But there is a problem. Recall that, by definition, <m>\arctan\frac{y}{x}</m> is
+an angle <m>\theta(x,y)</m> that obeys
+<m>\tan\theta(x,y)= \arctan\frac{y}{x}</m>; but for any
+<m>(x,y)\in\bbbr^2\setminus\{(0,0\}</m> there are infinitely many angles
+having the tangent <m>\frac{y}{x}</m>. To define <m>\varphi(x,y)</m> we have to
+select exactly one such angle. It is impossible to do so in such a way
+that <m>\varphi(x,y)</m> is continuous on all of <m>\bbbr^2\setminus\{(0,0\}</m>.
+</p>
+
+<p>To see why, fix any <m>r \gt 0</m>, and imagine that you are walking on the circle
+<m>x^2+y^2=r^2</m> in the <m>xy</m>-plane. At time <m>\theta</m>, you are at <m>x=r\cos\theta</m>,
+<m>y=r\sin\theta</m> and then <m>\frac{y}{x} = \tan\theta</m> and you are allowed to
+define <m>\varphi(x,y)=\theta+k\pi</m>, for any integer <m>k</m>.
+</p>
+
+<p> Suppose that at time <m>\theta=0</m> you choose <m>k=0</m>. That is, you choose <m>\varphi(r,0)=0</m>.
+Now start walking, choosing an allowed <m>\varphi(x,y)</m>, i.e. choosing a <m>k</m>,
+for each point <m>(x,y)</m> that you cross.
+Because <m>\varphi(x,y)</m> has to vary continuously
+<fn>If <m>\varphi(x,y)</m>
+is not continuous, its gradient does not exist, and <m>\varphi</m> cannot be
+a potential.</fn>
+ with <m>(x,y)</m>, you
+have to continue choosing <m>k=0</m>. But you run off a cliff as <m>\theta</m>
+approaches <m>2\pi</m>, because then
+<ul>
+<li>
+you are approaching <m>(r,0)</m> from below, as in the figure below, and
+</li>
+<li>
+because you are choosing <m>k=0</m>, <m>\varphi(x,y)</m> is just a little less than
+<m>2\pi</m>, but
+</li>
+<li>
+you have already chosen <m>\varphi(r,0)=0</m>, not <m>2\pi</m>.
+So <m>\varphi(x,y)</m> has a jump discontinuity
+<fn>Those who have taken
+some complex analysis may recognize this as the branch cut in <m>\ln z</m>.</fn>
+along the positive <m>x</m>-axis.
+</li>
+</ul>
+</p>
+
+<sidebyside>
+<image source="figs/notConservative"/>
+</sidebyside>
+
+<p>
+If you are having trouble following this argument, don't worry about it.
+We will return with a less hand-wavy argument later.
+</p></example>
+
+<!-- <xi:include href="../problems/prob_s2.3.ptx" /> -->
+
+</section>

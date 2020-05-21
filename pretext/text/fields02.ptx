@@ -1,0 +1,523 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<section xmlns:xi="http://www.w3.org/2001/XInclude" xml:id="sec_fieldLines">
+
+<!-- Copyright 2018-2020 Joel Feldman, Andrew Rechnitzer and Elyse Yeager -->
+<!-- This work is licensed under the Creative Commons Attribution-NonCommercial-ShareAlike 4.0 International License-->
+<!-- https://creativecommons.org/licenses/by-nc-sa/4.0 -->
+
+<title>Optional <mdash/> Field Lines</title>
+
+<introduction>
+
+<p>Suppose that we drop a tiny stick into a river
+<fn>Think Poohsticks.</fn>
+ with the velocity
+field of the flowing water being <m>\vv(x,y)</m>. We are assuming, for
+simplicity, that the velocity field does not depend
+<fn>This is not such an unreasonable assumption. The flow often changes on a larger time scale.</fn>
+on time <m>t</m>. The stick will move along with the water
+<fn>This is also not an unreasonable approximation.</fn>.
+When the stick
+is at <m>\vr</m>, its velocity will be the same as the velocity of the
+water at <m>\vr</m>, which is <m>\vv(\vr)</m>. Thus if the stick is at
+<m>\vr(t)</m> at time <m>t</m>, we will have
+<me>
+\diff{\vr}{t} = \vv\big(\vr(t)\big)
+</me>
+The stick will trace out a path, parametrized by <m>\vr(t)</m>.
+</p>
+
+<definition xml:id="def_fieldLine">
+<statement><p>
+A path that is parametrized by a function <m>\vr(t)</m> that obeys
+<me>
+\diff{\vr}{t} = \vv\big(\vr(t)\big)
+</me>
+is called a
+<ul>
+<li> field line or integral curve (for general vector fields) or a
+</li>
+<li> stream line or flow line (when the vector field <m>\vv</m> is
+                  being thought of as a velocity field) or a
+</li>
+<li> line of force (when the vector field <m>\vv</m> is
+                  being thought of as a force field)
+</li>
+</ul>
+of the vector field <m>\vv</m>.
+</p></statement>
+</definition>
+
+<example xml:id="eg_flowSketchVortex">
+  <title>Flow Line Sketch for the Vortex of Example <xref ref="eg_Vortex"/></title>
+<p>
+Consider the vortex vector field, <m>\vv(x,y) = \Om\big(-y\hi +x\hj\big)</m>
+of Example <xref ref="eg_Vortex"/>. Once we sketched the vector field, as in
+Figure <xref ref="fig_vortexField"/>, or even made the <q>skeleton sketch</q> of
+Figure <xref ref="fig_vortexCrude"/>, we can get rough idea of what the stream lines
+look like just by following the arrows. For example, suppose that
+we start a stream line (i.e. drop the stick into the stream) on the positive
+<m>x</m>-axis. Looking at Figure <xref ref="fig_vortexCrude"/>, which is repeated
+here,
+</p>
+
+<sidebyside>
+<image source="figs/phaseVortex2"/>
+</sidebyside>
+
+<p>the stick
+<ul>
+<li>
+starts by moving in the <m>+y</m> direction, i.e. straight upward.
+</li>
+<li>
+As it moves farther into the first quadrant it develops
+a larger and larger negative <m>x</m>-component of velocity.
+So it also moves leftwards toward the <m>y</m>-axis.
+</li>
+<li>
+Eventually it crosses the positive <m>y</m>-axis moving in the <m>-x</m> direction,
+i.e. to the left.
+</li>
+<li>
+As it moves farther into the second quadrant it develops
+a larger and larger negative <m>y</m>-component of velocity.
+So it also moves downwards toward the <m>x</m>-axis.
+</li>
+<li>
+Eventually it crosses the negative <m>x</m>-axis moving in the <m>-y</m> direction,
+i.e. straight downward.
+</li>
+<li>
+As it moves farther into the third quadrant it develops
+a larger and larger positive <m>x</m>-component of velocity.
+So it also moves rightward towards the <m>y</m>-axis.
+</li>
+<li>
+Eventually it crosses the negative <m>y</m>-axis moving in the <m>+x</m> direction,
+i.e. to the right.
+</li>
+<li>
+As it moves farther into the fourth quadrant it develops
+a larger and larger positive <m>y</m>-component of velocity.
+So it also moves upwards toward the <m>x</m>-axis.
+</li>
+</ul>
+With this type of analysis we cannot tell if the streamline, which is the red
+line in the figure above, will return to the <m>x</m>-axis
+<ul>
+<li>
+exactly at its starting point, forming a closed curve, or
+</li>
+<li>
+inside its starting point, spiralling inwards, or
+</li>
+<li>
+outside its starting point, spiralling outwards.
+</li>
+</ul>
+</p></example>
+
+
+<p>While the above procedure is a good way to get a qualitative feel
+for trajectories,
+we can develop more precise, detailed descriptions of field lines by
+working analytically. As we saw above, thinking of <m>\vr(t)</m> as the position
+at time <m>t</m> of a stick dropped into water whose velocity at <m>(x,y)</m> is <m>\vv(x,y)</m>, the velocity of the stick at time <m>t</m> will be the same
+as the velocity of the  water at <m>\vr(t)</m>, which is <m>\vv\big(\vr(t)\big)</m>.
+Thus <m>\vr(t)</m> will obey the system of first order differential equations
+</p>
+
+<fact xml:id="eq_VFstreamLineA">
+  <statement>
+    <p>
+    <me>
+    \diff{\vr}{t}(t) = \vv\big(\vr(t)\big)
+    </me>
+    </p>
+  </statement>
+</fact>
+
+<p>Notice that if we reparametrize <m>\vr(t)</m>, say to <m>\vR(u) = \vr\big(t(u)\big)</m>,
+then <m>\vR'(u) =   \vr'\big(t(u)\big)\ t'(u)</m> is parallel to
+(though not necessarily equal to) <m>\vr'\big(t(u)\big)= \vv\big(\vr\big((t(u)\big)\big)
+                         =\vv\big(\vR(u)\big)</m>.
+So if we only care about the curve traced out by the stick, and not about
+<em>when</em> the stick is at each point of the path, then it suffices to
+impose the weaker condition
+<fn>We'll have a more careful discussion of this in the optional §<xref ref="sec_fieldLinePara"/>.</fn>
+ that, when the stick
+is at <m>\vr(t)</m>, its velocity <m>\vr'(t)</m> is parallel to (though not necessarily equal to)
+<m>\vv\big(\vr(t)\big)</m>. In three dimensions, <m>\vr'(t)</m> is parallel to
+<m>\vv\big(\vr(t)\big)</m> when the cross product is zero:
+</p>
+
+<fact xml:id="eq_VFstreamLineBB">
+  <statement>
+    <p>
+    <me>
+    \vr'(t)\times\vv\big(\vr(t)\big)=\vZero
+    </me>
+    </p>
+  </statement>
+</fact>
+
+<p>
+In two dimensions we can still use the cross product by the simple
+expedient of thinking of <m>\vr'(t)</m> and <m>\vv\big(\vr(t)\big)</m> as three component
+vectors whose third components are zero.
+</p>
+
+<p>A more convenient way to implement the weaker <q>just parallel</q>
+condition, involves reparametrizing our streamline.
+Suppose that we are in two dimensions
+with <m>\vr'(t)=\big(\diff{x}{t}(t)\,,\,\diff{y}{t}(t)\big)</m> and
+<m>\vv(\vr)=\big(v_1(\vr)\,,\,v_2(\vr)\big)</m>  and fix some <m>t_0</m>. If <m>\diff{x}{t}(t_0)</m> is
+nonzero
+<fn>If <m>\diff{x}{t}(t_0)=0</m>, but <m>\diff{y}{t}(t_0)\ne 0</m>, we should use <m>y</m> rather than <m>x</m> as the parameter. If <m>\diff{x}{t}(t_0)=\diff{y}{t}(t_0)=0</m>, then <m>\vr(t)=\vr(t_0)</m> for all <m>t</m> and the streamline doesn't move. It is just a single point.</fn>,
+we can reparametrize the curve (at least near <m>\vr(t_0)</m>) so as to use <m>x</m>, rather than <m>t</m> as the parameter. To do so, we
+<ul>
+<li> solve <m>x=x(t)</m> for <m>t</m> as a function of <m>x</m>. Call
+the solution <m>T(x)</m>. Then
+</li>
+<li> the point on the curve which has <m>x</m>-coordinate <m>x</m> is
+<m>\vR(x)=\big(X(x)\,,\,Y(x)\big)</m> with <m>X(x)=x</m> and <m>Y(x) = y\big(T(x)\big)</m>.
+</li>
+</ul>
+Then the condition that <m>\vR'(x)=\big(1,Y'(x)\big)</m> is parallel to <m>\vv\big(\vR(x)\big)</m> says that <m>\vR'(x)</m> is a scalar multiple of
+<m>\vv\big(\vR(x)\big)</m> so that
+there is a nonzero number <m>c(x)</m> so that <m>\vR'(x)=c(x) \vv\big(\vR(x)\big)</m>. That is
+<me>
+\big(1,Y'(x)\big)
+   =\big( c(x)v_1\big(x,Y(x)\big)\,,\, c(x)v_2\big(x,Y(x)\big)  \big)
+</me>
+or equivalently
+<me>
+Y'(x)=\frac{Y'(x)}{1}
+=\frac{c(x)\,v_2\big(x,Y(x)\big)}{c(x)\,v_1\big(x,Y(x)\big)\big)}
+=\frac{v_2\big(x,Y(x)\big)}{v_1\big(x,Y(x)\big)}
+</me>
+This is exactly the statement that <m>y=Y(x)</m> is a solution of the differential equation
+<me>
+\diff{y}{x}(x) = \frac{v_2\big(x,y\big)}{v_1\big(x,y\big)}
+</me>
+It is conventional to pretend
+<fn>Of course <m>\diff{y}{x}</m> is not the ratio of <m>\dee{y}</m> and <m>\dee{x}</m>. However pretending that it is provides a simple
+way to remember the technique that is used to solve the equation. You have used this mnemonic device before when you learned how to solve separable differential equations.</fn>
+that <m>\diff{y}{x}</m> is the ratio of <m>\dee{y}</m> and <m>\dee{x}</m> and rewrite the differential equation
+<fn>Here is another nonrigorous, but intuitive way
+to come up with this equation. Suppose that our stick is at <m>(x,y)</m>
+and has velocity <m>\big(\diff{x} {t}(t)\,,\,\diff{y}{t}(t)\big)</m>.
+In a tiny time interval <m>\dee{t}</m> the stick moves by <m>\big(\diff{x}{t}(t)\,,\,\diff{y}{t}(t)\big)\dee{t}
+=(\dee{x},\dee{y})</m>, which is parallel to  <m>\big(v_1(x,y)\,,\,v_2(x,y)\big)</m>
+if <m>\frac{\dee{x}}{v_1(x,y)}=\frac{\dee{y}}{v_2(x,y)}</m>.</fn> as
+<me>
+\frac{\dee{x}}{v_1(x,y)}=\frac{\dee{y}}{v_2(x,y)}
+</me>
+</p>
+
+<p>Here is a summary of the discussion we have just completed. It extends to three dimensions in an obvious way.
+</p>
+
+<fact xml:id="eq_VFstreamLineB">
+  <statement>
+    <p>
+      Use the symbol <m>\parallel</m> to stand for <q>is parallel to</q>.
+      </p>
+
+      <p>
+      In two dimensions
+      <md>
+      <mrow>
+      &amp;\Big(\diff{x}{t}(t)\,,\,\diff{y}{t}(t)\Big) \parallel
+      \big(v_1(\vr(t))\,,\,v_2(\vr(t)\big)
+      </mrow><mrow>
+      &amp;\hskip0.5in\iff
+      \Big(\diff{x}{t}(t)\,,\,\diff{y}{t}(t)\,,\,0\Big)\times
+      \big(v_1(\vr(t))\,,\,v_2(\vr(t))\,,\,0\big) = \vZero
+      </mrow><mrow>
+      &amp;\hskip0.5in\iff \frac{dx}{v_1(x,y)}=\frac{dy}{v_2(x,y)}
+      </mrow>
+      </md>
+      and in three dimensions
+      <md>
+      <mrow>
+      &amp;\Big(\diff{x}{t}(t)\,,\,\diff{y}{t}(t)\,,\,\diff{z}{t}(t)\Big) \parallel
+      \big(v_1(\vr(t))\,,\,v_2(\vr(t))\,,\,v_3(\vr(t))\big)
+      </mrow><mrow>
+      &amp;\hskip0.5in\iff
+      \Big(\diff{x}{t}(t)\,,\,\diff{y}{t}(t)\,,\,\diff{z}{t}(t)\Big)\times
+      \big(v_1(\vr(t))\,,\,v_2(\vr(t))\,,\,v_3(\vr(t))\big) = \vZero
+      </mrow><mrow>
+      &amp;\hskip0.5in\iff \frac{dx}{v_1(x,y,z)}=\frac{dy}{v_2(x,y,z)}=\frac{dz}{v_3(x,y,z)}
+      </mrow>
+      </md>
+    </p>
+  </statement>
+</fact>
+
+<p>
+Let us apply this to two examples, in which the stream lines of the vortex field
+of Example <xref ref="eg_Vortex"/> are found by two different methods.
+</p>
+
+<example xml:id="eg_vortexStreamParallel">
+  <title>Stream lines for the vortex field using <m>\vr'(t)\parallel\vv(\vr(t))</m></title>
+<p>
+In this example we will find the stream lines for the vortex field,
+<m>\vv(x,y) = \Om\big(-y\hi +x\hj\big)</m> of Example <xref ref="eg_Vortex"/>,
+by using the requirement that, on a stream line, the velocity vector
+<m>\vr'(t)</m> must be parallel to <m>\vv\big(\vr(t)\big)</m>.
+By <xref ref="eq_VFstreamLineB"/> one way to express this requirement mathematically is
+<md>
+<mrow>
+\frac{dx}{-\Om y} = \frac{dy}{\Om x}
+</mrow>
+</md>
+This is a simple separable differential equation. We can solve it
+by cross multiplying and integrating both sides. (Recall that <m>\Om</m> is a
+constant.)
+<md>
+<mrow>
+\Om x\,\dee{x} = -\Om y\,\dee{y}
+&amp;\iff \Om \int x\,\dee{x} = -\Om \int y\,\dee{y}
+</mrow><mrow>
+&amp;\iff \half \Om x^2 =-\half \Om y^2 +C'
+</mrow><mrow>
+&amp;\iff x^2+y^2 = C
+</mrow>
+</md>
+where <m>C'</m> and <m>C=\frac{2}{\Om}C'</m> are just arbitrary constants. So the stream lines of the vortex field are exactly circles centred on the origin.
+</p>
+
+<sidebyside>
+<image source="figs/phaseVortex3"/>
+</sidebyside>
+
+<p>We can come to exactly the same conclusion by using the cross product
+formulation of <xref ref="eq_VFstreamLineBB"/>.
+<md>
+<mrow>
+&amp;\Big(\diff{x}{t}(t)\,,\,\diff{y}{t}(t)\,,\,0\Big)\times
+\big(v_1(\vr(t))\,,\,v_2(\vr(t))\,,\,0\big) = \vZero
+</mrow><mrow>
+&amp;\hskip0.5in\iff \Big(\diff{x}{t}(t)\,\hi+\diff{y}{t}(t)\,\hj\Big)\times
+\big(-\Om y(t)\,\hi+\Om x(t)\,\hj\big) = \vZero
+</mrow><mrow>
+&amp;\hskip0.5in\iff \Big(\Om x(t)\diff{x}{t}(t)
+               +\Om y(t)\diff{y}{t}(t)\Big)\hk=\vZero
+</mrow><mrow>
+&amp;\hskip0.5in\iff \Om x(t)\diff{x}{t}(t)
+               +\Om y(t)\diff{y}{t}(t)=0
+</mrow><mrow>
+&amp;\hskip0.5in\iff \diff{\ }{t}\Big(\half \Om x(t)^2+\half\Om y(t)^2\Big)=0
+\qquad\text{(Go ahead and evaluate the derivative.)}
+</mrow><mrow>
+&amp;\hskip0.5in\iff \half\Om\big(x(t)^2+y(t)^2\big) = C'
+</mrow><mrow>
+&amp;\hskip0.5in\iff x(t)^2+y(t)^2=C
+</mrow>
+</md>
+</p></example>
+
+<example xml:id="eg_vortexStreamEqual">
+  <title>Stream lines for the vortex field using <m>\vr'(t)=\vv(\vr(t))</m></title>
+<p>
+This time we will find the stream lines for the vortex field,
+<m>\vv(x,y) = \Om\big(-y\hi +x\hj\big)</m> of Example <xref ref="eg_Vortex"/>,
+by using <xref ref="eq_VFstreamLineA"/>, which is
+<md>
+<mrow>
+\diff{x}{t} &amp;= -\Om y
+</mrow><mrow>
+\diff{y}{t} &amp;= \Om x
+</mrow>
+</md>
+We can convert this system of first
+order linear ordinary differential equations
+into a single second order linear constant coefficient
+differential equation
+<fn>In Example <xref ref="eg_Pendulum"/> we converted a second order ordinary differential equation into a system of first order ordinary differential equations. We are now just reversing
+the procedure we used there.
+</fn>,
+by differentiating the first equation, to get <m>\difftwo{x}{t} = -\Om\diff{y}{t}</m>,
+and then substituting in the second equation to get
+<me>
+\difftwo{x}{t} + \Om^2 x = 0
+</me>
+This equation is a special case of the ordinary differential equation
+treated in Example <xref ref="eg_RLC"/> of the Appendix <xref ref="ap_ODE"/>, entitled
+<q>Review of Linear Ordinary Differential Equations</q>.  In fact it is
+exactly (<xref ref="eqn_ODERy"/><m>_{\rm h}</m>) with <m>R=0</m>, <m>L=C=\frac{1}{\Om}</m>. So
+the general solution is <xref ref="eqn_RLCampPhase"/> with
+<m>\rho=0</m> and <m>\nu=\Om</m>, which is
+<me>
+x(t) = A\cos(\Om t-\theta)
+</me>
+with <m>A</m> and <m>\theta</m> being arbitrary constants
+<fn>Even if you don't know how <m>x(t) = A\cos(\Om t-\theta)</m> was arrived at, you should
+be able to easily verify that it really does obey <m>x'+\Om^2 x=0</m>.
+</fn>.
+Then
+<me>
+y(t) = -\frac{1}{\Om}\diff{x}{t} =A\sin(\Om t-\theta)
+</me>
+giving us the familiar circular stream lines.
+</p></example>
+
+
+
+</introduction>
+
+<subsection xml:id="sec_fieldLinePara">
+<title>More about <m>\vr'(t)\times\vv\big(\vr(t)\big)=\vZero</m></title>
+
+<p>
+Here is a lemma that gives a more precise version of
+<q>if we only care about the curve traced out by the stick, and not about
+when the stick is at each point of the path, then it suffices to
+impose the weaker condition
+<m>\vr'(t)\times\vv\big(\vr(t)\big)=\vZero</m></q>.
+</p>
+
+<lemma xml:id="lem_fieldLinePara">
+<statement><p>
+Lat <m>a \lt b</m> and let <m>\vv(\vr)</m> be a vector field. Assume that,
+for all <m>a \lt u \lt b</m>,  <m>\vR(u)</m> is defined, both <m>\vR'(u)</m> and
+<m>\vv\big(\vR(u)\big)</m> are continuous and  nonzero and
+<me>
+\vR'(u)\times\vv\big(\vR(u)\big)=\vZero
+</me>
+Then <m>\Set{\vR(u)}{a \lt u \lt b}</m> is contained in a field line.
+</p></statement>
+</lemma>
+
+<proof>
+<p>
+As <m>\vR'(u)\times\vv\big(\vR(u)\big)=\vZero</m> and  both
+<m>\vR'(u)</m> and <m>\vv\big(\vR(u)\big)</m> are nonzero,  there is
+an <m>a(u)</m> such that
+<me>
+\vR'(u) = a(u)\,\vv\big(\vR(u)\big)
+</me>
+This <m>a(u)=\frac{\vR'(u)\cdot\vv(\vR(u))}{\vv(\vR(u))\cdot\vv(\vR(u))}</m>
+is necessarily nonzero and continuous. Since <m>a(u)</m> is nonzero and continuous,
+it never changes sign. That is, either <m>a(u) \gt 0</m> for all  <m>u</m>,
+or <m>a(u) \lt 0</m> for all <m>u</m>. Let <m>T(u)</m> be an antiderivative of <m>a(u)</m>. Then <m>T(u)</m>
+is strictly monotone (and continuous) and hence invertible. That is, there
+is a continuous function <m>U(t)</m> that obeys <m>U\big(T(u)\big)=u</m> for all
+<m>a \lt u \lt b</m> and <m>T\big(U(t)\big)=t</m> for all <m>t</m> in the range of <m>U</m>. Set
+<m>\vr(t) = \vR\big(U(t)\big)</m>.
+Then
+<md>
+<mrow>
+\vr'(t) &amp;= \vR'\big(U(t)\big) U'(t)
+        = a\big(U(t)\big)\,\vv\big(\vR\big(U(t)\big)\big)
+                                    \frac{1}{T'\big(U(t)\big)}
+        = a\big(U(t)\big)\,\vv\big(\vr(t)\big)
+                                    \frac{1}{a\big(U(t)\big)}
+</mrow><mrow>
+        &amp;=\vv\big(\vr(t)\big)
+</mrow>
+</md>
+So <m>\vr(t)</m> is a field line and <m>\vR(u) = \vr(T(u))</m>
+is a reparametrization of <m>\vr(t)</m>.
+</p></proof>
+
+<p>Here are a couple of examples that show that bad things can happen
+if we drop the requirement that <m>\vv(\vR(u))</m> is nonzero.
+</p>
+
+<example xml:id="ex_badStreamA">
+<p>
+Let the vector field <m>\vv(x,y)</m> be identically zero. Then any field line
+<m>\big(x(t)\,,\,y(t)\big)</m> must obey
+<md>
+<mrow>
+x'(t)=0\qquad y'(t)=0
+</mrow>
+</md>
+which forces both <m>x(t)</m> and <m>y(t)</m> to be constants. So each field line is
+just a single point. On the other hand every nonconstant
+<m>\vR(u)</m> obeys <m>\vR'(u)\times\vv\big(\vR(u)\big)=\vZero</m> but is not
+contained in a field line.
+</p></example>
+
+
+<p>Now here is a more interesting example.</p>
+
+<example xml:id="ex_badStreamB">
+<p>
+Consider the vector field <m>\vv(x,y)=x\,\hi</m>. This vector field takes the value <m>\vZero</m> at each point on the <m>y</m>-axis, is a positive multiple of <m>\hi</m>
+at every point of the right half-plane and is a negative multiple of
+<m>\hi</m> at every point of the left half-plane. Let's find the field lines.
+Any field line must obey
+<md>
+<mrow>
+\diff{x}{t}(t)=x(t)\qquad \diff{y}{t}(t)=0
+</mrow>
+</md>
+So <m>y(t)</m> must be a constant. We can solve the linear ordinary
+differential equation <m>\diff{x}{t}(t)=x(t)</m> by moving
+the <m>x(t)</m> to the left hand side, and multiplying by the (integrating factor)
+<m>e^{-t}</m>. This gives
+<me>
+e^{-t}\diff{x}{t}(t)-e^{-t} x(t)=0
+</me>
+By the product rule, this is the same as
+<me>
+\diff{}{t}\big(e^{-t}x(t)\big)=0
+</me>
+which forces <m>e^{-t}x(t)</m> to be a constant. So our field lines are
+<m>\big(Ce^t\,,\,D\big)</m>, with <m>C</m> and <m>D</m> being arbitrary constants.
+Note that
+<ul>
+<li>
+if <m>C=0</m>, the field line is just the single point <m>(0,D)</m> on the <m>y</m>-axis.
+It is illustrated by the black dot in the figure below.
+</li>
+<li>
+If <m>C \gt 0</m>, then as <m>t</m> runs from <m>-\infty</m> to <m>+\infty</m>, the field line
+covers the horizontal half-line
+<me>
+\Set{(x,D)}{x \gt 0}
+</me>
+in the right half-plane.
+It is illustrated by the red line in the figure below.
+</li>
+<li>
+If <m>C \lt 0</m>, then as <m>t</m> runs from <m>-\infty</m> to <m>+\infty</m>, the field line
+covers the horizontal half-line
+<me>
+\Set{(x,D)}{x \lt 0}
+</me>
+in the left half-plane.
+It is illustrated by the blue line in the figure below.
+</li>
+</ul>
+</p>
+
+<sidebyside>
+<image source="figs/horizontalField"/>
+</sidebyside>
+
+<p>
+On the other hand, fix any constant <m>D</m> and set <m>\vR(u) = u\hi +D\hj</m>.
+Then
+<me>
+\vR'(u)\times\vv\big(\vR(u)\big)
+=\hi\times\big(u\hi)
+=\vZero
+</me>
+But as <m>u</m> runs from <m>-\infty</m> to <m>+\infty</m>, <m>\vR(u)</m> runs over the
+full line <m>\Set{(x,D)}{-\infty \lt x \lt \infty}</m>. It is not contained in any
+single field line and, in fact, completely covers three
+different field lines.
+</p>
+
+</example>
+</subsection>
+
+<!-- <xi:include href="../problems/prob_s2.2.ptx" /> -->
+
+</section>

@@ -166,7 +166,8 @@ except Exception as err:
     exit(1)
 
 # all passed so now build
-os.makedirs("site", exist_ok=True)
+for dir in ["site", "site/knowl", "site/figs", "site/images", "site/pfigs"]:
+    os.makedirs(dir, exist_ok=True)
 
 # read in the pretext xslt magic
 print("Read in xsl file")

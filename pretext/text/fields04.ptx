@@ -1,0 +1,690 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<section xmlns:xi="http://www.w3.org/2001/XInclude" xml:id="sec_workIntegrals">
+
+<!-- Copyright 2018-2020 Joel Feldman, Andrew Rechnitzer and Elyse Yeager -->
+<!-- This work is licensed under the Creative Commons Attribution-NonCommercial-ShareAlike 4.0 International License-->
+<!-- https://creativecommons.org/licenses/by-nc-sa/4.0 -->
+
+<title>Line Integrals</title>
+
+<introduction>
+<p>
+We have already seen, in §<xref ref="sec_lineIntegral"/>, one type of integral along
+curves. We are now going to see a second, that turns out to have significant
+connections to conservative vector fields. It arose from the concept of
+<q>work</q> in classical mechanics.
+</p>
+
+<p>Suppose that we wish to find the work done by a force <m>\vF(\vr)</m> moving a particle
+along a path <m>\vr(t)</m>. During the <q>infinitesimal time interval</q>
+<fn>Yes, yes. We should first consider short time intervals <m>\De t \gt 0</m> and then take the limit <m>\De t\rightarrow 0</m> at the end. But you have undoubtedly used this
+type of argument so many times before that you would be thoroughly
+bored by it.</fn>
+from <m>t</m> to <m>t+\dee{t}</m>  the particle moves from <m>\vr(t)</m> to <m>\vr(t)+\dee{\vr}</m> with <m>\dee{\vr}=\diff{\vr}{t}(t)\,\dee{t}</m>. By definition, the work done
+during that infinitesimal time interval is
+<me>
+\vF\big(\vr(t)\big)\cdot\dee{\vr} = \vF\big(\vr(t)\big)\cdot
+\diff{\vr}{t}(t)\,\dee{t}
+</me>
+The total work done during the time interval from <m>t_0</m> to <m>t_1</m> is then
+<me>
+\text{Work} = \int_{t_0}^{t_1}\vF\big(\vr(t)\big)\cdot\diff{\vr}{t}(t)\,\dee{t}
+</me>
+There are some useful shorthand notations for this work.
+</p>
+
+<definition xml:id="not_workIntegral">
+<statement><p>
+Denote by <m>\cC</m> the parametrized path <m>\vr(t)</m> with <m>t_0\le t\le t_1</m>.
+Then
+<me>
+\int_\cC\vF\cdot\dee{\vr}
+=\int_\cC\big(\vF_1\dee{x}+\vF_2\dee{y}+\vF_3\dee{z}\big)
+=\int_{t_0}^{t_1}\vF\big(\vr(t)\big)\cdot\diff{\vr}{t}(t)\,\dee{t}
+</me>
+If <m>\cC</m> is a closed path, the notation <m>\oint_\cC\vF\cdot\dee{\vr}</m>
+is also used.
+</p></statement>
+</definition>
+
+<p>In the event that <m>\vF</m> is conservative, and we know the potential <m>\varphi</m>,
+the following theorem provides a really easy way to compute
+<q>work integrals</q>. The theorem is a generalization of the fundamental theorem
+of calculus, and indeed some people call it the fundamental theorem of line integrals.
+</p>
+
+<theorem xml:id="thm_workIntegral">
+<statement><p>
+Let <m>\vF=\nabla\varphi</m> be a conservative vector field. Then if <m>\cC</m> is
+any curve that starts at <m>P_0</m> and ends at <m>P_1</m>, we have
+<fn>So <m>\varphi</m> acts a bit like the antiderivative of first year calculus.</fn>
+<me>
+\int_\cC\vF\cdot\dee{\vr} =\varphi(P_1)-\varphi(P_0)
+</me>
+</p></statement>
+</theorem>
+
+<proof>
+<p>
+Let <m>\vr(t)=\big(x(t),y(t),z(t)\big)</m>, <m>t_0\le t\le t_1</m>,
+be any parametrization of <m>\cC</m> with <m>\vr(t_0)=P_0</m> and <m>\vr(t_1)=P_1</m>.
+Then, by definition,
+<md>
+<mrow>
+\int_\cC\vF\cdot\dee{\vr}
+&amp;=\int_{t_0}^{t_1}\vF\big(\vr(t)\big)\cdot\diff{\vr}{t}(t)\,\dee{t}
+=\int_{t_0}^{t_1}\vnabla\varphi\big(\vr(t)\big)\cdot\diff{\vr}{t}(t)\,\dee{t}
+</mrow><mrow>
+&amp;=\int_{t_0}^{t_1}\Big[
+\frac{\partial\varphi}{\partial x}\big(x(t),y(t),z(t)\big)
+                        \diff{x}{t}(t)
++\frac{\partial\varphi}{\partial y}\big(x(t),y(t),z(t)\big)
+                        \diff{y}{t}(t)
+</mrow><mrow>&amp;\hskip3in
++\frac{\partial\varphi}{\partial z}\big(x(t),y(t),z(t)\big)
+                        \diff{z}{t}(t)
+\Big]\dee{t}
+</mrow><mrow>
+&amp;=\int_{t_0}^{t_1}\diff{\ }{t}\Big[\varphi\big(x(t),y(t),z(t)\big)
+\Big]\dee{t}
+\qquad\text{by the chain rule in reverse}
+</mrow><mrow>
+&amp;=\varphi\big(\vr(t_1)\big) - \varphi\big(\vr(t_0)\big)
+=\varphi(P_1) - \varphi(P_0)
+</mrow>
+</md>
+by the fundamental theorem of calculus.
+</p></proof>
+
+<p>
+Observe that, in Theorem <xref ref="thm_workIntegral"/>, the value,
+<m>\varphi(P_1)-\varphi(P_0)</m>, of the integral <m>\int_\cC\vF\cdot\dee{\vr}</m>
+depended only on the endpoints <m>P_0</m> and <m>P_1</m> of the curve, not on the path
+that the curve followed to get to <m>P_0</m> from <m>P_1</m>. We shall see, in Theorem
+<xref ref="thm_pathIndepConserv"/>, below, that this happens only for
+conservative vector fields.
+Here are several examples of line integrals of vector fields that are not
+conservative.
+</p>
+
+<example xml:id="eg_workIntegalA">
+<p>
+Set <m>P_0=(0,0)</m>, <m>P_1=(1,1)</m> and
+<fn>The reader should check that this vector field is not conservative.</fn>
+<me>
+\vF(x,y) = xy\,\hi + (y^2+1)\,\hj
+</me>
+We shall consider three curves, all starting at <m>P_0</m> and ending at <m>P_1</m>.
+<ol label="a">
+<li>
+Let <m>\cC_1</m> be the straight line from <m>P_0</m> to <m>P_1</m>.
+</li>
+<li>
+Let <m>\cC_2</m> be the path, made from two straight lines,
+which follows the <m>x</m>-axis from <m>P_0</m> to <m>(1,0)</m>
+and then follows the line <m>x=1</m> from <m>(1,0)</m> to <m>P_1</m>.
+</li>
+<li>
+Let <m>\cC_3</m> be the part of the parabola <m>x=y^2</m> from <m>P_0</m> to <m>P_1</m>.
+</li>
+</ol>
+</p>
+
+<sidebyside>
+<image source="figs/workIntegralA"/>
+</sidebyside>
+
+<p>
+We shall calculate the work <m>\int_{\cC_i}\vF\cdot\dee{\vr}</m> for each of
+the curves.
+<ol label="a">
+<li>
+We parametrize <m>\cC_1</m> by <m>\vr(t) = t\,\hi+t\,\hj</m> with <m>t</m> running from <m>0</m> to <m>1</m>.
+Then <m>x(t)=t</m> and <m>y(t)=t</m> so that
+<me>
+\vF\big(\vr(t)\big) = t^2\,\hi + (t^2+1)\,\hj\qquad\text{and}\qquad
+\diff{\vr}{t}(t) = \hi + \hj
+</me>
+so that
+<md>
+<mrow>
+\int_{\cC_1}\vF\cdot\dee{\vr}
+&amp;=\int_{0}^{1}\vF\big(\vr(t)\big)\cdot\diff{\vr}{t}(t)\,\dee{t}
+=\int_{0}^{1}\big[t^2\,\hi + (t^2+1)\,\hj\big]\cdot[\hi + \hj]\,\dee{t}
+</mrow><mrow>
+&amp;=\int_{0}^{1}\big[2t^2+1\big]\,\dee{t}
+</mrow><mrow>
+&amp;=\frac{5}{3}
+</mrow>
+</md>
+</li>
+<li>
+We split <m>\cC_2</m> into two parts, <m>\cC_{2,x}</m> running from <m>P_0</m> to <m>(1,0)</m>
+along the <m>x</m>-axis and then <m>\cC_{2,y}</m> running from <m>(1,0)</m> to <m>P_1</m>
+along the line <m>x=1</m>.
+We parametrize <m>\cC_{2,x}</m> by <m>\vr(x) = x\,\hi</m> with <m>x</m> running from <m>0</m> to <m>1</m>
+and <m>\cC_{2,y}</m> by <m>\vr(y) = \hi+y\,\hj</m> with <m>y</m> running from <m>0</m> to <m>1</m>.
+Then
+<fn>You might like to think about why we can split up the integral like this.</fn>
+<md>
+<mrow>
+&amp;\int_{\cC_2}\vF\cdot\dee{\vr}
+=\int_{\cC_{2,x}}\vF\cdot\dee{\vr} + \int_{\cC_{2,y}}\vF\cdot\dee{\vr}
+</mrow><mrow>
+&amp;\hskip0.25in=\int_{0}^{1}\big[(x) (0)\,\hi + (0^2+1)\,\hj\big]\cdot
+     \overbrace{\diff{\ }{x}\big(x\,\hi\big)}^{\hi}\,\dee{x}
+ + \int_{0}^{1}\big[(1) (y)\,\hi + (y^2+1)\,\hj\big]\cdot
+           \overbrace{\diff{\ }{y}\big(\hi+y\,\hj\big)}^{\hj}\,\dee{y}
+</mrow><mrow>
+&amp;\hskip0.25in=\int_{0}^{1}0\,\dee{x}
+ + \int_{0}^{1}\big(y^2+1\big)\,\dee{y}
+</mrow><mrow>
+&amp;\hskip0.25in=\frac{4}{3}
+</mrow>
+</md>
+</li>
+<li>
+We parametrize <m>\cC_3</m> by <m>\vr(t) = t^2\,\hi+t\,\hj</m> with <m>t</m> running from <m>0</m> to <m>1</m>.
+Then <m>x(t)=t^2</m> and <m>y(t)=t</m> so that
+<me>
+\vF\big(\vr(t)\big) = t^3\,\hi + (t^2+1)\,\hj\qquad\text{and}\qquad
+\diff{\vr}{t}(t) = 2t\,\hi + \hj
+</me>
+so that
+<md>
+<mrow>
+\int_{\cC_3}\vF\cdot\dee{\vr}
+&amp;
+=\int_{0}^{1}\big[t^3\,\hi + (t^2+1)\,\hj\big]\cdot[2t\,\hi + \hj]\,\dee{t}
+=\int_{0}^{1}\big[2t^4+t^2+1\big]\,\dee{t}
+</mrow><mrow>
+&amp;=\frac{2}{5}+\frac{1}{3}+1 = \frac{26}{15}
+</mrow>
+</md>
+</li>
+</ol>
+Note that, despite the fact that <m>\cC_1</m>, <m>\cC_2</m> and <m>\cC_3</m> all start at <m>P_0</m>
+and all end at <m>P_1</m>, the three integrals <m>\int_{\cC_1}\vF\cdot\dee{\vr}</m>,
+<m>\int_{\cC_2}\vF\cdot\dee{\vr}</m> and <m>\int_{\cC_3}\vF\cdot\dee{\vr}</m> all have different values.
+</p>
+
+</example>
+
+
+<example xml:id="eg_workIntegalB">
+<p>
+Set
+<fn>Again, the reader should verify that this vector field is not conservative.</fn>
+<me>
+\vF(x,y) = 2y\,\hi + 3x\,\hj
+</me>
+This time we consider two curves.
+<ol label="a">
+<li>
+Let <m>\cC_1</m> be circle <m>x^2+y^2=1</m>, traversed once counterclockwise, starting
+at <m>(1,0)</m>.
+</li>
+<li>
+Let <m>\cC_2</m> be (trivial) curve which just consists of the single point <m>(1,0)</m>.
+</li>
+</ol>
+We shall calculate the work <m>\int_{\cC_i}\vF\cdot\dee{\vr}</m> for each
+curve.
+<ol label="a">
+<li><p>
+We parametrize <m>\cC_1</m> by <m>\vr(t) = \cos t\,\hi+\sin t\,\hj</m> with <m>t</m>
+running from <m>0</m> to <m>2\pi</m>, just as we did in Example <xref ref="eg_paramCircle"/>.
+Then
+<md>
+<mrow>
+\oint_{\cC_1}\vF\cdot\dee{\vr}
+&amp;=\int_{0}^{2\pi}\big[2\sin t\,\hi + 3\cos t\,\hj\big]
+           \cdot[-\sin t\,\hi + \cos t\,\hj]\,\dee{t}
+=\int_{0}^{2\pi}\big[-2\sin^2 t+3\cos^2 t\big]\,\dee{t}
+</mrow>
+</md>
+You could evaluate these integrals using double angle trig identities
+like you did in first year calculus. But there is a sneaky, much easier, way.
+Because <m>\sin^2 t</m> and <m>\cos^2 t</m> are translates of each other, and both are
+periodic of period <m>\pi</m>, the two integrals
+<m>\int_0^{2\pi}\sin ^2 t\,\dee{t}</m> and <m>\int_0^{2\pi}\cos ^2 t\,\dee{t}</m>
+represent the same area and so are equal. See the figure below.
+</p>
+
+<sidebyside width="45%">
+  <image source="figs/sin2Graph"/>
+  <image source="figs/cos2Graph"/>
+</sidebyside>
+
+<p>
+Thus
+<md>
+<mrow>
+\int_{0}^{2\pi} \sin^2 t\,\dee{t}
+=\int_{0}^{2\pi} \cos^2 t\,\dee{t}
+=\int_{0}^{2\pi} \frac{1}{2}\big[\sin^2 t+\cos^2t\big]\,\dee{t}
+=\frac{1}{2}\int_{0}^{2\pi} \dee{t}
+=\pi
+</mrow>
+</md>
+and
+<md>
+<mrow>
+\oint_{\cC_1}\vF\cdot\dee{\vr}
+=-2\int_{0}^{2\pi} \sin^2 t\,\dee{t}
++3\int_{0}^{2\pi} \cos^2 t\,\dee{t}
+=\pi
+</mrow>
+</md></p>
+</li>
+<li>
+We parametrize <m>\cC_2</m> by <m>\vr(t) = \hi</m> for all <m>t</m>. Then
+<m>\diff{\vr}{t}(t) = \vZero</m> and <m>\int_{\cC_2}\vF\cdot\dee{\vr}=0</m>.
+</li>
+</ol>
+Again, despite the fact that <m>\cC_1</m> and <m>\cC_2</m> both start at <m>(1,0)</m>
+and end at <m>(1,0)</m>, the two integrals <m>\int_{\cC_1}\vF\cdot\dee{\vr}</m> and
+<m>\int_{\cC_2}\vF\cdot\dee{\vr}</m> are different.
+</p>
+
+</example>
+
+<example xml:id="eg_workIntegalC">
+<title>Example <xref ref="eg_screeningCounterexample"/>, again.</title>
+<p>
+In Example <xref ref="eg_screeningCounterexample"/>, we saw that the vector field
+<me>
+\vF(x,y) = -\frac{y}{x^2+y^2}\hi + \frac{x}{x^2+y^2}\hj
+\qquad \text{defined for all $(x,y)$ in $\bbbr^2$ except $(x,y)=(0,0)$}
+</me>
+passed the screening test of Theorem <xref ref="thm_screen"/>.a, and yet was not
+conservative. In this example, we will see that this <m>\vF</m> violates the
+conclusion of Theorem <xref ref="thm_workIntegral"/>, thereby providing a second proof
+that <m>\vF(x,y)</m> is not conservative on <m>\bbbr^2</m> with <m>(0,0)</m> removed.
+For the curve <m>\cC</m>, of Theorem <xref ref="thm_workIntegral"/>, we use the circle
+parametrized by <m>x=a\cos\theta,\ y=a\sin\theta</m>, <m>0\le\theta\le 2\pi</m>. Then
+<m>\dee{x}=-a\sin\theta\,\dee{\theta}</m> and
+<m>\dee{y}=a\cos\theta\,\dee{\theta}</m> so that
+<md>
+<mrow>
+\frac{1}{2\pi}\int_\cC \frac{x\,\dee{y}-y\,\dee{x}}{x^2+y^2}
+=\frac{1}{2\pi}\int_0^{2\pi} \frac{a^2\cos^2\theta\,\dee{\theta}+a^2\sin^2\theta\,\dee{\theta}}
+             {a^2\cos^2\theta+a^2\sin^2\theta}
+=\frac{1}{2\pi}\int_0^{2\pi}\dee{\theta}=1
+</mrow>
+</md>
+The curve <m>\cC</m> has initial point
+<md>
+<mrow>
+P_0&amp;=(a\cos\theta,\ a\sin\theta)\big|_{\theta=0} = (a,0)
+</mrow>
+<intertext>and final point</intertext><mrow>
+P_1&amp;=(a\cos\theta,\ a\sin\theta)\big|_{\theta=2\pi} = (a,0) =P_0
+</mrow>
+</md>
+So, if <m>\vF</m> were conservative with potential <m>\varphi</m>,
+Theorem <xref ref="thm_workIntegral"/> would give that
+<me>
+\frac{1}{2\pi}\int_\cC \frac{x\,\dee{y}-y\,\dee{x}}{x^2+y^2}
+=\varphi(P_1) - \varphi(P_0)=0
+</me>
+Consequently, <m>\vF</m> can't be conservative.
+</p></example>
+
+</introduction>
+
+<subsection xml:id="sec_pathIndep">
+<title>Path Independence</title>
+
+<p>This brings us to the following question. Let <m>\vF</m> be any fixed vector field.
+When is it true that, given any two fixed points <m>P_0</m> and <m>P_1</m>,
+the integrals
+<me>
+\int_{\cC}\vF\cdot\dee{\vr}=
+\int_{\cC'}\vF\cdot\dee{\vr}
+</me>
+for all curves <m>\cC</m>, <m>\cC'</m> that start at <m>P_0</m> and end at <m>P_1</m>?
+When can we ignore the path taken?
+If this is the case we say that
+<q><m>\int_{\cC}\vF\cdot\dee{\vr}</m> is independent of the path chosen</q>
+and we write
+<me>
+\int_{P_0}^{P_1}\vF\cdot\dee{\vr}
+=\int_{\cC}\vF\cdot\dee{\vr}
+</me>
+for any path <m>\cC</m> from <m>P_0</m> to <m>P_1</m>.
+The point of this section is that there is an intimate relation between
+path independence and conservativeness of vector fields, that we will
+get to in Theorem <xref ref="thm_pathIndepConserv"/>.
+</p>
+
+<p> For simplicity, we will consider only vector fields that are defined and continuous on all of <m>\bbbr^2</m>
+(i.e. the <m>xy</m>-plane) or <m>\bbbr^3</m> (i.e. the usual three dimensional world).
+Some discussion about what happens for vector fields that are defined only
+on part of <m>\bbbr^2</m> or <m>\bbbr^3</m> is given in the optional
+§<xref ref="sec_cohomology"/>.
+</p>
+
+<p>First we show that if there is one pair of (not necessarily distinct)
+points <m>P_0</m>, <m>P_1</m> such that
+<me>
+\int_{\cC_1}\vF\cdot\dee{\vr}=
+\int_{\cC_2}\vF\cdot\dee{\vr}
+</me>
+for all curves <m>\cC_1</m>, <m>\cC_2</m> that start at <m>P_0</m> and end at <m>P_1</m>,
+then it is also true that, for <em>any</em> other pair of points
+<m>P_0'</m>, <m>P_1'</m>
+<me>
+\int_{\cC'_1}\vF\cdot\dee{\vr}=
+\int_{\cC'_2}\vF\cdot\dee{\vr}
+</me>
+for all curves <m>\cC'_1</m>, <m>\cC'_2</m> that start at <m>P'_0</m> and end at <m>P'_1</m>.
+This might seem unlikely at first, but the idea of the proof is really
+intuitive.
+</p>
+
+<theorem xml:id="thm_pathIndepArbEndPoints">
+<statement><p>
+Let <m>\vF</m> be a vector field that is defined and continuous on all of <m>\bbbr^2</m>
+(or <m>\bbbr^3</m>). Let <m>P_0</m>, <m>P_1</m>, <m>P'_0</m>, <m>P'_1</m> be any four points
+in <m>\bbbr^2</m> (or <m>\bbbr^3</m>). Assume that
+<me>
+\int_{\cC_1}\vF\cdot\dee{\vr}=
+\int_{\cC_2}\vF\cdot\dee{\vr}
+</me>
+for all curves <m>\cC_1</m>, <m>\cC_2</m> that start at <m>P_0</m> and end at <m>P_1</m>.
+Then
+<me>
+\int_{\cC'_1}\vF\cdot\dee{\vr}=
+\int_{\cC'_2}\vF\cdot\dee{\vr}
+</me>
+for all curves <m>\cC'_1</m>, <m>\cC'_2</m> that start at <m>P'_0</m> and end at <m>P'_1</m>.
+</p></statement>
+</theorem>
+
+<proof>
+<p>
+Let <m>\cC'_1</m> and <m>\cC'_2</m> be any two curves that start at <m>P'_0</m> and
+end at <m>P'_1</m>.
+</p>
+
+<sidebyside>
+<image source="figs/pathIndep"/>
+</sidebyside>
+
+<p>
+We start by choosing any two (auxiliary) curves
+<ul>
+<li>
+<m>\cC_\ell</m> that starts at <m>P_0</m> and ends at <m>P'_0</m> and
+</li>
+<li>
+<m>\cC_r</m> that starts at <m>P'_1</m> and ends at <m>P_1</m>.
+</li>
+</ul>
+and then we define the curves
+<ul>
+<li>
+<m>\cC_1</m> to be <m>\cC_\ell</m>, followed by <m>C'_1</m>, followed by <m>\cC_r</m> and
+</li>
+<li>
+<m>\cC_2</m> to be <m>\cC_\ell</m>, followed by <m>C'_2</m>, followed by <m>\cC_r</m>.
+</li>
+</ul>
+Then both <m>\cC_1</m> and <m>\cC_2</m> start at <m>P_0</m> and end at <m>P_1</m>, so that,
+by hypothesis,
+<me>
+\int_{\cC_1}\vF\cdot\dee{\vr}=
+\int_{\cC_2}\vF\cdot\dee{\vr}
+</me>
+and, from the construction of <m>\cC_1</m> and <m>\cC_2</m>,
+<md>
+<mrow>
+&amp;\int_{\cC_\ell}\vF\cdot\dee{\vr}
++\int_{\cC'_1}\vF\cdot\dee{\vr}
++\int_{\cC_r}\vF\cdot\dee{\vr}=
+\int_{\cC_\ell}\vF\cdot\dee{\vr}
++\int_{\cC'_2}\vF\cdot\dee{\vr}
++\int_{\cC_r}\vF\cdot\dee{\vr}
+</mrow><mrow>
+\implies &amp; \int_{\cC'_1}\vF\cdot\dee{\vr}=
+\int_{\cC'_2}\vF\cdot\dee{\vr}
+</mrow>
+</md>
+as desired.
+</p></proof>
+
+<p>
+  We are now ready for our main theorem on conservative fields.
+</p>
+
+<theorem xml:id="thm_pathIndepConserv">
+<statement><p>
+Let <m>\vF</m> be a vector field that is defined and continuous on all of <m>\bbbr^2</m>
+(or <m>\bbbr^3</m>). Then the following three statements are equivalent.
+<ol label="a">
+<li>
+<m>\vF</m> is conservative. That is, there exists a function <m>\varphi</m> such that
+<m>\vF=\vnabla\varphi</m>.
+</li>
+<li>
+The integral <m>\oint_\cC\vF\cdot\dee{\vr}=0</m> for any closed curve <m>\cC</m>.
+</li>
+<li>
+The integral <m>\int\vF\cdot\dee{\vr}</m> is path independent. That is,
+for any points <m>P_0</m>, <m>P_1</m> we have
+<m>
+\int_{\cC_1}\vF\cdot\dee{\vr}=
+\int_{\cC_2}\vF\cdot\dee{\vr}
+</m>
+for all curves <m>\cC_1</m>, <m>\cC_2</m> that start at <m>P_0</m> and end at <m>P_1</m>.
+</li>
+</ol>
+That is, if any one of the three statements are true, then all three are true.
+</p></statement>
+</theorem>
+
+<proof>
+<p>
+It suffices for us to prove
+<fn>This is a pretty efficient, and standard, way to structure the proof of the equivalence of three
+statements.</fn>
+ that
+<ul>
+<li>
+the truth of (a) implies the truth of (b) and
+</li>
+<li>
+the truth of (b) implies the truth of (c) and
+</li>
+<li>
+the truth of (c) implies the truth of (a).
+</li>
+</ul>
+That's exactly what we will do.
+</p>
+
+<p>(a)<m>\implies</m>(b):
+Let <m>\cC</m> be a closed curve that starts at <m>P_0</m> and then ends back at <m>P_0</m>.
+Then, by Theorem <xref ref="thm_workIntegral"/> with <m>P_1=P_0</m>,
+<me>
+\oint_\cC\vF\cdot\dee{\vr} =\varphi(P_0) - \varphi(P_0)=0
+</me>
+</p>
+
+<p> (b)<m>\implies</m>(c):
+Pick any point <m>P_0</m> and set <m>P_1=P_0</m>. Then we are assuming that
+<m>\oint_\cC\vF\cdot\dee{\vr}=0</m> for all curves that start at <m>P_0</m> and end at <m>P_1</m>.
+In particular  <m>\int_\cC\vF\cdot\dee{\vr}</m> takes the same value for all curves
+that start at <m>P_0</m> and end at <m>P_1</m>.
+So Theorem <xref ref="thm_pathIndepArbEndPoints"/> immediately yields
+property (c).
+</p>
+
+<p> (c)<m>\implies</m>(a):
+We are to show that <m>\vF</m> is conservative.
+We'll start by guessing <m>\varphi</m> and then we'll verify that, for our
+chosen <m>\varphi</m>, we really do have <m>\vF=\vnabla\varphi</m>. Our guess for
+<m>\varphi</m> is motivated by Theorem <xref ref="thm_workIntegral"/>. If our <m>\vF</m> really is conservative, its potential is going to have to obey
+<m>\int_\cC\vF\cdot\dee{\vr} =\varphi(P_1) - \varphi(P_0)</m> for any curve <m>\cC</m> that starts at <m>P_0</m> and ends at <m>P_1</m>. Let's choose <m>P_0=\vZero</m>. Remembering,
+from Definition <xref ref="def_conservative"/>.a, that adding a constant to a
+potential always yields another potential, we can always choose
+<m>\varphi(\vZero)=0</m>. Then <m>\varphi(P_1)=\int_\cC\vF\cdot\dee{\vr}</m> for any
+curve <m>\cC</m> that starts at <m>\vZero</m> and ends at <m>P_1</m>. So define,
+for each point <m>\vx</m>, <m>\varphi(\vx)=\int_\cC\vF\cdot\dee{\vr}</m> for any
+curve <m>\cC</m> that starts at <m>\vZero</m> and ends at <m>\vx</m>.
+</p>
+
+<p>We now verify that, for this chosen <m>\varphi</m>, we really do have <m>\vF=\vnabla\varphi</m>.
+Fix any point <m>\vx</m> and any curve <m>\cC_{\vx}</m> that
+starts at the origin and ends at <m>\vx</m>.
+For any vector <m>\vu</m>, let <m>\cD_{\vu}</m> be the curve with parametrization
+<me>
+\vr_{\vu}(t)=\vx+t\vu\qquad 0\le t\le 1
+</me>
+This curve is a line segment that starts at <m>\vx</m> at <m>t=0</m> and ends at <m>\vx+\vu</m> at <m>t=1</m>.
+Observe that <m>{\vr\,}'_{\vu}(t)=\vu</m>.
+Recall that, by assumption, <m>\varphi(\vx+s\vu)=\int_\cC\vF\cdot\dee{\vr}</m> for <em>any</em>
+curve <m>\cC</m> that starts at <m>\vZero</m> and ends at <m>\vx+s\vu</m>. So
+<me>
+\varphi(\vx+s\vu)
+=\int_{\cC_{\vx}+\cD_{s\vu}}\vF\cdot d\vr
+</me>
+where <m>C_{\vx}+D_{s\vu}</m> is the curve which first follows
+<m>C_{\vx}</m> from the origin to <m>\vx</m> and then follows <m>D_{s\vu}</m>
+from <m>x</m> to <m>\vx+s\vu</m>. We have
+<md>
+<mrow>
+\int_{C_{\vx}+D_{s\vu}}\vF\cdot d\vr
+&amp;=\int_{C_{\vx}}\vF\cdot d\vr
++\int_{D_{s\vu}}\vF\cdot d\vr
+</mrow><mrow>
+&amp;=\int_{C_{\vx}}\vF\cdot d\vr
++\int_0^1 \vF(\vx+ts\vu)\cdot (s\vu)\,dt
+</mrow>
+</md>
+In the second integral, make the change of variables
+<m>\tau=ts</m>, <m>\dee{\tau}=s\dee{t}</m>. This  gives
+<me>
+\varphi(\vx+s\vu)=\int_{C_{\vx}}\vF\cdot d\vr
++\int_0^s \vF(\vx+\tau\vu)\cdot \vu\,d\tau
+</me>
+By the fundamental theorem of calculus, applied to the second integral,
+<me>
+\diff{\ }{s}\varphi(\vx+s\vu)\Big|_{s=0}
+=\vF(\vx+s\vu)\cdot \vu\Big|_{s=0}=\vF(\vx)\cdot \vu
+</me>
+Applying this with <m>\vu=\hi,\ \hj,\ \hk</m> gives us
+<me>
+\Big(\frac{\partial\varphi}{\partial x}(\vx)\,,\,
+     \frac{\partial\varphi}{\partial y}(\vx)\,,\,
+     \frac{\partial\varphi}{\partial z}(\vx)\Big)
+=\big(\vF(\vx)\cdot\hi\,,\,\vF(\vx)\cdot\hj\,,\,\vF(\vx)\cdot\hk\big)
+</me>
+which is
+<me>
+\nabla\varphi(\vx)=\vF(\vx)
+</me>
+as desired.
+</p></proof>
+
+<p>
+Using this result, we can completely characterize conservative fields on
+<m>\bbbr^2</m> and <m>\bbbr^3</m>.
+</p>
+
+<theorem xml:id="thm_screenConserv">
+<statement><p>
+Let <m>\vF</m> be a vector field that is defined and has continuous
+first order partial derivatives on all of <m>\bbbr^2</m> (or <m>\bbbr^3</m>).
+Then <m>\vF</m> is conservative if and only if it passes the screening test
+<m>\vnabla\times\vF=\vZero</m>, i.e. is curl free.
+</p></statement>
+</theorem>
+
+<warning xml:id="warn_screeningB">
+<p>
+Note that in Theorem <xref ref="thm_screenConserv"/> we are assuming that
+<m>\vF</m> passes the screening test on <em>all</em> of <m>\bbbr^2</m> or <m>\bbbr^3</m>.
+We have already seen, in Example <xref ref="eg_screeningCounterexample"/>,
+that if the screening test fails at even a single point, for example
+because the vector field is not defined at that point, then <m>\vF</m> need
+not be conservative. We'll explore what happens in such cases in the
+(optional)  §<xref ref="sec_cohomology"/>. We'll see that something can be salvaged.
+</p>
+</warning>
+
+<proof><title>Proof of Theorem <xref ref="thm_screenConserv"/></title>
+<p>
+We'll give the proof for the <m>\bbbr^2</m> case. The proof for the <m>\bbbr^3</m> case
+is very similar.
+We have already seen, in Theorem <xref ref="thm_screen"/>, that if <m>\vF</m>
+is conservative, then it passes the screening test and there is nothing more
+to do.
+</p>
+
+<p>So we now have
+to assume that <m>\vF</m> obeys <m>\frac{\partial F_1}{\partial y}(x,y)
+=  \frac{\partial F_2}{\partial x}(x,y)</m> on <em>all</em> of <m>\bbbr^2</m>
+and prove that it is conservative. We'll do so
+using the strategy of Example <xref ref="eg_potentialD"/> to find a function
+<m>\varphi(x,y)</m>, that obeys
+<me>
+\begin{split}
+\frac{\partial \varphi}{\partial x}(x,y) &amp;= F_1(x,y) \\
+\frac{\partial \varphi}{\partial y}(x,y) &amp;= F_2(x,y)
+\end{split}
+</me>
+The partial derivative <m>\frac{\partial \ }{\partial x}</m> treats <m>y</m>
+as a constant. So <m>\varphi(x,y)</m> obeys the first equation
+if and only if there is a function <m>\psi(y)</m> with
+<me>
+\varphi(x,y)
+=\int_0^x F_1(X,y)\,\dee{X}
+\ +\ \psi(y)
+</me>
+This <m>\varphi(x,y)</m> will also obey the second equation if and only if
+<md>
+<mrow>
+F_2(x,y)&amp;= \frac{\partial \varphi}{\partial y}(x,y)
+</mrow><mrow>
+&amp;=\frac{\partial \ }{\partial y}\Big(\int_0^x F_1(X,y)\,\dee{X}\ +\ \psi(y)\Big)
+
+</mrow><mrow>
+&amp;=\int_0^x \frac{\partial F_1}{\partial y}(X,y)\,\dee{X}\ +\ \psi'(y)
+</mrow>
+</md>
+So we have to find a <m>\psi(y)</m> that obeys
+<me>
+\psi'(y) = F_2(x,y) -
+                \int_0^x \frac{\partial F_1}{\partial y}(X,y)\,\dee{X}
+</me>
+This looks bad <mdash/> no matter what <m>\psi(y)</m> is, the left hand side is
+independent of <m>x</m>, while it looks like the right hand side depends on <m>x</m>.
+Fortunately our screening test hypothesis now rides in to the
+rescue
+<fn>or bails us out, or saves our bacon, or <m>\ldots</m></fn>.
+(We haven't used it yet, and it has to come in somewhere.)
+<md>
+<mrow>
+F_2(x,y) -  \int_0^x \frac{\partial F_1}{\partial y}(X,y)\,\dee{X}
+&amp;=F_2(x,y) -  \int_0^x \frac{\partial F_2}{\partial x}(X,y)\,\dee{X}
+</mrow><mrow>
+&amp;= F_2(x,y) - F_2(X,y)\Big|_{X=0}^{X=x}
+</mrow><mrow>
+&amp;=F_2(0,y)
+</mrow>
+</md>
+In going from the first line to the second line we used
+the fundamental theorem of calculus. So choosing
+<me>
+\psi(y) = \int_0^y F_2(0,Y)\,\dee{Y} +C
+</me>
+for any constant <m>C</m>, does the trick.
+</p></proof>
+
+</subsection>
+
+<!-- <xi:include href="../problems/prob_s2.4.ptx" /> -->
+
+</section>

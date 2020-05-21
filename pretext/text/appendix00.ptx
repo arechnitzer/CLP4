@@ -16,5 +16,6 @@
 <xi:include href="./appendix_taylor.ptx" />
 <xi:include href="./appendix_3dcoord.ptx" />
 <xi:include href="./appendix_quad.ptx" />
+<xi:include href="./appendix_ode.ptx" />
 
 </appendix>

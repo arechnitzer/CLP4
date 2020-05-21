@@ -1,0 +1,530 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!-- Copyright 2018-2020 Joel Feldman, Andrew Rechnitzer and Elyse Yeager -->
+<!-- This work is licensed under the Creative Commons Attribution-NonCommercial-ShareAlike 4.0 International License-->
+<!-- https://creativecommons.org/licenses/by-nc-sa/4.0 -->
+
+<section xml:id="ap_ODE">
+  <title>Review of Linear Ordinary Differential Equations</title>
+
+<definition xml:id="def_apODE">
+<statement><p>
+<ol label="a">
+<li>
+A <term>differential equation</term> is an equation for an
+unknown function that contains the derivatives of that unknown function.
+For example <m>y'(t)+y(t)=0</m> is a differential equation for the unknown
+function <m>y(t)</m>.
+</li>
+<li>
+A differential equation is called an <term>ordinary differential
+equation</term> (often shortened to <q>ODE</q>) if only ordinary derivatives
+appear. That is, if the unknown function has only a single independent
+variable. A differential equation is called a <term>partial differential
+equation</term> (often shortened to <q>PDE</q>) if partial derivatives
+appear. That is, if the unknown function has more than one independent
+variable. For example <m>y'(t)+y(t)=0</m> is an ODE while
+<m>\frac{\partial^2 u}{\partial\, t^2}(x,t)=c^2
+\frac{\partial^2 u}{\partial\, x^2}(x,t)</m> is a PDE.
+</li>
+<li>
+The <term>order</term> of a differential equation is the order of the
+highest derivative that appears. For example <m>y'(t)+y(t)=0</m>
+is a second order ODE.
+</li>
+<li><p>
+An ordinary differential equation that is of the form
+<men xml:id="eqn_ODEordern">
+a_0(t) y^{(n)}(t) + a_1(t) y^{(n-1)}(t)+\cdots+a_{n-1}(t) y'(t) +a_n(t)y(t)
+=F(t)
+</men>
+with given coefficient functions <m>a_0(t)</m>, <m>\cdots</m>, <m>a_n(t)</m> and <m>F(t)</m>
+is said to be <term>linear</term>. Otherwise, the ODE is said to be <term>nonlinear</term>.
+For example, <m>y'(t)^2+y(t)=0</m>, <m>y'(t)y'(t)+y(t)=0</m> and <m>y'(t)=e^{y(t)}</m>
+are all nonlinear.
+</p></li>
+<li>
+The ODE <xref ref="eqn_ODEordern"/> is said to have <term>constant coefficients</term> if
+the coefficients  <m>a_0(t)</m>, <m>a_1(t)</m>, <m>\cdots</m>, <m>a_n(t)</m> are all constants. Otherwise,
+it is said to have <term>variable coefficients</term>. For example,
+the ODE <m>y'(t)+7y(t)=\sin t</m> is constant coefficient, while
+<m>y'(t)+ty(t)=\sin t</m> is variable coefficient.
+</li>
+<li>
+The ODE <xref ref="eqn_ODEordern"/> is said to be <term>homogeneous</term> if <m>F(t)</m>
+is identically zero. Otherwise, it is said to be <term>inhomogeneous</term> or
+<term>nonhomogeneous</term>. For example, the ODE <m>y'(t)+7y(t)=0</m> is homogeneous,
+while  <m>y'(t)+7y(t)=\sin t</m> is inhomogeneous. A homogeneous ODE always
+has the trivial solution <m>y(t)=0</m>.
+</li>
+<li>
+An <term>initial value problem</term>  is a problem in which one is to find
+an unknown function <m>y(t)</m> that satisfies both a given ODE and given
+initial conditions, like <m>y(0)=1</m>, <m>y'(0)=0</m>.
+</li>
+<li>
+A <term>boundary value problem</term>  is a problem in which one is to find
+an unknown function <m>y(t)</m> that satisfies both a given ODE and given
+boundary conditions, like <m>y(0)=0</m>, <m>y(1)=0</m>.
+</li>
+</ol>
+</p></statement>
+</definition>
+
+
+<p>The following theorem gives the form of solutions to the ODE <xref ref="eqn_ODEordern"/>.
+</p>
+
+<theorem xml:id="thm_odeMain">
+<statement><p>
+Assume that the coefficients <m>a_0(t)</m>, <m>a_1(t)</m>, <m>\cdots</m>, <m>a_{n-1}(t)</m>,
+<m>a_n(t)</m> and <m>F(t)</m> are continuous functions and that
+<m>a_0(t)</m> is not zero.
+<ol label="a">
+<li><p>
+The general solution to the ODE <xref ref="eqn_ODEordern"/> is of the form
+<men xml:id="eqn_ODEgensln">
+y(t)=y_p(t)+ C_1y_1(t)+C_2y_2(t)+\cdots+C_n y_n(t)
+</men>
+where
+<ul>
+<li> <m>n</m> is the order of <xref ref="eqn_ODEordern"/>
+</li>
+<li> <m>y_p(t)</m> is any solution to <xref ref="eqn_ODEordern"/>
+</li>
+<li> <m>C_1</m>, <m>C_2</m>, <m>\cdots</m>, <m>C_n</m> are arbitrary constants
+</li>
+<li> <m>y_1</m>, <m>y_2</m>, <m>\cdots</m>, <m>y_n</m> are <m>n</m> independent solutions
+to the homogenous equation
+<me>
+a_0(t) y^{(n)}(t) + a_1(t) y^{(n-1)}(t)+\cdots+a_{n-1}(t) y'(t) +a_n(t)y(t)=0
+</me>
+associated to <xref ref="eqn_ODEordern"/>.
+<q>Independent</q> just means that no <m>y_i</m> can be written as a linear combination
+of the other <m>y_j</m>'s. For example, <m>y_1(t)</m> cannot be expressed in the form
+<m>b_2y_2(t)+\cdots+b_ny_n(t)</m>.
+</li>
+</ul>
+In <xref ref="eqn_ODEgensln"/>, <m>y_p</m> is called the <q>particular solution</q> and
+<m>C_1y_1(t)+C_2y_2(t)+\cdots+C_n y_n(t)</m> is called the
+<q>complementary solution</q>.
+</p></li>
+<li>
+Given any constants <m>b_0</m>, <m>\cdots</m>, <m>b_{n-1}</m> there is exactly
+one function <m>y(t)</m> that obeys the ODE <xref ref="eqn_ODEordern"/> and the initial
+conditions
+<me>
+y(0)=b_0\qquad y'(0)=b_1\qquad \cdots\qquad y^{(n-1)}(0)=b_{n-1}
+</me>
+</li>
+</ol>
+</p></statement>
+</theorem>
+
+
+<example xml:id="eg_RLC"><title>RLC circuit</title>
+<p>
+As an example of the most commonly used techniques for solving linear,
+constant coefficient ODE's, we consider the RLC circuit, which is
+the electrical circuit consisting of a resistor of
+resistance <m>R</m>, a coil (or solenoid) of inductance <m>L</m>, a capacitor
+of capacitance <m>C</m> and a voltage source arranged in series, as shown below.
+Here <m>R</m>, <m>L</m> and <m>C</m> are all nonnegative constants.
+</p>
+
+<sidebyside>
+<image source="figs/RLC"/>
+</sidebyside>
+
+<p>
+ We're going to think of the voltage <m>x(t)</m> as an input signal,
+and the voltage <m>y(t)</m> as an output signal.
+The goal is to determine the output signal produced by a given input signal.
+If <m>i(t)</m> is the current flowing at time <m>t</m> in the loop as shown and
+<m>q(t)</m> is the charge on the capacitor, then the voltages across <m>R</m>, <m>L</m>
+and <m>C</m>, respectively, at time <m>t</m> are
+<m>Ri(t)</m>, <m>L\diff{i}{t}(t)</m> and <m>y(t)=\frac{q(t)}{C}</m>. By the Kirchhoff's
+law
+<fn>Gustav Robert Kirchhoff (1824--1887) was a German physicist.</fn>
+that says that the voltage between any two points has to be independent
+of the path used to travel between the two points, these three voltages
+must add up to <m>x(t)</m> so that
+<men xml:id="eqn_RLCrlc">
+Ri(t) + L\diff{i}{t}(t) + \frac{q(t)}{C} = x(t)
+</men>
+Assuming that <m>R,\ L,\ C</m> and <m>x(t)</m> are known, this is still one
+differential equation in two unknowns, <m>i(t)</m> and <m>q(t)</m>. Fortunately,
+there is a relationship between the two. Namely
+<men xml:id="eqn_RLCiq">
+i(t)=\diff{q}{t}(t) = Cy'(t)
+</men>
+This just says that the capacitor cannot create or destroy charge on
+its own; all charging of the capacitor must come from the current.
+Substituting <xref ref="eqn_RLCiq"/> into <xref ref="eqn_RLCrlc"/> gives
+<me>
+ LCy'(t) + RCy'(t) + y(t) = x(t)
+</me>
+As a concrete example, we'll take  an ac voltage source and choose the
+origin of time so that <m>x(0)=0</m>, <m>x(t)=E_0\sin(\om t)</m>. Then the differential equation becomes
+<men xml:id="eqn_ODERy">
+LCy'(t)+RCy'(t)+y(t)=E_0\sin(\om t)
+</men>
+This is a second order, linear, constant coefficient ODE. So we know,
+from Theorem <xref ref="thm_odeMain"/>, that the general solution is of the form
+<m>y_p(t)+C_1y_1(t)+C_2y_2(t)</m>, where
+<ul>
+<li>
+ <m>y_p(t)</m>, the particular solution, is any one solution
+to  <xref ref="eqn_ODERy"/>,
+</li>
+<li>
+<m>C_1,C_2</m> are arbitrary
+constants and
+</li>
+<li>
+<m>y_1(t)</m>, <m>y_2(t)</m> are any two independent solutions of the corresponding
+homogeneous equation
+<men xml:id="eqn_ODERyh">
+LCy'(t)+RCy'(t)+y(t)=0
+<!-- % \tag{<xref ref="eqn_ODERy"/> $ _{\rm h}$} -->
+</men>
+</li>
+</ul>
+So to find the general solution to <xref ref="eqn_ODERy"/>, we need to find
+three functions: <m>y_1(t)</m>, <m>y_2(t)</m> and <m>y_p(t)</m>.
+</p>
+
+
+<p><ul>
+<li><p>
+<em>Finding <m>y_1(t)</m> and <m>y_2(t)</m>:</em>
+The best way to find <m>y_1</m> and <m>y_2</m> is to guess them.
+Any solution, <m>y_h(t)</m>, of <xref ref="eqn_ODERyh"/> has to have the property that <m>y_h(t)</m>,
+<m>RCy_h'(t)</m> and <m>LCy_h'(t)</m> cancel each other out for all <m>t</m>. We choose our guess
+so that <m>y_h(t)</m>, <m>y_h'(t)</m> and <m>y_h'(t)</m> are all proportional to a single
+function of <m>t</m>. Then it will be easy to see if <m>y_h(t)</m>, <m>RCy_h'(t)</m> and
+<m>LCy_h'(t)</m> all cancel. All derivatives of the function <m>e^{rt}</m> are again proportional to <m>e^{rt}</m>. Hence we try <m>y_h(t)=e^{rt}</m>, with the constant
+<m>r</m> to the determined. This guess is a solution of <xref ref="eqn_ODERyh"/>
+if and only if
+<men xml:id="eqn_ODERroots">
+\begin{split}
+LCr^2e^{rt}+RCre^{rt}+e^{rt}=0
+&amp;\iff LCr^2+RCr+1 =0 \\
+&amp;\iff  r=\frac{-RC\pm\sqrt{R^2C^2-4LC}}{2LC}\equiv r_{1,2}
+\end{split}
+</men>
+How we proceed depends on the sign of <m>R^2C^2-4LC</m>. That is, whether
+<m>R \gt  2\sqrt{\frac{L}{C}}</m> or  <m>R \lt  2\sqrt{\frac{L}{C}}</m>
+or <m>R = 2\sqrt{\frac{L}{C}}</m>.
+</p>
+<p>
+<ul>
+<li>
+<em>Finding <m>y_1(t)</m> and <m>y_2(t)</m>, when <m>R \gt  2\sqrt{\frac{L}{C}}</m>:</em>
+Then <m>R^2C^2-4LC \gt  0</m>, and <m>r_1</m> and <m>r_2</m> are two different real numbers.
+We may take <m>y_1(t)=e^{r_1t}</m> and <m>y_2(t)=e^{r_2t}</m> so that
+the complimentary solution is
+<m>
+C_1y_1(t)+C_2y_2(t)=C_1 e^{r_1t}+C_2e^{r_2 t}
+</m>.
+</li>
+<li><p>
+<em>Finding <m>y_1(t)</m> and <m>y_2(t)</m>, when <m>R \lt  2\sqrt{\frac{L}{C}}</m>:</em>
+Then <m>R^2C^2-4LC \lt  0</m> and <m>r_1</m> and <m>r_2</m>
+are the two different complex numbers <m>-\rho\pm i\nu</m>, where
+<me>
+\rho=\frac{R}{2L}\qquad\text{and}\qquad
+ \nu=\frac{\sqrt{4LC-R^2C^2}}{2LC}
+</me>
+We may again take
+<m>
+C_1 e^{r_1t}+C_2e^{r_2 t}
+</m>
+as the complimentray solution.  However we can also rewrite
+<m>C_1 e^{r_1t}+C_2e^{r_2 t}</m> in terms of real valued functions
+by using that <m>e^{\pm i\theta}=\cos\theta\pm i\sin\theta</m>:
+<md>
+<mrow>
+C_1 e^{r_1t}+C_2e^{r_2 t}
+  &amp;=e^{-\rho t}\big[C_1e^{i\nu t}+C_2e^{-i\nu t}\big]
+</mrow><mrow>
+  &amp;=e^{-\rho t}\big[C_1\big\{\cos(\nu t)+i\sin(\nu t)\big\}+
+               C_2\big\{\cos(\nu t)-i\sin(\nu t)\big\}\big]
+</mrow><mrow>
+  &amp;=e^{-\rho t}\big[D_1\cos(\nu t)+D_2\sin(\nu t)\big]
+</mrow>
+</md>
+where
+<fn>Don't make the mistake of thinking that <m>C_1</m>
+and <m>C_2</m> have to be real numbers, forcing <m>D_2</m> to be pure  imaginary.
+In most applications, <m>D_1</m> and <m>D_2</m> will be pure real and <m>C_1</m> and
+<m>C_2</m> will be complex.</fn>
+ <m>D_1=C_1+C_2,\ D_2=i(C_1-C_2)</m>. So we may also take
+<m>y_1(t)=e^{-\rho t}\cos(\nu t)</m>, <m>y_2(t)=e^{-\rho t}\sin(\nu t)</m> in
+the complementary solution.
+</p>
+
+<p>There is yet a third useful way to write
+the complementary solution.
+Think of <m>(D_1,D_2)</m> as a point in the <m>xy</m>-plane. Call the polar
+coordinates of that point <m>A</m> and <m>\theta</m> so that <m>D_1=A\cos\theta</m> and
+<m>D_2=A\sin\theta</m>. Then, using the trig identity <m>\cos(\alpha+\beta)
+=\cos \alpha\cos\beta-\sin \alpha\sin \beta</m>, with <m>\alpha=\nu t</m> and <m>\beta=-\theta</m>,
+<men xml:id="eqn_RLCampPhase">
+\begin{split}
+e^{-\rho t}\big[D_1\cos(\nu t)+D_2\sin(\nu t)\big]
+&amp;=e^{-\rho t}\big[A\cos(\nu t)\cos\theta+A\sin(\nu t)\sin\theta\big]\\
+&amp;=Ae^{-\rho t}\cos(\nu t-\theta)
+\end{split}
+</men>
+We have, in effect, replaced the two arbitrary constants <m>D_1</m> and <m>D_2</m>,
+whose values would normally be determined by initial conditions, by two
+other arbitrary constants, <m>R</m> and <m>\theta</m>, whose values would also normally
+be determined by initial conditions.
+</p>
+</li>
+<li>
+<em>Finding <m>y_1(t)</m> and <m>y_2(t)</m>, when <m>R=2\sqrt{\frac{L}{C}}</m>:</em>
+Then <m>R^2C^2-4LC=0</m> so that <m>r_1=r_2</m>. We may take
+<m>y_1=e^{r_1t}</m>, but <m>e^{r_2t}=e^{r_1t}</m> is certainly not a second independent
+solution. So we still need to find <m>y_2</m>.
+Here is a trick (called reduction of order
+<fn>The modern method of reduction of order was created by the French mathematician, physicist
+and music theorist Jean le Rond d'Alembert (1717-1783). The interested reader
+can easily search out more about his life.</fn>
+) for finding
+the other solutions:
+look for solutions of the form  <m>v(t)e^{-r_1 t}</m>. Here <m>e^{-r_1 t}</m>
+is the solution we have already found and <m>v(t)</m> is to be determined.
+To save writing, set <m>\rho=\frac{R}{2L}</m> so that <m>r_1=r_2=\rho</m>.
+To save writing also divide (<xref ref="eqn_ODERy"/><m>_{\rm h}</m>) by <m>LC</m> and
+substitute that <m>\frac{R}{L}=2\rho</m> and
+<m>\frac{1}{LC}=\frac{R^2}{4L^2}=\rho^2</m>.  (Recall that we are assuming
+that <m>R^2=\frac{4L}{C}</m>.) So (<xref ref="eqn_ODERy"/><m>_{\rm h}</m>) is equivalent to
+<me>
+y_h'(t)+2\rho\,y_h'(t)+\rho^2\,y_h(t)=0
+</me>
+Substitute in
+<md>
+<mrow>
+y_h(t)&amp;=\ \ \  v(t)e^{-\rho t}
+</mrow><mrow>
+y_h'(t)&amp;= -\rho v(t)e^{-\rho t}+\phantom{2\rho}v'(t)e^{-\rho t}
+</mrow><mrow>
+y_h'(t)&amp;= \phantom{-}\rho^2 v(t)e^{-\rho t}-2\rho v'(t)e^{-\rho t}
+                  +v'(t)e^{-\rho t}
+</mrow>
+</md>
+So when <m>y_h(t)=v(t)e^{-\rho t}</m>,
+<md>
+<mrow>
+&amp;y_h'(t)+2\rho\,y_h'(t)+\rho^2\,y_h(t)
+</mrow><mrow>
+&amp;\hskip1in=\big[\rho^2\!-\!2\rho^2\!+\!\rho^2\big]v(t)e^{-\rho t}
+       +\big[-2\rho\!+\!2\rho\big]v'(t)e^{-\rho t}+v'(t)e^{-\rho t}
+</mrow><mrow>
+&amp;\hskip1in=v'(t)e^{-\rho t}
+</mrow>
+</md>
+Thus <m>v(t)e^{-\rho t}</m> is a solution of (<xref ref="eqn_ODERy"/><m>_{\rm h}</m>) whenever the function
+<m>v'(t)=0</m> for all <m>t</m>. But, for any values of the constants <m>C_1</m> and <m>C_2</m>,
+<m>v(t)=C_1+C_2t</m> has vanishing second derivative
+so <m>\big(C_1+C_2t\big)e^{-\rho t}=\big(C_1+C_2t\big)e^{-r_1 t}</m> solves
+(<xref ref="eqn_ODERy"/><m>_{\rm h}</m>). This is of the form  <m>C_1y_1(t)+C_2y_2(t)</m> with
+<m>y_1(t)=e^{-r_1t}</m>, the solution that we found first, and <m>y_2(t)=te^{-r_1t}</m>,
+a second independent solution. So we may take <m>y_2(t)=te^{r_1t}</m>.
+</li>
+</ul></p>
+</li>
+<li><p>
+<em>Finding <m>y_p(t)</m>:</em>
+The best way to find <m>y_p</m> is to guess it. We guess that the circuit
+responds to an oscillating input voltage with an output voltage that oscillates
+at the same frequency. So we try
+<m>y_p(t)=\mathcal{A}\sin(\om t-\varphi)</m> with the amplitude <m>\mathcal{A}</m>
+and phase <m>\varphi</m> to be determined.
+</p>
+
+<p>For <m>y_p(t)</m> to be a solution, we need
+<md>
+<mrow>
+LCy_p'(t)+RCy_p'(t)+y_p(t)
+   &amp;=E_0 \sin(\om t)
+</mrow><mrow>
+-LC\om^2\mathcal{A}\sin(\om t-\varphi)+RC\om \mathcal{A}\cos(\om t-\varphi)
++\mathcal{A}\sin(\om t-\varphi)
+&amp;=E_0 \sin(\om t)
+</mrow><mrow>
+&amp;=E_0 \sin(\om t-\varphi+\varphi)
+</mrow>
+</md>
+and hence, applying <m>\sin(A+B)=\sin A\cos B+\cos A\sin B</m> with <m>A=\om
+t-\varphi</m> and <m>B=\varphi</m>,
+<md>
+<mrow>
+&amp;\big(1-LC\om^2\big)\mathcal{A}\sin(\om t-\varphi)+RC\om \mathcal{A}\cos(\om t-\varphi)
+</mrow><mrow>&amp;\hskip2in
+=E_0 \cos(\varphi)\sin(\om t-\varphi)
++ E_0 \sin(\varphi)\cos(\om t-\varphi)
+</mrow>
+</md>
+Matching coefficients of <m>\sin(\om t-\varphi)</m> and <m>\cos(\om t-\varphi)</m> on
+the left and right hand sides gives
+<mdn>
+<mrow xml:id="eqnODERnum">
+\big(1-LC\om^2\big)\mathcal{A}&amp;= E_0 \cos(\varphi)
+</mrow>
+<mrow xml:id="eqnODERden">
+RC\om \mathcal{A}&amp;=E_0 \sin(\varphi)
+</mrow>
+</mdn>
+It is now easy to solve for <m>\mathcal{A}</m> and <m>\varphi</m>
+<md alignment="alignat">
+<mrow>
+\frac{<xref ref="eqnODERden"/>}{<xref ref="eqnODERnum"/>}
+&amp;\implies \tan(\varphi) = \frac{RC\om}{1-LC\om^2}
+</mrow><mrow>
+&amp;\implies \varphi = \arctan\frac{RC\om}{1-LC\om^2}
+</mrow><mrow>
+\sqrt{<xref ref="eqnODERnum"/>^2\!+<xref ref="eqnODERden"/>^2}
+&amp;\implies\sqrt{\big(1\!-\!LC\om^2\big)^2+R^2C^2\om^2}\ \mathcal{A}= E_0
+</mrow><mrow>
+&amp;\implies \mathcal{A}=\frac{E_0}{\sqrt{(1\!-\!LC\om^2)^2+R^2C^2\om^2}}
+</mrow>
+</md>
+</p>
+</li>
+</ul>
+Naturally, different input frequencies <m>\om</m> give different output
+amplitudes <m>\mathcal{A}</m>. Here is a graph of <m>\mathcal{A}</m> against <m>\om</m>,
+with all other parameters held fixed.
+</p>
+
+<sidebyside>
+<image source="figs/resonance"/>
+</sidebyside>
+
+<p>
+Note that there is a small range of frequencies that give a large
+amplitude response. This is the phenomenon of resonance. It is exploited
+in the design of radio and television tuning circuitry. It has also been
+dramatically illustrated in, for example, the collapse
+<fn>There are videos of the collapse on the web.</fn>
+ of the Tacoma narrows bridge.
+</p></example>
+
+<example xml:id="exBVP"><title>Boundary Value Problems</title>
+<p>
+By part (b) of Theorem <xref ref="thm_odeMain"/>, an initial value problem consisting
+of an <m>n^{\rm th}</m> order linear ODE with reasonable
+<fn>For example, continuous.</fn>
+ coefficients and <m>n</m>
+initial conditions always has exactly one solution. We shall now see that
+a boundary value problem may have no solutions at all. Or it may have exactly
+one solution. Or it may have infinitely many solutions. We shall start
+by finding all solutions to the ODE
+<men xml:id="eqnbvODE">
+y'+y=0
+</men>
+We shall then impose various boundary conditions and see what happens.
+</p>
+
+<p>The function <m>y(t)=e^{rt}</m> is a solution to <xref ref="eqnbvODE"/> if and only if
+<me>
+r^2e^{rt}+e^{rt}=0\iff r^2+1=0\iff r=\pm i
+</me>
+where <m>i</m> (which electrical engineers often denote
+<fn>This is to avoid confusion with the current, which is typically called <m>i</m>.</fn>
+  <m>j</m>) is a square root
+of <m>-1</m>. Thus the general solution to the second order linear ODE  <xref ref="eqnbvODE"/>
+is <m>y(t)=C'_1 e^{it}+C'_2e^{-it}</m>, with <m>C_1'</m> and <m>C_2'</m> arbitrary constants.
+We may rewrite this general solution in terms of <m>\sin t</m> and <m>\cos t</m> by
+substituting in
+<me>
+e^{it}=\cos t+i\sin t\qquad
+e^{-it}=\cos t-i\sin t
+</me>
+This gives
+<me>
+y(t)=C'_1\big(\cos t+i\sin t)+C'_2(\cos t-i\sin t)
+=C_1\cos t+C_2\sin t
+</me>
+where <m>C_1=C'_1+C'_2</m>, and  <m>C_2=i(C'_1-C'_2)</m>.
+Note that there is nothing stopping <m>C_1'</m> and <m>C_2'</m> from being complex
+numbers. So there is nothing stopping <m>C_1=C'_1+C'_2</m>, and
+<m>C_2=i(C'_1-C'_2)</m> from being real numbers.
+</p>
+
+<p><ol label="a">
+<li>
+Now consider the boundary value problem
+<men xml:id="eqnbvpA">
+y'+y=0\qquad y(0)=0\qquad y(2\pi)=1
+</men>
+The function <m>y(t)</m> satisfies the ODE if and only if it is of the form
+<me>
+y(t)=C_1\cos t+C_2\sin t
+</me>
+for some constants <m>C_1</m> and <m>C_2</m>. A function
+of this form satisfies the boundary condition <m>y(0)=0</m> if and only if
+<me>
+0=y(0)= C_1\cos 0+C_2\sin 0 =C_1
+</me>
+A function of this form satisfies the boundary condition <m>y(2\pi)=1</m> if and
+only if
+<me>
+1=y(2\pi)= C_1\cos 2\pi+C_2\sin 2\pi =C_1
+</me>
+The two requirements <m>C_1=0</m> and <m>C_1=1</m> are incompatible. So the boundary
+value problem <xref ref="eqnbvpA"/> has no solution at all.
+</li>
+<li>
+Next consider the boundary value problem
+<men xml:id="eqnbvpB">
+y'+y=0\qquad y(0)=0\qquad y\Big(\frac{\pi}{2}\Big)=0
+</men>
+The function <m>y(t)</m> satisfies the ODE if and only if it is of the form
+<me>
+y(t)=C_1\cos t+C_2\sin t
+</me>
+for some constants <m>C_1</m> and <m>C_2</m>. A function
+of this form satisfies the boundary condition <m>y(0)=0</m> if and only if
+<me>
+0=y(0)= C_1\cos 0+C_2\sin 0 =C_1
+</me>
+A function of this form satisfies the boundary condition
+<m>y\big(\frac{\pi}{2}\big)=0</m> if and  only if
+<me>
+0=y\Big(\frac{\pi}{2}\Big)
+ = C_1\cos \Big(\frac{\pi}{2}\Big)+C_2\sin\Big(\frac{\pi}{2}\Big) =C_2
+</me>
+So we have a solution if and only if <m>C_1=C_2=0</m> and
+the boundary value problem <xref ref="eqnbvpB"/> has exactly one solution, namely <m>y(t)=0</m>, which is a bit dull.
+</li>
+<li>
+Finally consider the boundary value problem
+<men xml:id="eqnbvpC">
+y'+y=0\qquad y(0)=0\qquad y(2\pi)=0
+</men>
+The function <m>y(t)</m> satisfies the ODE if and only if it is of the form
+<me>
+y(t)=C_1\cos t+C_2\sin t
+</me>
+for some constants <m>C_1</m> and <m>C_2</m>. A function
+of this form satisfies the boundary condition <m>y(0)=0</m> if and only if
+<me>
+0=y(0)= C_1\cos 0+C_2\sin 0 =C_1
+</me>
+A function of this form satisfies the boundary condition
+<m>y(2\pi)=0</m> if and  only if
+<me>
+0=y(2\pi)= C_1\cos (2\pi)+C_2\sin(2\pi) =C_1
+</me>
+So we have a solution if and only if <m>C_1=0</m> and
+the boundary value problem <xref ref="eqnbvpC"/> has infinitely many solutions, namely
+<m>y(t)=C_2\sin t</m> with <m>C_2</m> being an arbitrary constant.
+</li>
+</ol>
+</p></example>
+
+
+</section>
