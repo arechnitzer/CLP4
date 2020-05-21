@@ -9,14 +9,12 @@
 
 <introduction>
 
-<p>Suppose that we drop a tiny stick into a river
-<fn>Think Poohsticks.</fn>
+<p>Suppose that we drop a tiny stick into a river<fn>Think Poohsticks.</fn>
  with the velocity
 field of the flowing water being <m>\vv(x,y)</m>. We are assuming, for
-simplicity, that the velocity field does not depend
-<fn>This is not such an unreasonable assumption. The flow often changes on a larger time scale.</fn>
-on time <m>t</m>. The stick will move along with the water
-<fn>This is also not an unreasonable approximation.</fn>.
+simplicity, that the velocity field does not depend<fn>This is not such an unreasonable assumption. The flow often changes on a 
+larger time scale.</fn>
+on time <m>t</m>. The stick will move along with the water<fn>This is also not an unreasonable approximation.</fn>.
 When the stick
 is at <m>\vr</m>, its velocity will be the same as the velocity of the
 water at <m>\vr</m>, which is <m>\vv(\vr)</m>. Thus if the stick is at
@@ -61,7 +59,7 @@ we start a stream line (i.e. drop the stick into the stream) on the positive
 here,
 </p>
 
-<sidebyside>
+<sidebyside width="40%">
 <image source="figs/phaseVortex2"/>
 </sidebyside>
 
@@ -144,8 +142,7 @@ then <m>\vR'(u) =   \vr'\big(t(u)\big)\ t'(u)</m> is parallel to
                          =\vv\big(\vR(u)\big)</m>.
 So if we only care about the curve traced out by the stick, and not about
 <em>when</em> the stick is at each point of the path, then it suffices to
-impose the weaker condition
-<fn>We'll have a more careful discussion of this in the optional §<xref ref="sec_fieldLinePara"/>.</fn>
+impose the weaker condition<fn>We'll have a more careful discussion of this in the optional §<xref ref="sec_fieldLinePara"/>.</fn>
  that, when the stick
 is at <m>\vr(t)</m>, its velocity <m>\vr'(t)</m> is parallel to (though not necessarily equal to)
 <m>\vv\big(\vr(t)\big)</m>. In three dimensions, <m>\vr'(t)</m> is parallel to
@@ -173,8 +170,7 @@ condition, involves reparametrizing our streamline.
 Suppose that we are in two dimensions
 with <m>\vr'(t)=\big(\diff{x}{t}(t)\,,\,\diff{y}{t}(t)\big)</m> and
 <m>\vv(\vr)=\big(v_1(\vr)\,,\,v_2(\vr)\big)</m>  and fix some <m>t_0</m>. If <m>\diff{x}{t}(t_0)</m> is
-nonzero
-<fn>If <m>\diff{x}{t}(t_0)=0</m>, but <m>\diff{y}{t}(t_0)\ne 0</m>, we should use <m>y</m> rather than <m>x</m> as the parameter. If <m>\diff{x}{t}(t_0)=\diff{y}{t}(t_0)=0</m>, then <m>\vr(t)=\vr(t_0)</m> for all <m>t</m> and the streamline doesn't move. It is just a single point.</fn>,
+nonzero<fn>If <m>\diff{x}{t}(t_0)=0</m>, but <m>\diff{y}{t}(t_0)\ne 0</m>, we should use <m>y</m> rather than <m>x</m> as the parameter. If <m>\diff{x}{t}(t_0)=\diff{y}{t}(t_0)=0</m>, then <m>\vr(t)=\vr(t_0)</m> for all <m>t</m> and the streamline doesn't move. It is just a single point.</fn>,
 we can reparametrize the curve (at least near <m>\vr(t_0)</m>) so as to use <m>x</m>, rather than <m>t</m> as the parameter. To do so, we
 <ul>
 <li> solve <m>x=x(t)</m> for <m>t</m> as a function of <m>x</m>. Call
@@ -201,11 +197,9 @@ This is exactly the statement that <m>y=Y(x)</m> is a solution of the differenti
 <me>
 \diff{y}{x}(x) = \frac{v_2\big(x,y\big)}{v_1\big(x,y\big)}
 </me>
-It is conventional to pretend
-<fn>Of course <m>\diff{y}{x}</m> is not the ratio of <m>\dee{y}</m> and <m>\dee{x}</m>. However pretending that it is provides a simple
+It is conventional to pretend<fn>Of course <m>\diff{y}{x}</m> is not the ratio of <m>\dee{y}</m> and <m>\dee{x}</m>. However pretending that it is provides a simple
 way to remember the technique that is used to solve the equation. You have used this mnemonic device before when you learned how to solve separable differential equations.</fn>
-that <m>\diff{y}{x}</m> is the ratio of <m>\dee{y}</m> and <m>\dee{x}</m> and rewrite the differential equation
-<fn>Here is another nonrigorous, but intuitive way
+that <m>\diff{y}{x}</m> is the ratio of <m>\dee{y}</m> and <m>\dee{x}</m> and rewrite the differential equation<fn>Here is another nonrigorous, but intuitive way
 to come up with this equation. Suppose that our stick is at <m>(x,y)</m>
 and has velocity <m>\big(\diff{x} {t}(t)\,,\,\diff{y}{t}(t)\big)</m>.
 In a tiny time interval <m>\dee{t}</m> the stick moves by <m>\big(\diff{x}{t}(t)\,,\,\diff{y}{t}(t)\big)\dee{t}
@@ -262,7 +256,8 @@ of Example <xref ref="eg_Vortex"/> are found by two different methods.
 </p>
 
 <example xml:id="eg_vortexStreamParallel">
-  <title>Stream lines for the vortex field using <m>\vr'(t)\parallel\vv(\vr(t))</m></title>
+  <title>Stream lines for the vortex field using <m>\vr'(t)
+\!\parallel\!\vv(\vr(t))</m></title>
 <p>
 In this example we will find the stream lines for the vortex field,
 <m>\vv(x,y) = \Om\big(-y\hi +x\hj\big)</m> of Example <xref ref="eg_Vortex"/>,
@@ -290,7 +285,7 @@ constant.)
 where <m>C'</m> and <m>C=\frac{2}{\Om}C'</m> are just arbitrary constants. So the stream lines of the vortex field are exactly circles centred on the origin.
 </p>
 
-<sidebyside>
+<sidebyside width="40%">
 <image source="figs/phaseVortex3"/>
 </sidebyside>
 
@@ -311,7 +306,8 @@ formulation of <xref ref="eq_VFstreamLineBB"/>.
                +\Om y(t)\diff{y}{t}(t)=0
 </mrow><mrow>
 &amp;\hskip0.5in\iff \diff{\ }{t}\Big(\half \Om x(t)^2+\half\Om y(t)^2\Big)=0
-\qquad\text{(Go ahead and evaluate the derivative.)}
+</mrow><mrow>
+&amp;\hskip0.5in\qquad\text{(Go ahead and evaluate the derivative.)}
 </mrow><mrow>
 &amp;\hskip0.5in\iff \half\Om\big(x(t)^2+y(t)^2\big) = C'
 </mrow><mrow>
@@ -321,7 +317,7 @@ formulation of <xref ref="eq_VFstreamLineBB"/>.
 </p></example>
 
 <example xml:id="eg_vortexStreamEqual">
-  <title>Stream lines for the vortex field using <m>\vr'(t)=\vv(\vr(t))</m></title>
+  <title>Stream lines for the vortex field using <m>\vr'(t)\!=\!\vv(\vr(t))</m></title>
 <p>
 This time we will find the stream lines for the vortex field,
 <m>\vv(x,y) = \Om\big(-y\hi +x\hj\big)</m> of Example <xref ref="eg_Vortex"/>,
@@ -336,10 +332,8 @@ by using <xref ref="eq_VFstreamLineA"/>, which is
 We can convert this system of first
 order linear ordinary differential equations
 into a single second order linear constant coefficient
-differential equation
-<fn>In Example <xref ref="eg_Pendulum"/> we converted a second order ordinary differential equation into a system of first order ordinary differential equations. We are now just reversing
-the procedure we used there.
-</fn>,
+differential equation<fn>In Example <xref ref="eg_Pendulum"/> we converted a second order ordinary differential equation into a system of first order ordinary differential equations. We are now just reversing
+the procedure we used there.</fn>,
 by differentiating the first equation, to get <m>\difftwo{x}{t} = -\Om\diff{y}{t}</m>,
 and then substituting in the second equation to get
 <me>
@@ -348,16 +342,14 @@ and then substituting in the second equation to get
 This equation is a special case of the ordinary differential equation
 treated in Example <xref ref="eg_RLC"/> of the Appendix <xref ref="ap_ODE"/>, entitled
 <q>Review of Linear Ordinary Differential Equations</q>.  In fact it is
-exactly (<xref ref="eqn_ODERy"/><m>_{\rm h}</m>) with <m>R=0</m>, <m>L=C=\frac{1}{\Om}</m>. So
+exactly <xref ref="eqn_ODERyh"/> with <m>R=0</m>, <m>L=C=\frac{1}{\Om}</m>. So
 the general solution is <xref ref="eqn_RLCampPhase"/> with
 <m>\rho=0</m> and <m>\nu=\Om</m>, which is
 <me>
 x(t) = A\cos(\Om t-\theta)
 </me>
-with <m>A</m> and <m>\theta</m> being arbitrary constants
-<fn>Even if you don't know how <m>x(t) = A\cos(\Om t-\theta)</m> was arrived at, you should
-be able to easily verify that it really does obey <m>x'+\Om^2 x=0</m>.
-</fn>.
+with <m>A</m> and <m>\theta</m> being arbitrary constants<fn>Even if you don't know how <m>x(t) = A\cos(\Om t-\theta)</m> was arrived at, you should
+be able to easily verify that it really does obey <m>x''+\Om^2 x=0</m>.</fn>.
 Then
 <me>
 y(t) = -\frac{1}{\Om}\diff{x}{t} =A\sin(\Om t-\theta)
@@ -414,7 +406,8 @@ Then
 \vr'(t) &amp;= \vR'\big(U(t)\big) U'(t)
         = a\big(U(t)\big)\,\vv\big(\vR\big(U(t)\big)\big)
                                     \frac{1}{T'\big(U(t)\big)}
-        = a\big(U(t)\big)\,\vv\big(\vr(t)\big)
+</mrow><mrow>
+        &amp;        = a\big(U(t)\big)\,\vv\big(\vr(t)\big)
                                     \frac{1}{a\big(U(t)\big)}
 </mrow><mrow>
         &amp;=\vv\big(\vr(t)\big)
@@ -497,7 +490,7 @@ It is illustrated by the blue line in the figure below.
 </ul>
 </p>
 
-<sidebyside>
+<sidebyside width="45%">
 <image source="figs/horizontalField"/>
 </sidebyside>
 

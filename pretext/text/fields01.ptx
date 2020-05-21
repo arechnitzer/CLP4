@@ -40,8 +40,7 @@ then <m>\vv</m> is called a <term>velocity field</term>.
 </li>
 <li>
 If <m>\vF(x,y,z)</m> is the force at position <m>(x,y,z)</m>,
-then <m>\vF</m> is called
-<fn>No, force fields are not only a sci-fi trope. Gravity is an example of a force field.</fn>
+then <m>\vF</m> is called<fn>No, force fields are not only a sci-fi trope. Gravity is an example of a force field.</fn>
 a <term>force field</term>.
 </li>
 </ul>
@@ -90,7 +89,7 @@ concentrate on the sphere <m>x^2+y^2+z^2=r^2</m>. It is sketched in red
 in the figure below.
 </p>
 
-<sidebyside>
+<sidebyside width="35%">
 <image source="figs/waterField2"/>
 </sidebyside>
 
@@ -121,8 +120,7 @@ Thus our vector field is
 <me>
 \vv(x,y,z) = \frac{m}{r(x,y,z)^2}\,\hat\vr(x,y,z)
 </me>
-If the world were two, rather than three dimensional
-<fn>You might want to think about what happens in <m>d</m> dimensions for general <m>d</m>.</fn>, and the source created <m>2\pi m</m> litres per second, the same argument leads to
+If the world were two, rather than three dimensional<fn>You might want to think about what happens in <m>d</m> dimensions for general <m>d</m>.</fn>, and the source created <m>2\pi m</m> litres per second, the same argument leads to
 <me>
 2\pi m\,dt =  (2\pi r) \big(v(r)\,dt\big)
 \implies v(r) = \frac{2\pi m}{2\pi r} =\frac{m}{r}
@@ -161,7 +159,7 @@ Here is a sketch of a bunch of such vectors.
 
 <figure xml:id="fig_sourceField">
 <caption></caption>
-<sidebyside>
+<sidebyside width="66%">
 <image source="figs/waterField"/>
 </sidebyside>
 </figure>
@@ -243,7 +241,7 @@ pointing vertical arrow at the same generic point in the fourth quadrant.
 (It's the red arrow in the figure below.)
 </p>
 
-<sidebyside>
+<sidebyside width="43%">
 <image source="figs/phaseVortex4"/>
 </sidebyside>
 
@@ -260,7 +258,7 @@ no vertical motion at all. Indicate this in the sketch by not drawing any
 vertical arrow on the bottom half of the <m>y</m>-axis.
 </p>
 
-<sidebyside>
+<sidebyside width="43%">
 <image source="figs/phaseVortex5"/>
 </sidebyside>
 </li>
@@ -274,7 +272,7 @@ following sketch.
 
 <figure xml:id="fig_vortexCrude">
   <caption></caption>
-<sidebyside>
+<sidebyside width="43%">
 <image source="figs/phaseVortex1"/>
 </sidebyside>
 </figure>
@@ -293,7 +291,7 @@ sketch of the vector field.
 
 <figure xml:id="fig_vortexField">
 <caption></caption>
-<sidebyside>
+<sidebyside width="70%">
 <image source="figs/vortexField"/>
 </sidebyside>
 </figure>
@@ -307,12 +305,11 @@ Hence the name <q>vortex</q>.
 <p>
 In this example, we illustrate another way in which  vector fields
 arise. Model a pendulum by a mass <m>m</m> that is connected to a hinge by
-an idealized rod that is massless
-<fn>While we are idealizing, let's put everything in a vacuum.</fn>
+an idealized rod that is massless<fn>While we are idealizing, let's put everything in a vacuum.</fn>
  and of fixed length <m>\ell</m>. Denote by <m>\theta</m> the angle
 </p>
 
-<sidebyside>
+<sidebyside width="25%">
 <image source="figs/pendulum3"/>
 </sidebyside>
 
@@ -328,18 +325,14 @@ itself so that the distance between the mass and the hinge is
 fixed at <m>\ell</m>.
 </li>
 </ul>
-In the optional
-<fn>In the optional Section <xref ref="sec_Pendulum"/> we also
+In the optional<fn>In the optional Section <xref ref="sec_Pendulum"/> we also
 include frictional forces. In this example, we do not, so set the <m>\beta</m>
-of Section <xref ref="sec_Pendulum"/> to zero here.
-</fn>
+of Section <xref ref="sec_Pendulum"/> to zero here.</fn>
 Section <xref ref="sec_Pendulum"/>,
 we show that the angle <m>\theta(t)</m> obeys the second order
-nonlinear
-<fn>It is common, when considering only small amplitude
+nonlinear<fn>It is common, when considering only small amplitude
 oscillations, to approximate <m>\sin\theta</m> by <m>\theta</m>. This converts our
-nonlinear differential equation into a linear differential equation.
-</fn>
+nonlinear differential equation into a linear differential equation.</fn>
 differential equation
 <me>
 \difftwo{\theta}{t} +\frac{g}{\ell}\sin\theta=0
@@ -347,10 +340,8 @@ differential equation
 It is often much more convenient to deal with first order, rather than
 second order, differential equations.
 The second order pendulum equation above may be
-reformulated
-<fn>This <q>hack</q> generalizes easily and is
-commonly used when generating, by computer, approximate solutions to higher order ordinary differential equations.
-</fn>
+reformulated<fn>This <q>hack</q> generalizes easily and is
+commonly used when generating, by computer, approximate solutions to higher order ordinary differential equations.</fn>
 as a system of first order ordinary differential equations, by the
 simple expedient of defining
 <me>
@@ -360,7 +351,7 @@ So <m>x(t)</m> is the angle at time <m>t</m> and <m>y(t)</m> is the angular velo
 <md alignment="alignat">
 <mrow>
 x'(t)&amp;=&amp;\theta'(t)&amp;=y(t)\cr
-y'(t)&amp;=&amp;\ \theta'(t)&amp;=-\frac{g}{\ell}\sin x(t)
+y'(t)&amp;=&amp;\ \theta''(t)&amp;=-\frac{g}{\ell}\sin x(t)
 </mrow>
 </md>
 Usually, one does not write in the <m>(t)</m> dependence explicitly.
@@ -399,8 +390,7 @@ and the vertical component.
 we have
 <ul>
 <li>
-rightward motion
-<fn>Note that this is rightward motion of the point <m>(x,y)</m>, not of the pendulum itself.</fn>
+rightward motion<fn>Note that this is rightward motion of the point <m>(x,y)</m>, not of the pendulum itself.</fn>
  when <m>y \gt 0</m>
 </li>
 <li>

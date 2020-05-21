@@ -37,9 +37,7 @@ obey <m>\varphi(x,y)=C</m> is called an equipotential curve.
 <p>
 In physics,  when a vector field is of the form <m>\vF=-\vnabla\varphi</m>,
 then <m>\varphi</m> is called a potential for <m>\vF</m>.
-<em>Note</em> the minus
-<fn>Physicists introduce this minus sign in order to eliminate the minus sign in the next footnote.
-</fn>
+<em>Note</em> the minus<fn>Physicists introduce this minus sign in order to eliminate the minus sign in the next footnote.</fn>
 sign in
 <m>\vF=\underset{\uparrow}{-}\vnabla\varphi</m>.
 </p>
@@ -87,8 +85,7 @@ on the left hand side and the chain rule on the right hand side.</intertext>
 </md>
 So <m>\frac{1}{2} m |\vv(t)|^2
     -\varphi\big(x(t),y(t),z(t)\big)</m>, which is called the
-energy
-<fn><m>\frac{1}{2} m |\vv(t)|^2</m> is the kinetic energy and
+energy<fn><m>\frac{1}{2} m |\vv(t)|^2</m> is the kinetic energy and
 <m>-\varphi</m> is the potential energy. See Warning <xref ref="warn_potential"/>.</fn>  of the
 particle at time <m>t</m>, does not actually depend on time <mdash/> it is conserved.
 Let's call the initial energy <m>E</m>. That is,
@@ -199,7 +196,7 @@ They are the blue curves.
 </li>
 <li>
 <em>The field lines (Optional):</em>
-Recalling <xref ref="eq_VFstreamLineB"/>,
+Recalling (<xref ref="eq_VFstreamLineB"/>),
 the field lines of the vector field <m>\vF(x,y) = x\,\hi-y\,\hj</m>
 are determined by
 <md>
@@ -242,14 +239,14 @@ We determine the direction of motion next.
 The sign data
 <md>
 <mrow>
-\hi\cdot\vF(x,y) = x
+&amp;\hi\cdot\vF(x,y) = x
     \left.\begin{cases}
               \gt 0 &amp;\text{if } x \gt 0 \\
              =0 &amp;\text{if } x=0 \\
               \lt 0 &amp;\text{if } x \lt 0
        \end{cases}\right\}
-\qquad
-\hj\cdot\vF(x,y) = -y
+</mrow><mrow>
+&amp;\hj\cdot\vF(x,y) = -y
     \left.\begin{cases}
               \gt 0 &amp;\text{if } y \lt 0 \\
              =0 &amp;\text{if } y=0 \\
@@ -264,7 +261,7 @@ Some equipotential curves are also sketched (in blue) in the figure
 on the right below.
 </p>
 
-<sidebyside>
+<sidebyside width="45%">
 <image source="figs/phaseHyperbola"/>
 <image source="figs/phaseHyperbola3"/>
 </sidebyside>
@@ -312,11 +309,16 @@ with respect to <m>t</m> and applying the chain rule gives
 <md>
 <mrow>
 \diff{\ }{t}\big[\varphi\big(x(t),y(t),z(t)\big)\big] &amp;=0
-</mrow><mrow>
+</mrow>
+</md>
+or
+<md>
+<mrow>
 \frac{\partial\varphi}{\partial x}\big(x(t),y(t),z(t)\big)\diff{x}{t}(t)
-+\frac{\partial\varphi}{\partial y}\big(x(t),y(t),z(t)\big)\diff{y}{t}(t)
-+\frac{\partial\varphi}{\partial z}\big(x(t),y(t),z(t)\big)\diff{z}{t}(t)
-&amp;=0
+&amp;+\frac{\partial\varphi}{\partial y}\big(x(t),y(t),z(t)\big)\diff{y}{t}(t)
+</mrow><mrow>
+&amp;+\frac{\partial\varphi}{\partial z}\big(x(t),y(t),z(t)\big)\diff{z}{t}(t)
+=0
 </mrow>
 </md>
 Notice that the left hand side is exactly the dot product
@@ -340,10 +342,10 @@ Then set <m>t=0</m> to get
 <me>
  \vF\big(\vr_0\big)\cdot\vT = 0
 </me>
-This says that the vector <m>\vT</m> (which is tangent to the equipotential
-surface at <m>\vr_0</m>) is perpendicular
-to the vector field at <m>\vr_0</m> (which is a tangent vector to the
-field line of <m>\vF</m> through <m>\vr_0</m>).
+This says that the vector <m>\vT</m>, which is tangent to the equipotential
+surface at <m>\vr_0</m>, is perpendicular
+to the vector field at <m>\vr_0</m>, which is a tangent vector to the
+field line of <m>\vF</m> through <m>\vr_0</m>.
 </p></proof>
 
 <p>Here is another example in which we try to find a potential for a vector field.
@@ -542,13 +544,11 @@ Combining the three bullet points gives <m>\vnabla\times\vF=\vZero</m>.
 
 <warning xml:id="warn_screening">
 <p>
-As always, we have to be careful with the flow of logic
-<fn>
+As always, we have to be careful with the flow of logic<fn>
 Use your favourite search engine to look up a list of common logical
 errors. One is <q>affirming the consequent</q>. An example would be concluding
 that because Shakespeare is dead, Elvis, who is also dead,
-must also be Shakespeare.</fn>
-.
+must also be Shakespeare.</fn>.
 The screening test in Theorem <xref ref="thm_screen"/> is a one-way test.
 If, for example,
 <m>\frac{\partial F_1}{\partial y} \ne \frac{\partial F_2}{\partial x}</m>
@@ -576,7 +576,7 @@ In the end we showed that, if <m>\Om\ne 0</m>, no potential could exist, i.e.
 the screening test of Theorem <xref ref="thm_screen"/>.a, we could have
 concluded that <m>\vv(x,y)</m> is not conservative by simply observing that
 <md alignment="alignat">
-<mrow>{3}
+<mrow>
 \frac{\partial \vv_1}{\partial y}&amp;= \frac{\partial \ }{\partial y}\big(-\Om y) &amp;= -\Om
 </mrow><mrow>
 \frac{\partial \vv_2}{\partial x}&amp;= \ \ \frac{\partial \ }{\partial x}\big(\Om x) &amp;= +\Om
@@ -644,20 +644,24 @@ This time
                       &amp; \frac{\partial\ }{\partial z} \\
                 y^2+2xz^2-1 &amp; (2x+1)y &amp; 2x^2z+z^3
             \end{matrix}\right]
-=0\hi-(4xz-4xz)\hj+(2y-2y)\hk
 </mrow><mrow>
-=\vZero
+&amp;=0\hi-(4xz-4xz)\hj+(2y-2y)\hk
+</mrow><mrow>
+&amp;=\vZero
 </mrow>
 </md>
 So <m>\vF</m> passes the screening test. Let's look for a function
 <m>\varphi(x,y,z)</m> obeying
-<men xml:id="eqn_egPotentialD">
-\begin{split}
-\frac{\partial \varphi}{\partial x}(x,y,z) &amp;= y^2+2xz^2-1 \\
-\frac{\partial \varphi}{\partial y}(x,y,z) &amp;= (2x+1)y \\
+<md>
+<mrow>
+\frac{\partial \varphi}{\partial x}(x,y,z) &amp;= y^2+2xz^2-1 
+</mrow><mrow>
+\frac{\partial \varphi}{\partial y}(x,y,z) &amp;= (2x+1)y
+\tag{$*$}
+</mrow><mrow>
 \frac{\partial \varphi}{\partial z}(x,y,z) &amp;= 2x^2z+z^3
-\end{split}
-</men>
+</mrow>
+</md>
 The partial derivative <m>\frac{\partial \ }{\partial x}</m> treats <m>y</m>
 and <m>z</m> as constants. So <m>\varphi(x,y,z)</m> obeys the first equation
 if and only if there is a function <m>\psi(y,z)</m> with
@@ -669,12 +673,13 @@ if and only if there is a function <m>\psi(y,z)</m> with
 This <m>\varphi(x,y,z)</m> will also obey the second equation if and only if
 <md>
 <mrow>
-\frac{\partial \ }{\partial y}\big(xy^2+x^2z^2-x+\psi(y,z)\big) = (2x+1)y
-&amp;\iff 2xy +\frac{\partial\psi}{\partial y}(y,z) = (2x+1)y
+&amp;\frac{\partial \ }{\partial y}\big(xy^2+x^2z^2-x+\psi(y,z)\big) = (2x+1)y
 </mrow><mrow>
-&amp;\iff \frac{\partial\psi}{\partial y}(y,z) = y
+&amp;\hskip1in\iff 2xy +\frac{\partial\psi}{\partial y}(y,z) = (2x+1)y
 </mrow><mrow>
-&amp;\iff \psi(y,z) = \frac{y^2}{2} +\zeta(z)
+&amp;\hskip1in\iff \frac{\partial\psi}{\partial y}(y,z) = y
+</mrow><mrow>
+&amp;\hskip1in\iff \psi(y,z) = \frac{y^2}{2} +\zeta(z)
 </mrow>
 </md>
 for some function <m>\zeta(z)</m> which depends only on <m>z</m>. At this stage
@@ -684,19 +689,20 @@ we know that
 =xy^2+x^2z^2-x+\psi(y,z)
 =xy^2+x^2z^2-x+\frac{y^2}{2}+\zeta(z)
 </me>
-obeys the first two equations of <xref ref="eqn_egPotentialD"/>,
+obeys the first two equations of (<m>*</m>),
 for any function <m>\zeta(z)</m>. Finally to have the third equation of
-<xref ref="eqn_egPotentialD"/> also satisfied, we also need to chose <m>\zeta(z)</m>
+(<m>*</m>) also satisfied, we also need to chose <m>\zeta(z)</m>
 to obey
 <md>
 <mrow>
-\frac{\partial \ }{\partial z}\big(xy^2+x^2z^2-x+\frac{y^2}{2}+\zeta(z)\big)
+&amp;\frac{\partial \ }{\partial z}\big(xy^2+x^2z^2-x+\frac{y^2}{2}+\zeta(z)\big)
  = 2x^2z+z^3
-&amp;\iff 2x^2z +\zeta'(z) = 2x^2z + z^3
 </mrow><mrow>
-&amp;\iff \zeta'(z) = z^3
+&amp;\hskip1in\iff 2x^2z +\zeta'(z) = 2x^2z + z^3
 </mrow><mrow>
-&amp;\iff \zeta(z) = \frac{z^4}{4} + C
+&amp;\hskip1in\iff \zeta'(z) = z^3
+</mrow><mrow>
+&amp;\hskip1in\iff \zeta(z) = \frac{z^4}{4} + C
 </mrow>
 </md>
 for any constant <m>C</m>. So one possible potential, namely that with <m>C=0</m> is
@@ -704,9 +710,7 @@ for any constant <m>C</m>. So one possible potential, namely that with <m>C=0</m
 \varphi(x,y,z)
 =xy^2+x^2z^2-x+\frac{y^2}{2}+\frac{z^4}{4}
 </me>
-Note, as a check
-<fn>It is always worth doing this check.</fn>
-, that
+Note, as a check<fn>It is always worth doing this check.</fn>, that
 <me>
 \vnabla \varphi(x,y,z)
 =\big(y^2+2xz^2-1\big)\hi+\big(2xy+y)\hj+\big(2x^2z+z^3\big)\hk
@@ -720,15 +724,17 @@ as desired.
 <p>
 Now is a good time to reread the Warning <xref ref="warn_screening"/>.
 In this example we will show that the vector field
-<me>
-\vF(x,y) = -\frac{y}{x^2+y^2}\hi + \frac{x}{x^2+y^2}\hj
-\qquad \text{defined for all $(x,y)$ in $\bbbr^2$ except $(x,y)=(0,0)$}
-</me>
+<md>
+<mrow>
+&amp;\vF(x,y) = -\frac{y}{x^2+y^2}\hi + \frac{x}{x^2+y^2}\hj
+</mrow><mrow>&amp;\qquad \text{defined for all $(x,y)$ in $\bbbr^2$ except $(x,y)=(0,0)$}
+</mrow>
+</md>
 passes the screening test of Theorem <xref ref="thm_screen"/>.a. We will also
 begin to see why it is <em>not</em> conservative on the domain
 <m>\bbbr^2\setminus\{(0,0)\}</m>. To verify the screening test, we compute
 <md alignment="alignat">
-<mrow>{3}
+<mrow>
 \frac{\partial\ }{\partial y}\Big(-\frac{y}{x^2+y^2}\Big)
   &amp;= -\frac{(x^2+y^2) - y(2y)}{{(x^2+y^2)}^2}
   &amp;&amp;= \frac{y^2-x^2}{{(x^2+y^2)}^2}
@@ -749,7 +755,7 @@ screening test is passed.
 <m>\frac{\partial \varphi}{\partial y}(x,y)</m>, is defined for all <m>(x,y)</m>
 in <m>\bbbr^2</m> except <m>(x,y)=(0,0)</m>, and obeys
 <md alignment="alignat">
-<mrow>{3}
+<mrow>
 \frac{\partial \varphi}{\partial x}(x,y) &amp;= -\frac{y}{x^2+y^2}
 &amp;&amp;= \frac{-\frac{y}{x^2}}{1+\big(\frac{y}{x}\big)^2}
 &amp;&amp;=\frac{\partial\ }{\partial x}\Big(\arctan\frac{y}{x}\Big)
@@ -784,8 +790,7 @@ define <m>\varphi(x,y)=\theta+k\pi</m>, for any integer <m>k</m>.
 <p> Suppose that at time <m>\theta=0</m> you choose <m>k=0</m>. That is, you choose <m>\varphi(r,0)=0</m>.
 Now start walking, choosing an allowed <m>\varphi(x,y)</m>, i.e. choosing a <m>k</m>,
 for each point <m>(x,y)</m> that you cross.
-Because <m>\varphi(x,y)</m> has to vary continuously
-<fn>If <m>\varphi(x,y)</m>
+Because <m>\varphi(x,y)</m> has to vary continuously<fn>If <m>\varphi(x,y)</m>
 is not continuous, its gradient does not exist, and <m>\varphi</m> cannot be
 a potential.</fn>
  with <m>(x,y)</m>, you
@@ -801,15 +806,14 @@ because you are choosing <m>k=0</m>, <m>\varphi(x,y)</m> is just a little less t
 </li>
 <li>
 you have already chosen <m>\varphi(r,0)=0</m>, not <m>2\pi</m>.
-So <m>\varphi(x,y)</m> has a jump discontinuity
-<fn>Those who have taken
+So <m>\varphi(x,y)</m> has a jump discontinuity<fn>Those who have taken
 some complex analysis may recognize this as the branch cut in <m>\ln z</m>.</fn>
 along the positive <m>x</m>-axis.
 </li>
 </ul>
 </p>
 
-<sidebyside>
+<sidebyside width="66%">
 <image source="figs/notConservative"/>
 </sidebyside>
 

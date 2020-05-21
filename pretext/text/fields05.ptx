@@ -12,7 +12,7 @@ an idealized rod that is massless and of fixed length <m>\ell</m>. Denote
 by <m>\theta</m> the angle
 </p>
 
-<sidebyside>
+<sidebyside widths="33% 25%" valign="middle">
 <image source="figs/pendulum2"/>
 <image source="figs/pendulum4"/>
 </sidebyside>
@@ -32,8 +32,7 @@ fixed at <m>\ell</m> and whose direction,
 <li>
 possibly some frictional forces, like friction in the hinge and
 air resistance. We shall assume that the total frictional force
-has magnitude proportional to the speed
-<fn>The dependence of air resistance (drag) on the speed <m>v</m> is relatively complex. At low speed drag tends to be approximately proportional to <m>v</m>, while at high speed
+has magnitude proportional to the speed<fn>The dependence of air resistance (drag) on the speed <m>v</m> is relatively complex. At low speed drag tends to be approximately proportional to <m>v</m>, while at high speed
 it tends to be approximately proportional to <m>v^2</m>.</fn>
 of the mass and has direction opposite to the direction of motion of the mass.
 </li>
@@ -83,8 +82,7 @@ In general, it can be hard to analyse nonlinear differential
 equations. But if the amplitude of oscillation is small enough
 that we may approximate
 <m>\sin\theta</m> by <m>\theta</m> we get the equation of motion
-of the linear pendulum
-<fn>When <m>\be=0</m>, this equation reduces to the equation <m>\difftwo{\theta}{t}+\frac{g}{\ell}\theta=0</m>, which occurs
+of the linear pendulum<fn>When <m>\be=0</m>, this equation reduces to the equation <m>\difftwo{\theta}{t}+\frac{g}{\ell}\theta=0</m>, which occurs
 in many different applications, and whose solutions exhibit simple
 harmonic motion.</fn> which is
 <md>
@@ -106,7 +104,7 @@ Then, for the full, nonlinear, equation
 <md alignment="alignat">
 <mrow>
 x'(t)&amp;=&amp;\theta'(t)&amp;=y(t)\cr
-y'(t)&amp;=&amp;\ \theta'(t)&amp;=-\frac{g}{\ell}\sin x(t)-\frac{\be}{m} y(t)
+y'(t)&amp;=&amp;\ \theta''(t)&amp;=-\frac{g}{\ell}\sin x(t)-\frac{\be}{m} y(t)
 </mrow>
 </md>
 The solutions of this first order system of ordinary differential equations
@@ -116,6 +114,8 @@ are flow lines for the vector field
 </me>
 When <m>\be=0</m>, this is exactly the vector field of Example <xref ref="eg_Pendulum"/>.
 </p>
+
+
 
 <!-- <xi:include href="../problems/prob_s2.5.ptx" /> -->
 
