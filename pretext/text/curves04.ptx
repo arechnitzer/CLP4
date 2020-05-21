@@ -123,7 +123,7 @@ meaning that <m>\hat\vB(s) = \hat\vT(s)\times\hat\vN(s)</m> and <m>\hk=\hi\times
 </p>
 
 <sidebyside>
-<image source="figs/cross.pdf"/>
+<image source="figs/cross"/>
 </sidebyside>
 
 <p>We have already computed <m>\diff{\hat\vT}{s}</m> and <m>\diff{\hat\vB}{s}</m>.
@@ -313,8 +313,8 @@ with <m>a,b \gt 0</m> as in the figure on the left below.
 </p>
 
 <sidebyside>
-<image source="figs/helix5.pdf"/>
-<image source="figs/RHR.pdf"/>
+<image source="figs/helix5"/>
+<image source="figs/RHR"/>
 </sidebyside>
 
 <p>
@@ -405,7 +405,7 @@ helix and the blue curve is the helix traced by the centre of curvature.
 </p>
 
 <sidebyside>
-<image source="figs/helix6.pdf"/>
+<image source="figs/helix6"/>
 </sidebyside>
 
 </example>

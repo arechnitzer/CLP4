@@ -120,7 +120,7 @@ commonly used, form. Namely, we can use the triangle
 </p>
 
 <sidebyside>
-<image source="figs/trianglePl.pdf"/>
+<image source="figs/trianglePl"/>
 </sidebyside>
 
 <p>to write <m>A= C\cos\alpha</m> and <m>B=C\sin\alpha</m> so that

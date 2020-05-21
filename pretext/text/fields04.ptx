@@ -131,7 +131,7 @@ Let <m>\cC_3</m> be the part of the parabola <m>x=y^2</m> from <m>P_0</m> to <m>
 </p>
 
 <sidebyside>
-<image source="figs/workIntegralA.pdf"/>
+<image source="figs/workIntegralA"/>
 </sidebyside>
 
 <p>
@@ -252,8 +252,8 @@ represent the same area and so are equal. See the figure below.
 </p>
 
 <sidebyside width="45%">
-  <image source="figs/sin2Graph.pdf"/>
-  <image source="figs/cos2Graph.pdf"/>
+  <image source="figs/sin2Graph"/>
+  <image source="figs/cos2Graph"/>
 </sidebyside>
 
 <p>
@@ -409,7 +409,7 @@ end at <m>P'_1</m>.
 </p>
 
 <sidebyside>
-<image source="figs/pathIndep.pdf"/>
+<image source="figs/pathIndep"/>
 </sidebyside>
 
 <p>
