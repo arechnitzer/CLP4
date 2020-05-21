@@ -1,14 +1,285 @@
 <?xml version="1.0" encoding="UTF-8" ?>
-<section xmlns:xi="http://www.w3.org/2001/XInclude" xml:id="">
+<section xmlns:xi="http://www.w3.org/2001/XInclude" xml:id="sec_orientation">
 
 <!-- Copyright 2018-2020 Joel Feldman, Andrew Rechnitzer and Elyse Yeager -->
 <!-- This work is licensed under the Creative Commons Attribution-NonCommercial-ShareAlike 4.0 International License-->
 <!-- https://creativecommons.org/licenses/by-nc-sa/4.0 -->
 
-<title></title>
+<title>Orientation of Surfaces</title>
 
 
+<p>One thing that made the flux integrals of the last section possible
+is that we could choose sensible unit normal vectors <m>\hn</m>. In this section,
+we explain this more carefully.
+</p>
 
+<p>Consider the sphere <m>x^2+y^2+z^2=1</m>. We can think of this surface as having two
+sides <mdash/> an inside (the side you see when you are living inside the
+sphere) and an outside (the side you see when you are living outside the
+sphere). Concentrate on one point <m>(x_0,y_0,z_0)</m> on the sphere.
+The surface <m>x^2+y^2+z^2=1</m> has precisely two unit normal vectors at
+<m>(x_0,y_0,z_0)</m>, namely
+<me>
+\hn_+ =  +(x_0,y_0,z_0)\qquad\text{and}\qquad
+\hn_- = -(x_0,y_0,z_0)
+</me>
+We can view <m>\hn_+</m> as being associated to (or attached to)
+the outside of the sphere and <m>\hn_-</m> as being associated to (or attached to)
+the inside of the sphere. Note that, as we move over the sphere,
+both <m>\hn_+</m> and <m>\hn_-</m> change continuously.
+</p>
+
+<definition xml:id="def_oriented">
+<statement><p>
+An oriented surface is a surface together with a <term>continuous</term> function
+<me>
+\hN: S\rightarrow\bbbr^3
+</me>
+such that, for each point <m>p</m> of <m>S</m>, <m>\hN(p)</m> is a unit normal to <m>S</m> at <m>p</m>.
+</p></statement>
+</definition>
+
+
+<example xml:id="eg_orientSphere"><title>Sphere</title>
+<p>
+One orientation of the sphere <m>S=\Set{(x,y,z)}{x^2+y^2+z^2=1}</m> is
+<me>
+\hN(x,y,z) = (x,y,z)
+</me>
+It associates to each point <m>p</m> of <m>S</m> the outward pointing unit normal
+to <m>S</m> at <m>p</m>. We can think of <m>S</m> with this orientation as being the outer
+side of <m>S</m>.
+</p>
+
+<p>The other orientation of the sphere <m>S=\Set{(x,y,z)}{x^2+y^2+z^2=1}</m> is
+<me>
+\hN(x,y,z) = -(x,y,z)
+</me>
+It associates to each point <m>p</m> of <m>S</m> the inward pointing unit normal
+to <m>S</m> at <m>p</m>. We can think of <m>S</m> with this orientation as being the inner
+side of <m>S</m>.
+</p>
+
+<p>While this discussion might seem inordinately picky,
+it turns out that not all surfaces can be oriented. Our next example
+exhibits one.
+</p></example>
+
+<example xml:id="eg_orientMobius"><title>Optional <mdash/> The Möbius Strip</title>
+<p>
+There are some surfaces <m>S</m> for which it is not possible to choose a
+continuous orientation map  <m>\hN: S\rightarrow\bbbr^3</m>. Such surfaces
+are said to be non-orientable. The most famous non-orientable surface
+is the Möbius
+<fn>August Ferdinand Möbius (1790--1868) was a
+German mathematician and astronomer. He was a descendant of Martin Luther
+and a student of Gauss.
+</fn>strip
+<fn>Another famous non-orientable surface is the Klein bottle.
+You can easily find discussions of it using your favourite search engine.
+</fn>, which you can construct as follows. Take a rectangular
+strip of paper.
+</p>
+
+<sidebyside>
+<image source="figs/mobiusC"/>
+</sidebyside>
+
+<p>
+Lay it flat and then introduce a half twist so that the arrow on the right hand
+end points upwards, rather than downwards. Then glue the two ends of the strip
+together, with the two arrows coinciding. That's the Möbius strip.
+</p>
+
+<sidebyside>
+<image source="figs/mobiusB"/>
+</sidebyside>
+
+<p>Let's parametrize it. Think of the strip of paper that we used to construct
+it as consisting of a backbone (the horizontal black line in the figure below)
+with a bunch of ribs (like the thick blue line in the figure) emanating from it.
+</p>
+
+<sidebyside>
+<image source="figs/mobiusD"/>
+</sidebyside>
+
+<p>
+When we glue the two  ends of the strip together, the black line forms
+a circle. If the strip has length <m>\ell</m>, the circle will have circumference <m>\ell</m> and hence radius <m>\frac{\ell}{2\pi}</m>. We'll parametrize it as
+the circle
+<md>
+<mrow>
+\frac{\ell}{2\pi}\hr(\theta)
+\qquad\text{where } \hr(\theta) = \cos(\theta)\,\hi + \sin(\theta)\,\hj
+</mrow>
+</md>
+This circle is in the <m>xy</m>-plane. It is the black circle in the
+figure below. (The figure only shows the part of the circle
+in the first octant, i.e. with <m>x,y,z\ge 0</m>.)
+</p>
+
+<sidebyside>
+<image source="figs/mobiusE"/>
+</sidebyside>
+
+<p>
+Now we'll add in the blue ribs. We'll put the blue rib, that is attached to
+the backbone at <m>\frac{\ell}{2\pi}\hr(\theta)</m>, in the plane
+that contains the vectors <m>\hr(\theta)</m> and <m>\hk</m>.
+</p>
+
+<p>A side view of the plane that contains the vectors <m>\hr(\theta)</m> and <m>\hk</m>
+is sketched in the figure below.
+</p>
+
+<sidebyside>
+<image source="figs/mobiusF"/>
+</sidebyside>
+
+<p>
+To put the half twist into the strip of paper, we want the
+blue rib to rotate about the backbone by <m>180^\circ</m>, i.e. <m>\pi</m> radians,
+as <m>\theta</m> runs from <m>0</m> to <m>2\pi</m>. That
+will be the case if we pick the angle <m>\varphi</m> in the figure to be
+<m>\frac{\theta}{2}</m>. The vector that is running along the blue rib
+in the figure is
+<me>
+\vu(v,\theta,\varphi)=v\cos(\varphi)\,\hr(\theta) + v\sin(\varphi)\,\hk
+</me>
+where the length, <m>v</m>, of the vector is a parameter.
+If the width of our original strip of paper is <m>w</m>, then as the parameter
+<m>v</m> runs from <m>-\frac{w}{2}</m> to <m>+\frac{w}{2}</m>, the tip of the
+vector <m>\vu(v,\theta,\varphi)</m> runs over the entire blue rib.
+So, choosing <m>\varphi=\frac{\theta}{2}</m>, our parametrization
+of the Möbius strip is
+<md>
+<mrow>
+\vr(\theta,v)
+ &amp;= \frac{\ell}{2\pi}\hr(\theta)
+             + \vu(v,\theta,\frac{\theta}{2})
+</mrow><mrow>
+ &amp;= \frac{\ell}{2\pi}\hr(\theta)
+     + v\cos\big(\frac{\theta}{2}\big) \hr(\theta)
+      + v\sin\big(\frac{\theta}{2}\big) \hk
+\qquad 0\le\theta \lt 2\pi,\ -\frac{w}{2}\le v\le \frac{w}{2}
+</mrow>
+</md>
+where <m>\hr(\theta) = \cos(\theta)\,\hi + \sin(\theta)\,\hj</m>.
+</p>
+
+<p>Now that we have parametrized the Möbius strip, let's return to
+the question of orientability. Recall, from Definition <xref ref="def_oriented"/>,
+that, if the Möbius strip were orientable, there would exist a continuous
+function <m>\hN</m> which assigns to each point <m>\vr</m> of the strip a unit
+normal vector <m>\hN(\vr)</m> at <m>\vr</m>. First, we'll find the normal vectors
+to the surface using <xref ref="eq_SUdSparam"/>. The partial derivatives
+<md>
+<mrow>
+\frac{\partial\vr}{\partial\theta}(\theta,v)
+&amp;=\frac{\ell}{2\pi}\hr'(\theta)
+     + v\cos\big(\frac{\theta}{2}\big) \hr'(\theta)
+     - \frac{v}{2}\sin\big(\frac{\theta}{2}\big) \hr(\theta)
+     + \frac{v}{2}\cos\big(\frac{\theta}{2}\big) \hk
+
+</mrow><mrow>
+\frac{\partial\vr}{\partial v}(\theta,v)
+&amp;=\cos\big(\frac{\theta}{2}\big) \hr(\theta)
+      + \sin\big(\frac{\theta}{2}\big) \hk
+</mrow>
+</md>
+are relatively messy, so let's just consider the case <m>v=0</m>
+(i.e. find the normal vectors a the backbone).
+Then
+<md>
+<mrow>
+\frac{\partial\vr}{\partial\theta}(\theta,0)
+&amp;=\frac{\ell}{2\pi}\hr'(\theta)
+
+</mrow><mrow>
+\frac{\partial\vr}{\partial v}(\theta,0)
+&amp;=\cos\big(\frac{\theta}{2}\big) \hr(\theta)
+      + \sin\big(\frac{\theta}{2}\big) \hk
+</mrow>
+</md>
+Since
+<md>
+<mrow>
+\hr'(\theta)\times \hr(\theta)
+&amp;=\big(-\sin(\theta)\,\hi + \cos(\theta)\,\hj\big)\times
+   \big(\cos(\theta)\,\hi + \sin(\theta)\,\hj\big)
+=-\hk
+
+</mrow><mrow>
+\hr'(\theta)\times \hk
+&amp;=\big(-\sin(\theta)\,\hi + \cos(\theta)\,\hj\big)\times \hk
+=\hr(\theta)
+</mrow>
+</md>
+we have
+<md>
+<mrow>
+\frac{\partial\vr}{\partial\theta}(\theta,0) \times
+\frac{\partial\vr}{\partial v}(\theta,0)
+=-\frac{\ell}{2\pi}\Big(\cos\big(\frac{\theta}{2}\big)\,\hk
+                       -\sin\big(\frac{\theta}{2}\big)\,\hr(\theta) \Big)
+</mrow>
+</md>
+As <m>\hk</m> and <m>\hr(\theta)</m> are mutually perpendicular unit vectors,
+<m>\cos\big(\frac{\theta}{2}\big)\,\hk
+                       -\sin\big(\frac{\theta}{2}\big)\,\hr(\theta)</m>
+has length one, and the two unit normal vectors to the Möbius strip
+at <m>\vr(\theta,0)</m> are
+<me>
+\pm \Big(\cos\big(\frac{\theta}{2}\big)\,\hk
+                       -\sin\big(\frac{\theta}{2}\big)\,\hr(\theta) \Big)
+</me>
+So, for each <m>\theta</m>, <m>\hN\big(\vr(\theta,0)\big)</m> must be either
+<me>
+\cos\big(\frac{\theta}{2}\big)\,\hk
+                       -\sin\big(\frac{\theta}{2}\big)\,\hr(\theta)
+\qquad\text{or}\qquad
+-\big(\cos\big(\frac{\theta}{2}\big)\,\hk
+                       -\sin\big(\frac{\theta}{2}\big)\,\hr(\theta) \big)
+</me>
+Imagine walking along the Möbius strip.
+The normal vector <m>\hN\big(\vr(\theta,v)\big)</m> is our body when we are
+at <m>\vr(\theta,v)</m> <mdash/> our feet are at the tail of the vector
+<m>\hN\big(\vr(\theta,v)\big)</m> and our head is at the arrow of
+<m>\hN\big(\vr(\theta,v)\big)</m>. We start walking at
+<m>\vr(0,0)=\frac{\ell}{2\pi}\hi</m>. Our body,
+<m>\hN\big(\frac{\ell}{2\pi}\hi\big)=\hN\big(\vr(0,0)\big)</m> has to be one of
+<m>\pm \big(\cos(0)\,\hk-\sin(0)\,\hr(0) \big)=\pm\hk</m>.
+Let's suppose that <m>\hN\big(\vr(0,0)\big)=+\hk</m>. (We start upright.)
+Now we start walking along the backbone of the Möbius strip,
+increasing <m>\theta</m>. Because <m>\hN\big(\vr(\theta,0)\big)</m> has to be continuous,
+<m>\hN\big(\vr(\theta,0)\big)</m> has to be
+<m>+\big(\cos\big(\frac{\theta}{2}\big)\,\hk
+                       -\sin\big(\frac{\theta}{2}\big)\,\hr(\theta) \big)</m>.
+We keep increasing <m>\theta</m>. By continuity, <m>\hN\big(\vr(\theta,0)\big)</m> has to be
+<m>+\big(\cos\big(\frac{\theta}{2}\big)\,\hk
+                       -\sin\big(\frac{\theta}{2}\big)\,\hr(\theta) \big)</m>
+for bigger and bigger <m>\theta</m>. Eventually we get to <m>\theta=2\pi</m>, i.e. to
+<me>
+\vr(2\pi,0)= \frac{\ell}{2\pi}\hr(2\pi) =  \frac{\ell}{2\pi}\hi
+=\frac{\ell}{2\pi}\hr(0)=\vr(0,0)
+</me>
+We are back to our starting point. Continuity has forced
+<me>
+\hN\big(\vr(2\pi,0)\big)
+=\hN\big(\vr(\theta,0)\big)\Big|_{\theta=2\pi}
+=+\big(\cos\big(\frac{\theta}{2}\big)\,\hk
+                       -\sin\big(\frac{\theta}{2}\big)\,\hr(\theta) \big)
+\Big|_{\theta=2\pi}
+=-\hk
+</me>
+So we have arrived back upside down.
+That's a problem <mdash/> <m>\hN\big(\vr(2\pi,0)\big)
+=\hN\big(\frac{\ell}{2\pi}\hi\big)</m>
+and we have already defined <m>\hN\big(\frac{\ell}{2\pi}\hi\big)=+\hk</m>, not <m>-\hk</m>. So the Möbius strip is not orientable. The interested reader
+should look up M. C. Escher's Möbius Strip II (Red Ants).
+</p>
+</example>
 
 <!-- <xi:include href="../problems/prob_s3.5.ptx" /> -->
 

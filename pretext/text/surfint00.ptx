@@ -8,5 +8,7 @@
 <xi:include href="./surfint01.ptx" />
 <xi:include href="./surfint02.ptx" />
 <xi:include href="./surfint03.ptx" />
+<xi:include href="./surfint04.ptx" />
+<xi:include href="./surfint05.ptx" />
 
 </chapter>
