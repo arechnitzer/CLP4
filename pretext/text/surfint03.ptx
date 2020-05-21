@@ -1,0 +1,1399 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<section xmlns:xi="http://www.w3.org/2001/XInclude" xml:id="sec_surfaceIntegrals">
+
+<!-- Copyright 2018-2020 Joel Feldman, Andrew Rechnitzer and Elyse Yeager -->
+<!-- This work is licensed under the Creative Commons Attribution-NonCommercial-ShareAlike 4.0 International License-->
+<!-- https://creativecommons.org/licenses/by-nc-sa/4.0 -->
+
+<title>Surface Integrals</title>
+
+<introduction>
+<p>We are now going to define two types of integrals over surfaces.
+<ul>
+<li>
+  Integrals that look like <m>\dblInt_S \rho\,\dee{S}</m> are used to
+compute the area and, when <m>\rho</m> is, for example, a mass density,
+the mass of the surface <m>S</m>.
+</li>
+<li>
+  Integrals that look like <m>\dblInt_S \vF\cdot\hn\,\dee{S}</m>,
+with <m>\hn(x,y,z)</m> being a unit vector that is perpendicular to
+<m>S</m> at <m>(x,y,z)</m>,  are called
+flux integrals. We shall see in §<xref ref="sec_fluxIntegrals"/>, that when
+<m>\vv</m> is the velocity field of a moving fluid and <m>\rho</m> is the density
+of the fluid, then <m>\dblInt_S \rho\vv\cdot\hn\,\dee{S}</m> is the rate at which
+fluid is crossing the surface <m>S</m>.
+</li>
+</ul>
+</p>
+</introduction>
+
+<subsection xml:id="subsec_paramSurfaces">
+  <title>Parametrized Surfaces</title>
+
+<p>
+Suppose that we wish to integrate over part, <m>S</m>, of a surface that is
+parametrized by <m>\vr(u,v)</m>. We start by cutting <m>S</m> up into small pieces
+by drawing a bunch of curves of constant <m>u</m> (the blue curves in the
+figure below) and a bunch of curves of constant <m>v</m> (the red curves in the
+figure below).
+</p>
+
+<sidebyside>
+<image source="figs/surfaceSlice.pdf"/>
+</sidebyside>
+
+<p>
+Concentrate on any one the small pieces. Here is a greatly magnified
+sketch.
+</p>
+
+<sidebyside>
+<image source="figs/dS.pdf"/>
+</sidebyside>
+
+<p>
+For example, the  lower red curve was constructed by holding <m>v</m> fixed
+at the value <m>v_0</m>, varying <m>u</m> and sketching <m>\vr(u,v_0)</m>, and
+the  upper red curve was constructed by holding <m>v</m> fixed
+at the slightly larger value <m>v_0+\dee{v}</m>, varying <m>u</m> and
+sketching <m>\vr(u,v_0+\dee{v})</m>. So the four intersection points in
+the figure are
+<md alignment="alignat">
+<mrow>{3}
+P_2&amp;=\vr(u_0, v_0+\dee{v}) &amp;\qquad
+   P_3&amp;=\vr(u_0+\dee{u}, v_0+\dee{v})
+</mrow><mrow>
+P_0&amp;=\vr(u_0, v_0) &amp;
+   P_1&amp;=\vr(u_0+\dee{u}, v_0)
+</mrow>
+</md>
+Now if
+<me>
+\vR(t) = \vr(u_0+t\dee{U}\,,\,v_0+t\dee{V})
+</me>
+(where <m>\dee{U}</m> and <m>\dee{V}</m> are any small constants)
+then, by Taylor expansion,
+<md>
+<mrow>
+\vr\big(u_0+\dee{U}\,,\,v_0+\dee{V}\big)
+&amp;=\vR(1)
+</mrow><mrow>
+&amp;\approx \big[\vR(0) +\vR'(0)\,\big(t-0\big)\big]_{t=1}
+</mrow><mrow>
+&amp;=\vr(u_0\,,\,v_0)
+   +\frac{\partial\vr}{\partial u}(u_0\,,\,v_0)\,\dee{U}
+   +\frac{\partial\vr}{\partial v}(u_0\,,\,v_0)\,\dee{V}
+</mrow>
+</md>
+Applying this three times, once with <m>\dee{U}=\dee{u}</m>, <m>\dee{V}=0</m>,
+once with <m>\dee{U}=0</m> <m>\dee{V}=\dee{v}</m>, and once with
+<m>\dee{U}=\dee{u}</m>, <m>\dee{V}=\dee{v}</m>,
+<md alignment="alignat">
+<mrow>{3}
+P_0&amp;=\vr(u_0\,,\,v_0)
+</mrow><mrow>
+P_1&amp;=\vr(u_0+\dee{u}, v_0)
+   &amp;&amp;\approx \vr(u_0\,,\,v_0)
+   +\frac{\partial\vr}{\partial u}(u_0\,,\,v_0)\,\dee{u}
+</mrow><mrow>
+P_2&amp;=\vr(u_0, v_0+\dee{v})
+   &amp;&amp;\approx \vr(u_0\,,\,v_0)
+   +\frac{\partial\vr}{\partial v}(u_0\,,\,v_0)\,\dee{v}
+</mrow><mrow>
+P_3&amp;=\vr(u_0+\dee{u}, v_0+\dee{v})
+   &amp;&amp;\approx\vr(u_0\,,\,v_0)
+   +\frac{\partial\vr}{\partial u}(u_0\,,\,v_0)\,\dee{u}
+   +\frac{\partial\vr}{\partial v}(u_0\,,\,v_0)\,\dee{v}
+</mrow>
+</md>
+We have dropped all Taylor expansion terms that are of degree two or higher
+in <m>\dee{u}</m>, <m>\dee{v}</m>. The reason is that, in defining the integral, we take
+the limit <m>\dee{u},\dee{v}\rightarrow 0</m>. Because of that limit,
+all of the dropped terms contribute exactly <m>0</m> to the integral.
+We shall not prove this. But we shall show, in the optional
+§<xref ref="sec_hoterms"/>, why this is the case.
+</p>
+
+<p>The small piece of our
+surface with corners <m>P_0</m>, <m>P_1</m>, <m>P_2</m>, <m>P_3</m>  is approximately a parallelogram with sides
+</p>
+
+<sidebyside width="45%">
+<p><md>
+<mrow>
+\overrightarrow{P_0P_1}
+\approx \overrightarrow{P_2P_3}
+&amp;\approx \frac{\partial\vr}{\partial u}(u_0\,,\,v_0)\,\dee{u}
+</mrow><mrow>
+\overrightarrow{P_0P_2}
+\approx \overrightarrow{P_1P_3}
+&amp;\approx \frac{\partial\vr}{\partial v}(u_0\,,\,v_0)\,\dee{v}
+</mrow>
+</md></p>
+<image source="figs/dS2.pdf"/>
+</sidebyside>
+
+<p>
+Denote by <m>\theta</m> the angle between the vectors
+<m>\overrightarrow{P_0P_1}</m> and <m>\overrightarrow{P_0P_2}</m>.
+The base of the parallelogram, <m>\overrightarrow{P_0P_1}</m>,
+has length <m>\big|\overrightarrow{P_0P_1}\big|</m>, and the height of the
+parallelogram is <m>\big|\overrightarrow{P_0P_2}\big|\,\sin\theta</m>.
+So the area of the parallelogram is
+<fn>As we mentioned above,
+the approximation below becomes exact when the limit <m>\dee{u},\dee{v}\rightarrow 0</m> is taken in the definition of the integral.
+See the optional §<xref ref="sec_hoterms"/>.</fn>
+<md>
+<mrow>
+|\overrightarrow{P_0P_1}|\ |\overrightarrow{P_0P_2}| \ \sin\theta
+&amp;= \big|\overrightarrow{P_0P_1}\times\overrightarrow{P_0P_2}\big|
+</mrow><mrow>
+&amp;\approx \bigg|\frac{\partial\vr}{\partial u}(u_0\,,\,v_0)\times
+              \frac{\partial\vr}{\partial v}(u_0\,,\,v_0)\bigg|
+          \dee{u}\dee{v}
+</mrow>
+</md>
+Furthermore, <m>\frac{\partial\vr}{\partial u}(u_0\,,\,v_0)</m>
+and <m>\frac{\partial\vr}{\partial v}(u_0\,,\,v_0)</m>
+are tangent vectors to the curves <m>\vr(t\,,\,v_0)</m> and <m>\vr(u_0\,,\,t)</m>
+respectively. Both of these curves lie in <m>S</m>.
+So <m>\frac{\partial\vr}{\partial u}(u_0\,,\,v_0)</m>
+and <m>\frac{\partial\vr}{\partial v}(u_0\,,\,v_0)</m> are tangent
+vectors to <m>S</m> at <m>(u_0,v_0)</m> and the cross product
+<m>\frac{\partial\vr}{\partial u}(u_0\,,\,v_0)\times
+              \frac{\partial\vr}{\partial v}(u_0\,,\,v_0)</m>
+is perpendicular to <m>S</m> at <m>(u_0,v_0)</m>. We have found
+both <m>\dee{S}</m> and <m>\hn\,\dee{S}</m>, where <m>\hn</m> is a unit normal vector
+to the surface.
+</p>
+
+<fact xml:id="eq_SUdSparam">
+  <statement>
+    <p>
+      For the parametrized surface <m>\vr(u,v)</m>,
+      <md>
+      <mrow>
+      \hn\, \dee{S} &amp; = \pm\frac{\partial\vr}{\partial u}(u\,,\,v)\times
+                    \frac{\partial\vr}{\partial v}(u\,,\,v)\
+                \dee{u}\dee{v}
+                </mrow><mrow>
+      \dee{S}&amp;= \bigg|\frac{\partial\vr}{\partial u}(u\,,\,v)\times
+                    \frac{\partial\vr}{\partial v}(u\,,\,v)\bigg|\
+                \dee{u}\dee{v}
+      </mrow>
+      </md>
+    </p>
+  </statement>
+</fact>
+
+<p>
+The <m>\pm</m> sign in <xref ref="eq_SUdSparam"/> is there because there are
+two unit normal vectors at each point of a surface, one on each side of the
+surface. Typically, the application itself tells you
+which of the two normal vectors should be used. We shall see many examples shortly.
+</p>
+
+</subsection>
+
+<subsection>
+  <title>Graphs</title>
+
+<p>
+The surface which is the graph <m>z = f(x,y)</m> can be parametrized
+by
+<me>
+\vr(x,y) = x\,\hi + y\,\hj + f(x,y)\,\hk
+</me>
+As
+<md>
+<mrow>
+\frac{\partial\vr}{\partial x}
+       = \hi + \frac{\partial f}{\partial x}\,\hk \qquad\text{and}\qquad
+\frac{\partial\vr}{\partial y}
+       = \hj + \frac{\partial f}{\partial y}\,\hk
+</mrow>
+</md>
+we have
+<me>
+ \frac{\partial\vr}{\partial x}\times
+              \frac{\partial\vr}{\partial y}
+=\det\left[\begin{matrix}
+           \hi &amp; \hj &amp; \hk \\
+           1 &amp; 0 &amp; \frac{\partial f}{\partial x} \\
+           0 &amp; 1 &amp; \frac{\partial f}{\partial y}
+           \end{matrix}\right]
+= -f_x(x,y)\,\hi - f_y(x,y)\,\hj + \hk
+</me>
+So, <xref ref="eq_SUdSparam"/> gives the following.
+</p>
+
+<fact xml:id="eq_SUdSgraph">
+  <statement>
+    <p>
+      For the surface <m>z=f(x,y)</m>,
+      <md>
+      <mrow>
+      \hn\, \dee{S} &amp; = \pm\big[-f_x(x,y)\,\hi - f_y(x,y)\,\hj + \hk\big]\
+                \dee{x}\dee{y}
+      </mrow><mrow>
+      \dee{S}&amp;= \sqrt{1 + f_x(x,y)^2 + f_y(x,y)^2}\
+                \dee{x}\dee{y}
+      </mrow>
+      </md>
+      Similarly, for the surface <m>x=g(y,z)</m>,
+      <md>
+      <mrow>
+      \hn\, \dee{S} &amp; = \pm\big[\hi -g_y(y,z)\,\hj - g_z(y,z)\,\hk\big]\
+                \dee{y}\dee{z}
+                </mrow><mrow>
+      \dee{S}&amp;= \sqrt{1 + g_y(y,z)^2 + g_z(y,z)^2}\
+                \dee{y}\dee{z}
+      </mrow>
+      </md>
+      and for the surface <m>y=h(x,z)</m>,
+      <md>
+      <mrow>
+      \hn\, \dee{S} &amp; = \pm\big[-h_x(x,z)\,\hi +\hj - h_z(x,z)\,\hk\big]\
+                \dee{x}\dee{z}
+                </mrow><mrow>
+      \dee{S}&amp;= \sqrt{1 + h_x(x,z)^2 + h_z(x,z)^2}\
+                \dee{x}\dee{z}
+      </mrow>
+      </md>
+    </p>
+  </statement>
+</fact>
+
+<p>
+Again, in any given application, some care must be taken in choosing
+the sign in <xref ref="eq_SUdSgraph"/>, so as to get the appropriate
+normal vector.
+</p>
+
+<p>The formulae like
+<m>\dee{S}= \sqrt{1 + f_x(x,y)^2 + f_y(x,y)^2}\ \dee{x}\dee{y}</m>
+in <xref ref="eq_SUdSgraph"/> have geometric interpretations. The red
+parallelogram in the sketch
+</p>
+
+<sidebyside>
+<image source="figs/surfaceProj.pdf"/>
+</sidebyside>
+
+<p>represents a little piece of our surface. It has area
+<m>\dee{S}= \sqrt{1 + f_x(x,y)^2 + f_y(x,y)^2}\ \dee{x}\dee{y}</m>.
+The blue parallelogram in the same sketch represents the projection
+of the red parallelogram onto the <m>xy</m>-plane. It has area <m>\dee{x}\dee{y}</m>.
+The vector <m>\hn</m> in the sketch is a unit normal for the red parallelogram.
+We have seen that it is parallel to
+<me>
+\frac{\partial\vr}{\partial x}\times
+              \frac{\partial\vr}{\partial y}
+= -f_x(x,y)\,\hi - f_y(x,y)\,\hj + \hk
+</me>
+so that the angle <m>\theta</m> between <m>\hn</m> and <m>\hk</m> obeys
+<md>
+<mrow>
+\cos\theta &amp;= \frac{(-f_x(x,y)\,\hi - f_y(x,y)\,\hj + \hk)\cdot\hk}
+                 {\big|-f_x(x,y)\,\hi - f_y(x,y)\,\hj + \hk\big|\,|\hk|}
+</mrow><mrow>
+&amp;=\frac{1}{\sqrt{1 + f_x(x,y)^2 + f_y(x,y)^2}}
+</mrow>
+</md>
+The geometric interpretation of
+<m>\dee{S}= \sqrt{1 + f_x(x,y)^2 + f_y(x,y)^2}\ \dee{x}\dee{y}</m>
+is that the area <m>\dee{S}</m> of a little piece of surface is the
+area of its projection on the <m>xy</m>-plane times the factor
+<m>\frac{1}{\cos\theta}</m> where <m>\theta</m> is the angle between <m>\hn</m>
+(which is perpendicular to the surface) and <m>\hk</m> (which is
+perpendicular to the <m>xy</m>-plane). Notice that
+<ul>
+<li>
+when <m>\theta</m> is close to zero, which corresponds the <m>f</m> being almost constant
+and our surface being almost parallel to the <m>xy</m>-plane, <m>\dee{S}</m>
+reduces to almost <m>\dee{x}\dee{y}</m>.
+</li>
+<li>
+On the other hand, in the limit <m>\theta\rightarrow\frac{\pi}{2}</m>, which
+corresponds to <m>f_x</m> and/or <m>f_y</m> becoming infinite
+and our surface becoming perpendicular to the <m>xy</m>-plane,
+<m>\dee{S}</m> becomes <q>infinity times</q> <m>\dee{x}\dee{y}</m>. In this case,
+we should represent our surface either in the form <m>x=g(y,z)</m>
+or in the form <m>y=h(x,z)</m>, rather than in the form <m>z=f(x,y)</m>.
+</li>
+</ul>
+</p>
+
+</subsection>
+
+<subsection>
+  <title>Surfaces Given by Implicit Equations</title>
+
+<p>
+Finally suppose that the surface is given by the equation
+<m>G(x,y,z)=K</m>, with <m>K</m> a constant. Suppose further that at some point
+on the surface <m>\frac{\partial G}{\partial z} \ne 0</m>. Then near that point
+we may solve
+<fn>This is called the implicit function theorem. We
+will not prove it. But it is not so hard to understand why it is true, if one thinks in terms of the Taylor expansion of
+<m>G</m> about the point. For simplicity, let's suppose that the point is
+<m>(0,0,0)</m> and <m>G</m> happens to be exactly equal to its first order
+Taylor expansion about <m>(0,0,0)</m>. That is, <m>G(x,y,z) = A +Bx +Cy +Dz</m>,
+for some constants <m>A</m>, <m>B</m>, <m>C</m>, <m>D</m>. Since <m>(0,0,0)</m> is on the surface,
+<m>A=K</m>. As <m>\frac{\partial G}{\partial z}=D \ne 0</m>  we can easily solve
+<m>G(x,y,z)=K</m> for <m>z</m> as a function of <m>x</m> and <m>y</m>. Namely
+<m>z=\frac{1}{D}(-Bx-Cy)</m>. The general proof is based on the fact that,
+under reasonable hypotheses, the first order Taylor expansion is a
+good approximation to <m>G</m> near <m>(0,0,0)</m>.</fn>
+the equation <m>G(x,y,z)=K</m> for <m>z</m> as a function of <m>x</m> and <m>y</m>. That is, the surface also obeys <m>z=f(x,z)</m> for a function <m>f(x,y)</m>
+that satisfies
+<me>
+G\big(x,y,f(x,y)\big) = K
+</me>
+near the point.
+Differentiating this with respect to <m>x</m> and <m>y</m> gives, by the chain rule,
+<md alignment="alignat">
+<mrow>
+0&amp;=\frac{\partial\hfill}{\partial x}\Big[G\big(x,y,f(x,y)\big)\Big]
+ &amp;\ =\ G_x\big(x,y,f(x,y)\big) + G_z\big(x,y,f(x,y)\big)\,f_x(x,y)
+</mrow><mrow>
+0&amp;=\frac{\partial\hfill}{\partial y}\Big[G\big(x,y,f(x,y)\big)\Big]
+ &amp;\ =\ G_y\big(x,y,f(x,y)\big) + G_z\big(x,y,f(x,y)\big)\,f_y(x,y)
+</mrow>
+</md>
+which implies
+<md>
+<mrow>
+f_x(x,y) = -\frac{G_x\big(x,y,f(x,y)\big)}{G_z\big(x,y,f(x,y)\big)}
+\qquad
+f_y(x,y) = -\frac{G_y\big(x,y,f(x,y)\big)}{G_z\big(x,y,f(x,y)\big)}
+</mrow>
+</md>
+and
+<md>
+<mrow>
+-f_x(x,y)\,\hi - f_y(x,y)\,\hj + \hk
+&amp;=\frac{G_x\big(x,y,f(x,y)\big)}{G_z\big(x,y,f(x,y)\big)}\,\hi+
+\frac{G_y\big(x,y,f(x,y)\big)}{G_z\big(x,y,f(x,y)\big)}\,\hj+\hk
+</mrow><mrow>
+&amp;=\frac{\vnabla G\big(x,y,f(x,y)\big)}{G_z\big(x,y,f(x,y)\big)}
+</mrow>
+</md>
+So, by (<xref ref="eq_SUdSparam"/>),
+</p>
+
+<fact xml:id="eq_SUdSimplicit">
+  <statement>
+    <p>
+      For the surface <m>G(x,y,z)=K</m>, when <m>G_z(x,y,z)\ne 0</m>,
+      <md>
+      <mrow>
+      \hn\, \dee{S} &amp; =
+          \pm\frac{\vnabla G\big(x,y,z\big)}{\vnabla G\big(x,y,z\big)\cdot\hk}\
+                \dee{x}\dee{y}
+</mrow><mrow>
+      \dee{S}&amp;=
+      \bigg|\frac{\vnabla G\big(x,y,z\big)}{\vnabla G\big(x,y,z\big)\cdot\hk}\bigg|\
+                \dee{x}\dee{y}
+      </mrow>
+      </md>
+      Similarly, for the surface <m>G(x,y,z)=K</m>, when <m>G_x(x,y,z)\ne 0</m>,
+      <md>
+      <mrow>
+      \hn\, \dee{S} &amp; =
+          \pm\frac{\vnabla G\big(x,y,z\big)}{\vnabla G\big(x,y,z\big)\cdot\hi}\
+                \dee{y}\dee{z}
+</mrow><mrow>
+      \dee{S}&amp;=
+      \bigg|\frac{\vnabla G\big(x,y,z\big)}{\vnabla G\big(x,y,z\big)\cdot\hi}\bigg|\
+                \dee{y}\dee{z}
+      </mrow>
+      </md>
+      and for the surface <m>G(x,y,z)=K</m>, when <m>G_y(x,y,z)\ne 0</m>,
+      <md>
+      <mrow>
+      \hn\, \dee{S} &amp; =
+          \pm\frac{\vnabla G\big(x,y,z\big)}{\vnabla G\big(x,y,z\big)\cdot\hj}\
+                \dee{x}\dee{z}
+</mrow><mrow>
+      \dee{S}&amp;=
+      \bigg|\frac{\vnabla G\big(x,y,z\big)}{\vnabla G\big(x,y,z\big)\cdot\hj}\bigg|\
+                \dee{x}\dee{z}
+      </mrow>
+      </md>
+    </p>
+  </statement>
+</fact>
+
+<p>
+If, for some point <m>(x_0,y_0,z_0)</m> we have
+<m>G_x(x_0,y_0,z_0)=
+ G_y(x_0,y_0,z_0)=
+ G_z(x_0,y_0,z_0)= 0</m>, we also have problem! Often this is a sign
+that our surface is not smooth at <m>(x_0,y_0,z_0)</m> and in fact does not
+have a normal vector there. For an example of this, see
+Example <xref ref="eg_tangentPlaneA"/>.
+</p>
+
+</subsection>
+
+<subsection xml:id="sec_rhodSexamples">
+  <title>Examples of <m>\dblInt_S \rho\,\dee{S}</m></title>
+<p>
+We'll start by computing, in several different ways, the surface area of the
+hemisphere
+<me>
+x^2+y^2+z^2=a^2\qquad z\ge 0
+</me>
+(with <m>a \gt 0</m>).
+You probably know, from high school, that the answer is
+<m>\frac{1}{2}\times 4\pi a^2=2\pi a^2</m>. But you have probably
+not seen a derivation of this answer.
+Note that, since <m>x^2+y^2 = a^2-z^2</m> on the hemisphere, the set
+of <m>(x,y)</m>'s for which there is a <m>z</m> with <m>(x,y,z)</m> on the  hemisphere
+is exactly <m>§et{(x,y)\in\bbbr^2}{x^2+y^2\le a^2}</m>.
+</p>
+
+<example xml:id="eg_SphereAreaCyl">
+  <title>Area of a hemisphere <mdash/> using cylindrical coordinates</title>
+<p>
+Let's parametrize the hemisphere <m>x^2+y^2+z^2=a^2</m>, <m>z\ge 0</m>,
+using as parameters the polar coordinates <m>r</m>, <m>\theta</m> of the
+cylindrical coordinates
+</p>
+
+<sidebyside width="45%">
+<p>
+<md>
+<mrow>
+x &amp;= r\cos\theta
+</mrow><mrow>
+y &amp;= r\sin\theta
+</mrow><mrow>
+z &amp;= z
+</mrow>
+</md>
+</p>
+<image source="figs/cylindrical.pdf"/>
+</sidebyside>
+
+<p>
+and then apply <xref ref="eq_SUdSparam"/>.
+In cylindrical coordinates the equation <m>x^2+y^2+z^2=a^2</m>
+becomes <m>r^2+z^2=a^2</m>, and the condition <m>x^2+y^2\le a^2</m> is <m>0\le r\le a</m>,
+<m>0\le\theta \lt  2\pi</m>.
+</p>
+
+<p>So the hemisphere can be parametrized by
+<md>
+<mrow>
+&amp;\big(x(r,\theta)\,,\, y(r,\theta)\,,\, z(r,\theta)\big)
+=\big(r\cos\theta\,,\,r\sin\theta\,,\,\sqrt{a^2-r^2}\,\big)
+</mrow><mrow>
+&amp;\hskip1in\text{with }\
+0\le r\le a,\ 0\le\theta \lt 2\pi
+</mrow>
+</md>
+Note that we selected the positive solution <m>z=\sqrt{a^2-r^2}</m> of <m>r^2+z^2=a^2</m>
+in order to satisfy the condition that <m>z\ge 0</m>.
+Since
+<md>
+<mrow>
+\Big(\frac{\partial x}{\partial r}\,,\,\frac{\partial y}{\partial r}\,,\,
+                     \frac{\partial z}{\partial r}\Big)
+&amp;=\Big(\cos\theta\,,\,\sin\theta\,,\,-\frac{r}{\sqrt{a^2-r^2}}\Big)
+</mrow><mrow>
+\Big(\frac{\partial x}{\partial\theta}\,,\,\frac{\partial y}{\partial\theta}
+             \,,\, \frac{\partial z}{\partial\theta}\Big)
+&amp;=(-r\sin\theta\,,\,r\cos\theta\,,\,0)
+</mrow>
+</md>
+<xref ref="eq_SUdSparam"/> yields
+<md>
+<mrow>
+\hn\,\dee{S}
+&amp;=\pm\Big(\frac{\partial x}{\partial r}\,,\,\frac{\partial y}{\partial r}
+   \,,\,\frac{\partial z}{\partial r}\Big)
+\times
+\Big(\frac{\partial x}{\partial\theta}\,,\,\frac{\partial y}{\partial\theta}
+   \,,\, \frac{\partial z}{\partial\theta}\Big)
+\ \dee{r}\dee{\theta}
+</mrow><mrow>
+&amp;=\pm \det\left[\begin{matrix}
+                \hi &amp; \hj &amp; \hk \\
+                \cos\theta &amp; \sin\theta &amp; -\frac{r}{\sqrt{a^2-r^2}} \\
+                -r\sin\theta &amp; r\cos\theta &amp; 0
+                \end{matrix}\right]\ \dee{r}\dee{\theta}
+
+</mrow><mrow>
+&amp;=\pm\Big(\frac{r^2\cos\theta}{\sqrt{a^2-r^2}}\,,\,
+           \frac{r^2\sin\theta}{\sqrt{a^2-r^2}}\,,\,
+          r\Big)\ \dee{r}\dee{\theta}
+</mrow><mrow>
+
+\dee{S}&amp;=\sqrt{ \frac{r^4}{a^2-r^2} +r^2}\ \dee{r}\dee{\theta}
+        =\sqrt{ \frac{a^2r^2}{a^2-r^2}}\ \dee{r}\dee{\theta}
+        =\frac{ar}{\sqrt{a^2-r^2}}\ \dee{r}\dee{\theta}
+</mrow>
+</md>
+So the area of the hemisphere is
+<md>
+<mrow>
+\int_0^a \dee{r}\int_0^{2\pi}\dee{\theta}\ \frac{ar}{\sqrt{a^2-r^2}}
+&amp;=2\pi a\int_0^a \dee{r}\ \frac{r}{\sqrt{a^2-r^2}}
+
+</mrow><mrow>
+&amp;=2\pi a\int_{a^2}^0 \frac{-\dee{u}/2}{\sqrt{u}}
+\qquad\text{with } u=a^2-r^2,\ \dee{u} = -2r\,\dee{r}
+</mrow><mrow>
+&amp;=2\pi a\Big[-\sqrt{u}\Big]_{a^2}^0
+</mrow><mrow>
+&amp;=2\pi a^2
+</mrow>
+</md>
+as it should be.
+</p></example>
+
+
+<example xml:id="eg_SphereImplicit">
+  <title>Area of a hemisphere <mdash/> using an implicit equation</title>
+
+<p>
+This time we'll compute the area of the hemisphere by using that, if
+<m>(x,y,z)</m> is on the hemisphere, then <m>G(x,y,z) = a^2</m> with
+<m>G(x,y,z) = x^2 + y^2 + z^2</m>.
+Since
+<me>
+\vnabla G(x,y,z) = \big(2x\,,\,2y\,,\,2z\big)
+</me>
+<xref ref="eq_SUdSimplicit"/> yields
+<md>
+<mrow>
+\dee{S}
+&amp;= \bigg|\frac{\vnabla G\big(x,y,z\big)}{\vnabla G\big(x,y,z\big)\cdot\hk}\bigg|
+            \ \dee{x}\dee{y}
+</mrow><mrow>
+&amp;= \bigg|\frac{\big(2x\,,\,2y\,,\,2z\big)}{2z}\bigg|
+            \ \dee{x}\dee{y}
+</mrow><mrow>
+&amp;= \frac{\sqrt{x^2+y^2+z^2}}{|z|}
+            \ \dee{x}\dee{y}
+</mrow><mrow>
+&amp;= \frac{a}{\sqrt{a^2-x^2-y^2}}
+            \ \dee{x}\dee{y} \qquad\text{on }  x^2+y^2+z^2=a^2
+</mrow>
+</md>
+So the area is
+<m>
+\dblInt_{x^2+y^2\le a^2}\frac{a}{\sqrt{a^2-x^2-y^2}}
+            \ \dee{x}\dee{y}
+</m>.
+To evaluate this integral, we switch to polar coordinates, substituting
+<m>x=r\cos\theta</m>, <m>y=r\sin\theta</m>. This gives
+<md>
+<mrow>
+\text{area}
+&amp;=\dblInt_{x^2+y^2\le a^2}\frac{a}{\sqrt{a^2-x^2-y^2}}
+            \ \dee{x}\dee{y}
+=\int_0^a\dee{r}\ r\int_0^{2\pi}\dee{\theta}\  \frac{a}{\sqrt{a^2-r^2}}
+</mrow><mrow>
+&amp;=2\pi a \int_0^a\dee{r}\ \frac{r}{\sqrt{a^2-r^2}}
+</mrow>
+</md>
+We already showed, in Example <xref ref="eg_SphereAreaCyl"/>, that the value
+of this integral is <m>2\pi a^2</m>.
+</p></example>
+
+<example xml:id="eg_SphereAreaSC">
+  <title>Area of a hemisphere <mdash/> using spherical coordinates</title>
+
+<p>
+Of course <q>integrating over a sphere</q> cries out  for
+spherical coordinates. So
+this time we parametrize the hemisphere <m>x^2+y^2+z^2=a^2</m>, <m>z\ge 0</m>,
+using as parameters the angular coordinates <m>\theta</m>, <m>\varphi</m> of the
+spherical coordinates
+</p>
+
+<sidebyside width="45%">
+<p><md>
+<mrow>
+x&amp;=\rho\sin\varphi\cos\theta
+</mrow><mrow>
+y&amp;=\rho\sin\varphi\sin\theta
+</mrow><mrow>
+z&amp;=\rho\cos\varphi
+</mrow>
+</md></p>
+<image source="figs/spherical.pdf"/>
+</sidebyside>
+
+<p>
+and then apply <xref ref="eq_SUdSparam"/>.
+In spherical coordinates the equation <m>x^2+y^2+z^2=a^2</m>
+becomes just <m>\rho^2=a^2</m>, and the condition <m>z\ge 0</m> is <m>0\le\varphi\le\frac{\pi}{2}</m>, <m>0\le\theta \lt  2\pi</m>.
+So the hemisphere can be parametrized
+<fn>As we have noted before,
+the spherical coordinate system really breaks down at <m>\varphi=0</m>,
+because <m>\rho=1</m>, <m>\varphi=0</m> gives the same point, namely the north pole <m>(0,0,1)</m>, for all values of <m>\theta</m>. We should really treat our
+integral like an improper integral, first integrating over
+<m>\veps \lt \varphi\le\frac{\pi}{2}</m> and then taking the limit
+<m>\veps\rightarrow 0^+</m>.
+However the breakdown of the spherical coordinate system at <m>\varphi=0</m>,
+just like the breakdown of polar coordinates at <m>r=0</m>, rarely causes
+problem and it is routine to skip the <q>improper integral</q> step.
+</fn> by
+<me>
+\big(x(\theta,\varphi)\,,\, y(\theta,\varphi)\,,\, z(\theta,\varphi)\big)
+=\big(a\sin\varphi\cos\theta\,,\,a\sin\varphi\sin\theta\,,\,a\cos\varphi\,\big)\quad
+0\le\varphi\le\frac{\pi}{2},\ 0\le\theta \lt 2\pi
+</me>
+Since
+<md>
+<mrow>
+\Big(\frac{\partial x}{\partial\theta}\,,\,
+      \frac{\partial y}{\partial\theta}\,,\,
+      \frac{\partial z}{\partial\theta}\Big)
+&amp;=\big(-a\sin\varphi\sin\theta\,,\,
+       a\sin\varphi\cos\theta\,,\,0\big)
+</mrow><mrow>
+\Big(\frac{\partial x}{\partial\varphi}\,,\,\frac{\partial y}{\partial\varphi}
+             \,,\, \frac{\partial z}{\partial\varphi}\Big)
+&amp;=(a\cos\varphi\cos\theta\,,\,a\cos\varphi\sin\theta\,,\,-a\sin\varphi)
+</mrow>
+</md>
+<xref ref="eq_SUdSparam"/> yields
+<md>
+<mrow>
+\hn\,\dee{S}
+&amp;=\pm\Big(\frac{\partial x}{\partial\theta}\,,\,
+          \frac{\partial y}{\partial\theta}\,,\,
+          \frac{\partial z}{\partial\theta}\Big)
+\times
+\Big(\frac{\partial x}{\partial\varphi}\,,\,\frac{\partial y}{\partial\varphi}
+   \,,\, \frac{\partial z}{\partial\varphi}\Big)
+\ \dee{\theta}\dee{\varphi}
+</mrow><mrow>
+&amp;=\pm \big(-a\sin\varphi\sin\theta\,,\,
+       a\sin\varphi\cos\theta\,,\,0\big)
+\times
+(a\cos\varphi\cos\theta\,,\,a\cos\varphi\sin\theta\,,\,-a\sin\varphi)
+\ \dee{\theta}\dee{\varphi}
+</mrow><mrow>
+&amp;=\pm\big(-a^2\sin^2\varphi\cos\theta\,,\,
+          -a^2\sin^2\varphi\sin\theta\,,\,
+          -a^2\sin\varphi\cos\varphi\Big)\ \dee{\theta}\dee{\varphi}
+</mrow><mrow>
+&amp;=\mp a^2\sin\varphi \big(\sin\varphi\cos\theta\,,\,
+          \sin\varphi\sin\theta\,,\,
+          \cos\varphi\Big)\ \dee{\theta}\dee{\varphi}
+</mrow><mrow>
+\dee{S}&amp;=a^2\sin\varphi \sqrt{\sin^2\varphi\cos^2\theta
+                    +\sin^2\varphi\sin^2\theta
+                    +\cos^2\varphi}\ \dee{\theta}\dee{\varphi}
+</mrow><mrow>
+        &amp;=a^2\sin\varphi\ \dee{\theta}\dee{\varphi}
+</mrow>
+</md>
+So the area of the hemisphere is
+<md>
+<mrow>
+a^2\int_0^{\frac{\pi}{2}} \dee{\varphi }\int_0^{2\pi}\dee{\theta}\ \sin\varphi
+&amp;=2\pi a^2 \int_0^{\frac{\pi}{2}} \dee{\varphi }\ \sin\varphi
+=2\pi a^2\Big[-\cos\varphi\Big]_0^{\pi/2}
+</mrow><mrow>
+&amp;=2\pi a^2
+</mrow>
+</md>
+</p></example>
+
+
+<p>There is an easier way to do this, using a little geometry.</p>
+
+<example xml:id="eg_SphereAreaSCB">
+  <title>Area of a hemisphere <mdash/> using spherical coordinates again</title>
+<p>
+We are now going to again compute the surface area of the hemisphere
+using spherical coordinates.
+But this time instead of determining <m>\dee{S}</m> using the canned formula
+<xref ref="eq_SUdSparam"/>, we are going to read it off of a sketch.
+</p>
+
+<p>Sketch the part of the hemisphere that is in the first octant,
+<m>x\ge 0</m>, <m>y\ge 0</m>, <m>z\ge 0</m>. Slice it up into small pieces by
+drawing in curves of constant <m>\theta</m> (the blue lines in the figure below)
+and curves of constant <m>\varphi</m> (the red lines in the figure below).
+</p>
+
+<sidebyside>
+<image source="figs/sphericaldSA.pdf"/>
+</sidebyside>
+
+<p>
+Each piece is approximately a little rectangle. Concentrate on one of them,
+like the piece with the thick sides in the figure above. The area, <m>\dee{S}</m>,
+of that piece is (essentially) the product of its height and its width.
+Each of the two sides of the piece is
+<ul>
+<li>
+a segment of a circle of radius <m>a</m>
+(a fat blue line in both the figure above and in the figure on the left below)
+</li>
+<li>
+that subtends an angle <m>\dee{\varphi}</m>
+</li>
+<li>
+and hence is the fraction <m>\frac{\dee{\varphi}}{2\pi}</m> of a full circle
+of radius <m>a</m> and hence is of length
+<m>\frac{\dee{\varphi}}{2\pi} 2\pi a = a\dee{\varphi}</m>.
+</li>
+</ul>
+The top of the piece is
+<ul>
+<li>
+a segment of a circle of radius <m>a\sin\varphi</m> (a fat red line in
+both the figure above and in the figure on the right below)
+</li>
+<li>
+that subtends an angle <m>\dee{\theta}</m>
+</li>
+<li>
+and hence is the fraction <m>\frac{\dee{\theta}}{2\pi}</m> of a full circle
+of radius <m>a\sin\varphi</m> and hence is of length
+<m>\frac{\dee{\theta}}{2\pi} 2\pi a\sin\varphi = a\sin\varphi\dee{\theta}</m>.
+</li>
+</ul>
+These are drawn in the figure below.
+</p>
+
+<sidebyside>
+<image source="figs/sphericaldSB.pdf"/>
+<image source="figs/sphericaldSC.pdf"/>
+</sidebyside>
+
+<p>
+So the area of our piece is
+<me>
+\dee{S} = \big(a\dee{\varphi}\big)\big(a\sin\varphi\dee{\theta}\big)
+= a^2\sin\varphi\,\dee{\theta}\dee{\varphi}
+</me>
+This is exactly the same formula that we found for <m>\dee{S}</m> in
+Example <xref ref="eg_SphereAreaSC"/> so that we will, yet again, get that the
+area of a hemisphere of radius <m>a</m> is <m>2\pi a^2</m>. (Phew!)
+</p></example>
+
+<p>But wait! We can do it again, by yet another method!</p>
+
+<example xml:id="eg_SphereGraph">
+  <title>Area of a hemisphere <mdash/> using <m>z=f(x,y)</m></title>
+<p>
+We'll compute the area of the hemisphere one last time
+<fn>We promise!</fn>. This time
+we'll use that the equation of the hemisphere is
+<me>
+z=f(x,y) = \sqrt{a^2-x^2-y^2}
+\qquad\text{with $(x,y)$ running over $x^2+y^2\le a^2$}
+</me>
+So <xref ref="eq_SUdSgraph"/> yields
+<md>
+<mrow>
+\dee{S}&amp;= \sqrt{1 + f_x(x,y)^2 + f_y(x,y)^2}\  \dee{x}\dee{y}
+</mrow><mrow>
+   &amp;=\sqrt{1+\Big(\frac{-x}{\sqrt{a^2-x^2-y^2}}\Big)^2
+            +\Big(\frac{-y}{\sqrt{a^2-x^2-y^2}}\Big)^2} \ \dee{x}\dee{y}
+</mrow><mrow>
+   &amp;=\sqrt{1+\frac{x^2+y^2}{a^2-x^2-y^2}} \ \dee{x}\dee{y}
+</mrow><mrow>
+   &amp;=\sqrt{\frac{a^2}{a^2-x^2-y^2}} \ \dee{x}\dee{y}
+</mrow>
+</md>
+So the area is
+<m>
+\dblInt_{x^2+y^2\le a^2}\frac{a}{\sqrt{a^2-x^2-y^2}}
+            \ \dee{x}\dee{y}
+</m>. We already found, in Example <xref ref="eg_SphereImplicit"/>, that the value
+of this integral in <m>2\pi a^2</m>.
+</p></example>
+
+<p>Let's do some more substantial examples, where the integrand is not 1.
+</p>
+
+<example xml:id="eg_surfaceIntegralA">
+<statement>
+<p>
+Evaluate
+<m>\ \dblInt_S x^2y^2z^2\ dS\ </m> where
+<m>S</m> is the part of the cone <m>x^2+y^2=z^2</m> with <m>0\le z\le 1</m>.
+</p>
+</statement>
+
+<solution>
+<p>
+We can express <m>S</m> as
+</p>
+
+<sidebyside width="45%">
+<p><me>
+z=f(x,y) = \sqrt{x^2+y^2}\qquad
+x^2+y^2\le 1
+</me></p>
+<image source="figs/coneB.pdf"/>
+</sidebyside>
+
+<p>
+Now since
+<me>
+f_x(x,y) = \frac{x}{\sqrt{x^2+y^2}}\qquad
+f_y(x,y) = \frac{y}{\sqrt{x^2+y^2}}
+</me>
+<xref ref="eq_SUdSgraph"/> gives
+<fn>This answer for <m>\dee{S}</m> is a very
+clean. Think about why. Hint: review the discussion following
+<xref ref="eq_SUdSgraph"/>.</fn>
+<me>
+\dee{S} = \Big[1 + \frac{x^2}{x^2+y^2}  + \frac{y^2}{x^2+y^2}\Big]^{1/2}
+             \ \dee{x}\dee{y}
+=\sqrt{2}\,\dee{x}\dee{y}
+</me>
+Our integral is then
+<md>
+<mrow>
+\dblInt_S x^2y^2z^2\ dS
+&amp;=\sqrt{2}\dblInt_{x^2+y^2\le 1} x^2 y^2 (x^2+y^2)\ \dee{x}\dee{y}
+</mrow>
+</md>
+Since we are integrating over a circular domain, let's
+convert to polar coordinates.
+<md>
+<mrow>
+\dblInt_S x^2y^2z^2\ dS
+&amp;=\sqrt{2}\int_0^{2\pi}\dee{\theta}\int_0^1 \dee{r} \
+          r(r\cos\theta)^2(r\sin\theta)^2 r^2
+</mrow><mrow>
+&amp;=\sqrt{2} \left[\int_0^{2\pi}\dee{\theta}\ \cos^2\theta \sin^2\theta\right]
+           \left[\int_0^1 \dee{r} \ r^7\right]
+</mrow><mrow>
+&amp;=\frac{\sqrt{2}}{8} \int_0^{2\pi}\dee{\theta}\
+          \cos^2\theta \sin^2\theta
+=\frac{\sqrt{2}}{32} \int_0^{2\pi}\dee{\theta}\ \sin^2(2\theta)
+</mrow><mrow>
+&amp;=\frac{\sqrt{2}}{64}  \int_0^{2\pi}\dee{\theta}\ \big[1-\cos(4\theta)\big]
+</mrow><mrow>
+</mrow>
+</md>
+Remembering
+<fn>If you have forgotten why, sketch the graph.</fn>
+ that the integral of <m>\cos(\theta)</m>, or <m>\cos(4\theta)</m>,
+over a full period is <m>0</m>, we end up with
+<me>
+\dblInt_S x^2y^2z^2\ dS = \frac{\sqrt{2}}{64}(2\pi)
+   =\frac{\pi\sqrt{2}}{32}
+</me>
+</p>
+</solution>
+
+<solution>
+<p>
+We may parametrize
+<fn>We did so previously, with different variable names, in Example <xref ref="eg_tangentPlaneA"/>.
+</fn> the cone by
+<md>
+<mrow>
+\vr(z,\theta) &amp;= z\cos\theta\,\hi +  z\sin\theta\,\hj + z\,\hk \qquad
+0\le z\le 1,\ 0\le\theta\le 2\pi
+</mrow>
+</md>
+The because
+<md>
+<mrow>
+\frac{\partial\vr}{\partial z}
+   =  \cos\theta\,\hi +  \sin\theta\,\hj + \hk \qquad\text{and}\qquad
+\frac{\partial\vr}{\partial z}
+   =  -z\sin\theta\,\hi +  z\c0s\theta\,\hj
+</mrow>
+</md>
+<xref ref="eq_SUdSparam"/> yields
+<fn>Again the formula for <m>\dee{S}</m> is very neat. Think about why.
+</fn>
+<md>
+<mrow>
+\hn\,\dee{S}
+&amp;=\pm\det\left[\begin{matrix}
+                   \hi &amp; \hj &amp; \hk \\
+                   \cos\theta &amp; \sin\theta &amp; 1 \\
+                   -z\sin\theta &amp; z\cos\theta &amp; 0
+                \end{matrix}\right]\,\dee{z}\dee{\theta}
+</mrow><mrow>
+&amp;=\pm\big[-z\cos\theta\,\hi - z\sin\theta\,\hj + z\,\hk\big]\
+          \dee{z}\dee{\theta}
+</mrow><mrow>
+\dee{S}&amp;= \sqrt{2} z\ \dee{z}\dee{\theta}
+</mrow>
+</md>
+So our integral becomes
+<md>
+<mrow>
+\dblInt_S x^2y^2z^2\ dS
+&amp;= \sqrt{2}\int_0^{2\pi}\dee{\theta} \int_0^1\dee{z}\
+           z (z\cos\theta)^2 (z\sin\theta)^2 z^2
+</mrow><mrow>
+&amp;= \sqrt{2}\int_0^{2\pi}\dee{\theta} \int_0^1\dee{z}\ z^7
+           \cos^2\theta \sin^2\theta
+</mrow><mrow>
+&amp;=\frac{\sqrt{2}}{8} \int_0^{2\pi}\dee{\theta}\
+          \cos^2\theta \sin^2\theta
+</mrow>
+</md>
+We evaluated this integral in Solution 1. So again
+<me>
+\dblInt_S x^2y^2z^2\ dS   =\frac{\pi\sqrt{2}}{32}
+</me>
+</p>
+</solution>
+</example>
+
+<p>Let's do something more celestial.</p>
+
+<example xml:id="eg_surfaceIntegralB">
+<p>
+Consider a spherical shell of radius <m>a</m> with mass density <m>\mu</m> per unit
+area. Think of it as a hollow planet
+<fn>A favourite of science fiction and fantasy writers. Plug <q>subterranean fiction</q> into your favourite search engine. While you're at it, also try <q>gravity train</q>. We'll look at it in the optional Example <xref ref="eg_gravityTrain"/>.
+</fn>.
+We are going to determine the gravitational force that it exerts on a particle
+of mass <m>m</m> a distance <m>b</m> away from its centre. This particle can be either
+outside the shell (<m>b \gt a</m>) or inside the shell (<m>b \lt a</m>).
+We can choose the coordinate system so that the centre of the shell is at the origin and the particle is
+at <m>(0,0,b)</m>. By Newton's law of gravitation, the force exerted on the
+particle by a tiny piece of the shell of surface area <m>\dee{S}</m> located at <m>\vr</m> is
+<me>
+\frac{G\,(\mu\dee{S})\,m}{|\vr-(0,0,b)|^3}(\vr-(0,0,b))
+</me>
+Here <m>G</m> is the gravitational constant, <m>\mu\dee{S}</m> is the mass of the tiny
+piece of shell, <m>m</m> is the mass of the particle
+</p>
+
+<sidebyside>
+<image source="figs/shell.pdf"/>
+<image source="figs/shellB.pdf"/>
+</sidebyside>
+
+<p>
+and <m>\vr-(0,0,b)</m> is the vector from the
+particle to the piece of shell. If we work in spherical coordinates, as we did in Example <xref ref="eg_SphereAreaSC"/>,
+<md>
+<mrow>
+\dee{S} &amp;= a^2\sin\varphi\,\dee{\varphi}\dee{\theta}
+</mrow>
+</md>
+and
+<md>
+<mrow>
+\vr &amp;= a\sin\varphi\cos\theta\,\hi
+      + a\sin\varphi\sin\theta\,\hj
+      + a\cos\varphi\,\hk
+</mrow><mrow>
+\vr-(0,0,b) &amp;= a\sin\varphi\cos\theta\,\hi
+      + a\sin\varphi\sin\theta\,\hj
+      + (a\cos\varphi-b)\,\hk
+</mrow><mrow>
+|\vr-(0,0,b)|^2 &amp;= a^2+b^2 -2ab\cos\varphi
+</mrow>
+</md>
+The total force is then
+<md>
+<mrow>
+\vF =
+    G\mu m a^2\int_0^\pi\dee{\varphi} \int_0^{2\pi}\dee{\theta}\ \sin\varphi\
+    \frac{a\sin\varphi\cos\theta\,\hi
+      + a\sin\varphi\sin\theta\,\hj
+      + (a\cos\varphi-b)\,\hk}
+         {\big[a^2+b^2 -2ab\cos\varphi\big]^{3/2}}
+</mrow>
+</md>
+Note for future reference that the square root in
+<m>[a^2+b^2 -2ab\cos\varphi]^{3/2}</m> is the <em>positive</em>
+square root because <m>[b^2+a^2 -2ab\cos\varphi]^{1/2}</m> is the length
+of <m>\vr-(0,0,b)</m>, which is positive.
+</p>
+
+<p>This integral is a little different than other integrals that we have
+encountered so far in that the integrand is a vector. By
+definition
+<fn>Under this definition we still have
+<m>\dblInt (\vA+\vB)\,\dee{S} = \dblInt \vA\,\dee{S} + \dblInt\vB\,\dee{S}</m>.
+</fn>,
+<me>
+\dblInt_S \big[G_1\,\hi + G_2\,\hj + G_3\,\hk \big]\ \dee{S}
+=\hi \dblInt_S G_1\ \dee{S}
++\hj \dblInt_S G_2\ \dee{S}
++\hk \dblInt_S G_3\ \dee{S}
+</me>
+so we just have to compute the three components separately.
+</p>
+
+<p>In our case,
+the <m>\hi</m> and <m>\hj</m> components
+<md>
+<mrow>
+\vF\cdot\hi &amp; = G\mu m a^2 \int_0^\pi\dee{\varphi} \left[
+\sin\varphi\
+    \frac{a\sin\varphi}
+         {\big[a^2+b^2 -2ab\cos\varphi\big]^{3/2}}
+\int_0^{2\pi}\dee{\theta}\ \cos\theta
+\right]
+</mrow><mrow>
+\vF\cdot\hj &amp; = G\mu m a^2\int_0^\pi\dee{\varphi}\left[
+ \sin\varphi\
+    \frac{a\sin\varphi}
+         {\big[a^2+b^2 -2ab\cos\varphi\big]^{3/2}}
+\int_0^{2\pi}\dee{\theta}\ \sin\theta
+\right]
+</mrow>
+</md>
+are both zero
+<fn>Think about why the <m>\hi</m> and <m>\hj</m> components
+should both be zero. Think symmetry.</fn>
+ because
+<m>\int_0^{2\pi}\cos\theta\ \dee{\theta}
+           =\int_0^{2\pi}\sin\theta\ \dee{\theta}
+           =0</m>
+so that
+<md>
+<mrow>
+\vF
+&amp;=  G\mu m a^2 \hk\int_0^\pi\dee{\varphi} \int_0^{2\pi}\dee{\theta}\ \sin\varphi\
+    \frac{a\cos\varphi-b}
+         {\big[a^2+b^2 -2ab\cos\varphi\big]^{3/2}}
+</mrow><mrow>
+&amp;=  2\pi G\mu m a^2 \hk\int_0^\pi\dee{\varphi}\ \sin\varphi\
+    \frac{a\cos\varphi-b}
+         {\big[a^2+b^2 -2ab\cos\varphi\big]^{3/2}}
+</mrow>
+</md>
+To evaluate this integral we substitute
+<md>
+<mrow>
+u=a^2+b^2 -2ab\cos\varphi\qquad
+\dee{u} = 2ab\sin\varphi\,\dee{\varphi}\qquad
+\cos\varphi = \frac{a^2+b^2-u}{2ab}
+</mrow>
+</md>
+When <m>\varphi=0</m>, <m>u=(a-b)^2</m> and when <m>\varphi =\pi</m>, <m>u=(a+b)^2</m>, so
+<md>
+<mrow>
+\vF
+&amp;=  \frac{\pi G\mu m a}{b} \hk\int_{(a-b)^2}^{(a+b)^2}
+     \dee{u}\  \frac{\frac{a^2+b^2-u}{2b}-b}  {u^{3/2}}
+</mrow><mrow>
+&amp;=  \frac{\pi G\mu m a}{b} \hk\Big[
+      \Big(\frac{a^2-b^2}{2b}\Big)\frac{u^{-1/2}}{-1/2}
+            -\frac{u^{1/2}}{1/2(2b)}
+   \Big]_{(a-b)^2}^{(a+b)^2}
+</mrow><mrow>
+</mrow>
+</md>
+Recalling that <m>u^{1/2}</m> is the <em>positive</em> square root,
+<md>
+<mrow>
+\vF&amp;=\frac{\pi G\mu m a}{b} \hk\Big[
+      \Big(\frac{b^2-a^2}{b}\Big)\frac{1}{a+b}
+            -\frac{a+b}{b}
+            -\Big(\frac{b^2-a^2}{b}\Big)\frac{1}{|a-b|}
+            +\frac{|a-b|}{b}
+   \Big]
+</mrow>
+</md>
+If <m>b \gt a</m>, so that <m>|a-b|=b-a</m>
+<md>
+<mrow>
+\vF&amp;=\frac{\pi G\mu m a}{b} \hk\Big[
+       \frac{b-a}{b}
+            -\frac{a+b}{b}
+            -\frac{a+b}{b}
+            +\frac{b-a}{b}
+   \Big]
+=-\frac{G(4\pi a^2\mu)m}{b^2} \hk
+</mrow>
+</md>
+If <m>b \lt a</m>, so that <m>|a-b|=a-b</m>
+<md>
+<mrow>
+\vF&amp;=\frac{\pi G\mu m a}{b} \hk\Big[
+      \frac{b-a}{b}
+            -\frac{a+b}{b}
+            +\frac{a+b}{b}
+            +\frac{a-b}{b}
+   \Big]
+=0
+</mrow>
+</md>
+The moral
+<fn>These two results appeared in Isaac Newton's Principia Mathematica (1687). They are known as Newton's <q>superb theorems</q>.</fn>
+ is
+<ul>
+<li>
+if the particle is inside the shell, it feels no gravitational force at all, and
+</li>
+<li>
+if the particle is outside the shell, it feels the same gravitational force
+as it would if the entire mass of the shell (<m>4\pi a^2\mu</m>) were
+concentrated at the centre of the shell.
+</li>
+</ul>
+</p>
+
+</example>
+
+<example xml:id="eg_gravityTrain">
+<title>Optional <mdash/> Gravity Train</title>
+<p>
+The <q>Gravity Train</q>
+<fn>The British physicist and architect
+(he was Surveyor to the City of London and chief assistant to Christopher Wren) Robert Hooke (1635--1703) wrote about the gravity train idea in a letter to Isaac Newton. A gravity train was used in the 2012 movie <em>Total Recall</em>.
+</fn> refers to the following curious, though admittedly
+not very practical, thought experiment.
+</p>
+
+<p><ul>
+<li>
+Pretend that the Earth is a perfect sphere of radius <m>R</m> and that
+it has a constant mass density <m>\rho</m>.
+</li>
+<li>
+Pick <em>any</em> two distinct points on the surface of the Earth. Call
+them <m>V</m> and <m>M</m>.
+</li>
+<li>
+Bore a tunnel straight through the Earth from <m>V</m> to <m>M</m>.
+</li>
+<li>
+Place a train in the tunnel at <m>V</m>. Assume that the only forces acting
+on the train are gravity, <m>\vG</m>, and a normal force, <m>\vN</m>, that  the tunnel
+imposes on the train to keep it in the tunnel. In particular, there are
+no frictional forces, like air resistance, and the train does not
+have an engine. Release the train and assume that it does not melt
+as it passes through the centre of the Earth.
+</li>
+</ul>
+</p>
+
+<sidebyside>
+<image source="figs/gravityTrain.pdf"/>
+</sidebyside>
+<p>
+What happens?
+</p>
+
+<p>We'll simplify our analysis of the motion of the train by
+picking a convenient coordinate system.
+<ul>
+<li>
+First translate our coordinate system so that the centre of the
+Earth, call it <m>O</m>, is at the origin, <m>(0,0,0)</m>.
+</li>
+<li>
+Then rotate our coordinate system about the origin so that the origin,
+<m>V</m> and <m>M</m> all lie in the <m>xz</m>-plane.
+</li>
+<li>
+Then rotate our coordinate system about the <m>y</m>-axis so that <m>V</m> and <m>M</m>
+have the same <m>z</m>-coordinate <m>Z\ge 0</m>. So the coordinates of <m>V</m> and <m>M</m>
+are <m>\big(\pm\sqrt{R^2-Z^2}\,,\,0\,,Z\big)</m>. Let's suppose that <m>V</m> is
+at <m>\big(\sqrt{R^2-Z^2}\,,\,0\,,Z\big)</m> and <m>M</m> is at
+<m>\big(-\sqrt{R^2-Z^2}\,,\,0\,,Z\big)</m>. It really doesn't matter which is which,
+but we can always arrange that it is <m>V</m> at
+<m>\big(+\sqrt{R^2-Z^2}\,,\,0\,,Z\big)</m> by rotating around the
+<m>z</m>-axis by <m>180^\circ</m> if necessary.
+</li>
+</ul>
+</p>
+
+<sidebyside>
+<image source="figs/gravityTrainB.pdf"/>
+</sidebyside>
+
+<p>
+The <m>y</m>- and <m>z</m>-coordinates of the train are always fixed at <m>0</m> and
+<m>Z</m>, respectively. So let's call the <m>x</m>-coordinate at time <m>t</m>
+<m>x(t)</m>, and look at the <m>x</m>-component of Newton's law of motion.
+<md>
+<mrow>
+m\va = \vG +\vN
+</mrow>
+</md>
+It is
+<me>
+m x'(t) = \vG\cdot\hi
+</me>
+because the normal force <m>\vN</m> has no <m>\hi</m> component. Recall that
+Newton's law of gravity says that
+<me>
+\vG = -\frac{GMm}{|\vr|^3}\vr
+</me>
+where <m>G</m> is the gravitational constant, <m>\vr</m> is the vector from <m>O</m> to the train, and <m>m</m> is the mass of the train. In this case, because of our
+computation in Example <xref ref="eg_surfaceIntegralB"/>, the train only feels
+gravity from shells of the Earth that are inside the train, so that
+<m>M</m> is the mass of the
+</p>
+
+<sidebyside>
+<image source="figs/gravityTrainC.pdf"/>
+</sidebyside>
+
+<p>
+part of the Earth whose distance to the centre of the Earth is no more
+than <m>|\vr|</m>. So
+<me>
+M = \frac{4}{3}\pi |\vr|^3\rho
+</me>
+and
+<me>
+mx'(t) = -\frac{Gm}{|\vr|^3}\  \frac{4}{3}\pi |\vr|^3\rho\ \vr\cdot\hi
+</me>
+so that
+<me>
+x'(t) + \frac{4\pi G\rho}{3} x(t) = 0
+</me>
+This is exactly the differential equation of simple harmonic motion.
+We have seen it before in Example <xref ref="eg_vortexStreamEqual"/>.
+Except for the constant <m>\frac{4\pi G\rho}{3}</m>, it is identical to the
+equation solved in Example <xref ref="exBVP"/> of the Appendix <xref ref="ap_ODE"/>, entitled
+<q>Review of Linear Ordinary Differential Equations</q>.
+The general solution is
+<me>
+x(t)  = C_1 \cos\left(\sqrt{\frac{4\pi G\rho}{3}}\ t\right)
+             +  C_2 \sin\left(\sqrt{\frac{4\pi G\rho}{3}}\ t\right)
+</me>
+with <m>C_1</m> and <m>C_2</m> being arbitrary constants. If we release the train,
+from rest, at <m>t=0</m>, then <m>x(0) = \sqrt{R^2-Z^2}</m> and <m>x'(0)=0</m>
+so that <m>C_1= \sqrt{R^2-Z^2}</m>, <m>C_2=0</m> and
+<me>
+x(t)  = \sqrt{R^2-Z^2} \cos\left(\sqrt{\frac{4\pi G\rho}{3}}\ t\right)
+</me>
+The train reaches <m>M</m> when <m>x(t)  = -\sqrt{R^2-Z^2}</m>. That is, when
+<m>\cos\left(\sqrt{\frac{4\pi G\rho}{3}}\ t\right)=-1</m>. So the transit
+time from <m>V</m> to <m>M</m> is
+<me>
+T= \pi  \sqrt{\frac{3}{4\pi G\rho}}
+  = \sqrt{\frac{3\pi}{4 G\rho}}
+</me>
+Notice that this transit time depends only on the gravitational constant
+<m>G</m> and the density of the Earth <m>\rho</m>. In particular it is
+completely independent of
+<ul>
+<li>
+where <m>V</m> and <m>M</m> are and, in particular,
+</li>
+<li>
+how close together <m>V</m> and <m>M</m> are, and also of
+</li>
+<li>
+the radius of the Earth.
+</li>
+</ul>
+In the case of the Earth, the transit time is about 42 minutes.
+</p>
+
+
+</example>
+
+</subsection>
+
+<subsection xml:id="sec_hoterms">
+  <title>Optional <mdash/> Dropping Higher Order Terms in <m>\dee{u},\dee{v}</m></title>
+<p>
+In the course of deriving <xref ref="eq_SUdSparam"/>, that is,
+<m>\hn\dee{S}</m> and <m>\dee{S}</m> formulae for
+</p>
+
+<sidebyside>
+<image source="figs/dS.pdf"/>
+</sidebyside>
+
+<p>we approximated, for example, the vectors
+<md alignment="alignat">
+<mrow>
+\overrightarrow{P_0P_1}
+&amp;=\vr(u_0+\dee{u}, v_0) -\vr(u_0\,,\,v_0)
+&amp;= \frac{\partial\vr}{\partial u}(u_0\,,\,v_0)\,\dee{u} + E_1
+&amp;\approx \frac{\partial\vr}{\partial u}(u_0\,,\,v_0)\,\dee{u}
+</mrow><mrow>
+\overrightarrow{P_0P_2}
+&amp;=\vr(u_0, v_0+\dee{v})-\vr(u_0\,,\,v_0)
+&amp;= \frac{\partial\vr}{\partial v}(u_0\,,\,v_0)\,\dee{v}  + E_2
+&amp;\approx \frac{\partial\vr}{\partial v}(u_0\,,\,v_0)\,\dee{v}
+</mrow>
+</md>
+where <m>E_1</m> is bounded
+<fn>Remember the error in the Taylor polynomial
+approximations.</fn>
+ by a constant times <m>\dee{u}^2</m>
+and <m>E_2</m> is bounded by a constant times <m>\dee{v}^2</m>. That is, we assumed
+that we could just drop <m>E_1</m> and <m>E_2</m>.
+</p>
+
+<p>So we approximated
+<md>
+<mrow>
+\big|\overrightarrow{P_0P_1}\times\overrightarrow{P_0P_2}\big|
+&amp;=\Big|\Big[\frac{\partial\vr}{\partial u}(u_0\,,\,v_0)\,\dee{u} + E_1\Big]
+\times\Big[\frac{\partial\vr}{\partial v}(u_0\,,\,v_0)\,\dee{v} + E_2\Big]
+\Big|
+</mrow><mrow>
+&amp;=\Big|\frac{\partial\vr}{\partial u}(u_0\,,\,v_0)\,\dee{u}
+\times\frac{\partial\vr}{\partial v}(u_0\,,\,v_0)\,\dee{v} + E_3
+\Big|
+</mrow><mrow>
+&amp;\approx \Big|\frac{\partial\vr}{\partial u}(u_0\,,\,v_0)\,\dee{u}
+\times\frac{\partial\vr}{\partial v}(u_0\,,\,v_0)\,\dee{v}
+\Big|
+</mrow>
+</md>
+where the length of the vector <m>E_3</m> is bounded by a constant times
+<m>\dee{u}^2\,\dee{v}+\dee{u}\,\dee{v}^2</m>.
+We'll now see why dropping terms like <m>E_3</m> does not change the value
+of the integral at all
+<fn>See the optional § 1.1.6 of the CLP-2 text
+for an analogous argument concerning Riemann sums.
+</fn>.
+</p>
+
+<p>Suppose that our domain of integration consists of all <m>(u,v)</m>'s
+in a rectangle of width <m>A</m> and height <m>B</m>, as in the figure below.
+</p>
+
+<sidebyside>
+<image source="figs/slicing.pdf"/>
+</sidebyside>
+
+<p>
+Subdivide the rectangle into a grid of <m>n\times n</m> small subrectangles
+by drawing lines of constant <m>v</m> (the red lines in the figure) and
+lines of constant <m>v</m> (the blue lines in the figure).
+Each subrectangle has width <m>\dee{u} = \frac{A}{n}</m> and height
+<m>\dee{v} = \frac{B}{n}</m>. Now suppose that in setting up the integral
+we make, for each subrectangle, an error that is bounded by some constant
+times
+<me>
+\dee{u}^2\,\dee{v}+\dee{u}\,\dee{v}^2
+=\Big(\frac{A}{n}\Big)^2 \frac{B}{n}
+ +  \frac{A}{n}\Big(\frac{B}{n}\Big)^2
+=\frac{AB(A+B)}{n^3}
+</me>
+Because there are a total of <m>n^2</m> subrectangles, the total error that
+we have introduced, for all of these subrectangles, is no larger than
+a constant times
+<me>
+n^2 \times \frac{AB(A+B)}{n^3} = \frac{AB(A+B)}{n}
+</me>
+When we define our integral by taking the limit <m>n\rightarrow 0</m> of
+the Riemann sums, this error converges to exactly <m>0</m>.
+</p>
+
+</subsection>
+
+<!-- <xi:include href="../problems/prob_s3.3.ptx" /> -->
+
+</section>

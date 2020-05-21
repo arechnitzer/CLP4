@@ -1,0 +1,511 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<section xmlns:xi="http://www.w3.org/2001/XInclude" xml:id="sec_paramSurfaces">
+
+<!-- Copyright 2018-2020 Joel Feldman, Andrew Rechnitzer and Elyse Yeager -->
+<!-- This work is licensed under the Creative Commons Attribution-NonCommercial-ShareAlike 4.0 International License-->
+<!-- https://creativecommons.org/licenses/by-nc-sa/4.0 -->
+
+<title>Parametrized Surfaces</title>
+
+<p>For many applications we will need to use integrals over surfaces.
+One obvious one is just computing surface areas. Another
+is computing the rate at which fluid traverses a surface.
+The first step is to simply specify surfaces carefully.
+</p>
+
+<p>There are three common ways to specify a surface in three dimensions.
+<ol label="a">
+<li> <em>Graph of a function:</em>
+Probably the most common way
+to specify a surface is to give its equation in the form
+<me>
+ z = f(x,y)\qquad (x,y)\in\cD\subset\bbbr^2
+</me>
+Here <q><m>(x,y)\in\cD\subset\bbbr^2</m></q> just means that <m>(x,y)</m> runs over the
+subset <m>\cD</m> of <m>\bbbr^2</m>.
+For example, if the surface is the top half of the sphere of radius
+one centred on the origin
+<me>
+ z = \sqrt{1-x^2-y^2}\qquad \text{with } x^2+y^2 \le 1
+</me>
+</li>
+<li> <em>Implicitly:</em>
+We can also specify that the surface
+is the set of points <m>(x,y,z)</m> that satisfy the equation
+<m>G(x,y,z)=0</m>, or, more generally
+<fn>Of courses we can always convert the equation <m>G(x,y,z)=K</m> into <m>H(x,y,z)=0</m>
+with <m>H(x,y,z)=G(x,y,z)-K</m>. But it often more convenient to use <m>G(x,y,z)=K</m>.
+</fn>, satisfy the equation <m>G(x,y,z)=K</m>,
+with <m>K</m> a constant. For example, the sphere of radius
+one centred on the origin is the set of points that obey
+<me>
+x^2+y^2+z^2=1
+</me>
+We shall explore this surface a little more in Example
+<xref ref="eg_SURsphere"/> below.
+</li>
+<li> <em>Range of a function:</em>
+Probably the most useful
+way to specify a surface, when one needs to integrate over the surface,
+is as the range of a function
+<md>
+<mrow>
+\vr&amp;: \cD\subset\bbbr^2 \rightarrow \bbbr^3
+</mrow><mrow>
+   &amp;(u,v) \in\cD \mapsto \vr(u,v) =\big(x(u,v)\,,\,y(u,v)\,,\,z(u,v)\big)
+</mrow>
+</md>
+The upper line means that <m>\vr</m> is a function which is defined on the subset
+<m>\cD</m> of <m>\bbbr^2</m> and which assigns to each point on <m>\cD</m> a point
+in <m>\bbbr^3</m>.
+The second line means that the function <m>\vr</m> assigns to the element
+<m>(u,v)</m> of <m>\cD</m> the element  <m>\vr(u,v) =\big(x(u,v)\,,\,y(u,v)\,,\,z(u,v)\big)</m>
+in <m>\bbbr^3</m>. Such a surface is called a parametrized surface <mdash/> each point
+of the surface is labelled by the values of the two parameters <m>u</m> and <m>v</m>.
+Parametrized surfaces are of course the two parameter analog of parametrized
+curves. Examples of parametrized surfaces come next.
+</li>
+</ol>
+</p>
+
+<example xml:id="SUR_paramGraph">
+<p>
+One simple, even trivial, way to parametrize the surface which is the graph
+<me>
+ z = f(x,y)\qquad (x,y)\in\cD\subset\bbbr^2
+</me>
+is to choose <m>x</m> and <m>y</m> as the parameters. That is, to choose
+<me>
+\vr(u,v) = \big(u,v,\,f(u,v)\big),\quad (u,v)\in\cD\qquad\text{or}\qquad
+\vr(x,y) = \big(x,y,\,f(x,y)\big),\quad (x,y)\in\cD
+</me>
+</p>
+</example>
+
+<p>
+Let's do something a bit more substantial.
+</p>
+
+<example xml:id="eg_SURsphere"><title>Sphere</title>
+<p>
+The sphere of radius <m>1</m> centred on the origin is the set of
+points <m>(x,y,z)</m> that obey
+<me>
+G(x,y,z)= x^2+y^2+z^2=1
+</me>
+We cannot express this surface as the graph of a function because,
+for each <m>(x,y)</m> with <m>x^2+y^2 \lt 1</m>, there are two <m>z</m>'s that obey
+<m>x^2+y^2+z^2=1</m>, namely
+<me>
+z=\pm\sqrt{1-x^2-y^2}
+</me>
+On the other hand, locally, this surface is the graph of a function.
+This means that, for any point <m>(x_0, y_0, z_0)</m> on the sphere, all
+points of the surface that are sufficiently near <m>(x_0, y_0, z_0)</m>
+can be expressed in one of the forms <m>z=f(x,y)</m> or <m>x=g(y,z)</m>,
+or <m>y=h(x,z)</m>. For example, the part of the sphere that is within a distance
+<m>\sqrt{2}</m> of the point <m>(0,0,1)</m> is
+<md>
+<mrow>
+&amp;\Set{(x,y,z)}{ x^2+y^2+z^2=1,\ |(x,y,z) - (0,0,1)| \lt \sqrt{2}}
+</mrow><mrow>
+&amp;=\Set{(x,y,z)}{ x^2+y^2+z^2=1,\ x^2+y^2+(z-1)^2  \lt  2}
+</mrow><mrow>
+&amp;=\Set{(x,y,z)}{ x^2+y^2+z^2=1,\ x^2+y^2+z^2-2z+1  \lt  2}
+</mrow><mrow>
+&amp;=\Set{(x,y,z)}{ x^2+y^2+z^2=1,\ z \gt 0}
+</mrow><mrow>
+&amp;=\Set{(x,y,z)}{ z=\sqrt{1-x^2-y^2},\ x^2+y^2 \lt 1}
+</mrow>
+</md>
+This is illustrated in the figure below which shows the <m>y=0</m> section
+of the sphere <m>x^2+y^2+z^2=1</m> and also the <m>y=0</m> section of the set of
+points that are within a distance <m>\sqrt{2}</m> of <m>(0,0,1)</m>. (They are
+the points inside the dashed circle.)
+</p>
+
+<sidebyside>
+<image source="figs/localGraphA"/>
+</sidebyside>
+
+<p>Similarly, as illustrated schematically in the figure below,
+the part of the sphere that is within a distance
+<m>\sqrt{2}</m> of the point <m>(1,0,0)</m> is
+<md>
+<mrow>
+&amp;\Set{(x,y,z)}{ x^2+y^2+z^2=1,\ |(x,y,z) - (1,0,0)| \lt \sqrt{2}}
+</mrow><mrow>
+&amp;=\Set{(x,y,z)}{ x^2+y^2+z^2=1,\ (x-1)^2+y^2+z^2  \lt  2}
+</mrow><mrow>
+&amp;=\Set{(x,y,z)}{ x^2+y^2+z^2=1,\ x^2-2x+1+y^2+z^2  \lt  2}
+</mrow><mrow>
+&amp;=\Set{(x,y,z)}{ x^2+y^2+z^2=1,\ x \gt 0}
+</mrow><mrow>
+&amp;=\Set{(x,y,z)}{ x=\sqrt{1-y^2-z^2},\ y^2+z^2 \lt 1}
+</mrow>
+</md>
+The figure below shows the <m>y=0</m> section
+of the sphere <m>x^2+y^2+z^2=1</m> and also the <m>y=0</m> section of the set of
+points that are within a distance <m>\sqrt{2}</m> of <m>(1,0,0)</m>. (Again, they are
+the points inside the dashed circle.)
+</p>
+
+<sidebyside>
+<image source="figs/localGraphB"/>
+</sidebyside>
+
+<p>We can parametrize the unit sphere by using spherical coordinates,
+which you should have seen before.
+As a reminder, here is a figure showing the definitions of the
+three spherical coordinates
+<md>
+<mrow>
+\rho&amp;=\text{ distance from }(x,y,z)\text{ to }(0,0,0)
+</mrow><mrow>
+\varphi&amp;=\text{ angle between the line }\overline{(0,0,0)\,(x,y,z)}
+\text{ and the $z$ axis}
+</mrow><mrow>
+\theta&amp;=\text{ angle between the line }\overline{(0,0,0)\,(x,y,0)}
+\text{ and the $x$ axis}
+</mrow>
+</md>
+</p>
+
+<sidebyside>
+<image source="figs/spherical"/>
+</sidebyside>
+
+<p>
+and here are two more figures giving the side and top views of the
+previous figure.
+</p>
+
+<sidebyside>
+<image source="figs/sphericalSide"/>
+<image source="figs/sphericalTop"/>
+</sidebyside>
+
+<p>
+From the figure, we see that Cartesian and spherical coordinates
+are related by
+<md>
+<mrow>
+x&amp;=\rho\sin\varphi\cos\theta
+</mrow><mrow>
+y&amp;=\rho\sin\varphi\sin\theta
+</mrow><mrow>
+z&amp;=\rho\cos\varphi
+</mrow>
+</md>
+The points on the sphere <m>x^2+y^2+z^2=1</m> are precisely the set of points
+with <m>\rho=1</m>. So we can use the parametrization
+<me>
+\vr(\theta,\varphi)
+=\big(\sin\varphi\cos\theta\,,\sin\varphi\sin\theta\,,\,\cos\varphi\big)
+</me>
+</p>
+
+<p>Here is how to see that as <m>\varphi</m> runs over <m>(0,\pi)</m> and <m>\theta</m>
+runs over <m>[0,2\pi)</m>, <m>\vr(\theta,\varphi)</m> covers the whole
+sphere <m>x^2+y^2+z^2=1</m> except for the north pole (<m>\varphi=0</m> gives
+the north pole for all values of <m>\theta</m>) and the south pole
+(<m>\varphi=\pi</m> gives the south pole for all values of <m>\theta</m>).
+</p>
+<p>
+<ul>
+<li><p> Fix <m>\theta</m> and have <m>\varphi</m> run over the interval
+<m>0 \lt \varphi\le \frac{\pi}{2}</m>. Then <m>\vr(\theta,\varphi)</m> traces out one quarter of a circle starting at the north pole <m>\vr(\theta,0) = (0,0,1)</m>
+(but excluding the north pole itself) and ending at the point
+<m>\vr(\theta,\frac{\pi}{2}) = (\cos\theta,\sin\theta,0)</m> in the <m>xy</m>-plane.
+</p>
+
+<sidebyside>
+<image source="figs/sphericalRngA"/>
+</sidebyside>
+
+</li>
+<li><p>
+Keep <m>\theta</m> fixed at the same value and extend the interval over which
+<m>\varphi</m> runs to <m>0 \lt \varphi \lt \pi</m>. Now <m>\vr(\theta,\varphi)</m> traces out a
+semi-circle starting at the north pole <m>\vr(\theta,0) = (0,0,1)</m>,
+ending at the south pole <m>\vr(\theta,\pi) = (0,0,-1)</m>
+(but excluding both the north and south poles themselves) and passing
+through the point
+<m>\vr(\theta,\frac{\pi}{2}) = (\cos\theta,\sin\theta,0)</m> in the <m>xy</m>-plane.
+</p>
+
+<sidebyside>
+<image source="figs/sphericalRngB"/>
+</sidebyside>
+</li>
+<li>
+Finally have <m>\theta</m>  run over <m>0\le\theta \lt 2\pi</m>. Then the semicircle
+rotates about the <m>z</m>-axis, sweeping out the full sphere, except for
+the north and south poles.
+</li>
+</ul>
+</p>
+
+<p>Recall that <m>\varphi</m> is the angle between the radius vector and the
+<m>z</m>-axis. If you hold <m>\varphi</m> fixed and increase <m>\theta</m> by a small amount
+<m>\dee{\theta}</m>, <m>\vr(\theta,\varphi)</m> sweeps out the red circular arc in the
+figure on the left below.
+If you hold <m>\varphi</m> fixed  and vary <m>\theta</m> from <m>0</m> to <m>2\pi</m>,
+<m>\vr(\theta,\varphi)</m> sweeps out a line of latitude. The figure on the
+right below gives the lines of latitude (or at least the parts of those
+lines in the first octant) for
+<m>\varphi=\frac{\pi}{10}</m>, <m>\frac{2\pi}{10}</m>, <m>\frac{3\pi}{10}</m>, <m>\frac{4\pi}{10}</m>
+and <m>\frac{5\pi}{10}=\frac{\pi}{2}</m>.
+</p>
+
+<sidebyside>
+<image source="figs/sphericalTh"/>
+<image source="figs/sphericalLat"/>
+</sidebyside>
+
+<p>
+On the other hand, if you hold <m>\theta</m> fixed and increase <m>\varphi</m>
+by a small amount <m>\dee{\varphi}</m>, <m>\vr(\theta,\varphi)</m> sweeps out the red circular
+arc in the figure on the left below. If you hold <m>\theta</m> fixed  and vary
+<m>\varphi</m> from <m>0</m> to <m>\pi</m>, <m>\vr(\theta,\varphi)</m> sweeps out a line of longitude.
+The figure on the right below gives the lines of longitude
+(or at least the parts of those lines in the first octant) for
+<m>\theta=0</m>, <m>\frac{\pi}{10}</m>, <m>\frac{2\pi}{10}</m>, <m>\frac{3\pi}{10}</m>,
+<m>\frac{4\pi}{10}</m> and <m>\frac{5\pi}{10}=\frac{\pi}{2}</m>.
+</p>
+
+<sidebyside>
+<image source="figs/sphericalPhi"/>
+<image source="figs/sphericalLong"/>
+</sidebyside>
+</example>
+
+
+<example xml:id="SURclyinder"><title>Cylinder</title>
+<p>
+The surface <m>x^2+z^2=1</m> is an infinite cylinder. Part of this cylinder
+in the first octant is sketched below.
+</p>
+
+<sidebyside>
+<image source="figs/cylinder"/>
+</sidebyside>
+
+<p>
+Note that the section of this cylinder that lies in the <m>xz</m>-plane,
+and in fact in any plane <m>y=c</m>, is the circle <m>x^2+z^2=1</m>. We can
+of course parametrize this circle by <m>x=\cos\theta</m>, <m>z=\sin\theta</m>.
+So we can parametrize the whole cylinder by using <m>\theta</m> and <m>y</m>
+as parameters.
+<me>
+\vr(\theta,y) = \big(\cos\theta\,,\,y\,,\,\sin\theta\big)
+\qquad
+0\le\theta \lt 2\pi,\ \ -\infty \lt y \lt \infty
+</me>
+</p>
+
+</example>
+
+
+<example xml:id="SURrevolution"><title>Surface of Revolution</title>
+<p>
+In this example, we are going to parametrize a surface of revolution.
+In your first integral calculus course, you undoubtedly encountered
+many surfaces created by rotating a curve <m>y=f(x)</m> about the <m>x</m>-axis
+or the <m>y</m>-axis.
+In this course, we are used to having the <m>z</m>-axis, rather than the <m>y</m>-axis,
+run vertically.
+</p>
+
+<p>So in this example, we'll parametrize the surface
+constructed by rotating the curve
+<me>
+z=g(y)=e^y \qquad 0\le y\le 1
+</me>
+about the <m>z</m>-axis. Exactly the same procedure can be used to parametrize
+surfaces created by rotating about the <m>x</m>-axis or the <m>y</m>-axis too.
+</p>
+
+<p>We start by just sketching the curve, considering the <m>yz</m>-plane as
+the plane <m>x=0</m> in <m>\bbbr^3</m>. The specified curve is the red curve
+in the figure below.
+Concentrate on any one point on that curve. It is the blue dot at <m>(0,Y,e^Y)</m>
+</p>
+
+<sidebyside>
+<image source="figs/revA"/>
+</sidebyside>
+
+<p>
+in the figure. When our curve is rotated about the <m>z</m>-axis, the blue dot
+sweeps out a circle. The circle that the blue dot sweeps out
+<ul>
+<li>
+lies in the horizontal plane <m>z=e^Y</m> and
+</li>
+<li>
+is centred on the <m>z</m>-axis and
+</li>
+<li>
+has radius <m>Y</m>.
+</li>
+</ul>
+We can parametrize the circle swept out in the usual way. Here
+is a top view of the circle, with the parameter, named <m>\theta</m>, indicated.
+</p>
+
+<sidebyside>
+<image source="figs/revTop"/>
+</sidebyside>
+
+<p>
+The coordinates of the red dot are <m>\big(Y\sin\theta\,,\,Y\cos\theta\,,\,e^Y\big)</m>. This also gives a parametrization of the surface of revolution
+<md>
+<mrow>
+x(Y,\theta) &amp; = Y\sin\theta
+</mrow><mrow>
+y(Y,\theta) &amp; = Y\cos\theta
+</mrow><mrow>
+z(Y,\theta) &amp; = e^Y
+</mrow><mrow>
+&amp;0\le Y\le 1,\qquad 0\le\theta \lt 2\pi
+</mrow>
+</md>
+Notice, by way of checks, that
+<ul>
+<li>  when <m>\theta=0</m>,
+<me>
+    \big(x(Y,0)\,,\,y(Y,0)\,,\,z(Y,0)\big)
+                 =(0,Y,e^Y)
+</me>
+runs over the entire desired curve (namely <m>z=g(y)</m>, <m>0\le y\le 1</m>),
+when <m>Y</m> runs over <m>0\le Y\le 1</m> and
+</li>
+<li>  for any fixed <m>0\le Y\le 1</m>,
+   <m>\big(x(Y,\theta)\,,\,y(Y,\theta)\,,\,z(Y,\theta)\big)</m> runs over the circle
+       <m>x^2+y^2=Y^2</m>, in the plane <m>z=e^Y</m>,
+       when <m>\theta</m> runs over <m>0\le\theta \lt 2\pi</m>.
+</li>
+</ul>
+Also notice that
+<me>
+x(Y,\theta)^2 + y(Y,\theta)^2 = Y^2
+</me>
+so that
+<me>
+Y=\sqrt{x(Y,\theta)^2 + y(Y,\theta)^2}
+</me>
+and
+<md>
+<mrow>
+z(Y,\theta) =e^{Y} = e^{ \sqrt{x(Y,\theta)^2 + y(Y,\theta)^2} }
+</mrow>
+</md>
+That is, the surface of revolution is contained in the (infinite) surface
+<me>
+z=e^{\sqrt{x^2+y^2}}
+</me>
+Remembering that <m>0\le Y\le 1</m>, we have that <m>1\le z=e^Y \le e</m>.
+Thus the surface of revolution is
+<me>
+z=e^{\sqrt{x^2+y^2}}\qquad 1\le z\le e
+</me>
+Finally here is a sketch of the part of the surface in the first octant,
+<m>x,y,z\ge 0</m>.
+</p>
+
+<sidebyside>
+<image source="figs/revB"/>
+</sidebyside>
+
+</example>
+
+<example xml:id="SURdonut"><title>Torus</title>
+<p>
+In this example, we are going to parametrize a donut (well, its surface), or an inner tube.
+</p>
+
+<sidebyside>
+<image source="figs/torus3d.jpg"/>
+</sidebyside>
+
+<p>
+The formal mathematical name for the surface of a donut is a torus. Our strategy will be to first parametrize the section of the torus in the
+right half of the
+<m>yz</m>-plane,  and then built up the full torus by rotating the circle
+about the <m>z</m>-axis. The section is a circle, sketched below.
+</p>
+
+<sidebyside>
+<image source="figs/torusSection"/>
+</sidebyside>
+
+<p>
+We'll assume that the centre of the circle is a distance <m>R</m> from the
+<m>z</m>-axis, and that the circle has radius <m>r</m>. Then the red dot on the circle
+is at
+<md>
+<mrow>
+x&amp;=0
+</mrow><mrow>
+y&amp;= R + r\cos\theta
+</mrow><mrow>
+z&amp;= r\sin\theta
+</mrow>
+</md>
+In particular the red dot is a distance <m>r\sin\theta</m> above the <m>xy</m>-plane and
+is a distance <m>R + r\cos\theta</m> from the <m>z</m>-axis. So when we rotate the section about the <m>z</m>-axis, the red dot sweeps out a circle
+which is sketched below.
+</p>
+
+<sidebyside>
+<image source="figs/torusRotB"/>
+</sidebyside>
+
+<p>
+The circle that the red dot sweeps out
+<ul>
+<li>
+lies in the plane <m>z=r\sin\theta</m> and
+</li>
+<li>
+is centred on the <m>z</m>-axis and
+</li>
+<li>
+has radius <m>\rho=R + r\cos\theta</m>.
+</li>
+</ul>
+We can parametrize the circle swept out in the usual way. Here
+is a top view of the circle, with the parameter, named <m>\psi</m>, indicated.
+</p>
+
+<sidebyside>
+<image source="figs/torusTop"/>
+</sidebyside>
+
+<p>
+So the parametrization of the circle swept out by the red dot, and also the
+parametrization of the torus, is
+<md>
+<mrow>
+x &amp;= \rho\cos\psi =  (R + r\cos\theta)\cos\psi
+</mrow><mrow>
+y &amp;= \rho\sin\psi =  (R + r\cos\theta)\sin\psi
+</mrow><mrow>
+z &amp;= r\sin\theta
+</mrow>
+</md>
+or
+<me>
+\vr(\theta,\psi) = (R + r\cos\theta)\cos\psi \ \hi
+                    + (R + r\cos\theta)\sin\psi \ \hj
+                    + r\sin\theta\ \hk
+\qquad 0\le\theta,\psi  \lt  2\pi
+</me>
+</p>
+
+</example>
+
+<!-- <xi:include href="../problems/prob_s3.1.ptx" /> -->
+
+</section>
