@@ -33,7 +33,7 @@ line in the figure below is a side view of <m>\dee{S}</m> and <m>\hn=\hn(x,y,z)<
 normal vector to <m>\dee{S}</m>.
 </p>
 
-<sidebyside>
+<sidebyside width="40%">
 <image source="figs/fluxIntDeriv"/>
 </sidebyside>
 
@@ -106,8 +106,7 @@ of<nbsp/><m>\hn</m>.
 <example xml:id="eg_fluxIntegralA"><title>Point Source</title>
 <p>
 In Example <xref ref="eg_ptSource"/>, we found that the vector field of
-a point source
-<fn>You can imagine that a very small pipe pumps water to
+a point source<fn>You can imagine that a very small pipe pumps water to
 the origin.</fn>
  (in three dimensions) that creates <m>4\pi m</m> liters per second
 is
@@ -124,19 +123,16 @@ We'll now compute the flux of this vector field across a
 sphere centred on the origin. Suppose that the sphere has radius <m>R</m>.
 </p>
 
-<sidebyside>
+<sidebyside width="33%">
 <image source="figs/sourceFlux"/>
 </sidebyside>
 
 <p>
-Then the outward
-<fn>It doesn't really matter which unit normal we pick here. We just have to be clear which one we're using. With the outward normal,
+Then the outward<fn>It doesn't really matter which unit normal we pick here. We just have to be clear which one we're using. With the outward normal,
 the flux gives the rate at which fluid crosses the sphere in the outward
 direction. If we were to use the inward pointing normal, the flux
 would give the rate at which fluid crosses the sphere in the inward
-direction.
-</fn>
- pointing Lemma <xref ref="lem_fluxInterp"/> normal at
+direction.</fn> pointing Lemma <xref ref="lem_fluxInterp"/> normal at
 a point <m>(x,y,z)</m> on the sphere is
 <me>
 \hn(x,y,z) = \hat\vr(x,y,z) = \frac{x\hi + y\hj + z\hk}{\sqrt{x^2+y^2+z^2}}
@@ -177,7 +173,7 @@ We'll now compute the flux of this vector field across a
 circle <m>C</m> centred on the origin. Suppose that the circle has radius <m>R</m>.
 </p>
 
-<sidebyside>
+<sidebyside width="33%">
 <image source="figs/vortexFlux"/>
 </sidebyside>
 
@@ -223,8 +219,7 @@ Evaluate
 \vF(x,y,z) = (x+y)\,\hi + (y+z)\,\hj + (x+z)\,\hk
 </me>
 and <m>S</m> is the boundary of <m>V=\Set{(x,y,z)}{0\le x^2+y^2\le 9,\ 0\le z\le 5}</m>,
-and <m>\hn</m> is the outward normal
-<fn>It is necessary that the problem specify, one way or another, whether <m>\hn</m> is the inward pointing normal or the outward pointing normal. Without this, the meaning of
+and <m>\hn</m> is the outward normal<fn>It is necessary that the problem specify, one way or another, whether <m>\hn</m> is the inward pointing normal or the outward pointing normal. Without this, the meaning of
 <m>\ \dblInt_S\vF\cdot\hn\ dS\ </m> is ambiguous. Think about where the orientation of the normal vector gets used in your solution.</fn>
  to <m>S</m>.
 </p>
@@ -234,7 +229,7 @@ and <m>\hn</m> is the outward normal
 The volume <m>V</m> looks like a tin can of radius <m>3</m> and height <m>5</m>.
 </p>
 
-<sidebyside>
+<sidebyside width="33%">
 <image source="figs/cylinder1"/>
 </sidebyside>
 
@@ -301,7 +296,7 @@ using cylindrical coordinates.
 Then, using <xref ref="eq_SUdSparam"/>,
 </p>
 
-<sidebyside width="45%">
+<sidebyside widths="45% 25%" valign="middle">
 <p><md>
 <mrow>
 \frac{\partial\vr}{\partial\theta}
@@ -324,25 +319,22 @@ Then, using <xref ref="eq_SUdSparam"/>,
 
 <p>
 Note that <m>\hn = (\cos\theta\,,\,\sin\theta\,,\,0)</m> is
-outward pointing
-<fn>To check, draw, in your head, a sketch of the top
+outward pointing<fn>To check, draw, in your head, a sketch of the top
 view of the can. <q>Top view</q> just means <q>ignore the <m>z</m>-coordinate</q>.
 The top view of the can is a circle of radius <m>3</m>. Then, at a generic point,
 <m>\vr=(\cos\theta,\sin\theta)</m>, on the can, draw the unit normal
 <m>\hn = (\cos\theta\,,\,\sin\theta)</m> with its tail at <m>\vr</m>. It is pointing
-away from the origin, just like <m>\vr</m> is. That is, <m>\hn</m> is pointing outward.</fn>
-,
-as desired.
+away from the origin, just like <m>\vr</m> is. That is, <m>\hn</m> is pointing 
+outward.</fn>, as desired.
 Continuing,
 <md>
 <mrow>
-\vF\big(x(\theta,z)\,,\,y(\theta,z)\,,\,z(\theta,z)\big)
-&amp;=3(\cos\theta+\sin\theta)\ \hi
-  +(3\sin\theta+z)\ \hj+(3\cos\theta+z)\ \hk
+\vF\big(x(\theta,z),y(\theta,z),z(\theta,z)\big)
+&amp;=3(\cos\theta\!+\!\sin\theta)\,\hi
+  +(3\sin\theta\!+\!z)\,\hj+(3\cos\theta\!+\!z)\,\hk
 </mrow><mrow>
 \vF\cdot\hn\,\dee{S}
-&amp;=\big\{9\cos^2\theta+3\sin\theta\cos\theta+9\sin^2\theta+3z\sin\theta\big\}\
-         \dee{\theta}\,\dee{z}
+&amp;=\big\{9\cos^2\theta\!+\!3\sin\theta\cos\theta\!+\!9\sin^2\theta\!+\!3z\sin\theta\big\}\,\dee{\theta}\,\dee{z}
 </mrow><mrow>
 &amp;=\big\{9 +\frac{3}{2}\,\sin(2\theta)+3z\sin\theta\big\}\
            \dee{\theta}\,\dee{z}
@@ -356,7 +348,7 @@ Continuing,
      \big\{9 +\frac{3}{2}\,\sin(2\theta)+3z\sin\theta\big\}
 </mrow><mrow>
 &amp;=9\int_0^{2\pi}\dee{\theta}\int_0^5\dee{z}
-\qquad\qquad\text{since }\int_0^{2\pi}\sin\theta\,\dee{\theta}
+\quad\text{since }\int_0^{2\pi}\sin\theta\,\dee{\theta}
                    =\int_0^{2\pi}\sin(2\theta)\,\dee{\theta}
                    =0
 </mrow><mrow>
@@ -368,10 +360,11 @@ and the total flux is
 <md>
 <mrow>
 \dblInt_{S}\vF\cdot\hn\ \dee{S}
-=\dblInt_{S_t}\vF\cdot\hn\ \dee{S}
+&amp;=\dblInt_{S_t}\vF\cdot\hn\ \dee{S}
  +\dblInt_{S_b}\vF\cdot\hn\ \dee{S}
  +\dblInt_{S_s}\vF\cdot\hn\ \dee{S}
-=45\pi+0+90\pi
+</mrow><mrow>
+&amp;=45\pi+0+90\pi
 =135\pi
 </mrow>
 </md>
@@ -390,7 +383,7 @@ Evaluate
 upward pointing unit normal.
 </p>
 
-<sidebyside>
+<sidebyside width="25%">
 <image source="figs/ellipsoid"/>
 </sidebyside>
 </statement>
@@ -466,8 +459,9 @@ component of <m>\hn</m> positive. (The problem specified that
 As
 <md>
 <mrow>
-\vF\big(x(\theta,\varphi)\,,\,y(\theta,\varphi)\,,\,z(\theta,\varphi)\big)
-&amp;=2^4\cos^4\theta\sin^4\varphi\ \hi
+&amp;\vF\big(x(\theta,\varphi)\,,\,y(\theta,\varphi)\,,\,z(\theta,\varphi)\big)
+</mrow><mrow>
+&amp;\hskip0.5in=2^4\cos^4\theta\sin^4\varphi\ \hi
   +2\times 3^2\sin^2\theta\sin^2\varphi\ \hj+\cos\varphi\ \hk
 </mrow>
 </md>
@@ -475,35 +469,34 @@ we have
 <md>
 <mrow>
 \vF\cdot\hn\,\dee{S}
-&amp;=\Big[3\times 2^4\cos^5\theta\sin^6\varphi+2\times 2 \times 3^2
-\sin^3\theta\sin^4\varphi+6\sin\varphi\cos^2\varphi\Big]\,\dee{\theta}\,\dee{\varphi}
+&amp;=\Big[3\times 2^4\cos^5\theta\sin^6\varphi\!+\!2\times 2 \times 3^2
+\sin^3\theta\sin^4\varphi\!+\!6\sin\varphi\cos^2\varphi\Big]\,\dee{\theta}\dee{\varphi}
 </mrow>
 </md>
 and the desired integral
 <md>
 <mrow>
  \dblInt_S\vF\cdot\hn\ \dee{S}
-&amp;=\int_0^{\frac{\pi}{2}}\dee{\varphi}\int_0^{2\pi}\dee{\theta}\
+&amp;=\int_0^{\frac{\pi}{2}}\!\!\dee{\varphi}\int_0^{2\pi}\dee{\theta}\
 \Big[3\times 2^4\cos^5\theta\sin^6\varphi+2\times 2\times 3^2
-\sin^3\theta\sin^4\varphi+6\sin\varphi\cos^2\varphi\Big]
+\sin^3\theta\sin^4\varphi
+</mrow><mrow>&amp;\hskip3in+6\sin\varphi\cos^2\varphi\Big]
 </mrow>
 </md>
 Since
 <m>\ \int_0^{2\pi} \cos^m\theta\,\dee{\theta}
 =\int_0^{2\pi} \sin^m\theta\,\dee{\theta}=0\ </m> for all
-odd
-<fn>Look at the graphs of <m>\cos^m\varphi</m> and
-<m>\sin^m\varphi</m>.</fn>
- natural numbers <m>m</m>,
+odd<fn>Look at the graphs of <m>\cos^m\varphi</m> and
+<m>\sin^m\varphi</m>.</fn> natural numbers <m>m</m>,
 <md>
 <mrow>
 \dblInt_S \vF\cdot\hn\, \dee{S}
 &amp;=\int_0^{\pi/2}\hskip-8pt \dee{\varphi}\int_0^{2\pi}\hskip-6pt\dee{\theta}\
                   6\sin\varphi\cos^2\varphi
 =12\pi\int_0^{\pi/2}\hskip-8pt \dee{\varphi}\ \sin\varphi\cos^2\varphi
-=12\pi\Big[-\frac{1}{3}\cos^3\varphi\Big]_0^{\pi/2}
 </mrow><mrow>
-&amp;=4\pi
+&amp;=12\pi\Big[-\frac{1}{3}\cos^3\varphi\Big]_0^{\pi/2}
+=4\pi
 </mrow>
 </md>
 The integral was evaluated by guessing (and checking) that
@@ -573,8 +566,9 @@ the <m>z</m> component of <m>\hn</m> positive. Continuing,
 
 </mrow><mrow>
 \vF\cdot\hn\, \dee{S}&amp;=\Big[3\times2^4\frac{r^6}{\sqrt{1-r^2}}\cos^5\theta
-+2^2 3^2\frac{r^4}{\sqrt{1-r^2}}
-\sin^3\theta+6r\sqrt{1-r^2}\Big]\,\dee{r}\,\dee{\theta}
++2^2 3^2\frac{r^4}{\sqrt{1-r^2}}\sin^3\theta
+</mrow><mrow>
+&amp;\hskip2.3in+6r\sqrt{1-r^2}\Big]\,\dee{r}\,\dee{\theta}
 </mrow>
 </md>
  Again using that
@@ -608,14 +602,15 @@ The surface is of the form <m>G(x,y,z)=0</m> with
 <mrow>
 \hn \dee{S}&amp;=\frac{\vnabla G}{\vnabla G\cdot\hk}\dee{x}\,\dee{y}
 =\frac{\frac{x}{2}\hi+\frac{2y}{9}\hj+2z\hk}{2z}\dee{x}\,\dee{y}
-=\Big(\frac{x}{4z}\hi+\frac{y}{9z}\hj+\hk\Big)\dee{x}\,\dee{y}\cr
+</mrow><mrow>
+&amp;=\Big(\frac{x}{4z}\hi+\frac{y}{9z}\hj+\hk\Big)\dee{x}\,\dee{y}
+</mrow><mrow>
 \implies \vF\cdot\hn\,\dee{S}
 &amp;=\Big(\frac{x^5}{4z}+\frac{2y^3}{9z}+z\Big)\dee{x}\,\dee{y}
 </mrow>
 </md>
 It is true that <m>\hn\dee{S}</m>, and consequently <m>\vF\cdot\hn\,\dee{S}</m>
-become infinite
-<fn>That's because the ellipsoid is becoming vertical as
+become infinite<fn>That's because the ellipsoid is becoming vertical as
 <m>z\rightarrow 0</m>, so that <m>x</m> and <m>y</m> are not really good parameters there.</fn>
 </p>
 
@@ -645,12 +640,9 @@ is even under <m>x\rightarrow-x,\ y\rightarrow -y</m>, so their integrals are ze
 </mrow>
 </md>
 To evaluate this integral, first make the change of variables
-<fn>
-The reader interested in general changes of variables in multidimensional
+<fn>The reader interested in general changes of variables in multidimensional
 integrals should look up <q>Jacobian determinant</q>.</fn>
-</p>
-
-<p><m>x=2X</m>, <m>\dee{x}=2\dee{X}</m>, <m>y=3Y</m>, <m>\dee{y}=3\dee{Y}</m>
+<m>x=2X</m>, <m>\dee{x}=2\dee{X}</m>, <m>y=3Y</m>, <m>\dee{y}=3\dee{Y}</m>
 to give
 <me>
 \int_S \vF\cdot\hn\, \dee{S}
@@ -659,38 +651,14 @@ to give
 </me>
 Then switch to polar coordinates, <m>X=r\cos\theta</m>, <m>Y=r\sin\theta</m>,
 <m>\dee{X}\dee{Y} = r\,\dee{r}\dee{\theta}</m> to give
-<!-- \intremark{
-To evaluate this integral, make the change of variables
-<me>
-x=2r\cos\theta\qquad y=3r\sin\theta
-</me>
-Then the domain of integration, <m>{\frac{x^2}{4}+\frac{y^2}{9}\le 1}</m>
-becomes <m>r^2\le 1</m>, the integrand <m>\sqrt{1-\frac{x^2}{4}-\frac{y^2}{9}}</m>
-becomes <m>\sqrt{1-r^2}</m> and <m>\,\dee{x}\,\dee{y}\,</m> becomes
-<md>
-<mrow>
-\left|\det\left[\begin{matrix}
-\frac{\partial x}{\partial r}&amp;\frac{\partial x}{\partial\theta}
-</mrow><mrow>
-\frac{\partial y}{\partial r}&amp;\frac{\partial y}{\partial\theta}
-\end{matrix}\right]\right|dr\,\dee{\theta}
-=\left|\det\left[\begin{matrix}
-2\cos\theta&amp;-2r\sin\theta
-</mrow><mrow>
-3\sin\theta&amp;3r\cos\theta
-\end{matrix}\right]\right|dr\,\dee{\theta}
-=6r\,dr\,\dee{\theta}
-</mrow>
-</md>
-} -->
 <md>
 <mrow>
 \int_S \vF\cdot\hn\, \dee{S}
 &amp;=\int_0^1 dr\int_0^{2\pi}\hskip-6pt\dee{\theta}\ 6r\sqrt{1-r^2}
 =12\pi\int_0^1 dr\ r\sqrt{1-r^2}
-=12\pi\Big[-\frac{1}{3}(1-r^2)^{3/2}\Big]_0^1
 </mrow><mrow>
-&amp;=4\pi
+&amp;=12\pi\Big[-\frac{1}{3}(1-r^2)^{3/2}\Big]_0^1
+=4\pi
 </mrow>
 </md>
 </p>
@@ -704,11 +672,11 @@ becomes <m>\sqrt{1-r^2}</m> and <m>\,\dee{x}\,\dee{y}\,</m> becomes
 <md>
 <mrow>
 \hn \dee{S}
-&amp;=\Big[-\frac{\partial f}{\partial x}\hi-\frac{\partial f}{\partial y}\hj
-+\hk\Big]\,\dee{x}\,\dee{y}
+&amp;=\Big[-\frac{\partial f}{\partial x}\hi\!-\!\frac{\partial f}{\partial y}\hj
+\!+\!\hk\Big]\,\dee{x}\,\dee{y}
 =\left[\frac{\frac{x}{4}\hi+\frac{y}{9}\hj}
 {\sqrt{1-\frac{x^2}{4}-\frac{y^2}{9}}}+\hk\right]\dee{x}\,\dee{y}\cr
-\implies
+\implies\!
 \vF\cdot\hn\, \dee{S}&amp;=\left[\frac{\frac{x^5}{4}+\frac{2y^3}{9}}
 {\sqrt{1-\frac{x^2}{4}-\frac{y^2}{9}}}
 +\sqrt{1-\frac{x^2}{4}-\frac{y^2}{9}}\right]\dee{x}\,\dee{y}
