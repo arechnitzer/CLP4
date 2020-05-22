@@ -1391,18 +1391,29 @@ In conclusion
 
 <fact xml:id="eq_gradInterp">
 <statement>
-<sbsgroup widths="10% 20% 5% 60%">
-<sidebyside>
-<p><m>\vnabla f(\vr_0)</m></p>
-<p>has direction</p> <p><m>\Big\{</m></p>
-<p>direction of maximum rate of change of <m>f</m> at <m>\vr_0</m></p>
-</sidebyside>
-<sidebyside>
-<p></p>
-<p>has magnitude</p> <p><m>\Big\{</m></p>
-<p>magnitude of maximum rate of change (per unit distance) of <m>f</m> at <m>\vr_0</m></p>
-</sidebyside>
-</sbsgroup>
+<p>
+<md alignment="alignat">
+<mrow>
+\vnabla f(\vr_0)
+&amp; \text{ has direction }
+&amp; \left\{
+\begin{array}{l}
+\text{direction of maximum rate of change}\\
+\text{of $f$ at $\vr_0$}
+\end{array}\right.
+</mrow><mrow>
+&amp;
+\text{ has magnitude }
+&amp;
+\left\{
+\begin{array}{l}
+\text{magnitude of maximum rate of change} \\
+\text{ (per unit distance) of $f$ at $\vr_0$}
+\end{array}
+\right.
+</mrow>
+</md>
+</p>
 </statement>
 </fact>
 
@@ -1467,19 +1478,26 @@ to conclude that
 
 
 <fact xml:id="eq_divInterp">
-  <statement>
-<sbsgroup widths="15% 5% 70%">
-<sidebyside>
-<p> <m>\vnabla\cdot\vv(\vr_0)</m></p>
-<p><m>=\Big\{</m></p>
-<p>rate at which fluid is exiting an infinitesimal sphere centred at <m>\vr_0</m>, per unit time, per unit volume</p>
-</sidebyside>
-<sidebyside>
-<p></p>
-<p><m>=\Big\{</m></p>
-<p>strength of the source at <m>\vr_0</m></p>
-</sidebyside>
-</sbsgroup>
+<statement>
+<p><md>
+<mrow>
+\vnabla\cdot\vv(\vr_0)
+&amp;
+=\left\{
+\begin{array}{l}
+\text{rate at which fluid is exiting an }\\
+\text{infinitesimal sphere centred }\\
+\text{at $\vr_0$, per unit time, per unit volume}
+\end{array} \right.
+</mrow>
+<mrow>
+&amp;
+=\left\{
+\text{strength of the source at $\vr_0$}
+\right.
+</mrow>
+</md>
+</p>
 </statement>
 </fact>
 

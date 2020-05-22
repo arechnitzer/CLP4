@@ -7,5 +7,10 @@
 
 <xi:include href="./intthm01.ptx" />
 <xi:include href="./intthm02.ptx" />
+<xi:include href="./intthm03.ptx" />
+<xi:include href="./intthm04.ptx" />
+ <xi:include href="./intthm05.ptx" />
+<xi:include href="./intthm06.ptx" />
+ <xi:include href="./intthm07.ptx" />
 
 </chapter>

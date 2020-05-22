@@ -1,0 +1,1136 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<section xmlns:xi="http://www.w3.org/2001/XInclude" xml:id="sec_unified">
+
+<!-- Copyright 2018-2020 Joel Feldman, Andrew Rechnitzer and Elyse Yeager -->
+<!-- This work is licensed under the Creative Commons Attribution-NonCommercial-ShareAlike 4.0 International License-->
+<!-- https://creativecommons.org/licenses/by-nc-sa/4.0 -->
+
+<title>Optional <mdash/> A Generalized Stokes' Theorem</title>
+
+
+<p>As we have seen, the fundamental theorem of calculus,
+the divergence theorem, Greens' theorem and Stokes' theorem
+share a number of common features. There is in fact a single framework
+which encompasses and generalizes all of them, and there is a
+single theorem of which they are all special cases. We now give a
+bare bones introduction to this framework and theorem. A proper
+treatment typically takes up a good part of a full course.
+Here is an outline of what we shall do:
+<ul>
+<li>
+First, we will define <term>differential forms</term>. To try and keep
+things as simple and concrete as possible, we'll only define
+<fn>In  general, a differential form is defined on a <term>manifold</term>, which is
+an abstract generalization of a multi-dimensional surface, like a sphere or a torus.
+</fn>
+differential forms on <m>\bbbr^3</m> <mdash/> all of our functions will be defined on
+<m>\bbbr^3</m>. Very roughly
+speaking, a <m>k</m>-form is what you write after the integral sign of
+an integral over a <m>k</m> dimensional object. Here <m>k</m> is one of <m>0</m>, <m>1</m>,
+<m>2</m>, <m>3</m>.  As a example, a <m>1</m>-form is an expression of the
+form <m>F_1(x,y,z)\,\dee{x}
+ + F_2(x,y,z)\,\dee{y}
+ + F_3(x,y,z)\,\dee{z}</m>. For <m>k=0</m>, think of a point as a zero
+dimensional object and think of evaluating a function at a point
+as <q>integrating the function over the point</q>.
+</li>
+<li>
+Then we will define some operations on differential forms, so that
+we can add them, multiply them, differentiate them and, eventually,
+integrate them.  The derivative of
+a <m>k</m>-form <m>\om</m> is a <m>(k+1)</m>-form that is denoted <m>\dee{\om}</m>.
+It will turn out that
+<ul>
+<li>sep1pt \parskip0pt \parsep0pt
+</li>
+<li>
+differentiating a <m>0</m>-form amounts to taking a gradient,
+</li>
+<li>
+differentiating a <m>1</m>-form amounts to taking a curl, and
+</li>
+<li>
+differentiating a <m>2</m>-form amounts to taking a divergence.
+</li>
+</ul>
+</li>
+<li><p>
+Finally we will get to the generalized Stokes' theorem which says that,
+if <m>\om</m> is a <m>k</m>-form (with <m>k=0,1,2</m>) and <m>D</m> is a <m>(k+1)</m>-dimensional
+domain of integration, then
+<me>
+\int_D d\om=\int_{\partial D}\om
+</me>
+It will turn out that
+<ul>
+<li>
+when <m>k=0</m>, this is just the fundamental theorem of calculus and
+</li>
+<li>
+when <m>k=1</m>, this is both Green's theorem and our Stokes' theorem, and
+</li>
+<li>
+when <m>k=2</m>, this is the divergence theorem.
+</li>
+</ul></p>
+</li>
+</ul>
+</p>
+
+<p>Now let's get to work. For simplicity, we will assume throughout this
+section that all derivatives of all functions exist and are continuous.
+Our first task to define differential forms.
+</p>
+
+<p>As we said above we will define a 1-form as an expression of the form
+<m>F_1(x,y,z)\,\dee{x}
+ + F_2(x,y,z)\,\dee{y}
+ + F_3(x,y,z)\,\dee{z}</m>. When you learned the definition of the
+integral the symbol <q><m>\dee{x}</m></q> was not given any mathematical
+meaning by itself. A meaning was given only to the collections of symbols
+<q><m>\int f(x)\ \dee{x}</m></q> and <q><m>\int_a^b f(x)\ \dee{x}</m></q>.
+Later in this section, we will give a meaning
+to <m>\dee{x}</m>. We will, in Definition <xref ref="def_differentialFormDiff"/>,
+define a differentiation operator that we will call <m>\dee{}</m>. Then <m>\dee{x}</m>
+will be that differentiation operator applied to the function <m>f(x)=x</m>.
+However, until then we will have to treat <m>\dee{x}</m> and <m>\dee{y}</m> and
+<m>\dee{z}</m> just as symbols. Their sole role in
+<m>F_1(x,y,z)\,\dee{x}
+ + F_2(x,y,z)\,\dee{y}
+ + F_3(x,y,z)\,\dee{z}</m>
+is to allow us to distinguish
+<fn>We could also define,
+for example, a <m>1</m>-form as an ordered list
+   <m>\big( F_1(x,y,z)\,,\,
+          F_2(x,y,z)\,,\,
+          F_3(x,y,z)\big)</m> of three functions and just view
+<m> F_1(x,y,z)\,\dee{x}
++ F_2(x,y,z)\,\dee{y}
+ + F_3(x,y,z)\,\dee{z}</m>
+as another notation for
+    <m>\big( F_1(x,y,z)\,,\,
+          F_2(x,y,z)\,,\,
+          F_3(x,y,z)\big)</m>.</fn>
+<m>F_1(x,y,z)</m>, <m>F_2(x,y,z)</m> and <m>F_3(x,y,z)</m>.
+</p>
+
+<p>Similarly, we will define a 2-form as an expression of the form
+<m>F_1(x,y,z)\,\dee{y}\wedge\dee{z}
+ + F_2(x,y,z)\,\dee{z}\wedge\dee{x}
+ + F_3(x,y,z)\,\dee{x}\wedge\dee{y}</m>.
+Once again there is a symbol, namely <q><m>\wedge</m></q>, that we have not yet given a meaning to. We will, in Definition <xref ref="def_differentialFormMult"/>,
+define a product, called the wedge product, with <m>\wedge</m> as
+the multiplication symbol.
+Then <m>\dee{x}\wedge\dee{y}</m> will be the wedge product of <m>\dee{x}</m> and
+<m>\dee{y}</m>. Until then we will have to treat <m>\dee{y}\wedge\dee{z}</m>,
+<m>\dee{z}\wedge\dee{x}</m> and <m>\dee{x}\wedge\dee{y}</m> just as three more
+meaningless symbols.
+</p>
+
+<p>Finally here is the definition.
+</p>
+
+<definition xml:id="def_differentialForm">
+<statement><p>
+<ol label="a">
+<li>
+A <m>0</m>-form is a function <m>f(x,y,z)</m>.
+</li>
+<li>
+A <m>1</m>-form is an expression of the form
+<me>
+  F_1(x,y,z)\,\dee{x}
+ + F_2(x,y,z)\,\dee{y}
+ + F_3(x,y,z)\,\dee{z}
+</me>
+with <m>F_1(x,y,z)</m>, <m>F_2(x,y,z)</m> and <m>F_3(x,y,z)</m> being functions
+of three variables.
+</li>
+<li>
+A <m>2</m>-form is an expression of the form
+<me>
+ F_1(x,y,z)\,\dee{y}\wedge\dee{z}
+ + F_2(x,y,z)\,\dee{z}\wedge\dee{x}
+ + F_3(x,y,z)\,\dee{x}\wedge\dee{y}
+</me>
+with <m>F_1(x,y,z)</m>, <m>F_2(x,y,z)</m> and <m>F_3(x,y,z)</m> being functions
+of three variables.
+</li>
+<li>
+A <m>3</m>-form is an expression of the form
+ <m> f(x,y,z)\,\dee{x}\wedge\dee{y}\wedge\dee{z}</m>,
+with <m>f(x,y,z)</m> being a function of three variables.
+</li>
+</ol>
+At this stage (there'll more later), just think of <q><m>\dee{x}</m></q>,
+<q><m>\dee{y}</m></q>, <q><m>\dee{z}</m></q>, <q><m>\dee{x}\wedge\dee{y}</m></q>, and so on,
+as symbols.  Do not yet attempt to attach any significance to them.
+</p></statement>
+</definition>
+
+<p>There are four operations involving differential forms <mdash/> addition,
+multiplication (<m>\wedge</m>), differentiation (<m>\dee{}</m>) and integration.
+Here are their
+definitions. First, addition is defined, and works, just the way that
+you would expect it to.
+</p>
+
+<definition xml:id="def_differentialFormAdd"><title>Addition of differential forms</title>
+<statement><p>
+<ol label="a">
+<li>
+The sum of the <m>0</m>-forms  <m>f</m> and <m>g</m> is the <m>0</m>-form <m>f+g</m>.
+</li>
+<li>
+The sum of two <m>1</m>-forms is the <m>1</m>-form
+<md>
+<mrow>
+  &amp;\big[F_1\,\dee{x}
+          + F_2\,\dee{y}
+          + F_3\,\dee{z}\big]
+</mrow><mrow>
+  +&amp;\big[G_1\,\dee{x}
+          + G_2\,\dee{y}
+          + G_3\,\dee{z}\big]
+</mrow><mrow>
+ =&amp; (F_1+G_1)\,\dee{x}
+          + (F_2+G_2)\,\dee{y}
+          + (F_3+G_3)\,\dee{z}
+</mrow>
+</md>
+</li>
+<li>
+The sum of two <m>2</m>-forms is the <m>2</m>-form
+<md>
+<mrow>
+  &amp;\big[F_1\,\dee{y}\wedge\dee{z}
+          + F_2\,\dee{z}\wedge\dee{x}
+          + F_3\,\dee{x}\wedge\dee{y}\big]
+</mrow><mrow>
+  +&amp;\big[G_1\,\dee{y}\wedge\dee{z}
+          + G_2\,\dee{z}\wedge\dee{x}
+          + G_3\,\dee{x}\wedge\dee{y}\big]
+</mrow><mrow>
+  =&amp;(F_1+G_1)\,\dee{y}\wedge\dee{z}
+          + (F_2+G_2)\,\dee{z}\wedge\dee{x}
+          + (F_3+G_3)\,\dee{x}\wedge\dee{y}
+</mrow>
+</md>
+</li>
+<li>
+The sum of two <m>3</m>-forms is the <m>3</m>-form
+<md>
+<mrow>
+   f\,\dee{x}\wedge\dee{y}\wedge\dee{z}
+ \ +\  g\,\dee{x}\wedge\dee{y}\wedge\dee{z}
+ \ =\  \big(f+g\big)\,\dee{x}\wedge\dee{y}\wedge\dee{z}
+</mrow>
+</md>
+</li>
+</ol>
+</p></statement>
+</definition>
+
+<p>There is one wrinkle in multiplication. It is not commutative,
+meaning that <m>\alpha\wedge\be</m> need not be the same as <m>\be\wedge\alpha</m>.
+You have already seen some noncommutative products. If <m>\va</m> and <m>\vb</m>
+are two vectors in <m>\bbbr^3</m>, then <m>\va\times\vb = -\vb\times \va</m>.
+Also, if <m>A</m> and <m>B</m> are two <m>n\times n</m> matrices, the matrix product
+<m>AB</m> need not be the same  as <m>BA</m>.
+</p>
+
+<definition xml:id="def_differentialFormMult"><title>Multiplication of differential forms</title>
+<statement><p>
+
+We now define a multiplication rule for differential forms.
+If <m>\om</m> is a <m>k</m>-form and <m>\om'</m> is a
+<m>k'</m>-form then the product will be a <m>(k+k')</m>-form and will be denoted
+<m>\om\wedge\om'</m> (read <q>omega wedge omega prime</q>). It is
+determined by the following properties.
+<ol label="a">
+<li>
+If <m>f</m> is a function (i.e. a <m>0</m>-form), then
+<md>
+<mrow>
+ f\big[F_1\,\dee{x} + F_2\,\dee{y} + F_3\,\dee{z}\big]
+   &amp;= (fF_1)\,\dee{x} + (fF_2)\,\dee{y} + (fF_3)\,\dee{z}
+</mrow><mrow>
+ f\big[F_1\,\dee{y}\wedge\dee{z}
+       + F_2\,\dee{z}\wedge\dee{x}
+       + F_3\,\dee{x}\wedge\dee{y}\big]
+  &amp;=(fF_1)\,\dee{y}\wedge\dee{z}
+       + (fF_2)\,\dee{z}\wedge\dee{x}
+</mrow><mrow>&amp;\hskip1.25in
+       + (fF_3)\,\dee{x}\wedge\dee{y}
+</mrow><mrow>
+ f\big[g\,\dee{x}\wedge\dee{y}\wedge\dee{z}\big]
+   &amp;= (fg)\,\dee{x}\wedge\dee{y}\wedge\dee{z}
+</mrow>
+</md>
+Traditionally, the <m>\wedge</m> is not written when multiplying
+a differential form by a function (i.e. a <m>0</m>-form).
+</li>
+<li>
+<m>\om\wedge\om'</m> is linear in <m>\om</m> and in <m>\om'</m>. This means that
+if <m>\om = f_1\om_1+f_2\om_2</m>, where <m>f_1</m>,<m>f_2</m> are
+functions and <m>\om_1,\om_2</m> are forms, then
+<me>
+\big(f_1\om_1+f_2\om_2\big)\wedge \om'= f_1 (\om_1\wedge\om')
++f_2 (\om_1\wedge\om')
+</me>
+Similarly,
+<me>
+\om\wedge\big(f_1\om'_1+f_2\om'_2\big)= f_1 (\om\wedge\om'_1)
++f_2 (\om\wedge\om'_1)
+</me>
+</li>
+<li>
+<p>If <m>\om</m> is a <m>k</m>-form and <m>\om'</m> is a  <m>k'</m>-form then <me>
+   \om\wedge\om'=(-1)^{kk'}\om'\wedge\om
+</me>
+That is, if at least one of <m>k</m> and <m>k'</m> is even, then
+<me>
+\om\wedge\om'=\om'\wedge\om
+</me>
+(so that the wedge product is commutative)
+and if <m>k</m> and <m>k'</m> are <em>both odd</em> then
+<me>
+\om\wedge\om'=-\om'\wedge\om
+</me>
+(so that the wedge product is anticommutative).
+In particular, if <m>\om</m> is a <m>d</m>-form with <m>d</m> <em>odd</em>
+<me>
+\om\wedge\om = 0
+</me></p>
+</li>
+<li>
+The wedge product is associative. This means that
+<me>
+(\om\wedge\om')\wedge\om''=\om\wedge\big(\om'\wedge\om''\big)
+</me>
+</li>
+</ol>
+</p></statement>
+</definition>
+
+<p>
+So the wedge product obeys most of the usual multiplication rules, with
+the one big exception that if <m>\om</m> is <m>k</m>-form and <m>\om'</m> is a
+<m>k'</m>-form with <m>k</m> and <m>k'</m>  <em>both odd</em> then <m>\om\wedge\om'=-\om'\wedge\om</m>.
+</p>
+
+<p>The best way to get a handle on
+the wedge product is to work through some examples, like these.
+</p>
+
+<example xml:id="eg_diffFormAddMultA">
+<p>
+Let
+    <m>\om = F_1\,\dee{x}
+     + F_2\,\dee{y}
+     + F_3\,\dee{z}
+    </m>
+and
+    <m>\om' = G_1\,\dee{x}
+     + G_2\,\dee{y}
+     + G_3\,\dee{z}
+    </m>
+be any two <m>1</m>-forms. Their product is
+<md>
+<mrow>
+   \om\wedge\om'
+&amp;=\big[F_1\,\dee{x}
+     + F_2\,\dee{y}
+     + F_3\,\dee{z}\big]
+   \wedge
+   \big[G_1\,\dee{x}
+     + G_2\,\dee{y}
+     + G_3\,\dee{z}\big]
+</mrow><mrow>
+   &amp;= \ \big(F_1\,\dee{x}\big)\wedge\big(G_1\,\dee{x}\big)
+     +\big(F_1\,\dee{x}\big)\wedge\big(G_2\,\dee{y}\big)
+     +\big(F_1\,\dee{x}\big)\wedge\big(G_3\,\dee{y}\big)
+</mrow><mrow>
+   &amp;\hskip0.1in +\big(F_2\,\dee{x}\big)\wedge\big(G_1\,\dee{x}\big)
+     +\big(F_2\,\dee{x}\big)\wedge\big(G_2\,\dee{y}\big)
+     +\big(F_2\,\dee{x}\big)\wedge\big(G_3\,\dee{y}\big)
+</mrow><mrow>
+   &amp;\hskip0.1in+ \big(F_3\,\dee{x}\big)\wedge\big(G_1\,\dee{x}\big)
+     +\big(F_3\,\dee{x}\big)\wedge\big(G_2\,\dee{y}\big)
+     +\big(F_3\,\dee{x}\big)\wedge\big(G_3\,\dee{y}\big)
+</mrow><mrow>
+   &amp;\hskip0.5in\text{(by linearity, i.e. by part (b) of
+                      Definition <xref ref="def_differentialFormMult"/>)}
+</mrow><mrow>
+   &amp;= \ F_1G_1\,\dee{x}\wedge\,\dee{x}
+     + F_1G_2\,\dee{x}\wedge\,\dee{y}
+     + F_1G_3\,\dee{x}\wedge\,\dee{z}
+</mrow><mrow>
+   &amp;\hskip0.1in +F_2G_1\,\dee{y}\wedge\,\dee{x}
+     + F_2G_2\,\dee{y}\wedge\,\dee{y}
+     + F_2G_3\,\dee{y}\wedge\,\dee{z}
+</mrow><mrow>
+   &amp;\hskip0.1in+ F_3G_1\,\dee{z}\wedge\,\dee{x}
+     + F_3G_2\,\dee{z}\wedge\,\dee{y}
+     + F_3G_3\,\dee{z}\wedge\,\dee{z}
+</mrow><mrow>
+   &amp;= \big(F_1G_2-F_2G_1)\,\dee{x}\wedge\dee{y}
+                  +\big(F_3G_1-F_1G_3)\,\dee{z}\wedge\dee{x}
+                  +\big(F_2G_3-F_3G_2)\,\dee{y}\wedge\dee{z}
+</mrow>
+</md>
+because
+<me>
+\dee{x}\wedge\,\dee{x}=\dee{y}\wedge\,\dee{y}=\dee{z}\wedge\,\dee{z}=0
+</me>
+and
+<me>
+\dee{x}\wedge\,\dee{y}=-\dee{y}\wedge\,\dee{x}\qquad
+\dee{x}\wedge\,\dee{z}=-\dee{z}\wedge\,\dee{x}\qquad
+\dee{z}\wedge\,\dee{y}=-\dee{y}\wedge\,\dee{z}
+</me>
+Note that, if we view <m>\vF=(F_1,F_2,F_3)</m> and <m>\vG=(G_1,G_2,G_3)</m>
+as vectors, we can write the product simply as
+</p>
+
+<fact xml:id="eqn_prodCross">
+  <statement>
+    <p>
+<md>
+<mrow>
+&amp;\big[F_1\,\dee{x}
+     + F_2\,\dee{y}
+     + F_3\,\dee{z}\big]
+   \wedge
+   \big[G_1\,\dee{x}
+     + G_2\,\dee{y}
+     + G_3\,\dee{z}\big]
+</mrow><mrow>
+&amp;\hskip1in=(\vF\times\vG)_1\, \dee{y}\wedge\dee{z}
+ +(\vF\times\vG)_2\, \dee{z}\wedge\dee{x}
+ +(\vF\times\vG)_3\, \dee{x}\wedge\dee{y}
+</mrow>
+</md>
+</p>
+</statement>
+</fact>
+
+<p>
+where we are using <m>(\vF\times\vG)_\ell</m> to denote the <m>\ell^{\rm th}</m>
+component of the cross product <m>\vF\times\vG</m>.
+In the special case that <m>F_3=G_3=0</m>, we have
+</p>
+
+<fact xml:id="eqnprodDet">
+  <statement>
+    <p><md>
+<mrow>
+\big[F_1\,\dee{x}
+     + F_2\,\dee{y}\big]
+   \wedge
+   \big[G_1\,\dee{x}
+     + G_2\,\dee{y}\big]
+=\big(F_1G_2-F_2G_1)\,\dee{x}\wedge\dee{y}
+=\det\left[\begin{matrix} F_1 &amp; F_2 \\
+G_1 &amp; G_2\end{matrix}\right]
+         \dee{x}\wedge\dee{y}
+</mrow>
+</md>
+</p>
+</statement>
+</fact>
+
+<p>We can now see why in the Definition <xref ref="def_differentialForm"/>.c
+of <m>2</m>-forms
+<ul>
+<li>
+there were no <m>\dee{x}\wedge\dee{x}</m> or
+              <m>\dee{y}\wedge\dee{y}</m> or
+              <m>\dee{z}\wedge\dee{z}</m>
+terms <mdash/> they are all zero and
+</li>
+<li>
+there were no <m>\dee{y}\wedge\dee{x}</m> or
+              <m>\dee{z}\wedge\dee{y}</m> or
+              <m>\dee{x}\wedge\dee{z}</m>
+terms <mdash/> they can all be rewritten using
+<m>\dee{x}\wedge\dee{y}</m>,
+              <m>\dee{y}\wedge\dee{z}</m> and
+              <m>\dee{z}\wedge\dee{x}</m>
+terms (or vice versa).
+</li>
+</ul>
+The reason that we chose to write the Definition <xref ref="def_differentialForm"/>.c
+as<me>
+ F_1\,\dee{y}\wedge\dee{z}
+ + F_2\,\dee{z}\wedge\dee{x}
+ + F_3\,\dee{x}\wedge\dee{y}
+</me>
+as opposed to in the form, for example,
+<me>
+ f_1\,\dee{x}\wedge\dee{y}
+ + f_2\,\dee{x}\wedge\dee{z}
+ + f_3\,\dee{y}\wedge\dee{z}
+</me>
+was to make formulae like <xref ref="eqn_prodCross"/> work.
+The easy way to remember
+<me>
+ F_1\,\dee{y}\wedge\dee{z}
+ + F_2\,\dee{z}\wedge\dee{x}
+ + F_3\,\dee{x}\wedge\dee{y}
+</me>
+is to rename (in your head) <m>x,y,z</m> to <m>x_1,x_2,x_3</m>. Then the subscripts
+in the three terms of
+<me>
+ F_1\,\dee{x_2}\wedge\dee{x_3}
+ + F_2\,\dee{x_3}\wedge\dee{x_1}
+ + F_3\,\dee{x_1}\wedge\dee{x_2}
+</me>
+are just <m>1,2,3</m> and <m>2,3,1</m> and <m>3,1,2</m> <mdash/> the three cyclic permutations
+of <m>1,2,3</m>.
+</p></example>
+
+<example xml:id="eg_diffFormAddMultB">
+<p>
+The product of the (general) <m>1</m>-form
+    <m>\om = F_1\,\dee{x}
+     + F_2\,\dee{y}
+     + F_3\,\dee{z}
+    </m>
+and the (general) <m>2</m>-form
+    <m>\om'=\big[G_1\,\dee{y}\wedge\dee{z}
+          + G_2\,\dee{z}\wedge\dee{x}
+          + G_3\,\dee{x}\wedge\dee{y}\big]
+    </m>
+(again note the numbering of the coefficients in the <m>2</m>-form) is
+<md>
+<mrow>
+  \om\wedge\om'
+ &amp;=\big[F_1\,\dee{x}
+     + F_2\,\dee{y}
+     + F_3\,\dee{z}\big]
+   \wedge
+   \big[G_1\,\dee{y}\wedge\dee{z}
+          + G_2\,\dee{z}\wedge\dee{x}
+          + G_3\,\dee{x}\wedge\dee{y}\big]
+</mrow><mrow>
+  &amp;= \ F_1G_1\,\dee{x}\wedge\dee{y}\wedge\dee{z}
+     + F_2G_2\,\dee{y}\wedge\dee{z}\wedge\dee{x}
+     + F_3G_3\,\dee{z}\wedge\dee{x}\wedge\dee{y}
+</mrow><mrow>
+  &amp; = \big(F_1G_1+F_2G_2+F_3G_3)\,\dee{x}\wedge\dee{y}\wedge\dee{z}
+
+</mrow>
+</md>
+Here we have used that, for <m>1</m>-forms, <m>\alpha\wedge\beta=-\beta\wedge\alpha</m>,
+so that
+<md>
+<mrow>
+\dee{y}\wedge\dee{z}\wedge\dee{x}
+&amp;=-\dee{y}\wedge\dee{x}\wedge\dee{z}=\dee{x}\wedge\dee{y}\wedge\dee{z}
+
+</mrow><mrow>
+\dee{z}\wedge\dee{x}\wedge\dee{y}
+&amp;=-\dee{x}\wedge\dee{z}\wedge\dee{y} =\dee{x}\wedge\dee{y}\wedge\dee{z}
+</mrow>
+</md>
+We have also used that any wedge product of three
+<m>\dee{\{x\text{ or }y\text{ or }z\}}</m>'s
+with at least two of the coordinates being the same is zero. For example
+<me>
+\dee{x}\wedge\dee{z}\wedge\dee{x} = - \dee{x}\wedge\dee{x}\wedge\dee{z}
+   =0
+</me>
+So
+</p>
+
+<fact xml:id="eqnProd1Form2Form">
+  <statement>
+    <p><md>
+<mrow>
+   &amp;\big[F_1\,\dee{x}
+     + F_2\,\dee{y}
+     + F_3\,\dee{z}\big]
+   \wedge
+   \big[G_1\,\dee{y}\wedge\dee{z}
+          + G_2\,\dee{z}\wedge\dee{x}
+          + G_3\,\dee{x}\wedge\dee{y}\big]
+</mrow><mrow>
+  &amp;\hskip4in = \vF\cdot\vG\,\dee{x}\wedge\dee{y}\wedge\dee{z}
+</mrow>
+</md>
+</p>
+</statement>
+</fact>
+
+</example>
+
+
+<example xml:id="eg_diffFormAddMultC">
+<p>
+Combining Examples <xref ref="eg_diffFormAddMultA"/> and <xref ref="eg_diffFormAddMultB"/>,
+we have the wedge product of any three (general)
+<m>1</m>-forms
+    <m>F_1\,\dee{x}
+     + F_2\,\dee{y}
+     + F_3\,\dee{z}</m>
+and
+    <m>G_1\,\dee{x}
+     + G_2\,\dee{y}
+     + G_3\,\dee{z}</m>
+and
+    <m>H_1\,\dee{x}
+     + H_2\,\dee{y}
+     + H_3\,\dee{z}</m>
+is
+<md>
+<mrow>
+&amp;\big[F_1\,\dee{x}
+     + F_2\,\dee{y}
+     + F_3\,\dee{z}\big]
+   \wedge
+   \big[G_1\,\dee{x}
+     + G_2\,\dee{y}
+     + G_3\,\dee{z}\big]
+   \wedge
+   \big[H_1\,\dee{x}
+     + H_2\,\dee{y}
+     + H_3\,\dee{z}\big]
+
+</mrow><mrow>
+&amp;\hskip0.1in=\big[F_1\,\dee{x}
+     + F_2\,\dee{y}
+     + F_3\,\dee{z}\big]
+   \wedge
+   \big[(\vG\times\vH)_1\, \dee{y}\wedge\dee{z}
+ +(\vG\times\vH)_2\, \dee{z}\wedge\dee{x}
+ +(\vG\times\vH)_3\, \dee{x}\wedge\dee{y}\big]
+
+</mrow><mrow>
+&amp;\hskip0.1in
+  =\big\{F_1(\vG\times\vH)_1 + F_2(\vG\times\vH)_2 + F_3(\vG\times\vH)_3\big\}
+     \dee{x}\wedge\dee{y}\wedge\dee{z}
+
+</mrow><mrow>
+&amp;\hskip0.1in
+  =\big\{F_1(G_2H_3-G_3H_2) +
+         F_2(G_3H_1-G_1H_3) +
+         F_3(G_1H_2-G_2H_1\big\}
+     \dee{x}\wedge\dee{y}\wedge\dee{z}
+
+</mrow>
+</md>
+This can be expressed cleanly in terms of determinants.
+Recalling the rule for expanding a determinant along its top row
+</p>
+
+<fact xml:id="eqnProd3Form">
+  <statement>
+    <p>
+<md>
+<mrow>
+&amp;\big[F_1\,\dee{x}
+     + F_2\,\dee{y}
+     + F_3\,\dee{z}\big]
+   \wedge
+   \big[G_1\,\dee{x}
+     + G_2\,\dee{y}
+     + G_3\,\dee{z}\big]
+   \wedge
+   \big[H_1\,\dee{x}
+     + H_2\,\dee{y}
+     + H_3\,\dee{z}\big]
+
+</mrow><mrow>
+&amp;\hskip3.5in
+  =\det\left[\begin{matrix} F_1 &amp; F_2 &amp; F_3 \\
+                            G_1 &amp; G_2 &amp; G_3 \\
+                            H_1 &amp; H_2 &amp; H_3 \end{matrix}\right]
+     \dee{x}\wedge\dee{y}\wedge\dee{z}
+</mrow>
+</md>
+</p>
+</statement>
+</fact>
+</example>
+
+
+<p>Our next operation is a differential operator which unifies and generalizes
+gradient, curl and divergence.
+</p>
+
+<definition xml:id="def_differentialFormDiff">
+  <title>Differentiation of differential forms</title>
+<statement><p>
+If <m>\om</m> is a <m>k</m>-form, then <m>\dee{\om}</m> is a <m>k+1</m>-form, with
+<m>\dee{}</m> being the unique
+<fn>That <m>\dee{}</m> is unique just means that
+the action of <m>\dee{}</m> on <em>any</em> differential form is completely
+determined by the four rules (a), (b), (c), (d). We will see in
+Example <xref ref="eg_diffFormDiff"/>.b,c,d, that this is indeed the case.</fn>
+such operator that obeys
+<ol label="a">
+<li>
+<m>\dee{}</m> is linear. That is, if <m>\om_1,\om_2</m> are <m>k</m>-forms and
+<m>a_1,a_2\in\bbbr</m>, then
+<me>
+\dee{\big(a_1\om_1+a_2\om_2\big)}
+=a_1\dee{\om_1}+a_2\dee{\om_2}
+</me>
+</li>
+<li>
+<m>\dee{}</m> obeys a <q>graded product rule</q>. Precisely, if <m>\om^{(k)}</m> is a
+<m>k</m>-form and <m>\om^{(\ell)}</m> is an <m>\ell</m>-form, then
+<me>
+\dee{\big(\om^{(k)}\wedge\om^{(\ell)}\big)}
+=\big(d\om^{(k)}\big)\wedge\om^{(\ell)}
++(-1)^k\om^{(k)} \wedge \big(\dee{\om^{(\ell)}}\big)
+</me>
+</li>
+<li>
+If <m>f(x,y,z)</m> is a <m>0</m>-form, then
+<md>
+<mrow>
+\dee{f}
+&amp;=\frac{\partial f}{\partial x}(x,y,z)\ \dee{x}
++\frac{\partial f}{\partial y}(x,y,z)\ \dee{y}
++\frac{\partial f}{\partial z}(x,y,z)\ \dee{z}
+</mrow><mrow>
+&amp;=\vnabla f(x,y,z)\cdot\dee{\vr}
+\qquad\text{where }
+\dee{\vr} = \dee{x}\,\hi + \dee{y}\,\hj + \dee{z}\,\hk
+</mrow>
+</md>
+</li>
+<li>
+For any differential form <m>\om</m>,
+<me>
+\dee{\big(\dee{\om}\big)}=0
+</me>
+</li>
+</ol>
+</p></statement>
+</definition>
+
+
+<example xml:id="eg_diffFormDiff">
+<p>
+<ol label="a">
+<li>
+If <m>f(x,y,z) = x</m>, then
+<me>
+\dee{f}
+=\frac{\partial x}{\partial x}(x,y,z)\ \dee{x}
++\frac{\partial x}{\partial y}(x,y,z)\ \dee{y}
++\frac{\partial x}{\partial z}(x,y,z)\ \dee{z}
+=\dee{x}
+</me>
+That is, <m>\dee{x}</m> really is the operator <m>\dee{}</m> applied to the
+function <m>x</m>. Similarly, <m>\dee{y}</m> really is the operator <m>\dee{}</m>
+applied to the function <m>y</m> and <m>\dee{z}</m> really is the operator
+<m>\dee{}</m> applied to the function <m>z</m>.
+</li>
+<li>
+For any <m>k</m>-form <m>\om</m>
+<md>
+<mrow>
+\dee{\big[\om\wedge\dee{x}\big]}
+&amp;=\dee{\om}\wedge\dee{x} + (-1)^k\om\wedge\dee{\big(\dee{x}\big)}
+</mrow><mrow>
+&amp;=\dee{\om}\wedge\dee{x}
+</mrow>
+</md>
+Similarly
+<me>
+\dee{\big[\om\wedge\dee{y}\big]}=\dee{\om}\wedge\dee{y}\qquad
+\dee{\big[\om\wedge\dee{z}\big]}=\dee{\om}\wedge\dee{z}
+</me>
+</li>
+<li>
+For any <m>1</m>-form
+<md>
+<mrow>
+&amp;\dee{}\big[F_1\dee{x} + F_2\dee{y} + F_3\dee{z}\big]
+=\dee{F_1}\wedge\dee{x} + \dee{F_2}\wedge\dee{y}  + \dee{F_3}\wedge\dee{z}
+
+</mrow><mrow>
+&amp;\hskip0.5in=\Big(\frac{\partial F_1}{\partial x}\ \dee{x}
+      +\frac{\partial F_1}{\partial y}\ \dee{y}
+      +\frac{\partial F_1}{\partial z}\ \dee{z}\Big)\wedge\dee{x}
++\Big(\frac{\partial F_2}{\partial x}\ \dee{x}
+      +\frac{\partial F_2}{\partial y}\ \dee{y}
+      +\frac{\partial F_2}{\partial z}\ \dee{z}\Big)\wedge\dee{y}
+
+</mrow><mrow>&amp;\hskip2in
++\Big(\frac{\partial F_3}{\partial x}\ \dee{x}
+      +\frac{\partial F_3}{\partial y}\ \dee{y}
+      +\frac{\partial F_3}{\partial z}\ \dee{z}\Big)\wedge\dee{z}
+
+</mrow><mrow>
+&amp;\hskip0.5in=
+  \Big(\frac{\partial F_3}{\partial y}-\frac{\partial F_2}{\partial z}\Big)
+          \ \dee{y}\wedge\dee{z}
+   +\Big(\frac{\partial F_1}{\partial z}-\frac{\partial F_3}{\partial x}\Big)
+          \ \dee{z}\wedge\dee{x}
+   +\Big(\frac{\partial F_2}{\partial x}-\frac{\partial F_1}{\partial y}\Big)
+          \ \dee{x}\wedge\dee{y}
+
+</mrow><mrow>
+&amp;\hskip0.5in=
+   (\vnabla\times\vF)_1\,\dee{y}\wedge\dee{z}
+   +(\vnabla\times\vF)_2\,\dee{z}\wedge\dee{x}
+   +(\vnabla\times\vF)_3\,\dee{x}\wedge\dee{y}
+</mrow>
+</md>
+</li>
+<li>
+For any <m>2</m>-form
+<md>
+<mrow>
+&amp;\dee{}\big[F_1\,\dee{y}\wedge\dee{z}
+ + F_2\,\dee{z}\wedge\dee{x}
+ + F_3\,\dee{x}\wedge\dee{y}\big]
+
+</mrow><mrow>
+&amp;\hskip0.5in=\dee{F_1}\wedge\dee{y}\wedge\dee{z}
++ \dee{F_2}\wedge\dee{z}\wedge\dee{x}
++ \dee{F_3}\wedge\dee{x}\wedge\dee{y}\big]
+
+</mrow><mrow>
+&amp;\hskip0.5in=\Big(\frac{\partial F_1}{\partial x}\ \dee{x}
+      +\frac{\partial F_1}{\partial y}\ \dee{y}
+      +\frac{\partial F_1}{\partial z}\ \dee{z}\Big)\wedge\dee{y}\wedge\dee{z}
+
+</mrow><mrow>&amp;\hskip2in
++\Big(\frac{\partial F_2}{\partial x}\ \dee{x}
+      +\frac{\partial F_2}{\partial y}\ \dee{y}
+      +\frac{\partial F_2}{\partial z}\ \dee{z}\Big)\wedge\dee{z}\wedge\dee{x}
+
+</mrow><mrow>&amp;\hskip2in
++\Big(\frac{\partial F_3}{\partial x}\ \dee{x}
+      +\frac{\partial F_3}{\partial y}\ \dee{y}
+      +\frac{\partial F_3}{\partial z}\ \dee{z}\Big)\wedge\dee{x}\wedge\dee{y}
+
+</mrow><mrow>
+&amp;\hskip0.5in=
+  \Big(\frac{\partial F_1}{\partial x}
+       +\frac{\partial F_2}{\partial y}
+       +\frac{\partial F_3}{\partial z}\Big)
+          \ \dee{x}\wedge\dee{y}\wedge\dee{z}
+
+</mrow><mrow>
+&amp;\hskip0.5in=
+   \vnabla\cdot\vF\ \dee{x}\wedge\dee{y}\wedge\dee{z}
+</mrow>
+</md>
+</li>
+<li>
+For any <m>3</m>-form
+<md>
+<mrow>
+\dee{}\big[f\,\dee{x}\wedge\dee{y}\wedge\dee{z}\big]
+&amp;=\Big(\frac{\partial f}{\partial x}\ \dee{x}
+      +\frac{\partial f}{\partial y}\ \dee{y}
+      +\frac{\partial f}{\partial z}\ \dee{z}\Big)
+    \wedge\dee{x}\wedge\dee{y}\wedge\dee{z}
+</mrow><mrow>
+&amp;=0
+</mrow>
+</md>
+</li>
+</ol>
+</p></example>
+
+
+<example xml:id="eg_diffFormDiffB">
+<p>
+In Definition <xref ref="def_differentialFormDiff"/>.c, we defined,
+for any function <m>f(x,y,z)</m> of three variables
+<md>
+<mrow>
+\dee{f}
+&amp;=\frac{\partial f}{\partial x}(x,y,z)\ \dee{x}
++\frac{\partial f}{\partial y}(x,y,z)\ \dee{y}
++\frac{\partial f}{\partial z}(x,y,z)\ \dee{z}
+</mrow>
+</md>
+The analogous formulae
+<fn>Indeed, you can view <m>f(t)</m> as a function
+of three variables that happens to be independent of two of the three
+variables. Similarly you can view <m>f(u,v)</m>  as a function of three
+variables that happens to be independent of one of the three variables.
+</fn>
+ for functions of one or two variables also apply.
+<md>
+<mrow>
+\dee{f(t)} &amp; = \diff{f}{t}(t)\,\dee{t}
+</mrow><mrow>
+\dee{f(uv)}
+&amp;=\frac{\partial f}{\partial u}(u,v)\ \dee{u}
++\frac{\partial f}{\partial v}(u,v)\ \dee{v}
+</mrow>
+</md>
+<ol label="a">
+<li>
+Let <m>F_1(x,y,z)\,\dee{x} + F_2(x,y,z)\,\dee{y} + F_3(x,y,z)\,\dee{z}</m>
+be a <m>1</m>-form. Suppose that we substitute <m>x=x(t)</m>, <m>y=y(t)</m> and <m>z=z(t)</m>,
+so that we are restricting our <m>1</m>-form to a parametrized curve.
+Then, writing <m>\vr(t) = \big(x(t),y(t),z(t)\big)</m>,
+<md>
+<mrow>
+&amp;F_1\big(x(t),y(t),z(t)\big)\,\dee{x(t)}
+  + F_2\big(x(t),y(t),z(t)\big)\,\dee{y(t)}
+  + F_3\big(x(t),y(t),z(t)\big)\,\dee{z(t)}
+</mrow><mrow>
+&amp;\hskip0.5in=F_1\big(\vr(t)\big)\diff{x}{t}(t)\,\dee{t}
+  + F_2\big(\vr(t)\big)\diff{y}{t}(t)\,\dee{t}
+  + F_3\big(\vr(t)\big)\diff{z}{t}(t)\,\dee{t}
+</mrow><mrow>
+&amp;\hskip0.5in= \vF\big(\vr(t)\big)\cdot\diff{\vr}{t}(t)\,\dee{t}
+</mrow>
+</md>
+</li>
+<li>
+Let <m>F_1(x,y,z)\,\dee{y}\wedge\dee{z}
+ + F_2(x,y,z)\,\dee{z}\wedge\dee{x}
+ + F_3(x,y,z)\,\dee{x}\wedge\dee{y}</m>
+be a <m>2</m>-form. Suppose that we substitute <m>x=x(u,v)</m>, <m>y=y(u,v)</m> and
+<m>z=z(u,v)</m>, so that we are restricting our <m>2</m>-form to a parametrized surface.
+Then, writing <m>\vr(u,v) = \big(x(u,v),y(u,v),z(u,v)\big)</m>,
+<md>
+<mrow>
+&amp;F_1\big(x(u,v),y(u,v),z(u,v)\big)\,\dee{y(u,v)}\wedge\dee{z(u,v)}
+
+</mrow><mrow>&amp;\hskip1in
+  + F_2\big(x(u,v),y(u,v),z(u,v)\big)\,\dee{z(u,v)}\wedge\dee{x(u,v)}
+
+</mrow><mrow>&amp;\hskip1in
+  + F_3\big(x(u,v),y(u,v),z(u,v)\big)\,\dee{x(u,v)}\wedge\dee{y(u,v)}
+</mrow><mrow>
+&amp;=F_1\big(\vr(u,v)\big)\,
+    \Big(\frac{\partial y}{\partial u}\dee{u}
+        +\frac{\partial y}{\partial v}\dee{v}\Big)\wedge
+    \Big(\frac{\partial z}{\partial u}\dee{u}
+        +\frac{\partial z}{\partial v}\dee{v}\Big)
+
+</mrow><mrow>&amp;\hskip1in
+  + F_2\big(\vr(u,v)\big)\,
+    \Big(\frac{\partial z}{\partial u}\dee{u}
+        +\frac{\partial z}{\partial v}\dee{v}\Big)\wedge
+    \Big(\frac{\partial x}{\partial u}\dee{u}
+        +\frac{\partial x}{\partial v}\dee{v}\Big)
+
+</mrow><mrow>&amp;\hskip1in
+  + F_3\big(\vr(u,v)\big)\,
+    \Big(\frac{\partial x}{\partial u}\dee{u}
+        +\frac{\partial x}{\partial v}\dee{v}\Big)\wedge
+    \Big(\frac{\partial y}{\partial u}\dee{u}
+        +\frac{\partial y}{\partial v}\dee{v}\Big)
+</mrow><mrow>
+&amp;=\Big[F_1\big(\vr(u,v)\big)\,
+    \Big(\frac{\partial y}{\partial u}\frac{\partial z}{\partial v}
+        -\frac{\partial y}{\partial v}\frac{\partial z}{\partial u}\Big)
+      +F_2\big(\vr(u,v)\big)\,
+    \Big(\frac{\partial z}{\partial u}\frac{\partial x}{\partial v}
+        -\frac{\partial z}{\partial v}\frac{\partial x}{\partial u}\Big)
+
+</mrow><mrow>&amp;\hskip1in
+      +F_3\big(\vr(u,v)\big)\,
+    \Big(\frac{\partial x}{\partial u}\frac{\partial y}{\partial v}
+        -\frac{\partial x}{\partial v}\frac{\partial y}{\partial u}\Big)
+        \Big] \dee{u}\wedge\dee{v}
+</mrow><mrow>
+&amp;=\Big[\vF\big(\vr(u,v)\big)\cdot \frac{\partial\vr}{\partial u}(u,v)
+                 \times \frac{\partial\vr}{\partial v}(u,v)\Big]
+         \dee{u}\wedge\dee{v}
+</mrow>
+</md>
+</li>
+</ol>
+</p></example>
+
+
+<p>Let us summarize what we have seen in the Example <xref ref="eg_diffFormDiff"/>.</p>
+
+<lemma xml:id="lemma_dGradCurlDiv">
+<statement><p>
+<ol label="a">
+<li>
+For any <m>0</m>-form
+<me>
+\dee{f}
+=\vnabla f(x,y,z)\cdot\dee{\vr}
+</me>
+</li>
+<li>
+For any <m>1</m>-form
+<md>
+<mrow>
+&amp;\dee{}\big[F_1\dee{x} + F_2\dee{y} + F_3\dee{z}\big]
+
+</mrow><mrow>&amp;\hskip1in
+=   (\vnabla\times\vF)_1\,\dee{y}\wedge\dee{z}
+   +(\vnabla\times\vF)_2\,\dee{z}\wedge\dee{x}
+   +(\vnabla\times\vF)_3\,\dee{x}\wedge\dee{y}
+</mrow>
+</md>
+</li>
+<li>
+For any <m>2</m>-form
+<me>
+\dee{}\big[F_1\,\dee{y}\wedge\dee{z}
+ + F_2\,\dee{z}\wedge\dee{x}
+ + F_3\,\dee{x}\wedge\dee{y}\big]
+=   \vnabla\cdot\vF\ \dee{x}\wedge\dee{y}\wedge\dee{z}
+</me>
+</li>
+<li>
+For any <m>3</m>-form
+<me>
+\dee{}\big[f\,\dee{x}\wedge\dee{y}\wedge\dee{z}\big]=0
+</me>
+</li>
+</ol>
+</p></statement>
+</lemma>
+
+
+<p>Our final operation is integration of differential forms. </p>
+
+<definition xml:id="def_differentialFormInt">
+  <title>Integration of differential forms</title>
+<statement><p>
+<ol label="a">
+<li>
+Let <m>f(x,y,z)</m> be a  <m>0</m>-form and <m>P=(x_0,y_0,z_0)\in\bbbr^3</m> be a point.
+Then
+<me>
+\int_{P} f = f\big(x_0,y_0,z_0\big)
+</me>
+More generally if, for each <m>1\le i\le \ell</m>, <m>P_i=(x_i,y_i,z_i)\in\bbbr^3</m>
+is a point and <m>n_i</m> is an integer, then
+<me>
+\int_{\Sigma_{i=1}^\ell n_iP_i} f = \sum_{i=1}^\ell n_i f\big(x_i,y_i,z_i\big)
+</me>
+</li>
+<li>
+Let  <m>\om = \vF(\vr)\cdot\dee{\vr}
+ = F_1(x,y,z)\,\dee{x} + F_2(x,y,z)\,\dee{y} + F_3(x,y,z)\,\dee{z} </m>
+be a  <m>1</m>-form. Let <m>\cC</m> be a curve that is parametrized
+by <m>\vr(t) = \big(x(t)\,,\,y(t)\,,\,z(t)\big)</m>, <m>a\le t\le b</m>. Then,
+motivated by Example <xref ref="eg_diffFormDiffB"/>.a above,
+<me>
+\int_{\cC}\om = \int_a^b \vF\big(\vr(t)\big)\cdot \diff{\vr}{t}(t)\ \dee{t}
+              =\int_{\cC} \vF\cdot\dee{\vr}
+</me>
+</li>
+<li>
+Let  <m>\om = F_1(x,y,z)\,\dee{y}\wedge\dee{z}
+ + F_2(x,y,z)\,\dee{z}\wedge\dee{x}
+ + F_3(x,y,z)\,\dee{x}\wedge\dee{y}</m>
+be a  <m>2</m>-form. Let <m>S</m> be an oriented surface that is parametrized
+by <m>\vr(u,v) = \big(x(u,v)\,,\,y(u,v)\,,\,z(u,v)\big)</m>,
+with <m>(u,v)</m> running over a region <m>R</m> in the <m>uv</m>-plane.
+Assume that <m>\vr(u,v)</m> is orientation preserving in the sense that
+<m>\hn\,\dee{S} = +\frac{\partial \vr}{\partial u}
+\times \frac{\partial \vr}{\partial v}\,\dee{u}\,\dee{v}</m>.Then,
+motivated by Example <xref ref="eg_diffFormDiffB"/>.b above,
+<md>
+<mrow>
+\int_{S}\om &amp;= \dblInt_R \Big[\vF\big(\vr(u,v)\big)\cdot
+           \frac{\partial\vr}{\partial u}(u,v)
+                 \times \frac{\partial\vr}{\partial v}(u,v)\Big]
+         \dee{u}\wedge\dee{v}
+           = \dblInt_S \vF\cdot \hn\,\dee{S}
+</mrow>
+</md>
+</li>
+<li>
+Let  <m>\om = f(x,y,z)\,\dee{x}\wedge\dee{y}\wedge\dee{z}</m>
+be a  <m>3</m>-form. Let <m>V</m> be a solid in <m>\bbbr^3</m>. Then
+<md>
+<mrow>
+\int_{V}\om &amp;= \tripInt_V f(x,y,z)\,\dee{x}\dee{y}\dee{z}
+</mrow>
+</md>
+</li>
+</ol>
+</p></statement>
+</definition>
+
+<p>Finally, after all of these definitions, we have a very compact
+theorem that simultaneously covers the fundamental theorem of calculus,
+Green's theorem. Stokes' theorem and the divergence theorem. Had we given
+all of our definitions in <m>n</m> dimensions, rather than just three dimensions,
+it would cover a lot more. This general theorem is also called Stokes'
+theorem.
+</p>
+
+
+<theorem xml:id="thm_GenStokes"><title>Stokes' Theorem</title>
+<statement><p>
+If <m>\om</m> is a <m>k</m>-form (with <m>k=0,1,2</m>) and <m>D</m> is a <m>(k+1)</m>-dimensional
+domain of integration, then
+<me>
+\int_D d\om=\int_{\partial D}\om
+</me>
+Here <m>\partial D</m> is the boundary of <m>D</m> (suitably oriented).
+</p></statement>
+</theorem>
+
+
+<p>To see the connection between the general Stokes' Theorem <xref ref="thm_GenStokes"/>
+and the Stokes' and divergence theorems of the earlier part of this chapter,
+here are the <m>k=1</m> and <m>k=2</m> cases of Theorem <xref ref="thm_GenStokes"/> again.
+<ul>
+<li>
+  Let <m>\om = F_1 \dee{x} + F_2 \dee{y} + F_3 \dee{z}</m> be a <m>1</m>-form
+and let <m>S</m> be a piecewise smooth oriented surface as in (our original)
+Stokes' theorem <xref ref="thm_Stokes"/>. Then, by Lemma <xref ref="lemma_dGradCurlDiv"/>.b,
+<me>
+d\om = (\vnabla\times\vF)_1\,\dee{y}\wedge\dee{z}
+   +(\vnabla\times\vF)_2\,\dee{z}\wedge\dee{x}
+   +(\vnabla\times\vF)_3\,\dee{x}\wedge\dee{y}
+</me>
+So, by parts (c) (but with <m>\vF</m> replaced by <m>\vnabla\times\vF</m>) and (b)
+of Definition <xref ref="def_differentialFormInt"/>,
+the conclusion <m>\int_D d\om=\int_{\partial D}\om</m> of
+(the general) Stokes' Theorem <xref ref="thm_GenStokes"/> is
+<md>
+<mrow>
+\dblInt_S \vnabla\times\vF\cdot\hn\,\dee{S}
+=\int_S d\om=\int_{\partial S}\om
+=\int_{\partial S}\vF\cdot\dee{\vr}
+</mrow>
+</md>
+which is the conclusion of (our original) Stokes' theorem <xref ref="thm_Stokes"/>.
+</li>
+<li>
+  <m>\om = F_1(x,y,z)\,\dee{y}\wedge\dee{z}
+ + F_2(x,y,z)\,\dee{z}\wedge\dee{x}
+ + F_3(x,y,z)\,\dee{x}\wedge\dee{y}</m>
+be a  <m>2</m>-form
+and let <m>V</m> be a solid as in the divergence theorem <xref ref="thm_divThm"/>.
+Then, by Lemma <xref ref="lemma_dGradCurlDiv"/>.c,
+<me>
+d\om = \vnabla\cdot\vF\,\dee{x}\wedge\dee{y}\wedge\dee{z}
+</me>
+So, by parts (d) (with <m>f =\vnabla\cdot\vF</m>) and (c)
+of Definition <xref ref="def_differentialFormInt"/>,
+the conclusion <m>\int_D d\om=\int_{\partial D}\om</m> of
+(the general) Stokes' Theorem <xref ref="thm_GenStokes"/> is
+<md>
+<mrow>
+\tripInt_V \vnabla\cdot\vF\,\dee{x}\dee{y}\dee{z}
+=\int_V d\om=\int_{\partial V}\om
+=\dblInt_{\partial V}\vF\cdot\hn\,\dee{S}
+</mrow>
+</md>
+which is the conclusion of the divergence theorem <xref ref="thm_divThm"/>.
+</li>
+</ul>
+</p>
+
+<!-- <xi:include href="../problems/prob_s4.7.ptx" /> -->
+
+</section>

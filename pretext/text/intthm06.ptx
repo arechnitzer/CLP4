@@ -1,11 +1,693 @@
 <?xml version="1.0" encoding="UTF-8" ?>
-<section xmlns:xi="http://www.w3.org/2001/XInclude" xml:id="">
+<section xmlns:xi="http://www.w3.org/2001/XInclude">
 
 <!-- Copyright 2018-2020 Joel Feldman, Andrew Rechnitzer and Elyse Yeager -->
 <!-- This work is licensed under the Creative Commons Attribution-NonCommercial-ShareAlike 4.0 International License-->
 <!-- https://creativecommons.org/licenses/by-nc-sa/4.0 -->
 
-<title></title>
+<title>Optional <mdash/> More Interpretation of Div and Curl</title>
+
+
+<p>We are now going to determine, in much more detail than before
+<fn>We'll  also use some more mathematics than before. In this section, we'll
+use eigenvalues and eigenvectors and solve some simple systems of
+ordinary differential equations. We'll also need to use a lot of subscripts and
+superscripts. It only looks intimidating.
+</fn>,
+what the divergence and curl of a vector field tells us about the
+flow of that vector field.
+</p>
+
+<p>Consider a (possibly compressible) fluid  with velocity field
+<m>\vv(\vx,t)</m>. Pick any time <m>t_0</m> and a really tiny piece of the fluid;
+assume that, at time <m>t_0</m>, it is a cube with corners
+at
+</p>
+
+<sidebyside width="45%">
+<p><me>
+\Set{\vx_0+n_1\veps\ha{1}+n_2\veps\ha{2}+n_3\veps\ha{3}}{n_1,n_2,n_3\in\{0,1\}}
+</me></p>
+<image source="figs/cube.pdf"/>
+</sidebyside>
+
+<p>
+Here <m>\veps \gt 0</m> is the length of each edge of the cube and is assumed to be
+really small. The vectors <m>\ha{1},\ \ha{2}</m> and <m>\ha{3}</m> are
+three mutually perpendicular unit vectors that give the orientation of the
+edges of the cube. The vectors from  the corner <m>\vx_0</m> to its three
+nearest neighbour corners are <m>\veps\ha{1},\ \veps\ha{2}</m> and <m>\veps\ha{3}</m>.
+</p>
+
+<p>As time progresses,
+the chunk of fluid moves. In particular, the corners move. Let us denote by
+<m>\veps\vb_1(t)</m> the vector, at time <m>t</m>,
+joining the <m>n_1=n_2=n_3=0</m> corner to the <m>n_1=1,\
+n_2=n_3=0</m> corner. Define <m>\veps\vb_2(t)</m> and <m>\veps\vb_3(t)</m> similarly.
+For times very close to <m>t_0</m> we can think of our chunk of fluid as being
+essentially a parallelepiped with edges <m>\veps\vb_k(t)</m>.
+</p>
+
+<sidebyside>
+<image source="figs/cubeB.pdf"/>
+</sidebyside>
+
+<p>
+By concentrating on the edges <m>\veps\vb_k(t)</m> of the chunk of fluid, rather
+than the corners, we are ignoring any translations that the chunk of
+fluid might have undergone. We want, instead, to determine
+how the size and orientation of the parallelepiped changes  as <m>t</m> increases.
+</p>
+
+<p>At time <m>t_0</m>, <m>\vb_k=\ha{k}</m>.
+The velocities  of the corners of the chunk of fluid at time <m>t_0</m> are
+<me>
+\vv\big(\vx_0+n_1\veps\ha{1}+n_2\veps\ha{2}+n_3\veps\ha{3},t_0\big)
+</me>
+In particular, at time <m>t_0</m>, the tail of <m>\veps\vb_k</m> has velocity
+<m>\vv(\vx_0,t_0)</m> and the head of <m>\veps\vb_k</m> has velocity
+<m>\vv(\vx_0+\veps\ha{k},t_0)</m>. Consequently (using a Taylor approximation),
+<me>
+\veps\diff{\vb_k}{t}(t_0)=\vv\big(\vx_0+\veps\ha{k},t_0\big)
+      -\vv\big(\vx_0,t_0\big)
+=\smsum_{j=1}^3\veps\frac{\partial\vv}{\partial x_j}\big(\vx_0,t_0\big)\ha{k}_j
++O(\veps^2)
+</me>
+and so
+<me>
+\diff{\vb_k}{t}(t_0)
+=\smsum_{j=1}^3\frac{\partial\vv}{\partial x_j}\big(\vx_0,t_0\big)\ha{k}_j
++O(\veps)
+</me>
+The notation <m>O(\veps^n)</m> represents a function that is bounded by a constant
+times <m>\veps^n</m> for all sufficiently small <m>\veps</m>. That is, we are saying that
+<m>\diff{\vb_k}{t}(t_0)</m> is
+<m>\smsum_{j=1}^3\frac{\partial\vv}{\partial x_j}\big(\vx_0,t_0\big)\ha{k}_j</m>
+plus a small error that is bounded by a constant time <m>\veps</m>.
+The notation <m>\ha{k}_j</m>
+just refers to the <m>j^{\rm th}</m> component of the vector <m>\ha{k}</m>.
+</p>
+
+<p>Define the <m>3\times 3</m> matrix <m>\cV</m> by
+<me>
+\cV_{i,j}=\frac{\partial \vv_i}{\partial x_j}\big(\vx_0,t_0\big)
+\tag{M}
+</me>
+Then we can write the above more compactly:
+<me>
+\diff{\vb_k}{t}(t_0)=\cV\vb_k(t_0)+O(\veps)
+</me>
+We study the behaviour of <m>\vb_k(t)</m> for small <m>\veps</m>  and <m>t</m> close to
+<m>t_0</m>, by studying the behaviour of the solutions to the initial value problems
+<me>
+\diff{\vb_k}{t}(t)=\cV\vb_k(t)\qquad \vb_k(t_0)=\ha{k}
+\tag{IVP}
+</me>
+To warm up, we first look at two two-dimensional examples. In both
+examples, the velocity field <m>\vv(x,y)</m> is linear in <m>(x,y)</m>.
+Consequently, in these examples, <m>\vv\big(\vx_0+\veps\ha{k},t_0\big)-\vv\big(\vx_0,t_0\big)</m>
+is exactly <m>\smsum_{j=1}^3\veps\frac{\partial\vv}
+{\partial x_j}\big(\vx_0,t_0\big)\ha{k}_j</m> and
+ the solution to (IVP) coincides with the exact <m>\vb_k(t)</m>.
+Following each example, we discuss a broad class of <m>\cV</m>'s that generate
+behaviour similar to that example.
+</p>
+
+<example xml:id="eg_flowExpand"><title><m>\vv(x,y)= 2x\hi+3y\hj</m></title>
+<p>In this example
+<me>
+\cV=\left[\begin{matrix}2&amp;0\\ 0&amp;3\end{matrix}\right]
+</me>
+The solution to the initial value problem
+<me>
+\vb'(t)=\cV\vb(t)\quad
+      \vb(0)=\left[\begin{matrix}\be_1\\\be_2\end{matrix}\right]
+\quad\text{or equivalently}\quad
+\begin{matrix}\vb_1'(t)=2\vb_1(t) &amp; \vb_1(0)=\be_1\\
+        \vb_2'(t)=3\vb_2(t) &amp; \vb_2(0)=\be_2\end{matrix}
+</me>
+is
+<me>
+\begin{matrix}\vb_1(t)=e^{2t}\be_1\\
+        \vb_2(t)=e^{3t}\be_2\end{matrix}
+\quad\text{or equivalently}\quad
+\vb(t)=\left[\begin{matrix}e^{2t}&amp;0\\ 0&amp;e^{3t}\end{matrix}\right]\vb(0)
+</me>
+If one chooses <m>\ha{1}=\hi</m> and <m>\ha{2}=\hj</m>, the edges,
+<m>\vb_1(t)=e^{2t}\ha{1}</m> and  <m>\vb_2(t)=e^{3t}\ha{2}</m>, of the chunk of
+fluid never change direction. But their lengths do change. The relative rate
+of change of length per unit time, <m>|\diff{\vb_k}{t}(t)|/|\vb_k(t)|</m>,
+is <m>2</m> for <m>\vb_1</m> and 3 for <m>\vb_3</m>. In the figure below, the darker
+rectangle is the initial square. That is, the square with edges <m>\vb_k(t_0)=\ha{k}</m>.
+The lighter rectangle is that with edges <m>\vb_k(t)</m> for some <m>t</m> a bit
+bigger than <m>t_0</m>.
+</p>
+
+<sidebyside>
+<image source="figs/square1.pdf"/>
+</sidebyside>
+
+</example>
+
+<p>
+As time increases the initial cube becomes a larger and larger rectangle.
+</p>
+
+<example xml:id="eg_flowExpandB">
+  <title>Example <xref ref="eg_flowExpandB"/>,  generalized.</title>
+
+<p>The behaviour of Example <xref ref="eg_flowExpandB"/> is typical of <m>\cV</m>'s
+that are symmetric matrices,
+i.e. that obey
+<fn>In terms of our original vector field, this condition
+is that
+<m>\frac{\partial \vv_i}{\partial x_j}\big(\vx_0,t_0\big)
+=\frac{\partial \vv_j}{\partial x_i}\big(\vx_0,t_0\big)</m>.
+So, in three dimensions, it comes down to the requirement that
+<m>\vnabla\times\vv</m> be zero at the point <m>\big(\vx_0,t_0\big)</m>.</fn>
+ <m>\cV_{i,j}=\cV_{j,i}</m> for all <m>i,j</m>.
+Any <m>d\times d</m> symmetric matrix
+<fn>This was proven by the French mathematician and physicist Augustin-Louis Cauchy (1789<ndash/>1857) in 1829.
+</fn>
+(with real entries)
+<ul>
+<li>
+ has <m>d</m> real eigenvalues
+</li>
+<li>
+has <m>d</m> mutually orthogonal real unit eigenvectors.
+</li>
+</ul>
+Denote by <m>\la_k,\ 1\le k\le d</m>, the eigenvalues of <m>\cV</m> and choose
+<m>d</m> mutually perpendicular real unit vectors, <m>\ha{k}</m>,  that obey
+<m>\cV\ha{k}=\la_k\ha{k}</m> for all <m>1\le k\le d</m>. Then
+<me>
+\vb_k(t)=e^{\la_k (t-t_0)}\ \ha{k}
+</me>
+obeys
+<me>
+\diff{\vb_k}{t}(t)=\la_ke^{\la_k (t-t_0)}\ \ha{k}=e^{\la_k (t-t_0)}\ \cV\ha{k}
+=\cV\vb_k(t)\qquad\text{and}\qquad
+\vb_k(t_0)= \ha{k}
+</me>
+So <m>\vb_k(t)=e^{\la_k (t-t_0)}\ \ha{k}</m> satisfies (IVP) for all <m>t</m> and
+<m>1\le k\le d</m>.
+</p>
+
+<p>If we start, at time <m>t_0</m>, with a cube whose edges, <m>\ha{k}</m>,
+ are eigenvectors of <m>\cV</m>, then as time progresses the edges,
+<m>\vb_k(t)</m>, of the chunk of fluid never change direction. But their lengths
+change with the relative rate of change of length per unit time being <m>\la_k</m>
+for edge number <m>k</m>. This rate of change may be positive (the edge grows
+with time) or negative (the edge shrinks in time) depending on the sign
+of <m>\la_k</m>.
+</p>
+
+<p>The volume of the chunk of fluid at time <m>t</m> is
+<m>V(t)=e^{\la_1 (t-t_0)}\cdots e^{\la_d (t-t_0)}</m>. The relative rate of change
+of volume per unit time is <m>V'(t)/V(t)=\la_1\cdots+\la_d</m>, the sum of the
+<m>d</m> eigenvalues.  The sum of the eigenvalues of any <m>d\times d</m> matrix <m>\cV</m>
+is given by its trace <m>\sum_{i=1}^d \cV_{i,i}</m>. For the matrix (M)
+<me>
+\frac{V'(t_0)}{V(t_0)}
+=\sum_{i=1}^d \frac{\partial v_i}{\partial x_i}\big(\vx_0,t_0\big)
+=\vnabla\cdot\vv\big(\vx_0,t_0\big)
+</me>
+So, at least when the matrix <m>\cV</m> defined in (M) is symmetric, the
+divergence <m>\vnabla\cdot\vv\big(\vx_0,t_0\big)</m> gives the relative
+rate of change of volume per unit time for our tiny chunk of fluid at
+time <m>t_0</m> and position <m>\vx_0</m>. Thus when <m>\vnabla\cdot\vv=0</m> the volume is
+fixed. In particular, this is the case when the fluid is incompressible.
+</p>
+</example>
+
+<p>
+In fact we can relax the symmetry condition.
+</p>
+
+<example xml:id="eg_flowExpandC">
+  <title>Example <xref ref="eg_flowExpandB"/>,  generalized yet again.</title>
+
+<p>For any <m>d\times d</m> matrix  <m>\cV</m>, the solution of
+<me>
+\vb'(t)=\cV\vb(t)\quad \vb(t_0)=\ve
+</me>
+is
+<me>
+\vb(t)=e^{\cV (t-t_0)}\ve
+</me>
+where the exponential of a <m>d\times d</m> matrix <m>B</m> is defined by
+the power series
+<me>
+e^B=\bbbone+B+\half B^2+\frac{1}{3!}B^3+\cdots=\smsum_{n=0}^\infty \frac{1}{n!}B^n
+</me>
+with <m>\bbbone</m> denoting the <m>d\times d</m> identity matrix.
+This sum converges
+<fn>The proof is not so hard, though we'll only
+outline it. Just denote by <m>\beta</m> the magnitude of the largest matrix
+element of <m>B</m>.  Then use the definition of the matrix product to prove that
+the largest matrix element of <m>B^n</m> has magnitude at most <m>(d\be)^n</m>.</fn>
+</p>
+
+<p>for all <m>d\times d</m> matrices <m>B</m>. Furthermore it easy
+to check, using the power series, that <m>e^{\cV (t-t_0)}</m>
+obeys <m>\diff{\hfill}{t}e^{\cV (t-t_0)}=\cV e^{\cV (t-t_0)}</m>
+and is the identity matrix when <m>t=t_0</m>. So
+<m>\vb(t)=e^{\cV (t-t_0)}\ve</m> really does obey
+<m>\vb'(t)=\cV\vb(t)</m> and <m>\vb(t_0)=\ve</m>.
+</p>
+
+<p>Pick any <m>d</m> vectors <m>\ve_k,\ 1\le k\le d</m>, and
+define <m>\vb_k(t)=e^{\cV (t-t_0)}\ve_k</m>. Also let <m>E</m> be the <m>d\times d</m> matrix
+whose <m>k^{\rm th}</m> column is <m>\ve_k</m> and <m>E(t)</m>  be the <m>d\times d</m> matrix
+whose <m>k^{\rm th}</m> column is <m>\vb_k(t)</m>. Then the volume of the parallelepiped
+with edges <m>\ve_k,\ 1\le k\le d</m>, is <m>V(t_0)=\det E</m> and the volume of the
+parallelepiped with edges <m>\vb_k(t),\ 1\le k\le d</m>, is
+<me>
+V(t)=\det E(t)=\det\big(e^{\cV (t-t_0)}E\big)
+=\det\big(e^{\cV (t-t_0)}\big)\det E
+=\det\big(e^{\cV (t-t_0)}\big)V(t_0)
+</me>
+Of course now we have to compute the determinant of the exponential of a matrix.
+Luckily, there is an easy way to do this.
+For any <m>d\times d</m> matrix <m>B</m>, <m>\det e^B=e^{\tr B}</m>, so
+<fn>Again, we won't prove this. But for a diagonal matrix, it is easy <mdash/> just compute
+both sides. So for a diagonalizable matrix it is also easy <mdash/> diagonalize.
+</fn>
+<me>
+V(t)=e^{(t-t_0)\tr \cV }V(t_0)\qquad\Rightarrow\qquad
+\frac{V'(t_0)}{V(t_0)}=\tr \cV=\sum_{i=1}^d \cV_{i,i}
+</me>
+So, for any matrix <m>\cV</m> defined as in (M)  and any choice of
+<m>\ha{k},\ 1\le k\le d</m>, the divergence
+<m>\vnabla\cdot\vv\big(\vx_0,t_0\big)</m> gives the relative rate of change
+of volume per unit time for our tiny chunk of fluid at time <m>t_0</m> and position
+<m>\vx_0</m>.
+</p></example>
+
+
+<example xml:id="eg_flowRot"><title><m>\vv(x,y)= -y\hi+x\hj</m></title>
+
+<p>In this example
+<me>
+\cV=\left[\begin{matrix}0&amp;-1\\ 1&amp;0\end{matrix}\right]
+</me>
+The solution
+<fn>You can find the solution either by guessing, or by using eigenvalues and eigenvectors.</fn>
+ to
+<me>
+\vb'(t)=\cV\vb(t)\quad
+\vb(0)=\left[\begin{matrix}\be_1 \\ \be_2\end{matrix}\right]
+\quad\text{or equivalently}\quad
+\begin{matrix}b_1'(t)=-b_2(t) &amp; b_1(0)=\be_1\\
+        b_2'(t)=b_1(t) &amp; b_2(0)=\be_2\end{matrix}
+</me>
+is
+<me>
+\begin{matrix}b_1(t)=\be_1\cos t-\be_2\sin t\\
+        b_2(t)=\be_1\sin t+\be_2\cos t\end{matrix}
+\quad\text{or equivalently}\quad
+\vb(t)=\left[\begin{matrix}\cos t&amp;-\sin t\\ \sin t&amp;
+                             \cos t\end{matrix}\right]\vb(0)
+</me>
+Consequently the vector <m>\vb(t)</m> has the same length as <m>\vb(0)</m>.
+The angle between <m>\vb(t)</m> and <m>\vb(0)</m> is just <m>t</m> radians. So,
+in this example, no matter
+what direction vectors <m>\ha{k}</m> we pick, the chunk of fluid just
+rotates at one radian
+per unit time. In the figure below, the outlined
+rectangle is the initial square. That is, the square with edges <m>\vb_k(t_0)=\ha{k}</m>.
+The shaded rectangle is that with edges <m>\vb_k(t)</m> for some <m>t</m> a bit
+bigger than <m>t_0</m>.
+</p>
+
+<sidebyside>
+<image source="figs/square2.pdf"/>
+</sidebyside>
+
+</example>
+
+<example xml:id="eg_flowRotB">
+  <title>Example <xref ref="eg_flowRot"/>,  generalized.</title>
+
+<p>The behaviour of Example <xref ref="eg_flowRot"/> is typical of <m>\cV</m>'s that
+are antisymmetric matrices, i.e. that obey <m>\cV_{i,j}=-\cV_{j,i}</m>
+for all <m>i,j</m>. As we have already observed, for any <m>d\times d</m>
+matrix  <m>\cV</m>, the solution of
+<m>\
+\vb'(t)=\cV\vb(t),\  \vb(0)=\ve
+\ </m>
+is
+<m>\
+\vb(t)=e^{\cV t}\ve
+</m>.
+We now show that if <m>\cV</m> is a <m>3\times 3</m> antisymmetric matrix,
+then <m>e^{\cV t}</m> is a rotation.
+</p>
+
+<p>Assuming that <m>\cV</m> is not the zero
+matrix (in which case <m>e^{\cV t}</m> is the identity matrix for all <m>t</m>),
+we can find a number <m>\Om \gt 0</m> and a unit vector <m>\hk=(k_1,k_2,k_3)</m>
+(not necessarily the standard unit vector parallel to the <m>z</m>-axis)
+such that
+<me>
+\cV=\left[\begin{matrix}0 &amp; -\Om k_3 &amp; \Om k_2\\
+                \Om k_3&amp; 0 &amp; -\Om k_1\\
+                -\Om k_2&amp;  \Om k_1&amp;0\end{matrix}\right]
+                \tag{R}
+</me>
+This is easy. Because <m>\cV</m> is antisymmetric, all of the entries on
+its diagonal must be zero. Define <m>\Om</m> to be
+<m>\sqrt{\cV_{1,2}^2+\cV_{1,3}^2+\cV_{2,3}^2}</m>
+and <m>k_1=-\cV_{2,3}/\Om</m>, <m>k_2=\cV_{1,3}/\Om</m>, <m>k_3=-\cV_{1,2}/\Om</m>. Also,
+let <m>\hi</m> be any unit vector orthogonal to <m>\hk</m> (again, not necessarily
+the standard one) and <m>\hj=\hk\times\hi</m>. So <m>\hi,\ \hj,\ \hk</m> is a
+right-handed system of three mutually perpendicular unit vectors.
+</p>
+
+<p>Observe that, for any vector <m>\ve=(e_1,e_2,e_3)</m>
+<me>
+\cV\ve=\left[\begin{matrix}0 &amp; -\Om k_3 &amp; \Om k_2\\
+                \Om k_3&amp; 0 &amp; -\Om k_1\\
+                -\Om k_2&amp;  \Om k_1&amp;0\end{matrix}\right]
+\left[\begin{matrix}e_1\\ e_2\\ e_3\end{matrix}\right]
+=\Om\left[\begin{matrix}k_2e_3-k_3e_2\\ k_3e_1-k_1e_3\\ k_1e_2-k_2e_1\end{matrix}\right]
+=\Om\hk\times \ve
+</me>
+In particular,
+<md>
+<mrow>
+\cV\hi&amp;=\Om\hk\times \hi=\Om\hj &amp;
+\cV\hj&amp;=\Om\hk\times \hj=-\Om\hi &amp;
+\cV\hk&amp;=\Om\hk\times \hk=\vZero
+</mrow><mrow>
+\cV^2\hi&amp;=\Om \cV\hj=-\Om^2\hi &amp;
+\cV^2\hj&amp;=-\Om \cV\hi=-\Om^2\hj &amp;
+\cV^2\hk&amp;=\cV\vZero=\vZero
+</mrow><mrow>
+\cV^3\hi&amp;=\Om \cV^2\hj=-\Om^3\hj &amp;
+\cV^3\hj&amp;=-\Om \cV^2\hi=\Om^3\hi &amp;
+\cV^3\hk&amp;=\cV^2\vZero=\vZero
+</mrow><mrow>
+\cV^4\hi&amp;=\Om \cV^3\hj=\Om^4\hi &amp;
+\cV^4\hj&amp;=-\Om \cV^3\hi=\Om^4\hj &amp;
+\cV^4\hk&amp;=\cV^3\vZero=\vZero
+</mrow>
+</md>
+and so on.
+For all odd <m>n\ge 1</m>,
+<me>
+\cV^n\hi=(-1)^{(n-1)/2}\Om^n\hj \qquad
+\cV^n\hj=-(-1)^{(n-1)/2}\Om^n\hi \qquad
+\cV^n\hk=\vZero
+</me>
+and all even <m>n\ge 2</m>,
+<me>
+\cV^n\hi=(-1)^{n/2}\Om^n\hi \qquad
+\cV^n\hj=(-1)^{n/2}\Om^n\hj \qquad
+\cV^n\hk=\vZero
+</me>
+Hence we can write
+<md alignment="alignat">
+<mrow>
+e^{\cV t}\hi
+   &amp;=\smsum_{n=0}^\infty \frac{1}{n!}(\cV t)^n\hi
+   &amp;&amp;=\smsum_{n\ {\rm even}}\!\! \frac{(-1)^{n/2}}{n!}(\Om t)^n\hi
+     &amp;&amp;\ +\smsum_{n\ {\rm odd}}\! \frac{(-1)^{(n-1)/2}}{n!}(\Om t)^n\hj
+</mrow><mrow>
+  &amp;=\phantom{-}\cos(\Om t)\,\hi+\sin(\Om t)\,\hj
+</mrow><mrow>
+e^{\cV t}\hj
+   &amp;=\smsum_{n=0}^\infty \frac{1}{n!}(\cV t)^n\hj
+   &amp;&amp;=\smsum_{n\ {\rm even}}\!\! \frac{(-1)^{n/2}}{n!}(\Om t)^n\hj
+    &amp;&amp;\ -\smsum_{n\ {\rm odd}}\! \frac{(-1)^{(n-1)/2}}{n!}(\Om t)^n\hi
+</mrow><mrow>
+  &amp;=-\sin(\Om t)\,\hi+\cos(\Om t)\,\hj
+</mrow><mrow>
+e^{\cV t}\hk
+   &amp;=\smsum_{n=0}^\infty \frac{1}{n!}(\cV t)^n\hk
+   &amp;&amp;=\hk
+</mrow>
+</md>
+So <m>e^{\cV t}</m> is rotation by an angle <m>\Om t</m> about the axis <m>\hk</m>.
+</p>
+
+</example>
+
+
+<example xml:id="eg_flowRotC">
+<title>Example <xref ref="eg_flowRotB"/>,  continued.</title>
+
+<p>Whether or not the matrix <m>\cV</m> defined in (M) is antisymmetric,
+the related matrix with entries
+<me>
+A_{i,j}=\half\big(\cV_{i,j}-\cV_{j,i}\big)
+</me>
+is.  When <m>\cV</m> is antisymmetric, <m>A</m> and <m>\cV</m> coincide. The matrix <m>A</m>
+is (to write it out explicitly)
+<me>
+A\!=\!\frac{1}{2}\!\!\left[\begin{matrix}0 &amp;
+                        \frac{\partial v_1}{\partial x_2}\big(\vx_0,t_0\big)
+                   \!-\!\frac{\partial v_2}{\partial x_1}\big(\vx_0,t_0\big)&amp;
+                        \frac{\partial v_1}{\partial x_3}\big(\vx_0,t_0\big)
+                  \!-\!\frac{\partial v_3}{\partial x_1}\big(\vx_0,t_0\big)\\
+                        -\frac{\partial v_1}{\partial x_2}\big(\vx_0,t_0\big)
+                   \!+\!\frac{\partial v_2}{\partial x_1}\big(\vx_0,t_0\big)&amp;
+                        0 &amp;
+                        \frac{\partial v_2}{\partial x_3}\big(\vx_0,t_0\big)
+                   \!-\!\frac{\partial v_3}{\partial x_2}\big(\vx_0,t_0\big)\\
+                       -\frac{\partial v_1}{\partial x_3}\big(\vx_0,t_0\big)
+                    \!+\!\frac{\partial v_3}{\partial x_1}\big(\vx_0,t_0\big)&amp;
+                       -\frac{\partial v_2}{\partial x_3}\big(\vx_0,t_0\big)
+                    \!+\!\frac{\partial v_3}{\partial x_2}\big(\vx_0,t_0\big)&amp;
+                     0\end{matrix}\right]
+</me>
+Comparing this with (R), we see that
+<me>
+\Om \hk=\half\nabla\times \vv\big(\vx_0,t_0\big)
+</me>
+So, at least when the matrix <m>\cV</m> defined in (M) is antisymmetric,
+our tiny cube rotates about the axis with
+<m>\nabla\times \vv\big(\vx_0,t_0\big)</m> at rate
+<m>\half\big|\nabla\times \vv\big(\vx_0,t_0\big)\big|</m>.
+</p>
+
+</example>
+
+<remark>
+<p>
+In the generalization, Example <xref ref="eg_flowRotB"/>, of
+Example <xref ref="eg_flowRot"/>, we only considered dimension 3. It
+is a nice exercise in eigenvalues and eigenvectors to handle general dimension.
+Here are the main facts about antisymmetric matrices with real entries
+that are used.
+<ul>
+<li>
+ All eigenvalues of antisymmetric matrices are either zero
+ or pure imaginary.
+</li>
+<li>
+For antisymmetric matrices with real entries, the nonzero
+eigenvalues come in complex conjugate pairs. The corresponding eigenvectors
+may also be chosen to be complex conjugates.
+</li>
+</ul>
+Choose as basis vectors (like <m>\hi,\ \hj,\ \hk</m> above)
+<ul>
+<li>
+the eigenvectors of eigenvalue 0 (they act like <m>\hk</m> above)
+</li>
+<li>
+the real and imaginary parts of each complex conjugate pair
+of eigenvectors (they act like <m>\hi,\ \hj</m> above)
+</li>
+</ul>
+</p>
+</remark>
+
+<p><alert>Resum\'e so far:</alert></p>
+
+<p>
+We have now seen that
+<ul>
+<li>
+when the matrix <m>\cV</m> defined in (M) is symmetric and
+the direction vectors <m>\ha{k}</m> of the cube are eigenvectors of <m>\cV</m>, then,
+at time <m>t_0</m>, the chunk of fluid is not changing orientation but is changing
+volume at instantaneous relative rate <m>\nabla\cdot\vv\big(\vx_0,t_0\big)</m>
+and
+</li>
+<li>
+when the matrix <m>\cV</m> defined in (M) is antisymmetric, then,
+at time <m>t_0</m>, the chunk of fluid is not changing shape or size but is rotating
+about the axis  <m>\nabla\times \vv\big(\vx_0,t_0\big)</m> at rate
+<m>\half\big|\nabla\times \vv\big(\vx_0,t_0\big)\big|</m>. For this reason,
+<m>\nabla\times \vv</m> is often referred to as a <q>vorticity</q> meter.
+</li>
+</ul>
+These agree with our earlier interpretations of divergence and curl.
+</p>
+
+<p><alert>The general case:</alert>
+</p>
+
+<p>
+Now consider a general matrix <m>\cV</m>. It can always be written
+as the sum
+<me>
+\cV=S+A
+</me>
+of a symmetric matrix <m>S</m> and an antisymmetric matrix <m>A</m>. Just define
+<me>
+S_{i,j}=\half\big(\cV_{i,j}+\cV_{j,i}\big)\qquad
+A_{i,j}=\half\big(\cV_{i,j}-\cV_{j,i}\big)
+</me>
+As we have already observed, the solution of
+<me>
+\vb'(t)=\cV\vb(t)\quad \vb(0)=\ve
+</me>
+is
+<me>
+\vb(t)=e^{\cV t}\ve=e^{(A+S) t}\ve
+</me>
+If <m>S</m> and <m>A</m> were ordinary numbers, we would have <m>e^{(A+S) t}=e^{At}e^{St}</m>.
+But for matrices this need not be the case, unless <m>S</m> and <m>A</m> happen
+to commute
+<fn>By definition, the matrices <m>S</m> and <m>A</m> commute when <m>AS=SA</m>.
+</fn>. For arbitrary matrices, it is still true that
+<me>
+e^{(A+S) t}=\lim_{n\rightarrow\infty }\Big[e^{At/n}e^{St/n}\Big]^n
+</me>
+This is called the Lie
+<fn>This formula is named after the Norwegian mathematician Marius Sophus Lie (1842<ndash/>1899). In 1870, he was arrested and held in prison in France for a month, because he was suspected of being a German spy. His mathematics notes were thought to be top secret coded messages.
+</fn>
+product formula.
+<!-- \intremark{The Lie product formula is proven in Reed and Simon, Volume I, Theorem VIII.29.} -->
+It shows that our tiny chunk of fluid mixes together the behaviours of <m>A</m>
+and <m>S</m>, scaling a bit, then rotating a bit, then scaling a bit and so
+on.
+</p>
+
+<example xml:id="eg_flowGen"><title><m>\ \vv(x,y)= 2y\hi.</m></title>
+
+<p>In this example
+<me>
+\cV=\left[\begin{matrix}0&amp;2\\ 0&amp;0\end{matrix}\right]=S+A\qquad{\rm with}\qquad
+S=\left[\begin{matrix}0&amp;1\\ 1&amp;0\end{matrix}\right]\qquad
+A=\left[\begin{matrix}0&amp;1\\ -1&amp;0\end{matrix}\right]
+</me>
+The solution to the full flow
+<me>
+\vb'(t)=\cV\vb(t)\quad
+\vb(0)= \left[\begin{matrix}\be_1 \\ \be_2\end{matrix}\right]
+\quad\text{or equivalently}\quad
+\begin{matrix}b_1'(t)=2b_2(t) &amp; b_1(0)=\be_1\\
+        b_2'(t)=0 &amp; b_2(0)=\be_2\end{matrix}
+</me>
+is
+<me>
+\begin{matrix}b_1(t)=\be_1+2\be_2 t\\
+        b_2(t)=\be_2\end{matrix}
+\quad\text{or equivalently}\quad
+\vb(t)=\left[\begin{matrix}1&amp; 2t\\ 0&amp;1\end{matrix}\right]\vb(0)
+</me>
+</p>
+
+<p>The solution to  the <m>S</m> part of the flow
+<me>
+\vb'(t)=S\vb(t)\quad
+\vb(0)=\left[\begin{matrix}\be_1 \\ \be_2\end{matrix}\right]
+\quad\text{or equivalently}\quad
+\begin{matrix}b_1'(t)=b_2(t) &amp; b_1(0)=\be_1\\
+        b_2'(t)=b_1(t) &amp; b_2(0)=\be_2\end{matrix}
+</me>
+is
+<fn>Recall that <m>\sinh t = \frac{1}{2}\big(e^t-e^{-t}\big)</m>
+and <m>\cosh t = \frac{1}{2}\big(e^t+e^{-t}\big)</m>.</fn>
+<me>
+\begin{matrix}b_1(t)=\be_1\cosh t+\be_2\sinh t\\
+        b_2(t)=\be_1\sinh t+\be_2\cosh t\end{matrix}
+\quad\text{or equivalently}\quad
+\vb(t)=\left[
+  \begin{matrix}\cosh t&amp; \sinh t\\ \sinh t&amp;\cosh t\end{matrix}
+  \right]\vb(0)
+</me>
+The eigenvectors of <m>S</m> are
+<me>
+\ha{1}=\frac{1}{\sqrt{2}}\left[\begin{matrix}1\\ 1\end{matrix}\right]\qquad
+\ha{2}=\frac{1}{\sqrt{2}}\left[\begin{matrix}1\\ -1\end{matrix}\right]
+</me>
+The corresponding eigenvalues are <m>+1</m> and <m>-1</m>. The eigenvectors obey
+<me>
+e^{St}\ha{1}=\left[\begin{matrix}\cosh t&amp; \sinh t\\ \sinh t&amp;\cosh t\end{matrix}\right]\ha{1}
+=e^t\ha{1}\qquad
+e^{St}\ha{2}=\left[\begin{matrix}\cosh t&amp; \sinh t\\ \sinh t&amp;\cosh t\end{matrix}\right]\ha{2}
+=e^{-t}\ha{2}
+</me>
+Under the <m>S</m> part of the flow <m>\ha{1}</m> scales by a factor of <m>e^t</m>, which
+is bigger than one for <m>t \gt 0</m> and <m>\ha{2}</m> scales by a factor of <m>e^{-t}</m>, which
+is smaller than one for <m>t \gt 0</m>.
+</p>
+
+<p>The solution to  the <m>A</m> part of the flow
+<me>
+\vb'(t)=A\vb(t)\quad
+    \vb(0)=\left[\begin{matrix}\be_1 \\ \be_2\end{matrix}\right]
+\quad\text{or equivalently}\quad
+\begin{matrix}b_1'(t)=b_2(t) &amp; b_1(0)=\be_1\\
+        b_2'(t)=-b_1(t) &amp; b_2(0)=\be_2\end{matrix}
+</me>
+is
+<me>
+\begin{matrix}b_1(t)=\be_1\cos t+\be_2\sin t\\
+        b_2(t)=-\be_1\sin t+\be_2\cos t\end{matrix}
+\quad\text{or equivalently}\quad
+\vb(t)=\left[
+  \begin{matrix}\cos t&amp; \sin t\\ -\sin t&amp;\cos t\end{matrix}\right]\vb(0)
+</me>
+The <m>A</m> part of the flow rotates clockwise about  the origin at one radian
+per unit time.
+</p>
+
+<p>Here are some figures to help us visualize this. The first shows
+a square with edges <m>\ha{1},\ \ha{2}</m>
+and its image under the full flow <m>t=0.4</m> later.  Under this full flow
+the vector <m>\ha{k}\rightarrow e^{0.4\cV}\ha{k}</m>. The second shows its image
+under <m>0.4</m> time units of the <m>S</m>-flow (that is, <m>\ha{k}\rightarrow e^{0.4S}\ha{k}</m>).
+ The third applies <m>0.4</m> time units of the <m>A</m>-flow to the shaded rectangle
+of the middle figure. So the lightly shaded rectangle of the third figure
+has edges <m>e^{0.4S}\ha{k}</m> and the darkly shaded rectangle
+has edges <m>e^{0.4A}e^{0.4S}\ha{k}</m>.
+</p>
+
+<sidebyside width="32%">
+<image source="figs/square3.pdf"/>
+<image source="figs/square4.pdf"/>
+<image source="figs/square5.pdf"/>
+</sidebyside>
+
+<p>
+Of course <m>e^{0.4A}e^{0.4S}\ha{k}</m> is not a very good approximation
+for <m>e^{0.4(A+S)}\ha{k}</m>. It is much better to take
+<m>\big[e^{0.4A/n}e^{0.4S/n}\big]^{n}\ha{k}</m> with <m>n</m> large.
+Each of the following figures shows two parallelepipeds. In each,
+the shaded region has edges
+<m>e^{0.4\cV}\ha{k}=e^{0.4(A+S)}\ha{k}</m> and the outlined region has edges
+<m>\big[e^{0.4A/n}e^{0.4S/n}\big]^{n}\ha{k}</m>.
+</p>
+
+<sidebyside width="32%">
+<image source="figs/square6.pdf"/>
+<image source="figs/square7.pdf"/>
+<image source="figs/square8.pdf"/>
+</sidebyside>
+
+<p>
+So we can see that, as <m>n</m> increases, <m>\big[e^{0.4A/n}e^{0.4S/n}\big]^{n}\ha{k}</m>
+becomes a better and better approximation to <m>e^{0.4(A+S)}\ha{k}</m>.
+</p>
+
+</example>
 
 
 <!-- <xi:include href="../problems/prob_s4.6.ptx" /> -->

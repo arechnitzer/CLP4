@@ -1,12 +1,789 @@
 <?xml version="1.0" encoding="UTF-8" ?>
-<section xmlns:xi="http://www.w3.org/2001/XInclude" xml:id="">
+<section xmlns:xi="http://www.w3.org/2001/XInclude" xml:id="sec_GreenThm">
 
 <!-- Copyright 2018-2020 Joel Feldman, Andrew Rechnitzer and Elyse Yeager -->
 <!-- This work is licensed under the Creative Commons Attribution-NonCommercial-ShareAlike 4.0 International License-->
 <!-- https://creativecommons.org/licenses/by-nc-sa/4.0 -->
 
-<title></title>
+<title>Green's Theorem</title>
 
+
+<p>Our next variant of the fundamental theorem of calculus is
+Green's
+<fn>George Green (1793<ndash/>1841) was a British
+mathematical-physicist. He spent much of the early part of his life
+working in his father's bakery and grain mill. He was finally admitted
+as an undergraduate to Cambridge in 1832, aged nearly forty.</fn>
+ theorem, which
+relates an integral, of a derivative of a (vector-valued) function,
+over a region  in the <m>xy</m>-plane, with an integral of the function
+over the curve bounding the region.
+First we need to define some properties of curves.
+</p>
+
+<definition xml:id="def_Green">
+<statement>
+<p>
+<ol label="a">
+<li>
+A curve <m>C</m> with parametrization <m>\vr(t)</m>, <m>a\le t\le b</m>, is said to be
+<term>closed</term> if <m>\vr(a)=\vr(b)</m>.
+</li>
+<li>
+A curve <m>C</m> is said to be <term>simple</term> if it does not cross itself.
+More precisely, if <m>\vr(t)</m>, <m>a\le t\le b</m>, is a parametrization of the
+curve and if <m>a\le t_1,t_2\le b</m> obey <m>t_1\ne t_2</m> and <m>\{t_1,t_2\}
+\ne\{a,b\}</m>, then <m>\vr(t_1)\ne \vr(t_2)</m>. That is, if <m>\vr(t_1)=\vr(t_2)</m>,
+then either <m>t_1=t_2</m> or <m>t_1=a</m>, <m>t_2=b</m>, or <m>t_1=b</m>, <m>t_2=a</m>.
+</li>
+<li><p>
+A curve <m>C</m> is <term>piecewise smooth</term> if it has a parametrization
+<m>\vr(t)</m> which
+<ul>
+<li>
+is continuous and which
+</li>
+<li>
+is differentiable except possibly at finitely many points with
+</li>
+<li>
+the derivative being continuous and nonzero except possibly at finitely
+many points.
+</li>
+</ul>
+</p></li>
+</ol>
+</p></statement>
+</definition>
+
+<p>
+Here are sketches of some examples.
+</p>
+
+<sidebyside width="22%">
+<image source="figs/curve1"/>
+    <image source="figs/curve2"/>
+    <image source="figs/curve3"/>
+    <image source="figs/astroid5"/>
+</sidebyside>
+
+<p>
+And here is Green's theorem.
+</p>
+
+<theorem xml:id="thm_Green"><title>Green's Theorem</title>
+<statement><p>
+Let
+<ul>
+<li>
+<m>R</m> be a finite region in the <m>xy</m>-plane,
+</li>
+<li><p>
+the boundary, <m>C</m>, of <m>R</m> consist of a finite number of piecewise smooth, simple closed curves
+<ul>
+<li>
+     that are oriented (i.e. arrows are put on <m>C</m>) consistently
+     with <m>R</m> in the sense that if you walk along
+     <m>C</m> in the direction of the arrows, then <m>R</m> is on your left
+</li>
+</ul>
+</p>
+
+<sidebyside>
+<image source="figs/greens1"/>
+<image source="figs/dcircleE"/>
+</sidebyside>
+</li>
+<li>
+<m>F_1(x,y)</m> and <m>F_2(x,y)</m> have continuous first partial derivatives
+at <em>every</em> point of <m>R</m>.
+</li>
+</ul>
+Then
+<me>
+\oint_{C} \big[F_1(x,y)\,\dee{x} +F_2(x,y)\,\dee{y}\big]
+ =\dblInt_{R}\Big(\frac{\partial F_2}{\partial x}
+                - \frac{\partial F_1}{\partial y}\Big)\ \dee{x}\dee{y}
+</me>
+</p></statement>
+</theorem>
+
+
+<warning xml:id="warn_Green">
+<p>
+Note that in Theorem <xref ref="thm_Green"/> we are assuming that
+<m>F_1</m> and <m>F_2</m> have continuous first partial derivatives
+at <em>every</em> point of <m>R</m>.
+If that is not the case, for example
+because <m>F_1</m> or <m>F_2</m> is not defined on all of <m>R</m>, then
+the conclusion of Green's theorem can fail. An example is
+<m>F_1=-\frac{y}{x^2+y^2}</m>, <m>F_2=\frac{x}{x^2+y^2}</m>, <m>R=\Set{(x,y)}{x^2+y^2\le 1}</m>.
+See Examples<nbsp/><xref ref="eg_greenC"/> and <xref ref="eg_greenCC"/>.
+</p>
+</warning>
+
+<p>
+Here are three notational remarks before we start the proof.
+<ul>
+<li>
+One way to remember the integrand on the right hand side is to write it
+as <m>(\vnabla\times\vF)\cdot\hk</m>.
+</li>
+<li>
+Many people use <m>M</m> instead of <m>F_1</m> and <m>N</m> instead of <m>F_2</m>.
+Then Green's theorem becomes
+<m>\oint_{C} \big[M(x,y)\,\dee{x} +N(x,y)\,\dee{y}\big]
+ =\dblInt_{R}\Big(\frac{\partial N}{\partial x}
+                - \frac{\partial M}{\partial y}\Big)\ \dee{x}\dee{y}</m>
+</li>
+<li>  The symbol <m>\oint_C</m> is just an alternate notation for <m>\int_C</m>
+that is sometimes used when <m>C</m> is a closed curve.
+See Notation <xref ref="not_workIntegral"/>.
+</li>
+</ul>
+</p>
+
+<proof>
+<p>
+We prove the result by reformulating it as a divergence theorem statement.
+To that end, we define
+<md>
+<mrow>
+V&amp;=\Set{(x,y,z)}{ (x,y)\in R,\ \ 0\le z\le 1}
+</mrow><mrow>
+\vG(x,y,z) &amp;= F_2(x,y)\,\hi -F_1(x,y)\,\hj
+</mrow>
+</md>
+Notice that <m>V</m> is exactly the volume obtained by expanding <m>R</m> vertically
+upward by one unit.
+</p>
+
+<sidebyside>
+<image source="figs/greens2"/>
+</sidebyside>
+
+<p>
+The definition of <m>\vG</m> does <em>not</em> contain a typo <mdash/> the <m>x</m>-component
+of <m>\vG</m> really is <m>F_2</m> and the <m>y</m>-component of <m>\vG</m> really is <m>-F_1</m>.
+(More or less the reverse of what you would normally write down.)
+</p>
+
+<p>These definitions have been rigged so that the divergence theorem
+applied to <m>\vG</m> and <m>V</m>, namely
+<md>
+<mrow>
+\dblInt_{\partial V} \vG\cdot\hn\,\dee{S}
+&amp;=\tripInt_V\vnabla\cdot\vG\ \dee{V}
+</mrow>
+</md>
+gives us exactly Green's theorem.
+</p>
+
+<p>Since <m>\vnabla\cdot\vG = \frac{\partial F_2}{\partial x}
+                - \frac{\partial F_1}{\partial y}</m>,  the right hand side is just
+<md>
+<mrow>
+\tripInt_V\vnabla\cdot\vG\ \dee{V}
+&amp;= \dblInt_{R}\dee{x}\dee{y}\int_0^1\dee{z} \ \vnabla\cdot\vG
+</mrow><mrow>
+&amp;= \dblInt_{R}\dee{x}\dee{y}\int_0^1\dee{z} \
+        \Big(\frac{\partial F_2}{\partial x}(x,y)
+                - \frac{\partial F_1}{\partial y}(x,y)\Big)
+</mrow><mrow>
+&amp;= \dblInt_{R}\dee{x}\dee{y}\
+        \Big(\frac{\partial F_2}{\partial x}(x,y)
+                - \frac{\partial F_1}{\partial y}(x,y)\Big)
+</mrow>
+</md>
+because the integrand is independent of <m>z</m>. This is exactly the right
+hand side of Green's theorem.
+</p>
+
+<p>Now for the left hand side. The boundary, <m>\partial V</m>, of <m>V</m> is the union
+of the (flat) bottom, the (flat) top and the (curved) side.
+The outward unit normal on the (horizontal, flat) top is <m>+\hk</m> and
+the outward unit normal on the (horizontal, flat) bottom is <m>-\hk</m>  so that
+<md>
+<mrow>
+\dblInt_{\partial V} \vG\cdot\hn\,\dee{S}
+&amp;=\dblInt_{\text{top}} \vG\cdot\hk\,\dee{S}
+   +\dblInt_{\text{bottom}} \vG\cdot(-\hk)\,\dee{S}
+   +\dblInt_{\text{side}} \vG\cdot\hn\,\dee{S}
+</mrow><mrow>
+&amp;=\dblInt_{\text{side}} \vG\cdot\hn\,\dee{S}
+</mrow>
+</md>
+We have used the fact that the <m>\hk</m> component of <m>\vG</m> is exactly zero
+to discard the integrals over the top and bottom of <m>\partial V</m>.
+To evaluate the integral over the side, we'll parametrize the side. Suppose that
+<m>\vr(t)=x(t)\hi +y(t)\hj</m>, <m>a\le t\le b</m>,
+is a parametrization of <m>C</m>, with the arrow in the figure above giving the
+direction of increasing <m>t</m>. Then we can use
+<md>
+<mrow>
+\vR(t,z)  = \vr(t) +z\hk
+          = x(t)\hi +y(t)\hj +z\hk \qquad a\le t\le b,\ 0\le z\le 1
+</mrow>
+</md>
+as a parametrization of the side. We'll use <xref ref="eq_SUdSparam"/> to determine
+<m>\hn\,\dee{S}</m> for the side. Since
+<md>
+<mrow>
+\frac{\partial\vR}{\partial t}(t,z) &amp; = x'(t)\hi +y'(t)\hj
+</mrow><mrow>
+\frac{\partial\vR}{\partial z}(t,z) &amp; = \hk
+</mrow>
+</md>
+ gives
+<md>
+<mrow>
+\hn\,\dee{S} &amp;= \frac{\partial\vR}{\partial t}(t,z)\times
+               \frac{\partial\vR}{\partial z}(t,z)\ \dee{t}\dee{z}
+</mrow><mrow>
+&amp;= \big(x'(t)\hi +y'(t)\hj\big)\times \hk\ \dee{t}\dee{z}
+</mrow><mrow>
+&amp;= \big(-x'(t)\hj +y'(t)\hi\big)\ \dee{t}\dee{z}
+</mrow>
+</md>
+Note that with this choice of <m>\pm</m> sign (that is,
+<m>\frac{\partial\vR}{\partial t}\times
+               \frac{\partial\vR}{\partial z}\ \dee{t}\dee{z}</m>
+rather than
+<m>-\frac{\partial\vR}{\partial t}\times
+               \frac{\partial\vR}{\partial z}\ \dee{t}\dee{z}</m>), the vector
+<m>\hn</m> really is the <em>outward</em> pointing normal, as we see from the sketch
+</p>
+
+<sidebyside>
+<image source="figs/greens3"/>
+</sidebyside>
+
+<p>
+We can now compute the surface integral directly.
+<md>
+<mrow>
+\dblInt_{\partial V} \vG\cdot\hn\,\dee{S}
+&amp;=\dblInt_{\text{side}} \vG\cdot\hn\,\dee{S}
+</mrow><mrow>
+&amp;=\int_a^b\dee{t}\int_0^1\dee{z}\ \vG\big(\vR(t,z)\big)\cdot
+          \big(-x'(t)\hj +y'(t)\hi\big)
+
+</mrow><mrow>
+&amp;=\int_a^b\dee{t}\int_0^1\dee{z}\
+         \big(F_2(x(t),y(t))\,\hi -F_1(x(t),y(t))\,\hj\big)\cdot
+          \big(-x'(t)\hj +y'(t)\hi\big)
+</mrow><mrow>
+&amp;=\int_a^b\dee{t}\
+         \big[F_2(x(t),y(t))\,y'(t) +F_1(x(t),y(t))\,x'(t)\big]
+
+</mrow><mrow>
+&amp;\hskip2in \text{since the integrand is independent of } z
+
+</mrow><mrow>
+&amp;=\oint_{C} \big[F_1(x,y)\,\dee{x} +F_2(x,y)\,\dee{y}\big]
+</mrow>
+</md>
+This is exactly the left
+hand side of Green's theorem.
+</p></proof>
+
+<example xml:id="eg_greenA">
+<statement>
+<p>
+Evaluate
+<me>
+\oint_C\big[(x-xy)\,\dee{x} + (y^3+1)\,\dee{y}
+</me>
+where <m>C</m> is the curve given in the figure
+</p>
+<sidebyside>
+<image source="figs/greensSquare"/>
+</sidebyside>
+
+</statement>
+
+<solution>
+<p>
+Let <m>R=\Set{(x,y)}{1\le x\le 2,\ 0\le y\le 1}</m>. By Green's theorem
+<md>
+<mrow>
+\oint_C\big[(x-xy)\,\dee{x} + (y^3+1)\,\dee{y}
+&amp;=\dblInt_R\Big[\frac{\partial }{\partial x}(y^3+1)
+                - \frac{\partial }{\partial y}(x-xy)\Big]\dee{x}\dee{y}
+</mrow><mrow>
+&amp;=\int_1^2\dee{x}\int_0^1\dee{y}\ x
+=\frac{x^2}{2}\bigg|_1^2
+=\frac{3}{2}
+</mrow>
+</md>
+</p>
+</solution>
+</example>
+
+
+<p>Here is a simple corollary of Green's theorem that tells how to compute the area enclosed by a curve in the <m>xy</m>-plane.
+</p>
+
+<corollary xml:id="cor_greens">
+<statement><p>
+Let
+<ul>
+<li>
+<m>R</m> be a finite region in the <m>xy</m>-plane whose boundary
+</li>
+<li>
+<m>C</m> consists of a finite number of piecewise smooth, simple closed curves.
+</li>
+<li>
+Orient <m>C</m> (i.e. put arrows on <m>C</m>) so that if you walk along
+<m>C</m> in the direction of the arrows, then <m>R</m> is on your left.
+</li>
+</ul>
+Then
+<me>
+\text{Area}(R)
+ =\oint_C x\dee{y}
+ =-\oint_C y\dee{x}
+ =\frac{1}{2}\oint_C \big[x\dee{y} -y\dee{x}\big]
+</me>
+</p></statement>
+</corollary>
+
+<proof>
+<p>
+This is just Green's theorem applied first with
+<m>\vF = x\,\hj</m>, then with <m>\vF= -y\,\hi</m> and finally with
+<m>\vF = \frac{1}{2}\big[-y\,\hi +x\,\hj\big]</m>. For all three of these
+<m>\vF</m>'s,
+<me>
+\frac{\partial F_2}{\partial x}
+                - \frac{\partial F_1}{\partial y} = 1
+</me>
+so that Green's theorem gives
+<me>
+\oint_{C} \big[F_1(x,y)\,\dee{x} +F_2(x,y)\,\dee{y}\big]
+ =\dblInt_{R}\Big(\frac{\partial F_2}{\partial x}
+                - \frac{\partial F_1}{\partial y}\Big)\ \dee{x}\dee{y}
+ =\dblInt_{R}\ \dee{x}\dee{y}
+ = \text{Area}(R)
+</me>
+</p>
+
+</proof>
+
+<example xml:id="eg_greenB">
+<p>
+In this example we will use Green's theorem to compute the area enclosed
+by the astroid <m>x^{2/3} + y^{2/3} = a^{2/3}</m>.
+</p>
+
+<sidebyside>
+<image source="figs/astroid6"/>
+</sidebyside>
+
+<p>
+In Example <xref ref="eg_astroid"/> we found the parametrization
+<me>
+\vr(t) = x(t)\,\hi + y(t)\,\hj = a\cos^3t\hi + a\sin^3 t\hj
+\qquad 0\le t\le 2\pi
+</me>
+for the astroid. So, by Corollary <xref ref="cor_greens"/>,
+<md>
+<mrow>
+\text{Area}
+&amp;=\frac{1}{2}\oint_C \big[x\dee{y} -y\dee{x}\big]
+ =\frac{1}{2}\int_0^{2\pi} \big[x(t)y'(t) -y(t)x'(t)\big]\dee{t}
+</mrow><mrow>
+&amp;=\frac{3a^2}{2}\int_0^{2\pi} \big[\cos^3t\sin^2t\cos t
+                                 +\sin^3t\cos^2 t\sin t\big]\dee{t}
+</mrow><mrow>
+&amp;=\frac{3a^2}{2}\int_0^{2\pi} \cos^2t\sin^2t\big[\cos^2t
+                                 +\sin^2t\big]\dee{t}
+</mrow><mrow>
+&amp;=\frac{3a^2}{2}\int_0^{2\pi} \cos^2t\sin^2t\ \dee{t}
+</mrow><mrow>
+&amp;=\frac{3a^2}{8}\int_0^{2\pi} \sin^2(2t)\ \dee{t}
+=\frac{3a^2}{16}\int_0^{2\pi} [1-\cos(4t)]\ \dee{t}
+</mrow><mrow>
+&amp;=\frac{3}{8}a^2\pi
+</mrow>
+</md>
+</p></example>
+
+
+<example xml:id="eg_greenC"><title>Trick Question</title>
+<statement>
+<p>
+Evaluate
+<me>
+\oint_C\vB\cdot\dee{\vr}
+</me>
+where
+<me>
+\vB = \frac{-y\hi+x\hj}{x^2+y^2}
+</me>
+and <m>C</m> is the curve
+<md>
+<mrow>
+x(t) &amp;= \sin(\cos t)
+</mrow><mrow>
+y(t) &amp;= \sin(\sin t)
+</mrow><mrow>
+z(t) &amp;= 0
+</mrow>
+</md>
+with <m>0\le t\le 2\pi</m>.
+</p>
+</statement>
+
+<solution>
+<p>
+First let's think about the curve <m>C</m>. If the curve were just
+<m>X(t)=\cos t</m>, <m>Y(t)=\sin t</m>, <m>Z(t)=0</m>, it would be the unit circle
+centred on the origin in the <m>xy</m>-plane, traversed counterclockwise.
+For <m>-\frac{\pi}{2}\le u\le \frac{\pi}{2}</m>, the function <m>\sin u</m>
+increases monotonically with  <m>u</m> and is of the same sign as <m>u</m> so that,
+since <m>|\sin t|\le 1 \lt \frac{\pi}{2}</m>,
+<ul>
+<li>
+<m>x(t) = \sin\big(\cos t)</m> has the same sign as <m>X(t)=\cos t</m> and is increasing
+at precisely the same <m>t</m>'s as is <m>X(t)</m>
+</li>
+<li>
+<m>y(t) = \sin\big(\sin t)</m> has the same sign as <m>Y(t)=\sin t</m> and is increasing
+at precisely the same <m>t</m>'s as is <m>Y(t)</m>
+</li>
+</ul>
+So the extra sine in our
+parametrization of <m>C</m> just distorts the circle, straightening the sides a little
+as depicted here.
+</p>
+
+<sidebyside>
+<image source="figs/dcircleA"/>
+</sidebyside>
+
+<p>
+It looks like our problem is a straightforward Green's theorem problem
+like Example<nbsp/><xref ref="eg_greenA"/>. Let's just try using the strategy of
+Example <xref ref="eg_greenA"/>. Because
+<md>
+<mrow>
+\frac{\partial \vB_2}{\partial x} - \frac{\partial \vB_1}{\partial y}
+&amp;=\frac{\partial }{\partial x}\frac{x}{x^2+y^2}
+                - \frac{\partial }{\partial y}\frac{-y}{x^2+y^2}
+</mrow><mrow>
+&amp;= \frac{1}{x^2+y^2} - \frac{2x^2}{{(x^2+y^2)}^2}
+  +\frac{1}{x^2+y^2} - \frac{2y^2}{{(x^2+y^2)}^2}
+</mrow><mrow>
+&amp;= \frac{(x^2+y^2) - 2x^2 + (x^2+y^2) - 2y^2}{{(x^2+y^2)}^2}
+</mrow><mrow>
+&amp;=0
+</mrow>
+</md>
+it looks like Green's theorem gives us, trivially,
+<me>
+\oint_C\vB\cdot\dee{\vr}
+=\oint_C\big[\vB_1\,\dee{x} +\vB_2\,\dee{y}\big]
+= \dblInt_{R}\Big(\frac{\partial B_2}{\partial x}
+                - \frac{\partial B_1}{\partial y}\Big)\ \dee{x}\dee{y}
+=0
+</me>
+where <m>R</m> is the region inside our curve <m>C</m>.
+</p>
+
+<p>That was easy <mdash/> but it's also very <alert>wrong</alert>!
+Our next steps are to
+<ul>
+<li>
+verify that <m>\oint_C\vB\cdot\dee{\vr}\ne 0</m>, and
+</li>
+<li>
+explain why we got the wrong answer, and
+</li>
+<li>
+modify our computation so as to give the correct answer.
+We'll do this in Example <xref ref="eg_greenCC"/>.
+</li>
+</ul>
+</p>
+
+<p>
+<em>Verification that <m>\oint_C\vB\cdot\dee{\vr}\ne 0</m>:}</em>
+</p>
+
+<p>
+Since
+<md>
+<mrow>
+x'(t) &amp;= -\cos(\cos t)\ \sin t
+</mrow><mrow>
+y'(t) &amp;= \cos(\sin t)\ \cos t
+</mrow><mrow>
+z'(t) &amp;= 0
+</mrow>
+</md>
+our integral is
+<md>
+<mrow>
+\oint_C\vB\cdot\dee{\vr}
+&amp;=\oint_C\big[\vB_1\,\dee{x} +\vB_2\,\dee{y}\big]
+=\int_0^{2\pi}\big[\vB_1\big(x(t),y(t)\big)\,x'(t)
+            +\vB_2\,\big(x(t),y(t)\big)\,y'(t)\big]\dee{t}
+
+</mrow><mrow>
+&amp;=\int_0^{2\pi}
+            \frac{\sin(\sin t)\,\cos(\cos t)\,\sin t
+                  +\sin(\cos t)\,\cos(\sin t)\,\cos t}
+                  {\sin^2(\cos t) +\sin^2(\sin t)}
+            \dee{t}
+</mrow>
+</md>
+This is a very ugly looking integral
+<fn>Indeed!</fn>.
+But even if we can't evaluate the
+integral, we can see that the integrand is strictly positive,
+and that forces <m>\oint_C\vB\cdot\vr \gt 0</m>. Because
+<me>
+0\le|\sin t|,|\cos t|\le 1 \lt \frac{\pi}{2}
+</me>
+<ul>
+<li>
+<m>\cos(\cos t) \gt 0</m>, and <m>\sin(\sin t)</m> has the same sign as <m>\sin t</m>,
+and <m>\sin(\sin t)</m> is zero if and only if <m>\sin t=0</m>.
+So the first term in the numerator,
+<me>
+\cos(\cos t)\,\sin(\sin t)\,\sin t\ge 0
+</me>
+and is zero if and only if <m>\sin t=0</m>
+</li>
+<li>
+<m>\cos(\sin t) \gt 0</m>, and <m>\sin(\cos t)</m> has the same sign as <m>\cos t</m>, and
+<m>\sin(\cos t)</m> is zero if and only if <m>\cos t=0</m>. So the second term
+in the numerator,
+<me>
+\cos(\sin t)\,\sin(\cos t)\,\cos t\ge 0
+</me>
+and is zero
+if and only if <m>\cos t=0</m>.
+</li>
+<li>
+There is no <m>t</m> for which both <m>\sin t</m> and <m>\cos t</m> are simultaneously
+zero. So the whole numerator
+<me>
+\sin(\sin t)\,\cos(\cos t)\,\sin t
+                  +\sin(\cos t)\,\cos(\sin t)\,\cos t \gt 0
+</me>
+is strictly positive.
+</li>
+</ul>
+Since the integrand is strictly positive, the integral is strictly positive.
+</p>
+
+<p><em>Why we got the wrong answer:</em>
+</p>
+
+<p>
+In our initial and wrong calculation above, we assumed that
+<m>\frac{\partial B_2}{\partial x}(x,y)
+                - \frac{\partial B_1}{\partial y}(x,y)=0</m>
+at all points <m>(x,y)</m> of the region <m>R</m> inside <m>C</m>. That's not true.
+While it is true for most points, it is not true for  <em>all</em> points.
+The vector field <m>\vB(x,y)</m> is not defined at <m>(x,y)=(0,0)</m>.
+So <m>\frac{\partial B_2}{\partial x}(x,y)
+                - \frac{\partial B_1}{\partial y}(x,y)</m>
+is also not defined at <m>(x,y)=(0,0)</m>. That's enough to invalidate
+Green's theorem. Read the statement of Theorem <xref ref="thm_Green"/> again carefully.
+</p>
+</solution>
+</example>
+
+<example xml:id="eg_greenCC"><title>Example <xref ref="eg_greenC"/>, again.</title>
+<statement>
+<p>
+Evaluate
+<me>
+\oint_C\vB\cdot\dee{\vr}
+</me>
+where
+<me>
+\vB = \frac{-y\hi+x\hj}{x^2+y^2}
+</me>
+and <m>C</m> is the curve
+<md>
+<mrow>
+x(t) &amp;= \sin(\cos t)
+</mrow><mrow>
+y(t) &amp;= \sin(\sin t)
+</mrow><mrow>
+z(t) &amp;= 0
+</mrow>
+</md>
+with <m>0\le t\le 2\pi</m>.
+</p>
+</statement>
+
+<solution>
+<p>
+This is the same integral that we computed incorrectly in Example
+ <xref ref="eg_greenC"/>.
+We'll use two ingredients to compute <m>\oint_C\vB\cdot\dee{\vr}</m>
+correctly.
+</p>
+
+<p><ul>
+<li>
+Let <m>a \gt 0</m> and denote by <m>C_a</m> the clockwise oriented circle in
+the <m>xy</m>-plane that is of radius <m>a</m> and is centered on the origin.
+We can explicitly compute
+<m>\oint_{C_a}\vB\cdot\dee{\vr}</m>. To do so just parametrize
+<m>C_a</m> by <m>x(t)=a\cos t</m>, <m>y(t) = a\sin t</m>, <m>z(t)=0</m>. Then
+<m>x'(t)=-a\sin t</m>, <m>y(t) = a\cos t</m> and
+<md>
+<mrow>
+\oint_{C_a}\vB\cdot\dee{\vr}
+
+&amp;=\int_0^{2\pi}\Big[\frac{-a\sin t\,\hi+a\cos t\,\hj}
+                            {a^2\cos^2t+a^2\sin^2t}\Big]
+           \cdot\big[-a\sin t\,\hi+a\cos t\,\hj\big]
+           \dee{t}
+=\int_0^{2\pi}\dee{t}=2\pi
+</mrow>
+</md>
+</li>
+<li><p>
+Pick an <m>a</m> that is small enough that <m>C_a</m> lies entirely inside <m>C</m> and
+apply Green's theorem with the region, <m>R_a</m>, that is between <m>C</m> and <m>C_a</m>.
+</p>
+
+<sidebyside>
+<image source="figs/dcircleB"/>
+</sidebyside>
+
+<p>
+The curve bounding <m>R_a</m> has two components <mdash/> <m>C</m> and <m>C_a</m>, but now <m>C_a</m>
+is oriented clockwise. (Recall that, in Green's theorem, when you walk along a boundary curve in the direction of the arrow, <m>R_a</m> has to be on your left.). Use
+<m>-C_a</m> to denote <m>C_a</m> oriented clockwise.
+<m>\frac{\partial B_2}{\partial x}(x,y)
+                - \frac{\partial B_1}{\partial y}(x,y)</m> really is zero
+at <em>all</em> points <m>(x,y)</m> of the region <m>R_a</m>. So Green's theorem gives
+<md>
+<mrow>
+0&amp;= \dblInt_{R_a}\Big(\frac{\partial B_2}{\partial x}
+                - \frac{\partial B_1}{\partial y}\Big)\ \dee{x}\dee{y}
+  = \oint_{C}\vB\cdot\dee{\vr} + \oint_{-C_a}\vB\cdot\dee{\vr}
+</mrow><mrow>
+ &amp; = \oint_{C}\vB\cdot\dee{\vr} - \oint_{C_a}\vB\cdot\dee{\vr}
+</mrow>
+</md>
+and so
+<md>
+<mrow>
+\oint_{C}\vB\cdot\dee{\vr}
+= \oint_{C_a}\vB\cdot\dee{\vr}
+=2\pi
+</mrow>
+</md>
+</p></li>
+</ul>
+</p>
+
+<!-- <p>\intremark{
+\noindent
+<em>Why Green's theorem applies to <m>R_a</m>:</em>
+</p>
+
+<p><ul>
+<li>sep1pt \parskip0pt \parsep0pt
+</li>
+<li>
+Remove from <m>R_a</m> a narrow path joining the central hole and the outside world
+as in the figure
+</p>
+
+<p><image source="figs/dcircleC"/>
+\noindent Call the resulting region <m>R_\veps</m>, when the path has width <m>\veps</m>,
+and denote by <m>C_\veps</m> the bounding curve of <m>R_\veps</m>.
+Theorem <xref ref="thm_Green"/> does apply to <m>R_\veps</m>, so
+<md>
+<mrow>
+\oint_{C_\veps}\vB\cdot\dee{\vr}
+=\dblInt_{R_\veps}\Big(\frac{\partial B_2}{\partial x}
+                - \frac{\partial B_1}{\partial y}\Big)\ \dee{x}\dee{y}
+=0
+</mrow>
+</md>
+</li>
+<li>  Now take the limit <m>\veps\rightarrow 0</m>. This gives
+<md>
+<mrow>
+\oint_{C_0}\vB\cdot\dee{\vr}
+=\lim_{\veps\rightarrow 0}\oint_{C_\veps}\vB\cdot\dee{\vr}
+</p>
+
+<p>=0
+</mrow>
+</md>
+where <m>C_0</m> is the curve in the figure
+</p>
+
+<p><image source="figs/dcircleD"/>
+\noindent
+Pick any point <m>P_0</m> on the original curve <m>C</m>. The curve <m>C_0</m>
+<ul>
+<li>sep1pt \parskip0pt \parsep0pt
+</li>
+<li>
+first
+<fn>It doesn't matter where <m>C_0</m> starts from.
+For concreteness, we can start it at the point, <m>P_0=(\sin 1,0,0)</m>, where
+the original curve <m>C</m> intersects the positive <m>x</m>-axis.</fn>
+</p>
+
+<p>follows the original curve <m>C</m> from <m>P_0</m> counterclockwise to the point <m>P_1</m>
+on the negative <m>x</m>-axis.
+</li>
+<li>
+Then it follows the negative <m>x</m>-axis towards the origin until it
+hits <m>C_a</m> at the point <m>P_2</m>.
+</li>
+<li>
+Then it circumnavigates <m>C_a</m> once clockwise, returning to <m>P_2</m>.
+</li>
+<li>
+Then it follows the negative <m>x</m>-axis away from the origin until it
+returns to <m>P_1</m>.
+</li>
+<li>
+Finally it follows <m>C</m> back to its starting point.
+</li>
+</ul>
+</li>
+<li>
+So
+<md>
+<mrow>
+0=\oint_{C_0}\vB\cdot\dee{\vr}
+&amp;=\oint_{C}\vB\cdot\dee{\vr}
+ +\oint_{\overline{P_1 P_2}}\vB\cdot\dee{\vr}
+ +\oint_{-C_a}\vB\cdot\dee{\vr}
+ +\oint_{\overline{P_2 P_1}}\vB\cdot\dee{\vr}
+</mrow><mrow>
+&amp;=\oint_{C}\vB\cdot\dee{\vr}
+ +\oint_{\overline{P_1 P_2}}\vB\cdot\dee{\vr}
+ +\oint_{-C_a}\vB\cdot\dee{\vr}
+ -\oint_{\overline{P_1 P_2}}\vB\cdot\dee{\vr}
+</mrow><mrow>
+&amp;=\oint_{C}\vB\cdot\dee{\vr}
+ +\oint_{-C_a}\vB\cdot\dee{\vr}
+</mrow>
+</md>
+as desired.
+</li>
+</ul>
+} -->
+</solution>
+</example>
 
 <!-- <xi:include href="../problems/prob_s4.3.ptx" /> -->
 
