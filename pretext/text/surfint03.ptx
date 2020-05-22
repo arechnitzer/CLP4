@@ -39,8 +39,8 @@ figure below) and a bunch of curves of constant <m>v</m> (the red curves in the
 figure below).
 </p>
 
-<sidebyside>
-<image source="figs/surfaceSlice.pdf"/>
+<sidebyside width="40%">
+<image source="figs/surfaceSlice"/>
 </sidebyside>
 
 <p>
@@ -48,8 +48,8 @@ Concentrate on any one the small pieces. Here is a greatly magnified
 sketch.
 </p>
 
-<sidebyside>
-<image source="figs/dS.pdf"/>
+<sidebyside width="40%">
+<image source="figs/dS"/>
 </sidebyside>
 
 <p>
@@ -60,7 +60,7 @@ at the slightly larger value <m>v_0+\dee{v}</m>, varying <m>u</m> and
 sketching <m>\vr(u,v_0+\dee{v})</m>. So the four intersection points in
 the figure are
 <md alignment="alignat">
-<mrow>{3}
+<mrow>
 P_2&amp;=\vr(u_0, v_0+\dee{v}) &amp;\qquad
    P_3&amp;=\vr(u_0+\dee{u}, v_0+\dee{v})
 </mrow><mrow>
@@ -90,7 +90,7 @@ Applying this three times, once with <m>\dee{U}=\dee{u}</m>, <m>\dee{V}=0</m>,
 once with <m>\dee{U}=0</m> <m>\dee{V}=\dee{v}</m>, and once with
 <m>\dee{U}=\dee{u}</m>, <m>\dee{V}=\dee{v}</m>,
 <md alignment="alignat">
-<mrow>{3}
+<mrow>
 P_0&amp;=\vr(u_0\,,\,v_0)
 </mrow><mrow>
 P_1&amp;=\vr(u_0+\dee{u}, v_0)
@@ -119,7 +119,7 @@ We shall not prove this. But we shall show, in the optional
 surface with corners <m>P_0</m>, <m>P_1</m>, <m>P_2</m>, <m>P_3</m>  is approximately a parallelogram with sides
 </p>
 
-<sidebyside width="45%">
+<sidebyside widths="45% 25%" valign="middle">
 <p><md>
 <mrow>
 \overrightarrow{P_0P_1}
@@ -131,7 +131,7 @@ surface with corners <m>P_0</m>, <m>P_1</m>, <m>P_2</m>, <m>P_3</m>  is approxim
 &amp;\approx \frac{\partial\vr}{\partial v}(u_0\,,\,v_0)\,\dee{v}
 </mrow>
 </md></p>
-<image source="figs/dS2.pdf"/>
+<image source="figs/dS2"/>
 </sidebyside>
 
 <p>
@@ -140,8 +140,7 @@ Denote by <m>\theta</m> the angle between the vectors
 The base of the parallelogram, <m>\overrightarrow{P_0P_1}</m>,
 has length <m>\big|\overrightarrow{P_0P_1}\big|</m>, and the height of the
 parallelogram is <m>\big|\overrightarrow{P_0P_2}\big|\,\sin\theta</m>.
-So the area of the parallelogram is
-<fn>As we mentioned above,
+So the area of the parallelogram is<fn>As we mentioned above,
 the approximation below becomes exact when the limit <m>\dee{u},\dee{v}\rightarrow 0</m> is taken in the definition of the integral.
 See the optional §<xref ref="sec_hoterms"/>.</fn>
 <md>
@@ -277,8 +276,8 @@ in <xref ref="eq_SUdSgraph"/> have geometric interpretations. The red
 parallelogram in the sketch
 </p>
 
-<sidebyside>
-<image source="figs/surfaceProj.pdf"/>
+<sidebyside width="40%">
+<image source="figs/surfaceProj"/>
 </sidebyside>
 
 <p>represents a little piece of our surface. It has area
@@ -334,8 +333,7 @@ or in the form <m>y=h(x,z)</m>, rather than in the form <m>z=f(x,y)</m>.
 Finally suppose that the surface is given by the equation
 <m>G(x,y,z)=K</m>, with <m>K</m> a constant. Suppose further that at some point
 on the surface <m>\frac{\partial G}{\partial z} \ne 0</m>. Then near that point
-we may solve
-<fn>This is called the implicit function theorem. We
+we may solve<fn>This is called the implicit function theorem. We
 will not prove it. But it is not so hard to understand why it is true, if one thinks in terms of the Taylor expansion of
 <m>G</m> about the point. For simplicity, let's suppose that the point is
 <m>(0,0,0)</m> and <m>G</m> happens to be exactly equal to its first order
@@ -355,10 +353,10 @@ near the point.
 Differentiating this with respect to <m>x</m> and <m>y</m> gives, by the chain rule,
 <md alignment="alignat">
 <mrow>
-0&amp;=\frac{\partial\hfill}{\partial x}\Big[G\big(x,y,f(x,y)\big)\Big]
+0&amp;=\frac{\partial}{\partial x}\Big[G\big(x,y,f(x,y)\big)\Big]
  &amp;\ =\ G_x\big(x,y,f(x,y)\big) + G_z\big(x,y,f(x,y)\big)\,f_x(x,y)
 </mrow><mrow>
-0&amp;=\frac{\partial\hfill}{\partial y}\Big[G\big(x,y,f(x,y)\big)\Big]
+0&amp;=\frac{\partial}{\partial y}\Big[G\big(x,y,f(x,y)\big)\Big]
  &amp;\ =\ G_y\big(x,y,f(x,y)\big) + G_z\big(x,y,f(x,y)\big)\,f_y(x,y)
 </mrow>
 </md>
@@ -463,7 +461,7 @@ using as parameters the polar coordinates <m>r</m>, <m>\theta</m> of the
 cylindrical coordinates
 </p>
 
-<sidebyside width="45%">
+<sidebyside widths="45% 25%" valign="middle">
 <p>
 <md>
 <mrow>
@@ -475,7 +473,7 @@ z &amp;= z
 </mrow>
 </md>
 </p>
-<image source="figs/cylindrical.pdf"/>
+<image source="figs/cylindrical"/>
 </sidebyside>
 
 <p>
@@ -545,7 +543,8 @@ So the area of the hemisphere is
 
 </mrow><mrow>
 &amp;=2\pi a\int_{a^2}^0 \frac{-\dee{u}/2}{\sqrt{u}}
-\qquad\text{with } u=a^2-r^2,\ \dee{u} = -2r\,\dee{r}
+</mrow><mrow>
+&amp;\hskip1in\text{with } u=a^2-r^2,\ \dee{u} = -2r\,\dee{r}
 </mrow><mrow>
 &amp;=2\pi a\Big[-\sqrt{u}\Big]_{a^2}^0
 </mrow><mrow>
@@ -616,7 +615,7 @@ using as parameters the angular coordinates <m>\theta</m>, <m>\varphi</m> of the
 spherical coordinates
 </p>
 
-<sidebyside width="45%">
+<sidebyside widths="45% 45%" valign="middle">
 <p><md>
 <mrow>
 x&amp;=\rho\sin\varphi\cos\theta
@@ -626,15 +625,15 @@ y&amp;=\rho\sin\varphi\sin\theta
 z&amp;=\rho\cos\varphi
 </mrow>
 </md></p>
-<image source="figs/spherical.pdf"/>
+<image source="figs/spherical"/>
 </sidebyside>
 
 <p>
 and then apply <xref ref="eq_SUdSparam"/>.
 In spherical coordinates the equation <m>x^2+y^2+z^2=a^2</m>
-becomes just <m>\rho^2=a^2</m>, and the condition <m>z\ge 0</m> is <m>0\le\varphi\le\frac{\pi}{2}</m>, <m>0\le\theta \lt  2\pi</m>.
-So the hemisphere can be parametrized
-<fn>As we have noted before,
+becomes just <m>\rho^2=a^2</m>, and the condition <m>z\ge 0</m> is 
+<m>0\le\varphi\le\frac{\pi}{2}</m>, <m>0\le\theta \lt  2\pi</m>.
+So the hemisphere can be parametrized<fn>As we have noted before,
 the spherical coordinate system really breaks down at <m>\varphi=0</m>,
 because <m>\rho=1</m>, <m>\varphi=0</m> gives the same point, namely the north pole <m>(0,0,1)</m>, for all values of <m>\theta</m>. We should really treat our
 integral like an improper integral, first integrating over
@@ -644,11 +643,15 @@ However the breakdown of the spherical coordinate system at <m>\varphi=0</m>,
 just like the breakdown of polar coordinates at <m>r=0</m>, rarely causes
 problem and it is routine to skip the <q>improper integral</q> step.
 </fn> by
-<me>
-\big(x(\theta,\varphi)\,,\, y(\theta,\varphi)\,,\, z(\theta,\varphi)\big)
-=\big(a\sin\varphi\cos\theta\,,\,a\sin\varphi\sin\theta\,,\,a\cos\varphi\,\big)\quad
+<md>
+<mrow>
+&amp;\big(x(\theta,\varphi)\,,\, y(\theta,\varphi)\,,\, z(\theta,\varphi)\big)
+=\big(a\sin\varphi\cos\theta\,,\,a\sin\varphi\sin\theta\,,\,a\cos\varphi\,\big)
+</mrow><mrow>
+&amp;
 0\le\varphi\le\frac{\pi}{2},\ 0\le\theta \lt 2\pi
-</me>
+</mrow>
+</md>
 Since
 <md>
 <mrow>
@@ -666,8 +669,8 @@ Since
 <xref ref="eq_SUdSparam"/> yields
 <md>
 <mrow>
-\hn\,\dee{S}
-&amp;=\pm\Big(\frac{\partial x}{\partial\theta}\,,\,
+&amp;\hn\,\dee{S}
+=\pm\Big(\frac{\partial x}{\partial\theta}\,,\,
           \frac{\partial y}{\partial\theta}\,,\,
           \frac{\partial z}{\partial\theta}\Big)
 \times
@@ -675,11 +678,11 @@ Since
    \,,\, \frac{\partial z}{\partial\varphi}\Big)
 \ \dee{\theta}\dee{\varphi}
 </mrow><mrow>
-&amp;=\pm \big(-a\sin\varphi\sin\theta\,,\,
-       a\sin\varphi\cos\theta\,,\,0\big)
-\times
-(a\cos\varphi\cos\theta\,,\,a\cos\varphi\sin\theta\,,\,-a\sin\varphi)
-\ \dee{\theta}\dee{\varphi}
+&amp;=\pm \big(\!-a\sin\varphi\sin\theta,
+       a\sin\varphi\cos\theta,0\big)
+\!\times\!
+(a\cos\varphi\cos\theta,a\cos\varphi\sin\theta,-a\sin\varphi)
+\,\dee{\theta}\dee{\varphi}
 </mrow><mrow>
 &amp;=\pm\big(-a^2\sin^2\varphi\cos\theta\,,\,
           -a^2\sin^2\varphi\sin\theta\,,\,
@@ -688,7 +691,11 @@ Since
 &amp;=\mp a^2\sin\varphi \big(\sin\varphi\cos\theta\,,\,
           \sin\varphi\sin\theta\,,\,
           \cos\varphi\Big)\ \dee{\theta}\dee{\varphi}
-</mrow><mrow>
+</mrow>
+</md>
+and
+<md>
+<mrow>
 \dee{S}&amp;=a^2\sin\varphi \sqrt{\sin^2\varphi\cos^2\theta
                     +\sin^2\varphi\sin^2\theta
                     +\cos^2\varphi}\ \dee{\theta}\dee{\varphi}
@@ -726,8 +733,8 @@ drawing in curves of constant <m>\theta</m> (the blue lines in the figure below)
 and curves of constant <m>\varphi</m> (the red lines in the figure below).
 </p>
 
-<sidebyside>
-<image source="figs/sphericaldSA.pdf"/>
+<sidebyside width="50%">
+<image source="figs/sphericaldSA"/>
 </sidebyside>
 
 <p>
@@ -767,9 +774,9 @@ of radius <m>a\sin\varphi</m> and hence is of length
 These are drawn in the figure below.
 </p>
 
-<sidebyside>
-<image source="figs/sphericaldSB.pdf"/>
-<image source="figs/sphericaldSC.pdf"/>
+<sidebyside widths="40% 40%">
+<image source="figs/sphericaldSB"/>
+<image source="figs/sphericaldSC"/>
 </sidebyside>
 
 <p>
@@ -788,8 +795,7 @@ area of a hemisphere of radius <m>a</m> is <m>2\pi a^2</m>. (Phew!)
 <example xml:id="eg_SphereGraph">
   <title>Area of a hemisphere <mdash/> using <m>z=f(x,y)</m></title>
 <p>
-We'll compute the area of the hemisphere one last time
-<fn>We promise!</fn>. This time
+We'll compute the area of the hemisphere one last time<fn>We promise!</fn>. This time
 we'll use that the equation of the hemisphere is
 <me>
 z=f(x,y) = \sqrt{a^2-x^2-y^2}
@@ -833,12 +839,12 @@ Evaluate
 We can express <m>S</m> as
 </p>
 
-<sidebyside width="45%">
+<sidebyside widths="45% 28%" valign="middle">
 <p><me>
 z=f(x,y) = \sqrt{x^2+y^2}\qquad
 x^2+y^2\le 1
 </me></p>
-<image source="figs/coneB.pdf"/>
+<image source="figs/coneB"/>
 </sidebyside>
 
 <p>
@@ -847,8 +853,7 @@ Now since
 f_x(x,y) = \frac{x}{\sqrt{x^2+y^2}}\qquad
 f_y(x,y) = \frac{y}{\sqrt{x^2+y^2}}
 </me>
-<xref ref="eq_SUdSgraph"/> gives
-<fn>This answer for <m>\dee{S}</m> is a very
+<xref ref="eq_SUdSgraph"/> gives<fn>This answer for <m>\dee{S}</m> is a very
 clean. Think about why. Hint: review the discussion following
 <xref ref="eq_SUdSgraph"/>.</fn>
 <me>
@@ -881,8 +886,7 @@ convert to polar coordinates.
 &amp;=\frac{\sqrt{2}}{64}  \int_0^{2\pi}\dee{\theta}\ \big[1-\cos(4\theta)\big]
 </mrow>
 </md>
-Remembering
-<fn>If you have forgotten why, sketch the graph.</fn>
+Remembering<fn>If you have forgotten why, sketch the graph.</fn>
  that the integral of <m>\cos(\theta)</m>, or <m>\cos(4\theta)</m>,
 over a full period is <m>0</m>, we end up with
 <me>
@@ -894,9 +898,7 @@ over a full period is <m>0</m>, we end up with
 
 <solution>
 <p>
-We may parametrize
-<fn>We did so previously, with different variable names, in Example <xref ref="eg_tangentPlaneA"/>.
-</fn> the cone by
+We may parametrize<fn>We did so previously, with different variable names, in Example <xref ref="eg_tangentPlaneA"/>.</fn> the cone by
 <md>
 <mrow>
 \vr(z,\theta) &amp;= z\cos\theta\,\hi +  z\sin\theta\,\hj + z\,\hk \qquad
@@ -912,9 +914,7 @@ The because
    =  -z\sin\theta\,\hi +  z\c0s\theta\,\hj
 </mrow>
 </md>
-<xref ref="eq_SUdSparam"/> yields
-<fn>Again the formula for <m>\dee{S}</m> is very neat. Think about why.
-</fn>
+<xref ref="eq_SUdSparam"/> yields<fn>Again the formula for <m>\dee{S}</m> is very neat. Think about why.</fn>
 <md>
 <mrow>
 \hn\,\dee{S}
@@ -957,9 +957,7 @@ We evaluated this integral in Solution 1. So again
 <example xml:id="eg_surfaceIntegralB">
 <p>
 Consider a spherical shell of radius <m>a</m> with mass density <m>\mu</m> per unit
-area. Think of it as a hollow planet
-<fn>A favourite of science fiction and fantasy writers. Plug <q>subterranean fiction</q> into your favourite search engine. While you're at it, also try <q>gravity train</q>. We'll look at it in the optional Example <xref ref="eg_gravityTrain"/>.
-</fn>.
+area. Think of it as a hollow planet<fn>A favourite of science fiction and fantasy writers. Plug <q>subterranean fiction</q> into your favourite search engine. While you're at it, also try <q>gravity train</q>. We'll look at it in the optional Example <xref ref="eg_gravityTrain"/>.</fn>.
 We are going to determine the gravitational force that it exerts on a particle
 of mass <m>m</m> a distance <m>b</m> away from its centre. This particle can be either
 outside the shell (<m>b \gt a</m>) or inside the shell (<m>b \lt a</m>).
@@ -973,9 +971,9 @@ Here <m>G</m> is the gravitational constant, <m>\mu\dee{S}</m> is the mass of th
 piece of shell, <m>m</m> is the mass of the particle
 </p>
 
-<sidebyside>
-<image source="figs/shell.pdf"/>
-<image source="figs/shellB.pdf"/>
+<sidebyside widths="35% 40%" valign="middle">
+<image source="figs/shell"/>
+<image source="figs/shellB"/>
 </sidebyside>
 
 <p>
@@ -1004,10 +1002,10 @@ The total force is then
 <md>
 <mrow>
 \vF =
-    G\mu m a^2\int_0^\pi\dee{\varphi} \int_0^{2\pi}\dee{\theta}\ \sin\varphi\
+    G\mu m a^2\int_0^\pi\!\!\dee{\varphi} \int_0^{2\pi}\!\!\dee{\theta}\ \sin\varphi\
     \frac{a\sin\varphi\cos\theta\,\hi
-      + a\sin\varphi\sin\theta\,\hj
-      + (a\cos\varphi-b)\,\hk}
+      \!+\! a\sin\varphi\sin\theta\,\hj
+      \!+\! (a\cos\varphi\!-\!b)\,\hk}
          {\big[a^2+b^2 -2ab\cos\varphi\big]^{3/2}}
 </mrow>
 </md>
@@ -1019,10 +1017,8 @@ of <m>\vr-(0,0,b)</m>, which is positive.
 
 <p>This integral is a little different than other integrals that we have
 encountered so far in that the integrand is a vector. By
-definition
-<fn>Under this definition we still have
-<m>\dblInt (\vA+\vB)\,\dee{S} = \dblInt \vA\,\dee{S} + \dblInt\vB\,\dee{S}</m>.
-</fn>,
+definition<fn>Under this definition we still have
+<m>\dblInt (\vA+\vB)\,\dee{S} = \dblInt \vA\,\dee{S} + \dblInt\vB\,\dee{S}</m>.</fn>,
 <me>
 \dblInt_S \big[G_1\,\hi + G_2\,\hj + G_3\,\hk \big]\ \dee{S}
 =\hi \dblInt_S G_1\ \dee{S}
@@ -1051,8 +1047,7 @@ the <m>\hi</m> and <m>\hj</m> components
 \right]
 </mrow>
 </md>
-are both zero
-<fn>Think about why the <m>\hi</m> and <m>\hj</m> components
+are both zero<fn>Think about why the <m>\hi</m> and <m>\hj</m> components
 should both be zero. Think symmetry.</fn>
  because
 <m>\int_0^{2\pi}\cos\theta\ \dee{\theta}
@@ -1127,8 +1122,7 @@ If <m>b \lt a</m>, so that <m>|a-b|=a-b</m>
 =0
 </mrow>
 </md>
-The moral
-<fn>These two results appeared in Isaac Newton's Principia Mathematica (1687). They are known as Newton's <q>superb theorems</q>.</fn>
+The moral<fn>These two results appeared in Isaac Newton's Principia Mathematica (1687). They are known as Newton's <q>superb theorems</q>.</fn>
  is
 <ul>
 <li>
@@ -1147,10 +1141,8 @@ concentrated at the centre of the shell.
 <example xml:id="eg_gravityTrain">
 <title>Optional <mdash/> Gravity Train</title>
 <p>
-The <q>Gravity Train</q>
-<fn>The British physicist and architect
-(he was Surveyor to the City of London and chief assistant to Christopher Wren) Robert Hooke (1635--1703) wrote about the gravity train idea in a letter to Isaac Newton. A gravity train was used in the 2012 movie <em>Total Recall</em>.
-</fn> refers to the following curious, though admittedly
+The <q>Gravity Train</q><fn>The British physicist and architect
+(he was Surveyor to the City of London and chief assistant to Christopher Wren) Robert Hooke (1635--1703) wrote about the gravity train idea in a letter to Isaac Newton. A gravity train was used in the 2012 movie <em>Total Recall</em>.</fn> refers to the following curious, though admittedly
 not very practical, thought experiment.
 </p>
 
@@ -1177,8 +1169,8 @@ as it passes through the centre of the Earth.
 </ul>
 </p>
 
-<sidebyside>
-<image source="figs/gravityTrain.pdf"/>
+<sidebyside width="40%">
+<image source="figs/gravityTrain"/>
 </sidebyside>
 <p>
 What happens?
@@ -1208,8 +1200,8 @@ but we can always arrange that it is <m>V</m> at
 </ul>
 </p>
 
-<sidebyside>
-<image source="figs/gravityTrainB.pdf"/>
+<sidebyside width="90%">
+<image source="figs/gravityTrainB"/>
 </sidebyside>
 
 <p>
@@ -1236,8 +1228,8 @@ gravity from shells of the Earth that are inside the train, so that
 <m>M</m> is the mass of the
 </p>
 
-<sidebyside>
-<image source="figs/gravityTrainC.pdf"/>
+<sidebyside width="50%">
+<image source="figs/gravityTrainC"/>
 </sidebyside>
 
 <p>
@@ -1306,8 +1298,8 @@ In the course of deriving <xref ref="eq_SUdSparam"/>, that is,
 <m>\hn\dee{S}</m> and <m>\dee{S}</m> formulae for
 </p>
 
-<sidebyside>
-<image source="figs/dS.pdf"/>
+<sidebyside width="40%">
+<image source="figs/dS"/>
 </sidebyside>
 
 <p>we approximated, for example, the vectors
@@ -1324,8 +1316,7 @@ In the course of deriving <xref ref="eq_SUdSparam"/>, that is,
 &amp;\approx \frac{\partial\vr}{\partial v}(u_0\,,\,v_0)\,\dee{v}
 </mrow>
 </md>
-where <m>E_1</m> is bounded
-<fn>Remember the error in the Taylor polynomial
+where <m>E_1</m> is bounded<fn>Remember the error in the Taylor polynomial
 approximations.</fn>
  by a constant times <m>\dee{u}^2</m>
 and <m>E_2</m> is bounded by a constant times <m>\dee{v}^2</m>. That is, we assumed
@@ -1352,18 +1343,16 @@ that we could just drop <m>E_1</m> and <m>E_2</m>.
 where the length of the vector <m>E_3</m> is bounded by a constant times
 <m>\dee{u}^2\,\dee{v}+\dee{u}\,\dee{v}^2</m>.
 We'll now see why dropping terms like <m>E_3</m> does not change the value
-of the integral at all
-<fn>See the optional § 1.1.6 of the CLP-2 text
-for an analogous argument concerning Riemann sums.
-</fn>.
+of the integral at all<fn>See the optional §1.1.6 of the CLP-2 text
+for an analogous argument concerning Riemann sums.</fn>.
 </p>
 
 <p>Suppose that our domain of integration consists of all <m>(u,v)</m>'s
 in a rectangle of width <m>A</m> and height <m>B</m>, as in the figure below.
 </p>
 
-<sidebyside>
-<image source="figs/slicing.pdf"/>
+<sidebyside width="40%">
+<image source="figs/slicing"/>
 </sidebyside>
 
 <p>

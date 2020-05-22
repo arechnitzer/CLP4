@@ -32,8 +32,7 @@ one centred on the origin
 <li> <em>Implicitly:</em>
 We can also specify that the surface
 is the set of points <m>(x,y,z)</m> that satisfy the equation
-<m>G(x,y,z)=0</m>, or, more generally
-<fn>Of courses we can always convert the equation <m>G(x,y,z)=K</m> into <m>H(x,y,z)=0</m>
+<m>G(x,y,z)=0</m>, or, more generally<fn>Of courses we can always convert the equation <m>G(x,y,z)=K</m> into <m>H(x,y,z)=0</m>
 with <m>H(x,y,z)=G(x,y,z)-K</m>. But it often more convenient to use <m>G(x,y,z)=K</m>.
 </fn>, satisfy the equation <m>G(x,y,z)=K</m>,
 with <m>K</m> a constant. For example, the sphere of radius
@@ -75,10 +74,13 @@ One simple, even trivial, way to parametrize the surface which is the graph
  z = f(x,y)\qquad (x,y)\in\cD\subset\bbbr^2
 </me>
 is to choose <m>x</m> and <m>y</m> as the parameters. That is, to choose
-<me>
-\vr(u,v) = \big(u,v,\,f(u,v)\big),\quad (u,v)\in\cD\qquad\text{or}\qquad
-\vr(x,y) = \big(x,y,\,f(x,y)\big),\quad (x,y)\in\cD
-</me>
+<md>
+<mrow>
+\vr(u,v) &amp;= \big(u,v,\,f(u,v)\big),\quad (u,v)\in\cD
+</mrow><mrow>\text{or}\qquad
+\vr(x,y) &amp;= \big(x,y,\,f(x,y)\big),\quad (x,y)\in\cD
+</mrow>
+</md>
 </p>
 </example>
 
@@ -124,7 +126,7 @@ points that are within a distance <m>\sqrt{2}</m> of <m>(0,0,1)</m>. (They are
 the points inside the dashed circle.)
 </p>
 
-<sidebyside>
+<sidebyside width="75%">
 <image source="figs/localGraphA"/>
 </sidebyside>
 
@@ -150,7 +152,7 @@ points that are within a distance <m>\sqrt{2}</m> of <m>(1,0,0)</m>. (Again, the
 the points inside the dashed circle.)
 </p>
 
-<sidebyside>
+<sidebyside width="90%">
 <image source="figs/localGraphB"/>
 </sidebyside>
 
@@ -171,7 +173,7 @@ three spherical coordinates
 </md>
 </p>
 
-<sidebyside>
+<sidebyside width="50%">
 <image source="figs/spherical"/>
 </sidebyside>
 
@@ -180,7 +182,7 @@ and here are two more figures giving the side and top views of the
 previous figure.
 </p>
 
-<sidebyside>
+<sidebyside widths="40% 50%" valign="middle">
 <image source="figs/sphericalSide"/>
 <image source="figs/sphericalTop"/>
 </sidebyside>
@@ -219,7 +221,7 @@ the north pole for all values of <m>\theta</m>) and the south pole
 <m>\vr(\theta,\frac{\pi}{2}) = (\cos\theta,\sin\theta,0)</m> in the <m>xy</m>-plane.
 </p>
 
-<sidebyside>
+<sidebyside width="45%">
 <image source="figs/sphericalRngA"/>
 </sidebyside>
 
@@ -234,7 +236,7 @@ through the point
 <m>\vr(\theta,\frac{\pi}{2}) = (\cos\theta,\sin\theta,0)</m> in the <m>xy</m>-plane.
 </p>
 
-<sidebyside>
+<sidebyside width="45%">
 <image source="figs/sphericalRngB"/>
 </sidebyside>
 </li>
@@ -258,7 +260,7 @@ lines in the first octant) for
 and <m>\frac{5\pi}{10}=\frac{\pi}{2}</m>.
 </p>
 
-<sidebyside>
+<sidebyside widths="45% 50%" valign="middle">
 <image source="figs/sphericalTh"/>
 <image source="figs/sphericalLat"/>
 </sidebyside>
@@ -274,7 +276,7 @@ The figure on the right below gives the lines of longitude
 <m>\frac{4\pi}{10}</m> and <m>\frac{5\pi}{10}=\frac{\pi}{2}</m>.
 </p>
 
-<sidebyside>
+<sidebyside widths="45% 50%" valign="middle">
 <image source="figs/sphericalPhi"/>
 <image source="figs/sphericalLong"/>
 </sidebyside>
@@ -287,7 +289,7 @@ The surface <m>x^2+z^2=1</m> is an infinite cylinder. Part of this cylinder
 in the first octant is sketched below.
 </p>
 
-<sidebyside>
+<sidebyside width="20%">
 <image source="figs/cylinder"/>
 </sidebyside>
 
@@ -332,7 +334,7 @@ in the figure below.
 Concentrate on any one point on that curve. It is the blue dot at <m>(0,Y,e^Y)</m>
 </p>
 
-<sidebyside>
+<sidebyside width="40%">
 <image source="figs/revA"/>
 </sidebyside>
 
@@ -354,7 +356,7 @@ We can parametrize the circle swept out in the usual way. Here
 is a top view of the circle, with the parameter, named <m>\theta</m>, indicated.
 </p>
 
-<sidebyside>
+<sidebyside width="66%">
 <image source="figs/revTop"/>
 </sidebyside>
 
@@ -414,7 +416,7 @@ Finally here is a sketch of the part of the surface in the first octant,
 <m>x,y,z\ge 0</m>.
 </p>
 
-<sidebyside>
+<sidebyside width="50%">
 <image source="figs/revB"/>
 </sidebyside>
 
@@ -425,7 +427,7 @@ Finally here is a sketch of the part of the surface in the first octant,
 In this example, we are going to parametrize a donut (well, its surface), or an inner tube.
 </p>
 
-<sidebyside>
+<sidebyside  width="40%">
 <image source="figs/torus3d"/>
 </sidebyside>
 
@@ -436,7 +438,7 @@ right half of the
 about the <m>z</m>-axis. The section is a circle, sketched below.
 </p>
 
-<sidebyside>
+<sidebyside width="60%">
 <image source="figs/torusSection"/>
 </sidebyside>
 
@@ -458,7 +460,7 @@ is a distance <m>R + r\cos\theta</m> from the <m>z</m>-axis. So when we rotate t
 which is sketched below.
 </p>
 
-<sidebyside>
+<sidebyside width="60%">
 <image source="figs/torusRotB"/>
 </sidebyside>
 
@@ -479,7 +481,7 @@ We can parametrize the circle swept out in the usual way. Here
 is a top view of the circle, with the parameter, named <m>\psi</m>, indicated.
 </p>
 
-<sidebyside>
+<sidebyside width="75%">
 <image source="figs/torusTop"/>
 </sidebyside>
 
@@ -496,12 +498,15 @@ z &amp;= r\sin\theta
 </mrow>
 </md>
 or
-<me>
-\vr(\theta,\psi) = (R + r\cos\theta)\cos\psi \ \hi
+<md>
+<mrow>
+&amp;\vr(\theta,\psi) = (R + r\cos\theta)\cos\psi \ \hi
                     + (R + r\cos\theta)\sin\psi \ \hj
                     + r\sin\theta\ \hk
-\qquad 0\le\theta,\psi  \lt  2\pi
-</me>
+</mrow><mrow>
+&amp; 0\le\theta,\psi  \lt  2\pi
+</mrow>
+</md>
 </p>
 
 </example>

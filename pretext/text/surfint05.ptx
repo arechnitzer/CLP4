@@ -70,18 +70,16 @@ exhibits one.
 There are some surfaces <m>S</m> for which it is not possible to choose a
 continuous orientation map  <m>\hN: S\rightarrow\bbbr^3</m>. Such surfaces
 are said to be non-orientable. The most famous non-orientable surface
-is the Möbius
-<fn>August Ferdinand Möbius (1790--1868) was a
+is the Möbius<fn>August Ferdinand Möbius (1790--1868) was a
 German mathematician and astronomer. He was a descendant of Martin Luther
 and a student of Gauss.
-</fn>strip
-<fn>Another famous non-orientable surface is the Klein bottle.
+</fn> strip<fn>Another famous non-orientable surface is the Klein bottle.
 You can easily find discussions of it using your favourite search engine.
 </fn>, which you can construct as follows. Take a rectangular
 strip of paper.
 </p>
 
-<sidebyside>
+<sidebyside width="40%">
 <image source="figs/mobiusC"/>
 </sidebyside>
 
@@ -91,7 +89,7 @@ end points upwards, rather than downwards. Then glue the two ends of the strip
 together, with the two arrows coinciding. That's the Möbius strip.
 </p>
 
-<sidebyside>
+<sidebyside width="40%">
 <image source="figs/mobiusB"/>
 </sidebyside>
 
@@ -100,7 +98,7 @@ it as consisting of a backbone (the horizontal black line in the figure below)
 with a bunch of ribs (like the thick blue line in the figure) emanating from it.
 </p>
 
-<sidebyside>
+<sidebyside width="40%">
 <image source="figs/mobiusD"/>
 </sidebyside>
 
@@ -119,7 +117,7 @@ figure below. (The figure only shows the part of the circle
 in the first octant, i.e. with <m>x,y,z\ge 0</m>.)
 </p>
 
-<sidebyside>
+<sidebyside width="66%">
 <image source="figs/mobiusE"/>
 </sidebyside>
 
@@ -133,7 +131,7 @@ that contains the vectors <m>\hr(\theta)</m> and <m>\hk</m>.
 is sketched in the figure below.
 </p>
 
-<sidebyside>
+<sidebyside width="66%">
 <image source="figs/mobiusF"/>
 </sidebyside>
 
@@ -157,12 +155,13 @@ of the Möbius strip is
 <mrow>
 \vr(\theta,v)
  &amp;= \frac{\ell}{2\pi}\hr(\theta)
-             + \vu(v,\theta,\frac{\theta}{2})
+             + \vu\left(v,\theta,\frac{\theta}{2}\right)
 </mrow><mrow>
  &amp;= \frac{\ell}{2\pi}\hr(\theta)
-     + v\cos\big(\frac{\theta}{2}\big) \hr(\theta)
-      + v\sin\big(\frac{\theta}{2}\big) \hk
-\qquad 0\le\theta \lt 2\pi,\ -\frac{w}{2}\le v\le \frac{w}{2}
+     + v\cos\left(\frac{\theta}{2}\right) \hr(\theta)
+      + v\sin\left(\frac{\theta}{2}\right) \hk
+</mrow><mrow>
+ &amp; 0\le\theta \lt 2\pi,\ -\frac{w}{2}\le v\le \frac{w}{2}
 </mrow>
 </md>
 where <m>\hr(\theta) = \cos(\theta)\,\hi + \sin(\theta)\,\hj</m>.
@@ -178,14 +177,14 @@ to the surface using <xref ref="eq_SUdSparam"/>. The partial derivatives
 <mrow>
 \frac{\partial\vr}{\partial\theta}(\theta,v)
 &amp;=\frac{\ell}{2\pi}\hr'(\theta)
-     + v\cos\big(\frac{\theta}{2}\big) \hr'(\theta)
-     - \frac{v}{2}\sin\big(\frac{\theta}{2}\big) \hr(\theta)
-     + \frac{v}{2}\cos\big(\frac{\theta}{2}\big) \hk
+     + v\cos\left(\frac{\theta}{2}\right) \hr'(\theta)
+     - \frac{v}{2}\sin\left(\frac{\theta}{2}\right) \hr(\theta)
+     + \frac{v}{2}\cos\left(\frac{\theta}{2}\right) \hk
 
 </mrow><mrow>
 \frac{\partial\vr}{\partial v}(\theta,v)
-&amp;=\cos\big(\frac{\theta}{2}\big) \hr(\theta)
-      + \sin\big(\frac{\theta}{2}\big) \hk
+&amp;=\cos\left(\frac{\theta}{2}\right) \hr(\theta)
+      + \sin\left(\frac{\theta}{2}\right) \hk
 </mrow>
 </md>
 are relatively messy, so let's just consider the case <m>v=0</m>
@@ -198,8 +197,8 @@ Then
 
 </mrow><mrow>
 \frac{\partial\vr}{\partial v}(\theta,0)
-&amp;=\cos\big(\frac{\theta}{2}\big) \hr(\theta)
-      + \sin\big(\frac{\theta}{2}\big) \hk
+&amp;=\cos\left(\frac{\theta}{2}\right) \hr(\theta)
+      + \sin\left(\frac{\theta}{2}\right) \hk
 </mrow>
 </md>
 Since
@@ -221,8 +220,8 @@ we have
 <mrow>
 \frac{\partial\vr}{\partial\theta}(\theta,0) \times
 \frac{\partial\vr}{\partial v}(\theta,0)
-=-\frac{\ell}{2\pi}\Big(\cos\big(\frac{\theta}{2}\big)\,\hk
-                       -\sin\big(\frac{\theta}{2}\big)\,\hr(\theta) \Big)
+=-\frac{\ell}{2\pi}\Big[\cos\left(\frac{\theta}{2}\right)\,\hk
+                       -\sin\left(\frac{\theta}{2}\right)\,\hr(\theta) \Big]
 </mrow>
 </md>
 As <m>\hk</m> and <m>\hr(\theta)</m> are mutually perpendicular unit vectors,
@@ -231,16 +230,16 @@ As <m>\hk</m> and <m>\hr(\theta)</m> are mutually perpendicular unit vectors,
 has length one, and the two unit normal vectors to the Möbius strip
 at <m>\vr(\theta,0)</m> are
 <me>
-\pm \Big(\cos\big(\frac{\theta}{2}\big)\,\hk
-                       -\sin\big(\frac{\theta}{2}\big)\,\hr(\theta) \Big)
+\pm \Big[\cos\left(\frac{\theta}{2}\right)\,\hk
+                       -\sin\left(\frac{\theta}{2}\right)\,\hr(\theta) \Big]
 </me>
 So, for each <m>\theta</m>, <m>\hN\big(\vr(\theta,0)\big)</m> must be either
 <me>
-\cos\big(\frac{\theta}{2}\big)\,\hk
+\cos\left(\frac{\theta}{2}\right)\,\hk
                        -\sin\big(\frac{\theta}{2}\big)\,\hr(\theta)
 \qquad\text{or}\qquad
--\big(\cos\big(\frac{\theta}{2}\big)\,\hk
-                       -\sin\big(\frac{\theta}{2}\big)\,\hr(\theta) \big)
+-\Big[\cos\left(\frac{\theta}{2}\right)\,\hk
+                       -\sin\left(\frac{\theta}{2}\right)\,\hr(\theta) \Big]
 </me>
 Imagine walking along the Möbius strip.
 The normal vector <m>\hN\big(\vr(\theta,v)\big)</m> is our body when we are
@@ -268,8 +267,8 @@ We are back to our starting point. Continuity has forced
 <me>
 \hN\big(\vr(2\pi,0)\big)
 =\hN\big(\vr(\theta,0)\big)\Big|_{\theta=2\pi}
-=+\big(\cos\big(\frac{\theta}{2}\big)\,\hk
-                       -\sin\big(\frac{\theta}{2}\big)\,\hr(\theta) \big)
+=+\Big[\cos\left(\frac{\theta}{2}\right)\,\hk
+                       -\sin\left(\frac{\theta}{2}\right)\,\hr(\theta) \Big]
 \Big|_{\theta=2\pi}
 =-\hk
 </me>
