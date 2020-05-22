@@ -1,12 +1,538 @@
 <?xml version="1.0" encoding="UTF-8" ?>
-<section xmlns:xi="http://www.w3.org/2001/XInclude" xml:id="">
+<section xmlns:xi="http://www.w3.org/2001/XInclude" xml:id="sec_cohomology">
 
 <!-- Copyright 2018-2020 Joel Feldman, Andrew Rechnitzer and Elyse Yeager -->
 <!-- This work is licensed under the Creative Commons Attribution-NonCommercial-ShareAlike 4.0 International License-->
 <!-- https://creativecommons.org/licenses/by-nc-sa/4.0 -->
 
-<title></title>
+<title>Optional <mdash/> Which Vector Fields Obey  <m>\vnabla\times\vF=0</m></title>
 
+
+<p>We already know that if a vector field <m>\vF</m> passes the screening
+test <m>\vnabla\times\vF=0</m> on <em>all</em> of <m>\bbbr^2</m> or <m>\bbbr^3</m>,
+then there is a function <m>\varphi</m> with <m>\vF=\vnabla\varphi</m>.
+That is, <m>\vF</m> is conservative.  We are now going to take a first look
+at what happens
+<fn>Russell Crowe posed a related question in the movie
+<em>A Beautiful Mind</em>. The movie is based on the life of the American mathematician John Nash, who won a Nobel Prize in Economics.</fn>
+ when <m>\vF</m> passes the screening test <m>\vnabla\times\vF=0</m>
+only on some proper subset <m>\cD</m> of <m>\bbbr^n</m>, <m>n=2</m> or <m>3</m>.
+We will just scratch the surface of this topic <mdash/> there is a whole subbranch
+of Mathematics (cohomology theory, which is part of algebraic topology)
+concerned with a general form of this question.
+We shall imagine that we are given a vector field <m>\vF</m> that is only
+defined on <m>\cD</m> and we shall assume
+<ul>
+<li>
+that <m>\cD</m> is a connected, open subset of <m>\bbbr^n</m> with <m>n=2</m> or <m>n=3</m>
+(see Definition <xref ref="def_COopen"/>, below)
+</li>
+<li>
+that all first order derivatives of all vector fields
+and functions that we consider are continuous and
+</li>
+<li><p>
+that all curves we consider are piecewise smooth. A curve
+is piecewise smooth if it
+</p>
+
+<p>is a union of a finite number of smooth curves
+<m>\cC_1,\cC_2,\cdots,\cC_m</m> with the end
+point of <m>\cC_i</m> being the beginning point of <m>\cC_{i+1}</m>
+for each <m>1\le i \lt m</m>. A curve is smooth
+<fn>The word <q>smooth</q> does
+not have a universal meaning in mathematics. It is used with different meanings in different contexts. We are here using one of
+the standard definitions. Another standard definition requires that
+all derivatives of all orders are continuous.</fn>
+ if it has a
+parametrization <m>\vr(t)</m>, <m>a\le t\le b</m>, whose first
+derivative <m>\vr'(t)</m> exists, is continuous and is
+nonzero everywhere.
+</p>
+
+<sidebyside>
+<image source="figs/pSmooth"/>
+</sidebyside>
+</li>
+</ul>
+</p>
+
+<definition xml:id="def_COopen">
+<statement><p>
+Let <m>n\ge 1</m> be an integer.
+<ol label="a">
+<li>
+Let <m>\va\in\bbbr^n</m> and <m>\veps \gt 0</m>. The open ball of radius <m>\veps</m>
+centred on <m>\va</m> is
+<me>
+B_\veps(\va)=\big\{\ \vx\in\bbbr^n\ \big|\ |\vx-\va| \lt \veps\ \big\}
+</me>
+Note the strict inequality in <m>|\vx-\va| \lt \veps</m>.
+</li>
+<li>
+A subset <m>\cO\subset\bbbr^n</m> is said to be an <q>open subset
+of <m>\bbbr^n</m></q> if, for each
+point <m>\va\in\cO</m>, there is an <m>\veps \gt 0</m> such that <m>B_\veps(\va)\subset\cO</m>.
+Equivalently, <m>\cO</m> is open if and only if it is a union of open balls.
+</li>
+<li> A subset <m>\cD\subset\bbbr^n</m> is said to be (pathwise)
+connected if every pair of points in <m>\cD</m> can be joined by a piecewise
+smooth curve in <m>\cD</m>.
+</li>
+</ol>
+</p></statement>
+</definition>
+
+<p>
+Here are some examples to help explain this definition.
+</p>
+
+<example xml:id="ex_COopen">
+<p>
+<ol label="a">
+<li>
+The <term>open rectangle</term>
+           <m>\cO=\big\{\ (x,y)\in\bbbr^2\ \big|\ 0 \lt x \lt 1,\ 0 \lt y \lt 1\ \big\}</m>
+is an open subset of <m>\bbbr^2</m> because any point <m>\va=(x_0,y_0)\in\cO</m>
+is a nonzero distance, namely <m>d=\min\big\{x_0,1-x_0,y_0,1-y_0\big\}</m> away
+from the boundary of <m>\cO</m>. So the open ball <m>B_{d/2}(\va)</m> is contained in
+<m>\cO</m>.
+</li>
+<li><p>
+The <term>closed rectangle</term>
+   <m>\cC=\big\{\ (x,y)\in\bbbr^2\ \big|\ 0\le x \le 1,\ 0 \le y \le 1\ \big\}</m>
+is <em>not</em> an open subset of <m>\bbbr^2</m>. For example,
+<m>\vZero=(0,0)</m> is a point in <m>\cC</m>. No matter what <m>\veps \gt 0</m> we pick,
+the open ball <m>B_\veps(\vZero)</m> is not contained in <m>\cC</m> because
+<m>B_\veps(\vZero)</m> contains the point <m>(-\frac{\veps}{2},0)</m>,
+which is not in <m>\cC</m>.
+</p>
+
+<sidebyside width="32%">
+<image source="figs/openSquare"/>
+<image source="figs/closedSquare"/>
+<image source="figs/xAxis"/>
+</sidebyside>
+</li>
+<li>
+The <m>x</m>-axis, <m>\cX=\big\{\ (x,y)\in\bbbr^2\ \big|\ y=0\ \big\}</m>,
+in <m>\bbbr^2</m> is
+<em>not</em> an open subset of <m>\bbbr^2</m> because for any point
+<m>(x_0,0)\in\cX</m> and
+any <m>\veps \gt 0</m>, the ball <m>B_\veps\big((x_0,0)\big)</m> contains points with
+nonzero <m>y</m>-coordinates and so is not contained in <m>\cX</m>.
+</li>
+<li> The union of open balls
+<me>
+B_1\big((0,0)\big)\cup B_1\big((2,0)\big)
+=\Set{(x,y)\in\bbbr^2}{x^2+y^2 \lt 1\ \text{ or }\ (x-2)^2+y^2 \lt 1}
+</me>
+is not connected, since any continuous path from, for example,
+<m>(2,0)</m> to <m>(0,0)</m> must leave the union. In the figure on the left below,
+an <q>empty disk</q> has been sketched at <m>(1,0)</m> just to emphasise
+that the point <m>(1,0)</m> is <em>not</em> in the union.
+</li>
+<li><p> On the other hand the union of <q>closed balls</q>
+<me>
+\Set{(x,y)\in\bbbr^2}{x^2+y^2\le 1\text{ or }(x-2)^2+y^2\le 1}
+</me>
+is connected.
+For example,  the straight line segment from <m>(2,0)</m> to <m>(0,0)</m> remains
+in the  the union.
+</p>
+
+<sidebyside>
+<image source="figs/openUnion"/>
+<image source="figs/closedUnion"/>
+</sidebyside>
+</li>
+</ol>
+</p></example>
+
+
+<p>Many, but not all, of the basic facts that we developed, in §<xref ref="sec_pathIndep"/>,
+about conservative fields in <m>\bbbr^n</m> also applies (with the same proofs)
+to fields on <m>\cD</m>.
+</p>
+
+<theorem xml:id="thm_COpathIndep">
+<statement><p>
+For a vector field <m>\vF</m>
+on <m>\cD\subset\bbbr^n</m>,
+<md>
+<mrow>
+\vF\text{ is conservative on $\cD$}
+&amp;\iff \vF=\vnabla \varphi\text{ on $\cD$, for some function $\varphi$}
+</mrow><mrow>
+&amp;\iff \text{for each $P_0,P_1\in\cD$, the integral }\int_\cC \vF\cdot \dee{\vr}
+            \text{ takes}
+</mrow><mrow>
+&amp;\hskip 0.5in \text{the same value for all curves $\cC$ from $P_0$ to $P_1$}
+</mrow><mrow>
+&amp;\iff \oint_\cC \vF\cdot \dee{\vr}=0\ \text{ for all closed curves $\cC$ in $\cD$}
+</mrow><mrow>
+&amp;\ \Longrightarrow \vnabla\times \vF=0\ \text{ on $\cD$}
+</mrow>
+</md>
+</p></statement>
+</theorem>
+
+<p>
+Note that the last line of this theorem contains only a one way implication.
+</p>
+
+<p>Combining this with Stokes' Theorem <xref ref="thm_Stokes"/>
+(when <m>n=3</m>, or Green's Theorem <xref ref="thm_Green"/> when <m>n=2</m>) gives us the following two consequences.
+</p>
+
+<theorem xml:id="thm_closedExact">
+<statement><p>
+<ol label="a">
+<li>
+If <m>\cD</m> has the property that
+<me>
+\begin{split}
+&amp;\text{every closed curve $\cC$ in $\cD$ is the boundary} \\
+&amp;\text{of a bounded oriented surface, $\cS$, in $\cD$}
+\end{split}
+\tag{H}
+</me>
+then
+<me>
+\vF\text{ is conservative on $\cD$}
+\iff \vnabla\times \vF=0\text{ on $\cD$}
+</me>
+</li>
+<li>
+For any <m>\cD</m>, if <m>\vnabla\times \vF=0</m> on <m>\cD</m>,
+then <m>\vF</m> is locally conservative. This means that for each point
+<m>\vx_0\in\cD</m>, there is an <m>\veps \gt 0</m> and a function <m>\varphi</m> such that
+<m>\vF=\vnabla\varphi</m> on <m>B_\veps(\vx_0)</m>.
+</li>
+</ol>
+</p></statement>
+</theorem>
+
+<proof>
+<p> (a)
+This is simply because if <m>\vnabla\times\vF=0</m> on <m>\cD</m> and if
+the curve <m>\cC=\partial\cS</m>,
+with <m>\cS</m> an oriented surface in <m>\cD</m>, then Stokes' theorem gives
+<me>
+\int_\cC \vF\cdot \dee{\vr}
+=\int_{\partial\cS} \vF\cdot \dee{\vr}
+=\dblInt_\cS \vnabla\times \vF\cdot\hn\ \dee{S}=0
+</me>
+So <m>\vF</m> is conservative by Theorem <xref ref="thm_COpathIndep"/>.
+</p>
+
+<p> (b)
+This is true simply because <m>B_\veps(\vx_0)</m> satisfies property (H).
+</p></proof>
+
+
+<example xml:id="ex_COhomology">
+<p>
+Here are some examples of <m>\cD</m>'s that violate (H).
+<ul>
+<li>
+When <m>\cD=\cD_1=\big\{\ (x,y)\in\bbbr^2\ \big|\ 0 \lt |(x,y)| \lt 3\big\}</m>
+(an open ball with its centre removed), then
+the circle <m>x^2+y^2=4</m> is a curve in <m>\cD</m> that is not the boundary
+of a surface in <m>\cD</m>. The circle <m>x^2+y^2=4</m> is the boundary of
+the disk <m>x^2+y^2 \lt 4</m>, but the disk <m>x^2+y^2 \lt 4</m> is not contained in
+<m>\cD</m> because the point <m>(0,0)</m> is in the disk and not in <m>\cD</m>.
+See the figure on the left below.
+</li>
+<li><p>
+When <m>\cD=\cD_2
+   =\big\{\ (x,y,z)\in\bbbr^3\ \big|\ |(x,y,z)| \lt 2, |(x,y)| \gt 0\big\}</m>
+(an open ball with the <m>z</m>-axis removed), then
+the circle <m>x^2+y^2=1</m>, <m>z=0</m> is a curve in <m>\cD</m> that is not the boundary
+of a surface in <m>\cD</m>. The circle is the boundary of many different
+surfaces in <m>\bbbr^3</m>, but each contains a point on the <m>z</m>-axis and
+so is  not contained in <m>\cD</m>. See the figure in the centre below.
+</p>
+
+<sidebyside width="32%">
+<image source="figs/pDisk"/>
+<image source="figs/lSphere"/>
+<image source="figs/pSphere"/>
+</sidebyside>
+</li>
+</ul>
+On the other hand, here is an example which does satisfy (H).
+<ul>
+<li>
+Let <m>\cD=\cD_3=\big\{\ (x,y,z)\in\bbbr^3\ \big|\ 0 \lt |(x,y,z)| \lt 2\big\}</m>
+(an open ball with its centre removed).
+For example the circle <m>x^2+y^2=1</m>, <m>z=0</m>  is the boundary of the surface
+<m>\big\{\ (x,y,z)\in\bbbr^3\ \big|\ x^2+y^2+z^2=1, z \gt 0\big\}\subset\cD</m>.
+See the figure on the right above.
+</li>
+</ul>
+</p></example>
+
+<p>
+This leaves the question of what happens when (H) is violated.
+We'll just look at one example, which however gives the flavour of the
+general theory.
+</p>
+
+<p>The punctured disk is</p>
+<sidebyside width="45%">
+<p><me>
+\cD=\big\{\ (x,y)\in\bbbr^2\ \big|\ 0 \lt |(x,y)| \lt 1\ \big\}
+</me></p>
+<image source="figs/pDisk2"/>
+</sidebyside>
+
+<p>
+We'll start by looking at one particular vector field, which passes the
+screening test, but which cannot possibly be conservative. The field,
+which we saw in Example <xref ref="eg_screeningCounterexample"/>, is
+<me>
+\vTh =-\frac{y}{x^2+y^2}\hi + \frac{x}{x^2+y^2}\hj
+</me>
+with domain of definition <m>\cD</m>. We'll first check that it passes
+the screening test:
+<md>
+<mrow>
+\vnabla\times\vTh
+&amp;=\Big\{\frac{\partial }{\partial x}\Big(\frac{x}{x^2+y^2}\Big)
+-\frac{\partial }{\partial y}\Big(-\frac{y}{x^2+y^2}\Big)\Big\}\hk
+</mrow><mrow>
+&amp;=\Big\{\Big(\frac{1}{x^2+y^2}-\frac{2x^2}{{(x^2+y^2)}^2}\Big)
++\Big(\frac{1}{x^2+y^2}-\frac{2y^2}{{(x^2+y^2)}^2}\Big)\Big\}\hk
+</mrow><mrow>
+&amp;=0
+</mrow>
+</md>
+Next we'll check that it cannot be conservative.
+Denote by <m>\cC_\veps</m> the circle <m>x^2+y^2=\veps^2</m>, with counterclockwise
+orientation. Parametrize <m>\cC_\veps</m> by
+<m>\vr(\theta)=\veps\cos\theta\,\hi+\veps\sin\theta\,\hj</m> with
+<m>0\le\theta\le2\pi</m>. Then
+<men xml:id="eqn_COthInt">
+\begin{split}
+\int_{\cC_\veps}\vTh\cdot \dee{\vr}
+&amp;=\int_0^{2\pi} \vTh\big(\vr(\theta)\big)\cdot\frac{\dee{\vr}}{d\theta}(\theta)\
+        d\theta\\
+&amp;=\int_0^{2\pi}
+       \Big(-\frac{1}{\veps}\sin\theta\,\hi
+                   +\frac{1}{\veps}\cos\theta\,\hj\Big)
+  \cdot\big(-\veps\sin\theta\,\hi+\veps\cos\theta\,\hj\big)\ d\theta\\
+&amp;=\int_0^{2\pi} \!\! d\theta\\
+&amp;=2\pi
+\end{split}
+</men>
+is not zero. By Theorem <xref ref="thm_COpathIndep"/>, <m>\vTh</m> cannot be
+conservative on the punctured disk since the integral
+<m>\int_{\cC_\veps}\vTh\cdot \dee{\vr}</m> around the closed curve <m>\cC_\veps</m> is
+nonzero.
+</p>
+
+<p>Next we'll check that it is locally conservative. That is, it can be written
+in the form <m>\vnabla\theta(x,y)</m> near any point <m>(x_0,y_0)</m> in its domain.
+Define <m>\theta(x,y)</m> to be the polar angle of <m>(x,y)</m> with, for example,
+<m>-\pi \lt \theta \lt \pi</m>. This <m>\theta</m> is defined on all of <m>\cD</m>,
+<em>except</em> for the negative real axis. The domain of definition,
+<m>\cD_\pi</m>, is sketched on the left below.
+</p>
+
+<sidebyside>
+<image source="figs/pDiskPi"/>
+<image source="figs/pDisk0"/>
+</sidebyside>
+
+<p>
+If <m>(x_0,y_0)</m> happens to lie on the negative real
+axis, just replace <m>-\pi \lt \theta \lt \pi</m> by a different interval of length <m>2\pi</m>,
+like <m>0 \lt \theta \lt 2\pi</m>.  The domain of definition of <m>\theta</m> would then change
+to the <m>\cD_0</m>, sketched on the right above.
+</p>
+
+<p>It's now a simple matter to check that <m>\vnabla\theta(x,y)=\vTh(x,y)</m>
+on the domain of definition of <m>\theta</m>. If <m>x\ne 0</m>, then, from the
+figure below,
+</p>
+
+<sidebyside>
+<image source="figs/triangleTh"/>
+</sidebyside>
+
+<p>
+we have that <m>\tan\theta(x,y)=\frac{y}{x}</m>, and
+<m>\cos\theta(x,y) = \frac{x}{\sqrt{x^2+y^2}}</m>, so that
+<md>
+<mrow>
+\frac{\partial }{\partial x}\tan\theta(x,y)
+&amp;=-\frac{y}{x^2} &amp;&amp;
+&amp;\hskip-10pt\implies&amp;&amp; &amp;\Big[\frac{\partial }{\partial x}\theta(x,y)\Big]
+      \ \sec^2\theta(x,y)
+      =-\frac{y}{x^2}
+
+</mrow><mrow>
+&amp; &amp;&amp; &amp;\hskip-10pt\implies&amp;&amp; &amp;\frac{\partial }{\partial x}\theta(x,y)
+=-\frac{y}{x^2}\cos^2\theta(x,y)
+=-\frac{y}{x^2}\ \frac{x^2}{x^2+y^2}
+=-\frac{y}{x^2+y^2}
+
+</mrow><mrow>
+\frac{\partial }{\partial y}\tan\theta(x,y)
+&amp;=\frac{1}{x} &amp;&amp;
+&amp;\hskip-10pt\implies&amp;&amp; &amp;\Big[\frac{\partial }{\partial y}\theta(x,y)\Big]
+     \ \sec^2\theta(x,y)
+     =\frac{1}{x}
+
+</mrow><mrow>
+&amp; &amp;&amp; &amp;\hskip-10pt\implies&amp;&amp; &amp;\frac{\partial }{\partial y}\theta(x,y)
+=\frac{1}{x}\cos^2\theta(x,y)
+=\frac{1}{x}\ \frac{x^2}{x^2+y^2}
+=\frac{x}{x^2+y^2}
+</mrow>
+</md>
+If <m>x=0</m>, then we must have <m>y\ne 0</m> (since <m>(0,0)</m> is not in the domain of definition to <m>\theta</m>), and we can use <m>\cot\theta(x,y)=\frac{x}{y}</m>
+instead and arrive at the same result.
+</p>
+
+<p>
+So far we have just looked at one vector field on <m>\cD</m>.
+We are  now ready to consider any vector field <m>\vF</m> on <m>\cD</m> that
+passes the screening test <m>\vnabla\times\vF=0</m> on <m>\cD</m>. We claim that
+there is a function <m>\varphi</m> on <m>\cD</m> such that
+<men xml:id="eqn_COalDef">
+\vF=\alpha_\vF\,\vTh+\vnabla\varphi\qquad\text{where}\qquad
+\alpha_\vF = \frac{1}{2\pi}\oint_{\cC_\veps}\vF\cdot \dee{\vr}
+</men>
+The significance of this claim is that it says that if a vector field on
+<m>\cD</m> passes the screening test on <m>\cD</m>, then, either it is conservative
+(that's the case if and only if <m>\alpha_\vF=0</m>) or, if it fails to be
+conservative, then it differs from a conservative field (namely
+<m>\vnabla\varphi</m>) only by
+a constant (namely <m>\alpha_\vF</m>) times the fixed vector field <m>\vTh</m>.
+That is, there is only one nonconservative vector field on <m>\cD</m> that
+passes the screening test, up to multiplication by constants and addition
+of conservative fields.  This is a nice simple surprise.
+</p>
+
+<p>Observe that in the definition of <m>\alpha_\vF</m>, we did not specify the radius
+<m>\veps</m> of the circle <m>\cC_\veps</m> to be used for the integration curve.
+That's because the answer to the integral does not depend on the choice
+of <m>\veps</m>. To see this, take any <m>0 \lt \veps' \lt \veps \lt 1</m> and consider the
+surface <m>S=\big\{\ (x,y)\in\bbbr^2\ \big|\ \veps' \lt |(x,y)| \lt \veps\big\}</m>.
+</p>
+
+<sidebyside>
+<image source="figs/pDisk3"/>
+</sidebyside>
+
+<p>
+It is completely contained in <m>\cD</m>.  The boundary of <m>S</m> consists of two
+parts. The outside part is <m>\cC_\veps</m>, oriented counterclockwise as usual.
+The inside part is <m>\cC_{\veps'}</m>, but oriented clockwise. It is usually
+denoted <m>-\cC_{\veps'}</m>. So, by Stokes' theorem,
+<me>
+\oint_{\cC_\veps}\vF\cdot \dee{\vr}
+        -\oint_{\cC_{\veps'}}\vF\cdot \dee{\vr}
+=\oint_{\cC_\veps}\vF\cdot \dee{\vr}
+        +\oint_{-\cC_{\veps'}}\vF\cdot \dee{\vr}
+=\oint_{\partial S}\vF\cdot \dee{\vr}
+=\dblInt_S \vnabla\times\vF\cdot\hn\ \dee{S}
+=0
+</me>
+</p>
+
+<p>Finally to verify the claim <xref ref="eqn_COalDef"/>, we check that the
+vector field <m>\vG=\vF-\alpha_\vF\vTh</m>
+is conservative on <m>\cD</m>. To do so, it suffices to check that
+<m>\oint_{\cC}\vG\cdot \dee{\vr}=0</m> for any closed curve <m>\cC</m> in <m>\cD</m>.
+In fact we can restrict our attention to curves <m>\cC</m> that are simple,
+closed, counterclockwise oriented curves on <m>\cD</m>. A curve is called
+simple if it does not cross itself. Closed curves which are not simple
+can be split up into simple closed subcurves. And changing the
+orientation of <m>\cC</m> just changes the sign of
+<m>\oint_{\cC}\vG\cdot \dee{\vr}=0</m>,
+which does not affect whether it is zero or not.
+</p>
+
+<p>So let <m>\cC</m> be
+a simple, closed, counterclockwise oriented curve in <m>\cD</m>. We need
+to verify that <m>\oint_\cC\vG\cdot \dee{\vr}=0</m>. Any simple closed curve in
+<m>\bbbr^2</m> divides <m>\bbbr^2</m> into three mutually disjoint
+subsets
+<fn>This, intuitively obvious, but hard to prove, result
+is called the Jordan curve theorem. It is named after the French mathematician
+Camille Jordan (1838<ndash/>1922), who first proved it.</fn>
+ <mdash/>
+<m>\cC</m> itself, the set of points inside <m>\cC</m> and the set of points
+outside <m>\cC</m>. Since <m>(0,0)</m> is not on <m>\cC</m>, it must be either outside <m>\cC</m>,
+as in the figure of the left below,  or inside <m>\cC</m> as in the figure on the right below.
+</p>
+
+<sidebyside>
+<image source="figs/pDisk4"/>
+<image source="figs/pDisk5"/>
+</sidebyside>
+
+<p>
+<ul>
+<li>  <em>Case 1: <m>(0,0)</m> outside <m>\cC</m>.</em>
+In this case <m>\cC</m> is the boundary of a set, <m>S</m>, which is completely
+contained in <m>\cD</m>, namely all of the points inside <m>\cC</m>.
+So, by Stokes' theorem,
+<md>
+<mrow>
+\oint_{\cC}\vG\cdot \dee{\vr}
+&amp;=\oint_{\partial S}\big(\vF-\alpha_\vF\vTh\big)\cdot \dee{\vr}
+=\dblInt_S \vnabla\times\vF\cdot\hn\ \dee{S}
+-\alpha_\vF\dblInt_S \vnabla\times\vTh\cdot\hn\ \dee{S}
+=0-\alpha_\vF 0
+</mrow><mrow>
+&amp;=0
+</mrow>
+</md>
+</li>
+<li>  <em>Case 2: <m>(0,0)</m> inside <m>\cC</m>.</em>
+ Since <m>(0,0)</m> is not on <m>\cC</m>, we can choose <m>\veps</m>
+small enough that the circle <m>\cC_\veps</m> lies completely inside
+<m>\cC</m>. Then the curve <m>\cC-\cC_\veps</m> is the boundary of a set,
+<m>S</m>, which is completely contained in <m>\cD</m>, namely the part of <m>\cD</m> that
+is between <m>\cC_\veps</m> and <m>\cC</m>.  So, by Stokes' theorem,
+<me>
+\oint_{\cC}\vG\cdot \dee{\vr}
+        -\oint_{\cC_\veps}\vG\cdot \dee{\vr}
+=\oint_{\cC-\cC_\veps}\vG\cdot \dee{\vr}
+=\oint_{\partial S}\vG\cdot \dee{\vr}
+=\dblInt_S \vnabla\times\vG\cdot\hn\ \dee{S}
+=0
+</me>
+since <m>\vnabla\times\vG=\vnabla\times\vF-\alpha_\vF\vnabla\times\vTh=0</m> on
+<m>\cD</m>. Hence
+<me>
+\oint_{\cC}\vG\cdot \dee{\vr}
+=\oint_{\cC_\veps}\vG\cdot \dee{\vr}
+=\oint_{\cC_\veps}\vF\cdot \dee{\vr}
+     -\alpha_\vF \oint_{\cC_\veps}\vTh\cdot \dee{\vr}
+=2\pi\alpha_\vF -\alpha_\vF(2\pi)=0
+</me>
+by the definition, <xref ref="eqn_COalDef"/>, of <m>\alpha_\vF</m> and <xref ref="eqn_COthInt"/>.
+</li>
+</ul>
+So <m>\vG</m> is conservative on <m>\cD</m> and <m>\vF</m> is of the form
+<xref ref="eqn_COalDef"/> on <m>\cD</m>.
+</p>
+
+<p>The ideas that we have explored here can be generalised quite a bit.
+For example, if we had a disk with <m>n \gt 1</m> punctures, we could use
+arguments like those above to show that any vector field <m>\vF</m> that passes
+the screening test has to be of the form
+<me>
+\vF=\vnabla\varphi + \sum_{\ell=1}^n \alpha_\ell\,\vTh_\ell
+</me>
+with <m>\vTh_\ell</m> simply being the above <m>\vTh</m> translated so as to be
+centered on the <m>\ell^{\rm th}</m> puncture.
+</p>
 
 <!-- <xi:include href="../problems/prob_s4.5.ptx" /> -->
 
