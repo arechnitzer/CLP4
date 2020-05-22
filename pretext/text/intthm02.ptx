@@ -1,0 +1,2161 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<section xmlns:xi="http://www.w3.org/2001/XInclude" xml:id="sec_divergenceThm">
+
+<!-- Copyright 2018-2020 Joel Feldman, Andrew Rechnitzer and Elyse Yeager -->
+<!-- This work is licensed under the Creative Commons Attribution-NonCommercial-ShareAlike 4.0 International License-->
+<!-- https://creativecommons.org/licenses/by-nc-sa/4.0 -->
+
+<title>The Divergence Theorem</title>
+
+<introduction>
+  <p>
+The rest of this chapter concerns three theorems: the divergence theorem,
+Green's theorem and Stokes' theorem. Superficially, they look
+quite different from each other. But, in fact, they are all <em>very</em>
+closely related and all three are generalizations of the
+fundamental theorem of calculus
+<me>
+\int_a^b \diff{f}{t}(t)\ \dee{t}
+   = f(b) -f(a)
+</me>
+The left hand side of the fundamental theorem of calculus is the
+integral of the derivative of a function.
+The right hand side involves only values of the function on the boundary
+of the domain of integration. The divergence theorem, Green's theorem
+and Stokes' theorem also have this form, but the integrals are in more than
+one dimension. So the derivatives are multidimensional, like the curl
+and divergence, and the integrands can involve vector fields.
+<ul>
+<li>
+For the divergence theorem, the integral on the left hand side is over
+a (three dimensional) volume and the right hand side is an integral
+over the boundary of the volume, which is a surface.
+</li>
+<li>
+For Green's and Stokes' theorems, the integral on the left hand side is over
+a (two dimensional) surface and the right hand side is an integral
+over the boundary of the surface, which is a curve.
+</li>
+</ul>
+</p>
+
+<p>The divergence theorem is going to relate a volume integral over a solid <m>V</m>
+to a flux integral over the surface of <m>V</m>. First we need a couple of
+definitions concerning the allowed surfaces. In many applications solids,
+for example cubes, have corners and edges where the normal vector is not defined. On the other hand, to be able to compute a flux integral over
+a surface, we certainly need that the set of points where  the normal vector
+is not well-defined is small enough that the existence of the flux integral
+is not jeopardized. This is the case for <q>piecewise smooth</q> surfaces,
+which we now define.
+</p>
+
+<definition xml:id="def_pSmoothSurface">
+<statement><p>
+<ol label="a">
+<li>
+A surface is <term>smooth</term> if it has a parametrization
+<m>\vr(u,v)</m> with continuous partial derivatives
+<m>\frac{\partial\vr}{\partial u}</m> and <m>\frac{\partial\vr}{\partial v}</m>
+and with <m>\frac{\partial\vr}{\partial u}\times\frac{\partial\vr}{\partial v}</m>
+nonzero.
+</li>
+<li>
+A surface is <term>piecewise smooth</term> if it consists of a finite
+number of smooth pieces that meet along sharp curves and at sharp corners.
+</li>
+</ol>
+</p></statement>
+</definition>
+
+<p> Here are sketches of a smooth surface (a sausage)
+and a piecewise smooth surface (an ice-cream cone), followed by the
+divergence theorem
+<fn>It is also known as Gauss's theorem.
+Johann Carl Friedrich Gauss (1777<ndash/>1855) was a German mathematician.
+Throughout the 1990's Gauss's portrait appeared on the German
+ten-mark banknote. In addition to Gauss's theorem, the Gaussian
+distribution (the bell curve), degaussing and the CGS unit for the
+magnetic field, and the crater Gauss on the Moon are named in his honour.
+</fn>.
+</p>
+
+<sidebyside>
+<image source="figs/divGenA"/>
+<image source="figs/pSmoothB"/>
+</sidebyside>
+
+<theorem xml:id="thm_divThm"><title>Divergence Theorem</title>
+<statement><p>
+Let
+<ul>
+<li>
+<m>V</m> be a bounded solid with a piecewise smooth
+surface
+<fn>We are going to consistently use the notation <m>\partial</m>(thing) to denote the boundary of (thing).</fn>
+ <m>\partial V</m>
+</li>
+<li>
+<m>\vF</m> be a vector field that has continuous first partial derivatives
+at every point of <m>V</m>.
+</li>
+</ul>
+Then
+<md>
+<mrow>
+\dblInt_{\partial V} \vF\cdot\hn\,\dee{S}
+&amp;=\tripInt_V\vnabla\cdot\vF\ \dee{V}
+</mrow>
+</md>
+where <m>\hn</m> is the outward unit normal of <m>\partial V</m>.
+</p></statement>
+</theorem>
+
+<!-- <p>\intremark{
+References:
+<ul>
+<li>
+Wilfred Kaplan, <em>Advanced Calculus</em>
+</li>
+<li>
+O. D. Kellogg, <em>Foundations of Potential Theory</em>
+</li>
+</ul>
+} -->
+
+<p>
+Like the fundamental theorem of calculus, the divergence theorem expresses
+the integral of a derivative of a function (in this case a vector-valued
+function) over a region in terms of the values of the function on the boundary of the region.
+</p>
+
+<warning xml:id="warn_divThm">
+<p>
+Note that in Theorem <xref ref="thm_divThm"/> we are assuming that
+the vector field <m>\vF</m> has continuous first partial derivatives
+at <em>every</em> point of <m>V</m>.
+If that is not the case, for example
+because <m>\vF</m> is not defined on all of <m>V</m>, then
+the conclusion of the divergence theorem can fail. An example is
+<m>\vF = \frac{\vr}{|\vr|^3}</m>, <m>V=\Set{(x,y,z)}{x^2+y^2+z^2\le 1}</m>.
+See Example<nbsp/><xref ref="eg_divThmD"/>.
+</p>
+</warning>
+
+<proof>
+<p>
+We have to show that
+<md>
+<mrow>
+\dblInt_{\partial V} \Big(
+     \vF_1\,\hi + \vF_2\,\hj + \vF_3\,\hk\Big)
+     \cdot\hn\,\dee{S}
+&amp;=\tripInt_V\Big(
+     \frac{\,\partial \vF_1}{\partial x}
+     +\frac{\partial \vF_2}{\partial y}
+     +\frac{\partial \vF_3}{\partial z}\Big)
+     \ \dee{V}
+</mrow>
+</md>
+Note that the left hand side is a sum of three terms <mdash/> one involving <m>\vF_1</m>,
+one involving <m>\vF_2</m> and one involving <m>\vF_3</m> <mdash/>
+and the right hand side is a sum of three terms <mdash/> one involving <m>\vF_1</m>,
+one involving <m>\vF_2</m> and one involving <m>\vF_3</m>. We'll  just show that
+the <m>\vF_3</m> terms on the left hand side and right hand side are equal, i.e.
+that
+<md>
+<mrow>
+\dblInt_{\partial V}  \vF_3\,\hk \cdot\hn\,\dee{S}
+&amp;=\tripInt_V
+     \frac{\partial \vF_3}{\partial z}
+     \ \dee{V}
+</mrow>
+</md>
+Showing that the <m>\vF_1</m> terms match and the <m>\vF_2</m> terms match is done
+in the same way
+<fn>Mutatis mutandis.</fn>.
+</p>
+
+<p><em>Special Geometry</em></p>
+
+<p>We'll first assume that the solid has the special form
+<me>
+V = \Set{(x,y,z)}{ B(x,y)\le z\le T(x,y),\ \ (x,y)\in R_{xy}}
+</me>
+where <m>R_{x,y}</m> is some subset of the <m>xy</m>-plane. We can further assume
+that, for each <m>(x,y) \in R_{xy}</m>, we have <m>B(x,y)\le  T(x,y)</m>.
+After we're finished with this special case, we'll handle the general case.
+</p>
+
+<!-- <p>\intremark{
+</p>
+
+<p>\noindent Old version:
+</p>
+
+<p>We'll first assume that the solid has the special form
+<me>
+V = \Set{(x,y,z)}{ B(x,y)\le z\le T(x,y),\ \ (x,y)\in R_{xy}}
+</me>
+where <m>R_{x,y}</m> is some subset of the <m>xy</m>-plane.
+For solids of this form, if you fix any <m>x=x_0</m> and <m>y=y_0</m>,
+then set of <m>z</m>-coordinates for which <m>(x_0,y_0,z)</m> lies in the solid
+are either
+<ul>
+<li>sep1pt \parskip0pt \parsep0pt
+</li>
+<li>
+an interval, namely <m>\big[B(x_0,y_0), T(x_0,y_0)\big]</m>,
+if <m>B(x_0,y_0) \lt  T(x_0,y_0)</m> or
+</li>
+<li>
+a single point, namely <m>\big\{B(x_0,y_0)\big\}</m>,
+if <m>B(x_0,y_0)= T(x_0,y_0)</m>, or
+</li>
+<li>  the empty set if <m>B(x_0,y_0) \gt  T(x_0,y_0)</m>
+or if <m>(x_0,y_0)\notin R_{xy}</m>.
+</li>
+</ul>
+The interval case is illustrated by the leftmost line in the figure below;
+the single point case is illustrated by the middle line; and the empty set
+case is illustrated by the rightmost line.
+</p>
+
+<p><sidebyside>
+<image source="figs/divSpec"/>
+</sidebyside>
+\noindent
+After we're finished with this special case, we'll handle the general case.
+}
+</p> -->
+
+<p>Let's work on <m>\dblInt_{\partial V}  \vF_3\,\hk \cdot\hn\,\dee{S}</m>
+first. As in the figure below,
+</p>
+
+<sidebyside>
+<image source="figs/divthm"/>
+</sidebyside>
+
+<p>
+the surface <m>\partial V</m> consists of three pieces <mdash/> the top, the bottom and
+the side. We'll consider each in turn.
+<ul>
+<li>
+The top is <m>\cT=\Set{(x,y,z)}{ z= T(x,y),\ \ (x,y)\in R_{xy}}</m>.
+By <xref ref="eq_SUdSgraph"/>, on <m>\cT</m>
+<me>
+\hn\, \dee{S}  = +\big[-T_x(x,y)\,\hi - T_y(x,y)\,\hj + \hk\big]\
+          \dee{x}\dee{y}
+</me>
+As <m>\hn</m> is to be the outward normal, it must point upwards on <m>\cT</m>.
+That's why we have chosen, and emphasised, the <q><m>+</m></q> sign. So <m>\hk\cdot\hn\,\dee{S} =
+\dee{x}\dee{y}</m> and
+<me>
+\dblInt_{\cT}  \vF_3\,\hk \cdot\hn\,\dee{S}
+=\dblInt_{R_{xy}}  \vF_3(x,y,T(x,y))\,\dee{x}\dee{y}
+</me>
+</li>
+<li>
+The bottom is
+<m>\cB=\Set{(x,y,z)}{ z= B(x,y),\ \ (x,y)\in R_{xy}}</m>.
+By <xref ref="eq_SUdSgraph"/>, on <m>\cB</m>
+<me>
+\hn\, \dee{S}  = -\big[-B_x(x,y)\,\hi - B_y(x,y)\,\hj + \hk\big]\
+          \dee{x}\dee{y}
+</me>
+As <m>\hn</m> is to be the outward normal, it must point downwards on <m>\cB</m>.
+That's why we have chosen the <q><m>-</m></q> sign. So <m>\hk\cdot\hn\,\dee{S} =
+-\dee{x}\dee{y}</m> and
+<me>
+\dblInt_{\cB}  \vF_3\,\hk \cdot\hn\,\dee{S}
+=-\dblInt_{R_{xy}}  \vF_3(x,y,B(x,y))\,\dee{x}\dee{y}
+</me>
+</li>
+<li>
+The side is <m>\cS=\Set{(x,y,z)}{(x,y)\in\partial R_{xy},\ B(x,y)\le z\le T(x,y)}</m>. It runs vertically. Hence on  <m>\cS</m> the normal vector to <m>\partial V</m>
+is parallel to the <m>xy</m>-plane so that <m>\hk\cdot\hn=0</m> and
+<me>
+\dblInt_{\cS}  \vF_3\,\hk \cdot\hn\,\dee{S} = 0
+</me>
+</li>
+</ul>
+</p>
+
+<p>So all together
+<md>
+<mrow>
+\dblInt_{\partial V}  \vF_3\,\hk \cdot\hn\,\dee{S}
+&amp;=\dblInt_{\cT}  \vF_3\,\hk \cdot\hn\,\dee{S}
+ +\dblInt_{\cB}  \vF_3\,\hk \cdot\hn\,\dee{S}
+ +\dblInt_{\cS}  \vF_3\,\hk \cdot\hn\,\dee{S} \notag
+ </mrow><mrow>
+&amp;=\dblInt_{R_{xy}}  \big[\vF_3(x,y,T(x,y))
+   -\vF_3(x,y,B(x,y))\big]\,\dee{x}\dee{y}
+   +0
+\tag{$\partial V$}
+</mrow>
+</md>
+</p>
+
+<p>Now let us examine
+<md>
+<mrow>
+\tripInt_V\frac{\partial \vF_3}{\partial z}\ \dee{V}
+&amp;= \dblInt_{R_{xy}}\dee{x}\dee{y}\int_{B(x,y)}^{T(x,y)}\dee{z}\
+            \frac{\partial \vF_3}{\partial z}(x,y,z) \notag
+</mrow><mrow>
+&amp;=\dblInt_{R_{xy}}  \big[\vF_3(x,y,T(x,y))
+   -\vF_3(x,y,B(x,y))\big]\,\dee{x}\dee{y}
+\tag{$V$}
+</mrow>
+</md>
+by the fundamental theorem of calculus.
+That's exactly what we had to show. The integrals (<m>\partial V</m>)
+and (<m>V</m>) are equal.
+</p>
+
+<p><em>General Geometry</em></p>
+
+<p>Now we'll drop the assumption on <m>V</m> that we imposed in the <q>Special
+Geometry</q> section above. The key idea that makes the proof work
+is that we can cut up any
+<fn>We are assuming that <m>V</m> is <q>reasonable</q>.
+</fn> <m>V</m> into pieces, each of which does obey the
+special assumption that we just considered. Consider, for example,
+the sausage shaped solid in the figure on the left below.
+</p>
+
+<sidebyside>
+<image source="figs/divGenA"/>
+<image source="figs/divGen"/>
+</sidebyside>
+
+<p>
+Call the sausage <m>V</m>.
+Cut it into two halves by running a cleaver horizontally through its
+centre. This splits the solid <m>V</m> into two halves, <m>V_1</m> and <m>V_2</m>
+as in the figure on the right above. It also splits the boundary <m>\partial V</m>
+of <m>V</m> into two halves <m>S_1</m> and <m>S_2</m>, also as in the figure on
+the right above. Note that
+<ul>
+<li>
+the boundary, <m>\partial V_1</m>, of <m>V_1</m> is the union of <m>S_1</m>
+and the shaded disk <m>S_c</m> (the cut introduced by the cleaver).
+On the cut <m>S_c</m>, the outward pointing normal to <m>V_1</m> is <m>-\hk</m>.
+</li>
+<li>
+The boundary, <m>\partial V_2</m>, of <m>V_2</m> is the union of <m>S_2</m>
+and the shaded disk <m>S_c</m>.
+On the cut <m>S_c</m>, the outward pointing normal to <m>V_2</m> is <m>+\hk</m>.
+</li>
+</ul>
+Now both <m>V_1</m> and <m>V_2</m> do satisfy the assumption of the <q>Special Geometry</q>
+section above. So
+<md>
+<mrow>
+\tripInt_V\frac{\partial \vF_3}{\partial z}\ \dee{V}
+&amp;= \tripInt_{V_1}\frac{\partial \vF_3}{\partial z}\ \dee{V}
+  +\tripInt_{V_2}\frac{\partial \vF_3}{\partial z}\ \dee{V}
+</mrow><mrow>
+&amp;=\dblInt_{\partial V_1}  \vF_3\,\hk \cdot\hn\,\dee{S}
+  +\dblInt_{\partial V_2}  \vF_3\,\hk \cdot\hn\,\dee{S}
+</mrow><mrow>
+&amp;=\dblInt_{S_1}  \vF_3\,\hk \cdot\hn\,\dee{S}
+  +\dblInt_{<image source="figs/SCdn"/>}  \vF_3\,\hk \cdot\hn\,\dee{S}
+  +\dblInt_{S_2}  \vF_3\,\hk \cdot\hn\,\dee{S}
+  +\dblInt_{<image source="figs/SCup"/>}  \vF_3\,\hk \cdot\hn\,\dee{S}
+</mrow>
+</md>
+The second and fourth integrals  are identical
+except that <m>\hn=-\hk</m> in the second integral and <m>\hn=+\hk</m> in the
+fourth integral. So they cancel exactly and
+<md>
+<mrow>
+\tripInt_V\frac{\partial \vF_3}{\partial z}\ \dee{V}
+&amp;=\dblInt_{S_1}  \vF_3\,\hk \cdot\hn\,\dee{S}
+  +\dblInt_{S_2}  \vF_3\,\hk \cdot\hn\,\dee{S}
+=\dblInt_{\partial V}  \vF_3\,\hk \cdot\hn\,\dee{S}
+</mrow>
+</md>
+as desired.
+</p></proof>
+
+
+<example xml:id="eg_divThmA">
+<statement>
+<p>
+Evaluate the flux integral <m>\dblInt_S \vF\cdot\hn\,\dee{S}</m> where
+<m>\hn </m> is the outward normal to <m>S</m>, which is the surface of
+the hemispherical region
+</p>
+<sidebyside width="45%">
+<p><me>
+V=\Set{(x,y,z}{x^2+y^2+z^2\le a^2,\ z\ge 0}
+</me></p>
+<image source="figs/hemisphere"/>
+</sidebyside>
+<p>
+and
+<me>
+\vF = xz^2\,\hi + (x^2y-z^3)\,\hj + \big(2xy + y^2 z +e^{\cos y}\big)\hk
+</me>
+</p>
+</statement>
+
+<solution>
+<p>The <m>e^{\cos y}</m> in <m>\vF</m> suggests that
+a direct evaluation of the integral is difficult. So we'll use a
+little trickery to to evaluate it. Not surprisingly,
+considering that we have just proven the divergence theorem, the trick
+is to apply the divergence theorem
+<fn>It's almost as though someone rigged the example with this in mind.
+</fn>.
+Since
+<md>
+<mrow>
+\vnabla\cdot\vF &amp;= \frac{\partial \vF_1}{\partial x}
+                 +\frac{\partial \vF_2}{\partial y}
+                 +\frac{\partial \vF_3}{\partial z}
+=\frac{\partial }{\partial x}\big(xz^2\big)
++\frac{\partial }{\partial y}\big(x^2y-z^3\big)
++\frac{\partial }{\partial z}\big(2xy + y^2 z +e^{\cos y}\big)
+</mrow><mrow>
+&amp;= z^2 + x^2 +y^2
+</mrow>
+</md>
+The divergence theorem tell us that
+<md>
+<mrow>
+\dblInt_S \vF\cdot\hn\,\dee{S}
+&amp;=\tripInt_V\big(x^2+y^2+z^2\big)\ \dee{V}
+</mrow>
+</md>
+Spherical coordinates are perfect for this integral. (See
+Appendix <xref ref="ap_spherCoord"/>, if you need to refresh your memory.)
+<md>
+<mrow>
+\tripInt_V\big(x^2+y^2+z^2\big)\ \dee{V}
+&amp;=\int_0^{2\pi}\dee{\theta}\int_0^{\frac{\pi}{2}}\dee{\varphi}
+   \int_0^a \dee{\rho}\,\rho^2\sin\varphi\ \rho^2
+</mrow><mrow>
+&amp;=\bigg[\int_0^{2\pi}\dee{\theta}\bigg]
+\bigg[\int_0^{\frac{\pi}{2}}\sin\varphi\,\dee{\varphi}\bigg]
+\bigg[\int_0^{a}\rho^4\,\dee{\rho}\bigg]
+</mrow><mrow>
+&amp;=\big[2\pi\big]\Big[-\cos\varphi\Big]_0^{\frac{\pi}{2}}
+   \Big[\frac{\rho^5}{5}\Big]_0^a
+</mrow><mrow>
+&amp;=\frac{2\pi a^5}{5}
+</mrow>
+</md>
+</p>
+</solution>
+</example>
+
+<example xml:id="eg_divThmB">
+<statement>
+<p>
+Evaluate the flux integral <m>\dblInt_S \vF\cdot\hn\,\dee{S}</m> where
+<m>\hn </m> is the outward normal to <m>S</m>, which is the part of the surface
+<m>z^2=x^2+y^2</m> with <m>1\le z\le 2</m>, and where
+<me>
+\vF = 3x\,\hi + (5y+e^{\cos x})\,\hj + z\,\hk
+</me>
+</p>
+</statement>
+
+<solution>
+<p>
+Again the <m>e^{\cos x}</m> in <m>\vF</m> suggests that a direct evaluation
+is difficult
+<fn>In fact, it is possible to evaluate this integral directly, if one recognizes that the ugly part of the integrand is odd under <m>y\rightarrow-y</m> and integrates to exactly zero.
+</fn> and again we'll apply the divergence theorem. But this time
+<m>S</m> is not the boundary of a solid <m>V</m>. It is the portion of the cone outlined
+in red in the figure on the left below and does not have a top or
+bottom <q>cap</q>.
+</p>
+
+<sidebyside>
+<image source="figs/cone"/>
+<image source="figs/coneB"/>
+</sidebyside>
+
+<p>
+Fortunately, there is a solid <m>V</m> whose boundary, while not being equal to
+<m>S</m>, at least contains <m>S</m>. It is (unsurprisingly)
+<me>
+V = \Set{(x,y,z)}{x^2+y^2\le z^2,\ \ 1\le z\le 2}
+</me>
+and is sketched in the figure on the right above.
+The boundary, <m>\partial V</m>, is the union of <m>S</m> and the two disks
+<md>
+<mrow>
+D_1 &amp;= \Set{(x,y,z)}{x^2+y^2\le z^2,\ \ z=1}
+</mrow><mrow>
+D_2 &amp;= \Set{(x,y,z)}{x^2+y^2\le z^2,\ \ z=2}
+</mrow>
+</md>
+So the divergence theorem gives
+<md>
+<mrow>
+\tripInt_V\vnabla\cdot\vF\ \dee{V} = \dblInt_{\partial V} \vF\cdot\hn\,\dee{S}
+= \dblInt_S \vF\cdot\hn\,\dee{S}
+ +\dblInt_{D_1} \vF\cdot\hn\,\dee{S}
+ +\dblInt_{D_2} \vF\cdot\hn\,\dee{S}
+</mrow>
+</md>
+which implies
+<md>
+<mrow>
+\dblInt_S \vF\cdot\hn\,\dee{S}
+&amp;= \tripInt_V\vnabla\cdot\vF\ \dee{V}
+  -\dblInt_{D_1} \vF\cdot\hn\,\dee{S}
+ -\dblInt_{D_2} \vF\cdot\hn\,\dee{S}
+</mrow>
+</md>
+The point of this exercise is that the left hand side, which is not easy
+to evaluate directly, is the integral we want, while the three
+integrals on the right hand side are all easy to evaluate. We do so now.
+The outward normal to (the horizontal disk) <m>D_2</m> is <m>+\hk</m>. So
+<md>
+<mrow>
+\dblInt_{D_2} \vF\cdot\hn\,\dee{S}
+&amp;=\dblInt_{D_2} \vF\cdot\hk\,\dee{S}
+=\dblInt_{D_2} z\,\dee{S}
+</mrow>
+</md>
+As <m>z=2</m> on <m>D_2</m>, and <m>D_2</m> is a disk of radius <m>2</m>,
+<me>
+\dblInt_{D_1} \vF\cdot\hn\,\dee{S}
+=2\text{Area}(D_2)
+=2\pi 2^2 = 8\pi
+</me>
+Similarly, the outward normal to (the horizontal disk) <m>D_1</m> is <m>-\hk</m>. So
+<md>
+<mrow>
+\dblInt_{D_1} \vF\cdot\hn\,\dee{S}
+&amp;=-\dblInt_{D_1} \vF\cdot\hk\,\dee{S}
+=-\dblInt_{D_1} z\,\dee{S}
+</mrow>
+</md>
+As <m>z=1</m> on <m>D_1</m>, and <m>D_1</m> is a disk of radius <m>1</m>,
+<me>
+\dblInt_{D_1} \vF\cdot\hn\,\dee{S}
+=\text{Area}(D_1)
+=-\pi 1^2 = -\pi
+</me>
+Finally, as <m>\vnabla\cdot\vF = 3+5+1 = 9</m>
+<md>
+<mrow>
+\tripInt_V\vnabla\cdot\vF\ \dee{V}
+=9\,\text{Vol}(V)
+</mrow>
+</md>
+The volume of <m>V</m> can be easily computed using the first year
+technique
+<fn>You can review in §1.6 of the CLP-2 text.
+</fn> of slicing <m>V</m> into thin horizontal pancakes like that sketched in the
+figure below.
+</p>
+
+<sidebyside>
+<image source="figs/coneC"/>
+</sidebyside>
+
+<p>
+The pancake at height <m>z</m> has
+<ul>
+<li>
+thickness <m>\dee{z}</m>,
+</li>
+<li>
+a circular cross-section of radius <m>z</m> (remember that the outer
+boundary of <m>V</m> has equation <m>x^2+y^2=z^2</m>), and hence has
+</li>
+<li>
+cross-sectional area <m>\pi z^2</m> and
+</li>
+<li>
+volume <m>\pi z^2\,\dee{z}</m>.
+</li>
+</ul>
+So
+<md>
+<mrow>
+\tripInt_V\vnabla\cdot\vF\ \dee{V}
+=9\,\text{Vol}(V)
+=9\int_1^2 \pi z^2\,\dee{z}
+=9\Big[\frac{\pi z^3}{3}\Big]_1^2
+=9\times \pi\frac{7}{3}
+=21\pi
+</mrow>
+</md>
+and, all together
+<md>
+<mrow>
+\dblInt_S \vF\cdot\hn\,\dee{S}
+&amp;= \tripInt_V\vnabla\cdot\vF\ \dee{V}
+  -\dblInt_{D_1} \vF\cdot\hn\,\dee{S}
+ -\dblInt_{D_2} \vF\cdot\hn\,\dee{S}
+= 21\pi - (-\pi) -8\pi
+=14\pi
+</mrow>
+</md>
+</p>
+
+<!-- <p>\intremark{
+To integrate the given integral directly use
+<me>
+\hn\,\dee{S} = \frac{\vnabla(z^2-x^2-y^2)}{\hk\cdot\vnabla(z^2-x^2-y^2)}
+                       \dee{x}\dee{y}
+             =\frac{-x\,\hi - y\,\hj +z\,\hk}{z}\dee{x}\dee{y}
+</me>
+so that
+<me>
+\vF\cdot\hn\,\dee{S}
+=\frac{-3x^2-5y^2-ye^{\cos x}+z^2}{z}\dee{x}\dee{y}
+</me>
+with <m>z = \sqrt{x^2+y^2}</m> and with domain of integration <m>1\le x^2+y^2\le 4</m>.
+The term <m>-\frac{y}{z}e^{\cos x}</m> will integrate to <m>0</m> because it is
+odd under <m>y\rightarrow-y</m>. The rest can be integrated using polar coordinates.
+}
+</p> -->
+</solution>
+</example>
+
+<example xml:id="eg_divThmC">
+<statement>
+<p>
+Evaluate the flux integral <m>\dblInt_S \vF\cdot\hn\,\dee{S}</m> where
+<m>\hn </m> is the upward normal to <m>S</m>, which is the part of
+<m>z={\big(x^2+y^2\big)}^2</m> with <m>0\le z\le 1</m>, and
+<me>
+\vF = \big(x+e^{y^2}\big)\,\hi + (y+\cos z)\,\hj + \hk
+</me>
+</p>
+</statement>
+<solution>
+<p>
+This integral can be evaluated in much the same way as we evaluated
+the integral of Example<nbsp/><xref ref="eg_divThmC"/>. We first define a solid <m>V</m>
+whose boundary <m>\partial V</m> contains <m>S</m>. A good, and hopefully obvious,
+choice is
+<md>
+<mrow>
+V = \Set{(x,y,z)}{{\big(x^2+y^2\big)}^2\le z,\ \ 0\le z\le 1 }
+</mrow>
+</md>
+The boundary of <m>V</m> is the union of <m>S</m>, with outward pointing normal <m>-\vn</m>
+(recall that the problem specifies that the symbol <m>\hn</m> refers to
+the upward point normal)  and the disk
+<me>
+D = \Set{(x,y,z)}{z= 1,\ \  {\big(x^2+y^2\big)}^2\le 1}
+</me>
+with outward pointing normal <m>\hk</m>.
+</p>
+
+<sidebyside>
+<image source="figs/bowl"/>
+</sidebyside>
+
+<p>
+So the divergence theorem gives
+<md>
+<mrow>
+\tripInt_V\vnabla\cdot\vF\ \dee{V}
+= -\dblInt_S \vF\cdot\hn\,\dee{S}
+ +\dblInt_{D} \vF\cdot\hk\,\dee{S}
+</mrow>
+</md>
+which implies
+<md>
+<mrow>
+\dblInt_S \vF\cdot\hn\,\dee{S}
+&amp;= -\tripInt_V\vnabla\cdot\vF\ \dee{V}
+  +\dblInt_{D} \vF\cdot\hk\,\dee{S}
+</mrow><mrow>
+&amp;= -\tripInt_V 2\ \dee{V}
+  +\dblInt_{D} \dee{S}
+</mrow>
+</md>
+<m>D</m> is a circular disk of radius <m>1</m>, and so has area <m>\pi</m>. To evaluate the
+volume integral we slice <m>V</m> into horizontal pancakes with the pancake at height <m>z</m> having a circular cross-section of radius <m>z^{\frac{1}{4}}</m>.
+(Recall that the boundary of <m>V</m> has <m>{\big(x^2+y^2\big)}^2 = z</m>.) So
+<md>
+<mrow>
+\dblInt_S \vF\cdot\hn\,\dee{S}
+&amp;= -2\int_0^1\pi \sqrt{z}\ \dee{z}
+  +\pi
+=-2\pi\times\frac{2}{3} +\pi
+=-\frac{\pi}{3}
+</mrow>
+</md>
+Again, you can see that the actual integration is quite easy. All of the work
+(or at least all of the thinking) happens in the setup.
+</p>
+</solution>
+</example>
+
+<example xml:id="eg_divThmD">
+<p>
+In Warning <xref ref="warn_divThm"/> we emphasised that the conclusion of the
+divergence Theorem <xref ref="thm_divThm"/> can fail if
+the vector field <m>\vF</m> is not defined at even a single
+point of <m>V</m>. Here is an example. Set
+<me>
+\vF = \frac{\vr}{|\vr|^3}
+\qquad\text{where } \vr=x\,\hi+y\,\hj +z\,\hk
+</me>
+and <m>V=\Set{(x,y,z)}{x^2+y^2+z^2\le 1}</m>.
+Then, if <m>(x,y,z)\ne\vZero</m>,
+<md>
+<mrow>
+\vnabla\cdot\vF(x,y,z)
+&amp;=\frac{\partial }{\partial x}\frac{x}{{\big[x^2+y^2+z^2\big]}^{3/2}}
++\frac{\partial }{\partial y}\frac{y}{{\big[x^2+y^2+z^2\big]}^{3/2}}
++\frac{\partial }{\partial z}\frac{z}{{\big[x^2+y^2+z^2\big]}^{3/2}}
+
+</mrow><mrow>
+&amp;=\frac{\big[x^2+y^2+z^2\big]-x\frac{3}{2}(2x)}{{\big[x^2+y^2+z^2\big]}^{5/2}}
++\frac{\big[x^2+y^2+z^2\big]-y\frac{3}{2}(2y)}{{\big[x^2+y^2+z^2\big]}^{5/2}}
++\frac{\big[x^2+y^2+z^2\big]-z\frac{3}{2}(2z)}{{\big[x^2+y^2+z^2\big]}^{5/2}}
+
+</mrow><mrow>
+&amp;=0
+</mrow>
+</md>
+On the other hand, the boundary of <m>V</m> is the unit sphere
+<m>\partial V = \Set{(x,y,z)}{x^2+y^2+z^2 = 1}</m>. The outward unit
+normal to <m>\partial V</m>
+is <m>\hn = \frac{\vr}{|\vr|}</m> so that
+<md>
+<mrow>
+\int_{\partial V}\vF\cdot\hn\ \dee{S}
+&amp;=\int_{|\vr|=1}  \frac{\vr}{|\vr|^3}\cdot \frac{\vr}{|\vr|}\ \dee{S}
+=\int_{|\vr|=1}  \frac{1}{|\vr|^2}\ \dee{S}
+=\int_{|\vr|=1}\dee{S}
+</mrow><mrow>
+&amp;=4\pi\ne 0
+</mrow>
+</md>
+</p>
+
+</example>
+
+</introduction>
+
+
+<subsection xml:id="sec_heatEqn">
+  <title>Optional <mdash/> An Application of the Divergence Theorem <mdash/> the Heat Equation</title>
+
+<subsubsection xml:id="subsubsec-">
+  <title>Derivation of the Heat Equation</title>
+
+<p>Let <m>T(x,y,z,t)</m> be the temperature at time <m>t</m> at the point <m>(x,y,z)</m>
+in some object <m>\cB</m>. The heat equation
+<fn>The heat equation was formulated by the French mathematician and physicist Jean-Baptiste
+Joseph Fourier in 1807. He lived from 1768 to 1830, a period which
+included both the French revolution and the reign of Napoleon. Indeed
+Fourier served on his local Revolutionary Committee, was imprisoned
+briefly during the Terror, and was Napoleon Bonaparte's scientific
+advisor on his Egyptian expedition of 1798. Fourier series and
+the Fourier transform are named after him. Fourier is also credited
+with discovering the greenhouse effect.
+</fn>
+is the partial differential equation
+that describes the flow of heat energy and consequently the behaviour of
+<m>T</m>. We now use the divergence theorem to derive the heat
+equation
+from two physical <q>laws</q>, that we assume are valid:
+<ul>
+<li>
+The amount of heat energy required to raise the temperature
+of an object by <m>\De T</m> degrees is <m>CM\,\De T</m> where, <m>M</m> is the mass
+of the object and <m>C</m> is a positive physical constant determined by the
+material contained in the object. It is called the specific heat, or specific heat capacity
+<fn>
+Heat is now understood to arise from the internal energy of the object.
+In an earlier theory, heat was viewed as measuring an invisible fluid,
+called the caloric. The amount of caloric that an object could hold
+was called its <q>heat capacity</q> by the Scottish physician and chemist
+Joseph Black (1728<ndash/>1799).
+</fn>, of the object.
+</li>
+<li><p>
+Think of heat energy as a moving fluid. We will rig its velocity field so
+that heat flows in the direction opposite to the temperature gradient.
+Precisely, we choose its velocity field to be <m>-\ka\vnabla T(x,y,z,t)</m>.
+Here <m>\ka</m> is another positive physical constant called the thermal
+conductivity of the object. So the rate at which heat is conducted
+across an element of surface area <m>\dee{S}</m> at <m>(x,y,z)</m> in the direction of
+its unit normal <m>\hn</m> is given by <m>-\ka\hn\cdot\vnabla T(x,y,z,t)\,\dee{S}</m> at
+time <m>t</m>. For example, in the figure
+</p>
+
+<sidebyside>
+<image source="figs/heat1"/>
+</sidebyside>
+
+<p>
+the temperature gradient, which points in the direction of
+increasing temperature, is opposite <m>\hn</m>. Consequently the flow rate
+<m>-\ka\hn\cdot\vnabla T(x,y,z,t)\,\dee{S}</m> is positive, indicating flow in the
+direction of <m>\hn</m>. This is just what you would expect <mdash/> heat flows from
+hot regions to cold regions. Also the rate of flow increases as the
+magnitude of the temperature gradient increases. This also makes sense
+(and is reminiscent of Newton's law of cooling).
+</p>
+</li>
+</ul>
+Let <m>V\subset\cB</m> be <em>any</em> three dimensional region in the object and denote
+by <m>\partial V</m> the surface of <m>V</m> and by <m>\hn</m> the outward normal to
+<m>\partial V</m>. The amount of heat that <em>enters</em> <m>V</m> across an infinitesimal
+piece <m>\dee{S}</m> of <m>\partial V</m> in an infinitesimal time interval <m>\dee{t}</m> is
+<m>-\big(-\ka\hn\cdot\vnabla T(x,y,z,t)\,\dee{S}\big)\,\dee{t}</m>.
+The amount of heat that enters <m>V</m> across all of <m>\partial V</m> in the
+time interval <m>\dee{t}</m> is given by the integral
+</p>
+
+<sidebyside width="45%">
+<p><me>
+\dblInt_{\partial V} \ka\hn\cdot\vnabla T(x,y,z,t)\,\dee{S}\,\dee{t}
+</me></p>
+<image source="figs/heat2"/>
+</sidebyside>
+
+<p>
+In this same time interval the temperature at a point  <m>(x,y,z)</m> in <m>V</m>
+changes by <m>\frac{\partial T}{\partial t}(x,y,z,t)\,\dee{t}</m>. If the density of
+the object at <m>(x,y,z)</m> is <m>\rho(x,y,z)</m>, the amount of heat energy
+required to increase the temperature of an infinitesimal volume <m>\dee{V}</m> of
+the object centred at <m>(x,y,z)</m> by
+<m>\frac{\partial T}{\partial t}(x,y,z,t)\,\dee{t}</m>
+is <m>C(\rho\dee{V})\,\frac{\partial T}{\partial t}(x,y,z,t)\,\dee{t}</m>.
+The amount of heat energy required
+to increase the temperature by <m>\frac{\partial T}{\partial t}(x,y,z,t)\,\dee{t}</m>
+at all points <m>(x,y,z)</m> in <m>V</m> is then
+<me>
+\tripInt_V C\rho\frac{\partial T}{\partial t}(x,y,z,t)\,\dee{V}\,\dee{t}
+</me>
+Assuming that the object is not generating or destroying
+<fn>The caloric theory of heat was itself destroyed by the cannon boring experiment of 1798.
+In this experiment the American/British physicist Benjamin Thompson
+(1753<ndash/>1814) boiled water just using the heat generated by friction
+during the boring of a cannon.</fn>
+ heat itself, this
+must be same as the amount of heat that entered <m>V</m> in the time interval
+<m>\dee{t}</m>. That is
+<me>
+\dblInt_{\partial V} \ka\hn\cdot\vnabla T\,\dee{S}\,\dee{t}
+=\tripInt_V C\rho\frac{\partial T}{\partial t}\,\dee{V}\,\dee{t}
+</me>
+Now we cancel the common factor of <m>\dee{t}</m>. We can then rewrite the
+left hand side as an integral over <m>V</m> by applying the divergence theorem
+giving
+<me>
+\tripInt_{V} \ka\vnabla\cdot\vnabla T\,\dee{V}
+=\tripInt_V C\rho\frac{\partial T}{\partial t}\,\dee{V}
+</me>
+As both integrals are over the same volume <m>V</m>, we have
+<me>
+\tripInt_{V} \ka\vnabla\cdot\vnabla T\,\dee{V}
+-\tripInt_V C\rho\frac{\partial T}{\partial t}\,\dee{V}
+=0
+\implies
+\tripInt_{V} \Big[\ka\vnabla^2 T
+          -C\rho\frac{\partial T}{\partial t}\Big]\,\dee{V}=0
+\tag{H}
+</me>
+where <m>\vnabla^2=\vnabla\cdot\vnabla=\frac{\partial^2 }{\partial x^2}+
+\frac{\partial^2 }{\partial y^2}+\frac{\partial^2 }{\partial z^2}</m>
+is the Laplacian.
+This must be true for all volumes <m>V</m> in the object and for all times <m>t</m>. We
+claim that this forces
+<me>
+\ka\vnabla^2 T(x,y,z,t)-C\rho\frac{\partial T}{\partial t}(x,y,z,t)=0
+</me>
+for all <m>(x,y,z)</m> in the object and all <m>t</m>.
+</p>
+
+<p>Suppose that to the contrary there was a point <m>(x_0,y_0,z_0)</m> in the object
+and a time <m>t_0</m> with, for example,
+<m>\ka\vnabla^2 T(x_0,y_0,z_0,t_0)
+   -C\rho\frac{\partial T}{\partial t}(x_0,y_0,z_0,t_0) \gt 0</m>.
+By continuity, which we are assuming, <m>\ka\vnabla^2 T(x,y,z,t_0)
+   -C\rho\frac{\partial T}{\partial t}(x,y,z,t_0)</m>
+must remain close to <m>\ka\vnabla^2 T(x_0,y_0,z_0,t_0)
+   -C\rho\frac{\partial T}{\partial t}(x_0,y_0,z_0,t_0)</m> when <m>(x,y,z)</m>
+is close to <m>(x_0,y_0,z_0)</m>.
+So we would have
+<me>
+\ka\vnabla^2 T(x,y,z,t_0)
+-C\rho\frac{\partial T}{\partial t}(x,y,z,t_0) \gt 0
+</me>
+for all <m>(x,y,z)</m> in some small ball <m>B</m> centered on <m>(x_0,y_0,z_0)</m>.
+Then, necessarily,
+<me>
+\tripInt_{B} \Big[\ka\vnabla\cdot\vnabla T(x,y,z,t_0)
+      -C\rho\frac{\partial T}{\partial t}(x,y,z,t_0)\Big]\,\dee{V} \gt 0
+</me>
+which violates (H) for <m>V=B</m>.  This completes our derivation of the
+heat equation, which is
+</p>
+
+<fact xml:id="eqn_heat">
+  <statement>
+    <p>
+<me>
+\frac{\partial T}{\partial t}(x,y,z,t)
+=\alpha \vnabla^2 T(x,y,z,t)
+</me>
+where <m>\alpha=\frac{\ka}{C\rho}</m> is called the thermal diffusivity.
+</p>
+</statement>
+</fact>
+</subsubsection>
+
+<subsubsection>
+  <title>An Application of the Heat Equation</title>
+
+<p>
+As an application, we look at the temperature a short distance
+below the surface of the Earth. For simplicity, we make the Earth
+flat
+<fn>Insert sarcastic footnote here.</fn>
+and we assume that the temperature, <m>T</m>, depends only on time, <m>t</m>, and
+the vertical coordinate, <m>z</m>. Then the heat equation simplifies to
+<me>
+\frac{\partial T}{\partial t}(z,t)
+=\alpha \frac{\partial^2 T}{\partial z^2}(z,t)
+\tag{HE}
+</me>
+We choose a coordinate system having the
+surface of the Earth at <m>z=0</m> and having <m>z</m> increase downward.
+We also assume that the temperature <m>T(0,t)</m> at the surface of the Earth
+is primarily determined by solar heating and is given by
+<me>
+T(0,t)=T_0+T_A\cos(\sigma t)+T_D\cos(\delta t)
+\tag{IC}
+</me>
+Here <m>T_0</m> is the long term
+average of the temperature at the surface of the Earth,
+<m>T_A\cos(\sigma t)</m> gives seasonal temperature variations and
+<m>T_D\cos(\delta t)</m> gives daily temperature variations.
+</p>
+
+<sidebyside>
+<image source="figs/heat3"/>
+</sidebyside>
+
+<p>We measure time in days so that
+<m>\delta =2\pi</m> and
+<m>\sigma =\frac{2\pi}{1\ {\rm year}}=\frac{2\pi}{365{\rm days}}</m>.
+Then <m>T_A\cos(\sigma t)</m> has period one year and
+<m>T_D\cos(\delta t)</m> has period one day.
+The solution to the initial value problem (HE)+(IC) can be found by separation
+of variables, a standard topic in courses on partial differential equations.
+The solution is
+<me>
+T(z,t)=T_0
++T_Ae^{-\sqrt{\sigma \over 2\sigma}\ z}
+     \cos\Big(\sigma t-\sqrt{\frac{\sigma }{2\alpha}}\ z\Big)
++T_De^{-\sqrt{\delta \over 2\alpha}\ z}
+ \cos\Big(\delta t-\sqrt{\frac{\delta }{2\alpha}}\ z\Big)
+\tag{SLN}
+</me>
+Whether or not you can find this solution,
+you can, and should, check that (SLN) satisfies both (HE) and (IC).
+</p>
+
+<p>Now let's see what we can learn from the solution (SLN).
+For any fixed <m>z</m>, the time average of <m>T(z,t)</m> is <m>T_0</m> (just because the average
+value if cosine is zero), the same as the average temperature
+at the surface <m>z=0</m>. That is, under the hypotheses that we have made,
+the long term average temperature at any depth <m>z</m> is is the same as
+the long term average temperature at the surface.
+</p>
+
+<p>The term
+<m>T_Ae^{-\sqrt{\sigma \over 2\alpha}\ z}
+           \cos\Big(\sigma t-\sqrt{\frac{\sigma }{2\alpha}}\   z\Big)</m>
+<ul>
+<li>
+oscillates in time with a period of one year, just like <m>T_A\cos(\sigma t)</m>
+</li>
+<li>
+has an amplitude <m>T_Ae^{-\sqrt{\sigma \over 2\alpha}\ z}</m> which
+is <m>T_A</m> at the surface and decreases exponentially as <m>z</m> increases.
+Increasing the depth <m>z</m> by a distance <m>\sqrt{\frac{2\alpha}{\sigma}}</m>
+causes the amplitude of the oscillation to decrease by a factor
+of <m>\frac{1}{e}</m>. Both of these first two bullet points are probably
+very consistent with your intuition. But this term also has a third property
+that you may find less obvious. It has
+</li>
+<li>
+has a time lag of <m>\frac{z}{\sqrt{2\alpha\sigma}}</m> with respect to
+<m>T_A\cos(\sigma t)</m>.
+The surface term <m>T_A\cos(\sigma t)</m> takes its maximum value when
+<m>t=0,\ \frac{2\pi}{\sigma},\ \frac{4\pi}{\sigma},\ \cdots</m>.
+At depth <m>z</m>, the corresponding term <m>T_Ae^{-\sqrt{\sigma \over 2\alpha}\ z}
+         \cos\Big(\sigma t-\sqrt{\frac{\sigma }{2\alpha}}\ z\Big)</m>
+takes its maximum value when <m>\ \sigma t-\sqrt{\frac{\sigma }{2\alpha}}\ z
+        =0,\ 2\pi, 4\pi,\ \cdots</m> so that
+<m>t=\frac{z}{\sqrt{2\alpha\sigma}},\ \frac{2\pi}{\sigma}+\frac{z}{\sqrt{2\alpha\sigma}},
+\ \frac{4\pi}{\sigma}+\frac{z}{\sqrt{2\alpha\sigma}},\ \cdots</m>.
+</li>
+</ul>
+Similarly, the term
+<m>T_De^{-\sqrt{\delta \over 2\alpha}\ z}
+          \cos\Big(\delta t-\sqrt{\frac{\delta }{2\alpha}}\ z\Big)</m>
+<ul>
+<li>
+oscillates in time with a period of one day, just like <m>T_D\cos(\delta t)</m>
+</li>
+<li>
+has an amplitude which is <m>T_D</m> at the surface and decreases by a
+factor of <m>\frac{1}{e}</m> for each increase of
+<m>\sqrt{\frac{2\alpha}{\delta}}</m>  in depth.
+</li>
+<li>
+has a time lag of <m>\frac{z}{\sqrt{2\alpha\delta}}</m> with respect to
+<m>T_D\cos(\delta t)</m>.
+</li>
+</ul>
+For water <m>\alpha</m> is approximately <m>0.012</m> m<m>^2</m>/day. This <m>\alpha</m> gives
+<me>
+\sqrt{\frac{2\alpha}{\sigma}}\approx  1.2\,{\rm m}\qquad
+\sqrt{\frac{2\alpha}{\delta}}\approx    0.062\,{\rm m} \qquad
+\frac{z}{\sqrt{2\alpha\sigma}}\approx 49\, z\,{\rm days} \qquad
+\frac{z}{\sqrt{2\alpha\delta}}\approx 2.6\, z\,{\rm days}
+</me>
+for <m>z</m> measured in centimeters. So at a depth of a couple of meters,
+the temperature is pretty constant in time. What variation there is
+lags the surface variations by several months.
+</p>
+
+<!-- <p>\intremark{
+</p>
+
+<p>\noindent
+Thermal diffusivity table
+</p>
+
+<p>\noindent
+\renewcommand{\arraystretch}{1.5}
+<tabular>
+<row>
+<cell>{ | l | l |}
+  \hline
+</cell><cell> <m>\alpha</m> </cell>
+</row><row>
+<cell> \hline
+soil </cell><cell> <m>0.005</m> cm<m>^2</m>/sec<m>=0.043</m> m<m>^2</m>/day </cell>
+</row><row>
+<cell> \hline
+soil </cell><cell> <m>0.034</m> m<m>^2</m>/day </cell>
+</row><row>
+<cell> \hline
+soil </cell><cell> <m>0.027</m> m<m>^2</m>/day </cell>
+</row><row>
+<cell> \hline
+soil </cell><cell> <m>0.32\times 10^{-6}</m> m<m>^2</m>/sec<m>=0.028</m> m<m>^2</m>/day </cell>
+</row><row>
+<cell> \hline
+soil </cell><cell> <m>0.65\times 10^{-6}</m> m<m>^2</m>/sec<m>=0.056</m> m<m>^2</m>/day </cell>
+</row><row>
+<cell> \hline
+soil </cell><cell> <m>0.98\times 10^{-6}</m> m<m>^2</m>/sec<m>=0.085</m> m<m>^2</m>/day </cell>
+</row><row>
+<cell> \hline
+sandy soil </cell><cell> <m>0.24\times 10^{-6}</m> m<m>^2</m>/sec<m>=0.021</m> m<m>^2</m>/day </cell>
+</row><row>
+<cell> \hline
+clay soil </cell><cell> <m>0.18\times 10^{-6}</m> m<m>^2</m>/sec<m>=0.016</m> m<m>^2</m>/day </cell>
+</row><row>
+<cell> \hline
+peat soil </cell><cell> <m>0.10\times 10^{-6}</m> m<m>^2</m>/sec<m>=0.009</m> m<m>^2</m>/day </cell>
+</row><row>
+<cell> \hline
+rock </cell><cell> <m>1.43\times 10^{-6}</m> m<m>^2</m>/sec<m>=0.124</m> m<m>^2</m>/day </cell>
+</row><row>
+<cell> \hline
+water </cell><cell> <m>0.0014</m> cm<m>^2</m>/sec<m>=0.012</m> m<m>^2</m>/day </cell>
+</row><row>
+<cell> \hline
+water </cell><cell> <m>0.14\times 10^{-6}</m> m<m>^2</m>/sec<m>=0.012</m> m<m>^2</m>/day </cell>
+</row><row>
+<cell> \hline
+</row>
+</tabular>
+\renewcommand{\arraystretch}{1.5}
+</p>
+
+<p>\bigskip
+\noindent References
+<ul>
+<li>sep1pt \parskip0pt \parsep0pt
+</li>
+<li>indent-15pt
+</li>
+<li>
+www.scielo.br/scielo.php?script=sci\_arttext\&amp;pid=S0100-06832013000100011
+</li>
+<li>
+www.mdpi.com/1424-8220/16/3/306/pdf
+</li>
+<li>
+http:/\!/web.archive.org/web/20150215053624/http:/\!/apollo.lsc.vsc.edu/
+         \\\null\hskip3in classes/met455/notes/section6/2.html
+</li>
+<li>
+https:/\!/link.springer.com/article/10.1007/BF02702224
+</li>
+</ul>
+For soil <m>\alpha\approx 0.005</m> cm<m>^2</m>/sec. This <m>\alpha</m>
+gives
+<me>
+\sqrt{\frac{2\alpha}{\sigma}}\approx  2{\rm m}\qquad
+\sqrt{\frac{2\alpha}{\delta}}\approx 10{\rm cm} \qquad
+\frac{z}{\sqrt{2\alpha\sigma}}\approx 0.3 z\,{\rm days} \qquad
+\frac{z}{\sqrt{2\alpha\delta}}\approx 0.3z\,{\rm hours}
+</me>
+for <m>z</m> measured in centimeters.
+For water <m>\alpha\approx 0.0014</m> cm<m>^2</m>/sec. This <m>\alpha</m>
+gives
+<me>
+\sqrt{\frac{2\alpha}{\sigma}}\approx  1.2{\rm m}\qquad
+\sqrt{\frac{2\alpha}{\delta}}\approx 6{\rm cm} \qquad
+\frac{z}{\sqrt{2\alpha\sigma}}\approx 0.5 z\,{\rm days} \qquad
+\frac{z}{\sqrt{2\alpha\delta}}\approx 0.6z\,{\rm hours}
+</me>
+for <m>z</m> measured in centimeters.
+</p>
+
+<p>}
+</p> -->
+
+</subsubsection>
+</subsection>
+
+<subsection xml:id="sec_divVar">
+  <title>Variations of the Divergence Theorem</title>
+
+<p>
+Here are a couple useful variations of the divergence theorem.
+</p>
+
+<theorem xml:id="thm_divVrn">
+  <title>Variations on the divergence theorem</title>
+<statement><p>
+If <m>V</m> is a solid with surface <m>\partial V</m>, then
+<md>
+<mrow>
+\dblInt_{\partial V} \vF\cdot\hn\,\dee{S}
+&amp;=\tripInt_V\vnabla\cdot\vF\ \dee{V}
+</mrow><mrow>
+\dblInt_{\partial V} f \hn\,\dee{S}
+&amp;=\tripInt_V\vnabla f\ \dee{V}
+</mrow><mrow>
+\dblInt_{\partial V} \hn\times\vF\,\dee{S}
+&amp;=\tripInt_V\vnabla\times\vF\ \dee{V}
+</mrow>
+</md>
+where <m>\hn</m> is the outward unit normal of <m>\partial V</m>.
+</p></statement>
+</theorem>
+
+<p><alert>Memory Aid.</alert> All three formulae can be combined into
+<me>
+\dblInt_{\partial V} \hn *\tilde F\,\dee{S}
+=\tripInt_V\vnabla *\tilde F\ \dee{V}
+</me>
+where <m>*</m> can be either <m>\cdot</m>, <m>\times</m> or nothing.
+When <m>*=\cdot</m> or <m>*=\times</m>, then <m>\tilde F=\vF</m>. When <m>*</m> is nothing,
+<m>\tilde F=f</m>.
+</p>
+
+<proof>
+<p>
+The first formula is exactly the divergence theorem and was proven
+in Theorem<nbsp/><xref ref="thm_divThm"/>.
+</p>
+
+<p>
+To prove the second formula, set <m>\vF=f\va</m>, where <m>\va</m> is any constant
+vector, and apply the divergence theorem.
+<md>
+<mrow>
+\dblInt_{\partial V} f\va\cdot\hn\,\dee{S}
+&amp;=\tripInt_V\vnabla\cdot(f\va)\ \dee{V}
+</mrow><mrow>
+&amp;=\tripInt_V\big[(\vnabla f)\cdot\va
++f\underbrace{\vnabla\cdot\va}_{=0}\big]\ \dee{V}
+\qquad\text{(by the vector identity Theorem <xref ref="thm_divIdentities"/>.c)}
+</mrow><mrow>
+&amp;=\tripInt_V(\vnabla f)\cdot\va\ \dee{V}
+</mrow>
+</md>
+To get the third line, we just used that <m>\va</m> is a constant, so that
+all of its derivatives are zero. Rewrite
+<me>
+\tripInt_V(\vnabla f)\cdot\va\ \dee{V}
+=\tripInt_V\va\cdot(\vnabla f)\ \dee{V}
+</me>
+Since <m>\va</m> is a constant, we can factor
+it out of both integrals, so
+<md>
+<mrow>
+&amp;\va\cdot\dblInt_{\partial V} f\hn\,\dee{S}
+=\va\cdot\tripInt_V\vnabla f\ \dee{V}
+</mrow><mrow>
+\implies &amp;\va\cdot\bigg\{\dblInt_{\partial V} f\hn\,\dee{S}
+-\tripInt_V\vnabla f\ \dee{V}\bigg\}=0
+</mrow>
+</md>
+In particular, choosing <m>\va=\hi</m>, <m>\hj</m> and <m>\hk</m>, we see that
+all three components of the vector <m>\dblInt_{\partial V} f\hn\,\dee{S}
+-\tripInt_V\vnabla f\ \dee{V}</m> are zero. So
+<me>
+\dblInt_{\partial V} f\hn\,\dee{S}
+-\tripInt_V\vnabla f\ \dee{V}=0
+</me>
+which is what we wanted show.
+</p>
+
+<p>
+To prove the third formula, apply the divergence theorem, but with
+<m>\vF</m> replaced by <m>\va\times\vF</m>, where <m>\va</m> is any constant vector.
+<md>
+<mrow>
+&amp;\dblInt_{\partial V} (\va\times\vF)\cdot\hn\ \dee{S}
+=\tripInt_V\vnabla\cdot(\va\times\vF)\ \dee{V}
+</mrow><mrow>
+&amp;\hskip0.5in=\tripInt_V\big[\vF\cdot\underbrace{(\vnabla \times \va)}_{=\vZero}
+  -\va\cdot(\vnabla\times\vF)\big]\ \dee{V}
+\quad \text{(by the vector identity Theorem <xref ref="thm_divIdentities"/>.d)}
+</mrow><mrow>
+&amp;\hskip0.5in=-\tripInt_V\va\cdot(\vnabla \times\vF)\ \dee{V}
+=-\va\cdot\tripInt_V\vnabla \times\vF\ \dee{V}
+</mrow>
+</md>
+To get the third line, we again used that <m>\va</m> is a constant, so that
+all of its derivatives are zero. For all vectors
+<m>(\va\times\vb)\cdot\vc=\va\cdot(\vb\times\vc)</m> (in case you don't
+remember this, it was Lemma <xref ref="lem_tripProd"/>.a) so that
+<me>
+(\va\times\vF)\cdot\hn
+=\va\cdot(\vF\times\hn)
+</me>
+and
+<md>
+<mrow>
+&amp;\va\cdot\dblInt_{\partial V} \vF\times\vn\ \dee{S}
+=-\va\cdot\tripInt_V\vnabla \times\vF\ \dee{V}
+</mrow><mrow>
+\implies &amp;\va\cdot\bigg\{\dblInt_{\partial V} \vF\times\vn\ \dee{S}
++\tripInt_V\vnabla\times\vF\ \dee{V}\bigg\}=0
+</mrow>
+</md>
+In particular, choosing <m>\va=\hi</m>, <m>\hj</m> and <m>\hk</m>, we see that
+all three components of the vector <m>\dblInt_{\partial V} \vF\times\vn\ \dee{S}
++\tripInt_V\vnabla\times\vF\ \dee{V}</m> are zero. So
+<me>
+\tripInt_V\vnabla\times\vF\ \dee{V}
+=-\dblInt_{\partial V} \vF\times\vn\ \dee{S}
+=\dblInt_{\partial V} \hn\times\vF\ \dee{S}
+</me>
+which is what we wanted show.
+</p>
+
+</proof>
+
+</subsection>
+
+<subsection xml:id="sec_buoy">
+  <title>An Application of the Divergence Theorem <mdash/> Buoyancy</title>
+
+<p>In this section, we use the divergence theorem to show that
+when you immerse an object in a fluid the net effect of fluid pressure
+acting on the surface of the object is a vertical force (called the buoyant
+force) whose magnitude equals the weight of fluid displaced by the object.
+This is known as Archimedes' principle
+<fn>The interested reader should do a net search for the story of Archimedes and the golden crown.
+</fn>.
+</p>
+
+<p>We shall also show that the buoyant
+force acts through the <q>centre of buoyancy</q> which is the centre of mass of
+the fluid displaced by the object. The design of
+self-righting
+<fn>The first design of a self-righting boat was
+entered by William Wouldhave in a lifeboat design competition organised
+by South Shield's Law House committee in 1789.</fn>
+ boats exploits
+the fact that the centre of buoyancy and the centre of gravity, where gravity
+acts, need not be the same.
+</p>
+
+<p>We start by computing the total force due to the pressure of the fluid
+pushing on the object. Recall that pressure
+<ul>
+<li>
+is the force per unit surface area that the fluid exerts on the object
+</li>
+<li>
+acts perpendicularly to the surface
+</li>
+<li>
+pushes on the object
+</li>
+</ul>
+Thus the force due to pressure that acts on an infinitesimal
+piece of the object's surface at <m>\vr=(x,y,z)</m> with surface area <m>\dee{S}</m> and
+outward normal <m>\hn</m> is <m>-p(\vr)\,\hn \dee{S}</m>. The minus sign is there because pressure is directed into the object.
+If the object fills the volume <m>V</m> and has surface <m>\partial
+V</m>, then the total force on the object due to fluid pressure, called
+the buoyant force,  is
+<me>
+\vB=-\dblInt_{\partial V}p(\vr)\,\hn\,\dee{S}
+</me>
+We now wish to apply a variant of the divergence theorem to rewrite
+<m>\vB=-\tripInt_V \vnabla p\ \dee{V}</m>. But there is a problem with this:
+<m>p(\vr)</m> is the fluid pressure at <m>\vr</m> and is only defined where there is
+fluid. In particular, there is no fluid
+<fn>A cup of tea in the galley
+doesn't count.</fn>
+ inside the object, so <m>p(\vr)</m> is not
+defined for any <m>\vr</m> in the interior of <m>V</m>.
+</p>
+
+<p>So we pretend that we remove
+the object from the fluid and we call <m>P(\vr)</m> the fluid pressure at <m>\vr</m>
+when there is no object in the fluid. We also make the assumption that at
+any point <m>\vr</m> outside of the object, the pressure at <m>\vr</m> does not depend
+on whether the object is in the fluid or not. In other words, we assume that
+<me>
+p(\vr)=\begin{cases}
+             P(\vr)&amp; \text{if $\vr$ is not in $V$}\\
+            \text{not defined} &amp; \text{if $\vr$ is in the $V$}
+        \end{cases}
+</me>
+This assumption is only an approximation to reality, but, in practice,
+it is a very good approximation. So, by Theorem <xref ref="thm_divVrn"/>,
+<men xml:id="eq_buoyancy">
+\vB=-\dblInt_{\partial V}p(\vr)\,\hn\,\dee{S}
+=-\dblInt_{\partial V}P(\vr)\,\hn\,\dee{S}
+=-\tripInt_{V}\vnabla P(\vr)\,\dee{V}
+</men>
+</p>
+
+<p>Our next job is to compute <m>\vnabla P</m>. Concentrate on an infinitesimal
+cube of fluid whose edges are parallel to the coordinate axes. Call the
+lengths of the edges <m>\dee{x}</m>, <m>\dee{y}</m> and <m>\dee{z}</m> and the position
+of the centre of the cube <m>(x,y,z)</m>. The forces applied to the various
+faces of the cube by the pressure of fluid outside the cube are
+illustrated in the figure
+</p>
+
+<sidebyside>
+<image source="figs/fluidcube"/>
+</sidebyside>
+
+<p>
+The total force due to the pressure acting on the cube
+is the sum
+<md>
+<mrow>
+&amp;-P\big(x+\frac{\dee{x}}{2},y,z\big)\,dy\dee{z}\,\hi
++P\big(x-\frac{\dee{x}}{2},y,z\big)\,dy\dee{z}\,\hi
+</mrow><mrow>
+&amp;-P\big(x,y+\frac{dy}{2},z\big)\,\dee{x}\dee{z}\,\hj
++P\big(x,y-\frac{dy}{2},z\big)\,\dee{x}\dee{z}\,\hj
+</mrow><mrow>
+&amp;-P\big(x,y,z+\frac{\dee{z}}{2}\big)\,\dee{x}dy\,\hk
++P\big(x,y,z-\frac{\dee{z}}{2}\big)\,\dee{x}dy\,\hk
+</mrow>
+</md>
+of the forces acting on the six faces.
+Consider the <m>\hi</m> component and rewrite it as
+<md>
+<mrow>
+&amp;-P\big(x+\frac{\dee{x}}{2},y,z\big)\,dy\dee{z}\,\hi
++P\big(x-\frac{\dee{x}}{2},y,z\big)\,dy\dee{z}\,\hi
+</mrow><mrow>
+&amp;\hskip1in
+=-\frac{P(x+{\dee{x}\over2},y,z)-P(x-{\dee{x}\over2},y,z)}{\dee{x}}\,\hi\
+     \dee{x} \dee{y} \dee{z}
+</mrow><mrow>
+&amp;\hskip1in
+= - \frac{\partial P}{\partial x}(x,y,z)\,\hi\
+     \dee{x} \dee{y} \dee{z}
+</mrow>
+</md>
+</p>
+
+<p>Doing this for the other components as well,
+we see that the total force due to the pressure acting on the cube is
+<md>
+<mrow>
+-\Big\{\frac{\partial P}{\partial x}(x,y,z)\,\hi
++\frac{\partial P}{\partial y}(x,y,z)\,\hj
++\frac{\partial P}{\partial z}(x,y,z)\,\hk
+\Big\}\dee{x} \dee{y} \dee{z}
+=-\vnabla P(x,y,z)\, \dee{x} \dee{y} \dee{z}
+</mrow>
+</md>
+We shall assume that the only other force acting on the cube is gravity
+and that the fluid is stationary (or at least not accelerating).
+Hence the total force acting on the cube is zero. If the fluid has density
+<m>\rhof</m>, then the  cube has mass <m>\rhof\, \dee{x}\dee{y}\dee{z}</m> so that the force of
+gravity is <m>- g\rhof\,  \dee{x}\dee{y}\dee{z}\,\hk</m>. The vanishing of
+the total force now tells us that
+<me>
+-\vnabla P(\vr)\, \dee{x} \dee{y} \dee{z}
+- g\rhof\,  \dee{x} \dee{y} \dee{z}\,\hk=0
+\implies \vnabla P(\vr)= - g\rhof  \,\hk
+</me>
+Subbing this into <xref ref="eq_buoyancy"/> gives
+<me>
+\vB= g\,\hk\tripInt_{V}\rhof\,\dee{V} = gM_f\,\hk
+</me>
+where <m>M_f =\tripInt_V \rhof\,\dee{V}</m> is the mass of the fluid
+displaced by the object <mdash/> <em>not</em> the mass of the object itself.
+Thus the buoyant force acts straight up and has magnitude equal to
+<m>gM_f </m>, which is also the magnitude of the force of gravity acting on the
+fluid displaced by the object. In other words, it is the weight of the
+displaced fluid. This is exactly Archimedes' principle.
+</p>
+
+<p>We next consider the rotational motion of our submerged object. The physical
+law that determines the rotational motion of a rigid body about a point
+<m>\vr_0</m> is analogous to the familiar Newton's law, <m>m\frac{d\vv}{\dee{t}}=\vF</m>,
+that determines the translational motion of the object. For the rotational
+law of motion,
+<ul>
+<li>
+the mass <m>m</m> is replaced by a physical quantity, characteristic
+of the object, called the moment of inertia, and
+</li>
+<li>
+the ordinary velocity <m>\vv</m> is replaced by the angular
+velocity, which is a vector whose length is the rate of rotation (i.e.
+angle rotated per unit time) and whose direction is parallel to the axis
+of rotation (with the sign determined by a right hand rule), and
+</li>
+<li>  the force <m>\vF</m>
+is replaced by a vector called the torque about <m>\vr_0</m>.  A force <m>\vF</m> applied
+at <m>\vr=(x,y,z)</m> produces the torque
+<fn>This is what Archimedes was referring to when he said <q>Give me a lever and a place to stand and I will move the earth.</q></fn>
+ <m>(\vr-\vr_0)\times\vF</m> about <m>\vr_0</m>.
+</li>
+</ul>
+This is derived in the optional §<xref ref="sec_torque"/>, entitled <q>Torque</q>,
+and is all that we need to know about rotational motion of rigid bodies in
+this discussion.
+</p>
+
+<p>Fix any point <m>\vr_0</m>. The total torque about <m>\vr_0</m> produced by
+force of pressure acting on the surface of the submerged object is
+<me>
+\vT=\dblInt_{\partial V} (\vr-\vr_0)\times\big(-p(\vr)\hn\big)\,\dee{S}
+=\dblInt_{\partial V} \hn\times\big(P(\vr)\, (\vr-\vr_0)\big)\,\dee{S}
+</me>
+Recall that in these integrals <m>\vr=(x,y,z)</m> is the position of the
+infinitesimal piece <m>\dee{S}</m> of the surface <m>S</m>.
+Applying the cross product variant of the divergence theorem in Theorem
+<xref ref="thm_divVrn"/>, followed by the vector identity
+Theorem <xref ref="thm_curlIdentities"/>.c, gives
+<md>
+<mrow>
+\vT&amp;=\tripInt_V \vnabla\times\big(P(\vr)\,(\vr-\vr_0)\big)\,\dee{V}
+=\tripInt_V \big\{\vnabla P(\vr)\times(\vr-\vr_0)
+     +P(\vr)\underbrace{\vnabla\times(\vr-\vr_0)}_{=\vZero}\big\}\,\dee{V}\cr
+&amp;=\tripInt_V \vnabla P(\vr)\times(\vr-\vr_0)\,\dee{V}
+</mrow>
+</md>
+since <m>\vnabla\times\vr_0=0</m>, because <m>\vr_0</m> is a constant, and
+<me>
+\vnabla\times\vr=\det\left[\begin{matrix}
+                   \hi&amp;\hj&amp;\hk\cr
+                   \frac{\partial }{\partial x}&amp;
+                   \frac{\partial }{\partial y}&amp;
+                   \frac{\partial }{\partial z}\\
+                   x&amp;y&amp;z
+                  \end{matrix}\right]
+=0
+</me>
+We have already found that <m>\vnabla P(\vr)=-g\rhof\hk</m>.
+Substituting it in gives
+<md alignment="alignat">
+<mrow>
+\vT&amp;=-\tripInt_V g\rhof\hk\times(\vr-\vr_0)\,\dee{V}
+&amp;&amp;=-g\hk\times\tripInt_V \rhof (\vr-\vr_0)\,\dee{V}
+</mrow><mrow>
+&amp;=-g\hk\times\bigg\{\tripInt_V\! \vr\rhof\,\dee{V}
+                 -\vr_0\!\tripInt_V\! \rhof\,\dee{V}\bigg\}
+&amp;&amp;=-g\bigg\{\tripInt_V\! \rhof\,\dee{V}\bigg\}\hk\times \bigg\{
+     \frac{\tripInt_V \vr\rhof\,\dee{V}}{\tripInt_V\rhof\,
+                     \dee{V}}-\vr_0\bigg\}
+</mrow><mrow>
+&amp;=-\vB\times\bigg\{\frac{\tripInt_V \vr\rhof\,\dee{V}}
+                        {\tripInt_V\rhof\,\dee{V}}-\vr_0\bigg\}
+&amp;&amp;=\bigg\{\frac{\tripInt_V \vr\rhof\,\dee{V}}
+            {\tripInt_V\rhof\,\dee{V}}-\vr_0\bigg\}\times\vB
+</mrow>
+</md>
+So the torque generated at <m>\vr_0</m> by pressure over the entire surface
+is the same as a force <m>\vB</m> all applied at the single point
+<me>
+\vC_\vB=\frac{\tripInt_V \vr\rhof\,\dee{V}}{\tripInt_V\rhof\,\dee{V}}
+</me>
+This point is called the centre of buoyancy. It is the centre of mass
+of the displaced fluid.
+</p>
+
+<p>The moral of the above discussion is that the buoyant force, <m>\vB</m>,
+on a rigid body
+<ul>
+<li>
+acts straight upward,
+</li>
+<li>
+has magnitude equal to the weight of the displaced fluid and
+</li>
+<li>
+acts at the centre of buoyancy, which is the centre of mass
+of the displaced fluid.
+</li>
+</ul>
+As above, denoting by <m>\rhob</m> the density of the object,
+the torque about <m>\vr_0</m> due to gravity acting on the object is
+<me>
+\tripInt_V (\vr-\vr_0)\times(-g\rhob\hk)\,\dee{V}
+=\bigg\{\frac{\tripInt_V \vr\rhob\,\dee{V}}
+            {\tripInt_V\rhob\,\dee{V}}-\vr_0\bigg\}\times
+                  \left(-g\bigg\{\tripInt_V \rhob\,\dee{V}\bigg\}\ \hk\right)
+</me>
+So the gravitational force, <m>\vG</m>,
+<ul>
+<li>
+acts straight down,
+</li>
+<li>
+has magnitude equal to the weight
+<m>g M_b=g\tripInt_V \vr\rhob\,\dee{V}</m> (where <m>\rhob</m> is the density of
+the object) of the object and
+</li>
+<li>
+acts at the centre of mass,
+<m>
+\vC_\vG=\frac{\tripInt_V \vr\rhob\,\dee{V}}{\tripInt_V\rhob\,\dee{V}}
+</m>,
+of the object.
+</li>
+</ul>
+</p>
+<!-- \intremark{
+The torque about <m>\vr_0</m> due to gravity is
+<md alignment="alignat">
+<mrow>{3}
+\vT&amp;=-\tripInt_V (\vr-\vr_0)\times g\rhob\hk\,\dee{V}
+&amp;&amp;=g\hk\times\tripInt_V \rhob (\vr-\vr_0)\,\dee{V}
+</mrow><mrow>
+&amp;=g\hk\times\bigg\{\tripInt_V\! \vr\rhob\,\dee{V}
+                 -\vr_0\!\tripInt_V\! \rhob\,\dee{V}\bigg\}
+&amp;&amp;=g\bigg\{\tripInt_V\! \rhob\,\dee{V}\bigg\}\hk\times \bigg\{
+     \frac{\tripInt_V \vr\rhob\,\dee{V}}{\tripInt_V\rhob\,\dee{V}}-\vr_0\bigg\}
+</p>
+
+<p></mrow><mrow>
+&amp;=\big(gM_b\hk\big)\times\bigg\{\frac{\tripInt_V \vr\rhob\,\dee{V}}
+                        {\tripInt_V\rhob\,\dee{V}}-\vr_0\bigg\}
+&amp;&amp;=\bigg\{\frac{\tripInt_V \vr\rhob\,\dee{V}}
+            {\tripInt_V\rhob\,\dee{V}}-\vr_0\bigg\}\times\big(-gM_b\hk\big)
+</mrow>
+</md>
+</p>
+
+<p>}
+</p> -->
+
+<p>
+Because the mass distribution of the object need not be the same as the
+mass distribution of the displaced fluid, buoyancy and gravity may act at
+two different points. This is exploited in the design of self-righting boats.
+</p>
+
+<p>These boats are constructed with a heavy, often lead (which is cheap and dense), keel.  As a result, the centre of gravity is lower in the boat
+than the center of buoyancy, which, because the displaced fluid has constant density, is at the geometric centre of the boat. As the figure below illustrates,
+a right side up configuration of such a boat is stable, while an upside down
+configuration is unstable. The boat rotates so as to keep the centre
+of gravity straight below the centre of buoyancy. To see this pretend that
+you are holding on to the boat with one hand holding the centre of buoyancy
+and the other hand holding the centre of gravity. Use your hands to apply forces
+in the directions of the arrows and think about how the boat will respond.
+</p>
+
+<sidebyside>
+<image source="figs/boatU"/>
+<image source="figs/boatD"/>
+</sidebyside>
+
+</subsection>
+
+<subsection xml:id="sec_torque">
+  <title>Optional <mdash/> Torque</title>
+
+
+<p>In this section, we derive the properties of torque that we used in
+the last example. Newton's law of motion says that the position <m>\vr(t)</m>
+of a single particle moving under the influence
+of a force <m>\vF</m> obeys <m>m\vr''(t)=\vF</m>. Similarly, the positions <m>\vr_i(t)</m>,
+<m>1\le i\le n</m>, of a set of particles moving under the influence
+of forces <m>\vF_i</m> obey <m>m\vr_i''(t)=\vF_i</m>, <m>1\le i\le n</m>. Very often
+systems of interest consist
+of some small number of rigid bodies. Suppose that we are interested in
+the motion of a single rigid body, say a piece of wood. The piece of wood
+is made up of a huge number
+<fn>Just 12 grams of carbon contains about <m>6\times 10^{23}
+</m> atoms.
+</fn> of atoms. So the system of equations
+determining the motion of all of the individual atoms in the piece of
+wood is huge. On the other hand, we shall see that because the piece of
+wood is rigid, its configuration is completely determined by the
+position of, for example, its centre of mass and its orientation
+(we won't get into what precisely is meant by <q>orientation</q>, but
+it is certainly determined by, for example, the positions of a few
+of the corners of the piece of wood).
+To be precise, we shall extract from the  huge system of equations
+that determine the motion of all of the individual atoms, a
+small system of equations that determine the motion of the centre of mass
+and the orientation. We'll do so now.
+</p>
+
+<p>Imagine a piece of wood moving in <m>\bbbr^3</m>.</p>
+
+<sidebyside>
+<image source="figs/seesaw"/>
+</sidebyside>
+
+<p>
+Furthermore, imagine that the piece of wood consists of a huge number of
+particles joined by a huge number of weightless but very
+strong
+<fn>Mathematicians and their idealizations! Really the rods just
+represent the atomic/chemical forces that hold the wood together.
+</fn> steel rods.
+The steel rod joining particle number one to particle number two just
+represents a force acting between particles number one and two.
+Suppose that
+<ul>
+<li>
+there are <m>n</m> particles, with particle number <m>i</m> having mass <m>m_i</m>,
+</li>
+<li>
+at time <m>t</m>, particle number <m>i</m> has position <m>\vr_i(t)</m>,
+</li>
+<li>
+at time <m>t</m>,  the external force (gravity and the like)
+acting on particle number <m>i</m> is <m>\vF_i(t)</m>, and
+</li>
+<li>
+at time <m>t</m>, the force acting on particle number <m>i</m>,
+due to the steel rod joining particle number <m>i</m> to particle number <m>j</m>
+is <m>\vF_{i,j}(t)</m>. If there is no steel rod joining particles
+number <m>i</m> and <m>j</m>, just set
+<m>\vF_{i,j}(t)=0</m>. In particular, <m>\vF_{i,i}(t)=0</m>.
+</li>
+</ul>
+The only assumptions that we shall make about the steel rod forces are
+<dl width="narrow">
+<li><title>(A1)</title><p>
+for each <m>i\ne j</m>, <m>\vF_{i,j}(t)=-\vF_{j,i}(t)</m>. In words,
+the steel rod joining particles <m>i</m> and <m>j</m> applies equal and opposite
+forces to particles <m>i</m> and <m>j</m>.
+</p></li>
+<li><title>(A2)</title><p>
+for each <m>i\ne j</m>, there is a function <m>M_{i,j}(t)</m> such
+that <m>\vF_{i,j}(t)=M_{i,j}(t)\big[\vr_i(t)-\vr_j(t)\big]</m>. In words,
+the force due to the rod joining particles <m>i</m> and <m>j</m> acts parallel to the
+line joining particles <m>i</m> and <m>j</m>. For (A1) to be true, that is
+to have <m>M_{i,j}(t)\big[\vr_i(t)-\vr_j(t)\big]
+=-M_{j,i}(t)\big[\vr_j(t)-\vr_i(t)\big]</m>, we need
+<m>M_{i,j}(t)=M_{j,i}(t)</m>.
+</p></li>
+</dl>
+Newton's law of motion, applied to particle number <m>i</m>,  now tells us that
+<me>
+m_i \vr''_i(t)
+= \vF_i(t)+\sum_{j=1}^n \vF_{i,j}(t)
+\tag{$N_i$}
+</me>
+Adding up all of the equations (<m>N_i</m>),
+for <m>i=1,\ 2,\ 3,\ \cdots,\ n</m> gives
+<me>
+\sum_{i=1}^n m_i \vr''_i(t)
+= \sum_{i=1}^n \vF_i(t)+\sum_{1\le i,j\le n} \vF_{i,j}(t)
+\tag{$\Sigma N_i$}
+</me>
+The sum <m>\sum\limits_{1\le i,j\le n} \vF_{i,j}(t)</m> contains <m>\vF_{1,2}(t)</m>
+exactly once and it also contains <m>\vF_{2,1}(t)</m> exactly once and these two
+terms cancel exactly, by assumption (A1). In this way, all terms in
+<m>\sum\limits_{1\le i,j\le n} \vF_{i,j}(t)</m>
+with <m>i\ne j</m> exactly cancel. All terms with <m>i=j</m> are assumed to be zero.
+So <m>\sum\limits_{1\le i,j\le n} \vF_{i,j}(t)=0</m> and the equation
+(<m>\Sigma N_i</m>) simplifies to
+<me>
+\sum_{i=1}^n m_i \vr''_i(t)
+= \sum_{i=1}^n \vF_i(t)
+\tag{$ \Sigma N_i $}
+</me>
+Phew! Denote by <m>M=\sum\limits_{i=1}^n m_i</m> the total mass of the body,
+by <m>\vR(t)=\frac{1}{M}\sum\limits_{i=1}^n m_i\vr_i(t)</m>  the centre of
+mass
+<fn>Note that this is just the weighted average (no pun intended)
+of the positions of the particles.</fn>
+ of the body and by
+<m>\vF(t)=\sum\limits_{i=1}^n \vF_i(t)</m>  the total external force acting
+on the system. In this notation, equation (<m>\Sigma N_i</m>) can be written as
+</p>
+<fact xml:id="eqn_rigidCofM">
+<statement><p>
+<me>
+M\vR''(t)=\vF(t)
+</me>
+</p></statement>
+</fact>
+
+<p>
+The upshot is that the centre of mass of the system moves just like
+a single particle of mass <m>M</m> subject to the total external force.
+This is why we can often replace an extended object by a point mass at its
+centre of mass.
+</p>
+
+<p>Now take the cross product of <m>\vr_i(t)</m> and equation (<m>N_i</m>)
+and sum over <m>i</m>. This gives
+<me>
+\sum_{i=1}^n m_i\ \vr_i(t)\times\vr''_i(t)
+= \sum_{i=1}^n \vr_i(t)\times\vF_i(t)
++\sum_{1\le i,j\le n} \vr_i(t)\times\vF_{i,j}(t)
+\tag{$\Sigma \vr_i\times N_i$}
+</me>
+By the assumption (A2)
+<md>
+<mrow>
+\vr_1(t)\times\vF_{1,2}(t)
+&amp;=M_{1,2}(t)\ \vr_1(t)\times\big[\vr_1(t)-\vr_2(t)\big]
+</mrow><mrow>
+
+\vr_2(t)\times\vF_{2,1}(t)
+&amp;=M_{2,1}(t)\ \vr_2(t)\times\big[\vr_2(t)-\vr_1(t)\big]
+
+</mrow><mrow>
+&amp;=-M_{1,2}(t)\ \vr_2(t)\times\big[\vr_1(t)-\vr_2(t)\big]
+
+</mrow>
+<intertext>so that</intertext><mrow>
+\vr_1(t)\times\vF_{1,2}(t)
++\vr_2(t)\times\vF_{2,1}(t)
+&amp;=M_{1,2}(t)\ \big[\vr_1(t)-\vr_2(t)\big]\times\big[\vr_1(t)-\vr_2(t)\big]
+=0
+</mrow>
+</md>
+because the cross product of any two parallel vectors is zero.
+</p>
+
+<p>The last equation says that the <m>i=1</m>, <m>j=2</m> term in
+<m>\sum\limits_{1\le i,j\le n} \vr_i(t)\times\vF_{i,j}(t)</m>
+exactly cancels the <m>i=2</m>, <m>j=1</m> term.
+In this way all of the terms in
+<m>\sum\limits_{1\le i,j\le n} \vr_i(t)\times\vF_{i,j}(t)</m>
+with <m>i\ne j</m> cancel. Each term with <m>i=j</m> is exactly zero because
+<m>\vF_{ii}=0</m>.
+So <m>\sum\limits_{1\le i,j\le n} \vr_i(t)\times\vF_{i,j}(t)=0</m>
+and (<m>\Sigma \vr_i\times N_i</m>) simplifies to
+<me>
+\sum_{i=1}^n m_i\ \vr_i(t)\times\vr''_i(t)
+= \sum_{i=1}^n \vr_i(t)\times\vF_i(t)
+\tag{$\Sigma \vr_i\times N_i$}
+</me>
+At this point it makes sense to define vectors
+<md>
+<mrow>
+\vL(t)&amp;= \sum_{i=1}^n m_i\ \vr_i(t)\times\vr'_i(t)
+</mrow><mrow>
+\vT(t)&amp;=\sum_{i=1}^n \vr_i(t)\times\vF_i(t)
+</mrow>
+</md>
+because, in this notation, (<m>\Sigma \vr_i\times N_i</m>) becomes
+</p>
+
+<fact xml:id="eqn_rigidR">
+<statement>
+<p>
+<me>
+\diff{ }{t}\vL(t)=\vT(t)
+</me>
+</p>
+</statement>
+</fact>
+
+<p>
+Equation <xref ref="eqn_rigidR"/> plays the role of Newton's law of
+motion for rotational motion. <m>\vT(t)</m> is called the torque and
+plays the role of <q>rotational force</q>. <m>\vL(t)</m> is called the
+angular momentum (about the origin) and is a measure of the rate
+at which the piece of wood is rotating.
+For example, if a particle of mass <m>m</m> is travelling in a circle of
+radius <m>\rho</m> in the <m>xy</m>-plane at <m>\om</m> radians per unit time, then <m>\vr(t)=\rho\cos(\om t)\hi+\rho\sin(\om t)\hj</m> and
+<md>
+<mrow>
+m\vr(t)\times\vr'(t)
+&amp;= m \big[\rho\cos(\om t)\hi+\rho\sin(\om t)\hj\big]
+\times\big[-\om\rho\sin(\om t)\hi+\om\rho\cos(\om t)\hj\big]
+</mrow><mrow>
+&amp;=m \rho^2\ \om\ \hk
+</mrow>
+</md>
+is proportional to <m>\om</m>, which is the rate of rotation about the origin
+and is in the direction <m>\hk</m>, which is normal to the plane containing
+the circle.
+</p>
+
+<p>In any event, in order for the piece of wood to remain stationary,
+equations <xref ref="eqn_rigidCofM"/> and <xref ref="eqn_rigidR"/>
+force <m>\vF(t)=\vT(t)=0</m>.
+</p>
+
+<p>Now suppose that the piece of wood is a seesaw
+<fn>Or teeter-totter for those who speak a different English dialect.</fn>
+ that is supported on a
+fulcrum at <m>\vp</m>. The forces consist of gravity, <m>-m_ig\hk</m>,
+acting on particle number <m>i</m>, for each  <m>1\le i\le n</m>, and the
+</p>
+
+<sidebyside>
+<image source="figs/seesaw2"/>
+</sidebyside>
+
+<p>
+force <m>\vPhi</m> imposed by the fulcrum that is pushing up on the particle
+at <m>\vp</m>. The total external force is <m>\vF=\vPhi-\sum\limits_{i=1}^n m_ig\hk
+=\vPhi-Mg\hk</m>. If the seesaw is to remain stationary, this must be zero so that
+<m>\vPhi=Mg\hk</m>.
+</p>
+
+<p>The total torque (about the origin) is
+<me>
+\vT=\vp\times\vPhi-\sum_{i=1}^n m_ig \vr_i\times\hk
+=g\Big(M\vp-\sum_{i=1}^n m_i \vr_i\Big)\times\hk
+</me>
+If the seesaw is to remain stationary, this must also be zero. This will
+be the case if the fulcrum is placed at
+<me>
+\vp=\frac{1}{M}\sum_{i=1}^n m_i \vr_i
+</me>
+which is just the centre of mass of the piece of wood.
+</p>
+
+<p>More generally, suppose that the external forces acting on the piece of wood
+consist of <m>\vF_i</m>, acting on particle number <m>i</m>, for each <m>1\le i\le n</m>,
+and a <q>fulcrum force</q> <m>\vPhi</m> acting on a particle at
+<m>\vp</m>. The total external force is <m>\vF=\vPhi+\sum\limits_{i=1}^n \vF_i</m>.
+If the piece of wood is to remain stationary, this must be zero so that
+<m>\vPhi=-\sum\limits_{i=1}^n \vF_i</m>. The total torque (about the origin) is
+<me>
+\vT=\vp\times\vPhi+\sum_{i=1}^n \vr_i\times\vF_i
+=\sum_{i=1}^n (\vr_i-\vp)\times\vF_i
+</me>
+If the piece of wood is to remain stationary, this must also be zero.
+That is, the torque about point <m>\vp</m> due to all of the forces <m>\vF_i</m>,
+<m>1\le i\le n</m>, must be zero.
+</p>
+
+</subsection>
+
+<subsection xml:id="sec_poisson">
+  <title>Optional <mdash/> Solving Poisson's Equation</title>
+
+
+<p>In this section we shall use the divergence theorem find a formula for the solution of Poisson's equation
+<me>
+\vnabla^2\varphi = 4\pi\rho
+</me>
+Here <m>\rho=\rho(\vr)</m> is a given (continuous) function and <m>\varphi</m>
+is the unknown function that we wish to find.
+This equation arises, for example, in electrostatics, where <m>\rho</m> is
+the charge density and <m>\varphi</m> is the electric potential.
+</p>
+
+<p>The main step in finding this solution formula will be to consider an
+<ul>
+<li>
+arbitrary (smooth) function <m>\varphi</m> and an
+</li>
+<li>
+arbitrary (smooth) region <m>V</m>  in <m>\bbbr^3</m> and an
+</li>
+<li>
+arbitrary point <m>\vr_0</m> in the interior of <m>V</m>
+</li>
+</ul>
+and to find an auxiliary formula which expresses <m>\varphi(\vr_0)</m> in terms of
+<ul>
+<li>
+<m>\vnabla^2\varphi(\vr)</m>, with <m>\vr</m> running over <m>V</m> and
+</li>
+<li>
+<m>\vnabla\varphi(\vr)</m> and <m>\varphi(\vr)</m>, with <m>\vr</m> running only over
+<m>\partial V</m>.
+</li>
+</ul>
+This auxiliary formula, which we shall derive below, is
+<me>
+\varphi(\vr_0)=-\frac{1}{4\pi}\bigg\{
+\tripInt_V\frac{ \vnabla^2\varphi(\vr)}{|\vr-\vr_0|}\ d^3\vr
+-\dblInt_{\partial V}\varphi(\vr)\frac{\vr-\vr_0}{|\vr-\vr_0|^3}\cdot\hn\ \dee{S}
+-\dblInt_{\partial V}\frac{\vnabla\varphi(\vr)}{|\vr-\vr_0|}\cdot\hn\ \dee{S}\bigg\}
+\tag{$V$}
+</me>
+When we take the limit as <m>V</m> expands to fill all of <m>\bbbr^3</m> then,
+assuming that <m>\varphi</m> and <m>\vnabla\varphi</m> go to zero sufficiently
+quickly
+<fn>Suppose, for example, that, for large <m>|\vr-\vr_0|</m>,
+<m>|\varphi(\vr)|</m> is bounded by a constant times <m>\frac{1}{|\vr-\vr_0|}</m>
+and <m>|\vnabla\varphi(\vr)|</m> is bounded by a constant times
+<m>\frac{1}{|\vr-\vr_0|^2}</m>. Then, if <m>\partial V</m> is the sphere of
+radius <m>R</m> centred on <m>\vr_0</m>,  <m>\partial V</m> has surface area <m>4\pi R^2</m>
+and the two integrals over <m>\partial V</m> are bounded by a constant times
+<m>\frac{1}{R}</m>.
+</fn>
+at <m>\infty</m>, the two integrals over <m>\partial V</m> will converge to zero and
+we will end up with the formula
+<me>
+\varphi(\vr_0)=-\frac{1}{4\pi}
+\tripInt_{\bbbr^3}\frac{ \vnabla^2\varphi(\vr)}{|\vr-\vr_0|}\ d^3\vr
+</me>
+This expresses <m>\varphi</m> evaluated at an
+arbitrary point, <m>\vr_0</m>, of <m>\bbbr^3</m> in terms of <m>\vnabla^2\varphi(\vr)</m>,
+with <m>\vr</m> running over <m>\bbbr^3</m>, which is exactly what we want, since
+<m>\vnabla^2\varphi = 4\pi\rho</m> for any solution of Poisson's equation.
+So once we have proven (V) we will have proven
+<fn>Note that the theorem
+does not claim that the <m>\varphi</m> defined in the theorem obeys
+<m>\vnabla^2\varphi = 4\pi\rho</m>. It does, but the proof is beyond our scope.</fn>
+</p>
+
+<theorem xml:id="thm_PoissonSoln">
+<statement><p>
+Assume that <m>\rho(\vr)</m> is continuous and decays sufficiently quickly as
+<m>\vr\rightarrow\infty</m>.  If <m>\varphi</m> obeys
+<m>\vnabla^2\varphi = 4\pi\rho</m> on <m>\bbbr^3</m>, and <m>\varphi</m>
+and <m>\vnabla\varphi</m> decay sufficiently quickly as <m>\vr\rightarrow\infty</m>, then
+<me>
+\varphi(\vr_0)=
+-\tripInt_{\bbbr^3}\frac{ \rho(\vr)}{|\vr-\vr_0|}\ d^3\vr
+</me>
+for all <m>\vr_0</m> in <m>\bbbr^3</m>.
+</p></statement>
+</theorem>
+
+<p>Let
+<md>
+<mrow>
+\vr(x,y,z)&amp;=x\,\hi+y\,\hj+z\,\hk
+</mrow><mrow>
+\vr_0&amp;=x_0\,\hi+y_0\,\hj+z_0\,\hk
+</mrow>
+</md>
+We shall exploit three properties of the function
+<m>\frac{1}{|\vr-\vr_0|}</m>. The first two properties are
+<md>
+<mrow>
+\vnabla \frac{1}{|\vr-\vr_0|} &amp;=-\frac{\vr-\vr_0}{|\vr-\vr_0|^3}\tag{P1}
+</mrow><mrow>
+\vnabla^2 \frac{1}{|\vr-\vr_0|} &amp;=-\vnabla\cdot\frac{\vr-\vr_0}{|\vr-\vr_0|^3}
+=0
+\tag{P2}
+</mrow>
+</md>
+and are valid for all <m>\vr\ne \vr_0</m>. Verification of the first property is
+a simple one line computation. Verification of the second property is
+a simple three line computation.
+</p>
+
+<p>The other property of <m>\frac{1}{|\vr-\vr_0|}</m>
+that we shall use is the following. Let <m>S_\veps</m> be the sphere of
+radius <m>\veps</m> centered on <m>\vr_0</m>. Then, for any continuous function <m>\psi(\vr)</m>,
+<md>
+<mrow>
+\lim_{\veps\rightarrow 0+}\dblInt_{S_\veps}
+              \frac{\psi(\vr)}{|\vr-\vr_0|^p}\ \dee{S}
+&amp;=\lim_{\veps\rightarrow 0+} \frac{1}{\veps^p} \dblInt_{S_\veps}
+              \psi(\vr)\ \dee{S}
+=\lim_{\veps\rightarrow 0+}\frac{\psi(\vr_0)}{\veps^p}
+             \dblInt_{S_\veps}\ \dee{S}
+=\lim_{\veps\rightarrow 0+}\frac{\psi(\vr_0)}{\veps^p}4\pi\veps^2
+\notag
+</mrow><mrow>
+&amp;=\begin{cases}4\pi\psi(\vr_0)&amp; \text{if } p=2 \\
+         0             &amp; \text{if } p \lt 2\\
+         \text{undefined} &amp; \text{if } p \gt 2
+         \end{cases}
+\tag{P3}
+</mrow>
+</md>
+</p>
+
+<!-- <p>\intremark{
+</p>
+
+<p>\noindent
+Here is the verification of (P1) and (P2).
+It suffices to consider <m>\vr_0=\vZero</m>.
+The <m>x</m>-component of (P1) is
+<md>
+<mrow>
+\frac{\partial }{\partial x}\frac{1}{|\vr|}
+=\frac{\partial }{\partial x}\frac{1}{\sqrt{x^2+y^2+z^2}}
+=-\frac{1}{2}\frac{2x}{{\big[x^2+y^2+z^2\big]}^{3/2}}
+=-\frac{\vr\cdot\hi}{|\vr|^3}
+</mrow>
+</md>
+as desired. For (P2), we have
+<md>
+<mrow>
+\vnabla\cdot\frac{\vr}{|\vr|^3}
+&amp;=\frac{\partial }{\partial x}\frac{x}{{\big[x^2+y^2+z^2\big]}^{3/2}}
++\frac{\partial }{\partial y}\frac{y}{{\big[x^2+y^2+z^2\big]}^{3/2}}
++\frac{\partial }{\partial z}\frac{z}{{\big[x^2+y^2+z^2\big]}^{3/2}}
+</p>
+
+<p></mrow><mrow>
+&amp;=\frac{\big[x^2+y^2+z^2\big]-x\frac{3}{2}(2x)}{{\big[x^2+y^2+z^2\big]}^{5/2}}
++\frac{\big[x^2+y^2+z^2\big]-y\frac{3}{2}(2y)}{{\big[x^2+y^2+z^2\big]}^{5/2}}
++\frac{\big[x^2+y^2+z^2\big]-z\frac{3}{2}(2z)}{{\big[x^2+y^2+z^2\big]}^{5/2}}
+</p>
+
+<p></mrow><mrow>
+&amp;=0
+</mrow>
+</md>
+</p>
+
+<p>}
+</p> -->
+
+<p>
+<em>Derivation of (V):</em>
+</p>
+
+<p>Here is the derivation of (<m>V</m>). Let <m>V_\veps</m> be the part of <m>V</m> outside
+of <m>S_\veps</m>.
+</p>
+
+<sidebyside>
+<image source="figs/poisson"/>
+</sidebyside>
+
+<p>
+Note that the boundary <m>\partial V_\veps</m> of <m>V_\veps</m> consists
+of two parts <mdash/> the boundary <m>\partial V</m> of <m>V</m> and the sphere <m>S_\veps</m>
+<mdash/> and that the unit outward normal to <m>\partial V_\veps</m> on <m>S_\veps</m> is
+<m>-\frac{\vr-\vr_0}{|\vr-\vr_0|}</m>, because it points towards <m>\vr_0</m> and hence
+outside of <m>V_\veps</m>.
+</p>
+
+<p>Recall the vector identity Theorem <xref ref="thm_degTwoIdentities"/>.d, which says
+<me>
+\vnabla\cdot(f\vnabla g-g\vnabla f)=f\,\vnabla^2g-g\,\vnabla^2f
+</me>
+Applying this identity with <m>f= \frac{1}{|\vr-\vr_0|}</m> and <m>g=\varphi</m>
+gives
+<md>
+<mrow>
+\vnabla\cdot\Big(\frac{1}{|\vr-\vr_0|}\vnabla\varphi
+-\varphi\vnabla\frac{1}{|\vr-\vr_0|}\Big)
+&amp;=\frac{\vnabla^2\varphi}{|\vr-\vr_0|}
+  -\varphi\,\overbrace{ \vnabla^2\frac{1}{|\vr-\vr_0|} }^{=0\text{ by (P2)}}
+</mrow><mrow>
+&amp;=\frac{\vnabla^2\varphi}{|\vr-\vr_0|}
+</mrow>
+</md>
+which is the integrand of the first integral on the right hand side of (V).
+So, by the divergence theorem
+<md>
+<mrow>
+\tripInt_{V_\veps} \frac{\vnabla^2\varphi}{|\vr-\vr_0|} dV
+&amp;=\tripInt_{V_\veps}\vnabla\cdot\Big(\frac{1}{|\vr-\vr_0|}\vnabla\varphi
+-\varphi\vnabla\frac{1}{|\vr-\vr_0|}\Big) dV
+</mrow><mrow>
+&amp;=\dblInt_{\partial V}\Big(\frac{1}{|\vr-\vr_0|}\vnabla\varphi
+-\varphi\vnabla\frac{1}{|\vr-\vr_0|}\Big)\cdot\hn\ \dee{S}
+</mrow><mrow>
+&amp;\hskip1in+\dblInt_{S_\veps}\Big(\frac{1}{|\vr-\vr_0|}\vnabla\varphi
+-\varphi\vnabla\frac{1}{|\vr-\vr_0|}\Big)\cdot
+\Big(-\frac{\vr-\vr_0}{|\vr-\vr_0|}\Big) \dee{S}
+\tag{M}
+</mrow>
+</md>
+To see the connection between (M) and the rest of (V), note that,
+<ul>
+<li>
+by (P1), the first term on the right hand side of (M) is
+<me>
+\dblInt_{\partial V}\Big(\frac{1}{|\vr-\vr_0|}\vnabla\varphi
+-\varphi\vnabla\frac{1}{|\vr-\vr_0|}\Big)\cdot\hn\ \dee{S}
+=\dblInt_{\partial V}\frac{\vnabla\varphi(\vr)}{|\vr-\vr_0|}\cdot\hn\ \dee{S}
++\dblInt_{\partial V}\varphi(\vr)\frac{\vr-\vr_0}{|\vr-\vr_0|^3}\cdot\hn\ \dee{S}
+\tag{R1}
+</me>
+which is <m>4\pi</m> times the second and third terms on the right hand side of (V),
+</li>
+<li>
+and substituting in
+<m>\vnabla \frac{1}{|\vr-\vr_0|} =-\frac{\vr-\vr_0}{|\vr-\vr_0|^3}</m>,
+from (P1), and applying (P3) with <m>p=2</m>, the limit of the second
+term on the right hand side of (M) is
+<md>
+<mrow>
+&amp;\lim_{\veps\rightarrow 0+}
+\dblInt_{S_\veps}\Big(\frac{1}{|\vr-\vr_0|}\vnabla\varphi
+-\varphi\vnabla\frac{1}{|\vr-\vr_0|}\Big)\cdot
+        \Big(-\frac{\vr-\vr_0}{|\vr-\vr_0|}\Big) \dee{S}
+</mrow><mrow>
+&amp;\hskip1in=-\lim_{\veps\rightarrow 0+}
+\dblInt_{B_\veps}\big[\vnabla\varphi\cdot(\vr-\vr_0)+\varphi\big]
+\frac{1}{|\vr-\vr_0|^2} \dee{S}
+</mrow><mrow>
+&amp;\hskip1in=-4\pi\Big[\vnabla\varphi\cdot(\vr-\vr_0)+\varphi\Big]_{\vr=\vr_0}
+</mrow><mrow>
+&amp;\hskip1in=-4\pi\varphi(\vr_0)
+\tag{R2}
+</mrow>
+</md>
+</li>
+</ul>
+So applying
+<fn>You might worry about the singularity in <m>\frac{\vnabla^2\varphi}{|\vr-\vr_0|}</m>
+when applying <m>\lim_{\veps\rightarrow 0+}</m> to <m>\tripInt_{V_\veps} \frac{\vnabla^2\varphi}{|\vr-\vr_0|} dV</m>. That this singularity
+is harmless may be seen using spherical coordinates centred on <m>\vr_0</m>.
+Then <m>\dee{V}</m> contains a factor of <m>|\vr-\vr_0|^2</m>
+(see §<xref ref="ap_spherCoord"/>), which completely eliminates the singularity.
+</fn>
+<m>\lim_{\veps\rightarrow 0+}</m> to (M) and substituting in (R1) and (R2)
+gives
+<md>
+<mrow>
+\tripInt_{V}\frac{\vnabla^2\varphi}{|\vr-\vr_0|}\ dV
+=\dblInt_{\partial V}\frac{\vnabla\varphi(\vr)}{|\vr-\vr_0|}\cdot\hn\ \dee{S}
++\dblInt_{\partial V}\varphi(\vr)\frac{\vr-\vr_0}{|\vr-\vr_0|^3}\cdot\hn\ \dee{S}
+-4\pi\varphi(\vr_0)
+</mrow>
+</md>
+which is exactly equation (V).
+</p>
+
+</subsection>
+<!-- <xi:include href="../problems/prob_s4.2.ptx" /> -->
+
+</section>
