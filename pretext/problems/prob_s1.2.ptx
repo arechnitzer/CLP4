@@ -1,0 +1,397 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+
+<!-- Copyright 2018 Joel Feldman, Andrew Rechnitzer and Elyse Yeager -->
+<!-- This work is licensed under the Creative Commons Attribution-NonCommercial-ShareAlike 4.0 International License-->
+<!-- https://creativecommons.org/licenses/by-nc-sa/4.0 -->
+
+<exercises>
+<exercisegroup>
+<introduction><conceptual/></introduction>
+
+<exercise>
+<statement><p>
+A curve <m>\vr(s)</m> is parametrized in terms of arclength. What is  <m>\displaystyle\int_1^t |\vr'(s)|\,\dee{s}</m> when <m>t \ge 1</m>?
+</p></statement>
+<hint><p>
+You're asked to find the arclength of the curve from <m>s=1</m> to <m>s=t</m>.
+</p></hint>
+<answer><p>
+<m>t-1</m>
+</p></answer>
+<solution><p>
+By Lemma <xref ref="lem_CVtanArclen"/>.c, <m>|\vr'(s)|=1</m>
+under arclength parametrization. So
+<m>\int_1^t |\vr'(s)|\dee{s}=\int_1^t \dee{s}=t-1</m>.
+</p></solution>
+</exercise>
+
+<exercise>
+<statement><p>
+The function
+<me>
+\vr(s)=\sin\left(\frac{s+1}{2}\right)\hi+\cos\left(\frac{s+1}{2}\right)\hj+\frac{\sqrt3}{2}(s+1)\hk</me>
+</p>
+
+<p> is parametrized in terms of arclength, starting from the point <m>P</m>. What is <m>P</m>?
+</p></statement>
+<hint><p>
+The arclength will be 0 at <m>P</m>.
+</p></hint>
+<answer><p>
+<m>\left( \sin(1/2),\cos(1/2),\sqrt{3}/2\right)</m>
+</p></answer>
+<solution><p>
+The arclength from <m>P</m> to <m>P</m> will be 0, so <m>P</m> is the point where <m>s=0</m>. That is, <m>\vr(0)</m>, or
+<m>\left( \sin(1/2),\cos(1/2),\sqrt{3}/2\right)</m>.
+</p></solution>
+</exercise>
+
+<exercise>
+<statement><p>
+A curve <m>\vR=\va(t)</m> is reparametrized in terms of arclength as <m>\vR=\vb(s)=\va(t(s))</m>. Of the following options, which best describes the relationship between the vectors <m>\va'(t_0)</m> and <m>\vb'(s_0)</m>, where <m>t(s_0)=t_0</m>?
+</p>
+
+<p>You may assume <m>\va'(t)</m>  and <m>\vb'(s)</m> exist and are nonzero for all <m>t,s\ge0</m>.
+<ol label="A">
+<li> they are parallel and point in the same direction
+</li>
+<li> they are parallel and point in opposite directions
+</li>
+<li> they are perpendicular
+</li>
+<li> they have the same magnitude
+</li>
+<li> they are equal
+</li>
+</ol>
+</p></statement>
+<hint><p>
+<m>\va(t_0)</m> and <m>\vb(s_0)</m> describe the same point on <m>\vR</m>.
+</p></hint>
+<answer><p>
+A
+</p></answer>
+<solution><p>
+We consider the situation geometrically. If we plot <m>\vR</m> in space (of the relevant dimension), regardless of its parametrization, the derivative at a point will give a vector tangent to <m>\vR</m>, in the direction the curve moves when the parameter is increasing. Since <m>\va(t_0)</m> and <m>\vb(s_0)</m> describe the same spot on the curve, <m>\va'(t_0)</m> and <m>\vb'(s_0)</m> will be parallel
+<fn>Since we specified the derivatives are nonzero, there's no messiness about vectors being parallel to a zero vector.</fn>
+ <mdash/> they're both tangent to the same piece of curve. Furthermore, as <m>t</m> increases, so does <m>s</m>, so the direction of increasing <m>t</m> is the same as the direction of increasing <m>s</m>. Therefore, A. holds.
+</p>
+<sidebyside>
+<image><latex-image>\begin{tikzpicture}
+\draw[thick] plot[domain=-1:1.75]({\x*\x*\x-\x*\x},\x);
+\draw (-2,-1) node[below]{$\vR$};
+\draw (25/64,1.25) node[vertex, label=below right:{$\va(t_0)=\vb(s_0)$}]{};
+\draw[thick, blue] plot[domain=-2:2.5] (\x,{0.457*(\x-25/64)+1.25})node[right]{tangent direction};
+\end{tikzpicture}</latex-image></image>
+</sidebyside><p>
+Now we consider the magnitudes of the vectors, to rule out E. Recall <m>|\va'(t)|</m> is the speed at which the curve changes relative to <m>t</m>; this could be any (nonnegative) number. By the same token, <m> |\vb'(s)|=1</m>. So, <m>\vb'(s_0)</m> is a unit vector, while <m>\va'(t_0)</m> may or may not be. Then the two vectors are not <em>necessarily</em> equal (although they could be).
+</p>
+
+<p>So, the best answer is A.
+</p>
+</solution>
+
+<solution>
+<p>
+The chain rule gives us a relationship between <m>\vb'(s)</m> and <m>\va'(t)</m>.
+<md>
+<mrow>
+\diff{\vb}{s}&amp;=\diff{}{s}[\va(t(s))]=\diff{\va}{t}\,\diff{t}{s}
+</mrow>
+</md>
+So, the vectors <m>\diff{\vb}{s}</m> and <m>\diff{\va}{t}</m> differ only by the scalar function <m>\diff{t}{s}</m>. So, at any point along the curve, these vectors are parallel.
+</p>
+
+<p>Furthermore, we know that <m>t</m> and <m>s</m> are positively correlated: as <m>t</m> increases, so does <m>s</m>, because we're covering more arclength. So, <m>\diff{t}{s}</m> is nonnegative. Furthermore, since the derivatives are nonzero, <m>\diff{t}{s}</m> is nonzero. So, <m>\vb'(s_0)</m> and <m>\va'(t_0)</m> are positive scalar multiples of each other. That is, they are parallel, and pointing in the same direction. However, unless <m>\diff{t}{s}=1</m> (that is, <m>t(s)=s+C</m> for some constant <m>C</m>), the vectors do not have the same magnitude, and hence are not equal.
+</p>
+
+<p>So, A is the best solution.</p>
+</solution>
+</exercise>
+</exercisegroup>
+
+<exercisegroup><introduction><procedural/></introduction>
+
+<exercise><title><fromexam>M317 2012D</fromexam></title>
+<statement><p>
+<ol label="a">
+<li>
+Let
+<me>
+\vr(t) = (2 \sin^3 t , 2\cos^3 t, 3 \sin t \cos t)
+</me>
+Find the unit tangent vector to this parametrized curve at <m>t = \pi/3</m>,
+pointing in the direction of increasing <m>t</m>.
+</li>
+<li>
+Reparametrize the vector function <m>\vr(t)</m> from (a) with respect to
+arc length measured from the point <m>t = 0</m> in the direction of increasing <m>t</m>.
+</li>
+</ol>
+</p></statement>
+
+<hint><p>
+On your way to finding the relationship between <m>t</m> and arclength, you should realize that the curve has constant speed (with respect to <m>t</m>), though not constant velocity.
+</p></hint>
+
+<answer><p>
+(a) <m>\big(\frac{3}{4}\,,\,
+                -\frac{\sqrt{3}}{4}\,,\,-\frac{1}{2}\big)</m></p><p>
+(b) <m>\vR(s) = \big(2 \sin^3(\frac{s}{3}) , 2\cos^3(\frac{s}{3}),
+       3 \sin(\frac{s}{3}) \cos(\frac{s}{3})\big)</m>
+</p></answer>
+
+<solution><p> (a) The velocity vector is
+<md>
+<mrow>
+\vr'(t) &amp;= (6\sin^2(t)\cos t\,,\, -6\sin t\cos^2(t)\,,\, 3\cos^2t-3\sin^2t)
+</mrow><mrow>
+        &amp;= 3\big(\sin t \sin(2t)\,,\,-\cos t\sin(2t)\,,\,\cos(2t)\big)
+</mrow>
+</md>
+In particular, since <m>\sin(\pi/3)=\sin(2\pi/3)=\frac{\sqrt{3}}{2}</m>
+and <m>\cos(\pi/3)=-\cos(2\pi/3)=\frac{1}{2}</m>,
+<md>
+<mrow>
+\vr'(\pi/3)  &amp;= 3\big(\frac{3}{4}\,,\,
+                -\frac{\sqrt{3}}{4}\,,\,-\frac{1}{2}\big)
+</mrow>
+</md>
+and the specified unit tangent vector is
+<md>
+<mrow>
+\hat\vT &amp;= \frac{\big(\frac{3}{4}\,,\,
+                -\frac{\sqrt{3}}{4}\,,\,-\frac{1}{2}\big)}
+               {\big|\big(\frac{3}{4}\,,\,
+                -\frac{\sqrt{3}}{4}\,,\,-\frac{1}{2}\big)\big|}
+        =\big(\frac{3}{4}\,,\,
+                -\frac{\sqrt{3}}{4}\,,\,-\frac{1}{2}\big)
+</mrow>
+</md>
+</p>
+
+<p> (b)
+The speed is
+<md>
+<mrow>
+\diff{s}{t}
+  &amp;= |\vr'(t)| = 3\sqrt{\sin^2t\sin^2(2t)+\cos^2t\sin^2(2t)+\cos^2(2t)}
+</mrow><mrow>
+  &amp;= 3\sqrt{\sin^2(2t)+\cos^2(2t)}
+</mrow><mrow>
+  &amp;=3
+</mrow>
+</md>
+So <m>s=3t</m> and the reparametrized form is
+<md>
+<mrow>
+\vR(s) = \big(2 \sin^3(\frac{s}{3}) , 2\cos^3(\frac{s}{3}),
+       3 \sin(\frac{s}{3}) \cos(\frac{s}{3})\big)
+</mrow>
+</md>
+</p>
+
+</solution>
+</exercise>
+
+<exercise xml:id="prob_s1_2_spiral"><title><fromexam>M317 2008D</fromexam></title>
+<statement><p>
+This problem is about the logarithmic spiral in the plane
+<me>
+\vr(t) = e^t (\cos t, \sin t),\qquad t \in \bbbr
+</me>
+<ol label="a">
+<li>
+Find the arc length of the piece of this spiral which is contained in the unit
+circle.
+</li>
+<li>
+Reparametrize the logarithmic spiral with respect to arc length, measured
+from <m>t = -\infty</m>.
+</li>
+</ol>
+</p></statement>
+
+<hint><p>
+For which values of <m>t</m> is <m>|\vr(t)|\le 1</m>? Check the domain of <m>t</m> <mdash/> we're not starting at zero.
+</p></hint>
+
+<answer><p>
+(a) <m>\sqrt{2}</m></p><p>
+(b) <m>\frac{s}{\sqrt{2}}\left(\cos\Big(\ln\Big(\frac{s}{\sqrt{2}}\Big)\Big)\,,\,
+                 \sin\Big(\ln\Big(\frac{s}{\sqrt{2}}\Big)\Big)\right)</m>
+ with <m>s \gt 0</m>
+</p></answer>
+
+<solution><p> (a) We have <m>|\vr(t)|=e^t\le 1</m> for <m>t\le 0</m>.
+So the part of the spiral contained in the unit circle is the part of
+the spiral with <m>-\infty \lt t\le 0</m>.
+As
+<md>
+<mrow>
+\vr'(t) = e^t (\cos t, \sin t) + e^t (-\sin t, \cos t)
+        =e^t\big(\cos t -\sin t\,,\,\sin t + \cos t\big)
+</mrow>
+</md>
+the speed
+<md>
+<mrow>
+\diff{s}{t} = \big|\vr'(t)\big|
+            = e^t \sqrt{(\cos t-\sin t)^2+(\sin t+\cos t)^2}
+            = \sqrt{2}e^t
+</mrow>
+</md>
+and the arclength from <m>t=-\infty</m> to <m>\vr(t)</m> is
+<me>
+s(t)=\int_{-\infty}^t \diff{s}{t}(\tilde t)\ \dee{\tilde t}
+    =\int_{-\infty}^t \sqrt{2} e^{\tilde t}\ \dee{\tilde t}
+    =\sqrt{2}e^t
+</me>
+In particular the length of the part of the spiral contained in the
+unit circle is <m>s(0)=\sqrt{2}</m>.
+</p>
+
+<p> (b)
+The inverse function of <m>s(t)=\sqrt{2} e^t</m> is
+<m>t(s) =\ln\left(\frac{s}{\sqrt{2}}\right)</m> with <m>s \gt 0</m>.
+(As <m>t\rightarrow-\infty</m>, the arc length <m>s\rightarrow 0</m> and
+as <m>t\rightarrow+\infty</m>, the arc length <m>s\rightarrow +\infty</m>.)
+So the reparametrization is
+<md>
+<mrow>
+\vR(s) = e^t (\cos t, \sin t)\Big|_{t=\ln\left(\frac{s}{\sqrt{2}}\right)}
+=\frac{s}{\sqrt{2}}\left(\cos\Big(\ln\Big(\frac{s}{\sqrt{2}}\Big)\Big)\,,\,
+                 \sin\Big(\ln\Big(\frac{s}{\sqrt{2}}\Big)\Big)\right)
+\quad\text{with } s \gt 0
+</mrow>
+</md>
+</p>
+
+</solution>
+</exercise>
+</exercisegroup>
+
+<exercisegroup><introduction><application/></introduction>
+
+<exercise>
+<statement><p>
+Define
+<me>
+\vr(t)=\left(\frac{1}{\sqrt{1+t^2}},  \frac{\arctan t}{\sqrt{1+t^{-2}}}, \arctan t\right)</me>
+</p>
+
+<p>for <m>0 \le t</m>.
+Reparametrize the function using <m>z=\arctan t</m>, and describe the curve it defines. What is the geometric interpretation of the new parameter <m>z</m>?
+</p></statement>
+<hint><p>
+Be careful with the domain.
+</p></hint>
+<answer><p>
+<m>\left(\cos z,  z\sin z, z\right)</m> for <m>0 \le z  \lt  \pi/2</m>. The curve is (the first quarter-turn of) a spiral, with width in the <m>x</m>-direction 2, and increasing width in the <m>y</m>-direction.  The parameter <m>z</m> is the height, as well as a radian measure for the spiral.
+</p></answer>
+<solution><p>
+Using <m>\arctan t = z</m>, and so <m>t=\tan z</m>:
+<md>
+<mrow>
+\vr(t)&amp;=\left(\frac{1}{\sqrt{1+t^2}},  \frac{\arctan t}{\sqrt{1+t^{-2}}}, \arctan t\right)
+</mrow><mrow>
+&amp;=\left(\frac{1}{\sqrt{1+\tan^2z}},  \frac{z}{\sqrt{1+\cot^{2}z}}, z\right)
+</mrow><mrow>
+&amp;=\left(\frac{1}{|\sec z|},  \frac{z}{|\csc z|}, z\right)
+</mrow><mrow>
+&amp;=\left(|\cos z|,  z|\sin z|, z\right)
+</mrow>
+<intertext>Since <m>0 \le t </m>, and <m>\arctan t  \lt  \pi/2</m> we have <m>0 \le z  \lt  \pi/2</m>, so <m>\cos z</m> and <m>\sin z</m> are both nonnegative.</intertext><mrow>
+&amp;=\left(\cos z,  z\sin z, z\right)
+</mrow>
+</md>
+If we didn't have the restricted domain, this would make a spiral going up: <m>z</m> is both the height of the spiral and a radian measure. The <m>\hi</m>-component of the spiral stays between <m>-1</m> and <m>1</m>, while the <m>\hj</m>-component increases. So, our spiral gets increasingly <q>wide,</q> while staying the same <q>thickness.</q>
+</p><sidebyside>
+<image><latex-image>\begin{tikzpicture}
+\draw[thick] plot[domain=0:23, smooth, samples=100]({sin( \x r)*\x/3},{cos(\x r)+\x/4});
+\draw[very thick, red] plot[domain=0:1.57, smooth, samples=100]({sin( \x r)*\x/3},{cos(\x r)+\x/4});
+\end{tikzpicture}</latex-image></image>
+</sidebyside><p>
+Due to the restricted domain, our actual curve is only one-quarter of a <q>turn</q> of this spiral, indicated in red above.
+</p>
+
+<p>The parameter <m>z</m> is a measure of height, and it is also a radian measure as the spiral turns.
+</p></solution>
+</exercise>
+
+<exercise>
+<statement><p>
+Reparametrize the function <m>\vr(t)=(\tfrac12 t^2 , \tfrac13 t^3)</m> in terms of arclength from <m>t=-1</m>.
+</p></statement>
+<hint><p>
+Remember <m>\sqrt{x^2}=|x|</m>. You will need to consider cases for this one.
+</p></hint>
+<answer><p>
+<m>\vR(s)=\begin{cases}
+\Big(\frac12\left[ (2\sqrt2-3s)^{2/3}-1)\right],-\frac13\left[(2\sqrt2-3s)^{2/3}-1\right]^{3/2}\Big)&amp;\text{ when }s\le \frac13(2\sqrt2-1)\\
+\Big(\frac12\left[(3s+2-2\sqrt2)^{2/3}-1 \right],\frac13\left[(3s+2-2\sqrt2)^{2/3}-1\right]^{3/2}\Big)&amp;\text{ when }s \gt \frac13(2\sqrt2-1)
+\end{cases}
+</m>
+</p></answer>
+<solution><p>
+<md>
+<mrow>
+\vr(t)&amp;=(\tfrac12 t^2 , \tfrac13 t^3)
+</mrow><mrow>
+\vr'(t)&amp;=(t,t^2)
+</mrow><mrow>
+|\vr'(t)|&amp;=\sqrt{t^2+t^4}=|t|\sqrt{1+t^2}
+</mrow><mrow>
+s(t)&amp;=\int_{-1}^t|x|\sqrt{1+x^2}\dee{x}=\begin{cases}
+\int_{-1}^t -x\sqrt{1+x^2}\dee{x} &amp; \text{when } t \le 0
+\\
+\int_{-1}^0 -x\sqrt{1+x^2}\dee{x} +\int_{0}^t x\sqrt{1+x^2}\dee{x} &amp; \text{when } t  \gt  0
+\end{cases}
+</mrow>
+<intertext>Let <m>u=1+x^2, \frac12\dee{u}=x\dee{x}</m></intertext>
+<mrow>
+&amp;=\begin{cases}
+-\int_{2}^{1+t^2} \frac{1}{2}\sqrt{u}\dee{u} &amp; \text{when } t \le 0
+\\
+-\int_{2}^1 \frac12\sqrt{u}\dee{u}+ \int_{1}^{1+t^2} \frac12\sqrt{u}\dee{u} &amp; \text{when } t  \gt  0
+\end{cases}
+</mrow><mrow>&amp;=\begin{cases}
+ -\frac{1}{3}u^{3/2}|_{2}^{1+t^2} &amp; \text{when } t \le 0
+\\
+-\frac{1}{3}u^{3/2}|_{2}^{1}+  \frac13u^{3/2}|_{1}^{1+t^2} &amp; \text{when } t  \gt  0
+\end{cases}
+</mrow><mrow>&amp;=\begin{cases}
+ \frac{2^{3/2}}{3}-\frac{1}{3}(1+t^2)^{3/2} &amp; \text{when } t \le 0
+\\
+-\frac23+\frac{2^{3/2}}{3}+\frac13(1+t^2)^{3/2} &amp; \text{when } t  \gt  0
+\end{cases}
+</mrow>
+<intertext>Solving for <m>t</m> in terms of <m>s</m>:</intertext><mrow>
+1+t^2&amp;=\begin{cases}(2\sqrt2-3s)^{2/3} &amp;\text{when } t \le 0
+\\
+(3s+2-2\sqrt{2})^{2/3} &amp;\text{when }t \gt 0\end{cases}
+</mrow><mrow>
+t^2&amp;=\begin{cases}(2\sqrt2-3s)^{2/3}-1 &amp;\text{when } t \le 0
+\\
+(3s+2-2\sqrt{2})^{2/3}-1 &amp;\text{when }t \gt 0
+\end{cases}
+</mrow>
+<intertext>Remembering that <m>\sqrt{t^2}=|t|</m>:</intertext><mrow>
+t&amp;=\begin{cases}-\sqrt{(2\sqrt2-3s)^{2/3}-1} &amp;\text{when } t \le 0
+\\
+\sqrt{(3s+2-2\sqrt{2})^{2/3}-1} &amp;\text{when }t \gt 0
+\end{cases}
+</mrow>
+<intertext>Noting that <m>t=0</m> when <m>s=\tfrac{1}{3}(2\sqrt2-1)</m>, we find our reparametrization of <m>(\tfrac12t^2,\tfrac13t^3)</m>.</intertext><mrow>
+\vR(s)&amp;=\begin{cases}
+\Big(\frac12\left[ (2\sqrt2-3s)^{2/3}-1)\right],-\frac13\left[(2\sqrt2-3s)^{2/3}-1\right]^{3/2}\Big)&amp;\text{ when }s\le \frac13(2\sqrt2-1)
+\\
+\Big(\frac12\left[(3s+2-2\sqrt2)^{2/3}-1 \right],\frac13\left[(3s+2-2\sqrt2)^{2/3}-1\right]^{3/2}\Big)&amp;\text{ when }s \gt \frac13(2\sqrt2-1)
+\end{cases}
+</mrow>
+</md>
+Remark: after a computation with this much detail, it's nice to find a few points to check, to verify that our answer is reasonable. For instance, when <m>s=0</m>, <m>t</m> should be <m>-1</m>, and vice-versa. Also, we found that <m>t=0</m> corresponds to <m>s=\frac13(2\sqrt2-1)</m>. So, we should be able to verify that <m>\vr(0)=\vR\left(\frac13(2\sqrt2-1)\right)</m> and <m>\vr(-1)=\vR(0)</m>.
+</p></solution>
+</exercise></exercisegroup>
+
+</exercises>
