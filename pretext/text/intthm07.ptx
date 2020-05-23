@@ -19,10 +19,8 @@ Here is an outline of what we shall do:
 <ul>
 <li>
 First, we will define <term>differential forms</term>. To try and keep
-things as simple and concrete as possible, we'll only define
-<fn>In  general, a differential form is defined on a <term>manifold</term>, which is
-an abstract generalization of a multi-dimensional surface, like a sphere or a torus.
-</fn>
+things as simple and concrete as possible, we'll only define<fn>In  general, a differential form is defined on a <term>manifold</term>, which is
+an abstract generalization of a multi-dimensional surface, like a sphere or a torus.</fn>
 differential forms on <m>\bbbr^3</m> <mdash/> all of our functions will be defined on
 <m>\bbbr^3</m>. Very roughly
 speaking, a <m>k</m>-form is what you write after the integral sign of
@@ -35,14 +33,13 @@ dimensional object and think of evaluating a function at a point
 as <q>integrating the function over the point</q>.
 </li>
 <li>
+<p>
 Then we will define some operations on differential forms, so that
 we can add them, multiply them, differentiate them and, eventually,
 integrate them.  The derivative of
 a <m>k</m>-form <m>\om</m> is a <m>(k+1)</m>-form that is denoted <m>\dee{\om}</m>.
 It will turn out that
 <ul>
-<li>sep1pt \parskip0pt \parsep0pt
-</li>
 <li>
 differentiating a <m>0</m>-form amounts to taking a gradient,
 </li>
@@ -53,6 +50,7 @@ differentiating a <m>1</m>-form amounts to taking a curl, and
 differentiating a <m>2</m>-form amounts to taking a divergence.
 </li>
 </ul>
+</p>
 </li>
 <li><p>
 Finally we will get to the generalized Stokes' theorem which says that,
@@ -87,8 +85,8 @@ Our first task to define differential forms.
  + F_2(x,y,z)\,\dee{y}
  + F_3(x,y,z)\,\dee{z}</m>. When you learned the definition of the
 integral the symbol <q><m>\dee{x}</m></q> was not given any mathematical
-meaning by itself. A meaning was given only to the collections of symbols
-<q><m>\int f(x)\ \dee{x}</m></q> and <q><m>\int_a^b f(x)\ \dee{x}</m></q>.
+meaning by itself. A meaning was given only to collections of symbols like the indefinite integral <q><m>\int f(x)\ \dee{x}</m></q> and the definite integral
+<q><m>\int_a^b f(x)\ \dee{x}</m></q>.
 Later in this section, we will give a meaning
 to <m>\dee{x}</m>. We will, in Definition <xref ref="def_differentialFormDiff"/>,
 define a differentiation operator that we will call <m>\dee{}</m>. Then <m>\dee{x}</m>
@@ -98,8 +96,7 @@ However, until then we will have to treat <m>\dee{x}</m> and <m>\dee{y}</m> and
 <m>F_1(x,y,z)\,\dee{x}
  + F_2(x,y,z)\,\dee{y}
  + F_3(x,y,z)\,\dee{z}</m>
-is to allow us to distinguish
-<fn>We could also define,
+is to allow us to distinguish<fn>We could also define,
 for example, a <m>1</m>-form as an ordered list
    <m>\big( F_1(x,y,z)\,,\,
           F_2(x,y,z)\,,\,
@@ -253,11 +250,11 @@ If <m>f</m> is a function (i.e. a <m>0</m>-form), then
 <md>
 <mrow>
  f\big[F_1\,\dee{x} + F_2\,\dee{y} + F_3\,\dee{z}\big]
-   &amp;= (fF_1)\,\dee{x} + (fF_2)\,\dee{y} + (fF_3)\,\dee{z}
+   &amp;= (fF_1)\,\dee{x} \!+\! (fF_2)\,\dee{y} \!+\! (fF_3)\,\dee{z}
 </mrow><mrow>
  f\big[F_1\,\dee{y}\wedge\dee{z}
-       + F_2\,\dee{z}\wedge\dee{x}
-       + F_3\,\dee{x}\wedge\dee{y}\big]
+       \!+\! F_2\,\dee{z}\wedge\dee{x}
+       \!+\! F_3\,\dee{x}\wedge\dee{y}\big]
   &amp;=(fF_1)\,\dee{y}\wedge\dee{z}
        + (fF_2)\,\dee{z}\wedge\dee{x}
 </mrow><mrow>&amp;\hskip1.25in
@@ -359,8 +356,7 @@ be any two <m>1</m>-forms. Their product is
      +\big(F_3\,\dee{x}\big)\wedge\big(G_2\,\dee{y}\big)
      +\big(F_3\,\dee{x}\big)\wedge\big(G_3\,\dee{y}\big)
 </mrow><mrow>
-   &amp;\hskip0.5in\text{(by linearity, i.e. by part (b) of
-                      Definition <xref ref="def_differentialFormMult"/>)}
+ &amp;\hskip0.5in\text{(by linearity, i.e. by part (b) of the last Definition)}
 </mrow><mrow>
    &amp;= \ F_1G_1\,\dee{x}\wedge\,\dee{x}
      + F_1G_2\,\dee{x}\wedge\,\dee{y}
@@ -376,6 +372,8 @@ be any two <m>1</m>-forms. Their product is
 </mrow><mrow>
    &amp;= \big(F_1G_2-F_2G_1)\,\dee{x}\wedge\dee{y}
                   +\big(F_3G_1-F_1G_3)\,\dee{z}\wedge\dee{x}
+</mrow><mrow>
+   &amp;\hskip0.1in
                   +\big(F_2G_3-F_3G_2)\,\dee{y}\wedge\dee{z}
 </mrow>
 </md>
@@ -389,7 +387,12 @@ and
 \dee{x}\wedge\,\dee{z}=-\dee{z}\wedge\,\dee{x}\qquad
 \dee{z}\wedge\,\dee{y}=-\dee{y}\wedge\,\dee{z}
 </me>
-Note that, if we view <m>\vF=(F_1,F_2,F_3)</m> and <m>\vG=(G_1,G_2,G_3)</m>
+</p>
+</example>
+
+<p>
+Note that, looking at the last example,
+if we view <m>\vF=(F_1,F_2,F_3)</m> and <m>\vG=(G_1,G_2,G_3)</m>
 as vectors, we can write the product simply as
 </p>
 
@@ -430,8 +433,9 @@ In the special case that <m>F_3=G_3=0</m>, we have
    \wedge
    \big[G_1\,\dee{x}
      + G_2\,\dee{y}\big]
-=\big(F_1G_2-F_2G_1)\,\dee{x}\wedge\dee{y}
-=\det\left[\begin{matrix} F_1 &amp; F_2 \\
+&amp;=\big(F_1G_2-F_2G_1)\,\dee{x}\wedge\dee{y}
+</mrow><mrow>
+&amp;=\det\left[\begin{matrix} F_1 &amp; F_2 \\
 G_1 &amp; G_2\end{matrix}\right]
          \dee{x}\wedge\dee{y}
 </mrow>
@@ -488,7 +492,7 @@ in the three terms of
 </me>
 are just <m>1,2,3</m> and <m>2,3,1</m> and <m>3,1,2</m> <mdash/> the three cyclic permutations
 of <m>1,2,3</m>.
-</p></example>
+</p>
 
 <example xml:id="eg_diffFormAddMultB">
 <p>
@@ -519,7 +523,6 @@ and the (general) <m>2</m>-form
      + F_3G_3\,\dee{z}\wedge\dee{x}\wedge\dee{y}
 </mrow><mrow>
   &amp; = \big(F_1G_1+F_2G_2+F_3G_3)\,\dee{x}\wedge\dee{y}\wedge\dee{z}
-
 </mrow>
 </md>
 Here we have used that, for <m>1</m>-forms, <m>\alpha\wedge\beta=-\beta\wedge\alpha</m>,
@@ -542,11 +545,7 @@ with at least two of the coordinates being the same is zero. For example
    =0
 </me>
 So
-</p>
-
-<fact xml:id="eqnProd1Form2Form">
-  <statement>
-    <p><md>
+<md>
 <mrow>
    &amp;\big[F_1\,\dee{x}
      + F_2\,\dee{y}
@@ -560,11 +559,7 @@ So
 </mrow>
 </md>
 </p>
-</statement>
-</fact>
-
 </example>
-
 
 <example xml:id="eg_diffFormAddMultC">
 <p>
@@ -586,63 +581,56 @@ is
 <md>
 <mrow>
 &amp;\big[F_1\,\dee{x}
-     + F_2\,\dee{y}
-     + F_3\,\dee{z}\big]
+     \!+\! F_2\,\dee{y}
+     \!+\! F_3\,\dee{z}\big]
    \wedge
    \big[G_1\,\dee{x}
-     + G_2\,\dee{y}
-     + G_3\,\dee{z}\big]
+     \!+\! G_2\,\dee{y}
+     \!+\! G_3\,\dee{z}\big]
    \wedge
    \big[H_1\,\dee{x}
      + H_2\,\dee{y}
      + H_3\,\dee{z}\big]
-
 </mrow><mrow>
 &amp;\hskip0.1in=\big[F_1\,\dee{x}
      + F_2\,\dee{y}
      + F_3\,\dee{z}\big]
    \wedge
+</mrow><mrow>&amp;\hskip1in
    \big[(\vG\times\vH)_1\, \dee{y}\wedge\dee{z}
  +(\vG\times\vH)_2\, \dee{z}\wedge\dee{x}
  +(\vG\times\vH)_3\, \dee{x}\wedge\dee{y}\big]
-
 </mrow><mrow>
 &amp;\hskip0.1in
   =\big\{F_1(\vG\times\vH)_1 + F_2(\vG\times\vH)_2 + F_3(\vG\times\vH)_3\big\}
      \dee{x}\wedge\dee{y}\wedge\dee{z}
-
 </mrow><mrow>
 &amp;\hskip0.1in
-  =\big\{F_1(G_2H_3-G_3H_2) +
-         F_2(G_3H_1-G_1H_3) +
-         F_3(G_1H_2-G_2H_1\big\}
+  =\big\{F_1(G_2H_3\!-\!G_3H_2) \!+\!
+         F_2(G_3H_1\!-\!G_1H_3) \!+\!
+         F_3(G_1H_2\!-\!G_2H_1\big\}
      \dee{x}\wedge\dee{y}\wedge\dee{z}
 
 </mrow>
 </md>
 This can be expressed cleanly in terms of determinants.
 Recalling the rule for expanding a determinant along its top row
-</p>
-
-<fact xml:id="eqnProd3Form">
-  <statement>
-    <p>
 <md>
 <mrow>
 &amp;\big[F_1\,\dee{x}
-     + F_2\,\dee{y}
-     + F_3\,\dee{z}\big]
+     \!+\! F_2\,\dee{y}
+     \!+\! F_3\,\dee{z}\big]
    \wedge
    \big[G_1\,\dee{x}
-     + G_2\,\dee{y}
-     + G_3\,\dee{z}\big]
+     \!+\! G_2\,\dee{y}
+     \!+\! G_3\,\dee{z}\big]
    \wedge
    \big[H_1\,\dee{x}
-     + H_2\,\dee{y}
-     + H_3\,\dee{z}\big]
+     \!+\! H_2\,\dee{y}
+     \!+\! H_3\,\dee{z}\big]
 
 </mrow><mrow>
-&amp;\hskip3.5in
+&amp;\hskip3in
   =\det\left[\begin{matrix} F_1 &amp; F_2 &amp; F_3 \\
                             G_1 &amp; G_2 &amp; G_3 \\
                             H_1 &amp; H_2 &amp; H_3 \end{matrix}\right]
@@ -650,8 +638,6 @@ Recalling the rule for expanding a determinant along its top row
 </mrow>
 </md>
 </p>
-</statement>
-</fact>
 </example>
 
 
@@ -663,8 +649,7 @@ gradient, curl and divergence.
   <title>Differentiation of differential forms</title>
 <statement><p>
 If <m>\om</m> is a <m>k</m>-form, then <m>\dee{\om}</m> is a <m>k+1</m>-form, with
-<m>\dee{}</m> being the unique
-<fn>That <m>\dee{}</m> is unique just means that
+<m>\dee{}</m> being the unique<fn>That <m>\dee{}</m> is unique just means that
 the action of <m>\dee{}</m> on <em>any</em> differential form is completely
 determined by the four rules (a), (b), (c), (d). We will see in
 Example <xref ref="eg_diffFormDiff"/>.b,c,d, that this is indeed the case.</fn>
@@ -757,24 +742,23 @@ For any <m>1</m>-form
 &amp;\hskip0.5in=\Big(\frac{\partial F_1}{\partial x}\ \dee{x}
       +\frac{\partial F_1}{\partial y}\ \dee{y}
       +\frac{\partial F_1}{\partial z}\ \dee{z}\Big)\wedge\dee{x}
+</mrow><mrow>&amp;\hskip2in
 +\Big(\frac{\partial F_2}{\partial x}\ \dee{x}
       +\frac{\partial F_2}{\partial y}\ \dee{y}
       +\frac{\partial F_2}{\partial z}\ \dee{z}\Big)\wedge\dee{y}
-
 </mrow><mrow>&amp;\hskip2in
 +\Big(\frac{\partial F_3}{\partial x}\ \dee{x}
       +\frac{\partial F_3}{\partial y}\ \dee{y}
       +\frac{\partial F_3}{\partial z}\ \dee{z}\Big)\wedge\dee{z}
-
 </mrow><mrow>
 &amp;\hskip0.5in=
   \Big(\frac{\partial F_3}{\partial y}-\frac{\partial F_2}{\partial z}\Big)
           \ \dee{y}\wedge\dee{z}
    +\Big(\frac{\partial F_1}{\partial z}-\frac{\partial F_3}{\partial x}\Big)
           \ \dee{z}\wedge\dee{x}
+</mrow><mrow>&amp;\hskip2in
    +\Big(\frac{\partial F_2}{\partial x}-\frac{\partial F_1}{\partial y}\Big)
           \ \dee{x}\wedge\dee{y}
-
 </mrow><mrow>
 &amp;\hskip0.5in=
    (\vnabla\times\vF)_1\,\dee{y}\wedge\dee{z}
@@ -854,12 +838,10 @@ for any function <m>f(x,y,z)</m> of three variables
 +\frac{\partial f}{\partial z}(x,y,z)\ \dee{z}
 </mrow>
 </md>
-The analogous formulae
-<fn>Indeed, you can view <m>f(t)</m> as a function
+The analogous formulae<fn>Indeed, you can view <m>f(t)</m> as a function
 of three variables that happens to be independent of two of the three
 variables. Similarly you can view <m>f(u,v)</m>  as a function of three
-variables that happens to be independent of one of the three variables.
-</fn>
+variables that happens to be independent of one of the three variables.</fn>
  for functions of one or two variables also apply.
 <md>
 <mrow>
@@ -880,6 +862,7 @@ Then, writing <m>\vr(t) = \big(x(t),y(t),z(t)\big)</m>,
 <mrow>
 &amp;F_1\big(x(t),y(t),z(t)\big)\,\dee{x(t)}
   + F_2\big(x(t),y(t),z(t)\big)\,\dee{y(t)}
+</mrow><mrow>&amp;\hskip2in
   + F_3\big(x(t),y(t),z(t)\big)\,\dee{z(t)}
 </mrow><mrow>
 &amp;\hskip0.5in=F_1\big(\vr(t)\big)\diff{x}{t}(t)\,\dee{t}

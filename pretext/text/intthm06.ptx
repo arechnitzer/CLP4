@@ -8,12 +8,10 @@
 <title>Optional <mdash/> More Interpretation of Div and Curl</title>
 
 
-<p>We are now going to determine, in much more detail than before
-<fn>We'll  also use some more mathematics than before. In this section, we'll
+<p>We are now going to determine, in much more detail than before<fn>We'll  also use some more mathematics than before. In this section, we'll
 use eigenvalues and eigenvectors and solve some simple systems of
 ordinary differential equations. We'll also need to use a lot of subscripts and
-superscripts. It only looks intimidating.
-</fn>,
+superscripts. It only looks intimidating.</fn>,
 what the divergence and curl of a vector field tells us about the
 flow of that vector field.
 </p>
@@ -22,13 +20,13 @@ flow of that vector field.
 <m>\vv(\vx,t)</m>. Pick any time <m>t_0</m> and a really tiny piece of the fluid;
 assume that, at time <m>t_0</m>, it is a cube with corners
 at
-</p>
-
-<sidebyside width="45%">
 <p><me>
 \Set{\vx_0+n_1\veps\ha{1}+n_2\veps\ha{2}+n_3\veps\ha{3}}{n_1,n_2,n_3\in\{0,1\}}
 </me></p>
-<image source="figs/cube.pdf"/>
+</p>
+
+<sidebyside width="22%">
+<image source="figs/cube"/>
 </sidebyside>
 
 <p>
@@ -48,8 +46,8 @@ For times very close to <m>t_0</m> we can think of our chunk of fluid as being
 essentially a parallelepiped with edges <m>\veps\vb_k(t)</m>.
 </p>
 
-<sidebyside>
-<image source="figs/cubeB.pdf"/>
+<sidebyside width="28%">
+<image source="figs/cubeB"/>
 </sidebyside>
 
 <p>
@@ -143,8 +141,8 @@ The lighter rectangle is that with edges <m>\vb_k(t)</m> for some <m>t</m> a bit
 bigger than <m>t_0</m>.
 </p>
 
-<sidebyside>
-<image source="figs/square1.pdf"/>
+<sidebyside width="42%">
+<image source="figs/square1"/>
 </sidebyside>
 
 </example>
@@ -154,22 +152,18 @@ As time increases the initial cube becomes a larger and larger rectangle.
 </p>
 
 <example xml:id="eg_flowExpandB">
-  <title>Example <xref ref="eg_flowExpandB"/>,  generalized.</title>
+  <title>Example <xref ref="eg_flowExpand"/>,  generalized</title>
 
-<p>The behaviour of Example <xref ref="eg_flowExpandB"/> is typical of <m>\cV</m>'s
+<p>The behaviour of Example <xref ref="eg_flowExpand"/> is typical of <m>\cV</m>'s
 that are symmetric matrices,
-i.e. that obey
-<fn>In terms of our original vector field, this condition
+i.e. that obey<fn>In terms of our original vector field, this condition
 is that
 <m>\frac{\partial \vv_i}{\partial x_j}\big(\vx_0,t_0\big)
 =\frac{\partial \vv_j}{\partial x_i}\big(\vx_0,t_0\big)</m>.
 So, in three dimensions, it comes down to the requirement that
 <m>\vnabla\times\vv</m> be zero at the point <m>\big(\vx_0,t_0\big)</m>.</fn>
  <m>\cV_{i,j}=\cV_{j,i}</m> for all <m>i,j</m>.
-Any <m>d\times d</m> symmetric matrix
-<fn>This was proven by the French mathematician and physicist Augustin-Louis Cauchy (1789<ndash/>1857) in 1829.
-</fn>
-(with real entries)
+Any <m>d\times d</m> symmetric matrix<fn>This was proven by the French mathematician and physicist Augustin-Louis Cauchy (1789<ndash/>1857) in 1829.</fn> (with real entries)
 <ul>
 <li>
  has <m>d</m> real eigenvalues
@@ -226,7 +220,7 @@ In fact we can relax the symmetry condition.
 </p>
 
 <example xml:id="eg_flowExpandC">
-  <title>Example <xref ref="eg_flowExpandB"/>,  generalized yet again.</title>
+  <title>Example <xref ref="eg_flowExpand"/>,  generalized yet again</title>
 
 <p>For any <m>d\times d</m> matrix  <m>\cV</m>, the solution of
 <me>
@@ -242,8 +236,7 @@ the power series
 e^B=\bbbone+B+\half B^2+\frac{1}{3!}B^3+\cdots=\smsum_{n=0}^\infty \frac{1}{n!}B^n
 </me>
 with <m>\bbbone</m> denoting the <m>d\times d</m> identity matrix.
-This sum converges
-<fn>The proof is not so hard, though we'll only
+This sum converges<fn>The proof is not so hard, though we'll only
 outline it. Just denote by <m>\beta</m> the magnitude of the largest matrix
 element of <m>B</m>.  Then use the definition of the matrix product to prove that
 the largest matrix element of <m>B^n</m> has magnitude at most <m>(d\be)^n</m>.</fn>
@@ -251,7 +244,7 @@ the largest matrix element of <m>B^n</m> has magnitude at most <m>(d\be)^n</m>.<
 
 <p>for all <m>d\times d</m> matrices <m>B</m>. Furthermore it easy
 to check, using the power series, that <m>e^{\cV (t-t_0)}</m>
-obeys <m>\diff{\hfill}{t}e^{\cV (t-t_0)}=\cV e^{\cV (t-t_0)}</m>
+obeys <m>\diff{}{t}e^{\cV (t-t_0)}=\cV e^{\cV (t-t_0)}</m>
 and is the identity matrix when <m>t=t_0</m>. So
 <m>\vb(t)=e^{\cV (t-t_0)}\ve</m> really does obey
 <m>\vb'(t)=\cV\vb(t)</m> and <m>\vb(t_0)=\ve</m>.
@@ -270,10 +263,8 @@ V(t)=\det E(t)=\det\big(e^{\cV (t-t_0)}E\big)
 </me>
 Of course now we have to compute the determinant of the exponential of a matrix.
 Luckily, there is an easy way to do this.
-For any <m>d\times d</m> matrix <m>B</m>, <m>\det e^B=e^{\tr B}</m>, so
-<fn>Again, we won't prove this. But for a diagonal matrix, it is easy <mdash/> just compute
-both sides. So for a diagonalizable matrix it is also easy <mdash/> diagonalize.
-</fn>
+For any <m>d\times d</m> matrix <m>B</m>, <m>\det e^B=e^{\tr B}</m>, so<fn>Again, we won't prove this. But for a diagonal matrix, it is easy <mdash/> just compute
+both sides. So for a diagonalizable matrix it is also easy <mdash/> diagonalize.</fn>
 <me>
 V(t)=e^{(t-t_0)\tr \cV }V(t_0)\qquad\Rightarrow\qquad
 \frac{V'(t_0)}{V(t_0)}=\tr \cV=\sum_{i=1}^d \cV_{i,i}
@@ -292,9 +283,7 @@ of volume per unit time for our tiny chunk of fluid at time <m>t_0</m> and posit
 <me>
 \cV=\left[\begin{matrix}0&amp;-1\\ 1&amp;0\end{matrix}\right]
 </me>
-The solution
-<fn>You can find the solution either by guessing, or by using eigenvalues and eigenvectors.</fn>
- to
+The solution<fn>You can find the solution either by guessing, or by using eigenvalues and eigenvectors.</fn> to
 <me>
 \vb'(t)=\cV\vb(t)\quad
 \vb(0)=\left[\begin{matrix}\be_1 \\ \be_2\end{matrix}\right]
@@ -321,14 +310,14 @@ The shaded rectangle is that with edges <m>\vb_k(t)</m> for some <m>t</m> a bit
 bigger than <m>t_0</m>.
 </p>
 
-<sidebyside>
-<image source="figs/square2.pdf"/>
+<sidebyside width="31%">
+<image source="figs/square2"/>
 </sidebyside>
 
 </example>
 
 <example xml:id="eg_flowRotB">
-  <title>Example <xref ref="eg_flowRot"/>,  generalized.</title>
+  <title>Example <xref ref="eg_flowRot"/>,  generalized</title>
 
 <p>The behaviour of Example <xref ref="eg_flowRot"/> is typical of <m>\cV</m>'s that
 are antisymmetric matrices, i.e. that obey <m>\cV_{i,j}=-\cV_{j,i}</m>
@@ -408,25 +397,26 @@ and all even <m>n\ge 2</m>,
 \cV^n\hk=\vZero
 </me>
 Hence we can write
-<md alignment="alignat">
+<md>
 <mrow>
 e^{\cV t}\hi
    &amp;=\smsum_{n=0}^\infty \frac{1}{n!}(\cV t)^n\hi
-   &amp;&amp;=\smsum_{n\ {\rm even}}\!\! \frac{(-1)^{n/2}}{n!}(\Om t)^n\hi
-     &amp;&amp;\ +\smsum_{n\ {\rm odd}}\! \frac{(-1)^{(n-1)/2}}{n!}(\Om t)^n\hj
+   =\smsum_{n\ {\rm even}}\!\! \frac{(-1)^{n/2}}{n!}(\Om t)^n\hi
+      \ +\smsum_{n\ {\rm odd}}\! \frac{(-1)^{(n-1)/2}}{n!}(\Om t)^n\hj
 </mrow><mrow>
   &amp;=\phantom{-}\cos(\Om t)\,\hi+\sin(\Om t)\,\hj
 </mrow><mrow>
 e^{\cV t}\hj
    &amp;=\smsum_{n=0}^\infty \frac{1}{n!}(\cV t)^n\hj
-   &amp;&amp;=\smsum_{n\ {\rm even}}\!\! \frac{(-1)^{n/2}}{n!}(\Om t)^n\hj
-    &amp;&amp;\ -\smsum_{n\ {\rm odd}}\! \frac{(-1)^{(n-1)/2}}{n!}(\Om t)^n\hi
+   =\smsum_{n\ {\rm even}}\!\! \frac{(-1)^{n/2}}{n!}(\Om t)^n\hj
+    \ -\smsum_{n\ {\rm odd}}\! \frac{(-1)^{(n-1)/2}}{n!}(\Om t)^n\hi
 </mrow><mrow>
   &amp;=-\sin(\Om t)\,\hi+\cos(\Om t)\,\hj
 </mrow><mrow>
 e^{\cV t}\hk
    &amp;=\smsum_{n=0}^\infty \frac{1}{n!}(\cV t)^n\hk
-   &amp;&amp;=\hk
+</mrow><mrow>
+   &amp;=\hk
 </mrow>
 </md>
 So <m>e^{\cV t}</m> is rotation by an angle <m>\Om t</m> about the axis <m>\hk</m>.
@@ -436,7 +426,7 @@ So <m>e^{\cV t}</m> is rotation by an angle <m>\Om t</m> about the axis <m>\hk</
 
 
 <example xml:id="eg_flowRotC">
-<title>Example <xref ref="eg_flowRotB"/>,  continued.</title>
+<title>Example <xref ref="eg_flowRotB"/>,  continued</title>
 
 <p>Whether or not the matrix <m>\cV</m> defined in (M) is antisymmetric,
 the related matrix with entries
@@ -446,19 +436,19 @@ A_{i,j}=\half\big(\cV_{i,j}-\cV_{j,i}\big)
 is.  When <m>\cV</m> is antisymmetric, <m>A</m> and <m>\cV</m> coincide. The matrix <m>A</m>
 is (to write it out explicitly)
 <me>
-A\!=\!\frac{1}{2}\!\!\left[\begin{matrix}0 &amp;
-                        \frac{\partial v_1}{\partial x_2}\big(\vx_0,t_0\big)
+\frac{1}{2}\!\!\left[\begin{matrix}0 &amp;
+                        \!\!\!\frac{\partial v_1}{\partial x_2}\big(\vx_0,t_0\big)
                    \!-\!\frac{\partial v_2}{\partial x_1}\big(\vx_0,t_0\big)&amp;
-                        \frac{\partial v_1}{\partial x_3}\big(\vx_0,t_0\big)
+                        \!\!\!\frac{\partial v_1}{\partial x_3}\big(\vx_0,t_0\big)
                   \!-\!\frac{\partial v_3}{\partial x_1}\big(\vx_0,t_0\big)\\
-                        -\frac{\partial v_1}{\partial x_2}\big(\vx_0,t_0\big)
+                        \!-\frac{\partial v_1}{\partial x_2}\big(\vx_0,t_0\big)
                    \!+\!\frac{\partial v_2}{\partial x_1}\big(\vx_0,t_0\big)&amp;
                         0 &amp;
-                        \frac{\partial v_2}{\partial x_3}\big(\vx_0,t_0\big)
-                   \!-\!\frac{\partial v_3}{\partial x_2}\big(\vx_0,t_0\big)\\
-                       -\frac{\partial v_1}{\partial x_3}\big(\vx_0,t_0\big)
+                     \! \!\!\frac{\partial v_2}{\partial x_3}\big(\vx_0,t_0\big)
+                     \!-\!\frac{\partial v_3}{\partial x_2}\big(\vx_0,t_0\big)\\
+                      \!-\!\frac{\partial v_1}{\partial x_3}\big(\vx_0,t_0\big)
                     \!+\!\frac{\partial v_3}{\partial x_1}\big(\vx_0,t_0\big)&amp;
-                       -\frac{\partial v_2}{\partial x_3}\big(\vx_0,t_0\big)
+                       \!\!-\!\frac{\partial v_2}{\partial x_3}\big(\vx_0,t_0\big)
                     \!+\!\frac{\partial v_3}{\partial x_2}\big(\vx_0,t_0\big)&amp;
                      0\end{matrix}\right]
 </me>
@@ -505,7 +495,7 @@ of eigenvectors (they act like <m>\hi,\ \hj</m> above)
 </p>
 </remark>
 
-<p><alert>Resum\'e so far:</alert></p>
+<p><alert>Resumé so far:</alert></p>
 
 <p>
 We have now seen that
@@ -552,23 +542,18 @@ is
 </me>
 If <m>S</m> and <m>A</m> were ordinary numbers, we would have <m>e^{(A+S) t}=e^{At}e^{St}</m>.
 But for matrices this need not be the case, unless <m>S</m> and <m>A</m> happen
-to commute
-<fn>By definition, the matrices <m>S</m> and <m>A</m> commute when <m>AS=SA</m>.
-</fn>. For arbitrary matrices, it is still true that
+to commute<fn>By definition, the matrices <m>S</m> and <m>A</m> commute 
+when <m>AS=SA</m>.</fn>. For arbitrary matrices, it is still true that
 <me>
 e^{(A+S) t}=\lim_{n\rightarrow\infty }\Big[e^{At/n}e^{St/n}\Big]^n
 </me>
-This is called the Lie
-<fn>This formula is named after the Norwegian mathematician Marius Sophus Lie (1842<ndash/>1899). In 1870, he was arrested and held in prison in France for a month, because he was suspected of being a German spy. His mathematics notes were thought to be top secret coded messages.
-</fn>
-product formula.
-<!-- \intremark{The Lie product formula is proven in Reed and Simon, Volume I, Theorem VIII.29.} -->
+This is called the Lie<fn>This formula is named after the Norwegian mathematician Marius Sophus Lie (1842<ndash/>1899). In 1870, he was arrested and held in prison in France for a month, because he was suspected of being a German spy. His mathematics notes were thought to be top secret coded messages.</fn> product formula.
 It shows that our tiny chunk of fluid mixes together the behaviours of <m>A</m>
 and <m>S</m>, scaling a bit, then rotating a bit, then scaling a bit and so
 on.
 </p>
 
-<example xml:id="eg_flowGen"><title><m>\ \vv(x,y)= 2y\hi.</m></title>
+<example xml:id="eg_flowGen"><title><m>\ \vv(x,y)= 2y\hi</m></title>
 
 <p>In this example
 <me>
@@ -601,8 +586,7 @@ is
 \begin{matrix}b_1'(t)=b_2(t) &amp; b_1(0)=\be_1\\
         b_2'(t)=b_1(t) &amp; b_2(0)=\be_2\end{matrix}
 </me>
-is
-<fn>Recall that <m>\sinh t = \frac{1}{2}\big(e^t-e^{-t}\big)</m>
+is<fn>Recall that <m>\sinh t = \frac{1}{2}\big(e^t-e^{-t}\big)</m>
 and <m>\cosh t = \frac{1}{2}\big(e^t+e^{-t}\big)</m>.</fn>
 <me>
 \begin{matrix}b_1(t)=\be_1\cosh t+\be_2\sinh t\\
@@ -618,12 +602,15 @@ The eigenvectors of <m>S</m> are
 \ha{2}=\frac{1}{\sqrt{2}}\left[\begin{matrix}1\\ -1\end{matrix}\right]
 </me>
 The corresponding eigenvalues are <m>+1</m> and <m>-1</m>. The eigenvectors obey
-<me>
-e^{St}\ha{1}=\left[\begin{matrix}\cosh t&amp; \sinh t\\ \sinh t&amp;\cosh t\end{matrix}\right]\ha{1}
-=e^t\ha{1}\qquad
-e^{St}\ha{2}=\left[\begin{matrix}\cosh t&amp; \sinh t\\ \sinh t&amp;\cosh t\end{matrix}\right]\ha{2}
+<md>
+<mrow>
+e^{St}\ha{1}&amp;=\left[\begin{matrix}\cosh t&amp; \sinh t\\ \sinh t&amp;\cosh t\end{matrix}\right]\ha{1}
+=e^t\ha{1}
+</mrow><mrow>
+e^{St}\ha{2}&amp;=\left[\begin{matrix}\cosh t&amp; \sinh t\\ \sinh t&amp;\cosh t\end{matrix}\right]\ha{2}
 =e^{-t}\ha{2}
-</me>
+</mrow>
+</md>
 Under the <m>S</m> part of the flow <m>\ha{1}</m> scales by a factor of <m>e^t</m>, which
 is bigger than one for <m>t \gt 0</m> and <m>\ha{2}</m> scales by a factor of <m>e^{-t}</m>, which
 is smaller than one for <m>t \gt 0</m>.
@@ -660,10 +647,13 @@ has edges <m>e^{0.4S}\ha{k}</m> and the darkly shaded rectangle
 has edges <m>e^{0.4A}e^{0.4S}\ha{k}</m>.
 </p>
 
-<sidebyside width="32%">
-<image source="figs/square3.pdf"/>
-<image source="figs/square4.pdf"/>
-<image source="figs/square5.pdf"/>
+<sidebyside widths="33% 32%" valign="middle">
+<image source="figs/square3"/>
+<image source="figs/square4"/>
+</sidebyside>
+
+<sidebyside width="37%">
+<image source="figs/square5"/>
 </sidebyside>
 
 <p>
@@ -677,9 +667,9 @@ the shaded region has edges
 </p>
 
 <sidebyside width="32%">
-<image source="figs/square6.pdf"/>
-<image source="figs/square7.pdf"/>
-<image source="figs/square8.pdf"/>
+<image source="figs/square6"/>
+<image source="figs/square7"/>
+<image source="figs/square8"/>
 </sidebyside>
 
 <p>
