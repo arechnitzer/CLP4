@@ -9,8 +9,7 @@
 <introduction>
 
 <p>Our last variant of the fundamental theorem of calculus is
-Stokes'
-<fn>Sir George Gabriel Stokes (1819<ndash/>1903) was an Irish physicist and mathematician. In addition to Stokes' theorem, he is known for the Navier-Stokes equations of fluid dynamics and for his work on the wave theory of light. He gave evidence to the Royal Commission on the Use of Iron in
+Stokes'<fn>Sir George Gabriel Stokes (1819<ndash/>1903) was an Irish physicist and mathematician. In addition to Stokes' theorem, he is known for the Navier-Stokes equations of fluid dynamics and for his work on the wave theory of light. He gave evidence to the Royal Commission on the Use of Iron in
 Railway Structures after the Dee bridge disaster of 1847.
 </fn> theorem, which is like Green's theorem, but in three dimensions.
 It relates an integral over a finite surface
@@ -42,7 +41,7 @@ the boundary, <m>\partial S</m>, of the surface <m>S</m> consist of a finite num
 </ul>
 </p>
 
-<sidebyside>
+<sidebyside width="41%">
 <image source="figs/stokes0"/>
 </sidebyside>
 </li>
@@ -73,7 +72,8 @@ theorem. Our proof of Stokes' theorem will consist of rewriting the integrals
 so as to allow an application of Green's theorem.
 </li>
 <li>
-If <m>\partial S</m> is simple closed curve and
+<p>
+If <m>\partial S</m> is a simple closed curve and
 <ul>
 <li>
 when you look at <m>\partial S</m> from high on the <m>z</m>-axis, it is oriented
@@ -84,6 +84,7 @@ counterclockwise (look at the figure in Theorem <xref ref="thm_Stokes"/>), then
 <m>\partial S</m>.
 </li>
 </ul>
+</p>
 </li>
 </ul>
 </p>
@@ -95,11 +96,8 @@ Both integrals involve <m>F_1</m> terms and <m>F_2</m> terms and
 <m>F_3</m> terms. We shall show that the <m>F_1</m> terms in the two integrals agree.
 In other words, we shall assume that <m>\vF=F_1\hi</m>.
 The proofs that the <m>F_2</m> and <m>F_3</m> terms also agree are similar.
-For simplicity, we'll assume
-<fn>Otherwise, decompose <m>S</m> into simpler pieces, analogously to what we did in the proof of the divergence theorem.</fn>
-</p>
-
-<p>that the boundary of <m>S</m> consists of just a single curve, and that we can
+For simplicity, we'll assume<fn>Otherwise, decompose <m>S</m> into simpler pieces, analogously to what we did in the proof of the divergence theorem.</fn>
+that the boundary of <m>S</m> consists of just a single curve, and that we can
 <ul>
 <li>
 pick a parametrization of <m>S</m> with
@@ -121,7 +119,7 @@ Then the curve <m>\partial S</m> bounding <m>S</m>
 can be parametrized as <m>\vR(t)=\vr\big(u(t),v(t)\big)</m>, <m>a\le t\le b</m>.
 </p>
 
-<sidebyside>
+<sidebyside widths="41% 32%" valign="middle">
 <image source="figs/stokes1"/>
 <image source="figs/stokes2"/>
 </sidebyside>
@@ -173,7 +171,7 @@ points from <m> \vr(u_0,v_0)</m> into the interior of <m>S</m>. It's the blue ar
 the figure on the left below.
 </p>
 
-<sidebyside width="32%">
+<sidebyside widths="40% 18% 40%" valign="top">
 <image source="figs/stokes4"/>
 <image source="figs/stokes5"/>
 <image source="figs/stokes3"/>
@@ -235,6 +233,8 @@ and
                          \frac{\partial x}{\partial v}
                        -\frac{\partial x}{\partial u}
                        \frac{\partial z}{\partial v}\right)\hj
+</mrow><mrow>
+&amp;\hskip1in
   +\left(\frac{\partial x}{\partial u}
                          \frac{\partial y}{\partial v}
                        -\frac{\partial y}{\partial u}
@@ -268,21 +268,24 @@ Now we examine the line integral and show that it equals this one.
 <p><em>The line integral:</em>
 <md>
 <mrow>
-\oint_{\partial S}\vF\cdot \dee{\vr}
-&amp;=\int_a^b\vF\Big(\vr\big(u(t),v(t)\big)\Big)\cdot\diff{ }{t}
+&amp;\oint_{\partial S}\vF\cdot \dee{\vr}
+=\int_a^b\vF\Big(\vr\big(u(t),v(t)\big)\Big)\cdot\diff{ }{t}
 \vr\big(u(t),v(t)\big)\ \dee{t}
 </mrow><mrow>
-&amp;=\int_a^b\vF\Big(\vr\big(u(t),v(t)\big)\Big)\cdot\Big[
+&amp;\hskip0.1in=\int_a^b\vF\Big(\vr\big(u(t),v(t)\big)\Big)\cdot\Big[
 \frac{\partial\vr}{\partial u}\big(u(t),v(t)\big)\diff{u}{t}(t)
 +\frac{\partial\vr}{\partial v}\big(u(t),v(t)\big)\diff{v}{t}(t)\Big]\ \dee{t}
 </mrow>
 </md>
 We can write this as the line integral
-<me>
-\oint_{\partial R}M(u,v)\ \dee{u}+N(u,v)\ \dee{v}
-=\int_a^b \Big[M\big(u(t),v(t)\big)\ \diff{u}{t}(t)
+<md>
+<mrow>
+&amp;\oint_{\partial R}M(u,v)\ \dee{u}+N(u,v)\ \dee{v}
+</mrow><mrow>
+&amp;\hskip1in=\int_a^b \Big[M\big(u(t),v(t)\big)\ \diff{u}{t}(t)
 +N\big(u(t),v(t))\ \diff{v}{t}(t)\Big]\ \dee{t}
-</me>
+</mrow>
+</md>
 around <m>\partial R</m>, if we choose
 <md alignment="alignat">
 <mrow>
@@ -389,7 +392,7 @@ tells us that <m>\dblInt_{S_1}\vnabla\times\vF\cdot\hn\ \dee{S}
 =\dblInt_{S_2}\vnabla\times\vF\cdot\hn\ \dee{S}</m>.
 </p>
 
-<sidebyside>
+<sidebyside width="26%">
 <image source="figs/twoSurfaceA"/>
 </sidebyside>
 
@@ -404,7 +407,7 @@ be the solid between <m>S_1</m> and <m>S_2</m>.
 The boundary <m>\partial V</m> of <m>V</m> is the union of <m>S_1</m> and <m>S_2</m>.
 </p>
 
-<sidebyside>
+<sidebyside width="26%">
 <image source="figs/twoSurfaceB"/>
 </sidebyside>
 
@@ -414,18 +417,19 @@ But beware that the outward pointing normal to <m>\partial V</m> (call it
 theorem gives
 <md>
 <mrow>
-\dblInt_{S_2}\vnabla\times\vF\cdot\hn\ \dee{S}
+&amp;\dblInt_{S_2}\vnabla\times\vF\cdot\hn\ \dee{S}
 -\dblInt_{S_1}\vnabla\times\vF\cdot\hn\ \dee{S}
-&amp;= \dblInt_{S_2}\vnabla\times\vF\cdot\hN\ \dee{S}
+</mrow><mrow>
+&amp;\hskip0.5in= \dblInt_{S_2}\vnabla\times\vF\cdot\hN\ \dee{S}
 +\dblInt_{S_1}\vnabla\times\vF\cdot\hN\ \dee{S}
 </mrow><mrow>
-&amp;= \dblInt_{\partial V}\vnabla\times\vF\cdot\hN\ \dee{S}
+&amp;\hskip0.5in= \dblInt_{\partial V}\vnabla\times\vF\cdot\hN\ \dee{S}
 </mrow><mrow>
-&amp;= \tripInt_{V}\vnabla\cdot\big(\vnabla\times\vF\big)\ \dee{V}
+&amp;\hskip0.5in= \tripInt_{V}\vnabla\cdot\big(\vnabla\times\vF\big)\ \dee{V}
 </mrow><mrow>
-&amp;\hskip1in\qquad\text{by the divergence theorem}
+&amp;\hskip2in\qquad\text{by the divergence theorem}
 </mrow><mrow>
-&amp;=0
+&amp;\hskip0.5in=0
 </mrow>
 </md>
 by the vector identity Theorem <xref ref="thm_degTwoIdentities"/>.a.
@@ -466,7 +470,7 @@ S = \Set{(x,y,z)}{ x^2+y^2\le 4,\ \ z=1}
 </me>
 </p>
 
-<sidebyside>
+<sidebyside width="40%">
 <image source="figs/horizontalDiskB"/>
 </sidebyside>
 
@@ -492,6 +496,8 @@ Since
                          \frac{\partial }{\partial z} \\
                               2z+\sin\big(x^{146}\big)   &amp; -5y
                                \end{matrix}\right]
+</mrow><mrow>
+&amp;\hskip1in
    +\hk\det\left[\begin{matrix}
                          \frac{\partial }{\partial x} &amp;
                          \frac{\partial }{\partial y} \\
@@ -540,7 +546,7 @@ is a circle, with centre <m>(0,0,0)</m> and radius <m>2</m>. The part of the cir
 in the first octant is sketched on the left below.
 </p>
 
-<sidebyside>
+<sidebyside widths="24% 32%" valign="middle">
 <image source="figs/circle4c"/>
 <image source="figs/circle4d"/>
 </sidebyside>
@@ -608,7 +614,8 @@ so that <m>\hn\,dS= (-\hj+\hk)\,\dee{x}\dee{y}</m>. As <m>(x,y,z)</m> runs over
 <md>
 <mrow>
 S &amp;= \Set{(x,y,z)}{ x^2+y^2+z^2\le 4,\ \ z=y}
-  = \Set{(x,y,z)}{ x^2+2y^2\le 4,\ \ z=y}
+</mrow><mrow>
+  &amp;= \Set{(x,y,z)}{ x^2+2y^2\le 4,\ \ z=y}
 </mrow><mrow>
   &amp;= \Set{(x,y,z)}{ \tfrac{x^2}{4} +\tfrac{y^2}{2}\le 1,\ \ z=y}
 </mrow>
@@ -619,7 +626,7 @@ The part of this ellipse in the first octant is the shaded region in
 the figure below.
 </p>
 
-<sidebyside>
+<sidebyside width="32%">
 <image source="figs/circle4e"/>
 </sidebyside>
 
@@ -631,7 +638,8 @@ This ellipse has semiaxes <m>a=2</m> and <m>b =\sqrt{2}</m> and hence area <m>\p
 &amp; = 2\dblInt_S \hj\cdot\hn\,\dee{S}
 =2\dblInt_R \hj\cdot(-\hj+\hk)\,\dee{x}\dee{y}
 =-2 \dblInt_R \dee{x}\dee{y}
-= -2\text{Area}(R)
+</mrow><mrow>
+&amp;= -2\text{Area}(R)
 </mrow><mrow>
 &amp;=-4\sqrt{2}\pi
 </mrow>
@@ -651,7 +659,7 @@ going from <m>(2,0,0)</m> to <m>(0, 3, 0)</m> to <m>(0, 0, 6)</m> and back to
 <m>(2, 0, 0)</m> along straight line segments.
 </p>
 
-<sidebyside>
+<sidebyside width="25%">
 <image source="figs/domainTriangle"/>
 </sidebyside>
 </statement>
@@ -669,7 +677,8 @@ So the integral along this segment is
 <mrow>
 \int_0^1 \vF(\vr(t))\cdot\diff{\vr}{t}\ \dee{t}
 &amp;=\int_0^1 (2+t\,,\, 2(2-2t)\,,\, (3t)^2)\cdot(-2\,,\, 3\,,\, 0)\ \dee{t}
-=\int_0^1 (8-14t)\ \dee{t}
+</mrow><mrow>
+&amp;=\int_0^1 (8-14t)\ \dee{t}
 </mrow><mrow>
 &amp;=\Big[8t-7t^2\Big]_0^1=1
 </mrow>
@@ -686,11 +695,10 @@ So the integral along this segment is
 <mrow>
 \int_0^1 \vF(\vr(t))\cdot\diff{\vr}{t}\ \dee{t}
 &amp;=\int_0^1 \big(3(1-t)\,,\, - 12t\,,\, 9(1-t)^2+ 6t\big)\cdot(0, -3, 6)\ \dee{t}
-
 </mrow><mrow>
 &amp;=\int_0^1 [36t+54(1-t)^2+36t]\ \dee{t}
-=\Big[18t^2-18(1-t)^3+18t^2\Big]_0^1
-
+</mrow><mrow>
+&amp;=\Big[18t^2-18(1-t)^3+18t^2\Big]_0^1
 </mrow><mrow>
 &amp;=54
 </mrow>
@@ -705,7 +713,6 @@ So the line integral along this segment is
 <mrow>
 \int_0^1 \vF(\vr(t))\cdot\diff{\vr}{t}\ \dee{t}
 &amp;=\int_0^1 \big(2t\,,\, 4t - 12(1-t)\,,\,  6(1-t)\big)\cdot(2, 0, -6)\ \dee{t}
-
 </mrow><mrow>
 &amp;=\int_0^1 [4t-36(1-t)]\ \dee{t}
 =\Big[2t^2+18(1-t)^2\Big]_0^1
@@ -722,9 +729,10 @@ The full line integral is
 <solution>
 <p>
 This time we shall apply Stokes' Theorem. The curl of <m>\vF</m> is
-<me>
+<md>
+<mrow>
 \vnabla\times\vF
-=\det\left[\begin{matrix}
+&amp;=\det\left[\begin{matrix}
           \hi &amp; \hj &amp;\hk \\
           \frac{\partial }{\partial x} &amp;
               \frac{\partial }{\partial y} &amp;
@@ -732,8 +740,13 @@ This time we shall apply Stokes' Theorem. The curl of <m>\vF</m> is
            x+y &amp; 2(x-z) &amp; y^2+z
           \end{matrix}
      \right]
-=(2y+2)\hi-(0-0)\hj+(2-1)\hk=2(y+1)\hi+\hk
-</me>
+</mrow><mrow>
+&amp;
+=(2y+2)\hi-(0-0)\hj+(2-1)\hk
+</mrow><mrow>
+&amp;=2(y+1)\hi+\hk
+</mrow>
+</md>
 The curve <m>C</m> is a triangle and so is contained in a plane.
 Any plane has an equation of the form <m>Ax+By+Cz=D</m>.
 Our plane does not pass through the origin (look at the figure above)
@@ -774,16 +787,13 @@ R&amp;=\Set{(x,y,z)}{x\ge0,\ y\ge0,\ 3x+2y\le 6}
 </md>
 </p>
 
-<sidebyside>
+<sidebyside width="42%">
 <image source="figs/domainTriangleB"/>
 </sidebyside>
 
 <p>
-Using horizontal strips as in the figure below,
-</p>
-
-<sidebyside widths="60% 30%">
-<p><md>
+Using horizontal strips as in the figure on the left below,
+<md>
 <mrow>
 \oint_C\vF\cdot \dee{\vr}&amp;=\dblInt_S\vnabla\times\vF\cdot\hn\,\dee{S}
 </mrow><mrow>
@@ -802,15 +812,16 @@ Using horizontal strips as in the figure below,
 &amp; =\big[-4\times 9 +11\times 3 +42\big]
 =39
 </mrow>
-</md></p>
-<image source="figs/limitsv3"/>
-</sidebyside>
-
-<p>Alternatively, using vertical strips as in the figure below,
+</md>
 </p>
 
-<sidebyside widths="60% 30%">
-<p><md>
+<sidebyside widths="31% 29%" valign="middle">
+<image source="figs/limitsv3"/>
+<image source="figs/limitsv2"/>
+</sidebyside>
+
+<p>Alternatively, using vertical strips as in the figure on the right above,
+<md>
 <mrow>
 \oint_C\vF\cdot \dee{\vr}
 
@@ -827,9 +838,8 @@ Using horizontal strips as in the figure below,
 &amp;=\frac{9}{4}\,8+\frac{21}{4}\,4
 =39
 </mrow>
-</md></p>
-<image source="figs/limitsv2"/>
-</sidebyside>
+</md>
+</p>
 </solution>
 </example>
 
@@ -857,15 +867,13 @@ through the origin. They are sketched in the figure below.
 The paraboloid is red.
 </p>
 
-<sidebyside>
+<sidebyside width="60%">
 <image source="figs/stokes6"/>
 </sidebyside>
 
 <p>
 Their intersection, the curve <m>C</m>, is the blue curve in the figure.
-It looks like a deformed
-<fn>By Salvador Dali?</fn>
- circle.
+It looks like a deformed<fn>By Salvador Dali?</fn> circle.
 </p>
 
 <p>One could imagine parametrizing <m>C</m>. For example, substituting
@@ -920,7 +928,7 @@ with upward pointing normal
 The surface <m>S</m> is sketched below. It is a pretty weird surface. About the
 </p>
 
-<sidebyside>
+<sidebyside width="63%">
 <image source="figs/stokes7"/>
 </sidebyside>
 
@@ -928,8 +936,7 @@ The surface <m>S</m> is sketched below. It is a pretty weird surface. About the
 only simple thing about it is that its boundary, <m>\partial S</m>, is the circle
 <m>x^2+y^2=1</m>, <m>z=0</m>.
 It is clear that we should not try to evaluate the integral
-directly
-<fn>That way lies pain.</fn>.
+directly<fn>That way lies pain.</fn>.
 In this solution we will combine the divergence theorem with the
 observation that
 <md>
@@ -956,7 +963,7 @@ whose bottom surface is <m>S'</m>. So the boundary of <m>V</m> is the union of <
 <m>S'</m>.
 </p>
 
-<sidebyside>
+<sidebyside width="30%">
 <image source="figs/stokes7a"/>
 </sidebyside>
 </li>
@@ -990,7 +997,8 @@ Theorem <xref ref="thm_Stokes"/>.
 &amp;=\dblInt_{S'}\vG\cdot\hn\,\dee{S}
 =\dblInt_{S'}\vG\cdot\hk\,\dee{S}
 =\dblInt_{\Atop{x^2+y^2\le 1}{z=0}}(2x-2z)\,\dee{x}\dee{y}
-=\dblInt_{\Atop{x^2+y^2\le 1}{z=0}}(2x)\,\dee{x}\dee{y}
+</mrow><mrow>
+&amp;=\dblInt_{\Atop{x^2+y^2\le 1}{z=0}}(2x)\,\dee{x}\dee{y}
 </mrow><mrow>
 &amp;=0
 </mrow>
@@ -1065,7 +1073,7 @@ and <m>C</m> is the curve <m>x^2+y^2+z^2=4</m>, <m>z=y</m>
 oriented counterclockwise when viewed from above.
 </p>
 
-<sidebyside>
+<sidebyside width="29%">
 <image source="figs/circle4bb"/>
 </sidebyside>
 
@@ -1085,9 +1093,7 @@ So <m>C</m> is a circle which, like the sphere, has radius <m>2</m> and centre
 \qquad 0\le t\le 2\pi
 </me>
 where
-    <ul>
-<li>sep1pt \parskip0pt \parsep0pt
-</li>
+ <ul>
 <li>
       <m>\vc=(0,0,0)</m> is the centre of <m>C</m>,
 </li>
@@ -1103,12 +1109,12 @@ where
 </li>
 <li> are mutually perpendicular.
 </li>
-</ul></p>
+</ol></p>
 </li>
 </ul>
 </p>
 
-<sidebyside>
+<sidebyside width="38%">
 <image source="figs/circle4a"/>
 </sidebyside>
 
@@ -1134,11 +1140,14 @@ The trickiest part is finding suitable vectors <m>\hi'</m> and <m>\hj'</m>:
 </ul>
 Substituting in <m>\vc=(0,0,0)</m>, <m>\rho=2</m>, <m>\hi'=(1,0,0)</m> and
 <m>\hj'=\frac{1}{\sqrt{2}}(0,1,1)</m> gives
-<me>
-\vr(t)=2\cos t\,(1,0,0)+ 2\sin t\,\frac{1}{\sqrt{2}}(0,1,1)
+<md>
+<mrow>
+&amp;\vr(t)=2\cos t\,(1,0,0)+ 2\sin t\,\frac{1}{\sqrt{2}}(0,1,1)
 =2\Big(\cos t, \frac{\sin t}{\sqrt{2}},\frac{\sin t}{\sqrt{2}}\Big)
-\qquad 0\le t\le 2\pi
-</me>
+</mrow><mrow>
+&amp;0\le t\le 2\pi
+</mrow>
+</md>
 To check that this parametrization is correct, note that
 <m>x=2\cos t</m>, <m>y=\sqrt{2}\sin t</m>, <m>z=\sqrt{2}\sin t</m> satisfies both
 <m>x^2+y^2+z^2=4</m> and <m>z=y</m>.
@@ -1159,7 +1168,8 @@ parametrization, we can set up the integral.
 &amp;=-\big(0, 2\cos t+\sqrt{2}\sin t,2\cos t+\sqrt{2}\sin t\big)\cr
 \vF\big(\vr(t)\big)\cdot \vr\,'(t)
 &amp;=-\big[4\sqrt{2}\cos^2 t+4\cos t\sin t\big]
-=-\big[2\sqrt{2}\cos(2t)+2\sqrt{2}+2\sin(2t)\big]
+</mrow><mrow>
+&amp;=-\big[2\sqrt{2}\cos(2t)+2\sqrt{2}+2\sin(2t)\big]
 </mrow>
 </md>
 by the double angle formulae <m>\sin(2t)=2\sin t\,\cos t</m> and
@@ -1200,7 +1210,7 @@ S''&amp;=\Set{(x,y,z)}{x^2+y^2+z^2= 4,\ z\le y}
 </md>
 </p>
 
-<sidebyside>
+<sidebyside width="29%">
 <image source="figs/circle4b"/>
 </sidebyside>
 
@@ -1267,14 +1277,14 @@ slices. On each such slice, <m>x</m> is essentially constant and <m>y</m> runs f
 <m>-\sqrt{(4-x^2)/2}</m> to <m>\sqrt{(4-x^2)/2}</m>.  The leftmost such slice would
 have <m>x=-2</m> and the rightmost such slice would have <m>x=2</m>. So the correct
 limits with this slicing are
-</p>
-
-<sidebyside width="45%">
-  <image source="figs/limitsv"/>
-<p><me>
+<me>
 \dblInt_R f(x,y)\,\dee{x}\dee{y}
 =\int_{-2}^2\dee{x}\int_{-\sqrt{(4-x^2)/2}}^{\sqrt{(4-x^2)/2}} \dee{y}\ f(x,y)
-</me></p>
+</me>
+</p>
+
+<sidebyside width="40%">
+  <image source="figs/limitsv"/>
 </sidebyside>
 
 <p>
@@ -1283,21 +1293,21 @@ slices, then, on each such slice, <m>y</m> is essentially constant and <m>x</m> 
 <m>-\sqrt{4-2y^2}</m> to <m>\sqrt{4-2y^2}</m>.  The bottom such slice would
 have <m>y=-\sqrt{2}</m> and the top such slice would have <m>y=\sqrt{2}</m>.
 So the correct limits with this slicing are
-</p>
-
-<sidebyside width="45%">
-  <image source="figs/limitsh"/>
-  <p><me>
+<me>
 \dblInt_R f(x,y)\,\dee{x}\dee{y}
 =\int_{-\sqrt{2}}^{\sqrt{2}}\dee{y}\int_{-\sqrt{4-2y^2}}^{\sqrt{4-2y^2}} \dee{x}\ f(x,y)
-</me></p>
+</me>
+</p>
+
+<sidebyside width="40%">
+  <image source="figs/limitsh"/>
 </sidebyside>
 
 <p>
 Note that the integral with limits
 </p>
 
-<sidebyside width="45%">
+<sidebyside widths="30% 50%" valign="middle">
   <image source="figs/limitsr"/>
   <p><me>
 \int_{-\sqrt{2}}^{\sqrt{2}}\dee{y}\int_{-2}^{2} \dee{x}\ f(x,y)
@@ -1320,13 +1330,16 @@ the integral <m>\dblInt_S \vnabla\times\vF\cdot\hn\,\dee{S}</m> without ever det
 We already know that <m>\vnabla\times\vF=2\,\hj</m>. Since <m>S</m> is the level
 surface <m>z-y=0</m>, the gradient <m>\vnabla(z-y)=-\hj+\hk</m> is normal to <m>S</m>.
 So <m>\hn = \frac{1}{\sqrt{2}}(-\hj+\hk)</m> and
-<me>
+<md>
+<mrow>
 \oint_C\vF\cdot \dee{\vr}
-=\dblInt_S \vnabla\times\vF\cdot\hn\,\dee{S}
+&amp;=\dblInt_S \vnabla\times\vF\cdot\hn\,\dee{S}
 =\dblInt_S (2\hj)\cdot \frac{1}{\sqrt{2}}(-\hj+\hk)\,\dee{S}
-=\dblInt_S -\sqrt{2}\,\dee{S}
+</mrow><mrow>
+&amp;=\dblInt_S -\sqrt{2}\,\dee{S}
 =-\sqrt{2}\ {\rm Area}\,(S)
-</me>
+</mrow>
+</md>
 As <m>S</m> is a circle of radius <m>2</m>, <m>\oint_C\vF\cdot \dee{\vr}=-4\sqrt{2}\pi</m>,
 yet again.
 </p>
@@ -1356,12 +1369,12 @@ its divergence
 \vnabla\cdot\vB
 &amp;=\frac{\partial }{\partial x} \left(\frac{x}{(x^2+y^2+z^2)^{3/2}}\right)
   +\frac{\partial }{\partial y} \left(\frac{y}{(x^2+y^2+z^2)^{3/2}}\right)
-  +\frac{\partial }{\partial z} \left(\frac{z}{(x^2+y^2+z^2)^{3/2}}\right)
-
+</mrow><mrow>
+&amp;\hskip1in  +\frac{\partial }{\partial z} \left(\frac{z}{(x^2+y^2+z^2)^{3/2}}\right)
 </mrow><mrow>
 &amp;=\left(\frac{1}{(x^2+y^2+z^2)^{3/2}}-\frac{3x^2}{(x^2+y^2+z^2)^{5/2}}\right)
+</mrow><mrow>&amp;\hskip1in
 +\left(\frac{1}{(x^2+y^2+z^2)^{3/2}}-\frac{3y^2}{(x^2+y^2+z^2)^{5/2}}\right)
-
 </mrow><mrow>&amp;\hskip1in
 +\left(\frac{1}{(x^2+y^2+z^2)^{3/2}}-\frac{3z^2}{(x^2+y^2+z^2)^{5/2}}\right)
 
@@ -1377,10 +1390,8 @@ is zero everywhere except at the origin, where it is not defined.
 \bbbr^3\setminus\{(0,0,0)\}
              =\Set{(x,y,z)}{(x,y,z)\ne(0,0,0)}
 </m>. To see this, suppose to the contrary that it did have a vector potential
-<m>\vA</m>. Then its flux through any closed surface
-<fn>If you are uncomfortable with the surface not having a boundary, poke a very small hole
-in the surface, giving it a very small boundary. Then take the limit as the hole tends to zero.</fn>
- (i.e. surface without a boundary) <m>S</m> would be
+<m>\vA</m>. Then its flux through any closed surface<fn>If you are uncomfortable with the surface not having a boundary, poke a very small hole
+in the surface, giving it a very small boundary. Then take the limit as the hole tends to zero.</fn> (i.e. surface without a boundary) <m>S</m> would be
 <md>
 <mrow>
 \dblInt_S\vB\cdot\hn\,\dee{S}
@@ -1499,7 +1510,7 @@ direction of motion along <m>C_\veps</m> and your palm is facing <m>D_\veps</m>,
 the thumb is pointing in the direction <m>\hn</m>.
 </p>
 
-<sidebyside>
+<sidebyside width="20%">
 <image source="figs/prepaddle"/>
 </sidebyside>
 
@@ -1542,7 +1553,7 @@ pointing along <m>\hn</m> and each of the paddles perpendicular to <m>C_\veps</m
 and  centred on <m>C_\veps</m>.
 </p>
 
-<sidebyside>
+<sidebyside width="37%">
 <image source="figs/paddle"/>
 </sidebyside>
 
@@ -1613,19 +1624,16 @@ voltage is created (<q>induced</q>) by a time varying magnetic field.
 This process is exploited in many applications, including
 electric generators, induction motors, induction cooking, induction welding
 and inductive charging.
-Michael Faraday
-<fn>Michael Faraday (1791<ndash/>1867) was an
+Michael Faraday<fn>Michael Faraday (1791<ndash/>1867) was an
 English physicist and chemist. He ended up being an extremely
-influential scientist despite having only the most basic of formal educations.
-</fn>
- is generally credited with the
+influential scientist despite having only the most basic of formal educations.</fn> is generally credited with the
 discovery of magnetic induction. Faraday's law
 is the following. Let <m>S</m> be an oriented surface with boundary <m>C</m>.
 Let <m>\vE</m> and <m>\vB</m> be the (time dependent) electric and magnetic
 fields and define
 </p>
 
-<sidebyside width="45%">
+<sidebyside widths="45% 28%" vaign="middle">
 <p><md>
 <mrow>
 \oint_C\vE\cdot \dee{\vr}&amp;=\text{voltage around }C
@@ -1667,9 +1675,7 @@ So <m>\vG=\vZero</m> everywhere and we conclude that
 <me>
 \vnabla\times\vE+\frac{\partial\vB}{\partial t}=0
 </me>
-This is one of Maxwell's electromagnetic field equations
-<fn>For the others, see Example <xref ref="eg_ITmaxwell"/>
-</fn>.
+This is one of Maxwell's electromagnetic field equations<fn>For the others, see Example <xref ref="eg_ITmaxwell"/></fn>.
 </p>
 </subsection>
 

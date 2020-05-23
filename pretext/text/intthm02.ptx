@@ -69,17 +69,15 @@ number of smooth pieces that meet along sharp curves and at sharp corners.
 
 <p> Here are sketches of a smooth surface (a sausage)
 and a piecewise smooth surface (an ice-cream cone), followed by the
-divergence theorem
-<fn>It is also known as Gauss's theorem.
+divergence theorem<fn>It is also known as Gauss's theorem.
 Johann Carl Friedrich Gauss (1777<ndash/>1855) was a German mathematician.
 Throughout the 1990's Gauss's portrait appeared on the German
 ten-mark banknote. In addition to Gauss's theorem, the Gaussian
 distribution (the bell curve), degaussing and the CGS unit for the
-magnetic field, and the crater Gauss on the Moon are named in his honour.
-</fn>.
+magnetic field, and the crater Gauss on the Moon are named in his honour.</fn>.
 </p>
 
-<sidebyside>
+<sidebyside widths="21%  16%" valign="middle">
 <image source="figs/divGenA"/>
 <image source="figs/pSmoothB"/>
 </sidebyside>
@@ -90,8 +88,7 @@ Let
 <ul>
 <li>
 <m>V</m> be a bounded solid with a piecewise smooth
-surface
-<fn>We are going to consistently use the notation <m>\partial</m>(thing) to denote the boundary of (thing).</fn>
+surface<fn>We are going to consistently use the notation <m>\partial</m>(thing) to denote the boundary of (thing).</fn>
  <m>\partial V</m>
 </li>
 <li>
@@ -110,17 +107,6 @@ where <m>\hn</m> is the outward unit normal of <m>\partial V</m>.
 </p></statement>
 </theorem>
 
-<!-- <p>\intremark{
-References:
-<ul>
-<li>
-Wilfred Kaplan, <em>Advanced Calculus</em>
-</li>
-<li>
-O. D. Kellogg, <em>Foundations of Potential Theory</em>
-</li>
-</ul>
-} -->
 
 <p>
 Like the fundamental theorem of calculus, the divergence theorem expresses
@@ -171,8 +157,7 @@ that
 </mrow>
 </md>
 Showing that the <m>\vF_1</m> terms match and the <m>\vF_2</m> terms match is done
-in the same way
-<fn>Mutatis mutandis.</fn>.
+in the same way<fn>Mutatis mutandis.</fn>.
 </p>
 
 <p><em>Special Geometry</em></p>
@@ -186,53 +171,12 @@ that, for each <m>(x,y) \in R_{xy}</m>, we have <m>B(x,y)\le  T(x,y)</m>.
 After we're finished with this special case, we'll handle the general case.
 </p>
 
-<!-- <p>\intremark{
-</p>
-
-<p>\noindent Old version:
-</p>
-
-<p>We'll first assume that the solid has the special form
-<me>
-V = \Set{(x,y,z)}{ B(x,y)\le z\le T(x,y),\ \ (x,y)\in R_{xy}}
-</me>
-where <m>R_{x,y}</m> is some subset of the <m>xy</m>-plane.
-For solids of this form, if you fix any <m>x=x_0</m> and <m>y=y_0</m>,
-then set of <m>z</m>-coordinates for which <m>(x_0,y_0,z)</m> lies in the solid
-are either
-<ul>
-<li>sep1pt \parskip0pt \parsep0pt
-</li>
-<li>
-an interval, namely <m>\big[B(x_0,y_0), T(x_0,y_0)\big]</m>,
-if <m>B(x_0,y_0) \lt  T(x_0,y_0)</m> or
-</li>
-<li>
-a single point, namely <m>\big\{B(x_0,y_0)\big\}</m>,
-if <m>B(x_0,y_0)= T(x_0,y_0)</m>, or
-</li>
-<li>  the empty set if <m>B(x_0,y_0) \gt  T(x_0,y_0)</m>
-or if <m>(x_0,y_0)\notin R_{xy}</m>.
-</li>
-</ul>
-The interval case is illustrated by the leftmost line in the figure below;
-the single point case is illustrated by the middle line; and the empty set
-case is illustrated by the rightmost line.
-</p>
-
-<p><sidebyside>
-<image source="figs/divSpec"/>
-</sidebyside>
-\noindent
-After we're finished with this special case, we'll handle the general case.
-}
-</p> -->
 
 <p>Let's work on <m>\dblInt_{\partial V}  \vF_3\,\hk \cdot\hn\,\dee{S}</m>
 first. As in the figure below,
 </p>
 
-<sidebyside>
+<sidebyside width="65%">
 <image source="figs/divthm"/>
 </sidebyside>
 
@@ -284,12 +228,12 @@ is parallel to the <m>xy</m>-plane so that <m>\hk\cdot\hn=0</m> and
 <p>So all together
 <md>
 <mrow>
-\dblInt_{\partial V}  \vF_3\,\hk \cdot\hn\,\dee{S}
-&amp;=\dblInt_{\cT}  \vF_3\,\hk \cdot\hn\,\dee{S}
- +\dblInt_{\cB}  \vF_3\,\hk \cdot\hn\,\dee{S}
- +\dblInt_{\cS}  \vF_3\,\hk \cdot\hn\,\dee{S} \notag
+&amp;\dblInt_{\partial V}\!\!  \vF_3\,\hk \cdot\hn\,\dee{S}
+=\!\dblInt_{\cT}\!  \vF_3\,\hk \cdot\hn\,\dee{S}
+ \!+\!\dblInt_{\cB}\!  \vF_3\,\hk \cdot\hn\,\dee{S}
+ \!+\!\dblInt_{\cS}\!  \vF_3\,\hk \cdot\hn\,\dee{S} \notag
  </mrow><mrow>
-&amp;=\dblInt_{R_{xy}}  \big[\vF_3(x,y,T(x,y))
+&amp;\hskip0.5in=\dblInt_{R_{xy}}  \big[\vF_3(x,y,T(x,y))
    -\vF_3(x,y,B(x,y))\big]\,\dee{x}\dee{y}
    +0
 \tag{$\partial V$}
@@ -318,14 +262,13 @@ and (<m>V</m>) are equal.
 
 <p>Now we'll drop the assumption on <m>V</m> that we imposed in the <q>Special
 Geometry</q> section above. The key idea that makes the proof work
-is that we can cut up any
-<fn>We are assuming that <m>V</m> is <q>reasonable</q>.
+is that we can cut up any<fn>We are assuming that <m>V</m> is <q>reasonable</q>.
 </fn> <m>V</m> into pieces, each of which does obey the
 special assumption that we just considered. Consider, for example,
 the sausage shaped solid in the figure on the left below.
 </p>
 
-<sidebyside>
+<sidebyside widths="20% 24%" valign="middle">
 <image source="figs/divGenA"/>
 <image source="figs/divGen"/>
 </sidebyside>
@@ -353,20 +296,23 @@ Now both <m>V_1</m> and <m>V_2</m> do satisfy the assumption of the <q>Special G
 section above. So
 <md>
 <mrow>
-\tripInt_V\frac{\partial \vF_3}{\partial z}\ \dee{V}
-&amp;= \tripInt_{V_1}\frac{\partial \vF_3}{\partial z}\ \dee{V}
+&amp;\tripInt_V\frac{\partial \vF_3}{\partial z}\ \dee{V}
+= \tripInt_{V_1}\frac{\partial \vF_3}{\partial z}\ \dee{V}
   +\tripInt_{V_2}\frac{\partial \vF_3}{\partial z}\ \dee{V}
 </mrow><mrow>
-&amp;=\dblInt_{\partial V_1}  \vF_3\,\hk \cdot\hn\,\dee{S}
+&amp;\hskip0.5in=\dblInt_{\partial V_1}  \vF_3\,\hk \cdot\hn\,\dee{S}
   +\dblInt_{\partial V_2}  \vF_3\,\hk \cdot\hn\,\dee{S}
 </mrow><mrow>
-&amp;=\dblInt_{S_1}  \vF_3\,\hk \cdot\hn\,\dee{S}
-  +\dblInt_{<image source="figs/SCdn"/>}  \vF_3\,\hk \cdot\hn\,\dee{S}
+&amp;\hskip0.5in=\dblInt_{S_1}  \vF_3\,\hk \cdot\hn\,\dee{S}
+  +\dblInt_{S_c\downarrow}  \vF_3\,\hk \cdot\hn\,\dee{S}
   +\dblInt_{S_2}  \vF_3\,\hk \cdot\hn\,\dee{S}
-  +\dblInt_{<image source="figs/SCup"/>}  \vF_3\,\hk \cdot\hn\,\dee{S}
+</mrow><mrow>
+&amp;\hskip1.5in  +\dblInt_{S_c\uparrow}  \vF_3\,\hk \cdot\hn\,\dee{S}
 </mrow>
 </md>
-The second and fourth integrals  are identical
+Here <m>S_c\downarrow</m> is the surface <m>S_c</m> with normal vector <m>-\hk</m> and
+<m>S_c\uparrow</m>  is the surface <m>S_c</m> with normal vector <m>-\hk</m>.
+So the second and fourth integrals  are identical
 except that <m>\hn=-\hk</m> in the second integral and <m>\hn=+\hk</m> in the
 fourth integral. So they cancel exactly and
 <md>
@@ -388,7 +334,7 @@ Evaluate the flux integral <m>\dblInt_S \vF\cdot\hn\,\dee{S}</m> where
 <m>\hn </m> is the outward normal to <m>S</m>, which is the surface of
 the hemispherical region
 </p>
-<sidebyside width="45%">
+<sidebyside widths="45% 24%" valign="middle">
 <p><me>
 V=\Set{(x,y,z}{x^2+y^2+z^2\le a^2,\ z\ge 0}
 </me></p>
@@ -407,16 +353,15 @@ and
 a direct evaluation of the integral is difficult. So we'll use a
 little trickery to to evaluate it. Not surprisingly,
 considering that we have just proven the divergence theorem, the trick
-is to apply the divergence theorem
-<fn>It's almost as though someone rigged the example with this in mind.
-</fn>.
+is to apply the divergence theorem<fn>It's almost as though someone rigged the example with this in mind.</fn>.
 Since
 <md>
 <mrow>
 \vnabla\cdot\vF &amp;= \frac{\partial \vF_1}{\partial x}
                  +\frac{\partial \vF_2}{\partial y}
                  +\frac{\partial \vF_3}{\partial z}
-=\frac{\partial }{\partial x}\big(xz^2\big)
+</mrow><mrow>
+&amp;=\frac{\partial }{\partial x}\big(xz^2\big)
 +\frac{\partial }{\partial y}\big(x^2y-z^3\big)
 +\frac{\partial }{\partial z}\big(2xy + y^2 z +e^{\cos y}\big)
 </mrow><mrow>
@@ -467,15 +412,13 @@ Evaluate the flux integral <m>\dblInt_S \vF\cdot\hn\,\dee{S}</m> where
 <solution>
 <p>
 Again the <m>e^{\cos x}</m> in <m>\vF</m> suggests that a direct evaluation
-is difficult
-<fn>In fact, it is possible to evaluate this integral directly, if one recognizes that the ugly part of the integrand is odd under <m>y\rightarrow-y</m> and integrates to exactly zero.
-</fn> and again we'll apply the divergence theorem. But this time
+is difficult<fn>In fact, it is possible to evaluate this integral directly, if one recognizes that the ugly part of the integrand is odd under <m>y\rightarrow-y</m> and integrates to exactly zero.</fn> and again we'll apply the divergence theorem. But this time
 <m>S</m> is not the boundary of a solid <m>V</m>. It is the portion of the cone outlined
 in red in the figure on the left below and does not have a top or
 bottom <q>cap</q>.
 </p>
 
-<sidebyside>
+<sidebyside widths="23% 24%" valign="middle">
 <image source="figs/cone"/>
 <image source="figs/coneB"/>
 </sidebyside>
@@ -498,8 +441,10 @@ D_2 &amp;= \Set{(x,y,z)}{x^2+y^2\le z^2,\ \ z=2}
 So the divergence theorem gives
 <md>
 <mrow>
-\tripInt_V\vnabla\cdot\vF\ \dee{V} = \dblInt_{\partial V} \vF\cdot\hn\,\dee{S}
-= \dblInt_S \vF\cdot\hn\,\dee{S}
+\tripInt_V\vnabla\cdot\vF\ \dee{V} 
+&amp;= \dblInt_{\partial V} \vF\cdot\hn\,\dee{S}
+</mrow><mrow>
+&amp;= \dblInt_S \vF\cdot\hn\,\dee{S}
  +\dblInt_{D_1} \vF\cdot\hn\,\dee{S}
  +\dblInt_{D_2} \vF\cdot\hn\,\dee{S}
 </mrow>
@@ -552,13 +497,11 @@ Finally, as <m>\vnabla\cdot\vF = 3+5+1 = 9</m>
 </mrow>
 </md>
 The volume of <m>V</m> can be easily computed using the first year
-technique
-<fn>You can review in §1.6 of the CLP-2 text.
-</fn> of slicing <m>V</m> into thin horizontal pancakes like that sketched in the
+technique<fn>You can review in §1.6 of the CLP-2 text.</fn> of slicing <m>V</m> into thin horizontal pancakes like that sketched in the
 figure below.
 </p>
 
-<sidebyside>
+<sidebyside width="39%">
 <image source="figs/coneC"/>
 </sidebyside>
 
@@ -597,29 +540,13 @@ and, all together
 &amp;= \tripInt_V\vnabla\cdot\vF\ \dee{V}
   -\dblInt_{D_1} \vF\cdot\hn\,\dee{S}
  -\dblInt_{D_2} \vF\cdot\hn\,\dee{S}
-= 21\pi - (-\pi) -8\pi
+</mrow><mrow>
+&amp;= 21\pi - (-\pi) -8\pi
 =14\pi
 </mrow>
 </md>
 </p>
 
-<!-- <p>\intremark{
-To integrate the given integral directly use
-<me>
-\hn\,\dee{S} = \frac{\vnabla(z^2-x^2-y^2)}{\hk\cdot\vnabla(z^2-x^2-y^2)}
-                       \dee{x}\dee{y}
-             =\frac{-x\,\hi - y\,\hj +z\,\hk}{z}\dee{x}\dee{y}
-</me>
-so that
-<me>
-\vF\cdot\hn\,\dee{S}
-=\frac{-3x^2-5y^2-ye^{\cos x}+z^2}{z}\dee{x}\dee{y}
-</me>
-with <m>z = \sqrt{x^2+y^2}</m> and with domain of integration <m>1\le x^2+y^2\le 4</m>.
-The term <m>-\frac{y}{z}e^{\cos x}</m> will integrate to <m>0</m> because it is
-odd under <m>y\rightarrow-y</m>. The rest can be integrated using polar coordinates.
-}
-</p> -->
 </solution>
 </example>
 
@@ -654,7 +581,7 @@ D = \Set{(x,y,z)}{z= 1,\ \  {\big(x^2+y^2\big)}^2\le 1}
 with outward pointing normal <m>\hk</m>.
 </p>
 
-<sidebyside>
+<sidebyside width="52%">
 <image source="figs/bowl"/>
 </sidebyside>
 
@@ -713,13 +640,13 @@ Then, if <m>(x,y,z)\ne\vZero</m>,
 \vnabla\cdot\vF(x,y,z)
 &amp;=\frac{\partial }{\partial x}\frac{x}{{\big[x^2+y^2+z^2\big]}^{3/2}}
 +\frac{\partial }{\partial y}\frac{y}{{\big[x^2+y^2+z^2\big]}^{3/2}}
-+\frac{\partial }{\partial z}\frac{z}{{\big[x^2+y^2+z^2\big]}^{3/2}}
-
+</mrow><mrow>
+&amp;\hskip1in+\frac{\partial }{\partial z}\frac{z}{{\big[x^2+y^2+z^2\big]}^{3/2}}
 </mrow><mrow>
 &amp;=\frac{\big[x^2+y^2+z^2\big]-x\frac{3}{2}(2x)}{{\big[x^2+y^2+z^2\big]}^{5/2}}
 +\frac{\big[x^2+y^2+z^2\big]-y\frac{3}{2}(2y)}{{\big[x^2+y^2+z^2\big]}^{5/2}}
-+\frac{\big[x^2+y^2+z^2\big]-z\frac{3}{2}(2z)}{{\big[x^2+y^2+z^2\big]}^{5/2}}
-
+</mrow><mrow>
+&amp;+\frac{\big[x^2+y^2+z^2\big]-z\frac{3}{2}(2z)}{{\big[x^2+y^2+z^2\big]}^{5/2}}
 </mrow><mrow>
 &amp;=0
 </mrow>
@@ -752,17 +679,14 @@ is <m>\hn = \frac{\vr}{|\vr|}</m> so that
   <title>Derivation of the Heat Equation</title>
 
 <p>Let <m>T(x,y,z,t)</m> be the temperature at time <m>t</m> at the point <m>(x,y,z)</m>
-in some object <m>\cB</m>. The heat equation
-<fn>The heat equation was formulated by the French mathematician and physicist Jean-Baptiste
+in some object <m>\cB</m>. The heat equation<fn>The heat equation was formulated by the French mathematician and physicist Jean-Baptiste
 Joseph Fourier in 1807. He lived from 1768 to 1830, a period which
 included both the French revolution and the reign of Napoleon. Indeed
 Fourier served on his local Revolutionary Committee, was imprisoned
 briefly during the Terror, and was Napoleon Bonaparte's scientific
 advisor on his Egyptian expedition of 1798. Fourier series and
 the Fourier transform are named after him. Fourier is also credited
-with discovering the greenhouse effect.
-</fn>
-is the partial differential equation
+with discovering the greenhouse effect.</fn> is the partial differential equation
 that describes the flow of heat energy and consequently the behaviour of
 <m>T</m>. We now use the divergence theorem to derive the heat
 equation
@@ -772,14 +696,11 @@ from two physical <q>laws</q>, that we assume are valid:
 The amount of heat energy required to raise the temperature
 of an object by <m>\De T</m> degrees is <m>CM\,\De T</m> where, <m>M</m> is the mass
 of the object and <m>C</m> is a positive physical constant determined by the
-material contained in the object. It is called the specific heat, or specific heat capacity
-<fn>
-Heat is now understood to arise from the internal energy of the object.
+material contained in the object. It is called the specific heat, or specific heat capacity<fn>Heat is now understood to arise from the internal energy of the object.
 In an earlier theory, heat was viewed as measuring an invisible fluid,
 called the caloric. The amount of caloric that an object could hold
 was called its <q>heat capacity</q> by the Scottish physician and chemist
-Joseph Black (1728<ndash/>1799).
-</fn>, of the object.
+Joseph Black (1728<ndash/>1799).</fn>, of the object.
 </li>
 <li><p>
 Think of heat energy as a moving fluid. We will rig its velocity field so
@@ -792,7 +713,7 @@ its unit normal <m>\hn</m> is given by <m>-\ka\hn\cdot\vnabla T(x,y,z,t)\,\dee{S
 time <m>t</m>. For example, in the figure
 </p>
 
-<sidebyside>
+<sidebyside width="25%">
 <image source="figs/heat1"/>
 </sidebyside>
 
@@ -816,7 +737,7 @@ The amount of heat that enters <m>V</m> across all of <m>\partial V</m> in the
 time interval <m>\dee{t}</m> is given by the integral
 </p>
 
-<sidebyside width="45%">
+<sidebyside widths="45% 27%" valign="middle">
 <p><me>
 \dblInt_{\partial V} \ka\hn\cdot\vnabla T(x,y,z,t)\,\dee{S}\,\dee{t}
 </me></p>
@@ -837,12 +758,10 @@ at all points <m>(x,y,z)</m> in <m>V</m> is then
 <me>
 \tripInt_V C\rho\frac{\partial T}{\partial t}(x,y,z,t)\,\dee{V}\,\dee{t}
 </me>
-Assuming that the object is not generating or destroying
-<fn>The caloric theory of heat was itself destroyed by the cannon boring experiment of 1798.
+Assuming that the object is not generating or destroying<fn>The caloric theory of heat was itself destroyed by the cannon boring experiment of 1798.
 In this experiment the American/British physicist Benjamin Thompson
 (1753<ndash/>1814) boiled water just using the heat generated by friction
-during the boring of a cannon.</fn>
- heat itself, this
+during the boring of a cannon.</fn> heat itself, this
 must be same as the amount of heat that entered <m>V</m> in the time interval
 <m>\dee{t}</m>. That is
 <me>
@@ -857,15 +776,18 @@ giving
 =\tripInt_V C\rho\frac{\partial T}{\partial t}\,\dee{V}
 </me>
 As both integrals are over the same volume <m>V</m>, we have
-<me>
-\tripInt_{V} \ka\vnabla\cdot\vnabla T\,\dee{V}
+<md>
+<mrow>
+&amp;\tripInt_{V} \ka\vnabla\cdot\vnabla T\,\dee{V}
 -\tripInt_V C\rho\frac{\partial T}{\partial t}\,\dee{V}
 =0
-\implies
+</mrow><mrow>
+&amp;\hskip1in\implies
 \tripInt_{V} \Big[\ka\vnabla^2 T
           -C\rho\frac{\partial T}{\partial t}\Big]\,\dee{V}=0
 \tag{H}
-</me>
+</mrow>
+</md>
 where <m>\vnabla^2=\vnabla\cdot\vnabla=\frac{\partial^2 }{\partial x^2}+
 \frac{\partial^2 }{\partial y^2}+\frac{\partial^2 }{\partial z^2}</m>
 is the Laplacian.
@@ -920,9 +842,7 @@ where <m>\alpha=\frac{\ka}{C\rho}</m> is called the thermal diffusivity.
 <p>
 As an application, we look at the temperature a short distance
 below the surface of the Earth. For simplicity, we make the Earth
-flat
-<fn>Insert sarcastic footnote here.</fn>
-and we assume that the temperature, <m>T</m>, depends only on time, <m>t</m>, and
+flat<fn>Insert sarcastic footnote here.</fn> and we assume that the temperature, <m>T</m>, depends only on time, <m>t</m>, and
 the vertical coordinate, <m>z</m>. Then the heat equation simplifies to
 <me>
 \frac{\partial T}{\partial t}(z,t)
@@ -943,7 +863,7 @@ average of the temperature at the surface of the Earth,
 <m>T_D\cos(\delta t)</m> gives daily temperature variations.
 </p>
 
-<sidebyside>
+<sidebyside width="94%">
 <image source="figs/heat3"/>
 </sidebyside>
 
@@ -955,14 +875,17 @@ Then <m>T_A\cos(\sigma t)</m> has period one year and
 The solution to the initial value problem (HE)+(IC) can be found by separation
 of variables, a standard topic in courses on partial differential equations.
 The solution is
-<me>
-T(z,t)=T_0
+<md>
+<mrow>
+T(z,t)&amp;=T_0
 +T_Ae^{-\sqrt{\sigma \over 2\sigma}\ z}
      \cos\Big(\sigma t-\sqrt{\frac{\sigma }{2\alpha}}\ z\Big)
-+T_De^{-\sqrt{\delta \over 2\alpha}\ z}
+</mrow><mrow>
+&amp;\hskip1in+T_De^{-\sqrt{\delta \over 2\alpha}\ z}
  \cos\Big(\delta t-\sqrt{\frac{\delta }{2\alpha}}\ z\Big)
 \tag{SLN}
-</me>
+</mrow>
+</md>
 Whether or not you can find this solution,
 you can, and should, check that (SLN) satisfies both (HE) and (IC).
 </p>
@@ -1023,9 +946,9 @@ has a time lag of <m>\frac{z}{\sqrt{2\alpha\delta}}</m> with respect to
 </ul>
 For water <m>\alpha</m> is approximately <m>0.012</m> m<m>^2</m>/day. This <m>\alpha</m> gives
 <me>
-\sqrt{\frac{2\alpha}{\sigma}}\approx  1.2\,{\rm m}\qquad
-\sqrt{\frac{2\alpha}{\delta}}\approx    0.062\,{\rm m} \qquad
-\frac{z}{\sqrt{2\alpha\sigma}}\approx 49\, z\,{\rm days} \qquad
+\sqrt{\frac{2\alpha}{\sigma}}\approx  1.2\,{\rm m}\quad
+\sqrt{\frac{2\alpha}{\delta}}\approx    0.062\,{\rm m} \quad
+\frac{z}{\sqrt{2\alpha\sigma}}\approx 49\, z\,{\rm days} \quad
 \frac{z}{\sqrt{2\alpha\delta}}\approx 2.6\, z\,{\rm days}
 </me>
 for <m>z</m> measured in centimeters. So at a depth of a couple of meters,
@@ -1033,106 +956,6 @@ the temperature is pretty constant in time. What variation there is
 lags the surface variations by several months.
 </p>
 
-<!-- <p>\intremark{
-</p>
-
-<p>\noindent
-Thermal diffusivity table
-</p>
-
-<p>\noindent
-\renewcommand{\arraystretch}{1.5}
-<tabular>
-<row>
-<cell>{ | l | l |}
-  \hline
-</cell><cell> <m>\alpha</m> </cell>
-</row><row>
-<cell> \hline
-soil </cell><cell> <m>0.005</m> cm<m>^2</m>/sec<m>=0.043</m> m<m>^2</m>/day </cell>
-</row><row>
-<cell> \hline
-soil </cell><cell> <m>0.034</m> m<m>^2</m>/day </cell>
-</row><row>
-<cell> \hline
-soil </cell><cell> <m>0.027</m> m<m>^2</m>/day </cell>
-</row><row>
-<cell> \hline
-soil </cell><cell> <m>0.32\times 10^{-6}</m> m<m>^2</m>/sec<m>=0.028</m> m<m>^2</m>/day </cell>
-</row><row>
-<cell> \hline
-soil </cell><cell> <m>0.65\times 10^{-6}</m> m<m>^2</m>/sec<m>=0.056</m> m<m>^2</m>/day </cell>
-</row><row>
-<cell> \hline
-soil </cell><cell> <m>0.98\times 10^{-6}</m> m<m>^2</m>/sec<m>=0.085</m> m<m>^2</m>/day </cell>
-</row><row>
-<cell> \hline
-sandy soil </cell><cell> <m>0.24\times 10^{-6}</m> m<m>^2</m>/sec<m>=0.021</m> m<m>^2</m>/day </cell>
-</row><row>
-<cell> \hline
-clay soil </cell><cell> <m>0.18\times 10^{-6}</m> m<m>^2</m>/sec<m>=0.016</m> m<m>^2</m>/day </cell>
-</row><row>
-<cell> \hline
-peat soil </cell><cell> <m>0.10\times 10^{-6}</m> m<m>^2</m>/sec<m>=0.009</m> m<m>^2</m>/day </cell>
-</row><row>
-<cell> \hline
-rock </cell><cell> <m>1.43\times 10^{-6}</m> m<m>^2</m>/sec<m>=0.124</m> m<m>^2</m>/day </cell>
-</row><row>
-<cell> \hline
-water </cell><cell> <m>0.0014</m> cm<m>^2</m>/sec<m>=0.012</m> m<m>^2</m>/day </cell>
-</row><row>
-<cell> \hline
-water </cell><cell> <m>0.14\times 10^{-6}</m> m<m>^2</m>/sec<m>=0.012</m> m<m>^2</m>/day </cell>
-</row><row>
-<cell> \hline
-</row>
-</tabular>
-\renewcommand{\arraystretch}{1.5}
-</p>
-
-<p>\bigskip
-\noindent References
-<ul>
-<li>sep1pt \parskip0pt \parsep0pt
-</li>
-<li>indent-15pt
-</li>
-<li>
-www.scielo.br/scielo.php?script=sci\_arttext\&amp;pid=S0100-06832013000100011
-</li>
-<li>
-www.mdpi.com/1424-8220/16/3/306/pdf
-</li>
-<li>
-http:/\!/web.archive.org/web/20150215053624/http:/\!/apollo.lsc.vsc.edu/
-         \\\null\hskip3in classes/met455/notes/section6/2.html
-</li>
-<li>
-https:/\!/link.springer.com/article/10.1007/BF02702224
-</li>
-</ul>
-For soil <m>\alpha\approx 0.005</m> cm<m>^2</m>/sec. This <m>\alpha</m>
-gives
-<me>
-\sqrt{\frac{2\alpha}{\sigma}}\approx  2{\rm m}\qquad
-\sqrt{\frac{2\alpha}{\delta}}\approx 10{\rm cm} \qquad
-\frac{z}{\sqrt{2\alpha\sigma}}\approx 0.3 z\,{\rm days} \qquad
-\frac{z}{\sqrt{2\alpha\delta}}\approx 0.3z\,{\rm hours}
-</me>
-for <m>z</m> measured in centimeters.
-For water <m>\alpha\approx 0.0014</m> cm<m>^2</m>/sec. This <m>\alpha</m>
-gives
-<me>
-\sqrt{\frac{2\alpha}{\sigma}}\approx  1.2{\rm m}\qquad
-\sqrt{\frac{2\alpha}{\delta}}\approx 6{\rm cm} \qquad
-\frac{z}{\sqrt{2\alpha\sigma}}\approx 0.5 z\,{\rm days} \qquad
-\frac{z}{\sqrt{2\alpha\delta}}\approx 0.6z\,{\rm hours}
-</me>
-for <m>z</m> measured in centimeters.
-</p>
-
-<p>}
-</p> -->
 
 </subsubsection>
 </subsection>
@@ -1190,11 +1013,12 @@ vector, and apply the divergence theorem.
 </mrow><mrow>
 &amp;=\tripInt_V\big[(\vnabla f)\cdot\va
 +f\underbrace{\vnabla\cdot\va}_{=0}\big]\ \dee{V}
-\qquad\text{(by the vector identity Theorem <xref ref="thm_divIdentities"/>.c)}
 </mrow><mrow>
 &amp;=\tripInt_V(\vnabla f)\cdot\va\ \dee{V}
 </mrow>
 </md>
+To get the second line, we used the vector identity 
+Theorem <xref ref="thm_divIdentities"/>.c.
 To get the third line, we just used that <m>\va</m> is a constant, so that
 all of its derivatives are zero. Rewrite
 <me>
@@ -1232,12 +1056,13 @@ To prove the third formula, apply the divergence theorem, but with
 </mrow><mrow>
 &amp;\hskip0.5in=\tripInt_V\big[\vF\cdot\underbrace{(\vnabla \times \va)}_{=\vZero}
   -\va\cdot(\vnabla\times\vF)\big]\ \dee{V}
-\quad \text{(by the vector identity Theorem <xref ref="thm_divIdentities"/>.d)}
 </mrow><mrow>
 &amp;\hskip0.5in=-\tripInt_V\va\cdot(\vnabla \times\vF)\ \dee{V}
 =-\va\cdot\tripInt_V\vnabla \times\vF\ \dee{V}
 </mrow>
 </md>
+To get the second line, we used the vector identity 
+Theorem <xref ref="thm_divIdentities"/>.d.
 To get the third line, we again used that <m>\va</m> is a constant, so that
 all of its derivatives are zero. For all vectors
 <m>(\va\times\vb)\cdot\vc=\va\cdot(\vb\times\vc)</m> (in case you don't
@@ -1278,19 +1103,15 @@ which is what we wanted show.
 when you immerse an object in a fluid the net effect of fluid pressure
 acting on the surface of the object is a vertical force (called the buoyant
 force) whose magnitude equals the weight of fluid displaced by the object.
-This is known as Archimedes' principle
-<fn>The interested reader should do a net search for the story of Archimedes and the golden crown.
-</fn>.
+This is known as Archimedes' principle<fn>The interested reader should do a net search for the story of Archimedes and the golden crown.</fn>.
 </p>
 
 <p>We shall also show that the buoyant
 force acts through the <q>centre of buoyancy</q> which is the centre of mass of
 the fluid displaced by the object. The design of
-self-righting
-<fn>The first design of a self-righting boat was
+self-righting<fn>The first design of a self-righting boat was
 entered by William Wouldhave in a lifeboat design competition organised
-by South Shield's Law House committee in 1789.</fn>
- boats exploits
+by South Shield's Law House committee in 1789.</fn> boats exploits
 the fact that the centre of buoyancy and the centre of gravity, where gravity
 acts, need not be the same.
 </p>
@@ -1320,9 +1141,7 @@ the buoyant force,  is
 We now wish to apply a variant of the divergence theorem to rewrite
 <m>\vB=-\tripInt_V \vnabla p\ \dee{V}</m>. But there is a problem with this:
 <m>p(\vr)</m> is the fluid pressure at <m>\vr</m> and is only defined where there is
-fluid. In particular, there is no fluid
-<fn>A cup of tea in the galley
-doesn't count.</fn>
+fluid. In particular, there is no fluid<fn>A cup of tea in the galley doesn't count.</fn>
  inside the object, so <m>p(\vr)</m> is not
 defined for any <m>\vr</m> in the interior of <m>V</m>.
 </p>
@@ -1355,7 +1174,7 @@ faces of the cube by the pressure of fluid outside the cube are
 illustrated in the figure
 </p>
 
-<sidebyside>
+<sidebyside width="86%">
 <image source="figs/fluidcube"/>
 </sidebyside>
 
@@ -1397,8 +1216,8 @@ we see that the total force due to the pressure acting on the cube is
 <md>
 <mrow>
 -\Big\{\frac{\partial P}{\partial x}(x,y,z)\,\hi
-+\frac{\partial P}{\partial y}(x,y,z)\,\hj
-+\frac{\partial P}{\partial z}(x,y,z)\,\hk
+\!+\!\frac{\partial P}{\partial y}(x,y,z)\,\hj
+\!+\!\frac{\partial P}{\partial z}(x,y,z)\,\hk
 \Big\}\dee{x} \dee{y} \dee{z}
 =-\vnabla P(x,y,z)\, \dee{x} \dee{y} \dee{z}
 </mrow>
@@ -1444,8 +1263,7 @@ of rotation (with the sign determined by a right hand rule), and
 </li>
 <li>  the force <m>\vF</m>
 is replaced by a vector called the torque about <m>\vr_0</m>.  A force <m>\vF</m> applied
-at <m>\vr=(x,y,z)</m> produces the torque
-<fn>This is what Archimedes was referring to when he said <q>Give me a lever and a place to stand and I will move the earth.</q></fn>
+at <m>\vr=(x,y,z)</m> produces the torque<fn>This is what Archimedes was referring to when he said <q>Give me a lever and a place to stand and I will move the earth.</q></fn>
  <m>(\vr-\vr_0)\times\vF</m> about <m>\vr_0</m>.
 </li>
 </ul>
@@ -1468,7 +1286,8 @@ Theorem <xref ref="thm_curlIdentities"/>.c, gives
 <md>
 <mrow>
 \vT&amp;=\tripInt_V \vnabla\times\big(P(\vr)\,(\vr-\vr_0)\big)\,\dee{V}
-=\tripInt_V \big\{\vnabla P(\vr)\times(\vr-\vr_0)
+</mrow><mrow>
+&amp;=\tripInt_V \big\{\vnabla P(\vr)\times(\vr-\vr_0)
      +P(\vr)\underbrace{\vnabla\times(\vr-\vr_0)}_{=\vZero}\big\}\,\dee{V}\cr
 &amp;=\tripInt_V \vnabla P(\vr)\times(\vr-\vr_0)\,\dee{V}
 </mrow>
@@ -1486,20 +1305,23 @@ since <m>\vnabla\times\vr_0=0</m>, because <m>\vr_0</m> is a constant, and
 </me>
 We have already found that <m>\vnabla P(\vr)=-g\rhof\hk</m>.
 Substituting it in gives
-<md alignment="alignat">
+<md>
 <mrow>
 \vT&amp;=-\tripInt_V g\rhof\hk\times(\vr-\vr_0)\,\dee{V}
-&amp;&amp;=-g\hk\times\tripInt_V \rhof (\vr-\vr_0)\,\dee{V}
+</mrow><mrow>
+&amp;=-g\hk\times\tripInt_V \rhof (\vr-\vr_0)\,\dee{V}
 </mrow><mrow>
 &amp;=-g\hk\times\bigg\{\tripInt_V\! \vr\rhof\,\dee{V}
                  -\vr_0\!\tripInt_V\! \rhof\,\dee{V}\bigg\}
-&amp;&amp;=-g\bigg\{\tripInt_V\! \rhof\,\dee{V}\bigg\}\hk\times \bigg\{
+</mrow><mrow>
+&amp;=-g\bigg\{\tripInt_V\! \rhof\,\dee{V}\bigg\}\hk\times \bigg\{
      \frac{\tripInt_V \vr\rhof\,\dee{V}}{\tripInt_V\rhof\,
                      \dee{V}}-\vr_0\bigg\}
 </mrow><mrow>
 &amp;=-\vB\times\bigg\{\frac{\tripInt_V \vr\rhof\,\dee{V}}
                         {\tripInt_V\rhof\,\dee{V}}-\vr_0\bigg\}
-&amp;&amp;=\bigg\{\frac{\tripInt_V \vr\rhof\,\dee{V}}
+</mrow><mrow>
+&amp;=\bigg\{\frac{\tripInt_V \vr\rhof\,\dee{V}}
             {\tripInt_V\rhof\,\dee{V}}-\vr_0\bigg\}\times\vB
 </mrow>
 </md>
@@ -1553,30 +1375,6 @@ of the object.
 </li>
 </ul>
 </p>
-<!-- \intremark{
-The torque about <m>\vr_0</m> due to gravity is
-<md alignment="alignat">
-<mrow>{3}
-\vT&amp;=-\tripInt_V (\vr-\vr_0)\times g\rhob\hk\,\dee{V}
-&amp;&amp;=g\hk\times\tripInt_V \rhob (\vr-\vr_0)\,\dee{V}
-</mrow><mrow>
-&amp;=g\hk\times\bigg\{\tripInt_V\! \vr\rhob\,\dee{V}
-                 -\vr_0\!\tripInt_V\! \rhob\,\dee{V}\bigg\}
-&amp;&amp;=g\bigg\{\tripInt_V\! \rhob\,\dee{V}\bigg\}\hk\times \bigg\{
-     \frac{\tripInt_V \vr\rhob\,\dee{V}}{\tripInt_V\rhob\,\dee{V}}-\vr_0\bigg\}
-</p>
-
-<p></mrow><mrow>
-&amp;=\big(gM_b\hk\big)\times\bigg\{\frac{\tripInt_V \vr\rhob\,\dee{V}}
-                        {\tripInt_V\rhob\,\dee{V}}-\vr_0\bigg\}
-&amp;&amp;=\bigg\{\frac{\tripInt_V \vr\rhob\,\dee{V}}
-            {\tripInt_V\rhob\,\dee{V}}-\vr_0\bigg\}\times\big(-gM_b\hk\big)
-</mrow>
-</md>
-</p>
-
-<p>}
-</p> -->
 
 <p>
 Because the mass distribution of the object need not be the same as the
@@ -1594,7 +1392,7 @@ and the other hand holding the centre of gravity. Use your hands to apply forces
 in the directions of the arrows and think about how the boat will respond.
 </p>
 
-<sidebyside>
+<sidebyside widths="15% 15%" valign="middle">
 <image source="figs/boatU"/>
 <image source="figs/boatD"/>
 </sidebyside>
@@ -1614,10 +1412,8 @@ of forces <m>\vF_i</m> obey <m>m\vr_i''(t)=\vF_i</m>, <m>1\le i\le n</m>. Very o
 systems of interest consist
 of some small number of rigid bodies. Suppose that we are interested in
 the motion of a single rigid body, say a piece of wood. The piece of wood
-is made up of a huge number
-<fn>Just 12 grams of carbon contains about <m>6\times 10^{23}
-</m> atoms.
-</fn> of atoms. So the system of equations
+is made up of a huge number<fn>Just 12 grams of carbon contains about <m>6\times 10^{23}
+</m> atoms.</fn> of atoms. So the system of equations
 determining the motion of all of the individual atoms in the piece of
 wood is huge. On the other hand, we shall see that because the piece of
 wood is rigid, its configuration is completely determined by the
@@ -1633,17 +1429,15 @@ and the orientation. We'll do so now.
 
 <p>Imagine a piece of wood moving in <m>\bbbr^3</m>.</p>
 
-<sidebyside>
+<sidebyside width="33%">
 <image source="figs/seesaw"/>
 </sidebyside>
 
 <p>
 Furthermore, imagine that the piece of wood consists of a huge number of
 particles joined by a huge number of weightless but very
-strong
-<fn>Mathematicians and their idealizations! Really the rods just
-represent the atomic/chemical forces that hold the wood together.
-</fn> steel rods.
+strong<fn>Mathematicians and their idealizations! Really the rods just
+represent the atomic/chemical forces that hold the wood together.</fn> steel rods.
 The steel rod joining particle number one to particle number two just
 represents a force acting between particles number one and two.
 Suppose that
@@ -1710,10 +1504,8 @@ So <m>\sum\limits_{1\le i,j\le n} \vF_{i,j}(t)=0</m> and the equation
 </me>
 Phew! Denote by <m>M=\sum\limits_{i=1}^n m_i</m> the total mass of the body,
 by <m>\vR(t)=\frac{1}{M}\sum\limits_{i=1}^n m_i\vr_i(t)</m>  the centre of
-mass
-<fn>Note that this is just the weighted average (no pun intended)
-of the positions of the particles.</fn>
- of the body and by
+mass<fn>Note that this is just the weighted average (no pun intended)
+of the positions of the particles.</fn> of the body and by
 <m>\vF(t)=\sum\limits_{i=1}^n \vF_i(t)</m>  the total external force acting
 on the system. In this notation, equation (<m>\Sigma N_i</m>) can be written as
 </p>
@@ -1734,12 +1526,15 @@ centre of mass.
 
 <p>Now take the cross product of <m>\vr_i(t)</m> and equation (<m>N_i</m>)
 and sum over <m>i</m>. This gives
-<me>
-\sum_{i=1}^n m_i\ \vr_i(t)\times\vr''_i(t)
-= \sum_{i=1}^n \vr_i(t)\times\vF_i(t)
+<md>
+<mrow>
+&amp;\sum_{i=1}^n m_i\ \vr_i(t)\times\vr''_i(t)
+</mrow><mrow>
+&amp;\hskip0.5in= \sum_{i=1}^n \vr_i(t)\times\vF_i(t)
 +\sum_{1\le i,j\le n} \vr_i(t)\times\vF_{i,j}(t)
 \tag{$\Sigma \vr_i\times N_i$}
-</me>
+</mrow>
+</md>
 By the assumption (A2)
 <md>
 <mrow>
@@ -1752,7 +1547,6 @@ By the assumption (A2)
 
 </mrow><mrow>
 &amp;=-M_{1,2}(t)\ \vr_2(t)\times\big[\vr_1(t)-\vr_2(t)\big]
-
 </mrow>
 <intertext>so that</intertext><mrow>
 \vr_1(t)\times\vF_{1,2}(t)
@@ -1826,14 +1620,12 @@ equations <xref ref="eqn_rigidCofM"/> and <xref ref="eqn_rigidR"/>
 force <m>\vF(t)=\vT(t)=0</m>.
 </p>
 
-<p>Now suppose that the piece of wood is a seesaw
-<fn>Or teeter-totter for those who speak a different English dialect.</fn>
- that is supported on a
+<p>Now suppose that the piece of wood is a seesaw<fn>Or teeter-totter for those who speak a different English dialect.</fn> that is supported on a
 fulcrum at <m>\vp</m>. The forces consist of gravity, <m>-m_ig\hk</m>,
 acting on particle number <m>i</m>, for each  <m>1\le i\le n</m>, and the
 </p>
 
-<sidebyside>
+<sidebyside width="50%">
 <image source="figs/seesaw2"/>
 </sidebyside>
 
@@ -1911,24 +1703,25 @@ and to find an auxiliary formula which expresses <m>\varphi(\vr_0)</m> in terms 
 </li>
 </ul>
 This auxiliary formula, which we shall derive below, is
-<me>
-\varphi(\vr_0)=-\frac{1}{4\pi}\bigg\{
+<md>
+<mrow>
+\varphi(\vr_0)&amp;=-\frac{1}{4\pi}\bigg\{
 \tripInt_V\frac{ \vnabla^2\varphi(\vr)}{|\vr-\vr_0|}\ d^3\vr
 -\dblInt_{\partial V}\varphi(\vr)\frac{\vr-\vr_0}{|\vr-\vr_0|^3}\cdot\hn\ \dee{S}
--\dblInt_{\partial V}\frac{\vnabla\varphi(\vr)}{|\vr-\vr_0|}\cdot\hn\ \dee{S}\bigg\}
+</mrow><mrow>
+&amp;\hskip1in-\dblInt_{\partial V}\frac{\vnabla\varphi(\vr)}{|\vr-\vr_0|}\cdot\hn\ \dee{S}\bigg\}
 \tag{$V$}
-</me>
+</mrow>
+</md>
 When we take the limit as <m>V</m> expands to fill all of <m>\bbbr^3</m> then,
 assuming that <m>\varphi</m> and <m>\vnabla\varphi</m> go to zero sufficiently
-quickly
-<fn>Suppose, for example, that, for large <m>|\vr-\vr_0|</m>,
+quickly<fn>Suppose, for example, that, for large <m>|\vr-\vr_0|</m>,
 <m>|\varphi(\vr)|</m> is bounded by a constant times <m>\frac{1}{|\vr-\vr_0|}</m>
 and <m>|\vnabla\varphi(\vr)|</m> is bounded by a constant times
 <m>\frac{1}{|\vr-\vr_0|^2}</m>. Then, if <m>\partial V</m> is the sphere of
 radius <m>R</m> centred on <m>\vr_0</m>,  <m>\partial V</m> has surface area <m>4\pi R^2</m>
 and the two integrals over <m>\partial V</m> are bounded by a constant times
-<m>\frac{1}{R}</m>.
-</fn>
+<m>\frac{1}{R}</m>.</fn>
 at <m>\infty</m>, the two integrals over <m>\partial V</m> will converge to zero and
 we will end up with the formula
 <me>
@@ -1939,8 +1732,7 @@ This expresses <m>\varphi</m> evaluated at an
 arbitrary point, <m>\vr_0</m>, of <m>\bbbr^3</m> in terms of <m>\vnabla^2\varphi(\vr)</m>,
 with <m>\vr</m> running over <m>\bbbr^3</m>, which is exactly what we want, since
 <m>\vnabla^2\varphi = 4\pi\rho</m> for any solution of Poisson's equation.
-So once we have proven (V) we will have proven
-<fn>Note that the theorem
+So once we have proven (V) we will have proven<fn>Note that the theorem
 does not claim that the <m>\varphi</m> defined in the theorem obeys
 <m>\vnabla^2\varphi = 4\pi\rho</m>. It does, but the proof is beyond our scope.</fn>
 </p>
@@ -1994,7 +1786,8 @@ radius <m>\veps</m> centered on <m>\vr_0</m>. Then, for any continuous function 
               \psi(\vr)\ \dee{S}
 =\lim_{\veps\rightarrow 0+}\frac{\psi(\vr_0)}{\veps^p}
              \dblInt_{S_\veps}\ \dee{S}
-=\lim_{\veps\rightarrow 0+}\frac{\psi(\vr_0)}{\veps^p}4\pi\veps^2
+</mrow><mrow>
+&amp;=\lim_{\veps\rightarrow 0+}\frac{\psi(\vr_0)}{\veps^p}4\pi\veps^2
 \notag
 </mrow><mrow>
 &amp;=\begin{cases}4\pi\psi(\vr_0)&amp; \text{if } p=2 \\
@@ -2006,44 +1799,6 @@ radius <m>\veps</m> centered on <m>\vr_0</m>. Then, for any continuous function 
 </md>
 </p>
 
-<!-- <p>\intremark{
-</p>
-
-<p>\noindent
-Here is the verification of (P1) and (P2).
-It suffices to consider <m>\vr_0=\vZero</m>.
-The <m>x</m>-component of (P1) is
-<md>
-<mrow>
-\frac{\partial }{\partial x}\frac{1}{|\vr|}
-=\frac{\partial }{\partial x}\frac{1}{\sqrt{x^2+y^2+z^2}}
-=-\frac{1}{2}\frac{2x}{{\big[x^2+y^2+z^2\big]}^{3/2}}
-=-\frac{\vr\cdot\hi}{|\vr|^3}
-</mrow>
-</md>
-as desired. For (P2), we have
-<md>
-<mrow>
-\vnabla\cdot\frac{\vr}{|\vr|^3}
-&amp;=\frac{\partial }{\partial x}\frac{x}{{\big[x^2+y^2+z^2\big]}^{3/2}}
-+\frac{\partial }{\partial y}\frac{y}{{\big[x^2+y^2+z^2\big]}^{3/2}}
-+\frac{\partial }{\partial z}\frac{z}{{\big[x^2+y^2+z^2\big]}^{3/2}}
-</p>
-
-<p></mrow><mrow>
-&amp;=\frac{\big[x^2+y^2+z^2\big]-x\frac{3}{2}(2x)}{{\big[x^2+y^2+z^2\big]}^{5/2}}
-+\frac{\big[x^2+y^2+z^2\big]-y\frac{3}{2}(2y)}{{\big[x^2+y^2+z^2\big]}^{5/2}}
-+\frac{\big[x^2+y^2+z^2\big]-z\frac{3}{2}(2z)}{{\big[x^2+y^2+z^2\big]}^{5/2}}
-</p>
-
-<p></mrow><mrow>
-&amp;=0
-</mrow>
-</md>
-</p>
-
-<p>}
-</p> -->
 
 <p>
 <em>Derivation of (V):</em>
@@ -2053,7 +1808,7 @@ as desired. For (P2), we have
 of <m>S_\veps</m>.
 </p>
 
-<sidebyside>
+<sidebyside width="30%">
 <image source="figs/poisson"/>
 </sidebyside>
 
@@ -2085,14 +1840,14 @@ which is the integrand of the first integral on the right hand side of (V).
 So, by the divergence theorem
 <md>
 <mrow>
-\tripInt_{V_\veps} \frac{\vnabla^2\varphi}{|\vr-\vr_0|} dV
-&amp;=\tripInt_{V_\veps}\vnabla\cdot\Big(\frac{1}{|\vr-\vr_0|}\vnabla\varphi
+&amp;\tripInt_{V_\veps} \frac{\vnabla^2\varphi}{|\vr-\vr_0|} dV
+=\tripInt_{V_\veps}\vnabla\cdot\Big(\frac{1}{|\vr-\vr_0|}\vnabla\varphi
 -\varphi\vnabla\frac{1}{|\vr-\vr_0|}\Big) dV
 </mrow><mrow>
-&amp;=\dblInt_{\partial V}\Big(\frac{1}{|\vr-\vr_0|}\vnabla\varphi
+&amp;\hskip0.25in=\dblInt_{\partial V}\Big(\frac{1}{|\vr-\vr_0|}\vnabla\varphi
 -\varphi\vnabla\frac{1}{|\vr-\vr_0|}\Big)\cdot\hn\ \dee{S}
 </mrow><mrow>
-&amp;\hskip1in+\dblInt_{S_\veps}\Big(\frac{1}{|\vr-\vr_0|}\vnabla\varphi
+&amp;\hskip1.0in+\dblInt_{S_\veps}\Big(\frac{1}{|\vr-\vr_0|}\vnabla\varphi
 -\varphi\vnabla\frac{1}{|\vr-\vr_0|}\Big)\cdot
 \Big(-\frac{\vr-\vr_0}{|\vr-\vr_0|}\Big) \dee{S}
 \tag{M}
@@ -2102,13 +1857,16 @@ To see the connection between (M) and the rest of (V), note that,
 <ul>
 <li>
 by (P1), the first term on the right hand side of (M) is
-<me>
-\dblInt_{\partial V}\Big(\frac{1}{|\vr-\vr_0|}\vnabla\varphi
+<md>
+<mrow>
+&amp;\dblInt_{\partial V}\Big(\frac{1}{|\vr-\vr_0|}\vnabla\varphi
 -\varphi\vnabla\frac{1}{|\vr-\vr_0|}\Big)\cdot\hn\ \dee{S}
-=\dblInt_{\partial V}\frac{\vnabla\varphi(\vr)}{|\vr-\vr_0|}\cdot\hn\ \dee{S}
+</mrow><mrow>
+&amp;\hskip0.5in=\dblInt_{\partial V}\frac{\vnabla\varphi(\vr)}{|\vr-\vr_0|}\cdot\hn\ \dee{S}
 +\dblInt_{\partial V}\varphi(\vr)\frac{\vr-\vr_0}{|\vr-\vr_0|^3}\cdot\hn\ \dee{S}
 \tag{R1}
-</me>
+</mrow>
+</md>
 which is <m>4\pi</m> times the second and third terms on the right hand side of (V),
 </li>
 <li>
@@ -2135,13 +1893,11 @@ term on the right hand side of (M) is
 </md>
 </li>
 </ul>
-So applying
-<fn>You might worry about the singularity in <m>\frac{\vnabla^2\varphi}{|\vr-\vr_0|}</m>
+So applying<fn>You might worry about the singularity in <m>\frac{\vnabla^2\varphi}{|\vr-\vr_0|}</m>
 when applying <m>\lim_{\veps\rightarrow 0+}</m> to <m>\tripInt_{V_\veps} \frac{\vnabla^2\varphi}{|\vr-\vr_0|} dV</m>. That this singularity
 is harmless may be seen using spherical coordinates centred on <m>\vr_0</m>.
 Then <m>\dee{V}</m> contains a factor of <m>|\vr-\vr_0|^2</m>
-(see §<xref ref="ap_spherCoord"/>), which completely eliminates the singularity.
-</fn>
+(see §<xref ref="ap_spherCoord"/>), which completely eliminates the singularity.</fn>
 <m>\lim_{\veps\rightarrow 0+}</m> to (M) and substituting in (R1) and (R2)
 gives
 <md>

@@ -193,7 +193,6 @@ particle at time <m>t</m>, then
 </mrow><mrow>
 \text{acceleration at time } t
        &amp;=\va(t)=\vr'(t)=\vv'(t)=\big(x''(t)\,,\,y''(t)\,,\,z''(t)\big)
-</mrow><mrow>
 </mrow>
 <intertext>and the distance travelled between times <m>T_0</m> and <m>T</m> is</intertext><mrow>
   s(T)-s(T_0)&amp;= \int_{T_0}^T \Big|\diff{\vr}{t}(t)\Big|\,\dee{t}

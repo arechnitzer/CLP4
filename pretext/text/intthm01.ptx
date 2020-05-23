@@ -503,7 +503,6 @@ Substituting in
 -\frac{\partial F_1}{\partial z}\Big)\hj
 +\Big(\frac{\partial F_2}{\partial x}
 -\frac{\partial F_1}{\partial y}\Big)\hk
-</mrow><mrow>
 </mrow>
 <intertext>gives</intertext><mrow>
 \vnabla\cdot\big(\vnabla\times F\big)
@@ -2006,7 +2005,7 @@ Here is a sketch of the vector field <m>\vv(x,y,z) = x\,\hi+y\,\hj+z\,\hk</m>
 and a circle centered on the origin, like <m>C_\veps</m>.
 </p>
 
-<sidebyside width="33%">
+<sidebyside width="26%">
 <image source="figs/sourceCurl"/>
 </sidebyside>
 
@@ -2037,7 +2036,7 @@ Here is a sketch of the vector field <m>\vv(x,y,z) = -y\,\hi+x\,\hj</m>
 and a circle centered on the origin, like <m>C_\veps</m>.
 </p>
 
-<sidebyside width="23%">
+<sidebyside width="21%">
 <image source="figs/vortexCurl"/>
 </sidebyside>
 
@@ -2071,7 +2070,7 @@ Here is a sketch of the vector field <m>\vv(x,y,z) = \hi</m>
 and a circle centered on the origin, like <m>C_\veps</m>.
 </p>
 
-<sidebyside width="33%">
+<sidebyside width="32%">
 <image source="figs/transCurl"/>
 </sidebyside>
 

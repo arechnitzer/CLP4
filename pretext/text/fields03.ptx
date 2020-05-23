@@ -58,7 +58,6 @@ then, by Newton's law of motion,
 &amp;\implies &amp; m\diff{\vv}{t}(t) &amp;= \vF\big(x(t),y(t),z(t)\big)
 </mrow><mrow>
 &amp;\implies &amp; m\diff{\vv}{t}(t) &amp;= \vnabla\varphi\big(x(t),y(t),z(t)\big)
-</mrow><mrow>
 </mrow>
 <intertext>Now dot both sides with <m>\vv(t)</m>.</intertext><mrow>
 &amp;\implies &amp; m\,\vv(t)\cdot\diff{\vv}{t}(t) &amp;= \vv(t)\cdot\vnabla\varphi\big(x(t),y(t),z(t)\big)
@@ -68,7 +67,6 @@ then, by Newton's law of motion,
 </mrow><mrow>
 &amp; &amp; &amp; \hskip1in
 +z'(t)\frac{\partial\varphi}{\partial z}\big(x(t),y(t),z(t)\big)
-</mrow><mrow>
 </mrow>
 <intertext>Next use <m>\diff{}{t}\vv\cdot\vv=2\vv\cdot\diff{\vv}{t}</m>
 on the left hand side and the chain rule on the right hand side.</intertext>
