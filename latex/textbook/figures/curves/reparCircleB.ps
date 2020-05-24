@@ -1,0 +1,113 @@
+%!PS-Adobe-3.0
+%%BoundingBox:       0.0 0.0     130.4 75.2
+%%Title:              
+%%Created by:        Figure.java
+%%Date:              Fri Mar 03 16:10:09 PST 2017
+%%EndComments
+
+gsave
+
+%% ellipse library
+
+/ellipsedict 10 dict def        %% arguments: xcentre ycentre xradius yradius
+ellipsedict /emtrx matrix put  %%            startangle endangle closetype
+
+/ellipse                       %% closetype: 0 for open, 1 for chord, 2 for wedge
+    {ellipsedict begin
+       /closetype exch def
+       /endangle exch def      /startangle exch def
+       /yrad exch def          /xrad exch def
+       /y exch def             /x exch def
+       /savematrix emtrx currentmatrix def
+    x y translate
+    xrad  yrad  scale
+    newpath
+    closetype 2 eq  {0 0 moveto} if
+    0 0 1 startangle endangle arc
+    closetype 1 eq  {closepath} if
+    closetype 2 eq  {closepath} if
+    savematrix setmatrix
+    end
+    } def
+
+%%  Figure2ps dictionary
+
+/Figure2psDict 30 dict def
+Figure2psDict begin
+  /iscp false def
+  {pop pop /iscp true def} {pop pop} {pop pop pop pop pop pop} {} pathforall
+  iscp {currentpoint translate} if
+  /setpsfont {exch findfont exch scalefont setfont} bind def
+  /stringsize {/temp exch def gsave newpath 0 0 moveto
+               temp true charpath flattenpath pathbbox
+               /strh exch def /strw exch def pop  pop grestore} bind def
+
+newpath -1.0 -1.0 moveto 131.4 -1.0 lineto 131.4 76.2 lineto -1.0 76.2 lineto closepath clip
+/Helvetica 10 setpsfont
+0.5 setlinewidth
+newpath
+-1.4210854715202004E-14  10.02666666666667  moveto
+130.40000000000003  10.02666666666667  lineto stroke
+newpath
+65.2  3.552713678800501E-15  moveto
+65.2  75.2  lineto stroke
+1.0 setlinewidth
+newpath
+  115.35384615384616  10.02666666666667  moveto
+  115.19923858415382  13.96008266582263  lineto
+  114.73636908215616  17.869247847350245  lineto
+  113.96809139225272  21.73006090797606  lineto
+  112.89914220188001  25.5187186513307  lineto
+  111.53611193825839  29.21186274256984  lineto
+  109.88740413621662  32.786723720275944  lineto
+  107.96318362760525  36.221261377759575  lineto
+  105.77531387172814  39.49430064826266  lineto
+  103.33728381317079  42.585662156286546  lineto
+  100.66412471797148  45.47628663015225  lineto
+  97.77231750086767  48.148352408748224  lineto
+  94.67969111497635  50.58538531799737  lineto
+  91.40531263036914  52.77236023961849  lineto
+  87.96936967924498  54.69579374597684  lineto
+  84.39304599246451  56.343827229899176  lineto
+  80.69839079480506  57.70630001693037  lineto
+  76.90818286415772  58.774812009270185  lineto
+  73.04579009278697  59.54277547516958  lineto
+  69.13502541650423  60.005455664487485  lineto
+  65.2  60.160000000000004  lineto
+  61.264974583495786  60.005455664487485  lineto
+  57.35420990721304  59.54277547516958  lineto
+  53.49181713584229  58.77481200927019  lineto
+  49.70160920519495  57.70630001693037  lineto
+  46.0069540075355  56.343827229899176  lineto
+  42.43063032075504  54.69579374597685  lineto
+  38.994687369630874  52.7723602396185  lineto
+  35.720308885023655  50.58538531799737  lineto
+  32.627682499132334  48.148352408748224  lineto
+  29.735875282028537  45.47628663015225  lineto
+  27.06271618682922  42.58566215628655  lineto
+  24.62468612827187  39.494300648262666  lineto
+  22.43681637239476  36.221261377759575  lineto
+  20.512595863783396  32.78672372027596  lineto
+  18.86388806174162  29.211862742569846  lineto
+  17.500857798119988  25.51871865133071  lineto
+  16.431908607747296  21.730060907976068  lineto
+  15.66363091784386  17.869247847350252  lineto
+  15.200761415846195  13.960082665822636  lineto
+  15.046153846153842  10.026666666666676  lineto
+stroke
+
+0.5 setlinewidth
+1 1 0 0 setcmykcolor  
+newpath
+65.2  45.47628663015225  moveto
+100.66412471797148  45.47628663015225  lineto stroke
+0 1 1 0 setcmykcolor  
+gsave
+  0 1 1 0 setcmykcolor   
+  100.66412471797148 45.47628663015225   3.5107692307692315 3.5093333333333336  0 360 0 ellipse fill
+grestore
+0 0 0 1 setcmykcolor  
+
+%%Trailer
+end
+grestore

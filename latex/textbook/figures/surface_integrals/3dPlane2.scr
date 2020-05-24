@@ -1,0 +1,28 @@
+This is 3dPlane2.scr
+
+name 3dPlane2
+size 2  1
+xlimits 0 200
+ylimits 0 100
+topmargin .05 in
+bottommargin .15 in
+
+
+rotate 10
+line 0 0   150 0
+line 0 0    50 50
+line 50 50   200 50
+line 150 0   200 50
+
+arrow 40 20    40 60
+disk  40 20 2 2
+arrow 40 20   100 30
+disk  100 30 2 2
+line  40 29  49 31.5
+line 49 31.5   49 21.5
+
+label 37 26 lt "$(x_0,y_0,z_0)$"
+label 95 60 lt "$(x,y,z)$"
+label 25 53 rc "$\vec n$"
+
+

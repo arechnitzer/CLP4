@@ -1,0 +1,36 @@
+lbl file prepared by figPac Sun Jun 04 17:21:35 PDT 2017
+361.35
+144.54
+0
+0
+0
+2
+ 
+361.35
+144.54
+2
+0
+ 
+180.67
+34.69
+1
+0
+$-P(x,y,z+\frac{\dee{z}}{2})\,\dee{x}\dee{y}\,\hk$
+180.67
+109.13
+1
+2
+$P(x,y,z-\frac{\dee{z}}{2})\,\dee{x}\dee{y}\,\hk$
+218.98
+72.27
+0
+1
+$-P(x,y+\frac{\dee{y}}{2},z)\,\dee{x}\dee{z}\,\hj$
+143.09
+72.27
+2
+1
+$P(x,y-\frac{\dee{y}}{2},z)\,\dee{x}\dee{z}\,\hj$
+-1000
+0/1/2 left/center/right
+0/1/2 bottom/center/top

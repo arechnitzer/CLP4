@@ -1,0 +1,137 @@
+%!PS-Adobe-3.0
+%%BoundingBox:       0.0 0.0     128.8 172.8
+%%Title:              
+%%Created by:        Figure.java
+%%Date:              Fri Sep 08 14:21:33 PDT 2017
+%%EndComments
+
+gsave
+
+%% ellipse library
+
+/ellipsedict 10 dict def        %% arguments: xcentre ycentre xradius yradius
+ellipsedict /emtrx matrix put  %%            startangle endangle closetype
+
+/ellipse                       %% closetype: 0 for open, 1 for chord, 2 for wedge
+    {ellipsedict begin
+       /closetype exch def
+       /endangle exch def      /startangle exch def
+       /yrad exch def          /xrad exch def
+       /y exch def             /x exch def
+       /savematrix emtrx currentmatrix def
+    x y translate
+    xrad  yrad  scale
+    newpath
+    closetype 2 eq  {0 0 moveto} if
+    0 0 1 startangle endangle arc
+    closetype 1 eq  {closepath} if
+    closetype 2 eq  {closepath} if
+    savematrix setmatrix
+    end
+    } def
+
+%%  Figure2ps dictionary
+
+/Figure2psDict 30 dict def
+Figure2psDict begin
+  /iscp false def
+  {pop pop /iscp true def} {pop pop} {pop pop pop pop pop pop} {} pathforall
+  iscp {currentpoint translate} if
+  /setpsfont {exch findfont exch scalefont setfont} bind def
+  /stringsize {/temp exch def gsave newpath 0 0 moveto
+               temp true charpath flattenpath pathbbox
+               /strh exch def /strw exch def pop  pop grestore} bind def
+
+newpath -1.0 -1.0 moveto 129.8 -1.0 lineto 129.8 173.8 lineto -1.0 173.8 lineto closepath clip
+/Helvetica 10 setpsfont
+0.5 setlinewidth
+newpath
+42.93333333333334  64.80000000000001  moveto
+15.047315331474408  32.4  lineto stroke
+newpath
+42.93333333333334  64.80000000000001  moveto
+128.8  64.80000000000001  lineto stroke
+newpath
+42.93333333333334  64.80000000000001  moveto
+42.93333333333334  151.20000000000002  lineto stroke
+gsave
+  0.9 setgray
+newpath
+  67.27598799876073  129.60000000000002  moveto
+  67.27598799876073  129.60000000000002  lineto
+  110.20932133209406  129.60000000000002  lineto
+  91.61864266418812  108.0  lineto
+  48.68530933085477  108.0  lineto
+fill grestore
+
+newpath
+79.44731533147441  105.84  moveto
+79.44731533147441  88.56  lineto stroke
+gsave
+  0.0 setgray
+newpath 79.44731533147441  88.56 moveto 81.44731533147441   94.56  lineto  79.44731533147441   93.06  lineto  77.44731533147441   94.56 lineto closepath fill grestore
+
+[2 2] 1 setdash
+newpath
+79.44731533147441  118.80000000000001  moveto
+79.44731533147441  105.84  lineto stroke
+[ ] 0 setdash
+1.5 setlinewidth
+0 1 1 0 setcmykcolor  
+newpath
+  67.27598799876073  129.60000000000002  moveto
+  67.27598799876073  129.60000000000002  lineto
+  110.20932133209406  129.60000000000002  lineto
+  91.61864266418812  108.0  lineto
+  48.68530933085477  108.0  lineto
+  67.27598799876073  129.60000000000002  lineto
+closepath stroke
+
+newpath
+67.27598799876073  129.60000000000002  moveto
+95.18265466542739  129.60000000000002  lineto stroke
+gsave
+  0 1 1 0 setcmykcolor   
+newpath 95.18265466542739  129.60000000000002 moveto 86.18265466542739   132.60000000000002  lineto  88.43265466542739   129.60000000000002  lineto  86.18265466542739   126.60000000000002 lineto closepath fill grestore
+
+newpath
+110.20932133209406  129.60000000000002  moveto
+97.19584626455989  114.48000000000002  lineto stroke
+gsave
+  0 1 1 0 setcmykcolor   
+newpath 97.19584626455989  114.48000000000002 moveto 105.34065550232297   119.34436866206183  lineto  101.59910955108607   119.59603092538843  lineto  100.79307245753327   123.25838047230732 lineto closepath fill grestore
+
+newpath
+91.61864266418812  108.0  moveto
+65.8586426641881  108.0  lineto stroke
+gsave
+  0 1 1 0 setcmykcolor   
+newpath 65.8586426641881  108.0 moveto 74.8586426641881   105.0  lineto  72.6086426641881   108.0  lineto  74.8586426641881   111.0 lineto closepath fill grestore
+
+newpath
+48.68530933085477  108.0  moveto
+61.69878439838894  123.12  lineto stroke
+gsave
+  0 1 1 0 setcmykcolor   
+newpath 61.69878439838894  123.12 moveto 53.553975160625846   118.2556313379382  lineto  57.295521111862755   118.00396907461159  lineto  58.10155820541555   114.3416195276927 lineto closepath fill grestore
+
+gsave
+  0 1 1 0 setcmykcolor   
+  67.27598799876073 129.60000000000002   2.146666666666667 2.1599999999999997  0 360 0 ellipse fill
+grestore
+gsave
+  0 1 1 0 setcmykcolor   
+  110.20932133209406 129.60000000000002   2.146666666666667 2.1599999999999997  0 360 0 ellipse fill
+grestore
+gsave
+  0 1 1 0 setcmykcolor   
+  48.68530933085477 108.0   2.146666666666667 2.1599999999999997  0 360 0 ellipse fill
+grestore
+gsave
+  0 1 1 0 setcmykcolor   
+  91.61864266418812 108.0   2.146666666666667 2.1599999999999997  0 360 0 ellipse fill
+grestore
+
+%%Trailer
+end
+grestore

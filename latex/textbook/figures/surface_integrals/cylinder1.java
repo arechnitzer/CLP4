@@ -1,0 +1,60 @@
+                  /*  File:  cylinder1.java    */
+
+
+import figPac.* ;
+import fnPac.* ;
+import java.applet.* ;
+import java.awt.* ;
+
+
+public class cylinder1 extends Template {
+
+     static {templateClass = new cylinder1() ; }
+
+     public void setup() {
+          filePrefix = "cylinder1" ;    // used as the prefix for any ps or lbl files written
+          outputPsFile = true ;
+          outputLblFile = true ;
+          xsize = 2*0.8 ;      
+          ysize = 2*180/120*0.8 ;  
+          xmin = -60 ;
+          xmax = 60 ;
+          ymin = -90 ;
+          ymax = 90 ;
+          topmargin = 0 ;   // in inches
+          bottommargin = 0 ;   // in inches
+          leftmargin = 0 ;   // in inches
+          rightmargin = 0 ;   // in inches
+          useZoom = true ;
+          useDrag = true ;
+          showCoords = true ;
+          showCanvasBoundary = true ;   
+     }
+     
+     public  void prepareFigure(Figure canvas) {
+          double r = 30 ;
+          double h = 25 ;
+          double y = h ;
+          double x = r*y/h ;
+          fEnv("lineWidth", 1) ;
+          fEnv("psFillGray", 0.8) ;
+          fDisk(0,h,x,x/3.0, CLOSED+FILLED) ;
+          fLine(-x,-h, -x,h) ;
+          fLine(x,-h, x,h) ;
+          fEllipticalArc(0,-h, x,x/3.0, 180, 360, OPEN) ;
+          canvas.append( new fPsWrite("[2 2] 1 setdash\n")) ;
+          fEllipticalArc(0,-h, x,x/3.0, 0, 180, OPEN) ;
+          canvas.append( new fPsWrite("[ ] 0 setdash\n")) ;
+          fEnv("lineWidth", 0.5) ;
+          fArrow(0,h, 0, 2.2*h) ; 
+          fTeXlabel(4.0, 2.2*h, "cl", "$\\hn=\\hk$") ;
+          fTeXlabel(-0.3*x, 1.5*h, "br", "$S_t$") ;
+          fArrow(0,-h-x/3, 0, -2.2*h) ; 
+          fTeXlabel(4.0, -2.2*h, "bl", "$\\hn=-\\hk$") ;
+          fTeXlabel(-0.3*x, -1.5*h, "tr", "$S_b$") ;
+          fArrow(x, 0, x+1.2*h,0) ; 
+          fTeXlabel(x+1.2*h, 5, "br", "$\\hn$") ;
+          fTeXlabel(-1.07*x, 0, "cr", "$S_s$") ;
+
+     }
+}
