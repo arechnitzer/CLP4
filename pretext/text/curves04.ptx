@@ -58,7 +58,7 @@ doesn't lie  in a single plane, and we can use the derivative
 =\diff{\hat\vT}{s}\times\hat\vN + \hat\vT\times \diff{\hat\vN}{s}
 </mrow><mrow>
 &amp;=\hat\vT\times \diff{\hat\vN}{s}\qquad
-\text{$\Big($ since $\diff{\hat\vT}{s}$ is parallel to $\hat\vN \Big)$}
+\Big( \text{since } \diff{\hat\vT}{s} \text{ is parallel to } \hat\vN \Big)
 </mrow>
 </md>
 as a measure
@@ -408,6 +408,6 @@ helix and the blue curve is the helix traced by the centre of curvature.
 </example>
 
 
-<!-- <xi:include href="../problems/prob_s1.4.ptx" /> -->
+<xi:include href="../problems/prob_s1.4.ptx" />
 
 </section>

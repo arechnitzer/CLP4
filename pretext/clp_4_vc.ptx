@@ -14,10 +14,9 @@
 		<xi:include href="misc/frontmatter.ptx" />
 
 		<xi:include href="text/curves00.ptx" />
-		<xi:include href="text/fields00.ptx" />
-		<xi:include href="text/surfint00.ptx" />		
-		<xi:include href="text/intthm00.ptx" />
-
+		<!-- <xi:include href="text/fields00.ptx" /> -->
+		<!-- <xi:include href="text/surfint00.ptx" />		 -->
+		<!-- <xi:include href="text/intthm00.ptx" /> -->
 		<backmatter>
 			<title>Appendices</title>
 			<xi:include href="text/appendix00.ptx" />

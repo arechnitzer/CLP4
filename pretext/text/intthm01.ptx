@@ -1929,7 +1929,7 @@ Again most of these terms integrate to zero, because
 </mrow>
 </md>
 and the <m>\sin^2t</m> and <m>\cos^2 t</m> terms are easily integrated using
-(see Example <xref ref="eg_workIntegalB"/>)
+(see Example <xref ref="eg_workIntegralB"/>)
 <me>
 \int_0^{2\pi}\sin^2 t\ \dee{t}=\int_0^{2\pi}\cos^2 t\ \dee{t}
 =\frac{1}{2}\int_0^{2\pi}\big[\sin^2t+\cos^2 t\big]\ \dee{t}=\pi

@@ -46,9 +46,9 @@ myTags = [
 myRep = [
     # I had these set so that I could see all parts of exercises on page.
     # breaks validation, but really helps debugging.
-    # ["hint", "statement",],
-    # ["answer", "statement"],
-    # ["solution", "statement"],
+    ["hint", "statement",],
+    ["answer", "statement"],
+    ["solution", "statement"],
 ]
 
 # ["foo", pretextStuff] replaces <foo/> with pretextStuff
@@ -56,7 +56,7 @@ mySubs = [
     ["conceptual", "<p><alert>Exercises &#8212; Stage 1</alert></p>"],
     ["procedural", "<p><alert>Exercises &#8212; Stage 2</alert></p>"],
     ["application", "<p><alert>Exercises &#8212; Stage 3</alert></p>"],
-    ["fromexam", "<em>&#x2733;</em>"],
+    ["fromexam", "<m>\\ast</m>"],
 ]
 
 # build parameters as dict
