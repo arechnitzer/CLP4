@@ -83,6 +83,7 @@
   \newcommand{\cV}{\mathcal{V}}
   \newcommand{\cX}{\mathcal{X}}
 
+  \newcommand{\he}{\hat{\mathbf{e}}}
   %\newcommand{\hi}{\hat{\mathbf{i}}}
   %\newcommand{\hj}{\hat{\mathbf{j}}}
   \newcommand{\hi}{\hat{\pmb{\imath}}}
@@ -153,6 +154,17 @@
   \newcommand{\YEstickfig}[3]{
   	\draw (#1,#2) arc(-90:270:2mm);
   	\draw (#1,#2)--(#1,#2-.5) (#1-.25,#2-.75)--(#1,#2-.5)--(#1+.25,#2-.75) (#1-.2,#2-.2)--(#1+.2,#2-.2);}
+
+  \newcommand{\trigtri}[4]{
+  \begin{tikzpicture}
+  \draw (-.5,0)--(2,0)--(2,1.5)--cycle;
+  \draw (1.8,0) |- (2,.2);
+  \draw[double] (0,0) arc(0:30:.5cm);
+  \draw (0,.2) node[right]{$#1$};
+  \draw (1,-.5) node{$#2$};
+  \draw (2,.75) node[right]{$#3$};
+  \draw (.6,1.1) node[rotate=30]{$#4$};
+  \end{tikzpicture}}
 
 </macros>
 

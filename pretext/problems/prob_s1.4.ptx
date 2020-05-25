@@ -702,7 +702,7 @@ for the parametrized space curve <m>\vr(t)</m>.
 </p></statement>
 
 <hint><p>
-By Theorem <xref ref="thm_curvatureFormulae"/> of the CLP-4 text,
+By Theorem <xref ref="thm_curvatureFormulae"/>,
 the tangential component of acceleration is
 <m>
 a_T(t) = \difftwo{s}{t}
@@ -737,7 +737,7 @@ The speed is
 \diff{s}{t} = |\vr'(t)| = \sqrt{1+4t^2}
 </mrow>
 </md>
-By Theorem <xref ref="thm_curvatureFormulae"/> of the CLP-4 text,
+By Theorem <xref ref="thm_curvatureFormulae"/>,
 the tangential component of acceleration is
 <md>
 <mrow>
@@ -2825,7 +2825,7 @@ Hence <m>|v|=\sqrt{3}</m>; since <m>v=|\vv|</m>, <m>v=\sqrt3</m>. Then
 </md>
 </p>
 
-<p>	(c) By Theorem <xref ref="thm_curvatureFormulae"/>.c in the CLP-4 text,
+<p>	(c) By Theorem <xref ref="thm_curvatureFormulae"/>.c,
 	the tangential component of the acceleration is
 	<md>
 <mrow>

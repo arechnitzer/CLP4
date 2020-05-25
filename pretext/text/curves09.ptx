@@ -165,6 +165,6 @@ fraction <m>\frac{\dee{\theta}}{2\pi}</m> of the area of the full disk, which is
 </sidebyside>
 
 
-<!-- <xi:include href="../problems/prob_s1.9.ptx" /> -->
+<xi:include href="../problems/prob_s1.9.ptx" />
 
 </section>

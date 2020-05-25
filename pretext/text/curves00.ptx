@@ -170,12 +170,10 @@
   </example>
 
 </introduction>
-
 <xi:include href="./curves01.ptx" />
 <xi:include href="./curves02.ptx" />
 <xi:include href="./curves03.ptx" />
 <xi:include href="./curves04.ptx" />
-<!--
 <xi:include href="./curves05.ptx" />
 <xi:include href="./curves06.ptx" />
 <xi:include href="./curves07.ptx" />
@@ -184,5 +182,4 @@
 <xi:include href="./curves10.ptx" />
 <xi:include href="./curves11.ptx" />
 <xi:include href="./curves12.ptx" />
--->
 </chapter>

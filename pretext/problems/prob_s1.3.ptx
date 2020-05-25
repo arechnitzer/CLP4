@@ -462,7 +462,7 @@ Parametrize the curve by <m>\vr(t) = t\,\hi +e^t\,\hj</m>. Then
 </li>
 <li> Since <m>\hN</m> is a unit vector perpendicular to <m>\hT=\dfrac{\hi+\hj}{\sqrt 2}</m>, we know <m>\hN</m> will be either <m>\dfrac{\hi-\hj}{\sqrt 2}</m> or <m>\dfrac{-\hi+\hj}{\sqrt 2}</m>.
 </li>
-<li> Using Part<nbsp/>(<xref ref="clpcurvesthm_curvatureFormulae_partd"/>) of the proof of Theorem<nbsp/><xref ref="thm_curvatureFormulae"/>:
+<li> Using <xref text="custom" ref="clpcurvesthm_curvatureFormulae_partd"> Part<nbsp/>(d)</xref> of the proof of Theorem<nbsp/><xref ref="thm_curvatureFormulae"/>:
 <md>
 <mrow>
 \vv(t) \times \va(t) &amp;= \ka\left(\diff{s}{t}\right)^3\hT \times \hN
