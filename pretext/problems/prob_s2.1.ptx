@@ -1,0 +1,1329 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+
+<!-- Copyright 2018 Joel Feldman, Andrew Rechnitzer and Elyse Yeager -->
+<!-- This work is licensed under the Creative Commons Attribution-NonCommercial-ShareAlike 4.0 International License-->
+<!-- https://creativecommons.org/licenses/by-nc-sa/4.0 -->
+
+<exercises>
+
+<exercisegroup><introduction><conceptual/></introduction>
+
+<exercise>
+<statement><p>
+Below is a sketch of the vector field <m>\vv(x,y)</m>.
+</p>
+
+<sidebyside>
+<image><latex-image>\begin{tikzpicture}
+\YEaxis{5.5}{3.5}
+\foreach \x in {-1,-2,-3,-4,1,2,3,4}{
+\YExcoord{\x}{}
+}
+\foreach \x in {-1,-2,-3,1,2,3}{
+\YEycoord{\x}{}
+}
+\foreach \x in {-4,...,4}{
+\foreach \y in {-3,...,3}{
+\MULTIPLY{\x}{\numberPI}{\xpi}
+\DIVIDE{\xpi}{4}{\xx}
+\COS{\xx}{\cosx}
+\POWER{\y}{2}{\ysq}
+\ADD{\ysq}{2}{\denom}
+\DIVIDE{\cosx}{\denom}{\ynew}
+\DIVIDE{\x}{4}{\xnew}
+	\draw[- \gt , red, thick] (\x,\y)--({\x+\xnew},{\y+\ynew});
+	}}
+\end{tikzpicture}</latex-image></image>
+</sidebyside>
+
+<p>Find the regions where the <m>x</m>-coordinates and <m>y</m>-coordinates are positive, negative, and zero:
+<me>\vv(x,y)\cdot \hi \begin{cases}
+ \gt 0 &amp; \mbox{ when } \fbox{$\vphantom{L}\qquad\qquad $} \\
+=0 &amp;\mbox{ when } \fbox{$\vphantom{L}\qquad\qquad $} \\
+ \lt 0&amp;\mbox{ when } \fbox{$\vphantom{L}\qquad\qquad $}
+\end{cases}</me>
+<me>
+\vv(x,y) \cdot \hj
+\begin{cases}
+ \gt 0 &amp; \text{ when } \fbox{$\vphantom{L}\qquad\qquad $} \\
+  =0 &amp; \text{ when } \fbox{$\vphantom{L}\qquad\qquad $} \\
+ \lt 0&amp;\text{ when } \fbox{$\vphantom{L}\qquad\qquad $}
+\end{cases}
+</me>
+</p>
+
+<p>You may assume that <m>\vv(x,y)</m> behaves as expected at the points you don't see. That is, the samples are representative of a smooth, continuous vector-valued function. You may also assume the tick marks on the axes correspond to unit distances.
+</p></statement>
+
+<hint><p>
+Not all blanks represent a single interval.
+</p></hint>
+
+<answer><p>
+<me>\vv(x,y)\cdot \hi \left.\begin{cases}
+ \gt 0 &amp; \text{ when } \fbox{$x \gt 0$}\\
+=0 &amp;\text{ when } \fbox{$x=0$}\\
+ \lt 0&amp;\text{ when } \fbox{$x \lt 0$}
+\end{cases}\right\}</me>
+and
+<me>\vv(x,y)\cdot \hj \left.\begin{cases}
+ \gt 0 &amp; \text{ when } \fbox{$-2 \lt x \lt 2$}\\
+=0 &amp;\mbox{ when } \fbox{$x \in \{-2,2\}$}\\
+ \lt 0&amp;\mbox{ when } \fbox{$x \lt -2$ or $x \gt 2$}
+\end{cases}\right\}</me>
+at least for <m>(x,y)</m> shown in the sketch.
+</p></answer>
+
+<solution><p>
+The vectors are pointing to the right when <m>x \gt 0</m>, to the left when <m>x \lt 0</m>, and are vertical when <m>x=0</m>. So, at least for <m>(x,y)</m> shown in the sketch,
+<me>
+\vv(x,y)\cdot \hi \begin{cases}
+ \gt 0 &amp; \text{ when } \fbox{$x \gt 0$}\\
+=0 &amp;\text{ when } \fbox{$x=0$}\\
+ \lt 0&amp;\text{ when } \fbox{$x \lt 0$}
+\end{cases}</me>
+</p>
+
+<p>The behaviour of the <m>y</m>-values is more complicated. Vectors in one vertical line seem to be all pointing up, or all pointing down. So, the sign of <m>\vv\cdot\hj</m> depends only on <m>x</m>, not on <m>y</m> (although the <em>magnitude</em> of <m>\vv\cdot\hj</m> depends on both). Roughly,  the vectors are pointing
+<ul>
+<li> Down when <m>x \lt -2</m>;
+</li>
+<li> horizontally when <m>x=-2</m> (remember the vector is positioned with the <em>base</em> of <m>\vv(x,y)</m> at <m>(x,y)</m>;
+</li>
+<li> up when <m>-2 \lt x \lt 2</m>;
+</li>
+<li> horizontally  when <m>x=2</m>;
+</li>
+<li> up when <m>2 \lt x</m>.
+</li>
+</ul>
+</p>
+
+<p>Since we're assuming there's nothing surprising happening between the samples pictured, at least for <m>(x,y)</m> shown in the sketch,
+</p>
+
+<p><me>
+\vv(x,y)\cdot \hj \begin{cases}
+ \gt 0 &amp; \text{ when } \fbox{$-2 \lt x \lt 2$}\\
+=0 &amp;\text{ when } \fbox{$x \in \{-2,2\}$}\\
+ \lt 0&amp;\text{ when } \fbox{$x \lt -2$ or $x \gt 2$}
+\end{cases}</me>
+</p>
+
+</solution>
+</exercise>
+
+<exercise>
+<statement><p>
+Below is a sketch of the vector field <m>\vv(x,y)</m>.
+</p>
+
+<sidebyside>
+<image><latex-image>\begin{tikzpicture}[xscale=1.2]
+\YEaxis{5.5}{5.5}
+\foreach \x in {-1,-2,-3,-4,1,2,3,4}{
+\YExcoord{\x}{}
+\YEycoord{\x}{}
+}
+\foreach \x in {-4,...,4}{
+\foreach \y in {-4,...,4}{
+\ADD{\x}{\y}{\xnew}
+\SUBTRACT{\x}{\y}{\ynew}
+\POWER{\x}{2}{\xtest}
+\POWER{\y}{2}{\ytest}
+\ADD{\xtest}{\ytest}{\test}
+	\ifnum \test = 0
+		{}
+		\else
+		\draw[- \gt , red, thick] (\x,\y)--({\x+\xnew/6},{\y+\ynew/6});
+	\fi
+	}}
+\draw[dotted]  (-4,-4) grid (4,4);
+\end{tikzpicture}</latex-image></image>
+</sidebyside>
+
+<p>
+	Find the regions where the <m>x</m>-coordinates and <m>y</m>-coordinates are positive, negative, and zero:
+</p>
+
+<p>
+<me>\vv(x,y)\cdot \hi \begin{cases}
+ \gt 0 &amp; \mbox{ when } \fbox{$\vphantom{L}\qquad\qquad $}\\
+=0 &amp;\mbox{ when } \fbox{$\vphantom{L}\qquad\qquad $} \\
+ \lt 0&amp;\mbox{ when } \fbox{$\vphantom{L}\qquad\qquad $}
+\end{cases}</me>
+<me>\vv(x,y)\cdot \hj \begin{cases}
+ \gt 0 &amp; \mbox{ when } \fbox{$\vphantom{L}\qquad\qquad $} \\
+=0 &amp;\mbox{ when } \fbox{$\vphantom{L}\qquad\qquad $} \\
+ \lt 0&amp;\mbox{ when } \fbox{$\vphantom{L}\qquad\qquad $}
+\end{cases}</me>
+</p>
+
+<p>You may assume that the samples shown are representative of the general behaviour of <m>\vv(x,y)</m>. You may also assume the tick marks on the axes correspond to unit distances.
+</p>
+</statement>
+
+<hint><p>
+Write down all coordinates where <m>\vv(x,y)\cdot\hi=0</m> or <m>\vv(x,y)\cdot\hj=0</m>, and look for a pattern.
+</p></hint>
+
+<answer>
+<p>
+<me>
+\vv(x,y)\cdot \hi \left.\begin{cases}
+ \gt 0 &amp; \mbox{ when } \fbox{$y \gt -x$}\\
+=0 &amp;\mbox{ when } \fbox{$y=-x$}\\
+ \lt 0&amp;\mbox{ when } \fbox{$y \lt -x$}
+\end{cases}\right\}</me>
+and
+<me>\vv(x,y)\cdot \hj \left.\begin{cases}
+ \gt 0 &amp; \mbox{ when } \fbox{$y \lt x$}\\
+=0 &amp;\mbox{ when } \fbox{$y=x$}\\
+ \lt 0&amp;\mbox{ when } \fbox{$y \gt x$}
+\end{cases}\right\}</me>
+at least for <m>(x,y)</m> shown in the sketch.
+</p></answer>
+
+<solution><p>
+To start out, we find the places where <m>\vv(x,y)\cdot\hi=0</m> (vertical vectors) or <m>\vv(x,y)\cdot\hj=0</m> (horizontal vectors). Remember the vector <m>\vv(x,y)</m> has its <em>tail</em> at <m>(x,y)</m>.
+</p>
+
+<p>We see the vertical vectors  (those with <m>\vv(x,y)\cdot\hi=0</m>) occur at every point along the line <m>y=-x</m>, while
+horizontal vectors  (those with <m>\vv(x,y)\cdot\hj=0</m>) occur at every point along the line <m>y=x</m>.
+</p>
+
+<p>Indeed, below the line <m>y=-x</m>, vectors point to the left, while above the line <m>y=-x</m> they point to the right.
+Similarly, vectors point down when they're above the line <m>y=x</m>, and the point up when they're below the line <m>y=x</m>.
+</p>
+
+<sidebyside>
+<image><latex-image>\begin{tikzpicture}[scale=0.6]
+\fill[blue, opacity=0.3] (-5,5)|-(5,-5);
+\draw[blue, dashed] (-5,5)--(5.5,-5.5);
+\draw[blue] (-2.5,-6) node{LEFT};
+\draw[red] (2.5,5.5) node{RIGHT};
+\YEaxis{5.5}{5.5}
+\foreach \x in {-1,-2,-3,-4,1,2,3,4}{
+\YExcoord{\x}{}
+\YEycoord{\x}{}
+}
+\foreach \x in {-4,...,4}{
+\foreach \y in {-4,...,4}{
+\ADD{\x}{\y}{\xnew}
+\SUBTRACT{\x}{\y}{\ynew}
+\POWER{\x}{2}{\xtest}
+\POWER{\y}{2}{\ytest}
+\ADD{\xtest}{\ytest}{\test}
+	\ifnum \test = 0
+		{}
+		\else
+		\draw[- \gt , red, thick] (\x,\y)--({\x+\xnew/6},{\y+\ynew/6});
+	\fi
+	}}
+\draw[dotted]  (-4,-4) grid (4,4);
+\end{tikzpicture}</latex-image></image>
+</sidebyside>
+
+<sidebyside>
+<image><latex-image>\begin{tikzpicture}[scale=0.6]
+\fill[blue, opacity=0.3] (-5,-5)-|(5,5);
+\draw[blue,dashed] (-5,-5)--(5.5,5.5) ;
+\draw[blue] (2.5,-6) node{UP};
+\draw[red] (-2.5,5.5) node{DOWN};
+\YEaxis{5.5}{5.5}
+\foreach \x in {-1,-2,-3,-4,1,2,3,4}{
+\YExcoord{\x}{}
+\YEycoord{\x}{}
+}
+\foreach \x in {-4,...,4}{
+\foreach \y in {-4,...,4}{
+\ADD{\x}{\y}{\xnew}
+\SUBTRACT{\x}{\y}{\ynew}
+\POWER{\x}{2}{\xtest}
+\POWER{\y}{2}{\ytest}
+\ADD{\xtest}{\ytest}{\test}
+	\ifnum \test = 0
+		{}
+		\else
+		\draw[- \gt , red, thick] (\x,\y)--({\x+\xnew/6},{\y+\ynew/6});
+	\fi
+	}}
+\draw[dotted]  (-4,-4) grid (4,4);
+\end{tikzpicture}</latex-image></image>
+</sidebyside>
+
+<p>So, at least for <m>(x,y)</m> shown in the sketch,
+<me>
+\vv(x,y)\cdot \hi \begin{cases}
+ \gt 0 &amp; \mbox{ when } \fbox{$y \gt -x$}\\
+=0 &amp;\mbox{ when } \fbox{$y=-x$}\\
+ \lt 0&amp;\mbox{ when } \fbox{$y \lt -x$}
+\end{cases} \quad \text{and} \quad
+\vv(x,y)\cdot \hj \begin{cases}
+ \gt 0 &amp; \mbox{ when } \fbox{$y \lt x$}\\
+=0 &amp;\mbox{ when } \fbox{$y=x$}\\
+ \lt 0&amp;\mbox{ when } \fbox{$y \gt x$}
+\end{cases}
+</me>
+</p></solution>
+</exercise>
+
+<exercise>
+<statement><p>
+A platform with many small conveyor belts is aligned on a coordinate plane. Every conveyor belt moves an object on top of it in the direction of the origin, and a conveyor belt at position <m>(x,y)</m> causes an object on top of it to move with speed <m>y</m>. Assume the objects do not interfere with one another.
+</p>
+
+<p> Give a vector-valued formula for the velocity of an object at position <m>(x,y)</m>.
+ </p></statement>
+
+<hint><p>
+If you know the speed and direction of an object, you can find its velocity.
+</p></hint>
+
+<answer><p>
+<m>\vv(x,y)=\frac{-y}{\sqrt{x^2+y^2}}(x,y)</m>
+</p></answer>
+
+<solution>
+<p>
+Since all conveyors point towards the origin, the direction of motion of an object at location <m>(x,y)</m> is <m>\frac{(-x,-y)}{\sqrt{x^2+y^2}}</m>. Its magnitude is <m>y</m>, so <m>\vv(x,y)=\frac{-y}{\sqrt{x^2+y^2}}(x,y)</m>.
+</p></solution>
+</exercise>
+
+<exercise>
+<statement><p>
+Let <m>\vF = P\,\hi + Q\,\hj</m> be the two-dimensional vector field sketched below.
+</p>
+
+<sidebyside width="75%">
+<image source="pfigs/VFe"/>
+</sidebyside>
+
+<p>
+Determine the signs of <m>P</m>, <m>Q</m>, <m>\pdiff{Q}{x}</m>
+and <m>\pdiff{Q}{y}</m> at the point <m>A</m>.
+</p></statement>
+
+<!-- <hint></hint> -->
+
+<answer><p>
+<m>P \gt 0</m></p><p>
+<m>Q \gt 0</m></p><p>
+<m>\pdiff{Q}{x} \lt 0</m></p><p>
+<m>\pdiff{Q}{y} \gt 0</m>
+</p></answer>
+
+<solution><p>
+The arrows near the point <m>A</m> are pointing to the
+right, indicating that <m>P \gt 0</m>, and upward, indicating
+that <m>Q \gt 0</m>. Moving from left to right near <m>A</m>, the
+vertical component of the arrows is decreasing, indicating that
+<m>\pdiff{Q}{x} \lt 0</m>.  Moving vertically
+upwards near <m>A</m>, the vertical component of the arrows is
+increasing, indicating that <m>\pdiff{Q}{y} \gt 0</m>.
+</p>
+
+</solution>
+</exercise>
+
+<exercise>
+<statement><p>
+Imagine that the vector field <m>\vv(x,y) = x\,\hi+y\,\hj</m>
+</p>
+
+<p>is the velocity field of a moving fluid.
+<ol label="a">
+<li>
+At time <m>0</m> you drop a twig into the fluid at
+the point <m>(1,1)</m>. What is the approximate position of the twig
+at time <m>t=0.01</m>?
+</li>
+<li>
+At time <m>0</m> you drop a twig into the fluid at
+the point <m>(0,0)</m>. What is the position of the twig
+at time <m>t=0.01</m>?
+</li>
+<li>
+At time <m>0</m> you drop a twig into the fluid at
+the point <m>(0,0)</m>. What is the position of the twig
+at time <m>t=10</m>?
+</li>
+</ol>
+</p></statement>
+
+<hint><p>
+When the twig is at <m>(x,y)</m> it has velocity <m>\vv(x,y)</m>.
+</p></hint>
+
+<answer><p>
+(a) <m>(1.01\,,\,1.01)</m></p><p>
+(b) <m>(0\,,\,0)</m></p><p>
+(c) <m>(0\,,\,0)</m>
+</p></answer>
+
+<solution><p>
+(a)
+At time <m>0</m> the velocity of the twig is
+<m>\vv(1,1) =\hi+\hj</m>. So at time <m>t=0.1</m>, the position of the
+twig is approximately
+<me>
+(1,1) + 0.01(1,1) = (1.01\,,\,1.01)
+</me>
+</p>
+
+<p>(b)
+At time <m>0</m> the velocity of the twig is
+<m>\vv(0,0) =\vZero</m>. So at time <m>t=0.1</m>, the position of the
+twig is
+<me>
+(0,0) + 0.1(0,0) = (0\,,\,0)
+</me>
+</p>
+
+<p>(c) At time <m>0</m> the velocity of the twig is <m>\vv(0,0) =\vZero</m>.
+So it is stationary and its velocity remains zero for all time.
+The position of the twig at time <m>10</m>, and in fact at all times,
+is <m>(0\,,\,0)</m>.
+</p>
+
+</solution>
+</exercise>
+
+<exercise>
+<statement><p>
+Imagine that the vector field <m>\vv(x,y) = 2x\,\hi -\hj</m>
+</p>
+
+<p>is the velocity field of a moving fluid.
+At time <m>0</m> you drop a twig into the fluid at
+the point <m>(0,0)</m>. What is the position of the twig
+at time <m>t=10</m>?
+</p></statement>
+
+<hint><p>
+Whenever the twig is on the <m>y</m>-axis, its velocity is parallel to the <m>y</m>-axis.
+So it remains on the <m>y</m>-axis for all time.
+</p></hint>
+
+<answer><p>
+<m>(0\,,\,-10)</m>
+</p></answer>
+
+<solution><p>
+The velocity of the fluid at all points of the <m>y</m>-axis
+is <m>-\hj</m>. So the twig will remain on the <m>y</m>-axis and will
+consequently have velocity <m>-\hj</m> for all time. The position
+of the twig at time <m>10</m> will be
+<me>
+(0,0)+10(0,-1) = (0\,,\,-10)
+</me>
+</p></solution>
+</exercise>
+</exercisegroup>
+
+<exercisegroup><introduction><procedural/></introduction>
+
+<exercise>
+<statement><p>
+A platform with many small conveyor belts is aligned on a coordinate plane. Every conveyor belt moves an object on top of it in the direction of the origin, and a conveyor belt at position <m>(x,y)</m> causes an object on top of it to move with speed <m>y</m>. Assume the objects do not interfere with one another.
+</p>
+
+<p> Give a vector-valued formula for the velocity of an object at position <m>(x,y)</m>.
+ </p></statement>
+
+<hint><p>
+If you know the speed and direction of an object, you can find its velocity.
+</p></hint>
+
+<answer><p>
+<m>\vv(x,y)=\frac{-y}{\sqrt{x^2+y^2}}(x,y)</m>
+</p></answer>
+
+<solution><p>
+Since all conveyors point towards the origin, the direction of motion of an object at location <m>(x,y)</m> is <m>\frac{(-x,-y)}{\sqrt{x^2+y^2}}</m>. Its magnitude is <m>y</m>, so <m>\vv(x,y)=\frac{-y}{\sqrt{x^2+y^2}}(x,y)</m>.
+</p></solution>
+</exercise>
+
+<exercise>
+<statement><p>
+Friendly bees fly towards your face from all directions. The  speed of each bee is inversely proportional to its distance from your face.  Find a vector field for the velocity of the swarm.
+</p></statement>
+
+<hint><p>
+Set your face to be at the origin, <m>(0,0,0)</m>.
+</p>
+
+<p>If <m>A</m> is <q>inversely proportional</q> to <m>B</m>, then there exists a constant <m>\alpha</m> such that <m>AB=\alpha</m>. That way when <m>|B|</m> goes up, <m>|A|</m> goes down, and vice-versa.
+</p></hint>
+
+<answer><p>
+If your face is at the origin, then <m>\vv(x,y,z)=-\frac{\alpha}{{x^2+y^2+z^2}}(x,y,z)</m> for some positive constant <m>\alpha</m>.
+</p></answer>
+
+<solution><p>
+Set your face to be at the origin of our coordinate system, <m>(0,0,0)</m>. A bee at position <m>(x,y,z)</m> is a distance of <m>\sqrt{x^2+y^2+z^2}</m> from your face, heading in the direction <m>(-x,-y,-z)</m>. So, the unit vector indicating the direction of one friendly bee is <m>\frac{-1}{\sqrt{x^2+y^2+z^2}}(x,y,z)</m>. Now all we need to find is the length of this vector, i.e. the speed of the friendly bee.
+</p>
+
+<p>The speed of the friendly bee is inversely proportional to <m>\sqrt{x^2+y^2+z^2}</m>, its distance from your face. (Bees that are farther away are buzzing towards you more excitedly.) So, speed is given by <m>\frac{\alpha}{\sqrt{x^2+y^2+z^2}}</m> for some constant <m>\alpha</m>.
+</p>
+
+<p>The bee velocity has the direction of the unit vector <m>\frac{-1}{\sqrt{x^2+y^2+z^2}}(x,y,z)</m> with length  <m>\frac{\alpha}{\sqrt{x^2+y^2+z^2}}</m> for some positive constant <m>\alpha</m>. That is,
+<me>
+\vv(x,y,z)=-\frac{\alpha}{{x^2+y^2+z^2}}(x,y,z)</me>
+</p>
+
+</solution>
+</exercise>
+
+<exercise>
+<statement><p>
+Sketch the vector field
+<m>\vv(x,y)=(x^2,y)</m>.
+</p></statement>
+
+<hint><p>
+Start with the regions where <m>\vv(x,y)\cdot\hi</m> and <m>\vv(x,y)\cdot\hj</m> are positive and negative. As you move up/down/left/right, do the vectors get longer or shorter? More horizontal or more vertical?
+</p></hint>
+
+<answer>
+
+<sidebyside>
+<image><latex-image>\begin{tikzpicture}
+\YEaxis{5}{5}
+\foreach \x in {-3,...,3}{\foreach \y in {-4,...,4}{
+\POWER{\x}{2}{\xtmp}
+\DIVIDE{\xtmp}{10}{\xtmp}
+\ADD{\y}{0}{\ytmp}
+\DIVIDE{\ytmp}{10}{\ytmp}
+\POWER{\xtmp}{2}{\xtest}
+	\POWER{\ytmp}{2}{\ytest}
+	\ADD{\xtest}{\ytest}{\test}
+	\ifdim \test pt  \lt  0.01 pt
+	\draw[red, thick](\x,\y) --(\x+\xtmp,\y+\ytmp);
+	{}
+	\else
+\draw[- \gt , red, thick] (\x,\y) --(\x+\xtmp,\y+\ytmp);
+	\fi
+}}
+\end{tikzpicture}</latex-image></image>
+</sidebyside></answer>
+
+<solution><p>
+Beginning as in the text, we note
+<me>\vv(x,y)\cdot\hi=x^2 \begin{cases}
+ \gt 0 &amp; x \neq 0\\
+=0 &amp; x=0
+\end{cases}</me>
+ and
+<me>\vv(x,y)\cdot\hj=y \begin{cases}
+ \gt 0 &amp; y  \gt  0\\
+=0 &amp; y=0\\
+ \lt 0 &amp; y \lt 0
+\end{cases}.</me>
+That leads to the following picture:
+</p>
+<sidebyside>
+<image><latex-image>\begin{tikzpicture}
+\YEaxis{2.5}{2.5}
+\foreach \x in {-1,0,1}{\foreach \y in {-1,0,1}{
+\POWER{\x}{2}{\xtmp}
+\DIVIDE{\xtmp}{2}{\xtmp}
+\ADD{\y}{0}{\ytmp}
+\DIVIDE{\ytmp}{2}{\ytmp}
+\ifdim\xtmp pt=0pt
+\else
+\draw[- \gt , blue, thick] (\x,\y) --(\x+\xtmp,\y);
+\fi
+\ifdim\ytmp pt=0 pt
+\else
+\draw[- \gt , red, thick] (\x,\y) --(\x,\ytmp+\y);
+\fi
+}}
+\end{tikzpicture}</latex-image></image>
+</sidebyside>
+
+<p>
+This gives us a general idea to start with. Refining, we notice that when <m>x^2 \gt |y|</m>, then the vector <m>\vv(x,y)</m> will be more horizontal than vertical. As we move away from the <m>y</m>-axis in a horizontal line, the difference between <m>x^2</m> and <m>|y|</m> grows, so the vectors get more and more horizontal. However, for a fixed value of <m>x</m>, vectors farther from the axis will be more vertical than vectors closer to it.
+</p>
+<sidebyside>
+<image><latex-image>\begin{tikzpicture}
+\YEaxis{5}{5}
+\foreach \x in {-3,...,3}{\foreach \y in {-4,...,4}{
+\POWER{\x}{2}{\xtmp}
+\DIVIDE{\xtmp}{10}{\xtmp}
+\ADD{\y}{0}{\ytmp}
+\DIVIDE{\ytmp}{10}{\ytmp}
+\POWER{\xtmp}{2}{\xtest}
+	\POWER{\ytmp}{2}{\ytest}
+	\ADD{\xtest}{\ytest}{\test}
+	\ifdim \test pt  \lt  0.01 pt
+	\draw[red, thick](\x,\y) --(\x+\xtmp,\y+\ytmp);
+	{}
+	\else
+\draw[- \gt , red, thick] (\x,\y) --(\x+\xtmp,\y+\ytmp);
+	\fi
+}}
+\end{tikzpicture}</latex-image></image>
+</sidebyside></solution>
+</exercise>
+
+<exercise>
+<statement><p>
+Sketch the <em>direction</em> field of
+<m>\vv(x,y) = \left( \sqrt{x^2+y^2} , \sqrt{(x-1)^2+(y-1)^2}\right)</m>.
+</p></statement>
+
+<hint><p>
+<m>\vv(x,y)\cdot \hi</m> is the distance from <m>(x,y)</m> to the origin, while <m>\vv(x,y)\cdot\hj</m> is the distance from <m>(x,y)</m> to the point <m>(1,1)</m>.
+</p></hint>
+
+<answer>
+
+<sidebyside>
+<image><latex-image>\begin{tikzpicture}
+\YEaaxis{3}{5}{3}{5}
+\foreach \x in {-1,-.5,0,.5,1,1.5,2}{\foreach \y in {-1,-.5,0,.5,1,1.5,2}{
+\POWER{\x}{2}{\xsquared}
+\POWER{\y}{2}{\ysquared}
+\ADD{\xsquared}{\ysquared}{\tmp}
+\SQUAREROOT{\tmp}{\xtmp}
+\DIVIDE{\xtmp}{4}{\xtmp}
+\SUBTRACT{\x}{1}{\xtmpa}
+\POWER{\xtmpa}{2}{\xtmpb}
+\SUBTRACT{\y}{1}{\ytmpa}
+\POWER{\ytmpa}{2}{\ytmpb}
+\ADD{\xtmpb}{\ytmpb}{\tmp}
+\SQRT{\tmp}{\ytmp}
+\DIVIDE{\ytmp}{4}{\ytmp}
+\POWER{\xtmp}{2}{\xtest}
+	\POWER{\ytmp}{2}{\ytest}
+	\ADD{\xtest}{\ytest}{\test}
+	\ifdim \test pt  \lt  0.01 pt
+	{}
+	\else
+	\SQUAREROOT{\test}{\L}
+	\DIVIDE{\xtmp}{\L}{\xdir}
+	\DIVIDE{\ytmp}{\L}{\ydir}
+	\DIVIDE{\xdir}{2}{\xdir}
+	\DIVIDE{\ydir}{2}{\ydir}
+\draw[- \gt , red, thick] (2*\x,2*\y) --(2*\x+\xdir,2*\y+\ydir);
+	\fi
+
+}}
+\end{tikzpicture}</latex-image></image>
+</sidebyside></answer>
+
+<solution>
+
+<p>Although ultimately we'll sketch only unit-length vectors, we can still find the direction of <m>\vv(x,y)</m> by finding its <m>x</m>- and <m>y</m> components.
+</p>
+
+<p>Note <m>\vv(x,y)\cdot \hi</m> is the distance from <m>(x,y)</m> to the origin, while <m>\vv(x,y)\cdot\hj</m> is the distance from <m>(x,y)</m> to the point <m>(1,1)</m>. Both these numbers are always nonnegative. This leads to the following sketch:
+</p>
+
+<sidebyside>
+<image><latex-image>\begin{tikzpicture}
+\YEaaxis{3}{5}{3}{5}
+\foreach \x in {-1,-.5,0,.5,1,1.5,2}{\foreach \y in {-1,-.5,0,.5,1,1.5,2}{
+\POWER{\x}{2}{\xsquared}
+\POWER{\y}{2}{\ysquared}
+\ADD{\xsquared}{\ysquared}{\tmp}
+\SQUAREROOT{\tmp}{\xtmp}
+\DIVIDE{\xtmp}{4}{\xtmp}
+
+\ifdim\xtmp pt=0pt
+\else
+\draw[- \gt , blue, thick] (2*\x,2*\y) --(2*\x+\xtmp,2*\y);
+\fi
+\SUBTRACT{\x}{1}{\xtmpa}
+\POWER{\xtmpa}{2}{\xtmpb}
+\SUBTRACT{\y}{1}{\ytmpa}
+\POWER{\ytmpa}{2}{\ytmpb}
+\ADD{\xtmpb}{\ytmpb}{\tmp}
+\SQRT{\tmp}{\ytmp}
+\DIVIDE{\ytmp}{4}{\ytmp}
+
+\ifdim\ytmp pt=0 pt
+\else
+\draw[- \gt , red, thick] (2*\x,2*\y) --(2*\x,\ytmp+2*\y);
+\fi
+}}
+\end{tikzpicture}</latex-image></image>
+</sidebyside>
+
+<p>
+When <m>(x,y)</m> is far from the origin, its distance from <m>(0,0)</m> is almost the same as its distance from <m>(1,0)</m>. So, we expect <m>\vv(x,y)</m> to be approximately a scalar multiple of <m>(1,1)</m>.
+</p>
+
+<p>At <m>(0,0)</m>, <m>v(0,0)\cdot \hi=0</m>, so our vector is horizontal; similarly, <m>v(1,1)\cdot\hj=0</m> so this vector is horizontal. Vectors very near to <m>(0,0)</m> are nearly horizontal, while vectors near to <m>(1,1)</m> are nearly vertical.
+</p>
+
+<sidebyside>
+<image><latex-image>\begin{tikzpicture}
+\YEaaxis{3}{5}{3}{5}
+\foreach \x in {-1,-.5,0,.5,1,1.5,2}{\foreach \y in {-1,-.5,0,.5,1,1.5,2}{
+\POWER{\x}{2}{\xsquared}
+\POWER{\y}{2}{\ysquared}
+\ADD{\xsquared}{\ysquared}{\tmp}
+\SQUAREROOT{\tmp}{\xtmp}
+\DIVIDE{\xtmp}{4}{\xtmp}
+
+\SUBTRACT{\x}{1}{\xtmpa}
+\POWER{\xtmpa}{2}{\xtmpb}
+\SUBTRACT{\y}{1}{\ytmpa}
+\POWER{\ytmpa}{2}{\ytmpb}
+\ADD{\xtmpb}{\ytmpb}{\tmp}
+\SQRT{\tmp}{\ytmp}
+\DIVIDE{\ytmp}{4}{\ytmp}
+	\POWER{\xtmp}{2}{\xtest}
+	\POWER{\ytmp}{2}{\ytest}
+	\ADD{\xtest}{\ytest}{\test}
+	\ifdim \test pt  \lt  0.01 pt
+	\draw[red, thick](2*\x,2*\y) --(2*\x+\xtmp,2*\y+\ytmp);
+	{}
+	\else
+\draw[- \gt , red, thick] (2*\x,2*\y) --(2*\x+\xtmp,2*\y+\ytmp);
+	\fi
+}}
+
+\end{tikzpicture}</latex-image></image>
+</sidebyside>
+<p>
+For the direction field, we normalize our vectors to have unit length.
+</p>
+
+<sidebyside>
+<image><latex-image>\begin{tikzpicture}
+\YEaaxis{3}{5}{3}{5}
+\foreach \x in {-1,-.5,0,.5,1,1.5,2}{\foreach \y in {-1,-.5,0,.5,1,1.5,2}{
+\POWER{\x}{2}{\xsquared}
+\POWER{\y}{2}{\ysquared}
+\ADD{\xsquared}{\ysquared}{\tmp}
+\SQUAREROOT{\tmp}{\xtmp}
+\DIVIDE{\xtmp}{4}{\xtmp}
+\SUBTRACT{\x}{1}{\xtmpa}
+\POWER{\xtmpa}{2}{\xtmpb}
+\SUBTRACT{\y}{1}{\ytmpa}
+\POWER{\ytmpa}{2}{\ytmpb}
+\ADD{\xtmpb}{\ytmpb}{\tmp}
+\SQRT{\tmp}{\ytmp}
+\DIVIDE{\ytmp}{4}{\ytmp}
+
+	\POWER{\xtmp}{2}{\xtest}
+	\POWER{\ytmp}{2}{\ytest}
+	\ADD{\xtest}{\ytest}{\test}
+	\ifdim \test pt  \lt  0.01 pt
+	{}
+	\else
+	\SQUAREROOT{\test}{\L}
+	\DIVIDE{\xtmp}{\L}{\xdir}
+	\DIVIDE{\ytmp}{\L}{\ydir}
+	\DIVIDE{\xdir}{2}{\xdir}
+	\DIVIDE{\ydir}{2}{\ydir}
+\draw[- \gt , red, thick] (2*\x,2*\y) --(2*\x+\xdir,2*\y+\ydir);
+	\fi
+
+}}
+
+\end{tikzpicture}</latex-image></image>
+</sidebyside></solution>
+</exercise>
+
+<exercise>
+<statement><p>
+Sketch the <em>direction</em> field of
+<m>\vv(x,y)=(x^2+xy,y^2-xy)</m>.
+</p></statement>
+
+<hint><p>
+Factor <m>x^2+xy=x(x+y)</m> and <m>y^2-xy=y(x-y)</m>.
+Chop the plane up into eight regions using the two coordinate axes and the lines <m>y=x</m>, <m>y=-x</m>.
+</p></hint>
+
+<answer>
+
+<sidebyside>
+<image><latex-image>\begin{tikzpicture}
+\YEaxis{3.5}{3.5}
+\foreach \x in {-3,-2.5,...,3.1}{
+
+\POWER{\x}{2}{\xsq}
+\foreach \y in {-3,-2.5,...,3.1}{
+	\POWER{\y}{2}{\ysq}
+	\MULTIPLY{\x}{\y}{\xy}
+	\ADD{\xsq}{\xy}{\vx}
+	\SUBTRACT{\ysq}{\xy}{\vy}
+\POWER{\vx}{2}{\vxsq}
+	\POWER{\vy}{2}{\vysq}
+	\ADD{\vxsq}{\vysq}{\L}
+	\SQUAREROOT{\L}{\l}
+	\MULTIPLY{\l}{2}{\l}
+	\ifdim \l pt = 0 pt
+		{}
+		\else
+		\DIVIDE{\vx}{\l}{\dx}
+		\DIVIDE{\vy}{\l}{\dy}
+		\draw[thick, red,- \gt ] (\x,\y)--(\x+\dx,\y+\dy);
+	\fi
+}}
+\end{tikzpicture}</latex-image></image>
+</sidebyside></answer>
+
+<solution><p>
+The sign of <m>\vv(x,y) \cdot \hi = x(x+y)</m> depends on the signs of <m>x</m> and <m>x+y</m>. When they have the same signs, <m>\vv(x,y)\cdot \hi</m> is positive, so <m>\vv(x,y)</m> points to the right; when they have different signs, <m>\vv(x,y)</m> points to the left.
+</p><sidebyside>
+<image><latex-image>\begin{tikzpicture}
+\draw (0,-3)--(0,3) node[above]{$y$};
+\draw (-3,3)--(3,-3) node[right]{$y=-x$};
+
+\fill[pattern color=gray, pattern=NE lines, hatch distance=5pt, hatch thickness=0.8pt] (-3,3)--(3,-3)|-cycle;
+
+\fill[pattern color=gray, pattern=EW lines, hatch distance=5pt, hatch thickness=1.0pt] (0,-3) rectangle (3,3);
+\draw[ultra thick, blue,- \gt ] (1,0)--(2,0);
+\draw[ultra thick, blue,- \gt ] (-2,0)--(-1,0);
+\draw[very thick, blue,- \gt ] (-.5,2)--(-1.5,2);
+\draw[very thick, blue, \lt -] (.5,-2)--(1.5,-2);
+\end{tikzpicture}</latex-image></image>
+</sidebyside>
+
+<p>
+Similarly, the sign of <m>\vv(x,y) \cdot \hj = y(y-x)</m> depends on the signs of <m>y</m> and <m>y-x</m>.
+</p>
+
+<sidebyside>
+<image><latex-image>\begin{tikzpicture}
+\draw (-3,0)--(3,0) node[right]{$x$};
+\draw (-3,-3)--(3,3) node[right]{$y=x$};
+
+\fill[pattern color=gray, pattern=NW lines, hatch distance=5pt, hatch thickness=1.0pt] (-3,-3)--(3,3)-|cycle;
+
+\fill[pattern color=gray, pattern=NS lines, hatch distance=5pt, hatch thickness=1.0pt] (-3,0) rectangle (3,3);
+\draw[ultra thick, red,- \gt ] (-1,1)--(-1,2);
+\draw[ultra thick, red,- \gt ] (1,-2)--(1,-1);
+\draw[very thick, red,- \gt ] (2,1.5)--(2,.5);
+\draw[very thick, red,- \gt ] (-2,-.5)--(-2,-1.5);
+\end{tikzpicture}</latex-image></image>
+</sidebyside>
+
+<p>
+All together:
+</p>
+
+<sidebyside>
+<image><latex-image>\begin{tikzpicture}
+\YEaxis{3}{3}
+\draw[help lines] (-3,-3)--(3,3) node[right]{$y=x$};
+\draw[help lines] (-3,3)--(3,-3) node[right]{$y=-x$};
+
+\foreach \x in {0,...,7}{
+	\draw (0,0)+(45*\x+22.5:2.75cm) node[shape=circle,fill, minimum size=1mm, draw, inner sep=0](v\x){};}
+\color{blue}
+\foreach \x in {7,0,1,3,4,5}
+	{\draw(v\x) node[right]{\Large$\rightarrow$};}
+\foreach \x in {2,6}
+	{\draw(v\x) node[left]{\Large$\leftarrow$};}
+\color{red}
+\foreach \x in {1,2,3,5,6,7}
+	{\draw(v\x) node[above]{\Large$\uparrow$};}
+\foreach \x in {0,4}
+	{\draw(v\x) node[below]{\Large$\downarrow$};}
+\end{tikzpicture}</latex-image></image>
+</sidebyside>
+<p>
+Refining, we notice that  as we move straight up or down, <m>|\vv(x,y)\cdot \hi|</m> has its minimum along the lines <m>y=-x</m> and <m>x=0</m>. So, the vectors become more strongly vertical as we approach <m>y=-x</m> and <m>x=0</m> from above or below.
+</p>
+
+<p>Similarly, <m>|\vv(x,y)\cdot \hj|</m> has its minima along the lines <m>y=x</m> and <m>y=0</m>, so the vectors become more strongly horizontal as we approach <m>y=x</m> horizontally.
+</p>
+
+<sidebyside>
+<image><latex-image>\begin{tikzpicture}
+\YEaxis{3.5}{3.5}
+\foreach \x in {-3,-2.5,...,3.1}{
+
+\POWER{\x}{2}{\xsq}
+\foreach \y in {-3,-2.5,...,3.1}{
+	\POWER{\y}{2}{\ysq}
+	\MULTIPLY{\x}{\y}{\xy}
+	\ADD{\xsq}{\xy}{\vx}
+	\SUBTRACT{\ysq}{\xy}{\vy}
+
+	\POWER{\vx}{2}{\vxsq}
+	\POWER{\vy}{2}{\vysq}
+	\ADD{\vxsq}{\vysq}{\L}
+	\SQUAREROOT{\L}{\l}
+	\MULTIPLY{\l}{2}{\l}
+	\ifdim \l pt = 0 pt
+		{}
+		\else
+		\DIVIDE{\vx}{\l}{\dx}
+		\DIVIDE{\vy}{\l}{\dy}
+		\draw[thick, red,- \gt ] (\x,\y)--(\x+\dx,\y+\dy);
+	\fi
+}}
+\end{tikzpicture}</latex-image></image>
+</sidebyside></solution>
+</exercise>
+
+<exercise>
+<statement><p>
+Sketch the vector field <m>\displaystyle \vv(x,y)=\left[\frac{1/3}{\sqrt{x^2+y^2}}(x,y)+\frac{1/3}{\sqrt{(x-1)^2+y^2}}(x-1,y)\right]</m>.
+</p>
+
+</statement>
+
+<hint><p>
+What is the geometric interpretation of each summand?
+</p></hint>
+
+<answer>
+
+<sidebyside>
+<image><latex-image>\begin{tikzpicture}
+\YEaxis{5}{5}
+\draw (0,0) node[vertex]{};
+\draw (1,0) node[vertex]{};
+
+\foreach \x in {-4,-3.5,...,4}{
+\foreach \y in {-4,-3.5,...,4}{
+
+\SUBTRACT{\x}{1}{\xless}
+	\POWER{\xless}{2}{\xlsq}
+	\POWER{\x}{2}{\xsq}
+	\POWER{\y}{2}{\ysq}
+	\ADD{\xsq}{\ysq}{\xy}
+	\ADD{\xlsq}{\ysq}{\xly}
+
+		\MULTIPLY{\xy}{\xly}{\testdomain}
+		\SUBTRACT{\x}{.5}{\xtesta}
+		\ABSVALUE{\xtesta}{\xtestb}
+		\TRUNCATE[0]{\xtestb}{\testzero}
+		\ADD{\testdomain}{\testzero}{\test}
+		\ifdim \test pt  \lt .1 pt
+		{}
+		\else
+		\SQRT{\xy}{\dena}
+		\SQRT{\xly}{\denb}
+		\DIVIDE{1}{\dena}{\ca}
+		\DIVIDE{1}{\denb}{\cb}
+		\ADD{\ca}{\cb}{\ymost}
+		\MULTIPLY{\ymost}{\y}{\yunscaled}
+		\DIVIDE{\yunscaled}{3}{\yy}
+		\MULTIPLY{\ca}{\x}{\xa}
+		\MULTIPLY{\cb}{\xless}{\xb}
+		\ADD{\xa}{\xb}{\xunscaled}
+		\DIVIDE{\xunscaled}{3}{\xx}
+
+	\draw[red, - \gt ] (\x,\y)--(\x+\xx,\y+\yy);
+	\fi
+}}
+\end{tikzpicture}</latex-image></image>
+</sidebyside></answer>
+
+<solution>
+
+<p>The field <m>\vv(x,y)</m> is the sum, scaled by 1/3, of the unit vector pointing away from the origin and the unit vector pointing away from <m>(1,0)</m>. This tells us about a few regions:
+<ul>
+<li> Along the <m>x</m> axis between <m>(0,0)</m> and <m>(1,0)</m>, the vectors away from these points are pointing in opposite directions (and have the same length), so they cancel each other out. That is, <m>v(x,0)=0</m> for all <m>x \in (0,1)</m>.
+</li>
+<li> <m>v(0,0)</m> and <m>v(1,0)</m> are not defined.
+</li>
+<li><p>
+	Along the <m>x</m>-axis outside of <m>[0,1]</m>, the vector pointing away from the point <m>(0,0)</m> is the same as the  vector pointing away from the point <m>(1,0)</m>. So, <m>v(x,0)=(-2/3,0)</m> for <m>x \lt 0</m> and <m>v(x,0)=(2/3,0)</m> for <m>x \gt 1</m>.
+</p>
+
+<sidebyside>
+<image><latex-image>\begin{tikzpicture}
+\YEaxis{5}{2}
+\draw (0,0) node[vertex]{};
+\draw (1,0) node[vertex]{};
+\foreach \x in {-4,...,-1}
+{\SUBTRACT{\x}{.33}{\xx}
+\draw[- \gt , thick, red] (\x,0)--(\xx,0);}
+\foreach \x in {2,3,4}
+{\ADD{\x}{.33}{\xx}
+\draw[- \gt , thick, red] (\x,0)--(\xx,0);}
+\end{tikzpicture}</latex-image></image>
+</sidebyside>
+</li>
+<li><p>
+ As the distance from <m>(x,y)</m> to the origin grows, the vector pointing away from <m>(0,0)</m> looks more and more like the vector pointing away from <m>(1,0)</m>. So, our vectors far away from the origin look like vectors of length about 2/3, pointing away from the origin.
+</p>
+
+<sidebyside>
+<image><latex-image>\begin{tikzpicture}
+\YEaxis{5}{5}
+\draw (0,0) node[vertex]{};
+\draw (1,0) node[vertex]{};
+
+\foreach \x in {-4,-3.5,...,4}{
+\foreach \y in {-4,-3.5,...,4}{
+
+	\SUBTRACT{\x}{1}{\xless}
+	\POWER{\xless}{2}{\xlsq}
+	\POWER{\x}{2}{\xsq}
+	\POWER{\y}{2}{\ysq}
+	\ADD{\xsq}{\ysq}{\xy}
+	\ADD{\xlsq}{\ysq}{\xly}
+
+		\MULTIPLY{\xy}{\xly}{\testdomain}
+		\SUBTRACT{\x}{.5}{\xtesta}
+		\ABSVALUE{\xtesta}{\xtestb}
+		\TRUNCATE[0]{\xtestb}{\testzero}
+		\ADD{\testdomain}{\testzero}{\test}
+		\ifdim \test pt  \lt .1 pt
+		{}
+		\else
+		\SQRT{\xy}{\dena}
+		\SQRT{\xly}{\denb}
+		\DIVIDE{1}{\dena}{\ca}
+		\DIVIDE{1}{\denb}{\cb}
+		\ADD{\ca}{\cb}{\ymost}
+		\MULTIPLY{\ymost}{\y}{\yunscaled}
+		\DIVIDE{\yunscaled}{3}{\yy}
+		\MULTIPLY{\ca}{\x}{\xa}
+		\MULTIPLY{\cb}{\xless}{\xb}
+		\ADD{\xa}{\xb}{\xunscaled}
+		\DIVIDE{\xunscaled}{3}{\xx}
+		\draw[red, - \gt ] (\x,\y)--(\x+\xx,\y+\yy);
+	\fi
+}}
+\end{tikzpicture}</latex-image></image>
+</sidebyside>
+</li>
+</ul>
+</p></solution>
+</exercise>
+
+<exercise xml:id="prb_sketch_vf">
+<statement><p>
+Sketch each of the following vector fields, by
+drawing a figure like Figure <xref ref="fig_sourceField"/>.
+<ol label="a">
+<li>
+   <m>\vv(x,y) = x\,\hi+y\,\hj</m>.
+</li>
+<li>
+   <m>\vv(x,y) = 2x\,\hi -\hj</m>.
+</li>
+<li>
+   <m>\vv(x,y) = \frac{y\,\hi -x\,\hj}{\sqrt{x^2+y^2}}</m>.
+</li>
+</ol>
+</p></statement>
+
+<hint><p>
+(a), (c) Intrepret the vector field geometrically.
+</p></hint>
+
+<answer>
+<sbsgroup widths="10% 70%">
+	<sidebyside>
+	<p>(a)</p>
+	<image source="pfigs/VFf"/>
+	</sidebyside>
+	<sidebyside>
+	<p>(b)</p>
+	<image source="pfigs/VFg"/>
+	</sidebyside>
+	<sidebyside>
+	<p>(c)</p>
+	<image source="pfigs/VFh"/>
+	</sidebyside>
+</sbsgroup>
+
+</answer>
+
+<solution><p>
+(a)
+The vector field <m>\vv(x,y) = x\,\hi+y\,\hj</m> is the same as the radius
+vector. It points radially outward and has length growing linearly with
+the distance from the origin.
+</p>
+<sidebyside width="75%">
+<image source="pfigs/VFf"/>
+</sidebyside>
+
+<p>
+(b) The vertical component of  <m>\vv(x,y) = 2x\,\hi -\hj</m>
+is always <m>-1</m>. Its horizontal component is <m>2x</m>, so that
+<ul>
+<li>
+<m>\vv(x,y)</m> is rightward pointing when <m>x \gt 0</m>
+     and leftward pointing when <m>x \lt 0</m>, and
+</li>
+<li>
+  the magnitude of the horizontal component grows
+linearly with the distance from the <m>y</m>-axis.
+</li>
+</ul>
+It is sketched in the figure on the left below.
+</p>
+<sidebyside width="45%">
+<image source="pfigs/VFg"/>
+<image source="pfigs/VFh"/>
+</sidebyside>
+
+<p>
+(c) For every <m>(x,y)</m> the vector
+               <m>\vv(x,y) = \frac{y\,\hi -x\,\hj}{\sqrt{x^2+y^2}}</m>
+<ul>
+<li>
+   is of length <m>1</m> and
+</li>
+<li>
+   is perpendicular to the radius vector <m>x\,\hi+y\,\hj</m>.
+</li>
+<li>
+   <m>\vv(x,y)</m> is rightward pointing when <m>y \gt 0</m>
+   and leftward pointing when <m>y \lt 0</m>, and
+</li>
+<li>
+   <m>\vv(x,y)</m> is downward pointing when <m>x \gt 0</m>
+and upward pointing when <m>x \lt 0</m>.
+</li>
+</ul>
+It is sketched in the figure on the right above.
+</p></solution>
+</exercise>
+
+<exercise>
+<statement><p>
+A body of mass <m>M</m> exerts a force of magnitude <m>\frac{GM}{D^2}</m> on a particle  of unit mass distance <m>D</m> away from itself, where <m>G</m> is a physical constant. The force acts in the direction from the particle to the body.
+</p><sidebyside>
+<image><latex-image>\begin{tikzpicture}
+\draw (0,0) node[shape=circle, draw]{$M$};
+\draw (2,1) node[vertex]{};
+\draw[- \gt ] (2,1)--(1,.5);
+\end{tikzpicture}</latex-image></image>
+</sidebyside><p>
+Suppose a mass of 5 kg sits at position <m>(0,0)</m>, a mass of 3 kg sits at position <m>(2,3)</m>, and a mass of 7 kg sits at position <m>(4,0)</m> on a coordinate plane. Give the vector field <m>\vf(x,y)</m> of the net gravitational force exerted on a unit mass at position <m>(x,y)</m>.
+</p></statement>
+
+<hint><p>
+The constant <m>G</m> is the same for all masses, but <m>M</m> differs. The net force is the sum of three force vectors.
+</p></hint>
+
+<answer><p>
+<m>\vf(x,y)=\frac{-5G(x,y)}{(x^2+y^2)^{3/2}}+\frac{3G(2-x,3-y)}{((x-2)^2+(y-3)^2)^{3/2}}+\frac{7G(4-x,-y)}{((x-4)^2+y^2)^{3/2}}
+</m>
+</p></answer>
+
+<solution><p>
+A particle of unit mass at position <m>(x,y)</m> has distance <m>D_1=\sqrt{x^2+y^2}</m> from the 5kg mass, so that mass exerts a force of magnitude <m>\frac{G(5)}{x^2+y^2}</m> on the particle. This force has direction <m>(-x,-y)</m>. So, the force exerted by the 5kg mass is <m>\vf_1(x,y)=\frac{-5G}{(x^2+y^2)^{3/2}}(x,y)</m>.
+</p>
+
+<p>Similarly, the 3 kg mass at <m>(2,3)</m> exerts a force of <m>\vf_2(x,y)=\frac{3G}{((x-2)^2+(y-3)^2)^{3/2}}(2-x,3-y)</m>; and the 7 kg mass at <m>(4,0)</m> exerts a force of <m>\vf_3(x,y)=\frac{7G}{((x-4)^2+y^2)^{3/2}}(4-x,-y)</m>.
+</p>
+
+<p>The net force on a unit mass is therefore
+<md>
+<mrow>
+\vf(x,y)&amp;=\vf_1(x,y)+\vf_2(x,y)+\vf_3(x,y)
+</mrow><mrow>
+&amp;=\frac{-5G(x,y)}{(x^2+y^2)^{3/2}}+\frac{3G(2-x,3-y)}{((x-2)^2+(y-3)^2)^{3/2}}+\frac{7G(4-x,-y)}{((x-4)^2+y^2)^{3/2}}
+</mrow>
+</md>
+</p></solution>
+</exercise>
+</exercisegroup>
+
+<exercisegroup><introduction><application/></introduction>
+
+<exercise>
+<statement><p>
+<ol label="a.">
+<li><p>
+A pole leans against a vertical wall. The pole has length 2, and it touches the wall at height <m>H=1</m>. The pole slides down, still touching the wall, with its height decreasing at a rate of <m>\diff{H}{t}=0.5</m>.
+</p>
+
+<sidebyside>
+<image><latex-image>\begin{tikzpicture}
+\YEaaxis{.5}{7}{.5}{3.5}
+\draw[ultra thick] (5,0)--(0,3);
+\draw[- \gt ] (-.5,3)--(-.5,2.1);
+\color{blue}
+\draw[- \gt ] (-.5,2)--(-.5,1);
+\draw[ultra thick] (5.5,0)--(0,2);
+\color{red}
+\draw[ultra thick] (6,0)--(0,1);
+\end{tikzpicture}</latex-image></image>
+</sidebyside>
+<p>
+Find a vector function <m>\vv:\mathbb [0,2] \to \mathbb R^2</m> for the velocity, when <m>H=1</m>, of a point on the pole that is <m>p</m> units from the lower end, using the coordinate system from the sketch above.
+</p></li>
+<li><p> The frame of an umbrella is constructed by attaching straight, rigid poles to a common centre. The poles are all the same length, so they form radii of a circle.
+</p>
+
+<p>The frame is lifted from the centre of the circle. The edges of the frame drag on the ground, keeping the frame in the shape of a right circular cone that is becoming taller and thinner.
+</p>
+
+<sidebyside>
+<image><latex-image>\begin{tikzpicture}
+\draw (0,0) node[vertex]{};
+\filldraw[fill opacity=0.2] (0,0)--(-2,-1) arc(180:360:2cm and .75cm)--(0,0);
+\draw (0,0)--(-1,-1.65);
+\draw (0,0)--(1,-1.65);
+\draw[thick,- \gt ] (3,-.5)--(4,-.5);
+\end{tikzpicture}</latex-image></image>
+</sidebyside>
+
+<sidebyside>
+<image><latex-image>\begin{tikzpicture}
+\draw (0,0) node[vertex]{};
+\filldraw[fill opacity=0.2] (0,0)--(-1,-2) arc(180:360:1cm and .375cm)--(0,0);
+\draw (0,0)--(-.5,-2.35);
+\draw (0,0)--(.5,-2.35);
+\end{tikzpicture}</latex-image></image>
+</sidebyside>
+
+<p>
+Suppose the length of each pole is 2 metres, and the centre of the frame is being lifted at a rate of 50 cm/s.  Give a vector field for the velocity <m>\vV(x,y,z)</m> of a point
+           <m>(x,y,z)</m> on the frame when its centre is 1 metre above the ground.
+</p>
+
+<p>Let the ground have height <m>z=0</m>, and let the centre of the frame sit directly above the origin.
+</p>
+</li>
+</ol>
+</p></statement>
+
+<hint><p>
+For part a., make a triangle with <m>P</m> as one of its vertices that is similar to the triangle made by the pole, the wall, and the ground. Its hypotenuse has length <m>p</m>; let its base be <m>b</m> and its height be <m>h</m>. Find a way to translate between <m>(b,h)</m> and <m>(x,y)</m>.
+</p>
+
+<p>For part b., use your answer from part a. Start by describing a point on a pole as its distance from the lower end of the pole, <m>p</m>. Then, consider <m>\diff{z}{t}</m> and <m>\left(\diff{x}{t},\diff{y}{t}\right)</m> separately. If you're having a hard time simplifying your answer, note  <m>\sqrt{x^2+y^2}=\sqrt3(1-z)</m> for any point <m>(x,y,z)</m> on a pole when <m>H=1</m>.
+</p></hint>
+
+<answer><p>
+a. <m>\vv(p)=\left( \left(1-\frac{p}{2}\right)\frac{1}{2\sqrt{3}} , -\frac{p}{4} \right)</m>
+</p><p>
+b. <m>\vV(x,y,z)=\left(
+-\frac{x}{6}, -\frac{y}{6},\frac{z}{2}\right)</m> or equivalent
+</p></answer>
+
+<solution><p>
+<ol label="a.">
+<li><p>
+	Consider a point <m>P</m> on the pole that is a distance <m>p</m> away from the bottom end. Use this point to make a smaller right triangle, as in the picture below.
+</p>
+
+<sidebyside>
+<image><latex-image>\begin{tikzpicture}
+\YEaaxis{.5}{5.5}{.5}{3.5}
+\draw[thick] (5,0)-|(0,3)--cycle;
+\draw (2,2) node[ above]{2};
+\draw (-.5,1.5) node{$H$};
+\draw (2.5,-1.25) node{$\sqrt{4-H^2}$};
+\color{red}
+\draw (3,1.2) node[vertex, label=above:{$P$}]{};
+\filldraw[fill opacity=0.1](5,0)-|(3,1.2)--cycle;
+\draw[|-|] (5.5,.5) --(3.5,1.7) node[midway, above]{$p$};
+\draw (4,-.5) node{$b$};
+\draw (2.5,.5) node{$h$};
+\end{tikzpicture}</latex-image></image>
+</sidebyside>
+
+<p>
+Using similar triangles:
+<md>
+<mrow>
+ h&amp;=\frac{p}{2}H  &amp; b&amp;=\frac{p}{2}\sqrt{4-H^2}
+</mrow>
+<intertext>If <m>P</m> is at position <m>(x,y)</m>, then:</intertext><mrow>
+ y&amp;=h=\frac{p}{2}H &amp; x&amp;=\sqrt{4-H^2}-b=\left(1-\frac{p}{2}\right)\sqrt{4-H^2}
+</mrow><mrow>
+\diff{y}{t}&amp;=\frac{p}{2}\diff{H}{t}=-\frac{p}{4}
+&amp;\diff{x}{t}&amp;=\left(1-\frac{p}{2}\right)\frac{-H}{\sqrt{4-H^2}}\diff{H}{t}=\left(1-\frac{p}{2}\right)\frac{H}{2\sqrt{4-H^2}}
+</mrow>
+<intertext>When <m>H=1</m>:</intertext><mrow>
+\left.\diff{y}{t}\right|_{H=1}&amp;=-\frac{p}{4}
+&amp;\left.\diff{x}{t}\right|_{H=1}&amp;=\left(1-\frac{p}{2}\right)\frac{1}{2\sqrt{3}}
+</mrow>
+</md>
+Therefore,
+<me>
+\vv(p)=\left.\left( \diff{x}{t},\diff{y}{t}\right)\right|_{H=1}=\left( \left(1-\frac{p}{2}\right)\frac{1}{2\sqrt{3}} , -\frac{p}{4} \right)</me>
+</p>
+
+<p>For our model, we set the domain of this function to be <m>[0,2]</m>.
+</p>
+</li>
+<li>
+<p>
+Let's start by seeing what we can salvage from our work on part a.
+As in part a., consider a point <m>P</m> on one of the poles, <m>p</m> metres from the bottom end.
+</p>
+
+<sidebyside>
+<image><latex-image>\begin{tikzpicture}[xscale=1.25]
+\draw[thick] (5,0)-|(0,3)--cycle;
+\draw (0,3) node[vertex, label=left:{$(0,0,H)$}]{};
+\draw[|-|] (6,1)--(1,4) node[midway, above]{2};
+\draw[|-|] (0,-.3)--(3,-.3) node[midway, below]{$\sqrt{x^2+y^2}$};
+\draw[|-|] (0,-1.25)--(5,-1.25) node[midway, below]{$\sqrt{4-H^2}$};
+\color{red}
+\draw[thick, red, fill=red, fill opacity=0.1] (5,0)-|(3,1.2)--cycle;
+\draw (3,1.2) node[vertex, label=left:{$P=(x,y,z)$}]{};
+\draw[|-|] (5.5,.5) --(3.5,1.7) node[midway, above]{$p$};
+\end{tikzpicture}</latex-image></image>
+</sidebyside>
+
+<p>
+Let <m>P</m> have position <m>(x,y,z)</m>. Noting that <m>\diff{H}{t}</m> is now positive, not negative, if we stick to this two-dimensional slice,
+<me>
+ \vV(p)=\left( \left(1-\frac{p}{2}\right)\frac{-1}{2\sqrt{3}} , \frac{p}{4} \right) </me>
+</p>
+
+<p>where the second coordinate is <m>z</m> and the first coordinate refers to the (horizontal) line in the direction of the vector <m>(x,y,0)</m>.
+</p>
+
+<sidebyside>
+<image><latex-image>\begin{tikzpicture}[scale=2]
+\draw[help lines, - \gt ] (0,-1)--(0,1.5) node[above]{$z$};
+\draw (0,1) node[vertex, label=above right:{$(0,0,H)$}]{};
+\draw (0,1)--(-2,-1) arc(180:360:2cm and .75cm)--(0,1);
+\filldraw[fill opacity=0.1] (0,1)--(1,-1.65)--(0,-1)--cycle;
+\draw (0,-1) node[vertex, label=left:{$(0,0,0)$}]{};
+\draw[- \gt ,blue] (0,-1) -- (1.5,-1.98) node[right]{$c\cdot(x,y,0)$};
+\color{red}
+\fill[opacity=0.2,red] (1,-1.65)--(.66,-.77)--(.66,-1.44)--cycle;
+\draw[red, |-|] (.8,-.7)--(1.1,-1.6) node[midway, right]{$p$};
+\draw (.66,-.77) node[vertex, label=above right:{$(x,y,z)$}]{};
+\draw (.66,-1.44) node[vertex, label= left:{$(x,y,0)$}]{};
+\end{tikzpicture}</latex-image></image>
+</sidebyside>
+
+<p>
+So, we know <m>\displaystyle\left.\diff{z}{t}\right|_{H=1}=\frac{p}{4}</m>, and we know <m>\displaystyle\left.\left(\diff{x}{t},\diff{y}{t}\right)\right|_{H=1}=(x,y)c</m> for some negative constant <m>c</m> with <m>|(x,y)c|=\left(1-\frac{p}{2}\right)\frac{1}{2\sqrt{3}}</m>. Since we have the direction and the magnitude of the vector, we can find the vector:
+<me>
+\left.\left( \diff{x}{t},\diff{y}{t}\right)\right|_{H=1}=(x,y)c=-\frac{\left(1-\frac{p}{2}\right)}{2\sqrt 3\sqrt{x^2+y^2}}(x,y)
+</me>
+</p>
+
+<p>We want our equation to be in terms of <m>x</m>, <m>y</m>, and <m>z</m>, so we need to get rid of <m>p</m>.
+Using similar triangles, <m>\frac{p}{2}=\frac{\sqrt{4-H^2}-\sqrt{x^2+y^2}}{\sqrt{4-H^2}}</m>. When <m>H=1</m>, then <m>1-\frac{p}{2}=\frac{\sqrt{x^2+y^2}}{\sqrt3}</m>. So:
+</p>
+
+<p><me>
+\left.\left( \diff{x}{t},\diff{y}{t}\right)\right|_{H=1}
+=-\frac{1}{6}(x,y)</me>
+</p>
+
+<p>Finally:
+<me>
+\vV(x,y,z)=\left.\left( \diff{x}{t},\diff{y}{t},\diff{z}{t}\right)\right|_{H=1}=\left(
+-\frac{1}{6}x ,
+-\frac{1}{6}y ,
+\frac{1}{2}z\right)</me>
+</p>
+
+<p>Not all values of <m>(x,y,z)</m> are on the frame. But, for those values of <m>(x,y,z)</m> that <em>are</em> on the frame, this equation holds.
+</p>
+</li>
+</ol>
+</p></solution>
+</exercise>
+</exercisegroup>
+
+</exercises>
