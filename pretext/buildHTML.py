@@ -24,7 +24,7 @@ xsltFile = pretextPath + "/xsl/mathbook-html.xsl"
 xsFile = pretextPath + "/schema/pretext.rng"
 xs = ET.RelaxNG(ET.parse(xsFile))
 # mbx location
-mbx = pretextPath + "/script/mbx"
+ptx = pretextPath + "/pretext/pretext"
 
 # now some tag operations
 # each in this list should be a 4-ple [ancestor-tag, tag, replace-before, replace-after]
@@ -45,9 +45,9 @@ myTags = [
 myRep = [
     # I had these set so that I could see all parts of exercises on page.
     # breaks validation, but really helps debugging.
-    # ["hint", "statement",],
-    # ["answer", "statement"],
-    # ["solution", "statement"],
+    ["hint", "statement",],
+    ["answer", "statement"],
+    ["solution", "statement"],
 ]
 
 # ["foo", pretextStuff] replaces <foo/> with pretextStuff
@@ -184,7 +184,7 @@ htmlSource = transform(procd, **param)
 print("HTML written")
 print("Processing tikz to svg")
 subprocess.check_output(
-    [mbx, "-vv", "-c", "latex-image", "-f", "svg", "-d", "images", "../" + sourceFile]
+    [ptx, "-c", "latex-image", "-f", "svg", "-d", "images", "../" + sourceFile]
 )
 
 print("Error log:")
