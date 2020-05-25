@@ -26,6 +26,8 @@
   \newcommand{\bdiff}[2]{ \frac{\mathrm{d}}{\mathrm{d}#2} \left( #1 \right)}
   \newcommand{\ddiff}[3]{ \frac{\mathrm{d}^#1#2}{\mathrm{d}{#3}^#1}}
 
+  \newcommand{\pdiff}[2]{ \frac{\partial #1}{\partial #2}}
+
   \newcommand{\bbbn}{\mathbb{N}}
   \newcommand{\bbbr}{\mathbb{R}}
   \newcommand{\bbbp}{\mathbb{P}}
@@ -54,6 +56,7 @@
   \newcommand{\vb}{\mathbf{b}}
   \newcommand{\vc}{\mathbf{c}}
   \newcommand{\ve}{\mathbf{e}}
+  \newcommand{\vf}{\mathbf{f}}
   \newcommand{\vC}{\mathbf{C}}
   \newcommand{\vp}{\mathbf{p}}
   \newcommand{\vn}{\mathbf{n}}
@@ -177,6 +180,74 @@
 
 \usepackage{pgfplots}
 \pgfplotsset{width=65mm,compat=1.9, tick label style={font=\scriptsize}}
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%% tikz pattern hatch distance control (Joel) %%%%%%%%
+
+% variant of https://tex.stackexchange.com/a/29367/121799
+\tikzset{
+    hatch distance/.store in=\hatchdistance,
+    hatch distance=10pt,
+    hatch thickness/.store in=\hatchthickness,
+    hatch thickness=2pt
+}
+
+\makeatletter
+\pgfdeclarepatternformonly[\hatchdistance,\hatchthickness]{NE lines}
+{\pgfqpoint{0pt}{0pt}}
+{\pgfpoint{1.5*\hatchdistance}{1.5*\hatchdistance}}
+{\pgfpoint{1.4142*\hatchdistance}{1.4142*\hatchdistance}}%
+{
+    \pgfsetcolor{\tikz@pattern@color}
+    \pgfsetlinewidth{\hatchthickness}
+    \pgfpathmoveto{\pgfqpoint{0pt}{0pt}}
+    \pgfpathlineto{\pgfpoint{1.4142*\hatchdistance}{1.4142*\hatchdistance}}
+    \pgfusepath{stroke}
+}
+\makeatother
+
+\makeatletter
+\pgfdeclarepatternformonly[\hatchdistance,\hatchthickness]{EW lines}
+{\pgfqpoint{0pt}{0pt}}
+{\pgfqpoint{\hatchdistance}{\hatchdistance}}
+{\pgfpoint{\hatchdistance}{\hatchdistance}}%
+{
+    \pgfsetcolor{\tikz@pattern@color}
+    \pgfsetlinewidth{\hatchthickness}
+    \pgfpathmoveto{\pgfqpoint{0pt}{0pt}}
+    \pgfpathlineto{\pgfqpoint{\hatchdistance}{0pt}}
+    \pgfusepath{stroke}
+}
+\makeatother
+
+\makeatletter
+\pgfdeclarepatternformonly[\hatchdistance,\hatchthickness]{NS lines}
+{\pgfqpoint{0pt}{0pt}}
+{\pgfqpoint{\hatchdistance}{\hatchdistance}}
+{\pgfpoint{\hatchdistance}{\hatchdistance}}%
+{
+    \pgfsetcolor{\tikz@pattern@color}
+    \pgfsetlinewidth{\hatchthickness}
+    \pgfpathmoveto{\pgfqpoint{0pt}{0pt}}
+    \pgfpathlineto{\pgfqpoint{0pt}{\hatchdistance}}
+    \pgfusepath{stroke}
+}
+\makeatother
+
+\makeatletter
+\pgfdeclarepatternformonly[\hatchdistance,\hatchthickness]{NW lines}
+{\pgfqpoint{0pt}{0pt}}
+{\pgfpoint{1.5*\hatchdistance}{1.5*\hatchdistance}}
+{\pgfpoint{1.4142*\hatchdistance}{1.4142*\hatchdistance}}%
+{
+    \pgfsetcolor{\tikz@pattern@color}
+    \pgfsetlinewidth{\hatchthickness}
+    \pgfpathmoveto{\pgfpoint{1.4142*\hatchdistance}{0pt}}
+    \pgfpathlineto{\pgfpoint{0pt}{1.4142*\hatchdistance}}
+    \pgfusepath{stroke}
+}
+\makeatother
 
 </latex-image-preamble>
 
