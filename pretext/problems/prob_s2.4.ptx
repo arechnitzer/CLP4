@@ -1,0 +1,4083 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+
+<!-- Copyright 2018 Joel Feldman, Andrew Rechnitzer and Elyse Yeager -->
+<!-- This work is licensed under the Creative Commons Attribution-NonCommercial-ShareAlike 4.0 International License-->
+<!-- https://creativecommons.org/licenses/by-nc-sa/4.0 -->
+
+<exercises>
+
+<exercisegroup><introduction><conceptual/></introduction>
+
+<exercise>
+<statement><p>
+Evaluate <m>\int_\cC x^2y^2\,\dee{x}+x^3y\,\dee{y}</m> counterclockwise around
+the square with vertices <m>(0,0)</m>, <m>(1,0)</m>, <m>(1,1)</m> and <m>(0,1)</m>.
+</p></statement>
+
+<hint><p>
+The top and bottom of the square can be easily paramerized using <m>x</m>
+as the parameter. The other two sides can be easily parameterized using <m>y</m>
+as the parameter.
+</p></hint>
+<answer><p>
+<m>\frac{1}{6}</m>
+</p></answer>
+<solution><p>
+The square has four sides, each of which is a line segment.
+<ul>
+<li>
+On the first side, <m>y=0</m> and <m>\dee{y}=0</m>. That is, we may parametrize
+the first side by <m>\vr(x)=x\,\hi</m> with <m>0\le x\le 1</m>.
+</li>
+<li>
+On the second side, <m>x=1</m> and <m>\dee{x}=0</m>. We may parametrize
+the second side by <m>\vr(y)=\hi+y\,\hj</m> with <m>0\le y\le 1</m>.
+</li>
+<li>
+On the third side, <m>y=1</m> and <m>\dee{y}=0</m>. We may parametrize the
+third side by <m>\vr(x)=x\,\hi+\hj</m> with <m>x</m> running from <m>1</m> to <m>0</m>.
+</li>
+<li>
+On the final side, <m>x=0</m> and <m>\dee{x}=0</m>.  We may parametrize the
+fourth side by <m>\vr(y)=y\,\hj</m> with <m>y</m> running from <m>1</m> to <m>0</m>.
+</li>
+</ul>
+</p>
+
+<sidebyside width="75%">
+  <image source="pfigs/square"/>
+</sidebyside>
+
+<p>
+So
+<md>
+<mrow>
+\int_\cC x^2y^2\,\dee{x}+x^3y\,\dee{y}
+&amp;=\int_0^1 x^2\times 0^2\,\dee{x} +\int_0^1 1^3\times y\,\dee{y}
++\int_1^0 x^2\times 1^2\,\dee{x} +\int_1^0 0^3\times y\,\dee{y}
+</mrow><mrow>
+&amp;=\frac{1}{2}-\frac{1}{3}
+=\frac{1}{6}
+</mrow>
+</md>
+</p>
+
+</solution>
+</exercise>
+
+<exercise>
+<statement><p>
+For each of the following fields, decide which of the following holds:
+<ol label="A">
+<li> The characterization of conservative vector fields, Theorem<nbsp/><xref ref="thm_screenConserv"/> (with Theorem<nbsp/><xref ref="thm_screen"/>),  tells us <m>\vF</m> is conservative.
+</li>
+<li> The characterization of conservative vector fields, Theorem<nbsp/><xref ref="thm_screenConserv"/> (with Theorem<nbsp/><xref ref="thm_screen"/>), tells us <m>\vF</m> is <alert>not</alert> conservative.
+</li>
+<li> The characterization of conservative vector fields, Theorem<nbsp/><xref ref="thm_screenConserv"/> (with Theorem<nbsp/><xref ref="thm_screen"/>), does not tell us whether <m>\vF</m> is conservative or not.
+</li>
+</ol>
+</p>
+
+<p><ol label="a">
+<li> <m>\vF=x\hi + z\hj + y\hk</m>
+</li>
+<li> <m>\vF=y^2z\hi + x^2z\hj + x^2y\hk</m>
+</li>
+<li> <m>\vF=(ye^{xy}+1)\hi + (xe^{xy}+z)\hj + \left( \frac1z+y\right)\hk</m>
+</li>
+<li> <m>\vF=y\cos(xy)\hi + x\sin(xy)\hj </m>
+</li>
+</ol>
+</p></statement>
+<hint><p>
+Contrast Theorems<nbsp/><xref ref="thm_screenConserv"/> and <xref ref="thm_screen"/>.
+</p></hint>
+<answer><p>
+a.  A </p><p>
+b.  B </p><p>
+c.  A </p><p>
+d.  B
+</p></answer>
+<solution><p>
+Every <m>\vF</m> in this problem is defined and has continuous first-order partial derivatives on all of <m>\mathbb R^2</m> or <m>\mathbb R^3</m>. The characterization in Theorem<nbsp/><xref ref="thm_screenConserv"/> tells us that our fields will be conservative if and only if they pass the screening test, i.e. have curl 0.
+</p>
+
+<p><ol label="a">
+<li> <md>
+<mrow>\vF&amp;=x\hi + z\hj + y\hk
+</mrow><mrow>
+\vnabla \times \vF&amp;=\Big(\frac{\partial F_3}{\partial y} -\frac{\partial F_2}{\partial z} \Big)\hi
++\Big(\frac{\partial F_1}{\partial z} -\frac{\partial F_3}{\partial x} \Big)\hj
++\Big(\frac{\partial F_2}{\partial x} -\frac{\partial F_1}{\partial y} \Big)\hk
+</mrow><mrow>
+&amp;=(1-1)\hi+(0-0)\hj+(0-0)\hk = \mathbf0
+</mrow>
+</md>
+This field passes the screening test.  Since <m>\vF</m> is defined and has continuous first-order partial derivatives on all of <m>\mathbb R^3</m>, it is conservative. So, we have option A.
+</li>
+<li>  <md>
+<mrow>\vF&amp;=y^2z\hi + x^2z\hj + x^2y\hk
+</mrow><mrow>
+\vnabla \times \vF&amp;=\Big(\frac{\partial F_3}{\partial y} -\frac{\partial F_2}{\partial z} \Big)\hi
++\Big(\frac{\partial F_1}{\partial z} -\frac{\partial F_3}{\partial x} \Big)\hj
++\Big(\frac{\partial F_2}{\partial x} -\frac{\partial F_1}{\partial y} \Big)\hk
+</mrow><mrow>
+&amp;=(x^2-x^2)\hi+(y^2-2xy)\hj+(2xz-2yz)\hk \neq \mathbf0
+</mrow>
+</md>
+So, <m>\vF</m> fails the screening test.  So, it's not conservative. That's option B.
+</li>
+<li>
+ <md>
+<mrow>\vF&amp;=(xe^{xy}+1)\hi + (ye^{xy}+z)\hj + \left( \frac1z+y\right)\hk
+</mrow><mrow>
+\vnabla \times \vF&amp;=\Big(\frac{\partial F_3}{\partial y} -\frac{\partial F_2}{\partial z} \Big)\hi
++\Big(\frac{\partial F_1}{\partial z} -\frac{\partial F_3}{\partial x} \Big)\hj
++\Big(\frac{\partial F_2}{\partial x} -\frac{\partial F_1}{\partial y} \Big)\hk
+</mrow><mrow>
+&amp;=(1-1)\hi+(0-0)\hj+(e^{xy}(xy+1)-xye^{xy}(xy+1))\hk = \mathbf0
+</mrow>
+</md>
+<m>\vF</m> passes the screening test. Since <m>\vF</m> is defined and has continuous first-order partial derivatives on all of <m>\mathbb R^3</m>, it is conservative. So, we have option A.
+</li>
+<li>
+ <md>
+<mrow>\vF&amp;=y\cos(xy)\hi + x\sin(xy)\hj
+</mrow><mrow>
+\frac{\partial F_2}{\partial x}&amp;=xy\cos(xy)+\sin(xy)
+</mrow><mrow>
+\frac{\partial F_1}{\partial y}&amp;=-xy\sin(xy)+\cos(xy)
+</mrow><mrow>
+\frac{\partial F_2}{\partial x}&amp;\neq \frac{\partial F_1}{\partial y}
+</mrow>
+</md>
+<m>\vF</m> fails the screening test, so it is not conservative.
+That is Option B.
+</li>
+</ol>
+</p></solution>
+</exercise>
+
+<exercise>
+<statement><p>
+Let <m>\varphi(x,y,z)=e^{x^2+y^2}+\cos(z^2)</m>, and define <m>\vF = \vnabla \varphi</m>. Evaluate <m>\int_C\vF\cdot\dee{\vr}</m> over the closed curve <m>C</m> that is an ellipse  traversed clockwise, centred at <m>(1,2,3)</m>, passing through the points <m>(\sqrt5-1,-2,\sqrt5-3)</m>, <m>((\sqrt5-2)/2,-1/2,(\sqrt5-6)/2)</m>, and <m>(-2,\sqrt 3-2,\sqrt3-3)</m>.
+</p>
+
+</statement>
+<hint><p>
+Please don't do any computation, especially not to find <m>C</m>!
+</p></hint>
+<answer><p>
+0
+</p></answer>
+<solution><p>
+Since <m>\vF</m> is conservative, <m>\int_C\vF\cdot\dee{\vr}=0</m> over any closed curve <m>C</m>. The given curve is closed, so the integral is simply zero.
+</p></solution>
+</exercise>
+
+<exercise>
+<statement><p>
+Let <m>P_1</m> and <m>P_2</m> be points in <m>\mathbb R^2</m>. Let <m>A</m> and <m>B</m> be paths from <m>P_1</m> to <m>P_2</m>, as shown below.
+</p>
+
+<sidebyside>
+<image><latex-image>\begin{tikzpicture}
+\draw[ultra thick, blue] plot[smooth, domain=-.79:3.93]({2*sin( \x r)},{2*sin( (\x*2) r)});
+\draw[ultra thick, blue,- \gt ] plot[smooth, domain=-.45:-.5]({2*sin( \x r)},{2*sin( (\x*2) r)});
+\draw[ultra thick, blue,- \gt ] plot[smooth, domain=3.5:3.45]({2*sin( \x r)},{2*sin( (\x*2) r)});
+\draw[ultra thick, blue,- \gt ] plot[smooth, domain=1.6:1.55]({2*sin( \x r)},{2*sin( (\x*2) r)});
+\draw[blue] (2.5,0) node{B};
+\draw (-1.4,2) node[vertex, label=above:${P_1}$](b){};
+\draw (-1.4,-2) node[vertex, label=below:${P_2}$](c){};
+\draw[ultra thick, red] (b) to[out=224, in=135] (c);
+\draw[red] (-2.25,0) node[left]{A};
+\draw[ultra thick, red,- \gt ] (-2.1,1)--(-2.15,.9);
+\end{tikzpicture}</latex-image></image>
+</sidebyside>
+
+<p>
+Suppose <m>\vF</m> is a conservative vector field in <m>\mathbb R^2</m> with <m>\int_A \vF\cdot\dee{\vr}=5</m>. What is <m>\int_B \vF\cdot\dee{\vr}?</m>
+</p></statement>
+<hint><p>
+Review properties of conservative vector fields.
+</p></hint>
+<answer><p>
+5
+</p></answer>
+<solution><p>
+Since <m>\vF</m> is conservative, and <m>A</m> and <m>B</m> start and end at the same points, by path-independence
+<m>\int_B \vF\cdot\dee{\vr}=\int_A \vF\cdot\dee{\vr}=5.</m>
+</p></solution>
+</exercise>
+
+<exercise><title><fromexam>M317 2016D</fromexam></title>
+<statement><p>
+Let <m>\vF(x, y, z) = e^x \sin y\,\hi + \big[ ae^x \cos y + bz\big]\,\hj
+   + cx\, \hk</m>. For which values of the constants <m>a</m>, <m>b</m>, <m>c</m>
+is <m>\int_C\vF\cdot\dee{\vr}=0</m> for all closed paths <m>C</m>?
+</p></statement>
+
+<hint><p>
+Review Theorem<nbsp/><xref ref="thm_pathIndepConserv"/> in the text.
+</p></hint>
+
+<answer><p>
+<m>a=1</m>, <m>b=c=0</m>
+</p></answer>
+
+<solution><p>
+By Theorem<nbsp/><xref ref="thm_pathIndepConserv"/>, the condition that
+ <q><m>\int_C\vF\cdot\dee{\vr}=0</m> for all closed paths <m>C</m></q>
+is equivalent to the condition that <q><m>\vF</m> is conservative</q>, which,
+since <m>\vF</m> is defined on all of <m>\bbbr^3</m>, is equivalent to the condition
+that <m>\vF</m> pass the screening test
+<md>
+<mrow>
+\vZero =\vnabla\times \vF
+&amp;=\det\left[\begin{matrix}\hi&amp;\hj&amp;\hk \\
+     \frac{\partial }{\partial x}&amp;
+        \frac{\partial }{\partial y}&amp;
+        \frac{\partial }{\partial z}\\
+        e^x \sin y &amp; ae^x \cos y + bz &amp; cx\end{matrix}\right]
+= -b\,\hi-c\,\hj+\big(ae^x\cos y-e^x\cos y\big)\,\hk
+</mrow>
+</md>
+which is the case if and only if <m>b=c=0</m> and <m>a=1</m>.
+</p></solution>
+</exercise>
+
+<exercise>
+<statement><p>
+Consider the four vector fields sketched below. Exactly one of
+those vector fields is conservative. Determine which three vector fields
+are not conservative and explain why.
+</p>
+
+<sbsgroup widths="5% 40% 5% 40%">
+  <sidebyside>
+  <p>(a)</p> <image source="pfigs/VFa"/>
+  <p>(b)</p> <image source="pfigs/VFb"/>
+  </sidebyside>
+  <sidebyside>
+  <p>(c)</p> <image source="pfigs/VFc"/>
+  <p>(d)</p> <image source="pfigs/VFd"/>
+  </sidebyside>
+</sbsgroup>
+
+</statement>
+
+<hint><p>
+Review Theorem<nbsp/><xref ref="thm_pathIndepConserv"/> in the text.
+</p></hint>
+
+<answer><p>
+(a) Not conservative </p><p>
+(b) Not conservative </p><p>
+(c) Not conservative </p><p>
+(d) Conservative
+</p></answer>
+
+<solution><p>
+(a) Consider the circle <m>\cC</m> in the figure (a) on the left below,
+oriented <em>clockwise</em>. The vector field <m>\vF</m> is in the same
+direction as <m>\diff{\vr}{t}</m> at every point of the curve.
+So <m>\vF\cdot\diff{\vr}{t} \gt 0</m> at every point of <m>\cC</m> and
+<m>\cC</m> is a closed curve with <m>\oint_{\cC}\vF\cdot \dee{\vr} \gt 0</m>.
+As a consequence  <m>\vF</m> is not conservative.
+</p>
+
+<sidebyside widths="5% 40% 5% 40%">
+<p>(a)</p> <image source="pfigs/VFas"/>
+<p>(b)</p> <image source="pfigs/VFbs"/>
+</sidebyside>
+
+<p>
+(b) Consider the square in the figure (b) on the right above,
+oriented <em>counterclockwise</em>. It consists of the four line
+segments <m>L_1</m>, <m>L_2</m>, <m>L_3</m> and <m>L_4</m>. On all of <m>L_1</m>, <m>L_2</m>, <m>L_3</m>
+we have that <m>\vF\big(\vr(t)\big)\cdot\vr'(t)=0</m> because the vector
+field is perpendicular to the line segment. On  <m>L_4</m>
+we have <m>\vF\big(\vr(t)\big)\cdot\vr'(t) \gt 0</m>. So
+<md>
+<mrow>
+\oint_{\cC}\vF\cdot \dee{\vr} &amp;= \int_{L_1}\vF\cdot \dee{\vr}
+                         +\int_{L_2}\vF\cdot \dee{\vr}
+                         +\int_{L_3}\vF\cdot \dee{\vr}
+                         +\int_{L_4}\vF\cdot \dee{\vr}
+</mrow><mrow>
+                         &amp; =0+0+0+\int_{L_4}\vF\cdot \dee{\vr} \gt 0
+</mrow>
+</md>
+So <m>\cC</m> is a closed curve with <m>\oint_{\cC}\vF\cdot \dee{\vr} \gt 0</m>
+and  <m>\vF</m> is not conservative.
+</p>
+
+<p>(c) Consider the square in the figure (c) on the left below,
+oriented <em>counterclockwise</em>. It consists of the four line
+segments <m>L_1</m>, <m>L_2</m>, <m>L_3</m> and <m>L_4</m>. On <m>L_1</m> and <m>L_3</m>
+we have that the dot product <m>\vF\big(\vr(t)\big)\cdot\vr'(t)=0</m> because the vector
+field is perpendicular to the line segment. On  <m>L_2</m>
+we have <m>\vF\big(\vr(t)\big)\cdot\vr'(t) \lt 0</m> while on  <m>L_4</m>
+we have <m>\vF\big(\vr(t)\big)\cdot\vr'(t) \gt 0</m>. The vector field
+<m>\vF</m> is longer on <m>L_4</m> than on <m>L_2</m>. So
+<m>\vF\big(\vr(t)\big)\cdot\vr'(t)</m> has a larger magnitude on <m>L_4</m>
+than <m>L_2</m> and
+<md>
+<mrow>
+\oint_{\cC}\vF\cdot \dee{\vr} &amp;= \int_{L_1}\vF\cdot \dee{\vr}
+                         +\int_{L_2}\vF\cdot \dee{\vr}
+                         +\int_{L_3}\vF\cdot \dee{\vr}
+                         +\int_{L_4}\vF\cdot \dee{\vr}
+</mrow><mrow>
+                         &amp; =0+\int_{L_2}\vF\cdot \dee{\vr}+0
+                           +\int_{L_4}\vF\cdot \dee{\vr} \gt 0
+</mrow>
+</md>
+So <m>\cC</m> is a closed curve with <m>\oint_{\cC}\vF\cdot \dee{\vr} \gt 0</m>
+and  <m>\vF</m> is not conservative.
+</p>
+
+<sidebyside>
+<p>(c)</p> <image source="pfigs/VFcs"/>
+<p>(d)</p> <image source="pfigs/VFd"/>
+</sidebyside>
+
+<p>
+(d) We are told that one of the four vector fields is
+conservative. Only the vector field in (d) is left, so it is
+conservative.
+</p>
+
+<p><em>Remark:</em>
+We can verify that vector field (d) is indeed conservative
+by observing (look at the figure (d) on the right above)
+that the <m>\hi</m> component of the vector field is exactly
+zero and that the <m>\hj</m>  component depends only on <m>y</m>. So the
+vector field is of the form
+<me>
+\vF(x,y) = a(y)\,\hj
+</me>
+for some function <m>a(y)</m>.
+If <m>A(y)</m> is any antiderivative of <m>a(y)</m>, we have <m>\vF=\vnabla A</m>,
+so that <m>\vF</m> is conservative with potential <m>A(y)</m>.
+</p></solution>
+</exercise>
+
+<exercise><title><fromexam>M317 2007A</fromexam></title>
+<statement><p>
+Consider the vector field
+<me>
+\vF(x, y, z) = \frac{x-2y}{x^2+y^2}\,\hi
+              +\frac{2x + y}{x^2+y^2}\,\hj
+              + z\,\hk
+</me>
+<ol label="a">
+<li>
+Determine the domain of <m>\vF</m>.
+</li>
+<li>
+Compute <m>\vnabla \times \vF</m>. Simplify the result.
+</li>
+<li>
+Evaluate the line integral
+<me>
+\int_C \vF \cdot \dee{\vr}
+</me>
+where <m>C</m> is the circle of radius <m>2</m> in the plane <m>z = 3</m>,
+centered at <m>(0, 0, 3)</m> and traversed counter-clockwise if
+viewed from the positive <m>z</m>-axis, i.e. viewed <q>from above</q>.
+</li>
+<li>
+Is <m>\vF</m> conservative?
+</li>
+</ol>
+</p></statement>
+
+<hint><p>
+Part (d) is a hint.
+</p></hint>
+
+<answer><p>
+(a) The (largest possible) domain is <m>D=\Set{(x,y,z)}{x^2+y^2\ne 0}</m>.
+</p>
+
+<p>(b) <m>\vnabla\times\vF=\vZero</m> on <m>D</m></p><p>
+(c) <m>\int_C \vF \cdot \dee{\vr}=4\pi</m></p><p>
+(d) <m>\vF</m> is <em>not</em> conservative.
+</p></answer>
+
+<solution>
+
+<p> (a) The (largest possible) domain is
+<m>
+D=\Set{(x,y,z)}{x^2+y^2\ne 0}
+</m>. That is, all of <m>\mathbb R^3</m> except the points lying along the <m>z</m>-axis.
+</p>
+
+<p> (b)
+As preliminary computations, let's find
+<md>
+<mrow>
+\frac{\partial }{\partial y}\left(\frac{x-2y}{x^2+y^2}\right)
+&amp;=\frac{-2}{x^2+y^2}-\frac{2y(x-2y)}{{(x^2+y^2)}^2}
+=\frac{-2x^2+2y^2-2xy}{{(x^2+y^2)}^2}
+
+</mrow><mrow>
+\frac{\partial }{\partial x}\left(\frac{2x+y}{x^2+y^2}\right)
+&amp;=\frac{2}{x^2+y^2}-\frac{2x(2x+y)}{{(x^2+y^2)}^2}
+=\frac{-2x^2+2y^2-2xy}{{(x^2+y^2)}^2}
+
+</mrow>
+</md>
+So the curl of <m>\vF</m> is
+<md>
+<mrow>
+\vnabla\times\vF
+&amp;=\det\left[\begin{matrix}
+\hi &amp;\hj &amp;\hk
+</mrow><mrow>
+\pdiff{}{x} &amp; \pdiff{}{y} &amp;
+                \pdiff{}{z}
+</mrow><mrow>
+\frac{x-2y}{x^2+y^2} &amp; \frac{2x + y}{x^2+y^2} &amp; z
+\end{matrix}
+\right]
+=\left(\frac{-2x^2+2y^2-2xy}{{(x^2+y^2)}^2}
+  -\frac{-2x^2+2y^2-2xy}{{(x^2+y^2)}^2}\right)\hk
+=\vZero
+</mrow>
+</md>
+<em>on the domain of <m>\vF</m></em>.
+</p>
+
+<p> (c) Parametrize the circle by
+<me>
+\vr(t) = 2\cos t\,\hi +2\sin t\,\hj +3\,\hk\qquad
+\vr'(t) = -2\sin t\,\hi +2\cos t\,\hj
+</me>
+with <m>0\le\theta\le 2\pi</m>. So the integral is
+<md>
+<mrow>
+\int_C \vF \cdot \dee{\vr}
+&amp;=\int_0^{2\pi}\!\!\bigg\{
+       \overbrace{\frac{2\cos t-4\sin t}{4}}^{\frac{x-2y}{x^2+y^2}}\,\hi
+      +\overbrace{\frac{4\cos t + 2\sin t}{4}}^{\frac{2x+y}{x^2+y^2}}\,\hj
+      + \overbrace{3}^{z}\,\hk\bigg\}
+           \cdot
+  \Big\{\overbrace{-2\sin t\,\hi +2\cos t\,\hj}^{\vr'(t)}\Big\}\dee{t}
+</mrow><mrow>
+&amp;=\int_0^{2\pi}
+       \frac{-4\sin t\cos t+8\sin^2 t+8\cos^2t+4\sin t\cos t}{4}\,\dee{t}
+</mrow><mrow>
+&amp;= 2\int_0^{2\pi}\dee{t}
+=4\pi
+</mrow>
+</md>
+</p>
+
+<p> (d) As the integral of <m>\vF</m> around the simple closed curve <m>C</m>
+is not zero, <m>\vF</m> cannot be conservative.
+See Theorem <xref ref="thm_pathIndepConserv"/> and
+Examples <xref ref="eg_screeningCounterexample"/> and <xref ref="eg_greenCC"/>.
+</p></solution>
+</exercise>
+
+<exercise>
+<statement><p>
+Find the work, <m>\int_\cC\vF\cdot \dee{\vr}</m>, done by the force field
+<m>\vF=(x+y)\hi+(x-z)\hj+(z-y)\hk</m> in moving an object
+from <m>(1,0,-1)</m> to <m>(0,-2,3)</m>. Does the work done depend on the path used
+to get from <m>(1,0,-1)</m> to <m>(0,-2,3)</m>?
+</p></statement>
+
+<hint><p>
+The last part of the question is a huge hint.
+</p></hint>
+
+<answer><p>
+<m>9\frac{1}{2}</m> for all paths from <m>(1,0,-1)</m> to <m>(0,-2,3)</m>
+</p></answer>
+
+<solution><p>
+The point here is that <m>\vF</m> is conservative, as
+<m>\vF=\nabla\phi</m> with
+<me>
+\phi=\frac{x^2}{2}+yx-yz+\frac{z^2}{2}
+</me>
+So, for all paths from <m>\vr(t_0)=(1,0,-1)</m> to <m>\vr(t_1)=(0,-2,3)</m>,
+<md>
+<mrow>
+\int_\cC\vF\cdot \dee{\vr}
+=\phi\big(\vr(t_1)\big)-\phi\big(\vr(t_0)\big)
+&amp;=\phi(0, -2, 3)-\phi(1,0,-1)
+</mrow><mrow>
+&amp;=\left[0+0+6+\frac{9}{2}\right]-\left[\frac{1}{2}+0-0+\frac{1}{2}\right]
+</mrow><mrow>
+&amp;=9\frac{1}{2}
+</mrow>
+</md>
+.
+</p>
+
+</solution>
+</exercise>
+</exercisegroup>
+
+<exercisegroup><introduction><procedural/></introduction>
+
+<exercise>
+<statement><p>
+Consider the vector field
+<me>
+\vV(x, y) = (e^x \cos y + x^2, x^2y + 3)
+</me>
+Evaluate the line integral <m>\int_C\vV\cdot \dee{\vr}</m> along the
+oriented  curve <m>C</m> obtained by moving from <m>(0, 0)</m> to <m>(1,0)</m> to
+<m>(1, \pi)</m> and finally to <m>(0, \pi)</m> along straight line segments.
+</p></statement>
+
+<answer><p>
+<m>2(e-1)+\frac{\pi^2}{2}+3\pi</m>
+</p></answer>
+
+<solution><p>
+Note that:
+<ul>
+<li>
+Along the line segment from <m>(0, 0)</m> to <m>(1,0)</m>, <m>x</m> increases
+from <m>0</m> to <m>1</m>, while <m>y</m> is held fixed at <m>y=0</m>.
+So we may parametrize this segment by <m>\vr(x) = x\,\hi</m>, <m>0\le x\le 1</m>.
+</li>
+<li>
+Along the line segment from <m>(1, 0)</m> to <m>(1,\pi)</m>, <m>y</m> increases
+from <m>0</m> to <m>\pi</m>, while <m>x</m> is held fixed at <m>x=1</m>.
+So we may parametrize this segment by <m>\vr(x) = \hi + y\,\hj</m>, <m>0\le y\le\pi</m>.
+</li>
+<li>
+Along the line segment from <m>(1, \pi)</m> to <m>(0,\pi)</m>, <m>x</m> decreases
+from <m>1</m> to <m>0</m>, while <m>y</m> is held fixed at <m>y=\pi</m>.
+So we may parametrize this segment by <m>\vr(x) = x\,\hi+\pi\,\hj</m>
+with <m>x</m> running from <m>1</m> to <m>0</m>.
+</li>
+</ul>
+Hence
+<md>
+<mrow>
+\int_C \vV\cdot \dee{\vr}
+&amp;=\int_0^1 \vV(x,0)\cdot\hi\ \dee{x}+\int_0^\pi \vV(1,y)\cdot\hj\ \dee{y}
++\int_1^0 \vV(x,\pi)\cdot\hi\ \dee{x}
+</mrow><mrow>
+&amp;=\int_0^1 (e^x+x^2)\ \dee{x}
+         +\int_0^\pi (y+3)\ \dee{y}+\int_1^0 (-e^x+x^2)\ \dee{x}\cr
+&amp;=2\int_0^1 e^x\ \dee{x}+\int_0^\pi (y+3)\ \dee{y}
+</mrow><mrow>
+&amp;=2(e-1)+\frac{\pi^2}{2}+3\pi
+</mrow>
+</md>
+</p></solution>
+</exercise>
+
+<exercise>
+<statement><p>
+Evaluate <m>\int_\cC\vF\cdot \dee{\vr}</m> for
+<ol label="a">
+<li>
+<m>\vF(x,y)=xy\,\hi-x^2\,\hj</m> along <m>y=x^2</m> from <m>(0,0)</m> to <m>(1,1)</m>.
+</li>
+<li>
+<m>\vF(x,y,z)=(x-z)\,\hi+(y-z)\,\hj-(x+y)\,\hk</m> along the polygonal path from
+<m>(0,0,0)</m> to <m>(1,0,0)</m> to <m>(1,1,0)</m> to <m>(1,1,1)</m>.
+</li>
+</ol>
+</p></statement>
+
+<answer><p>
+(a) <m>-\frac{1}{4}</m> </p><p>
+(b) <m>-1</m>
+</p></answer>
+
+<solution><p>
+(a)
+We may parametrize the curve by <m>\vr(t)=t\,\hi+t^2\,\hj</m> with <m>0\le t\le 1</m>.
+Then <m>\vv(t)=\diff{\vr}{t}(t)=\hi+2t\,\hj</m> and
+<m>\vF\big(x(t),y(t)\big)=t^3\,\hi-t^2\,\hj</m> so
+<md>
+<mrow>
+\int_\cC\vF\cdot \dee{\vr}
+&amp;=\int_0^1 \vF\big(x(t),y(t)\big)\cdot \diff{\vr}{t}(t)\ \dee{t}
+=\int_0^1\big[t^3\,\hi-t^2\,\hj\big]
+\cdot\big[\hi+2t\,\hj\big]\,\dee{t}
+=\int_0^1\big[-t^3\big]\,\dee{t}
+</mrow><mrow>
+&amp;=-\frac{1}{4}
+</mrow>
+</md>
+</p>
+
+<p>(b) The path is the union of three line segments.
+<ul>
+<li>
+On the first segment of the path <m>y=z=0</m> so <m>\vF</m> simplifies
+to <m>x\,\hi-x\,\hk</m> and <m>\dee{\vr}=\hi\ \dee{x}</m> (i.e. we can parametrize
+the first segment of the path by <m>\vr(x)=x\,\hi</m> with <m>0\le x\le 1</m>),
+so <m>\vF\cdot \dee{\vr}=x\,\dee{x}</m>.
+</li>
+<li>
+On the second segment of the path <m>x=1</m>, <m>z=0</m> so <m>\vF</m> simplifies
+to <m>\hi+y\hj-(1+y)\hk</m> and <m>\dee{\vr}=\hj\, \dee{y}</m>
+(parametrize the second segment of the path by <m>
+\vr(y)=\hi+y\,\hj</m> with <m>0\le y\le 1</m>),
+so <m>\vF\cdot \dee{\vr}=y\,\dee{y}</m>.
+</li>
+<li>
+On the final segment of the path <m>x=y=1</m> so <m>\vF</m> simplifies
+to <m>(1-z)\hi+(1-z)\hj-2\hk</m> and <m>\dee{\vr}=\hk\, \dee{z}</m>
+(parametrize the third segment of the path by <m>
+\vr(z)=\hi+\hj+z\,\hk</m> with <m>0\le z\le 1</m>),
+so <m>\vF\cdot \dee{\vr}=-2\,\dee{z}</m>.
+</li>
+</ul>
+So
+<me>
+\int_\cC\vF\cdot \dee{\vr}=\int_0^1 x\,\dee{x}
+           +\int_0^1 y\,\dee{y}+\int_0^1(-2)\,\dee{z}
+=\frac{1}{2}+\frac{1}{2}-2
+=-1
+</me>
+</p></solution>
+</exercise>
+
+<exercise><title><fromexam>M317 1998D</fromexam></title>
+<statement><p>
+Let <m>\cC</m> be the part of the curve of intersection of <m>xyz=8</m>
+and <m>x=2y</m> which lies between the points <m>(2,1,4)</m> and <m>(4,2,1)</m>. Calculate
+<me>
+\int_\cC \vF\cdot \dee{\vr}
+</me>
+where
+<me>
+\vF = x^2\,\hi+(x-2y)\,\hj+x^2 y\,\hk
+</me>
+</p></statement>
+
+<hint><p>
+Parametrize the curve using <m>y</m> as a parameter.
+</p></hint>
+
+<answer><p>
+<m>-\frac{40}{3}</m>
+</p></answer>
+
+<solution><p>
+Parametrize the curve using <m>y</m> as a parameter. Then <m>y=t</m>, <m>x=2y=2t</m> and
+<m>z=\frac{8}{xy}=\frac{8}{2t^2}</m> so that:
+<md>
+<mrow>
+\vr(t)&amp;=2t\,\hi+t\,\hj+\frac{4}{t^2}\,\hk,\qquad 1\le t\le 2
+</mrow><mrow>
+\vr'(t)&amp;=2\,\hi+\hj-\frac{8}{t^3}\,\hk
+</mrow><mrow>
+\vF(\vr(t))&amp;= 4t^2\,\hi+4t^3\,\hk
+</mrow><mrow>
+\vF(\vr(t))\cdot \vr'(t)&amp;=8t^2-32
+</mrow>
+</md>
+Then
+<me>
+\int_\cC \vF\cdot \dee{\vr}
+=\int_1^2 \vF(\vr(t))\cdot \vr'(t)\ \dee{t}
+=\int_1^2 \big(8t^2-32\big)\ \dee{t}
+= \left[\frac{8}{3}t^3-32t\right]_1^2
+=-\frac{40}{3}
+</me>
+</p>
+
+</solution>
+</exercise>
+
+<exercise><title><fromexam>M317 2003A</fromexam></title>
+<statement><p>
+Let <m>\ \vF= e^x\sin y\,\hi+[ae^x\cos y+bz]\,\hj+cx\,\hk</m>.
+For which values of the constants <m>a,\ b,\ c</m> is
+<m>\ \int_C\vF\cdot \dee{\vr}=0\ </m> for all closed paths <m>C</m>?
+</p></statement>
+
+<hint><p>
+Use Theorems<nbsp/><xref ref="thm_pathIndepConserv"/> and <xref ref="thm_screenConserv"/>.
+</p></hint>
+
+<answer><p>
+<m>a=1,\ b=c=0</m>
+</p></answer>
+
+<solution><p>
+Note <m>\vF</m> is defined and continuous on all of <m>\mathbb R^3</m>. By  Theorem<nbsp/><xref ref="thm_pathIndepConserv"/>, the integral <m>\ \int_C\vF\cdot \dee{\vr}=0\ </m> for all closed paths <m>C</m>
+if and only if <m>\vF</m> is conservative. Furthermore, <m>\vF</m> has continuous first-order partial derivatives on all of <m>\bbbr^3</m>. Using Theorem<nbsp/><xref ref="thm_screenConserv"/>, <m>\vF</m> is conservative if
+and only if <m>\vnabla\times\vF=\vZero</m>:
+<md>
+<mrow>
+\vZero=\vnabla\times\vF
+&amp;=\det\left[\begin{matrix}\hi&amp;\hj&amp;\hk \\
+            \frac{\partial }{\partial x}&amp;
+            \frac{\partial }{\partial y}&amp;
+            \frac{\partial }{\partial z} \\
+  e^x\sin y &amp; ae^x\cos y+bz &amp; cx\end{matrix}\right]
+</mrow><mrow>
+&amp;=(0-b)\hi-(c-0)\hj+(ae^x\cos y-e^x\cos y)\hk
+</mrow>
+</md>
+So <m>a=1,\ b=c=0</m>.
+</p></solution>
+</exercise>
+
+<exercise>
+<statement><p>
+ Let  <m>\vF = 6x^2yz^2\,\hi + (2x^3z^2 + 2y - xz)\,\hj
++ 4x^3yz\,\hk</m> and let <m>\vG = yz\,\hi + xy\,\hk</m>.
+<ol label="a">
+<li>
+For what value of the constant <m>\la</m> is the vector field
+<m>\vH = \vF +  \la\vG</m> conservative on 3-space?
+</li>
+<li>
+Find a scalar potential <m>\phi(x,y,z)</m> for the conservative field <m>\vH</m> referred to in part (a).
+</li>
+<li>
+Find   <m>\int_C\vF\cdot \dee{\vr}</m> if <m>C</m> is the curve of intersection of the two surfaces <m>z = x</m> and <m>y = e^{xz}</m> from the point <m>(0, 1, 0)</m> to
+the point <m>(1, e, 1)</m>.
+</li>
+</ol>
+</p></statement>
+
+<hint><p>
+(a) Use Theorem<nbsp/><xref ref="thm_screenConserv"/>.
+</p>
+
+<p>(c) You may parametrize the curve using <m>x</m> as the parameter.
+Exploit the fact that, for the value of <m>\la</m> found in part (a), <m>\vF+\la \vG</m> is conservative.
+</p></hint>
+
+<answer><p>
+(a) <m>\la=-1</m></p><p>
+(b) <m>\phi(x,y,z)=2x^3yz^2-xyz+y^2+K</m>, for any constant <m>K</m>
+</p>
+
+<p>(c) <m>e^2+2e-2</m>
+</p></answer>
+
+<solution><p>
+(a), (b) The curls of <m>\vF</m> and <m>\vG</m> are
+<md>
+<mrow>
+\vnabla\times\vF
+&amp;= \det\left[\begin{matrix}
+                       \hi &amp;       \hj        &amp;   \hk
+</mrow><mrow>
+               \pdiff{}{x} &amp;   \pdiff{}{y}    &amp;  \pdiff{}{z}
+</mrow><mrow>
+                  6x^2yz^2 &amp; 2x^3z^2 + 2y - xz &amp;  4x^3yz
+            \end{matrix}\right]
+</mrow><mrow>
+&amp;=(4x^3z-4x^3z+x)\,\hi-(12x^2yz-12x^2yz)\,\hj+(6x^2z^2-z-6x^2z^2)\,\hk
+</mrow><mrow>
+&amp;=x\,\hi-z\,\hk
+</mrow><mrow>
+\vnabla\times\vG
+&amp;=\det\left[\begin{matrix}
+                   \hi       &amp;   \hj       &amp;  \hk
+</mrow><mrow>
+                 \pdiff{}{x} &amp; \pdiff{}{y} &amp;  \pdiff{}{z}
+</mrow><mrow>
+                          yz &amp;      0      &amp; xy
+\end{matrix}\right]
+</mrow><mrow>
+&amp;=x\hi-z\,\hk
+</mrow>
+</md>
+Hence the screening test for
+<me>
+\vnabla\times\big(\vF+\la\vG\big)=(x+\la x)\,\hi-(z+\la z)\,\hk
+</me>
+passes for <m>\la=-1</m>. Furthermore
+<md>
+<mrow>
+\vF-\vG &amp;=(6x^2yz^2-yz)\,\hi+(2x^3z^2 + 2y - xz)\,\hj+(4x^3yz-xy)\,\hk
+</mrow><mrow>
+&amp;=\vnabla\big(2x^3yz^2-xyz+y^2\big)
+</mrow>
+</md>
+The potential was found by guessing. Alternatively,
+we can find it by using that
+<m>\phi(x,y,z)</m> is a potential for <m>\vF-\vG</m>
+if and only if
+<md>
+<mrow>
+\pdiff{\phi}{x}(x,y,z) &amp;= 6x^2yz^2-yz
+</mrow><mrow>
+\pdiff{\phi}{y}(x,y,z) &amp;= 2x^3z^2 + 2y - xz
+</mrow><mrow>
+\pdiff{\phi}{z}(x,y,z) &amp;= 4x^3yz-xy
+</mrow>
+</md>
+Integrating the first of these equations gives
+<me>
+\phi(x,y,z) = 2x^3yz^2-xyz + f(y,z)
+</me>
+Substituting this into the second equation gives
+<me>
+2x^3z^2-xz + \pdiff{f}{y}(y,z)
+   = 2x^3z^2 + 2y - xz \qquad\hbox{or}\qquad
+\pdiff{f}{y}(y,z) = 2y
+</me>
+which integrates to
+<me>
+f(y,z) = y^2+ g(z)
+</me>
+Finally, substituting <m>\phi(x,y,z) = 2x^3yz^2-xyz + y^2 + g(z)</m>
+into the last equation gives
+<me>
+4x^3yz-xy + g'(z) = 4x^3yz-xy\qquad\hbox{or}\qquad
+g'(z) = 0
+</me>
+which integrates to
+<me>
+g(z) =  K
+</me>
+with <m>K</m> being an arbitrary constant.
+Choosing <m>K=0</m> gives the potential <m>\phi(x,y,z) =  2x^3yz^2-xyz + y^2</m>
+as in the guess above.
+</p>
+
+<p>(c) Any point <m>(x,y,z)</m> on the curve must have <m>z=x</m> and <m>y=e^{xz}=e^{x^2}</m>.
+So we may parametrize the curve by
+<m>\vr(x)=x\,\hi+e^{x^2}\,\hj+x\,\hk</m>, <m>0\le x\le 1</m>. Hence
+<md>
+<mrow>
+\int_C\vF\cdot \dee{\vr}
+&amp;=\int_C(\vF-\vG)\cdot \dee{\vr}+\int_C\vG\cdot \dee{\vr}
+</mrow><mrow>
+&amp;=\Big[2x^3yz^2-xyz+y^2\Big]_{(0,1,0)}^{(1,e,1)}
++\int_0^1\overbrace{[xe^{x^2}\hi + xe^{x^2}\hk]}^{\vG(\vr(x))}\cdot
+   \overbrace{[\hi+2xe^{x^2}\,\hj+\hk]}^{\diff{\vr}{x}}\ \dee{x}
+</mrow><mrow>
+&amp;=e+e^2-1+\int_0^1 2xe^{x^2}\ \dee{x}
+=e+e^2-1+\Big[e^{x^2}\Big]_0^1
+=e^2+2e-2
+</mrow>
+</md>
+</p></solution>
+</exercise>
+
+<exercise><title><fromexam>M317 2016D</fromexam></title>
+<statement><p>
+Find the work done by the force field
+<m>\vF(x,y,z) = (x - y^2\,,\, y - z^2\,,\, z - x^2)</m> on a particle
+that moves along the line segment from <m>(0, 0, 1)</m> to <m>(2, 1, 0)</m>.
+</p></statement>
+
+<answer><p>
+<m>\frac{7}{3}</m>
+</p></answer>
+
+<solution><p>
+Parametrize the line segment by
+<me>
+\vr(t) = (0,0,1) + t\big\{(2,1,0)-(0,0,1)\big\}
+       = \big(2t,t,1-t\big)\qquad
+0\le t\le 1
+</me>
+so that <m>\vr(0) = (0,0,1)</m> is the initial point of the line segment and
+<m>\vr(1) = (2,1,0)</m> is the final point of the segment. Then
+<me>
+\vr'(t) = (2,1,-1)\qquad
+</me>
+and the work is
+<md>
+<mrow>
+\int\vF\cdot\dee{\vr}
+&amp;=\int_0^1 \vF\big(\vr(t)\big)\cdot \vr'(t)\,\dee{t}
+=\int_0^1\big(2t-t^2\,,\, t-(1-t)^2 \,,\,(1-t)-4t^2\big)\cdot(2,1,-1)\,\dee{t}
+
+</mrow><mrow>
+&amp;=\int_0^1\big(4t-2t^2 \ +\ t-1+2t-t^2 \ -\ 1+t+4t^2\big)\,\dee{t}
+=\int_0^1\big(t^2+8t-2\big)\,\dee{t}
+
+</mrow><mrow>
+&amp;=\frac{1}{3}+4-2
+=\frac{7}{3}
+</mrow>
+</md>
+</p></solution>
+</exercise>
+
+<exercise><title><fromexam>M317 2003A</fromexam></title>
+<statement><p>
+Let <m>\ \vF= \frac{x}{x^2+y^2}\,\hi+\frac{y}{x^2+y^2}\,\hj+x^3\,\hk</m>.
+Let <m>P</m> be the path which starts at <m>(1,0,0)</m>, ends at
+<m>\big(\frac{1}{\sqrt{2}},\frac{1}{\sqrt{2}},\frac{1}{2}\ln 2\big)</m> and follows
+<me>
+x^2+y^2=1\qquad xe^z=1
+</me>
+Find the work done in moving a particle along <m>P</m> in the field <m>\vF</m>.
+</p></statement>
+
+<hint><p>
+Parametrize the path using sines and cosines. The work done is <m>\int_C \vF \cdot \dee{\vr}</m>
+</p></hint>
+
+<answer><p>
+<m>\frac{1}{3}\big[1-\frac{1}{2^{3/2}}\big]\approx 0.2155</m>
+</p></answer>
+
+<solution><p>
+On <m>P</m>, <m>z=\ln\frac{1}{x}=-\ln(x)</m>. So parametrize the curve
+<m>P</m> by
+<me>
+\vr(\theta)=\cos\theta\,\hi+\sin\theta\,\hj-\ln(\cos\theta)\,\hk\qquad
+0\le\theta\le\frac{\pi}{4}
+</me>
+Then
+<md>
+<mrow>
+\vr\,'(\theta)&amp;=-\sin\theta\,\hi+\cos\theta\,\hj+\tan\theta\,\hk
+</mrow><mrow>
+\vF\big(\vr(\theta)\big)&amp;=\cos\theta\,\hi+\sin\theta\,\hj+\cos^3\theta\,\hk
+</mrow><mrow>
+\vF\big(\vr(\theta)\big)\cdot\vr\,'(\theta)&amp;=\sin\theta\cos^2\theta
+</mrow
+</md>
+so that
+<md>
+<mrow>
+\text{Work}
+&amp;=\int_P\vF\cdot \dee{\vr}
+=\int_0^{\pi/4}\vF\big(\vr(\theta)\big)\cdot\vr\,'(\theta)\ \dee{\theta}
+=\int_0^{\pi/4}\sin\theta\cos^2\theta\ \dee{\theta}
+=-\frac{1}{3}\cos^3\theta\Big|_0^{\pi/4}
+</mrow><mrow>
+&amp;=\frac{1}{3}\big[1-\frac{1}{2^{3/2}}\big]\approx 0.2155
+</mrow>
+</md>
+</p></solution>
+</exercise>
+
+<exercise><title><fromexam>M317 2005A</fromexam></title>
+<statement><p>
+Let <m>\vF = \big(yz\cos x\,,\,z\sin x+2yz\,,\,y\sin x+y^2-\sin z\big)</m>
+and let <m>C</m> be the line segment <m>\vr(t) = (t,t,t)</m>, for <m>0\le t\le\pi/2</m>.
+Evaluate <m>\displaystyle\int_C\vF\cdot\dee{\vr}</m>.
+</p></statement>
+
+<hint><p>
+Is <m>\vF</m> conservative?
+</p></hint>
+
+<answer><p>
+<m>\frac{\pi^3}{8}+\frac{\pi^2}{4}-1</m>
+</p></answer>
+
+<solution><p>
+Hmmm. <m>\vF</m> looks suspiciously complicated. Let's
+guess that <m>\vF</m> is conservative and look for a potential for it.
+<m>\phi(x,y,z)</m> is a potential for this <m>\vF</m> if and only if
+<md>
+<mrow>
+\frac{\partial \varphi}{\partial x}(x,y,z) &amp;= yz\cos x
+</mrow><mrow>
+\frac{\partial \varphi}{\partial y}(x,y,z) &amp;= z\sin x+2yz
+</mrow><mrow>
+\frac{\partial \varphi}{\partial z}(x,y,z) &amp;= y\sin x+y^2-\sin z
+</mrow>
+</md>
+Integrating the first of these equations gives
+<me>
+\varphi(x,y,z) = yz\sin x + f(y,z)
+</me>
+Substituting this into the second equation gives
+<me>
+z\sin x + \pdiff{f}{y}(y,z)
+= z\sin x+2yz\qquad\text{or}\quad
+\pdiff{f}{y}(y,z) = 2yz
+</me>
+which integrates to
+<me>
+f(y,z) = y^2z + g(z)
+</me>
+Finally, substituting <m>\varphi(x,y,z) = yz\sin x+y^2z + g(z)</m>
+into the last equation gives
+<me>
+y\sin x+y^2 + g'(z)
+= y\sin x+y^2-\sin z\qquad\text{or}\quad
+g'(z) = -\sin z
+</me>
+which integrates to
+<me>
+g(z) = \cos z + C
+</me>
+with <m>C</m> being an arbitrary constant.
+So <m>\phi(x,y,z)=yz\sin x+y^2z+\cos z</m> is one allowed scalar potential
+and the specified integral is
+<md>
+<mrow>
+\int_C\vF\cdot\dee{\vr} = \varphi(\vr)\Big|_{\vr(0)}^{\vr(\pi/2)}
+= \varphi(\pi/2\,,\,\pi/2\,,\,\pi/2) -\varphi (0,0,0)
+= \frac{\pi^3}{8}+\frac{\pi^2}{4}-1
+</mrow>
+</md>
+</p>
+
+</solution>
+</exercise>
+
+<exercise><title><fromexam>M317 2010D</fromexam></title>
+<statement><p>
+Let <m>C</m> be the upper half of the unit circle centred on <m>(1, 0)</m>
+(i.e. that part of the circle which lies above the <m>x</m>-axis),
+oriented clockwise. Compute the line integral
+<m>\int_C xy\,\dee{y}</m>.
+</p></statement>
+
+<hint><p>
+Is <m>\vF= xy\,\hj</m> conservative? Sketch <m>C</m>.
+</p></hint>
+
+<answer><p>
+<m>-\frac{2}{3}</m>
+</p></answer>
+
+<solution><p>
+We are being asked to evaluate the line integral
+<m>\int_C\vF\cdot\dee{\vr}</m> with <m>C</m> being the specified semi-circle and
+<m>\vF=xy\,\hj</m>. As <m>\vnabla\times\vF\ne\vZero</m>, the vector field <m>\vF</m>
+is not conservative. So we'll evaluate the integral directly.
+First, using the figure,
+</p>
+
+<sidebyside width="75%">
+<image source="pfigs/OE10D_2"/>
+</sidebyside>
+
+<p>
+we parametrize <m>C</m> by
+<me>
+\vr(\theta) =
+\big(x(\theta)\,,\,y(\theta)\big)
+=(1-\cos\theta)\,\hi +\sin\theta\,\hj\qquad 0\le\theta\le\pi
+</me>
+So the integral is
+<md>
+<mrow>
+\int_C xy\,\dee{y}
+=\int_0^\pi x(\theta)\,y(\theta)\, y'(\theta)\ \dee{\theta}
+=\int_0^\pi (1-\cos\theta)\,\sin\theta\,\cos\theta \ \dee{\theta}
+</mrow>
+</md>
+Making the substitution <m>u=\cos\theta</m>, <m>\dee{u} =-\sin\theta\,\dee{\theta}</m>,
+<m>u(0)=1</m>, <m>u(\pi)=-1</m>,
+<md>
+<mrow>
+\int_C xy\,\dee{y}
+=\int_1^{-1} (1-u)\, u\, (-\dee{u})
+=\int_{-1}^1 (u-u^2)\,\dee{u}
+=-2 \int_0^1 u^2\,\dee{u}
+=-2 \frac{1^3}{3}=-\frac{2}{3}
+</mrow>
+</md>
+</p>
+
+</solution>
+<solution>
+<p>
+We can write <m>x</m> in terms of <m>y</m> over <m>C</m> in two pieces:
+<ul>
+<li> Let <m>C_1</m> be the quarter-circle <m>x=1-\sqrt{1-y^2}</m> as <m>y</m> goes from 0 to 1,  and
+</li>
+<li> Let <m>C_2</m> be the quarter-circle <m>x=1+\sqrt{1-y^2}</m> as <m>y</m> goes from 1 to 0.
+</li>
+</ul>
+Then:
+<md>
+<mrow>
+\int_C xy\dee{y} &amp;=\int_{C_1} xy\dee{y}+\int_{c_2}xy\dee{y}
+</mrow><mrow>
+&amp;=\int_0^1\left(1-\sqrt{1-y^2}\right)y\,\dee{y}+\int_1^0\left(1+\sqrt{1-y^2}\right)y\,\dee{y}
+</mrow><mrow>
+&amp;=\int_0^1 y\,\dee{y}-\int_0^1y\sqrt{1-y^2}\,\dee{y}+\int_1^0y\,\dee{y}+\int_1^0 y\sqrt{1-y^2}\,\dee{y}
+</mrow><mrow>
+&amp;=-2\int_0^1 y\sqrt{1-y^2}\,\dee{y}
+</mrow>
+<intertext>Using the substitution <m>u=1-y^2</m>, <m>\dee{u} =-2y\,\dee{y}</m>:
+</intertext><mrow>
+&amp;=\int_1^0u^{1/2}\dee{u}=-\frac23
+</mrow>
+</md>
+</p></solution>
+</exercise>
+
+<exercise><title><fromexam>M317 2006D</fromexam></title>
+<statement><p>
+Show that the following line integral is independent of path and
+evaluate the integral.
+<md>
+<mrow>
+\int_C (ye^x + \sin y)\,\dee{x} + (e^x + \sin y + x \cos y)\,\dee{y}
+</mrow>
+</md>
+where <m>C</m> is any path from <m>(1, 0)</m> to <m>(0, \pi/2)</m>.
+</p></statement>
+
+<hint><p>
+That the line integral is to be independent of path is a huge hint.
+</p></hint>
+
+<answer><p>
+The line integral is independent of path because it is of the form
+<m>\int_C \vF\cdot\dee{\vr}</m> with <m>\vF</m> being a conservative field. The value
+of the integral is <m>1+\frac{\pi}{2}</m>.
+</p></answer>
+
+<solution>
+
+<p>The line integral is <m>\int_C \vF\cdot\dee{\vr}</m> with
+<m>\vF = (ye^x + \sin y)\,\hi + (e^x + \sin y + x \cos y)\,\hj</m>.
+We are to show that it is independent of path. That is the case if and
+only if <m>\vF</m> is conservative. So let's look for a potential <m>\varphi</m>
+for <m>\vF</m>. That is, let's look for a function <m>\varphi</m> that obeys
+<md>
+<mrow>
+\frac{\partial \varphi}{\partial x}(x,y)
+&amp;= ye^x + \sin y
+</mrow><mrow>
+\frac{\partial \varphi}{\partial y}(x,y) &amp;= e^x + \sin y + x \cos y
+</mrow>
+</md>
+Integrating the first of these equations gives
+<me>
+\varphi(x,y) = ye^x + x\sin y + f(y)
+</me>
+Substituting this into the second equation gives
+<me>
+e^x + x\cos y + f'(y) = e^x + \sin y + x \cos y\qquad\text{or}\quad
+f'(y) = \sin y
+</me>
+which integrates to
+<me>
+f(y) = -\cos y + C
+</me>
+So <m>\vF</m> is indeed conservative with one potential being
+<m>\varphi(x,y) = ye^x + x\sin y -\cos y</m> and the line integral is
+<md>
+<mrow>
+\int_C (ye^x + \sin y)\,\dee{x} + (e^x + \sin y + x \cos y)\,\dee{y}
+&amp;=\int_C \vF\cdot\dee{\vr}
+=\varphi(x,y)\Big|^{(0,\pi/2)}_{(1,0)}
+</mrow><mrow>
+&amp;=\Big[ye^x + x\sin y -\cos y\Big]^{(0,\pi/2)}_{(1,0)}
+</mrow><mrow>
+&amp;=1+\frac{\pi}{2}
+</mrow>
+</md>
+</p>
+
+</solution>
+</exercise>
+
+<exercise><title><fromexam>M317 2006D</fromexam></title>
+<statement><p>
+Evaluate the integral
+<md>
+<mrow>
+\int_C xy \,\dee{x} + yz \,\dee{y} + zx \,\dee{z}
+</mrow>
+</md>
+around the triangle with vertices <m>(1, 0, 0)</m>, <m>(0, 1, 0)</m>, and <m>(0, 0, 1)</m>,
+oriented clockwise as seen from the point <m>(1, 1, 1)</m>.
+</p></statement>
+
+<hint><p>
+Note that
+<ul>
+<li>
+<m>y=0</m> on the line segment from <m>(1,0,0)</m> to <m>(0, 0, 1)</m> and
+</li>
+<li>
+<m>x=0</m> on the line segment from <m>(0,0,1)</m> to <m>(0, 1, 0)</m> and
+</li>
+<li>
+<m>z=0</m> on the line segment from <m>(0, 1, 0)</m> to <m>(1, 0, 0)</m>
+</li>
+</ul>
+</p></hint>
+
+<answer><p>
+<m>\frac{1}{2}</m>
+</p></answer>
+
+<solution><p>
+Here is a sketch of <m>C</m>.
+</p>
+
+<sidebyside width="75%">
+  <image source="pfigs/OE06D_1"/>
+</sidebyside>
+
+<p>
+Note that
+<ul>
+<li>
+<m>y=0</m> on the line segment from <m>(1, 0, 0)</m> to <m>(0,0,1)</m> so that
+the integral reduces to <m>\int zx \,\dee{z}</m> on that line segment and
+</li>
+<li>
+<m>x=0</m> on the line segment from <m>(0,0,1)</m> to <m>(0, 1, 0)</m> so that
+the integral reduces to <m>\int yz \,\dee{y}</m> on that line segment and
+</li>
+<li>
+<m>z=0</m> on the line segment from <m>(0, 1, 0)</m> to  <m>(1, 0, 0)</m> so that
+the integral reduces to <m>\int xy \,\dee{x}</m> on that line segment.
+</li>
+</ul>
+So it looks feasible to evaluate the integral directly.
+Label the sides of the triangle <m>C_1</m>, <m>C_2</m> and <m>C_3</m> as in the
+sketch above.
+<ul>
+<li>
+We parametrize <m>C_1</m> by <m>\vr(t) = (1,0,0) + t[(0,0,1)-(1,0,0)]
+                                = (1-t\,,\,0\,,\,t)</m>, <m>0\le t\le 1</m>.
+So
+<md>
+<mrow>
+\int_{C_1} xy \,\dee{x} + yz \,\dee{y} + zx \,\dee{z}
+&amp;= \int_{C_1}  zx \,\dee{z}
+=\int_0^1 \overbrace{(1-t)}^{x}
+         \overbrace{(t)}^{z}
+          \overbrace{(1)}^{z'(t)}\,\dee{t}
+=\int_0^1 (t-t^2)\,\dee{t}
+</mrow><mrow>
+&amp;=\frac{1}{2}-\frac{1}{3} =\frac{1}{6}
+</mrow>
+</md>
+</li>
+<li>
+We parametrize <m>C_2</m> by <m>\vr(t) = (0,0,1) + t[(0,1,0)-(0,0,1)]
+                                = (0\,,\,t\,,\,1-t)</m>, <m>0\le t\le 1</m>.
+So
+<md>
+<mrow>
+\int_{C_2} xy \,\dee{x} + yz \,\dee{y} + zx \,\dee{z}
+&amp;= \int_{C_2}  yz \,\dee{y}
+=\int_0^1 \overbrace{(t)}^{y}
+         \overbrace{(1-t)}^{z}
+          \overbrace{(1)}^{y'(t)}\,\dee{t}
+=\int_0^1 (t-t^2)\,\dee{t}
+</mrow><mrow>
+&amp;=\frac{1}{2}-\frac{1}{3} =\frac{1}{6}
+</mrow>
+</md>
+</li>
+<li>
+We parametrize <m>C_3</m> by <m>\vr(t) = (0,1,0) + t[(1,0,0)-(0,1,0)]
+                                = (t\,,\,1-t\,,\,0)</m>, <m>0\le t\le 1</m>.
+So
+<md>
+<mrow>
+\int_{C_3} xy \,\dee{x} + yz \,\dee{y} + zx \,\dee{z}
+&amp;= \int_{C_3}  xy \,\dee{x}
+=\int_0^1 \overbrace{(t)}^{x}
+         \overbrace{(1-t)}^{y}
+          \overbrace{(1)}^{x'(t)}\,\dee{t}
+=\int_0^1 (t-t^2)\,\dee{t}
+</mrow><mrow>
+&amp;=\frac{1}{2}-\frac{1}{3} =\frac{1}{6}
+</mrow>
+</md>
+</li>
+</ul>
+All together
+<md>
+<mrow>
+\int_{C} xy \,\dee{x} + yz \,\dee{y} + zx \,\dee{z}
+&amp;=\sum_{\ell=1}^3\int_{C_\ell} xy \,\dee{x} + yz \,\dee{y} + zx \,\dee{z}
+=3\times\frac{1}{6}=\frac{1}{2}
+</mrow>
+</md>
+</p></solution>
+</exercise>
+
+<exercise><title><fromexam>M317 2008D</fromexam></title>
+<statement><p>
+Evaluate the line integral <m>\int_C \vF\cdot \dee{\vr}</m>, where <m>\vF</m>
+is the conservative vector field
+<me>
+\vF (x, y, z) = \big(y + ze^x , x + e^y \sin z, z + e^x + e^y \cos z\big)
+</me>
+and <m>C</m> is the curve given by the parametrization
+<me>
+\vr(t) = (t, e^t , \sin t),\qquad
+t \text{ from } 0 \text{ to } \pi.
+</me>
+</p></statement>
+
+<hint><p>
+That <m>\vF</m> is conservative should be a dead giveaway.
+</p></hint>
+
+<answer><p>
+<m>\pi e^\pi</m>
+</p></answer>
+
+<solution><p>
+We are told that <m>\vF</m> is conservative. Let's find a potential
+<m>\varphi</m> obeying <m>\vnabla\varphi = \vF</m>. That is,
+<md>
+<mrow>
+\frac{\partial\varphi}{\partial x}
+   &amp;= y + ze^x
+</mrow><mrow>
+\frac{\partial\varphi}{\partial y}
+   &amp;= x + e^y \sin z
+</mrow><mrow>
+\frac{\partial\varphi}{\partial z}
+   &amp;= z + e^x + e^y \cos z
+</mrow>
+</md>
+The first equation forces <m>\varphi(x,y,z) = xy +ze^x +\psi(y,z)</m>.
+Substituting this into the second equation gives
+<m>x+\frac{\partial\psi}{\partial y}(y,z) = x + e^y \sin z</m>
+or <m>\frac{\partial\psi}{\partial y}(y,z) = e^y \sin z</m>
+which forces <m>\psi(y,z) = e^y\sin z +\zeta(z)</m>. So far, we have
+<m>\varphi(x,y,z) = xy +ze^x +e^y\sin z +\zeta(z)</m>.
+Substituting this into the third equation gives
+<m>e^x +e^y\cos z +\zeta'(z) = z + e^x + e^y \cos z</m> or
+<m>\zeta'(z) = z</m> which forces <m>\zeta(z) = \frac{z^2}{2}+C</m>, for some constant
+<m>C</m>, which we take to be zero. So our potential is
+<me>
+\varphi(x,y,z) = xy +ze^x +e^y\sin z +\frac{z^2}{2}
+</me>
+So the line integral
+<me>
+\int_C \vF\cdot \dee{\vr}
+=\varphi\big(\vr(\pi)\big) -\varphi\big(\vr(0)\big)
+=\varphi\big(\pi,e^\pi,0\big) -\varphi\big(0,1,0\big)
+=\pi e^\pi
+</me>
+</p>
+
+</solution>
+</exercise>
+
+<exercise><title><fromexam>M317 2002A</fromexam></title>
+<statement><p>
+<ol label="a">
+<li>
+For which values of the constants <m>\alpha</m>, <m>\beta</m> and <m>\gamma</m>
+is the vector field
+<me>
+\vF(x,y,z) = \alpha e^y\,\hi+(xe^y+\beta\cos z)\,\hj-\gamma y\sin z\,\hk
+</me>
+conservative?
+</li>
+<li>
+For those values of <m>\alpha</m>, <m>\beta</m> and <m>\gamma</m> found in part
+(a), calculate <m>\int_C \vF\cdot \dee{\vr}</m>, where <m>C</m> is the curve parametrized
+by <m>x=t^2</m>, <m>y=e^t</m>, <m>z=\pi t</m>, <m>0\le t\le 1</m>.
+</li>
+</ol>
+</p></statement>
+
+<hint><p>
+To calculate the integral, it might be easier to find a potential for <m>\vF</m> and use Theorem<nbsp/><xref ref="thm_workIntegral"/>.
+</p></hint>
+
+<answer><p>
+(a) <m>\alpha=1</m>, <m>\beta=\gamma</m></p><p>
+(b) <m>e^e-\beta(e+1)</m>
+</p></answer>
+
+<solution><p>
+(a)
+Note <m>\vF</m> is defined and continuous on all of <m>\mathbb R^3</m>. Furthermore, <m>\vF</m> has continuous first-order partial derivatives on all of <m>\bbbr^3</m>. Using Theorem<nbsp/><xref ref="thm_screenConserv"/>, <m>\vF</m> is conservative if
+and only if it has zero curl:
+</p>
+
+<p><md>
+<mrow>
+0&amp;=\vnabla\times\vF
+=\vnabla\times\big(\alpha e^y\,\hi+(xe^y+\beta\cos z)\,\hj
+                   -\gamma y\sin z\,\hk\big)
+</mrow><mrow>
+&amp;=(-\gamma\sin z+\beta\sin z)\hi+(e^y-\alpha e^y)\hk
+</mrow>
+</md>
+which is the case if and only if <m>\alpha=1</m>, <m>\beta=\gamma</m>.
+</p>
+
+<p>(b)
+We use Theorem<nbsp/><xref ref="thm_workIntegral"/>: if <m>\varphi</m> is a potential for <m>\vF</m>, then
+<me>
+ \int_C \vF \cdot \dee{\vr}  =  \varphi(P_1)-\varphi(P_0) </me>
+</p>
+
+<p>where <m>C</m> runs from <m>P_0</m> to <m>P_1</m>. So, we find <m>\varphi</m>.
+</p>
+
+<p> Assume that <m>\alpha=1</m>, <m>\beta=\gamma</m>.
+We find a potential <m>\varphi</m> for <m>\vF</m> by antidifferentiating.
+<md>
+<mrow>
+\frac{\partial \varphi}{\partial x}(x,y,z)
+            &amp;= e^y &amp; \implies \varphi(x,y,z) &amp;=xe^y+\psi_1(y,z)
+</mrow><mrow>
+\frac{\partial \varphi}{\partial y}(x,y,z) &amp;= xe^y+\beta\cos z  &amp; \implies \varphi(x,y,z) &amp;=xe^y+\beta y \cos z + \psi_2(x,z)
+</mrow><mrow>
+\frac{\partial \varphi}{\partial z}(x,y,z) &amp;= -\beta y\sin z &amp; \implies \varphi(x,y,z) &amp;=\beta y \cos z + \psi_3(x,y)
+</mrow>
+</md>
+for some functions <m>\psi_1(y,z)</m>, <m>\psi_2(x,z)</m> and <m>\psi_3(x,y)</m>
+to be determined.
+</p>
+
+<p>We'd like a single  function <m>\varphi(x,y,z)</m> that simultaneously obeys all three of these equations, for some <m>\psi_j</m>'s. An initial guess is simply
+the sum of all of the distinct terms, other that the <m>\psi_j</m>'s,
+that appear in the three equations above. The term <m>xe^y</m> appears in
+the <m>\psi_1</m> and <m>\psi_2</m> equations and the term <m>\be y\cos z</m> appears
+in the <m>\psi_2</m> and <m>\psi_3</m> equations. So we guess
+<me>
+\varphi(x,y,z)\stackrel{?}{=} xe^y+\beta y \cos z </me>
+</p>
+
+<p>If we let <m>\psi_1(y,z)=\beta y \cos z</m>, <m>\psi_2(x,z)=0</m>, and <m>\psi_3(x,y)=xe^y</m>, then we see this function <m>\varphi(x,y,z)</m> does indeed
+obey all three equations and so is a potential for <m>\vF</m>.
+</p>
+
+<p>The curve <m>C</m> runs from <m>P_0=(0^2,e^0,\pi\cdot0)=(0,1,0)</m> to <m>P_1=(1^2,e^1,\pi\cdot 1)=(1,e,\pi)</m>.
+Using Theorem<nbsp/><xref ref="thm_workIntegral"/>:
+<me>
+\int_C \vF \cdot \dee{\vr}  =   \varphi(1,e,\pi)-\varphi(0,1,0) = \big(e^e-\beta e\big)-\beta =e^e-\beta(e+1)
+</me>
+</p>
+
+</solution>
+</exercise>
+
+<exercise><title><fromexam>M317 2016A</fromexam></title>
+<statement><p>
+Consider the vector field <m>\vF(x,y,z) = (\cos x, 2 + \sin y, e^z)</m>.
+<ol label="a">
+<li>
+   Compute the curl of <m>\vF</m>.
+</li>
+<li>
+    Is there a function <m>f</m> such that <m>\vF = \vnabla f</m>?
+     Justify your answer.
+</li>
+<li>
+    Compute the integral <m>\int_C \vF\cdot\dee{\vr}</m> along the
+curve <m>C</m> parametrized by
+     <m>\vr(t) = (t, \cos t, \sin t)</m> with <m>0 \le t \le 3\pi</m>.
+</li>
+</ol>
+</p></statement>
+
+<hint><p>
+Your answer from (b) can help you in (c). Also, <m>\cos(1)=\cos(-1)</m>, because cosine is an even function.
+</p></hint>
+
+<answer><p>
+(a) <m>\vZero</m></p><p>
+(b) Yes. In fact <m>\vF=\vnabla f</m> with <m>f=\sin x +2y-\cos y +e^z </m>.</p><p>
+(c) <m>-4</m>
+</p></answer>
+
+<solution><p>
+(a) The curl of <m>\vF</m> is
+<md>
+<mrow>
+\vnabla\times\vF
+&amp;=\det\left[\begin{matrix}
+\hi &amp;\hj &amp;\hk
+</mrow><mrow>
+\pdiff{}{x} &amp; \pdiff{}{y} &amp;
+                \pdiff{}{z}
+</mrow><mrow>
+\cos x &amp; 2+\sin y &amp; e^z
+\end{matrix}
+\right]
+=\vZero
+</mrow>
+</md>
+Because <m>F_1</m> is a function only of <m>x</m>, <m>F_2</m> is a function only of <m>y</m>, and <m>F_3</m> is a function only of <m>z</m>, that all partial derivatives used in computing the curl are 0.
+</p>
+
+<p> (b) The vector field  <m>\vF</m> passes the screening test on all of
+<m>\bbbr^3</m> and so is conservative by Theorem <xref ref="thm_screenConserv"/>
+in the  text. Alternatively, we can see that
+<me>
+\vF=\vnabla\big(\sin x +2y-\cos y +e^z\big)
+</me>
+by inspection. Alternatively, <m>f</m> can be found
+by antidifferentiating its partial derivatives:
+<md>
+<mrow>
+\pdiff{f}{x}(x,y,z) &amp;= \cos x &amp;\implies
+  f(x,y,z)&amp;=\sin x + \psi_1(y,z)
+</mrow><mrow>
+\pdiff{f}{y}(x,y,z) &amp;= 2 + \sin y &amp;\implies
+  f(x,y,z)&amp;=2y-\cos y + \psi_2(x,z)
+</mrow><mrow>
+\pdiff{f}{z}(x,y,z) &amp;= e^z&amp;\implies
+f(x,y,z)&amp;=e^z+\psi_3(x,y)
+</mrow>
+</md>
+We'd like a single function <m>f(x,y,z)</m> that simultaneously obeys
+all three of these equations, for some <m>\psi_j</m>'s. An initial guess
+is simply the sum of all of the distinct terms, other than the <m>\psi_j</m>'s,
+that appear in the three
+equations. The term <m>\sin x</m> appears in the <m>\psi_1</m> equation,
+the terms <m>2y</m> and <m>-\cos y</m> appears in the <m>\psi_2</m>
+equation, and the term <m>e^z</m> appears in the <m>\psi_3</m>
+equation. So we guess
+<me>
+f(x,y,z)\stackrel{?}{=} \sin x +2y-\cos y +e^z </me>
+</p>
+
+<p>If we let <m>\psi_1(y,z)=2y-\cos y +e^z</m>, <m>\psi_2(x,z)=\sin x +e^z</m>,
+and <m>\psi_3(x,y)=\sin x +2y-\cos y</m>, then we see this function
+<m>f(x,y,z)</m> is indeed a potential for <m>\vF</m>.
+</p>
+
+<p> (c)
+Since <m>\vF=\vnabla f</m>,
+<md>
+<mrow>
+\int_C\vF\cdot\dee{\vr}
+&amp;= f\big(\vr(3\pi)\big) -f\big(\vr(0)\big)
+</mrow><mrow>
+&amp;= f(3\pi,-1,0) - f(0,1,0)
+</mrow><mrow>
+&amp;=\big(0-2-\cos (-1)+1\big)-\big(0+2-\cos 1+1\big)
+</mrow>
+<intertext>Since cosine is an even function, <m>\cos(-1)=\cos1</m>.</intertext><mrow>
+&amp;=-4
+</mrow>
+</md>
+</p></solution>
+</exercise>
+
+<exercise><title><fromexam>M317 2013D</fromexam></title>
+<statement><p><ol label="a">
+<li>
+Consider the vector field
+<me>
+\vF(x, y, z) = \left(z + e^y , xe^y - e^z \sin y, 1 + x + e^z \cos y\right)
+</me>
+Find the curl of <m>\vF</m>. Is <m>\vF</m> conservative?
+</li>
+<li>
+Find the integral <m>\int_C \vF \cdot \dee{\vr}</m> of the field
+<m>\vF</m> from (a) where <m>C</m> is the curve with parametrization
+<me>
+\vr(t) = (t^2 , \sin t, \cos^2 t)
+</me>
+where <m>t</m> ranges from <m>0</m> to <m>\pi</m>.
+</li>
+</ol>
+</p></statement>
+
+<hint><p>
+Review §<xref ref="sec_pathIndep"/> of the  text.
+</p></hint>
+
+<answer><p>
+(a) <m>\vnabla\times\vF=\vZero</m>. <m>\vF</m> is conservative.</p><p>
+(b) <m>\int_C \vF \cdot \dee{\vr}=2\pi^2</m>
+</p>
+
+</answer>
+
+<solution><p> (a)
+The curl is
+<md>
+<mrow>
+\vnabla\times\vF
+&amp;=\det\left[\begin{matrix}
+\hi &amp;\hj &amp;\hk
+</mrow><mrow>
+\pdiff{}{x} &amp; \pdiff{}{y} &amp;
+                \pdiff{}{z}
+</mrow><mrow>
+z+e^y &amp; xe^y-e^z\sin y &amp; 1+x+e^z\cos y
+\end{matrix}
+\right]
+=\vZero
+</mrow>
+</md>
+so <m>\vF</m> passes the screening test. Since its first-order partial derivatives are continuous on all of <m>\mathbb R^3</m>, it is conservative by
+Theorem <xref ref="thm_screenConserv"/> in the  text.
+</p>
+
+<p>By inspection, the potential is <m>\varphi(x,y,z)=xz+xe^y+e^z\cos y +z</m>
+<mdash/> this is another way to verify that <m>\vF</m> is conservative.
+Alternatively, <m>\varphi</m> can be found
+by antidifferentiating its partial derivatives.
+<md>
+<mrow>
+\frac{\partial \varphi}{\partial x}(x,y,z) &amp;= z + e^y &amp; \implies \varphi(x,y,z)&amp;=zx+xe^y+\psi_1(y,z)
+</mrow><mrow>
+\frac{\partial \varphi}{\partial y}(x,y,z) &amp;= xe^y - e^z \sin y &amp; \implies \varphi(x,y,z)&amp;=xe^y+e^z\cos y+\psi_2(x,z)
+</mrow><mrow>
+\frac{\partial \varphi}{\partial z}(x,y,z) &amp;= 1 + x + e^z \cos y &amp; \implies \varphi(x,y,z)&amp;=z+zx+e^z\cos y+\psi_3(x,y)
+</mrow>
+</md>
+We'd like a single function <m>\varphi(x,y,z)</m> that simultaneously obeys all three of these equations.
+An initial guess is simply the sum of the distinct terms (without the <m>\psi_j</m>'s) that appear in the equations above:
+<me>
+\varphi(x,y,z)\stackrel{?}{=} zx+xe^y+e^z\cos y+z </me>
+</p>
+
+<p>If we let <m>\psi_1(y,z)=e^z\cos y+z</m>, <m>\psi_2(x,z)=zx+z</m>, and <m>\psi_3(x,y)=xe^y</m>, then we see this function <m>\varphi(x,y,z)</m> is indeed a potential for <m>\vF</m>.
+</p>
+
+<p> (b)
+Since <m>\vF=\vnabla\varphi</m>, with <m>\varphi=xz+xe^y+e^z\cos y +z</m>,
+<md>
+<mrow>
+\int_C \vF \cdot \dee{\vr}
+&amp;=\varphi\big(\vr(\pi)\big)-\varphi\big(\vr(0)\big)=\Big[xz+xe^y+e^z\cos y +z\Big]_{\vr(0)}^{\vr(\pi)}
+</mrow><mrow>
+&amp;=\Big[xz+xe^y+e^z\cos y +z\Big]_{(0,0,1)}^{(\pi^2,0,1)}
+</mrow><mrow>
+&amp;=\left(\pi^2+\pi^2+e+1 \right)-\left(0+0+e+1 \right)
+=2\pi^2
+</mrow>
+</md>
+</p>
+
+</solution>
+</exercise>
+
+<exercise><title><fromexam>M317 2008A</fromexam></title>
+<statement><p>
+A physicist studies a vector field <m>\vF</m>. From experiments, it is
+known that <m>\vF</m> is of the form
+<me>
+\vF = (x - a)ye^x\,\hi + (xe^x + z^3 )\,\hj + byz^2\,\hk
+</me>
+where <m>a</m> and <m>b</m> are some real numbers. From theoretical considerations,
+it is known that <m>\vF</m> is conservative.
+</p>
+
+<p><ol label="a">
+<li>
+Determine <m>a</m> and <m>b</m>.
+</li>
+<li>
+Find a potential <m>f(x,y,z)</m> such that <m>\vnabla f = \vF</m>.
+</li>
+<li>
+Evaluate the line intgeral <m>\int_C\vF\cdot\dee{\vr}</m> where <m>C</m> is the
+curve defined by
+<me>
+\vr(t) = \big(t\,,\, \cos 2t\,,\, \cos t\big),
+\qquad 0 \le t \le \pi
+</me>
+</li>
+<li>
+Evaluate the line integral
+<me>
+I = \int_C (x + 1)ye^x \,\dee{x} + (xe^x + z^3 ) \,\dee{y} + 4yz^2 \,\dee{z},
+</me>
+where <m>C</m> is the same curve as in part (c). [Note: the <q>4</q> in the
+last term is not a misprint!].
+</li>
+</ol>
+</p></statement>
+
+<hint><p>
+Relate the integral of part (d) to the integral of part (c).
+</p></hint>
+
+<answer><p>
+(a) <m>a=-1</m>, <m>b=3</m></p><p>
+(b) <m>f(x,y,z) = xye^x + yz^3 + C</m> works for any constant <m>C</m>
+</p>
+
+<p>(c) <m>\pi e^\pi-2</m></p><p>
+(d) <m>\pi e^\pi -\frac{32}{15}</m>
+</p></answer>
+
+<solution><p> (a) For <m>\vF</m> to be conservative, it must pass
+the screening test
+<md>
+<mrow>
+\vZero = \vnabla\times\vF
+&amp;=\det\left[\begin{matrix}
+\hi &amp;\hj &amp;\hk
+</mrow><mrow>
+\pdiff{}{x} &amp; \pdiff{}{y} &amp;
+                \pdiff{}{z}
+</mrow><mrow>
+(x - a)ye^x &amp; xe^x + z^3 &amp; byz^2
+\end{matrix}
+\right]
+</mrow><mrow>
+&amp;= \big(bz^2-3z^2)\,\hi -\big(0-0\big)\,\hj +\big(e^x+xe^x-(x-a)e^x\big)\,\hk
+</mrow>
+</md>
+This is the case if and only if <m>b=3</m> and <m>a=-1</m>
+</p>
+
+<p>(b) Set <m>a=-1</m> and <m>b=3</m>. For <m>f</m> to be a potential for <m>\vF</m>,
+it must obey
+<md>
+<mrow>
+\pdiff{f}{x}(x,y,z)
+            &amp;= (x + 1)ye^x
+</mrow><mrow>
+\pdiff{f}{y}(x,y,z) &amp;= xe^x + z^3
+</mrow><mrow>
+\pdiff{f}{z}(x,y,z) &amp;= 3yz^2
+</mrow>
+</md>
+Integrating the second of these equations gives
+<me>
+f(x,y,z) = xye^x + yz^3 +g(x,z)
+</me>
+Substituting this into the last equation gives
+<me>
+3yz^2+\frac{\partial g}{\partial z}(x,z) = 3yz^2\qquad\text{or}\qquad
+\frac{\partial g}{\partial z}(x,z)=0
+</me>
+which forces
+<me>
+g(x,z) =  h(x)
+</me>
+Finally, substituting <m>f(x,y,z) = xye^x + yz^3 + h(x)</m>
+into the first equation gives
+<me>
+xye^x + ye^x + h'(x)
+=(x + 1)ye^x \quad\text{or}\quad
+h'(x) = 0
+</me>
+So <m>h(x) = C</m> and hence <m>f(x,y,z) = xye^x + yz^3 + C</m>
+works for any constant <m>C</m>.
+</p>
+
+<p>(c) Since <m>\vF=\vnabla f</m>,
+<md>
+<mrow>
+\int_C\vF\cdot\dee{\vr}
+&amp;=\int_C\vnabla f\cdot\dee{\vr}
+=f\big(\vr(\pi)) - f(\big(\vr(0)\big)
+=f(\pi,1,-1)-f(0,1,1)
+</mrow><mrow>
+&amp;=\big[\pi e^\pi -1 \big]-\big[ 1\big]
+=\pi e^\pi-2
+</mrow>
+</md>
+</p>
+
+<p>(d) Since
+<me>
+\int_C\vF\cdot\dee{\vr}
+=\int_C (x + 1)ye^x \,\dee{x} + (xe^x + z^3 ) \,\dee{y} + 3yz^2 \,\dee{z}
+</me>
+we have
+<md>
+<mrow>
+I &amp;= \int_C\vF\cdot\dee{\vr} + \int_C yz^2\dee{z}
+</mrow><mrow>
+&amp;= \pi e^\pi-2 +\int_0^\pi \overbrace{(\cos 2t)}^{y}
+                           \overbrace{\cos^2 t}^{z^2}
+                           \overbrace{(-\sin t)\,\dee{t}}^{\dee{z}}
+</mrow><mrow>
+&amp;= \pi e^\pi-2 +\int_0^\pi (2\cos^2t-1)
+                           \cos^2 t
+                           (-\sin t)\,\dee{t}
+</mrow><mrow>
+&amp;= \pi e^\pi-2 +\int_1^{-1} (2u^2-1)u^2\,\dee{u}
+     \qquad\text{with } u=\cos t,\ \dee{u}=-\sin t\,\dee{t}
+</mrow><mrow>
+&amp;= \pi e^\pi-2 +\Big[\frac{2u^5}{5} -\frac{u^3}{3}\Big]_{1}^{-1}
+</mrow><mrow>
+&amp;= \pi e^\pi-2 +\Big[-\frac{4}{5} +\frac{2}{3}\Big]
+</mrow><mrow>
+&amp;= \pi e^\pi -\frac{32}{15}
+</mrow>
+</md>
+</p></solution>
+</exercise>
+
+<introduction>
+  <p>Questions <nbsp/><xref ref="nonconserv1"/> and <xref ref="nonconserv2"/> ask you to evaluate line integrals of vector fields that are not conservative, but that can be expressed as a sum of a conservative vector field and another vector field that can be written concisely.</p>
+</introduction>
+
+
+<exercise xml:id="nonconserv1"><title><fromexam>M317 2011A</fromexam></title>
+<statement><p>
+Let
+<me>
+\vF = \big(y^2 e^{3z} +Axy^3\big)\,\hi
+     +(2xye^{3z}+3x^2y^2\big)\,\hj
+     +Bxy^2e^{3z}\,\hk
+</me>
+<ol label="a">
+<li>
+Find all values of <m>A</m> and <m>B</m> for which the vector field <m>\vF</m>
+is conservative.
+</li>
+<li>
+If <m>A</m> and <m>B</m> have values found in (a), find a potential function
+for <m>\vF</m>.
+</li>
+<li>
+Let <m>C</m> be the curve with parametrization
+<m>\vr(t) = e^{2t}\,\hi + e^{-t}\,\hj + \ln(1 + t) \,\hk</m> from
+<m>(1, 1, 0)</m> to <m>\big(e^2\,,\,\frac{1}{e}\,,\,\ln 2\big)</m>.
+Evaluate
+<me>
+\int_C (y^2 e^{3z} + xy^3)\,\dee{x} + (2xye^{3z} + 3x^2 y^2 )\,\dee{y}
+                 + 3xy^2 e^{3z}\,\dee{z}.
+</me>
+</li>
+</ol>
+</p></statement>
+
+<hint><p>
+	Write the integral of part (c) as <m>\int_C\vG\cdot\dee{\vr}</m>.
+	What is the difference between <m>\vG</m> and <m>\vF</m>?
+</p></hint>
+
+<answer><p>
+	(a) <m>A=2</m>, <m>B=3</m> </p><p>
+	(b) <m>\varphi(x,y,z)=xy^2e^{3z}+x^2y^3</m> is one allowed scalar potential.
+</p>
+
+<p>	(c) <m>6+e-2[e-1]=8-e\approx5.2817</m>
+</p></answer>
+
+<solution><p>
+(a)
+The vector field <m>\vF</m> is conservative if and only if it passes
+the screening test <m>\vnabla\times\vF=\vZero</m>. That is, if and only if,
+<md>
+<mrow>
+\vZero &amp;= \vnabla\times\vF=\det\left|\begin{matrix}\hi&amp;\hj&amp;\hk\\
+        \frac{\partial }{\partial x}&amp;
+        \frac{\partial }{\partial y}&amp;
+        \frac{\partial }{\partial z} \\
+y^2 e^{3z} +Axy^3 &amp; 2xye^{3z}+3x^2y^2 &amp; Bxy^2e^{3z}\end{matrix}\right|
+</mrow><mrow>
+&amp;=\big(2Bxy e^{3z}-6xy e^{3z}\big)\,\hi
+   -\big(By^2 e^{3z}-3y^2e^{3z}\big)\,\hj
+   +\big(2ye^{3z}+6xy^2- 2ye^{3z}-3Axy^2\big)\,\hk
+</mrow>
+</md>
+So <m>\vF</m> is conservative if and only if <m>A=2</m> and <m>B=3</m>.
+</p>
+
+<p>(b) Let <m>A=2</m> and <m>B=3</m>. We find a potential <m>\varphi</m> for <m>\vF</m> by antidifferentiating its partial derivatives.
+<md>
+<mrow>
+\frac{\partial \varphi}{\partial x}(x,y,z)
+            &amp;= y^2 e^{3z} +2xy^3 &amp;\implies \varphi(x,y,z)&amp;=xy^2e^{3z}+x^2y^3+\psi_1(y,z)
+</mrow><mrow>
+\frac{\partial \varphi}{\partial y}(x,y,z) &amp;= 2xye^{3z}+3x^2y^2 &amp;\implies \varphi(x,y,z)&amp;=xy^2e^{3z}+x^2y^3+\psi_2(x,z)
+</mrow><mrow>
+\frac{\partial \varphi}{\partial z}(x,y,z) &amp;= 3xy^2e^{3z}&amp;\implies \varphi(x,y,z)&amp;=xy^2e^{3z}+\psi_3(x,y)
+</mrow>
+</md>
+Let's guess that
+<me>
+\varphi(x,y,z)=xy^2e^{3z}+x^2y^3</me>
+</p>
+
+<p>(This was obtained by summing the distinct terms in the above three equations, without the <m>\psi_i</m>'s.) If we set <m>\psi_1(y,z)=\psi_2(x,z)=0</m> and <m>\psi_3(x,y)=x^2y^3</m>, we see our choice of <m>\varphi</m> is indeed a potential for <m>\vF</m>.
+</p>
+
+<p>(c) Set <m>A=2</m> and <m>B=3</m>.
+We are asked the evaluate <m>\int_C\vG\cdot\dee{\vr}</m> with
+<me>
+\vG = (y^2 e^{3z} + xy^3)\,\hi + (2xye^{3z} + 3x^2 y^2 )\,\hj
+                 + 3xy^2 e^{3z}\,\hk
+= \vF - xy^3\,\hi
+</me>
+So
+<md>
+<mrow>
+&amp;\int_C (y^2 e^{3z} + xy^3)\,\dee{x} + (2xye^{3z} + 3x^2 y^2 )\,\dee{y}
+                 + 3xy^2 e^{3z}\,\dee{z}
+= \int_C \vF\cdot\dee{\vr} - \int_C xy^3\,\dee{\vr}
+</mrow><mrow>
+&amp;\hskip1in = \varphi\big(\vr(1)\big) - \varphi\big(\vr(0)\big)
+     -\int_0^1 \overbrace{e^{2t}\big(e^{-t}\big)^3\,\hi}^{xy^3\,\hi}\cdot
+           \Big(\overbrace{2e^{2t}\,\hi-e^{-t}\,\hj+\frac{1}{1+t}\,\hk}^
+                {\vr'(t)}\Big)\ \dee{t}
+</mrow><mrow>
+&amp;\hskip1in = \varphi\big(e^2,\frac{1}{e},\ln 2\big) - \varphi\big(1,1,0\big)
+              - \int_0^1 2e^t\,\dee{t}
+</mrow><mrow>
+&amp;\hskip1in = \big\{e^2\big(\frac{1}{e}\big)^2 e^{3\ln 2}
+                  +e^4\big(\frac{1}{e}\big)^3\big\}
+              -\big(1+1\big) -2(e-1)
+</mrow><mrow>
+&amp;\hskip1in = 2^3 + e -2 -2e+2
+</mrow><mrow>
+&amp;\hskip1in = 8-e
+</mrow>
+</md>
+</p></solution>
+</exercise>
+
+<exercise xml:id="nonconserv2"><title><fromexam>M317 2018A</fromexam></title>
+<statement><p>
+<ol label="(a)">
+<li>
+For which value(s) of the constants <m>a,b</m> is the vector
+field
+<me>
+\vF=\big(2x\sin(\pi y)-e^z\big)\hi
++\big(ax^2\cos(\pi y)-3e^z\big)\hj
+-\big(x+by\big)e^z\hk
+</me>
+conservative?
+</li>
+<li>
+Let <m>\vF</m> be a conservative field from part (a). Find all functions <m>\varphi</m> for which <m>\vF=\vnabla\varphi</m>.
+</li>
+<li>
+Let <m>\vF</m> be a conservative field from part (a).
+Evaluate <m>\int_C \vF\cdot \dee{\vr}</m> where
+<m>C</m> is the intersection of <m>y=x</m> and <m>z=\ln(1+x)</m> from <m>(0,0,0)</m> to
+ <m>(1,1,\ln 2)</m>.
+</li>
+<li>
+Evaluate <m>\int_C \vG\cdot \dee{\vr}</m> where
+<me>
+\vG=\left(2x\sin(\pi y)-e^z\right)\,\hi
++\left(\pi x^2\cos(\pi y)-3e^z\right)\,\hj
+-xe^z\,\hk
+</me>
+and <m>C</m> is the intersection of <m>y=x</m> and <m>z=\ln(1+x)</m> from <m>(0,0,0)</m> to
+ <m>(1,1,\ln 2)</m>.
+</li>
+</ol>
+</p></statement>
+
+<hint><p>
+(d) How are <m>\vG</m> and <m>\vF</m> related?
+</p></hint>
+
+<answer><p>
+(a) <m>a=\pi,\ b=3</m></p><p>
+(b) <m>\varphi(x,y,z)=x^2\sin(\pi y)-xe^z-3ye^z+C</m> for any constant <m>C</m>
+</p>
+
+<p>(c) <m>-8</m></p><p>
+(d) <m>-\frac{13}{2}</m>
+</p></answer>
+
+<solution><p>  (a)
+The field is conservative only if
+<me>
+\frac{\partial F_1}{\partial y}=\frac{\partial F_2}{\partial x}\qquad
+\frac{\partial F_1}{\partial z}=\frac{\partial F_3}{\partial x}\qquad
+\frac{\partial F_2}{\partial z}=\frac{\partial F_3}{\partial y}
+</me>
+That is,
+<md>
+<mrow>
+\frac{\partial }{\partial y}\left(2x\sin(\pi y)-e^z\right)
+&amp;=\frac{\partial }{\partial x}\left(ax^2\cos(\pi y)-3e^z\right) &amp;
+&amp;\iff &amp;
+2\pi x\cos(\pi y) &amp; =2a x\cos(\pi y)
+
+</mrow><mrow>
+
+\frac{\partial }{\partial z}\left(2x\sin(\pi y)-e^z\right)
+&amp;=-\frac{\partial }{\partial x}\left(x+by\right)e^z &amp;
+&amp;\iff &amp;
+-e^z &amp; =-e^z
+
+</mrow><mrow>
+
+\frac{\partial }{\partial z}\left(ax^2\cos(\pi y)-3e^z\right)
+&amp;=-\frac{\partial }{\partial y}\left(x+by\right)e^z &amp;
+&amp;\iff &amp;
+-3e^z &amp; =-be^z
+</mrow>
+</md>
+Hence only <m>a=\pi,\ b=3</m> works.
+</p>
+
+<p>(b) When <m>a=\pi,\ b=3</m>
+<md>
+<mrow>
+\vF&amp;=\left(2x\sin(\pi y)-e^z\right)\hi
++\left(\pi x^2\cos(\pi y)-3e^z\right)\hj
+-\left(x+3y\right)e^z\hk
+</mrow><mrow>
+&amp;=\vnabla\big( x^2\sin(\pi y)-xe^z-3ye^z+C\big)
+</mrow>
+</md>
+so <m>\varphi(x,y,z)=x^2\sin(\pi y)-xe^z-3ye^z+C</m> for any constant <m>C</m>.
+Here <m>\varphi</m> was guessed. Alternatively, it can be found
+by antidifferentiating the partial derivatives of <m>\vF</m>.
+<md>
+<mrow>
+\frac{\partial \varphi}{\partial x}(x,y,z) &amp;= 2x\sin(\pi y)-e^z &amp;\implies \varphi(x,y,z)&amp;=x^2\sin(\pi y)-xe^z+\psi_1(y,z)
+</mrow><mrow>
+\frac{\partial \varphi}{\partial y}(x,y,z) &amp;= \pi x^2\cos(\pi y)-3e^z &amp;\implies \varphi(x,y,z)&amp;=x^2\sin(\pi y)-3ye^z+\psi_2(x,z)
+</mrow><mrow>
+\frac{\partial \varphi}{\partial z}(x,y,z) &amp;= -(x+3y)e^z &amp; \implies \varphi(x,y,z)&amp;=-xe^z-3ye^z+\psi_3(x,y)
+</mrow>
+</md>
+Summing the distinct terms on the right hand sides of the three equations
+above, we guess
+<me>
+\varphi(x,y,z) = x^2\sin(\pi y)-xe^z-3ye^z</me>
+ is a potential for <m>\vF</m>. Setting <m>\psi_1(y,z)=-3ye^z</m>, <m>\psi_2(x,z)=-xe^z</m>, and <m>\psi_3(x,y)=x^2\sin(\pi y)</m> convinces us that our guess is indeed a valid potential.
+</p>
+
+<p>(c) By part (b),
+<me>
+\int _C\vF\cdot \dee{\vr}
+=\varphi(1,1,\ln 2)-\varphi(0,0,0)
+=\left(\sin\pi-e^{\ln 2}-3e^{\ln 2}\right)-\left(\sin(0)-0-0\right)
+=-8
+</me>
+</p>
+
+<p>(d)
+Observe that <m>\vG=\vF+3ye^z\,\hk</m>, with <m>\vF</m> evaluated with
+<m>a=\pi,\ b=3</m>. Hence
+<me>
+\int _C\vG\cdot \dee{\vr}=\int _C\vF\cdot \dee{\vr}
++\int _C3ye^z\,\hk\cdot \dee{\vr}
+=-8+\int _C3ye^z\,\hk\cdot \dee{\vr}
+</me>
+To evaluate the remaining integral, parametrize the curve by <m>\vr(t)
+=t\hi+t\hj+\ln(1+t)\hk</m> with <m>0\le t\le 1</m>. Then <m>\vr'(t)=\hi+\hj+\frac{1}{1+t}\hk</m> and
+<m>3ye^z\hk=3t(1+t)\hk</m> so that <m>3ye^z\,\hk\cdot \dee{\vr}=3t\,\dee{t}</m>. Subbing in
+<me>
+\int _C\vG\cdot \dee{\vr}
+=-8+\int_0^13t\,\dee{t}
+=-8+\frac{3}{2}=-\frac{13}{2}
+</me>
+</p></solution>
+</exercise>
+
+<exercise><title><fromexam>M317 2007A</fromexam></title>
+<statement><p>
+Consider the vector field
+<me>
+\vF(x, y, z) = -2y \cos x \sin x\,\hi + (\cos^2 x + (1 + yz) e^{yz} )\,\hj
+                + y^2 e^{yz}\,\hk
+</me>
+<ol label="a">
+<li>
+Find a real valued function <m>f (x, y, z)</m> such that <m>\vF = \vnabla f</m>.
+</li>
+<li>
+Evaluate the line integral
+<me>
+\int_C \vF \cdot \dee{\vr}
+</me>
+where <m>C</m> is the arc of the curve
+<m>\vr(t) = \big(t, e^t , t^2 - \pi^2\big)</m> , <m>0 \le t \le \pi</m>,
+traversed from  <m>(0, 1, -\pi^2 )</m> to <m>(\pi, e^\pi , 0)</m>.
+</li>
+</ol>
+</p></statement>
+
+<hint><p>
+(a) Start with <m>\pdiff{f}{z} = y^2e^{yz}</m>.
+</p>
+
+<p>(b) Use the result of part (a) to do part (b).
+</p></hint>
+
+<answer><p>
+(a) <m>f(x,y,z) =  ye^{yz} + y\cos^2 x + C</m>  works for any constant <m>C</m>
+</p>
+
+<p>(b) <m>2e^\pi-e^{-\pi^2}-1</m>
+</p></answer>
+
+<solution><p> (a)
+The potential <m>f</m> must obey
+<md>
+<mrow>
+\pdiff{f}{x}(x,y,z)
+            &amp;= -2y \cos x \sin x
+</mrow><mrow>
+\pdiff{f}{y}(x,y,z) &amp;= \cos^2 x + (1 + yz) e^{yz}
+</mrow><mrow>
+\pdiff{f}{z}(x,y,z) &amp;= y^2 e^{yz}
+</mrow>
+</md>
+Integrating the last of these equations with respect to <m>z</m> gives
+<me>
+f(x,y,z) = ye^{yz} +g(x,y)
+</me>
+Substituting this into the second equation gives
+<me>
+e^{yz} + yze^{yz} +\frac{\partial g}{\partial y}(x,y) = \cos^2 x + (1 + yz) e^{yz}
+\qquad\text{or}\qquad
+\frac{\partial g}{\partial y}(x,y)=\cos^2 x
+</me>
+which forces
+<me>
+g(x,y) =  y\cos^2 x + h(x)
+</me>
+Finally, substituting <m>f(x,y,z) = ye^{yz} + y\cos^2 x + h(x)</m>
+into the first equation gives
+<me>
+-2y\sin x\cos x + h'(x)
+=-2y \cos x \sin x \quad\text{or}\quad
+h'(x) = 0
+</me>
+So <m>h(x) = C</m> and hence <m>f(x,y,z) =  ye^{yz} + y\cos^2 x + C</m>
+works for any constant <m>C</m>.
+</p>
+
+<p>(b) By part (a)
+<md>
+<mrow>
+\int_C \vF \cdot \dee{\vr}
+&amp;= \int_C \vnabla f \cdot \dee{\vr}
+=f\big(\pi, e^\pi , 0\big) -f\big(0, 1, -\pi^2\big)
+=\Big[ye^{yz} + y\cos^2 x\Big]^{(\pi, e^\pi , 0)}_{(0, 1, -\pi^2 )}
+</mrow><mrow>
+&amp;=\big(2e^\pi\big)-\big(e^{-\pi^2}+1\big)
+</mrow>
+</md>
+</p>
+
+</solution>
+</exercise>
+
+<exercise><title><fromexam>M317 2005D</fromexam></title>
+<statement><p>
+Consider the vector field <m>\vF(x, y, z) = 2x\,\hi + 2y\,\hj + 2z\,\hk</m>.
+<ol label="a">
+<li>
+Compute <m>\vnabla\times\vF</m>.
+</li>
+<li>
+If <m>C</m> is any path from <m>(0, 0, 0)</m> to <m>(a_1 , a_2 , a_3)</m> and
+<m>\va = a_1\,\hi + a_2\,\hj + a_3\,\hk</m>, show that
+<m>\int_C \vF\cdot \dee{\vr} = \va\cdot\va</m>.
+</li>
+</ol>
+</p></statement>
+
+<hint><p>
+The integral in part (b) is path independent. That's a big hint.
+</p></hint>
+
+<answer><p>
+(a) <m>\vZero</m>.
+</p>
+
+<p>(b) <m>\vF</m> is conservative with potential <m>\varphi(x,y,z) = x^2 + y^2 +z^2</m>.
+    So the integral is <m>\varphi(a_1,a_2,a_3) - \varphi(0,0,0) = \va\cdot\va</m>.
+</p></answer>
+
+<solution><p> (a)
+The curl of <m>\vF</m> is zero because <m>F_1</m> is a function only of <m>x</m>, <m>F_2</m> is a function only of <m>y</m>, and <m>F_3</m> is a function only of <m>z</m>. That is:
+<md>
+<mrow>
+\vnabla\times\vF
+&amp;=\det\left[\begin{matrix}
+\hi &amp;\hj &amp;\hk
+</mrow><mrow>
+\pdiff{}{x} &amp; \pdiff{}{y} &amp;
+                \pdiff{}{z}
+</mrow><mrow>
+2x &amp;  2y &amp; 2z
+\end{matrix}
+\right]=(0-0)\hi+(0-0)\hj+(0-0)\hk
+=\vZero
+</mrow>
+</md>
+</p>
+
+<p> (b)
+All first-order partial derivative of <m>\vF</m> are continuous on all of <m>\mathbb R^3</m>. By part (a), <m>\vF</m> passes the screening test and is conservative by
+Theorem <xref ref="thm_screenConserv"/> in the  text.
+By inspection, a potential is <m>\varphi=x^2+y^2+z^2</m>.
+Since <m>\vF=\vnabla\varphi</m>,
+<md>
+<mrow>
+\int_C \vF \cdot \dee{\vr}
+&amp;=\Big[x^2+y^2+z^2\Big]^{(a_1,a_2,a_3)}_{(0,0,0)}
+=a_1^2 + a_2^2 + a_3^2
+=\va\cdot\va
+</mrow>
+</md>
+</p>
+
+</solution>
+</exercise>
+
+<exercise><title><fromexam>M317 2015A</fromexam></title>
+<statement><p>
+Let <m>C</m> be the parameterized curve given by
+<me>
+\vr(t) = \big(\cos t, \sin t, t\big),\qquad
+0 \le t \le \frac{\pi}{2}
+</me>
+and let
+<me>
+\vF = \big(e^{yz}\,,\, xze^{yz} + ze^y\,,\, xye^{yz} + e^y\big)
+</me>
+<ol label="a">
+<li>
+Compute and simplify <m>\vnabla\times\vF</m>.
+</li>
+<li>
+Compute the work integral <m>\int_C\vF\cdot\dee{\vr}</m>.
+</li>
+</ol>
+</p></statement>
+
+<hint><p>
+Part (a) is a hint for part (b).
+</p></hint>
+
+<answer><p>
+(a) <m>\vnabla\times\vF=\vZero</m> </p><p>
+(b) <m>\frac{\pi e}{2} - 1</m>
+</p></answer>
+
+<solution><p> (a)
+The curl of <m>\vF</m> is
+<md>
+<mrow>
+\vnabla\times\vF
+&amp;=\det\left[\begin{matrix}
+\hi &amp;\hj &amp;\hk
+</mrow><mrow>
+\pdiff{}{x} &amp; \pdiff{}{y} &amp;
+                \pdiff{}{z}
+</mrow><mrow>
+e^{yz} &amp; xze^{yz} + ze^y &amp; xye^{yz} + e^y
+\end{matrix}
+\right]
+</mrow><mrow>
+&amp;= \big[(xe^{yz}+xyze^{yz}+e^y)-(xe^{yz}+xyze^{yz}+e^y)\big]\,\hi
+    -\big[ye^{yz}-ye^{yz}\big]\,\hj
+    + \big[ze^{yz}-ze^{yz}\big]\,\hk
+</mrow><mrow>
+&amp;= \vZero
+</mrow>
+</md>
+</p>
+
+<p>(b) <m>\vF</m> is defined on all of <m>\bbbr^3</m> and passes the conservative
+field screening test <m>\vnabla\times\vF=\vZero</m>. So <m>\vF</m> is
+conservative.
+We find a potential <m>\varphi</m> for <m>\vF</m> by antidifferentiating its partial derivatives.
+<md>
+<mrow>
+\frac{\partial \varphi}{\partial x}(x,y,z)
+            &amp;= e^{yz} &amp;\implies \varphi(x,y,z)&amp;=xe^{yz}+\psi_1(y,z)
+</mrow><mrow>
+\frac{\partial \varphi}{\partial y}(x,y,z) &amp;= xze^{yz} + ze^y&amp;\implies \varphi(x,y,z)&amp;=xe^{yz}+ze^y+\psi_2(x,z)
+</mrow><mrow>
+\frac{\partial \varphi}{\partial z}(x,y,z) &amp;= xye^{yz} + e^y&amp;\implies \varphi(x,y,z)&amp;=xe^{yz}+ze^y+\psi_3(x,y)
+</mrow>
+</md>
+All together, <m>\varphi(x,y,z) = xe^{yz} +ze^y + C</m>
+works for any constant <m>C</m>. So the specified work integral is
+<md>
+<mrow>
+\int_C\vF\cdot\dee{\vr}
+=\varphi\big(\vr(\pi/2)\big) - \varphi\big(\vr(0)\big)
+=\varphi\big(0,1,\pi/2\big) - \varphi\big(1,0,0\big)
+=\frac{\pi e}{2} - 1
+</mrow>
+</md>
+</p></solution>
+</exercise>
+
+<exercise><title><fromexam>M317 2017A</fromexam></title>
+<statement><p>
+<ol label="a">
+<li>
+Show that the planar vector field
+<me>
+\vF(x, y) = \big(2xy \cos(x^2)\,,\, \sin(x^2) - \sin(y)\big)
+</me>
+is conservative.
+</li>
+<li>
+Find a potential function for <m>\vF</m>.
+</li>
+<li>
+For the vector field <m>\vF</m> from above compute <m>\int_C\vF\cdot\dee{\vr}</m>,
+where <m>C</m> is the part of the graph <m>x = \sin(y)</m> from <m>y = \pi/2</m> to
+<m>y = \pi</m>.
+</li>
+</ol>
+</p></statement>
+
+<hint><p>
+The three parts of this problem are closely related.
+</p></hint>
+
+<answer><p>
+(a), (b)  <m>f(x,y) = y\sin(x^2)+\cos(y) + C</m>
+is a potential for any constant <m>C</m>. Because <m>\vF</m> has a potential,
+it is conservative.
+</p>
+
+<p>(c) <m>-1 -\frac{\pi}{2}\sin(1)</m>
+</p></answer>
+
+<solution><p> (a), (b)
+The function <m>f(x,y)</m> is a potential for <m>\vF(x,y)</m>
+if and only if it obeys
+<md>
+<mrow>
+\pdiff{f}{x}(x,y)
+            &amp;= 2xy \cos(x^2)
+</mrow><mrow>
+\pdiff{f}{y}(x,y) &amp;= \sin(x^2) - \sin(y)
+</mrow>
+</md>
+Integrating the first of these equations gives
+<me>
+f(x,y) = y\sin(x^2) + g(y)
+</me>
+Substituting this into the second equation gives
+<me>
+\sin(x^2)+g'(y) = \sin(x^2) - \sin(y)
+\qquad\text{or}\qquad
+g'(y) = -\sin(y)
+</me>
+which integrates to
+<me>
+g(y) = \cos(y) + C
+</me>
+with <m>C</m> an arbitrary constant. Hence <m>f(x,y) = y\sin(x^2)+\cos(y) + C</m>
+is a potential for any constant <m>C</m>. Because <m>\vF</m> has a potential,
+it is conservative.
+</p>
+
+<p>(c) We may parametrize <m>C</m> by
+<me>
+\vr(t) = \sin(t)\,\hi + t\,\hj\qquad
+\frac{\pi}{2}\le t\le\pi
+</me>
+As <m>f(x,y) = y\sin(x^2)+\cos(y)</m> is a potential for <m>\vF</m>
+<md>
+<mrow>
+\int_C\vF\cdot\dee{\vr}
+&amp;=f\big(\vr(\pi)\big) -f\big(\vr(\frac{\pi}{2})\big)
+=f\big(0,\pi\big) -f\big(1,\frac{\pi}{2}\big)
+=\big(-1\big)-\Big(\frac{\pi}{2}\sin(1)\Big)
+</mrow><mrow>
+&amp;=-1 -\frac{\pi}{2}\sin(1)
+</mrow>
+</md>
+</p></solution>
+</exercise>
+
+<exercise><title><fromexam>M317 2000D</fromexam></title>
+<statement><p>
+Consider the following force field, in which <m>m,n,p,q</m> are constants:
+<me>
+\vF
+= (mxyz + z^2 - ny^2)\,\hi + (x^2 z - 4xy)\,\hj + (x^2y + pxz + qz^3)\,\hk
+</me>
+<ol label="a">
+<li>
+Find all values of <m>m,n,p,q</m> such that
+<m>\oint_\cC \vF\cdot \dee{\vr} = 0</m> for all piecewise smooth closed
+curves <m>\cC</m> in <m>\bbbr^3</m>.
+</li>
+<li>
+For every possible choice of <m>m,n,p,q</m> in<nbsp/>(a),
+find the work done by <m>\vF</m> in moving a particle
+from the bottom to the top of the sphere <m>x^2 + y^2 + z^2 = 2z</m>.
+(The direction of <m>\hk</m> defines <q>up</q>.)
+</li>
+</ol>
+</p></statement>
+
+<hint><p>
+We can rewrite <m>x^2 + y^2 + z^2 = 2z</m> as <m>x^2+y^2+(z-1)^2=1</m>.
+</p></hint>
+
+<answer><p>
+(a) <m>p=2</m>, <m>m=2</m>, <m>n=2</m>, but <m>q\in\bbbr</m> is completely free</p><p>
+(b) <m>4q</m>
+</p></answer>
+
+<solution><p>
+(a)
+The stated integral property is characteristic of conservative fields (Theorem<nbsp/><xref ref="thm_pathIndepConserv"/>).
+Since all partial derivatives of <m>\vF</m> are defined on all of <m>\bbbr^3</m>,
+an equivalent property is
+<md>
+<mrow>
+\vZero &amp;= \nabla\times\vF
+= \left|\begin{matrix} \hi &amp; \hj &amp; \hk
+</mrow><mrow>
+      \frac{\partial }{\partial x} &amp; \frac{\partial }{\partial y} &amp; \frac{\partial }{\partial z}
+</mrow><mrow>
+(mxyz + z^2 - ny^2) &amp; (x^2 z - 4xy) &amp; (x^2y + pxz + qz^3) \end{matrix}\right|
+
+</mrow><mrow>
+&amp;= \hi\,\big(x^2-x^2\big) - \hj\,(2xy+pz-mxy-2z) + \hk\,(2xz-4y-mxz+2ny).
+</mrow>
+</md>
+This requires <m>p=2</m>, <m>m=2</m>, and <m>n=2</m>, but leaves <m>q\in\bbbr</m> completely free.
+</p>
+
+<p>(b)
+<alert>Solution 1:</alert>
+The choices from<nbsp/>(a) give
+<me>
+\vF
+= (2xyz + z^2 - 2y^2)\,\hi + (x^2 z - 4xy)\,\hj + (x^2y + 2xz + qz^3)\,\hk.
+</me>
+We find a potential <m>\varphi</m> for <m>\vF</m> by antidifferentiating its partial derivatives.
+<md>
+<mrow>
+\frac{\partial \varphi}{\partial x}(x,y,z) &amp;= 2xyz + z^2 - 2y^2 &amp;\implies \varphi(x,y,z)&amp;=x^2yz+xz^2-2xy^2+\psi_1(y,z)
+</mrow><mrow>
+\frac{\partial \varphi}{\partial y}(x,y,z) &amp;= x^2 z - 4xy  &amp;\implies \varphi(x,y,z)&amp;=x^2yz-2xy^2+\psi_2(x,z)
+</mrow><mrow>
+\frac{\partial \varphi}{\partial z}(x,y,z) &amp;= x^2y + 2xz + qz^3 &amp;\implies \varphi(x,y,z)&amp;=x^2yz+xz^2+\frac{q}{4}z^4+\psi_3(x,y)
+</mrow>
+</md>
+All together, <m>\vF=\nabla\varphi</m> for
+<me>
+\varphi(x,y,z) = x^2 y z + x z^2 - 2 x y^2 + \frac{1}{4}q z^4 + C
+</me>
+where <m>C</m> is any constant.
+</p>
+
+<p>Rearranging the sphere's equation to <m>x^2 + y^2 + (z-1)^2 = 1</m>
+reveals that its bottom is at <m>\vr_0 = (0,0,0)</m>, and its top is at
+<m>\vr_1 = (0,0,2)</m>.
+Hence the work done is
+<me>
+W
+= \int_\cC \vF\cdot \dee{\vr}
+= \int_\cC \nabla\varphi\cdot \dee{\vr}
+= \varphi(0,0,2) - \varphi(0,0,0)
+= 4q
+</me>
+</p>
+
+<p><alert>Solution 2:</alert>
+Since the integral is path-independent,
+all paths from <m>\vr_0</m> to <m>\vr_1</m> produce
+the same result.  A simple choice is
+<me>
+\cC:\qquad \vr = (0,0,t),\quad 0\le t\le 2
+</me>
+Here <m>\vr'(t) = (0,0,1)</m>, so direct calculation gives
+<me>
+\int_\cC \vF\cdot \dee{\vr}
+= \int_{t=0}^2 \vF\big(\vr(t)\big)\cdot\vr'(t)\,\dee{t}
+= \int_{t=0}^2 qt^3\,\dee{t}
+= \Big[\frac{1}{4}qt^4\Big]_{t=0}^2 = 4q
+</me>
+</p></solution>
+</exercise>
+</exercisegroup>
+
+<exercisegroup><introduction><application/></introduction>
+
+<exercise>
+<statement><p>
+Let <m>C</m> be the curve from <m>(0,0,0)</m> to <m>(1,1,1)</m> along the
+intersection of the surfaces <m>y=x^2</m> and <m>z=x^3</m>.
+<ol label="a">
+<li>
+Find <m>\int_C \rho\, \dee{s}</m> if <m>s</m> is arc length along <m>C</m> and <m>\rho=8x+36z</m>.
+</li>
+<li>
+Find <m>\int_C \vF\cdot \dee{\vr}</m> if
+ <m>\vF=\sin y\,\hi + (x\cos y+z)\,\hj+ (y+z)\,\hk</m>.
+</li>
+</ol>
+</p></statement>
+
+<hint><p>
+(a)
+The curve can be easily parametrized by using <m>x</m> as a parameter.
+</p>
+
+<p>(b)
+Don't evaluate the integral directly.
+</p>
+
+</hint>
+
+<answer><p>
+(a) <m>\frac{2}{3}\big[14^{3/2}-1\big]\approx 34.26</m></p><p>
+(b) <m>\sin 1+\frac{3}{2} \approx 2.3415</m>
+</p></answer>
+
+<solution><p>
+(a)
+ Parametrize <m>C</m> by <m>x</m>. When the first component of a point on the
+curve is <m>x</m>, then the second component, <m>y</m>, must be <m>x^2</m> and
+the third component, <m>z</m>, must be <m>x^3</m>. So
+<md>
+<mrow>
+\vr(x)&amp;=x\,\hi+x^2\,\hj+x^3\,\hk\qquad 0\le x\le 1
+</mrow><mrow>
+\vr'(x)&amp;=\hi+2x\,\hj+3x^2\,\hk
+</mrow><mrow>
+\diff{s}{x}(x)&amp;=\sqrt{1+4x^2+9x^4}
+</mrow>
+</md>
+and
+<md>
+<mrow>
+\rho(x)\ \diff{s}{x}(x)
+&amp;=\big(8x+36x^3\big)\sqrt{1+4x^2+9x^4}
+</mrow><mrow>
+\int_C\rho\ \dee{s}
+&amp;=\int_0^1 \big(8x+36x^3\big)\sqrt{1+4x^2+9x^4}\,\dee{x}
+</mrow>
+</md>
+Substituting <m>u=1+4x^2+9x^4</m>, <m>\dee{u} = \big(8x+36x^3\big)\,\dee{x}</m>,
+<m>u(0)=1</m>, <m>u(1)=14</m>,
+<md>
+<mrow>
+\int_C\rho\ \dee{s}
+&amp;=\int_1^{14} \sqrt{u}\ \dee{u}
+=\frac{2}{3}u^{3/2}\bigg|_1^{14}
+</mrow><mrow>
+&amp;=\frac{2}{3}\big[14^{3/2}-1\big]\approx 34.26
+</mrow>
+</md>
+</p>
+
+<p>(b)
+Since <m>\vF(x,y,z)=\nabla f(x,y,z)</m> with <m>f(x,y,z)=x\sin y+yz+\half z^2</m>,
+<me>
+\int_C \vF\cdot \dee{\vr}=f(1,1,1)-f(0,0,0)
+=\sin 1+\frac{3}{2} \approx 2.3415
+</me>
+The potential <m>f</m> was just guessed. Alternatively, it can be found
+by solving
+<md>
+<mrow>
+\pdiff{f}{x}(x,y,z)
+            &amp;= \sin y
+</mrow><mrow>
+\pdiff{f}{y}(x,y,z) &amp;= x\cos y+z
+</mrow><mrow>
+\pdiff{f}{z}(x,y,z) &amp;= y+z
+</mrow>
+</md>
+Integrating the first of these equations gives
+<me>
+f(x,y,z) = x\sin y +g(y,z)
+</me>
+Substituting this into the second equation gives
+<me>
+x\cos y+\frac{\partial g}{\partial y}(y,z) = x\cos y+z\qquad\hbox{or}\qquad
+\frac{\partial g}{\partial y}(x,z)=z
+</me>
+which forces
+<me>
+g(y,z) =  yz + h(z)
+</me>
+Finally, substituting <m>f(x,y,z) = x\sin y +yz + h(z)</m>
+into the last equation gives
+<me>
+y + h'(z)
+=y+z \quad\hbox{or}\quad
+h'(z) = z
+</me>
+So <m>h(x) = \frac{z^2}{2}+C</m> and hence
+<m>f(x,y,z) = x\sin y + yz + \frac{z^2}{2}+C</m>  for any constant <m>C</m>.
+</p>
+
+</solution>
+</exercise>
+
+<exercise><title><fromexam>M317 2008D</fromexam></title>
+<statement><p>
+The curve <m>C</m> is the helix that winds around the cylinder <m>x^2 + y^2 = 1</m>
+(counterclockwise, as viewed from the positive <m>z</m>-axis, looking
+down on the <m>xy</m>-plane). It starts at the point <m>(1, 0, 0)</m>, winds
+around the cylinder once, and ends at the point <m>(1, 0, 1)</m>.
+Compute the line integral of the vector field
+<me>
+\vF(x, y, z) = (-y, x, z^2)
+</me>
+along <m>C</m>.
+</p></statement>
+
+<hint><p>
+Refer to Example<nbsp/><xref ref="eg_helixTwist"/> for a parametrization of a helix.
+</p></hint>
+
+<answer><p>
+<m>2\pi+\frac{1}{3}</m>
+</p></answer>
+
+<solution><p> First, we'll parametrize <m>(x,y)</m>, which wraps once,
+counterclockwise, aroung the circle <m>x^2+y^2=1</m>. So
+<m>x(t) = \cos t</m>, <m>y(t) = \sin t</m>, <m>0\le t\le 2\pi</m> works. As <m>(x,y)</m> wraps
+around the circle, <m>z</m> has to start at <m>0</m> (when <m>t=0</m>) and end at <m>1</m>
+(when <m>t=2\pi</m>).
+So <m>z(t) =\frac{t}{2\pi}</m> works and our parametrization
+is
+<me>
+\vr(t) = \cos t\,\hi +\sin t\,\hj +\frac{t}{2\pi}\,\hk
+</me>
+(Compare to Example<nbsp/><xref ref="eg_helixTwist"/>.)
+With this parametrization
+<md>
+<mrow>
+\vr'(t) &amp;= -\sin t\,\hi +\cos t\,\hj +\frac{1}{2\pi}\,\hk
+</mrow><mrow>
+\vF\big(x(t),y(t),z(t)\big)&amp; = -\sin t\,\hi + \cos t\,\hj
+                                         + \frac{t^2}{4\pi^2} \hk
+</mrow><mrow>
+\vF\big(x(t),y(t),z(t)\big)\cdot\vr'(t)&amp; = 1 + \frac{t^2}{8\pi^3}
+</mrow>
+</md>
+and
+<md>
+<mrow>
+\int_C \vF\cdot\dee{\vr}
+&amp;= \int_0^{2\pi} \vF\big(x(t),y(t),z(t)\big)\cdot\vr'(t)\ \dee{t}
+= \int_0^{2\pi}\left(1 + \frac{t^2}{8\pi^3} \right)\ \dee{t}
+</mrow><mrow>
+&amp;=2\pi+\frac{1}{3}
+</mrow>
+</md>
+</p>
+
+</solution>
+</exercise>
+
+<exercise><title><fromexam>M317 2011D</fromexam></title>
+<statement><p>
+Evaluate the line integrals below. (Use any method you like.)
+<ol label="a">
+<li>
+<m>\int_C (x^2 + y)\,\dee{x} + x\,\dee{y}</m>, where <m>C</m> is the arc of the parabola
+<m>y = 9 - x^2</m> from <m>(-3, 0)</m> to <m>(3, 0)</m>.
+</li>
+<li>
+<m>\int_C \vF \cdot\hn\, \dee{s}</m>, where <m>\vF(x, y) = 2x^2\hi + ye^x\hj</m>,
+<m>C</m> is the boundary of the square <m>0 \le x \le 1</m>, <m>0 \le y \le 1</m>. Here
+<m>\hn</m> is the unit normal vector pointing outward from the square, and <m>s</m> is arc length.
+</li>
+</ol>
+</p></statement>
+
+<hint><p>
+(b) Parametrize each side of the square by arc length, and make use of the plentiful zeroes that arise.
+</p></hint>
+
+<answer><p>
+(a) <m>18</m></p><p>
+(b) <m>3-e</m>
+</p></answer>
+
+<solution><p> (a)
+Let's evaluate the integral directly using the parametrization
+<me>
+\vr(x) = x\,\hi +(9-x^2)\,\hj
+</me>
+with <m>-3\le x \le 3</m>.
+</p>
+
+<p>Since <m>\vr'(x) = \hi -2x\,\hj</m>,
+<md>
+<mrow>
+\int_C (x^2 + y)\,\dee{x} + x\,\dee{y}
+&amp;=\int_{-3}^3 \big(x^2\ +\  \overbrace{9-x^2}^{y}\
+          +x\overbrace{(-2x)}^{\diff{y}{x}}\big)\,\dee{x}
+=\int_{-3}^3 \big(9-2x^2\big)\,\dee{x}
+</mrow><mrow>
+&amp;=2\int_0^3 \big(9-2x^2\big)\,\dee{x}
+=2\left(27-2\frac{3^3}{3}\right)
+=18
+</mrow>
+</md>
+</p>
+
+<p> (b)  In this solution, we'll evaluate the
+integral directly. Label the four sides of the square <m>L_1</m>, <m>L_2</m>, <m>L_3</m> and
+<m>L_4</m> as in the figure
+</p>
+
+<sidebyside width="75%">
+  <image source="pfigs/OE11D_4"/>
+</sidebyside>
+
+<p>
+The parametrization of <m>L_1</m> by arc length is <m>\vr(s) = s\,\hi</m>, <m>0\le s\le 1</m>.
+As the outward pointing normal to <m>L_1</m> is <m>-\hj</m>,
+<md>
+<mrow>
+\int_{L_1} \vF \cdot\hn\, \dee{s}
+=\int_0^1 \vF(s,0) \cdot(-\hj)\, \dee{s}
+=\int_0^1 (-0)\, \dee{s}
+=0
+</mrow>
+</md>
+The parametrization of <m>L_2</m> by arc length is <m>\vr(s) = \hi+s\,\hj</m>,
+<m>0\le s\le 1</m>. As the outward pointing normal to <m>L_2</m> is <m>\hi</m>,
+<md>
+<mrow>
+\int_{L_2} \vF \cdot\hn\, \dee{s}
+=\int_0^1 \vF(1,s) \cdot \hi\, \dee{s}
+=\int_0^1 2\, \dee{s}
+=2
+</mrow>
+</md>
+The parametrization of <m>L_3</m> by arc length (starting at <m>(1,1)</m>)
+is <m>\vr(s) = (1-s)\,\hi+\hj</m>, <m>0\le s\le 1</m>.
+As the outward pointing normal to <m>L_3</m> is <m>\hj</m>,
+<md>
+<mrow>
+\int_{L_3} \vF \cdot\hn\, \dee{s}
+=\int_0^1 \vF(1-s,1) \cdot\hj\, \dee{s}
+=\int_0^1 e^{1-s}\, \dee{s}
+=\Big[-e^{1-s}\Big]_0^1
+=e-1
+</mrow>
+</md>
+The parametrization of <m>L_4</m> by arc length (starting at <m>(0,1)</m>)
+is <m>\vr(s) = (1-s)\,\hj</m>,  <m>0\le s\le 1</m>. As the outward pointing
+normal to <m>L_4</m> is <m>-\hi</m>,
+<md>
+<mrow>
+\int_{L_2} \vF \cdot\hn\, \dee{s}
+=\int_0^1 \vF(0,1-s) \cdot(- \hi)\, \dee{s}
+=\int_0^1 (-0)\, \dee{s}
+=0
+</mrow>
+</md>
+All together
+<md>
+<mrow>
+\int_C \vF \cdot\hn\, \dee{s}
+&amp;= \int_{L_1} \vF \cdot\hn\, \dee{s}
+   +\int_{L_2} \vF \cdot\hn\, \dee{s}
+   +\int_{L_3} \vF \cdot\hn\, \dee{s}
+   +\int_{L_4} \vF \cdot\hn\, \dee{s}
+</mrow><mrow>
+&amp;= 0+2+(e-1) +0
+=e+1
+</mrow>
+</md>
+</p>
+
+</solution>
+</exercise>
+
+<exercise><title><fromexam>M317 2009A</fromexam></title>
+<statement><p>
+A particle of mass <m>m = 1</m> has position <m>\vr_0 = \hj</m> and velocity
+<m>\vv_0 = \hi + \hk</m> at time <m>t = 0</m>. The particle moves under a force
+<m>\vF(t) = \hj - \sin t\, \hk</m>, where <m>t</m> denotes time.
+</p>
+
+<p><ol label="a">
+<li>
+Find the position <m>\vr(t)</m> of the particle as a function of <m>t</m>.
+</li>
+<li>
+Find the position <m>\vr_1</m> of the particle when it crosses the plane
+<m>x = \pi/2</m> for the first time after time <m>t = 0</m>.
+</li>
+<li>
+Determine the work done by <m>\vF</m> in moving the particle from <m>\vr_0</m> to
+<m>\vr_1</m>.
+</li>
+</ol>
+</p></statement>
+
+<hint><p>
+Force is mass times acceleration, where acceleration is the second derivative of position, <m>\vr(t)</m>, with respect to time, <m>t</m>. The work done by <m>\vF</m> between time <m>a</m> and time <m>b</m>
+is <m>\int_a^b \vF\cdot\dee{\vr}</m>.
+</p></hint>
+
+<answer><p>
+(a) <m>\vr(t) = t\,\hi+\big(1+\frac{t^2}{2}\big)\,\hj +\sin t\,\hk</m></p><p>
+(b) <m>\vr_1 = \frac{\pi}{2}\,\hi+\big(1+\frac{\pi^2}{8}\big)\,\hj + \hk</m>
+</p><p>
+(c) <m>\frac{\pi^2}{8}-\frac{1}{2}</m>
+</p></answer>
+
+<solution><p> (a) Since <m>m=1</m>, Newton's law of motion gives
+<md>
+<mrow>
+\va(t) = \vv'(t) = \vF(t) = \hj - \sin t\, \hk
+</mrow>
+</md>
+Integating gives
+<me>
+\vv(t) = t\,\hj +\cos t\,\hk +\vc
+</me>
+for some constant vector <m>\vc</m>. Since <m>\vv(0)=\hi+\hk</m>, we have <m>\vc = \hi</m>
+so that
+<md>
+<mrow>
+\vr'(t) = \vv(t) = \hi + t\,\hj +\cos t\,\hk
+</mrow>
+</md>
+Integating again gives
+<me>
+\vr(t) = t\,\hi+\frac{t^2}{2}\,\hj +\sin t\,\hk +\vc
+</me>
+for some (new) constant vector <m>\vc</m>. Since <m>\vr(0)=\hj</m>, we have
+<m>\vc = \hj</m>
+so that
+<md>
+<mrow>
+\vr(t) = t\,\hi+\left(1+\frac{t^2}{2}\right)\,\hj +\sin t\,\hk
+</mrow>
+</md>
+</p>
+
+<p> (b) The particle has <m>x=\pi/2</m> when <m>t=\pi/2</m> and then
+<md>
+<mrow>
+\vr_1=\vr(\pi/2) = \frac{\pi}{2}\,\hi+\left(1+\frac{\pi^2}{8}\right)\,\hj + \hk
+</mrow>
+</md>
+</p>
+
+<p> (c)
+The work done between time <m>t=0</m> and time <m>t=\pi/2</m> is
+<md>
+<mrow>
+\int_0^{\pi/2} \vF(t)\cdot \dee{\vr}
+&amp;=\int_0^{\pi/2} \vF(t)\cdot \diff{\vr}{t}(t)\,\dee{t}
+=\int_0^{\pi/2} [\hj-\sin t\,\hk]\cdot [\hi+t\,\hj+\cos t\,\hk]\,\dee{t}
+</mrow><mrow>
+&amp;= \int_0^{\pi/2} [t -\sin t\cos t]\,\dee{t}
+=\Big[\frac{t^2}{2}+\frac{1}{2}\cos^2 t\Big]_0^{\pi/2}
+=\frac{\pi^2}{8}-\frac{1}{2}
+</mrow>
+</md>
+</p>
+
+</solution>
+</exercise>
+
+<introduction><p>Questions<nbsp/><xref ref="path1"/> and <xref ref="path2"/> ask you to find a path that leads to a particular value of a line integral. Many such paths are possible <mdash/> you only need to find one.</p></introduction>
+
+<exercise xml:id="path1"><title><fromexam>M317 2012D</fromexam></title>
+<statement>
+<p>	<ol label="a">
+<li>
+		Consider the vector field <m>\vF\big(x,y\big)= (3y, x-1)</m> in <m>\bbbr^2</m> . Compute
+		the line integral
+		<me>
+		\int_L \vF\cdot\dee{\vr}
+		</me>
+		where <m>L</m> is the line segment from <m>(2, 2)</m> to <m>(1, 1)</m>.
+</li>
+<li>
+		Find an oriented path <m>C</m> from <m>(2, 2)</m> to <m>(1, 1)</m> such that
+		<me>
+		\int_C \vF\cdot\dee{\vr} =4
+		</me>
+		where <m>\vF</m> is the vector field from (a).
+</li>
+</ol>
+</p></statement>
+
+<hint><p>
+	Note that the curve goes from <m>(2,2)</m> to <m>(1,1)</m> <mdash/> not the other way around.
+</p>
+
+<p>	For part (b), one possibility is to look for a path
+	consisting of the line segment from <m>(2,2)</m> to <m>(2,Y)</m>, followed by
+	the line segment from <m>(2,Y)</m> to <m>(1,Y)</m>, followed by the line
+	segment from <m>(1,Y)</m> to <m>(1,1)</m>, with <m>Y</m> being a parameter to be determined.
+</p></hint>
+
+<answer><p>
+	(a) -5
+</p>
+
+<p>	(b) One possibility is the path consisting of the line
+	segment from <m>(2,2)</m> to <m>(2,-3)</m>, followed by the line segment from
+	<m>(2,-3)</m> to <m>(1,-3)</m>, followed by the line segment from <m>(1,-3)</m> to <m>(1,1)</m>.
+</p>
+
+<p>	Another possibility is the path from <m>(2,2)</m> to <m>(1,1)</m> along the parabola <m>27x^2-80x+54</m>.
+</p></answer>
+
+<solution><p> (a)
+	We can parametrize <m>L</m> by
+	<me>
+	\vr(t)  = \big(x(t),y(t)\big)
+	=(t,t),
+	</me>
+	with <m>t</m> running from 2 to 1.
+	Using this parametrization,
+	<md>
+<mrow>
+	\int_L \vF\cdot\dee{\vr}
+	&amp;=\int_2^1 \vF\big(x(t),y(t)\big)\cdot(x'(t),y'(t))\ \dee{t}
+	=\int_2^1 \big(3t\,,\,t-1\big)\cdot\big(1,1\big)\ \dee{t}
+
+</mrow><mrow>&amp;=\int_2^1 (4t-1)\ \dee{t} =-5
+	</mrow>
+</md>
+</p>
+
+<p>	 (b)
+	First, we note that such a choice of path is even possible: if <m>\vF</m> were conservative, then <m>\int_c\vF\cdot \dee{\vr}</m> would be <m>-5</m> for every path starting at <m>(2,2)</m> and ending at <m>(1,1)</m>, because it would be path independent. Since <m>\frac{\partial F_1}{\partial y}=3</m> and <m>\frac{\partial F_2}{\partial x}=1\neq\frac{\partial F_1}{\partial y}</m>, by Theorem<nbsp/><xref ref="thm_pathIndepConserv"/>, <m>\vF</m> is <em>not</em> path-independent.
+</p>
+
+<p>	<alert>Solution 1:</alert>
+	</p><sidebyside>
+<image><latex-image>\begin{tikzpicture}[scale=1.25]
+		\YEaaxis{.5}{3}{1}{3}
+		\draw (2,2) node[vertex,label=above:{$(2,2)$}](A){};
+		\draw (1,1) node[vertex, label=above left:{$(1,1)$}](B){};
+		\draw[ultra thick, red,- \gt ](A)--(1.5,1.5);
+		\draw[ultra thick, red] (1.5,1.5)--(B);
+		\draw[red] (1.3,1.75) node{$L$};
+		\draw (2,-1) node[vertex,label=below right:{$(2,Y)$}](C){};
+		\draw (1,-1) node[vertex, label=below left:{$(1,Y)$}](D){};
+		\draw[ultra thick, blue,- \gt ] (A)--(2,1);
+		\draw[ultra thick, blue, - \gt ](2,1)--(C)--(1.5,-1);
+		\draw[ultra thick, blue, - \gt ](1.5,-1)--(D)--(1,-.5);
+		\draw[ultra thick, blue,](1,-.5)--(B);
+		\draw[blue] (2.25,1) node{$L_1$};
+		\draw[blue] (1.5,-1.5) node{$L_2$};
+		\draw[blue] (.75,.25) node{$L_3$};
+		\end{tikzpicture}</latex-image></image>
+</sidebyside>
+
+<p>	Let's try a family of polygonal paths <m>C_Y</m> that consist of
+	<ul>
+<li>
+		the line segment <m>L_1</m> from <m>(2,2)</m> to <m>(2,Y)</m> followed by
+</li>
+<li>
+		the line segment <m>L_2</m> from <m>(2,Y)</m> to <m>(1,Y)</m> followed by
+</li>
+<li>
+		the line segment <m>L_3</m> from <m>(1,Y)</m> to <m>(1,1)</m>.
+</li>
+</ul>
+	This is a way of characterizing a family of alternate paths with only one parameter, <m>Y</m>.
+	We are hoping that the value of the integral
+	<m>\int_{C_Y} \vF\cdot\dee{\vr}</m> depends on <m>Y</m> and that we can choose
+	a specific value of <m>Y</m> so as to make the value of the integral
+	<m>\int_{C_Y} \vF\cdot\dee{\vr}</m> exactly <m>4</m>.
+</p>
+
+<p>	Note that
+	<ul>
+<li>
+	On <m>L_1</m>, <m>x=2</m> is a constant (so that <m>\dee{x}=0</m>)
+		and <m>y</m> runs from <m>2</m> to <m>Y</m>.
+</li>
+<li>
+  On <m>L_2</m>, <m>y=Y</m> is a constant (so that <m>\dee{y}=0</m>)
+		and <m>x</m> runs from <m>2</m> to <m>1</m>.
+</li>
+<li>
+On <m>L_3</m>, <m>x=1</m> is a constant (so that <m>\dee{x}=0</m>)
+		and <m>y</m> runs from <m>Y</m> to <m>1</m>
+</li>
+</ul>
+	So,
+	<md>
+<mrow>
+	\int_{C_Y} \vF\cdot\dee{\vr}
+	&amp;= \int_{L_1}\hskip-5pt \big\{(3y\,\dee{x} + (x-1)\dee{y}\big\}
+	+ \int_{L_2}\hskip-5pt \big\{(3y\,\dee{x} + (x-1)\dee{y}\big\}
+	+ \int_{L_3}\hskip-5pt \big\{(3y\,\dee{x} + (x-1)\dee{y}\big\}
+</mrow><mrow>
+	&amp;= \int_2^Y \dee{y}
+	+ \int_2^1 3Y\,\dee{x}
+	+ \int_Y^1 0\,\dee{y}
+</mrow><mrow>
+	&amp;= (Y-2) + 3Y(1-2) =-2Y-2
+	</mrow>
+</md>
+</p>
+
+<p>	Since we want our integral to be 4, we set <m>4=-2Y-2</m>, and find <m>Y=-3</m>. That is, the path <m>D</m> consisting of line segments from <m>(2,2)</m> to <m>(2,-3)</m> to <m>(1,-3)</m> to <m>(1,1)</m> gives us <m>\int_D \vF\cdot \dee{\vr}=4</m>.
+</p>
+
+<p>	<alert>Solution 2:</alert> Choosing three straight line segments was a convenient way to solve this, but not the only way. To emphasize this point, we show that we also could have considered (for example) the family of parabolas that pass through <m>(2,2)</m> and <m>(1,1)</m>.
+</p>
+
+<p>	That is, we consider the family of functions <m>y=ax^2+bx+c</m> with <m>2=4a+2b+c</m> and <m>1=a+b+c</m>. Subtracting the equation <m>a+b+c=1</m> from the
+equation <m>4a+2b+c=2</m> (in order to eliminate <m>c</m>) gives
+	<md alignment="alignat">
+<mrow>{6}
+	&amp;&amp;(4a+2b+c)-(a+b+c)&amp;=(2)-(1)
+</mrow><mrow>
+	 \implies&amp;&amp; 3a+b&amp;=1
+</mrow><mrow>
+	 \implies&amp;&amp; b&amp;=1-3a
+	 </mrow>
+<intertext>Using <m>b=1-3a</m>,</intertext><mrow>
+&amp;&amp;	a+b+c&amp;=1
+</mrow><mrow>
+	 \implies&amp;&amp; a+(1-3a)+c&amp;= 1
+</mrow><mrow> \implies&amp;&amp; c&amp;=2a
+	</mrow>
+</md>
+</p>
+
+<p>	So, the class of functions described by
+	<m>y=ax^2+(1-3a)x+2a</m> for some constant <m>a</m> are parabolas that pass through <m>(1,1)</m> and <m>(2,2)</m>.
+</p>
+
+<sidebyside>
+<image><latex-image>\begin{tikzpicture}[scale=1.25]
+		\YEaaxis{.5}{3}{1}{3}
+		\draw (2,2) node[vertex,label=above:{$(2,2)$}](A){};
+		\draw (1,1) node[vertex, label=above left:{$(1,1)$}](B){};
+		\draw[ultra thick, red,- \gt ](A)--(1.5,1.5);
+		\draw[ultra thick, red] (1.5,1.5)--(B);
+		\draw[red] (1.3,1.75) node{$L$};
+		\draw[ultra thick, blue]  plot[domain=1:1.5](\x,{3*\x*\x-8*\x+6});
+		\draw[ultra thick, blue, \lt -]  plot[domain=1.5:2](\x,{3*\x*\x-8*\x+6});
+		\draw[blue] (2,1) node[right]{$y=ax^2+(1-3a)x+2a$};
+		\end{tikzpicture}</latex-image></image>
+</sidebyside><p>
+	So, we consider paths of the form:
+	<md>
+<mrow>
+	\vr(x)&amp;=\big(x,\ ax^2+(1-3a)x+2a\big)
+</mrow><mrow>
+	\vF(\vr(x))&amp;=\big( 3ax^2+3(1-3a)x+6a,\ x-1 \big)
+</mrow><mrow>
+	\vr'(x)&amp;=\big( 1,\ 2ax+1-3a\big)
+</mrow><mrow>
+	\vF(\vr(x))\cdot \vr'(x)&amp;=\big(3ax^2+3(1-3a)x+6a\big)\ +\
+	\big( 2ax^2+(1-3a)x-2ax+(3a-1)\big)
+</mrow><mrow>
+	&amp;=5ax^2+(4-14a)x+(9a-1)
+	</mrow>
+<intertext>So, if <m>C</m> is a portion of this parabola from <m>(2,2)</m> to <m>(1,1)</m>, then</intertext><mrow>
+	\int_C \vF \cdot \dee{\vr}&amp;=\int_2^1\big(5ax^2+(4-14a)x+(9a-1)\big)\ \dee{x}
+</mrow><mrow>
+	&amp;=\left[\frac{5a}{3}x^3+(2-7a)x^2+(9a-1)x\right]_2^1
+</mrow><mrow>
+	&amp;=\frac{a}3-5
+	</mrow>
+</md>
+	Since we want our integral to have value 4, we set <m>4=\frac{a}3-5</m>, which yields <m>a=27</m>.
+</p>
+
+<p>	If we choose <m>C</m> to be the path from <m>(2,2)</m> to <m>(1,1)</m> along the parabola <m>27x^2-80x+54</m>, then <m>\int_C\vF\cdot\dee{\vr}=4</m>, as desired.
+</p></solution>
+</exercise>
+
+<exercise xml:id="path2"><title><fromexam>M317 2011D</fromexam></title>
+<statement><p>
+	Let <m>\vF = (2y + 2)\,\hi</m> be a vector field on <m>\bbbr^2</m>. Find an
+	oriented curve <m>C</m> from <m>(0, 0)</m> to <m>(2, 0)</m> such that
+	<m>\int_C \vF\cdot \dee{\vr} = 8</m>.
+</p></statement>
+
+<hint><p>
+	One possibility is to look for a path
+	consisting of the line segment from <m>(0,0)</m> to <m>(0,Y)</m>, followed by
+	the line segment from <m>(0,Y)</m> to <m>(2,Y)</m>, followed by the line
+	segment from <m>(2,Y)</m> to <m>(2,0)</m>, with <m>Y</m> being a parameter to be determined.
+</p></hint>
+
+<answer><p>
+	One possibility is the path consisting of the line
+	segment from <m>(0,0)</m> to <m>(0,1)</m>, followed by the line segment from
+	<m>(0,1)</m> to <m>(2,1)</m>, followed by the line segment from <m>(2,1)</m> to <m>(2,0)</m>.
+</p>
+
+<p>	Another possibility is the path tracing out the half ellipse <m>\left(\cos t+1\, , \, \frac{4}{\pi}\sin t\right)</m>,
+	with <m>t</m> running from <m>\pi</m> to <m>0</m>.
+</p></answer>
+
+<solution><p>
+	Let's try a family of polygonal paths <m>C_Y</m> (sketched below) that consist of
+	<ul>
+<li>
+		the line segment <m>L_1</m> from <m>(0,0)</m> to <m>(0,Y)</m> followed by
+</li>
+<li>
+		the line segment <m>L_2</m> from <m>(0,Y)</m> to <m>(2,Y)</m> followed by
+</li>
+<li>
+		the line segment <m>L_3</m> from <m>(2,Y)</m> to <m>(2,0)</m>.
+</li>
+</ul>
+	Here <m>Y</m> is a parameter.
+</p>
+
+<sidebyside width="75%">
+  <image source="pfigs/OE11D_6"/>
+</sidebyside>
+
+<p>
+	We are hoping that the value of the integral
+	<m>\int_{C_Y} \vF\cdot\dee{\vr}</m> depends on <m>Y</m> and that we can choose
+	a specific value of <m>Y</m> so as to make the value of the integral
+	<m>\int_{C_Y} \vF\cdot\dee{\vr}</m> exactly <m>8</m>. Note that
+	<ul>
+<li>
+		on <m>L_1</m>, <m>x=0</m> is a constant (so that <m>\dee{x}=0</m>)
+		and <m>y</m> runs from <m>0</m> to <m>Y</m> and
+</li>
+<li>
+		on <m>L_2</m>, <m>y=Y</m> is a constant (so that <m>\dee{y}=0</m>)
+		and <m>x</m> runs from <m>0</m> to <m>2</m> and
+</li>
+<li>
+		on <m>L_3</m>, <m>x=2</m> is a constant (so that <m>\dee{x}=0</m>)
+		and <m>y</m> runs from <m>Y</m> to <m>0</m>
+</li>
+</ul>
+	Since <m>\vF\cdot\dee{\vr} = (2y+2)\,\dee{x}</m>,
+	<md>
+<mrow>
+	\int_{C_Y} \vF\cdot\dee{\vr}
+	&amp;= \int_{L_1}\hskip-5pt (2y+2)\,\dee{x}
+	+ \int_{L_2}\hskip-5pt (2y+2)\,\dee{x}
+	+ \int_{L_3}\hskip-5pt (2y+2)\,\dee{x}
+</mrow><mrow>
+	&amp;= 0
+	+ \int_0^2 (2Y+2)\,\dee{x}
+	+ 0
+</mrow><mrow>
+	&amp;= 2(2Y+2)
+	</mrow>
+</md>
+	So <m>Y=1</m> does the job.
+</p>
+</solution>
+
+<solution>
+<p>
+	There's nothing magical about the form of the path from Solution 1. It's just a path that's relatively easy to describe using one constant <m>Y</m>. To emphasize this point, we provide a solution with an alternate path based on an ellipse.
+</p>
+
+<p>	A partial ellipse running from <m>(0,0)</m> to <m>(2,2)</m> can be described by <m>\vr(t)=(\cos t+1\, , \, A\sin t)</m> for a constant <m>A</m>, with <m>t</m> running from <m>\pi</m> to 0. (To find this: we centre a circle of radius 1 at the point <m>(1,0)</m>, then multiply its <m>y</m>-coordinate by <m>A</m>.)
+</p>
+
+<sidebyside>
+<image><latex-image>\begin{tikzpicture}
+		\YEaaxis{.5}{4.5}{.5}{2}
+		\YEycoord{1}{$A$}
+		\draw (0,0) node[vertex]{};
+		\draw (4,0) node[vertex, label=below:{$(2,0)$}]{};
+		\draw[ultra thick, red] plot[smooth,domain=0:3.14]({2*cos(\x r)+2},{sin(\x r)});
+		\end{tikzpicture}</latex-image></image>
+</sidebyside><p>
+	In this case, <m>\vF(\vr(t))=(2A\sin t + 2,0)</m> and <m>\vr'(t)=(-\sin t , A\cos t)</m>, so
+	<md>
+<mrow>
+	\vF(\vr(t))\cdot\vr'(t)&amp;=-\sin t (2A\sin 2 +2)=-A(2\sin^2t)-2\sin t=-A(1-\cos2t)-2\sin t
+</mrow><mrow>
+	\int \vF \cdot \dee\vr&amp;=\int_{\pi}^0\big( A(\cos2t-1)-2\sin t \big)\dee{t}=\left[A\left(\frac12\sin(2t)-t\right) +2\cos t\right]_{\pi}^0
+</mrow><mrow>
+	&amp;=A\pi+4
+	</mrow>
+</md>
+	Setting <m>A\pi+4=8</m>, we find <m>A=\frac{4}{\pi}</m>. So, the half-ellipse <m>\vr(t)=\left(\cos t+1\, , \, \frac{4}{\pi}\sin t\right)</m>, with <m>t</m> running from <m>\pi</m> to 0, is another path that gives <m>\int_C \vF\cdot\dee\vr=8</m>.
+</p></solution>
+</exercise>
+
+<exercise><title><fromexam>M317 2010D</fromexam></title>
+<statement><p>
+Let
+<me>
+\vF(x, y) = \big(1, y g(y)\big)
+</me>
+and suppose that <m>g(y)</m> is a function defined everywhere with
+everywhere continuous partials.
+Show that for any curve <m>C</m> whose endpoints <m>P</m> and <m>Q</m> lie on the <m>x</m>-axis,
+<me>
+\text{distance between } P \text{ and } Q  =  \left|\int_C\vF\cdot\dee{\vr}\right|
+</me>
+</p></statement>
+
+<hint><p>
+Is <m>\vF</m> conservative?
+</p></hint>
+
+<answer><p>
+See the solution.
+</p></answer>
+
+<solution><p>
+The vector field <m>\vF</m> is conservative, with
+<me>
+\vF=\vnabla\varphi\qquad
+\varphi(x,y) = x+ \int_0^y \tilde y g(\tilde y)\ \dee{\tilde y}
+</me>
+Consquently, for <m>P=(x_0,0)</m> and <m>Q=(x_1,0)</m>,
+<md>
+<mrow>
+\int_C\vF\cdot\dee{\vr}
+&amp;=\varphi(Q)-\varphi(P)
+=x_1 + \int_0^{0} \tilde y g(\tilde y)\ \dee{\tilde y}
+- x_0 - \int_0^{0} \tilde y g(\tilde y)\ \dee{\tilde y}
+</mrow><mrow>
+&amp;=x_1-x_0
+</mrow>
+</md>
+Thus
+<me>
+ \left|\int_C\vF\cdot\dee{\vr}\right|
+=|x(Q)-x(P)|
+= \text{distance between }  P \text{ and }  Q
+</me>
+</p>
+
+</solution>
+</exercise>
+
+<exercise><title><fromexam>M317 2010A</fromexam></title>
+<statement><p>
+Let <m>S</m> be the surface <m>z = 2 + x^2 - 3 y^2</m> and let
+<m>\vF(x , y , z) = ( xz + axy^2 )\hi + yz\hj + z^2\hk</m>.
+Consider the points <m>P_1 = ( 1 , 1 , 0 )</m> and <m>P_2 = ( 0 , 0 , 2 )</m>
+on the surface <m>S</m>.
+</p>
+
+<p>Find a value of the constant <m>a</m> so that
+<m>\int_{C_1} \vF \cdot \dee{\vr}= \int_{C_2} \vF \cdot \dee{\vr}</m>
+for any two curves <m>C_1</m> and <m>C_2</m> on the surface <m>S</m> from <m>P_1</m> to <m>P_2</m>.
+</p></statement>
+
+<hint><p>
+On <m>S</m>, note
+<m>z = 2 + x^2 - 3 y^2</m>. Further, the vector field <m>\tilde\vF(x,y,z) = z^2\,\hk</m> is
+conservative (with potential <m>\frac{1}{3} z^3</m>), so
+<m>\int_{C_1} \tilde\vF \cdot \dee{\vr}= \int_{C_2} \tilde\vF \cdot \dee{\vr}</m>
+for any two curves <m>C_1</m> and <m>C_2</m> from <m>P_1</m> to <m>P_2</m>. Compare this to Questions<nbsp/><xref ref="nonconserv1"/> through <xref ref="nonconserv2"/>.
+</p></hint>
+
+<answer><p>
+<m>a=4</m>
+</p></answer>
+
+<solution><p>
+<ul>
+<li>
+First notice that the vector field <m>\tilde\vF(x,y,z) = z^2\,\hk</m> is
+conservative (with potential <m>\frac{1}{3} z^3</m>), so
+<m>\int_{C_1} \tilde\vF \cdot \dee{\vr}= \int_{C_2} \tilde\vF \cdot \dee{\vr}</m>
+for any two curves <m>C_1</m> and <m>C_2</m> from <m>P_1</m> to <m>P_2</m> (whether or not they are on the surface <m>S</m>). Consequently, the statement
+<q><m>\int_{C_1} \vF \cdot \dee{\vr}= \int_{C_2} \vF \cdot \dee{\vr}</m></q>
+is true  if and only if the statement
+<q><m>\int_{C_1} (\vF-\tilde\vF) \cdot \dee{\vr}= \int_{C_2} (\vF-\tilde\vF) \cdot \dee{\vr}</m></q> is true.
+So we may replace the vector field <m>\vF</m>
+with the vector field
+<me>
+\vG(x,y,z)=\vF(x,y,z)-\tilde\vF(x,y,z)=( xz + axy^2 )\hi + yz\hj
+</me>
+</li>
+<li>
+We are to consider only curves on the surface <m>S</m>.
+For any such curve <m>C</m>, say parametrized by <m>\vr(t)</m> with <m>a\le t\le b</m>, the
+integral
+<me>
+\int_C \vG \cdot \dee{\vr}
+=\int_a^b \vG\big(\vr(t)\big)\cdot \diff{\vr}{t}(t)\ \dee{t}
+</me>
+depends only on the values of <m>\vG</m> on the surface <m>S</m>.
+In particular, if another vector field <m>\vH</m> obeys <m>\vH(x,y,z)=\vG(x,y,z)</m>,
+for all points <m>(x,y,z)</m> on <m>S</m>, we have
+<md>
+<mrow>
+\int_C \vG \cdot \dee{\vr}
+=\int_a^b \vG\big(\vr(t)\big)\cdot \diff{\vr}{t}(t)\ \dee{t}
+=\int_a^b \vH\big(\vr(t)\big)\cdot \diff{\vr}{t}(t)\ \dee{t}
+=\int_C \vH \cdot \dee{\vr}
+</mrow>
+</md>
+So we may replace <m>\vG</m> with
+<md>
+<mrow>
+\vH(x,y,z) &amp;= \vG(x,y,2+x^2-3y^2)
+  = \big[x(2+x^2-3y^2) +axy^2\big]\hi +y(2+x^2-3y^2)\hj
+</mrow><mrow>
+  &amp;= (2x+x^3 -3xy^2 +axy^2)\hi +(2y+yx^2-3y^3)\hj
+</mrow>
+</md>
+Note that <m>\vH(x,y,z)</m> is defined on all of <m>\bbbr^3</m>. It just happens
+to not depend on <m>z</m>.
+</li>
+<li>  The curl of <m>\vH</m> is
+<md>
+<mrow>
+\vnabla\times\vH
+&amp;=\det\left[\begin{matrix}
+\hi &amp;\hj &amp;\hk
+</mrow><mrow>
+\pdiff{}{x} &amp; \pdiff{}{y} &amp;
+                \pdiff{}{z}
+</mrow><mrow>
+2x+x^3 -3xy^2 +axy^2 &amp; 2y+yx^2-3y^3 &amp; 0
+\end{matrix}
+\right]
+</mrow><mrow>
+&amp;=\big(2xy -[-6xy +2axy]\big)\hk
+=(8-2a)xy\,\hk
+</mrow>
+</md>
+This is zero if <m>a=4</m>. As <m>\vH</m> has continuous first order partial derivatives on all of <m>\bbbr^3</m>, Theorem <xref ref="thm_screenConserv"/> tells us that, when <m>a=4</m>, <m>\vH</m> is conservative and that
+<m>\int_{C_1} \vH \cdot \dee{\vr}= \int_{C_2} \vH \cdot \dee{\vr}</m>
+for any two curves <m>C_1</m> and <m>C_2</m> from <m>P_1</m> to <m>P_2</m>
+</li>
+</ul>
+So <m>a=4</m> does the job.
+</p>
+
+</solution>
+</exercise>
+
+<exercise><title><fromexam>M317 2009A</fromexam></title>
+<statement><p>
+Consider the vector field <m>\vF</m> defined as
+<me>
+\vF(x,y,z) = \Big( (1 + ax^2 )ye^{3x^2} -  bxz \cos(x^2 z)\,,\,
+                    xe^{3x^2} \,,\,
+                    x^2 \cos(x^2 z) \Big)
+</me>
+where <m>a</m> and <m>b</m> are real valued constants.
+<ol label="a">
+<li>
+Compute <m>\vnabla\times\vF</m>.
+</li>
+<li>
+Determine for which values <m>a</m> and <m>b</m> the vector field <m>\vF</m> is conservative.
+</li>
+<li>
+For the values of <m>a</m> and <m>b</m> obtained in part (b), find a potential function
+<m>f</m> such that <m>\vnabla f = \vF</m>.
+</li>
+<li>
+Evaluate the line integral
+<me>
+\int_C \Big(ye^{3x^2} + 2xz\cos(x^2 z)\Big) \dee{x}
+          + xe^{3x^2} \dee{y}
+          + x^2 \cos(x^2 z) \dee{z}
+</me>
+where <m>C</m> is the arc of the curve <m>(t, t, t^3)</m> starting at the point
+<m>(0, 0, 0)</m> and ending at the point <m>(1, 1, 1)</m>.
+</li>
+</ol>
+</p></statement>
+
+<hint><p>
+Simplify the answer in part (a) as much as possible.
+</p>
+
+<p>For part (c), start with <m>\pdiff{f}{y} = xe^{3x^2}</m>
+and <m>\pdiff{f}{z} = x^2 \cos(x^2 z) </m>.
+</p>
+
+<p>For part (d), notice the difference between the given vector field
+and the conservative vector field of part (c). The resulting integral can be directly evaluated using methods from integral calculus.
+</p></hint>
+
+<answer><p>
+(a) <m>\vnabla\times\vF
+    = [-(b+2)x\cos(x^2 z)+(b+2)x^3z\sin(x^2 z)]\,\hj
+           + (6-a)x^2e^{3x^2}\,\hk </m>
+</p>
+
+<p>(b) <m>a=6</m>, <m>b=-2</m></p><p>
+(c) <m>f(x,y,z) = xye^{3x^2} +\sin(x^2 z) + C</m>   for any constant <m>C</m>
+</p>
+
+<p>(d) <m>\frac{1}{3} e^3 +\sin 1 -\frac{1}{3}</m>
+</p></answer>
+
+<solution><p> (a) The curl of <m>\vF</m> is
+<md>
+<mrow>
+\vnabla\times\vF
+&amp;=\det\left[\begin{matrix}
+\hi &amp;\hj &amp;\hk
+</mrow><mrow>
+\pdiff{}{x} &amp; \pdiff{}{y} &amp;
+                \pdiff{}{z}
+</mrow><mrow>
+(1 + ax^2 )ye^{3x^2} -  bxz \cos(x^2 z) &amp; xe^{3x^2} &amp; x^2 \cos(x^2 z)
+\end{matrix}
+\right]
+</mrow><mrow>
+&amp;= 0\,\hi +[-bx\cos(x^2 z)+bx^3z\sin(x^2 z)
+            -2x\cos(x^2 z) +2x^3z\sin(x^2 z)]\,\hj
+</mrow><mrow>
+&amp;\hskip1in + [e^{3x^2} +6x^2e^{3x^2}-(1 + ax^2 )e^{3x^2}]\,\hk
+</mrow><mrow>
+&amp;= [-(b+2)x\cos(x^2 z)+(b+2)x^3z\sin(x^2 z)]\,\hj
+           + (6-a)x^2e^{3x^2}\,\hk
+</mrow>
+</md>
+</p>
+
+<p> (b) For <m>\vF</m> to be conservative it is necessary that
+<m>\vnabla\times\vF=\vZero</m>. This is the case when <m>b=-2</m> and <m>a=6</m>.
+</p>
+
+<p> (c) For <m>f</m> to be a potential, when <m>b=-2</m> and <m>a=6</m>, we need
+<md>
+<mrow>
+\pdiff{f}{x}(x,y,z)
+            &amp;= (1 + 6x^2 )ye^{3x^2} + 2xz \cos(x^2 z)
+</mrow><mrow>
+\pdiff{f}{y}(x,y,z) &amp;= xe^{3x^2}
+</mrow><mrow>
+\pdiff{f}{z}(x,y,z) &amp;= x^2 \cos(x^2 z)
+</mrow>
+</md>
+Integrating the second of these equations gives
+<me>
+f(x,y,z) = xye^{3x^2} +g(x,z)
+</me>
+Substituting this into the last equation gives
+<me>
+\frac{\partial g}{\partial z}(x,z) = x^2 \cos(x^2 z)
+</me>
+which integrates to
+<me>
+g(x,z) = \sin(x^2 z) + h(x)
+</me>
+Finally, substituting <m>f(x,y,z) = xye^{3x^2} +\sin(x^2 z) + h(x)</m>
+into the first equation gives
+<me>
+(1+6x^2)ye^{3x^2} +2xz\cos(x^2 z) + h'(x)
+=(1 + 6x^2 )ye^{3x^2} + 2xz \cos(x^2 z)\quad\text{or}\quad
+h'(x) = 0
+</me>
+So <m>h(x) = C</m> and hence <m>f(x,y,z) = xye^{3x^2} +\sin(x^2 z) + C</m>
+works for any constant <m>C</m>.
+</p>
+
+<p> (d)
+Note that the integral is
+  <m>\int_C\big(\vF_{a=6,b=-2}-6x^2ye^{3x^2}\hi\big)\cdot\dee{\vr}</m>.
+So
+<md>
+<mrow>
+&amp;\int_C \Big(ye^{3x^2} + 2xz\cos(x^2 z)\Big) \dee{x}
+          + xe^{3x^2} \dee{y}
+          + x^2 \cos(x^2 z) \dee{z}
+ = \int_C \vnabla f\cdot\dee{\vr} -6\int_Cx^2ye^{3x^2}\,\dee{x}
+</mrow><mrow>
+&amp;\hskip1in= f(1,1,1) -f(0,0,0) -6\int_0^1 t^3e^{3t^2}\,\dee{t}
+</mrow><mrow>
+&amp;\hskip1in= e^3 +\sin 1 -\frac{1}{3}\int_0^3 ue^u\,\dee{u}\qquad
+\text{with }u=3t^2,\ \dee{u} = 6t\,\dee{t}
+</mrow><mrow>
+&amp;\hskip1in= e^3 +\sin 1 -\frac{1}{3}\Big[ue^u-e^u\Big]_0^3\qquad\text{integration by parts}
+</mrow><mrow>
+&amp;\hskip1in= \frac{1}{3} e^3 +\sin 1 -\frac{1}{3}
+</mrow>
+</md>
+</p>
+
+</solution>
+</exercise>
+
+<exercise><title><fromexam>M317 2001A</fromexam></title>
+<statement><p>
+Let <m>C</m> be the curve from <m>(0,0,0)</m> to <m>(1,1,1)</m> along the
+intersection of the surfaces <m>y=x^2</m> and <m>z=x^3</m>.
+</p>
+
+<p><ol label="a">
+<li>
+Find <m>\int_C \vF\cdot \dee{\vr}</m> if
+ <m>\vF=(xz-y)\,\hi + (z+x)\,\hj+ y\,\hk</m>.
+</li>
+<li>
+Find <m>\int_C \rho\, \dee{s}</m> if <m>s</m> is arc length along <m>C</m> and <m>\rho(x,y,z)=8x+36z</m>.
+</li>
+<li>
+Find <m>\int_C \vF\cdot \dee{\vr}</m> if
+ <m>\vF=\sin y\,\hi + (x\cos y+z)\,\hj+ (y+z)\,\hk</m>.
+</li>
+</ol>
+</p></statement>
+
+<hint><p>
+For (b), remember <m>\diff{s}{t}=\left| \diff{\vr}{t}\right|</m>\\
+Is the vector field of part (c) conservative?
+</p></hint>
+
+<answer><p>
+(a) <m>\frac{23}{15} = 1.5\dot 3</m></p><p>
+(b) <m>\frac{2}{3}\big[14^{3/2}-1\big]\approx 34.26</m></p><p>
+(c) <m>\sin 1+\frac{3}{2} \approx 2.3415</m>
+</p></answer>
+
+<solution><p> (a)
+ Parametrize <m>C</m> by <m>x</m>. Then
+<md>
+<mrow>
+\vr(x)&amp;=x\,\hi+x^2\,\hj+x^3\,\hk\qquad 0\le x\le 1
+</mrow><mrow>
+\vr'(x)&amp;=\hi+2x\,\hj+3x^2\,\hk
+</mrow><mrow>
+\vF\big(\vr(x)\big)\cdot\vr'(x)
+&amp;=\big((x^4-x^2)\,\hi +(x+x^3)\,\hj+x^2\,\hk\big)\cdot
+\big(\hi+2x\,\hj+3x^2\,\hk\big)
+</mrow><mrow>
+&amp;=x^4-x^2+2x^2+2x^4+3x^4
+=x^2+6x^4
+</mrow><mrow>
+\int_C\vF\cdot \dee{\vr}
+&amp;=\int_0^1 \big[x^2+6x^4\big]\,\dee{x}
+=\Big[\frac{x^3}{3}+\frac{6x^5}{5}\Big]_0^1
+=\frac{23}{15} = 1.5\dot 3
+</mrow>
+</md>
+</p>
+
+<p>(b)
+ Parametrize <m>C</m> by <m>x</m> as in part (a). Then
+<md>
+<mrow>
+\diff{s}{x}&amp;=\left|\diff{\vr}{x}\right|=\sqrt{1+4x^2+9x^4}
+</mrow><mrow>
+\rho(x,x^2,x^3)\ \diff{s}{x}
+&amp;=\big(8x+36x^3\big)\sqrt{1+4x^2+9x^4}
+</mrow><mrow>
+\int_C\rho\ \dee{s}
+&amp;=\int_0^1 \big(8x+36x^3\big)\sqrt{1+4x^2+9x^4}\,\dee{x}
+</mrow>
+<intertext>Using the substitution <m>u=1+4x^2+9x^4</m>, <m>\dee{u} = (8x+36x^3)\,\dee{x}</m>:
+</intertext><mrow>
+&amp;=\frac{2}{3}\big[1+4x^2+9x^4\big]^{3/2}\Big|_0^1
+</mrow><mrow>
+&amp;=\frac{2}{3}\big[14^{3/2}-1\big]\approx 34.26
+</mrow>
+</md>
+</p>
+
+<p>(c) Since <m>\vF=\vnabla f</m> with <m>f=x\sin y+yz+\frac{1}{2} z^2</m>,
+<me>
+\int_C \vF\cdot \dee{\vr}=f(1,1,1)-f(0,0,0)
+=\sin 1+\frac{3}{2} \approx 2.3415
+</me>
+The potential <m>f</m> was just guessed. Alternatively, it can be found
+by antidifferentiating:
+<md>
+<mrow>
+\pdiff{f}{x}(x,y,z)
+            &amp;= \sin y &amp;\implies f(x,y,z)&amp;=x\sin y + \psi_1(y,z)
+</mrow><mrow>
+\pdiff{f}{y}(x,y,z) &amp;= x\cos y+z &amp;\implies f(x,y,z)&amp;=x\sin y+yz+\psi_2(x,z)
+</mrow><mrow>
+\pdiff{f}{z}(x,y,z) &amp;= y+z&amp;\implies f(x,y,z)&amp;=yz+\frac12z^2+\psi_3(x,y)
+</mrow>
+</md>
+All together,
+<m>f(x,y,z) = x\sin y + yz + \frac{z^2}{2}+C</m>  works for any constant <m>C</m>.
+</p></solution>
+</exercise>
+
+<exercise><title><fromexam>M317 2000A</fromexam></title>
+<statement><p>
+ The vector field
+<m>\vF(x,y,z)= Ax^3y^2z\,\hi+\big(z^3+Bx^4yz\big)\,\hj
++\big(3yz^2-x^4y^2\big)\,\hk</m> is conservative on <m>\bbbr^3</m>.
+<ol label="a">
+<li>
+Find the values of the constants <m>A</m> and <m>B</m>.
+</li>
+<li>
+Find a potential <m>\varphi</m> such that <m>\vF=\vnabla\varphi</m> on
+<m>\bbbr^3</m>.
+</li>
+<li>
+If <m>\cC</m> is the curve <m>y=-x,\ z=x^2</m> from <m>(0,0,0)</m> to <m>(1,-1,1)</m>,
+evaluate <m>I=\int_\cC \vF\cdot \dee{\vr}</m>.
+</li>
+<li>
+Evaluate
+<m>J=\int_\cC (z-4x^3y^2z)\dee{x}+(z^3-x^4yz)\dee{y}+(3yz^2-x^4y^2)\dee{z}</m>,
+where <m>\cC</m> is the curve of part (c).
+</li>
+<li>
+Let <m>\cT</m> be the closed triangular path with vertices <m>(1,0,0)</m>,
+<m>(0,1,0)</m> and <m>(0,0,1)</m>, oriented counterclockwise as seen from the point
+<m>(1,1,1)</m>. Evaluate <m>\int_\cT(z\hi+\vF)\cdot \dee{\vr}</m>.
+</li>
+</ol>
+</p></statement>
+
+<hint><p>
+For part (d), what is the difference between <m>J</m>
+and <m>\int_\cC\vF\cdot\dee{\vr}</m>?
+</p><p>
+For part (e), many parts of the integral are zero: find as many as you can.
+</p></hint>
+
+<answer><p>
+(a) <m>A=-4</m>, <m>B=-2</m></p><p>
+(b) <m>\varphi(x,y,z)=-x^4y^2z+yz^3+C</m>
+with <m>C</m> being an arbitrary constant. </p><p>
+(c) <m>-2</m></p><p>
+(d) <m>-\frac{37}{24}\approx-1.5417</m></p><p>
+(e) <m>\frac{1}{2}</m>
+</p></answer>
+
+<solution><p>  (a)
+This field is conservative if and only if it passes the screening test
+<m>\vnabla\times\vF=\vZero</m>. That is, if and only if,
+<me>
+\frac{\partial F_1}{\partial y}=\frac{\partial F_2}{\partial x}\qquad
+\frac{\partial F_1}{\partial z}=\frac{\partial F_3}{\partial x}\qquad
+\frac{\partial F_2}{\partial z}=\frac{\partial F_3}{\partial y}
+</me>
+That is,
+<md>
+<mrow>
+\frac{\partial }{\partial y}(Ax^3y^2z)
+&amp;=\frac{\partial }{\partial x}\big(z^3+Bx^4yz\big) &amp;
+&amp;\iff &amp;
+2Ax^3yz &amp; =4Bx^3yz
+
+</mrow><mrow>
+
+\frac{\partial }{\partial z}(Ax^3y^2z)
+&amp;=\frac{\partial }{\partial x}\big(3yz^2-x^4y^2\big) &amp;
+&amp;\iff &amp;
+Ax^3y^2 &amp; =-4x^3y^2
+
+</mrow><mrow>
+
+\frac{\partial }{\partial z}\big(z^3+Bx^4yz\big)
+&amp;=\frac{\partial }{\partial y}\big(3yz^2-x^4y^2\big) &amp;
+&amp;\iff &amp;
+3z^2+Bx^4y&amp; =3z^2-2x^4y
+</mrow>
+</md>
+Hence only <m>A=-4</m>, <m>B=-2</m> works.
+</p>
+
+<p>(b) When <m>A=-4,\ B=-2</m>
+<me>
+\vF=-4x^3y^2z\,\hi+\big(z^3-2x^4yz\big)\,\hj
++\big(3yz^2-x^4y^2\big)\,\hk
+
+</me>
+We find a potential function <m>\varphi(x,y,z)</m>  for this <m>\vF</m> by antidifferentiating.
+<md>
+<mrow>
+\frac{\partial \varphi}{\partial x}(x,y,z) &amp;= -4x^3y^2z &amp;\implies
+\varphi(x,y,z)&amp;= -x^4y^2z+\psi_1(y,z)
+</mrow><mrow>
+\frac{\partial \varphi}{\partial y}(x,y,z) &amp;= z^3-2x^4yz &amp;\implies \varphi(x,y,z)&amp;=yz^3-x^4y^2z+\psi_2(x,z)
+</mrow><mrow>
+\frac{\partial \varphi}{\partial z}(x,y,z) &amp;= 3yz^2-x^4y^2&amp;\implies \varphi(x,y,z)&amp;=yz^3-x^4y^2z+\psi_3(x,y)
+</mrow>
+</md>
+All together, <m>\varphi(x,y,z)=-x^4y^2z+yz^3+C</m>
+with <m>C</m> being an arbitrary constant.
+</p>
+
+<p>(c) <m>I=\varphi(1,-1,1)-\varphi(0,0,0)=-2</m>.
+</p>
+
+<p>(d)
+Note that <m>J=\int_\cC\vG\cdot\dee{\vr}</m> with
+<md>
+<mrow>
+\vG &amp;= (z-4x^3y^2z)\hi+(z^3-x^4yz)\hj+(3yz^2-x^4y^2)\hk
+</mrow><mrow>
+    &amp;=\vF +z\,\hi+x^4yz\,\hj
+</mrow>
+</md>
+so that
+<md>
+<mrow>
+J
+&amp;=\int_\cC(z\hi+x^4yz\,\hj+\vF)\cdot \dee{\vr}
+=-2+\int_\cC(z\hi+x^4yz\,\hj)\cdot \dee{\vr}
+</mrow>
+</md>
+Parametrize <m>\cC</m> by <m>\vr(x)=x\,\hi-x\,\hj+x^2\,\hk</m> with <m>0\le x\le 1</m>. As
+<m>\diff{\vr}{x}=\hi-\hj+2x\,\hk</m>
+<md>
+<mrow>
+&amp;\int_\cC(z\hi+x^4yz\,\hj)\cdot \dee{\vr}
+=\int_0^1(x^2\hi-x^7\,\hj)\cdot \big(\hi-\hj+2x\,\hk\big)\ \dee{x}
+=\int_0^1(x^2+x^7)\ \dee{x}
+=\frac{1}{3}+\frac{1}{8}
+=\frac{11}{24}
+</mrow><mrow>
+&amp;\implies J=-2+\frac{11}{24}=-\frac{37}{24}\approx-1.5417
+</mrow>
+</md>
+</p>
+
+<p>(e)
+<m>\cT</m> is a closed path and <m>\vF</m> is conservative, so
+<m>\int_\cT\vF\cdot \dee{\vr}=0</m>. Let <m>\cT_1</m> be the line segment from
+<m>(1,0,0)</m> to <m>(0,1,0)</m>,  <m>\cT_2</m> be the line segment from
+<m>(0,1,0)</m> to <m>(0,0,1)</m>  and <m>\cT_3</m> be the line segment from <m>(0,0,1)</m> to
+<m>(1,0,0)</m>.
+</p>
+
+<sidebyside width="75%">
+  <image source="pfigs/OE00A_2"/>
+</sidebyside>
+
+<p>
+On <m>\cT_1</m>, <m>z=0</m>, so <m>\int_{\cT_1}z\hi\cdot \dee{\vr}=0</m>. On <m>\cT_2</m>,
+<m>x=0</m>, so <m>\hi\cdot \dee{\vr}=\dee{x}=0</m> and  <m>\int_{\cT_2}z\hi\cdot \dee{\vr}=0</m>. Parametrize
+<m>\cT_3</m> by <m>\vr(t)=t\hi+(1-t)\hk</m>, <m>0\le t\le 1</m>. Then
+<m>\diff{\vr}{t}=\hi-\hk</m> and the <m>z</m>-coordinate of the path is parametrized by <m>1-t</m>. So,
+<md>
+<mrow>
+\int_\cT(z\hi+\vF)\cdot \dee{\vr}
+&amp;=\int_{\cT_3}z\hi\cdot \dee{\vr}=\int_{0}^1\overbrace{(1-t)\hi}^{z\hi}\cdot\overbrace{(\hi-\hk)\ \dee{t}}^{\dee{\vr}}
+</mrow><mrow>
+&amp;=\int_0^1 (1-t) \ \dee{t}
+=\frac{1}{2}
+</mrow>
+</md>
+</p>
+
+</solution>
+</exercise>
+
+<exercise><title><fromexam>M317 2017D</fromexam></title>
+<statement><p>
+A particle of mass
+<me>
+m=2
+</me>
+is acted on by  a force
+<me>
+\vF = \big(4t\,,\,6t^2\,,\,-4t\big)
+</me>
+At <m>t=0</m>, the particle has velocity zero and is located at the
+point <m>(1,2,3)</m>.
+<ol label="a">
+<li>
+Find the velocity vector <m>\vv(t)</m> for <m>t\ge 0</m>.
+</li>
+<li>
+Find the position vector <m>\vr(t)</m> for <m>t\ge 0</m>.
+</li>
+<li>
+Find <m>\ka(t)</m> the curvature of the path traversed by the particle for <m>t\ge 0</m>.
+</li>
+<li>
+Find the work done by the force on the particle from <m>t=0</m> to <m>t=T</m>.
+</li>
+</ol>
+</p></statement>
+
+<hint><p>
+By Newton's law of motion, <m>m\vr''(t)=\vF(t)</m>.
+</p>
+
+<p>Recall <m>\ka(t)  = \frac{|\vr'(t)\times\vr''(t)|}{|\vr'(t)|^3}</m>.
+</p>
+
+</hint>
+
+<answer><p>
+(a) <m>\vv(t) = \big(t^2\,,\,t^3\,,\,-t^2\big) </m></p><p>
+(b) <m>\vr(t)
+    =\left(\frac{t^3}{3}+1\,,\,\frac{t^4}{4}+2\,,\,-\frac{t^3}{3}+3\right)</m></p><p>
+(c) <m>\ka(t) =\frac{\sqrt{2}}{t^2{(2+t^2)}^{3/2}}</m>
+</p>
+
+<p>(d) <m>2T^4 + T^6</m>
+</p></answer>
+
+<solution><p>
+(a) By Newton's law of motion
+<me>
+m\va =\vF\quad
+\implies\quad
+2\vv'(t) = \big(4t\,,\,6t^2\,,\,-4t\big) \quad
+\implies\quad
+\vv'(t) = \big(2t\,,\,3t^2\,,\,-2t\big)
+</me>
+So
+<me>
+\vv(t) = \vv(0) +\int_0^t \vv'(u)\, \dee{u}
+       = (0,0,0) + \int_0^t \big(2u\,,\,3u^2\,,\,-2u\big) \, \dee{u}
+       = \big(t^2\,,\,t^3\,,\,-t^2\big)
+</me>
+</p>
+
+<p>(b) From part (a), <m>\vr'(t) = \vv(t) = \big(t^2\,,\,t^3\,,\,-t^2\big)</m>.
+So
+<md>
+<mrow>
+\vr(t) &amp;= \vr(0) +\int_0^t \vr'(u)\, \dee{u}
+       = (1,2,3) + \int_0^t \big(u^2\,,\,u^3\,,\,-u^2\big) \, \dee{u}
+</mrow><mrow>
+       &amp;= (1,2,3) + \big(t^3/3\,,\,t^4/4\,,\,-t^3/3\big)
+       =\left(\frac{t^3}{3}+1\,,\,\frac{t^4}{4}+2\,,\,-\frac{t^3}{3}+3\right)
+</mrow>
+</md>
+</p>
+
+<p>(c) From parts (a) and (b)
+<me>
+|\vr'(t)|= \big|t^2(1,t,-1)\big| = t^2 \sqrt{2+t^2}
+</me>
+and
+<md>
+<mrow>
+\vr'(t)\times\vr''(t)&amp;= \det\left[\begin{matrix}\hi&amp;\hj&amp;\hk \\
+     t^2 &amp; t^3 &amp; -t^2 \\
+     2t  &amp; 3t^2 &amp; -2t\end{matrix}\right]
+</mrow><mrow>
+&amp;=\big(-2t^4+3t^4\big)\,\hi -\big(-2t^3+2t^3\big)\,\hj
+          + \big(3t^4-2t^4\big)\,\hk
+</mrow><mrow>
+&amp; = t^4\,\hi +t^4\,\hk
+</mrow><mrow>
+\implies \big|\vr'(t)\times\vr''(t)\big| &amp;= \sqrt{2}\, t^4
+</mrow>
+</md>
+The curvature is (see \S<xref ref="sec_CurveCompendium"/>)
+<md>
+<mrow>
+\ka(t)  &amp;= \frac{|\vr'(t)\times\vr''(t)|}{|\vr'(t)|^3}
+=\frac{\sqrt{2}\, t^4}{{\big(t^2 \sqrt{2+t^2}\big)}^3}
+</mrow><mrow>
+&amp;=\frac{\sqrt{2}}{t^2{(2+t^2)}^{3/2}}
+</mrow>
+</md>
+</p>
+
+<p>(d)  <m>W=\int \vF \cdot\dee{\vr}</m>:
+<md>
+<mrow>
+\int_{t=0}^{t=T} \vF(t)\cdot \dee{\vr}
+&amp;=\int_0^T \vF(t)\cdot \diff{\vr}{t}(t)\,\dee{t}
+=\int_0^T \big(4t\,,\,6t^2\,,\,-4t\big)\cdot
+\big(t^2\,,\,t^3\,,\,-t^2\big)\,\dee{t}
+</mrow><mrow>
+&amp;= \int_0^T \big(8t^3+6t^5\big)\,\dee{t}
+=2T^4 + T^6
+</mrow>
+</md>
+</p></solution>
+</exercise>
+
+<exercise><title><fromexam>M317 2001D</fromexam></title>
+<statement><p>
+	The position of an airplane at time <m>t</m> is given by
+	<m>
+	x=y=\frac{4\sqrt{2}}{3}t^{3/2},\ z=t(2-t)
+	</m>
+	from take-off at <m>t=0</m> to landing at <m>t=2</m>.
+	<ol label="a">
+<li>
+		What is the total distance the plane travels on this flight?
+</li>
+<li>
+		Find the radius of curvature <m>\ka</m> at the apex of the flight, which occurs
+		at <m>t=1</m>.
+</li>
+<li>
+		Two external forces are applied to the plane during the
+		flight: the force of gravity <m>\vG=-M g\,\hk</m>, where <m>M</m> is the mass of
+		the plane and <m>g</m> is a constant; and a friction force <m>\vF=-|\vv|^2\vv</m>,
+		where <m>\vv</m> is the velocity of the plane. Find the work done by each of
+		these forces during the flight.
+</li>
+<li>
+		One half-hour later, a bird follows the exact same flight <mdash/> path
+		as the plane, travelling at a constant speed <m>v=3</m>. One can show that
+		at the apex of the path, i.e. when the bird is at
+		<m>\big(\frac{4\sqrt{2}}{3},\frac{4\sqrt{2}}{3},1\big)</m>, the principal
+		unit normal <m>\hN</m> to the path points in the <m>-\hk</m> direction. Find the bird's (vector)
+		acceleration at that moment.
+</li>
+</ol>
+</p></statement>
+
+<hint><p>
+	(a) Remember the arclength of the parametrized path <m>\vr(t)</m> from <m>t=a</m> to <m>t=b</m> is given by <m>\int_a^b |\vr'(t)|\ \dee{t}</m>. In this case, <m>|\vr'(t)|</m> can be simplified considerably.
+</p><p>
+	(b) Remember <m>\ka(t)  = \frac{|\vr'(t)\times\vr''(t)|}{|\vr'(t)|^3}</m>. </p><p>
+	(c) Gravity is conservative. Friction is not conservative. </p><p>
+	(d) What are the tangential and normal components of acceleration?
+</p></hint>
+
+<answer><p>
+	(a) <m>8</m></p><p>
+	(b) <m>\frac{1}{8}</m></p><p>
+	(c) <m>-\frac{16}{5}(3^5-1)\approx-774.4</m></p><p>
+	(d) <m>\Big(0,0,-\frac{9}{8}\Big)</m>
+</p></answer>
+
+<solution><p> (a)
+	For the specified curve
+	<md>
+<mrow>
+	\vr(t)&amp;=\Big(\frac{4\sqrt{2}}{3}t^{3/2},\frac{4\sqrt{2}}{3}t^{3/2},
+	t(2-t)\Big)
+</mrow><mrow>
+	\vv(t)=\vr'(t)&amp;=\big(2\sqrt{2}t^{1/2},2\sqrt{2}t^{1/2},2-2t\big)
+</mrow><mrow>
+	|\vv|&amp;=\sqrt{8t+8t+4-8t+4t^2}=\sqrt{4(1+2t+t^2)}= 2|1+t|=2(1+t)
+	</mrow>
+</md>
+	So the distance travelled is
+	<me>
+	\int_0^2|\vv(t)|\,\dee{t}=\int_0^2 2(1+t)\,\dee{t} = 2\Big[t+\frac{t^2}{2}\Big]_0^2
+	=8
+	</me>
+</p>
+
+<p>	(b) As
+	<md>
+<mrow>
+	\vv(t)=\vr'(t)&amp;=\big(2\sqrt{2}t^{1/2},2\sqrt{2}t^{1/2},2-2t\big) &amp;
+	\vv(1)&amp;=2\sqrt{2}\big(1,1,0\big)
+</mrow><mrow>
+	\va(t)=\vv'(t)&amp;=\big(\sqrt{2}t^{-1/2},\sqrt{2}t^{-1/2},-2\big) &amp;
+	\va(1)&amp;=\sqrt{2}\big(1,1,-\sqrt{2}\big)
+</mrow><mrow>
+	\vv(1)\times\va(1)&amp;=4\big(-\sqrt{2},\sqrt{2},0\big) &amp;
+	|\vv(1)|&amp;=4
+	</mrow>
+</md>
+	the curvature
+	<md>
+<mrow>
+	\ka(1) &amp;= \frac{|\vv(1)\times\va(1)|}{|\vv(1)|^3}
+	=\frac{8}{4^3}
+	=\frac{1}{8}
+	</mrow>
+</md>
+</p>
+
+<p>	(c) <m>\vG=\nabla\varphi</m> with <m>\varphi(x,y,z)= - Mgz</m>, so that gravity is conservative.
+	The work done is
+	<me>
+	\varphi\big(\vr(2)\big)-\varphi\big(\vr(0)\big)
+	=\varphi\big(\frac{16}{3}\,,\,\frac{16}{3}\,,\,0\big)
+	-\varphi(0,0,0)=0
+	</me>
+	Friction is not conservative, so we have to compute the work long hand.
+	<md>
+<mrow>
+	\int_0^2\!\! \vF\cdot \dee{\vr}
+	&amp;=\int_0^2\!\! \vF(t)\cdot \diff{\vr}{t}(t)\,\dee{t}
+	=-\int_0^2 |\vv(t)|^2\vv(t)\cdot \vv(t)\,\dee{t}
+	=-\int_0^2 |\vv(t)|^4\,\dee{t}
+</mrow><mrow>
+	&amp;=-2^4\int_0^2 (1+t)^4\,\dee{t}
+	=-\frac{16}{5}(1+t)^5\Big|_0^2
+</mrow><mrow>
+	&amp;=-\frac{16}{5}(3^5-1)\approx-774.4
+	</mrow>
+</md>
+</p>
+
+<p>	(d)	 <alert>Solution 1:</alert></p><p>
+	We know, from Theorem <xref ref="thm_curvatureFormulae"/>.c in the
+	text, that
+	<me>
+	\va(t)  = \difftwo{s}{t}\hat\vT + \ka\Big(\diff{s}{t}\Big)^2\hat\vN
+	</me>
+	We have also been told that, at the apex, <m>\hat\vN=-\hk</m> and
+	that <m>\diff{s}{t}(t)=3</m> for all <m>t</m>.
+	So <m>\difftwo{s}{t}=0</m>. As <m>\ka=\frac{1}{8}</m> at the apex
+	<me>
+	\va(1)  = 0\hat\vT + \frac{1}{8}\big(3\big)^2(-\hk)
+	= -\frac{9}{8}\hk
+	</me>
+</p>
+
+<p>	<alert>Solution 2:</alert>
+	</p><p>
+	The bird follows the parametrized path
+	<me>
+	\vr(u)=\left(\frac{4\sqrt{2}}{3}u^{3/2},\frac{4\sqrt{2}}{3}u^{3/2},
+	u(2-u)\right)
+	</me>
+	This is the same path as the plane, but the parameter
+	<m>u</m> is not time. Let's denote by <m>\vR(t)</m> the position of
+	the bird at time <m>t</m>. At time <m>t</m> the bird is at some point on
+	the parametrized path, so there is some <m>u(t)</m> with
+	<me>
+	\vR(t) = \vr\big(u(t)\big)
+	</me>
+</p>
+
+<p>	We saw in part (a) that <m>\big|\diff{\vr}{u}\big|
+	=2(1+u)</m>. Since the bird always has speed <m>3</m>,
+	<md>
+<mrow>
+	&amp;3=\Big|\diff{\vR}{t}(t)\Big|=\Big|\diff{\vr}{u}(u(t))\diff{u}{t}\Big|
+	=2\big(1+u(t)\big)\diff{u}{t}
+</mrow><mrow>
+	&amp;\implies \diff{u}{t}=\frac{3}{2(1+u(t))}
+	\implies \difftwo{u}{t}=-\frac{3}{2(1+u(t))^2}\diff{u}{t}
+	=-\frac{9}{4(1+u(t))^3}
+	</mrow>
+</md>
+	At the apex <m>u=1</m> so that <m>\diff{u}{t}=\frac{3}{4}</m> and
+	<m>\difftwo{u}{t}=-\frac{9}{32}</m>. The bird's acceleration is
+	<me>
+	\difftwo{\vR}{t}(t)=\diff{}{t}\Big(\diff{\vR}{t}(t)\Big)
+	=\diff{ }{t}\Big(\diff{\vr}{u}(u(t))\diff{u}{t}(t)\Big)
+	=\difftwo{\vr}{u}\Big(\diff{u}{t}\Big)^2
+	+\diff{\vr}{u}\difftwo{u}{t}
+	</me>
+	From part (a)
+	<md>
+<mrow>
+	\diff{\vr}{u}&amp;=\big(2\sqrt{2}u^{1/2},2\sqrt{2}u^{1/2},2-2u\big)
+</mrow><mrow>
+	\difftwo{\vr}{u}&amp;=\big(\sqrt{2}u^{-1/2},\sqrt{2}u^{-1/2},-2\big)
+</mrow>
+</md>
+	At the apex, when <m>u=1</m>,
+	<md>
+<mrow>
+	\diff{\vr}{u}&amp;=\big(2\sqrt{2},2\sqrt{2},0\big)
+</mrow><mrow>
+	\difftwo{\vr}{u}&amp;=\big(\sqrt{2},\sqrt{2},-2\big)
+</mrow>
+</md>
+	and the acceleration is
+	<md>
+<mrow>
+	\difftwo{\vR}{t}
+	&amp;=\difftwo{\vr}{u}\Big(\diff{u}{t}\Big)^2
+	+\diff{\vr}{u}\difftwo{u}{t}
+	=\big(\sqrt{2},\sqrt{2},-2\big)\Big(\frac{3}{4}\Big)^2
+	+\big(2\sqrt{2},2\sqrt{2},0\big)\Big(-\frac{9}{32}\Big)
+  </mrow><mrow>
+	&amp;=\Big(0,0,-\frac{9}{8}\Big)
+	</mrow>
+</md>
+</p></solution>
+</exercise>
+</exercisegroup>
+
+</exercises>

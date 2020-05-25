@@ -1,0 +1,774 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+
+<!-- Copyright 2018 Joel Feldman, Andrew Rechnitzer and Elyse Yeager -->
+<!-- This work is licensed under the Creative Commons Attribution-NonCommercial-ShareAlike 4.0 International License-->
+<!-- https://creativecommons.org/licenses/by-nc-sa/4.0 -->
+
+<exercises>
+
+<exercisegroup><introduction><conceptual/></introduction>
+
+<exercise>
+<statement><p>
+We've seen two calculations of the energy <m>E</m> of a system. Equation<nbsp/><xref ref="eqn_consEnergy"/> told us
+<m>E=\frac{1}{2}m|\vv|^2+mgy</m>, while Example<nbsp/><xref ref="eg_potentialEnergy"/> says <m>\frac{1}{2} m |\vv(t)|^2 -\varphi\big(x(t),y(t),z(t)\big)=E</m>.
+</p>
+
+<p>Consider a force given by <m>\vF = \vnabla \varphi</m> for some differentiable function <m>\varphi:\mathbb R^3 \to \mathbb R</m>. A particle of mass <m>m</m> is being acted on by <m>\vF</m> and no other forces, and its position at time <m>t</m> is given by <m>(x(t),y(t),0)</m>.
+</p>
+
+<p>True or false: <m>mgy(t)=-\varphi(x(t),y(t),0)</m>.
+</p></statement>
+<hint><p>
+Carefully consider the context that lead to each of these equations.
+</p></hint>
+<answer><p>
+In general, false.
+</p></answer>
+<solution><p>
+False, in general.
+</p>
+
+<p>In the context of Equation<nbsp/><xref ref="eqn_consEnergy"/>, the only forces acting on the particle are gravity, <m>-mg\hj</m>, and the normal force, <m>W\hN</m>.
+</p>
+
+<p>We make no such constraints on the force in Example<nbsp/><xref ref="eg_potentialEnergy"/>. Certainly <m>\vF</m> <em>could</em> arise from gravity and the normal force of a track, but there's nothing saying it has to. For example, suppose <m>\varphi</m> is an equation that does not depend on <m>m</m> and/or <m>g</m>. Alternately, suppose the <m>y</m>-coordinate of our three-dimensional system is not <q>up.</q>
+</p></solution>
+</exercise>
+
+<exercise>
+<statement><p>
+For each of the following fields, decide which of the following holds:
+<ol label="A">
+<li> The screening test for conservative vector fields tells us <m>\vF</m> is conservative.
+</li>
+<li> The screening test for conservative vector fields tells us <m>\vF</m> is <alert>not</alert> conservative.
+</li>
+<li> The screening test for conservative vector fields does not tell us whether <m>\vF</m> is conservative or not.
+</li>
+</ol>
+(The screening test is Theorem<nbsp/><xref ref="thm_screen"/> in the text.)
+</p>
+
+<p>
+<ol label="a">
+<li> <m>\vF=x\hi + z\hj + y\hk</m>
+</li>
+<li> <m>\vF=y^2z\hi + x^2z\hj + x^2y\hk</m>
+</li>
+<li> <m>\vF=(ye^{xy}+1)\hi + (xe^{xy}+z)\hj + \left( \frac1z+y\right)\hk</m>
+</li>
+<li> <m>\vF=y\cos(xy)\hi + x\sin(xy)\hj </m>
+</li>
+</ol>
+</p></statement>
+<hint><p>
+One of the three options will NEVER be true, for any <m>\vF</m>.
+</p></hint>
+<answer><p>
+a. C </p><p>
+b. B </p><p>
+c. C </p><p>
+d. B
+</p></answer>
+<solution><p>
+Remember that the screening test can only rule out conservativity <mdash/> it can never, by itself, guarantee conservativity. So, A is <em>never</em> the case.
+<ol label="a">
+<li> <md>
+<mrow>\vF&amp;=x\hi + z\hj + y\hk
+</mrow><mrow>
+\vnabla \times \vF&amp;=\Big(\pdiff{F_3}{y} -\pdiff{F_2}{z} \Big)\hi
++\Big(\pdiff{F_1}{z} -\pdiff{F_3}{x} \Big)\hj
++\Big(\pdiff{F_2}{x} -\pdiff{F_1}{y} \Big)\hk
+</mrow><mrow>
+&amp;=(1-1)\hi+(0-0)\hj+(0-0)\hk = \mathbf0
+</mrow>
+</md>
+This field passes the screening test. That means the screening test doesn't rule out the possibility of <m>\vF</m> being conservative. So, we have option C.
+</li>
+<li>  <md>
+<mrow>\vF&amp;=y^2z\hi + x^2z\hj + x^2y\hk
+</mrow><mrow>
+\vnabla \times \vF&amp;=\Big(\pdiff{F_3}{y} -\pdiff{F_2}{z} \Big)\hi
++\Big(\pdiff{F_1}{z} -\pdiff{F_3}{x} \Big)\hj
++\Big(\pdiff{F_2}{x} -\pdiff{F_1}{y} \Big)\hk
+</mrow><mrow>
+&amp;=(x^2-x^2)\hi+(y^2-2xy)\hj+(2xz-2yz)\hk \neq \mathbf0
+</mrow>
+</md>
+So, <m>\vF</m> fails the screening test <mdash/> it's not conservative. That's option B.
+</li>
+<li>
+ <md>
+<mrow>\vF&amp;=(ye^{xy}+1)\hi + (xe^{xy}+z)\hj + \left( \frac1z+y\right)\hk
+</mrow><mrow>
+\vnabla \times \vF&amp;=\Big(\pdiff{F_3}{y} -\pdiff{F_2}{z} \Big)\hi
++\Big(\pdiff{F_1}{z} -\pdiff{F_3}{x} \Big)\hj
++\Big(\pdiff{F_2}{x} -\pdiff{F_1}{y} \Big)\hk
+</mrow><mrow>
+&amp;=(1-1)\hi+(0-0)\hj+(e^{xy}(xy+1)-e^{xy}(xy+1))\hk = \mathbf0
+</mrow>
+</md>
+<m>\vF</m> passes the screening test, so it may or may not be conservative. That is Option C.
+</li>
+<li>
+ <md>
+<mrow>\vF&amp;=y\cos(xy)\hi + x\sin(xy)\hj
+</mrow><mrow>
+\pdiff{F_2}{x}&amp;=xy\cos(xy)+\sin(xy)
+</mrow><mrow>
+\pdiff{F_1}{y}&amp;=-xy\sin(xy)+\cos(xy)
+</mrow><mrow>
+\pdiff{F_2}{x}&amp;\neq \pdiff{F_1}{y}
+</mrow>
+</md>
+<m>\vF</m> fails the screening test, so it is not conservative.
+That is Option B.
+</li>
+</ol>
+</p></solution>
+</exercise>
+
+<exercise>
+<statement><p>
+Suppose <m>\vF</m> is conservative and let <m>a</m>, <m>b</m>, and <m>c</m> be constants. Find a potential for <m>\vF+(a,b,c)</m>, OR give a conservative field <m>\vF</m> and constants  <m>a</m>, <m>b</m>, and <m>c</m> for which <m>\vF+(a,b,c)</m> is not conservative.
+</p>
+
+</statement>
+<hint><p>
+Modify <m>\varphi</m>, the potential for <m>\vF</m>.
+</p></hint>
+<answer><p>
+Let <m>\varphi</m> be a potential for <m>\vF</m>. Define <m>\phi=\varphi+ax+by+cz</m>. Then <m>\vnabla \phi = \vnabla\varphi+(a,b,c)=\vF+(a,b,c)</m>.
+</p></answer>
+<solution><p>
+Let <m>\varphi</m> be a potential for <m>\vF</m>. Define <m>\phi=\varphi+ax+by+cz</m>. Then <m>\vnabla \phi = \vnabla\varphi+(a,b,c)=\vF+(a,b,c)</m>. So, <m>\vF+(a,b,c)</m> is also conservative.
+</p></solution>
+</exercise>
+
+<exercise>
+<statement><p>
+Prove, or find a counterexample to, each of the following statements.
+<ol label="a">
+<li>
+If <m>\vF</m> is a conservative field and <m>\vG</m> is  a non-conservative field, then <m>\vF+\vG</m> is non-conservative.
+</li>
+<li>
+If <m>\vF</m> and <m>\vG</m> are both non-conservative fields, then <m>\vF+\vG</m> is non-conservative.
+</li>
+<li> If <m>\vF</m> and <m>\vG</m> are both conservative fields, then <m>\vF+\vG</m> is conservative.
+</li>
+</ol>
+</p></statement>
+<hint><p>
+a. If <m>\vF+\vG</m> is conservative, what has to be true?</p><p>
+b. What if <m>\vF</m> and <m>\vG</m> are quite similar? </p><p>
+c. Find a potential for <m>\vF+\vG</m>.
+</p></hint>
+<answer><p>
+<ol label="a">
+<li><p> If <m>\vF+\vG</m> is <em>conservative</em> for any particular <m>\vF</m> and <m>\vG</m>, then by definition, there exists a potential <m>\varphi</m> with <m>\vF+\vG = \vnabla \varphi</m>.
+</p>
+
+<p>Since <m>\vF</m> is conservative, there also exists a potential <m>\psi</m> with <m>\vF = \vnabla \psi</m>.
+</p>
+
+<p>But now <m>\vG = (\vF+\vG)-\vF=\vnabla \varphi - \vnabla \psi = \vnabla(\varphi-\psi)</m>. That means the function <m>(\varphi-\psi)</m> is a potential for <m>G</m>. However, this is impossible: since <m>\vG</m> is non-conservative, no function with this property exists.
+</p>
+
+<p>So it is not possible that <m>\vF+\vG</m> is conservative. It must be non-conservative.</p>
+</li>
+<li> Counterexample: if <m>\vF = -\vG</m>, then <m>\vF+\vG = \mathbf 0 = \vnabla c</m> for any constant <m>c</m>.
+</li>
+<li> Since both fields are conservative, they both have potentials, say <m>\vF=\vnabla \varphi</m> and <m>\vG = \vnabla \psi</m>. Then <m>\vF+\vG = \vnabla\varphi+\vnabla\psi=\vnabla(\varphi+\psi)</m>. That is, <m>(\varphi+\psi)</m> is a potential for <m>\vF+\vG</m>, so <m>\vF+\vG</m> is conservative.
+</li>
+</ol>
+</p></answer>
+<solution><p>
+<ol label="a">
+<li><p>
+   If <m>\vF+\vG</m> is <em>conservative</em> for any particular <m>\vF</m> and <m>\vG</m>, then by definition, there exists a potential <m>\varphi</m> with <m>\vF+\vG = \vnabla \varphi</m>.
+</p>
+
+<p>Since <m>\vF</m> is conservative, there also exists a potential <m>\psi</m> with <m>\vF = \vnabla \psi</m>.
+</p>
+
+<p>But now <m>\vG = (\vF+\vG)-\vF=\vnabla \varphi - \vnabla \psi = \vnabla(\varphi-\psi)</m>. That means the function <m>(\varphi-\psi)</m> is a potential for <m>G</m>. However, this is impossible: since <m>\vG</m> is non-conservative, no function with this property exists.
+</p>
+
+<p>So it is not possible that <m>\vF+\vG</m> is conservative. It must be non-conservative.</p>
+</li>
+<li> Counterexample: if <m>\vF = -\vG</m>, then <m>\vF+\vG = \mathbf 0 = \vnabla c</m> for any constant <m>c</m>.
+</li>
+<li> Since both fields are conservative, they both have potentials, say <m>\vF=\vnabla \varphi</m> and <m>\vG = \vnabla \psi</m>. Then <m>\vF+\vG = \vnabla\varphi+\vnabla\psi=\vnabla(\varphi+\psi)</m>. That is, <m>(\varphi+\psi)</m> is a potential for <m>\vF+\vG</m>, so <m>\vF+\vG</m> is conservative.
+</li>
+</ol>
+</p></solution>
+</exercise>
+</exercisegroup>
+
+<exercisegroup><introduction><procedural/></introduction>
+
+<exercise><title><fromexam>M317 2006A</fromexam></title>
+<statement><p>
+Let <m>D</m> be the domain consisting of all <m>(x,y)</m> such that <m>x \gt 1</m>,
+and let <m>\vF</m> be the vector field
+<md>
+<mrow>
+\vF =  -\frac{y}{x^2+y^2}\,\hi + \frac{x}{x^2+y^2}\,\hj
+</mrow>
+</md>
+Is <m>\vF</m> conservative on <m>D</m>? Give reasons for your answer.
+</p>
+
+</statement>
+
+<hint><p>
+Note that the domain is <m>D=\Set{(x,y)}{x \gt 1}</m>. Compare to Example<nbsp/><xref ref="eg_screeningCounterexample"/> in the text.
+</p></hint>
+
+<answer><p>
+Yes, <m>\vF</m> is conservative on <m>D</m>. A potential is
+<m>\varphi(x,y) = \arctan\frac{y}{x}</m>.
+</p></answer>
+
+<solution><p>
+Set <m>\varphi(x,y)= \arctan\frac{y}{x}</m> (using the standard <m>\arctan</m>
+that takes values between <m>-\frac{\pi}{2}</m> and <m>\frac{\pi}{2}</m>).
+Note that <m>\varphi(x,y)</m> is well-defined, with all partial derivatives
+continuous, on <m>D</m> since <m>x \gt 1</m> there. Then
+<md alignment="alignat">
+<mrow>{3}
+\pdiff{\varphi}{x}(x,y)
+&amp;= \frac{-\frac{y}{x^2}}{1+\big(\frac{y}{x}\big)^2}
+&amp;&amp;= -\frac{y}{x^2+y^2}
+</mrow><mrow>
+\pdiff{\varphi}{y}(x,y)
+&amp;= \frac{\frac{1}{x}}{1+\big(\frac{y}{x}\big)^2}
+&amp;&amp;= \phantom{-} \frac{x}{x^2+y^2}
+</mrow>
+</md>
+so that <m>\vF=\vnabla\varphi</m>.
+</p></solution>
+</exercise>
+
+<exercise>
+<statement><p>
+Find a potential <m>\varphi</m> for <m>\vF(x,y)=(x+y)\hi+(x-y)\hj</m>, or prove none exists.
+</p></statement>
+<hint><p>
+A potential does exist.
+</p></hint>
+<answer><p>
+<m>\varphi=\frac{1}{2}x^2+xy-\frac{1}{2}y^2</m>
+</p></answer>
+<solution><p>
+If <m>\varphi</m> is a potential for <m>\vF</m>, then:
+<ul>
+<li> <m>\pdiff{\varphi}{x}=x+y</m>, so <m>\varphi = \frac{1}{2}x^2+xy+\psi_1(y)</m>
+</li>
+<li> <m>\pdiff{\varphi}{y}=x-y</m>, so <m>\varphi = xy-\frac{1}{2}y^2+\psi_2(x)</m>
+</li>
+</ul>
+So, for instance, <m>\varphi = \frac{1}{2}x^2+xy-\frac{1}{2}y^2</m> is a potential for <m>\vF</m>.
+</p></solution>
+</exercise>
+
+<exercise>
+<statement><p>
+Find a potential <m>\varphi</m> for <m>\vF(x,y)=\left( \frac{1}{x}-\frac{1}{y}\right)\hi+\left(\frac{x}{y^2}\right)\hj</m>, or prove none exists.
+</p></statement>
+<hint><p>
+Recall <m>\diff{}{x} \ln |x| = \frac1x</m>.
+</p></hint>
+<answer><p>
+<m>\varphi=\ln |x| - \frac{x}{y}</m>
+</p></answer>
+<solution><p>
+If <m>\varphi</m> is a potential for <m>\vF</m>, then:
+<ul>
+<li> <m>\pdiff{\varphi}{x}=\frac1x-\frac1y</m>, so <m>\varphi = \ln|x|-\frac{x}{y}+\psi_1(y)</m>
+</li>
+<li> <m>\pdiff{\varphi}{y}=\frac{x}{y^2}</m>, so <m>\varphi = -\frac{x}{y}+\psi_2(x)</m>
+</li>
+</ul>
+So, for instance, <m>\varphi=\ln |x| - \frac{x}{y}</m> is a potential for <m>\vF</m>.
+</p>
+
+</solution>
+</exercise>
+
+<exercise>
+<statement><p>
+Find a potential <m>\varphi</m> for <m>\vF(x,y,z)=\left(x^2yz+xz\right)\hi+\left( \frac13x^3z+y \right)\hj+\left(\frac13x^3y+\frac12x^2+y\right)\hk</m>, or prove none exists.
+</p></statement>
+<hint><p>
+Try the screening test, Theorem<nbsp/><xref ref="thm_screen"/>.
+</p></hint>
+<answer><p>
+None exists: <m>\pdiff{F_2}{z}=\frac13x^3</m>, while <m>\pdiff{F_3}{y}=\frac{1}{3}x^3+1</m>, so <m>\vF</m> fails the screening test, Theorem<nbsp/><xref ref="thm_screen"/>.
+</p></answer>
+<solution><p>
+None exists: <m>\pdiff{F_2}{z}=\frac13x^3</m>, while <m>\pdiff{F_3}{y}=\frac{1}{3}x^3+1</m>, so <m>\vF</m> fails the screening test, Theorem<nbsp/><xref ref="thm_screen"/>.
+</p></solution>
+</exercise>
+
+<exercise>
+<statement><p>
+Find a potential <m>\varphi</m> for <me>
+\vF(x,y)=\left( \frac{x}{x^2+y^2+z^2}\right)\hi+\left( \frac{y}{x^2+y^2+z^2}\right)\hj+\left( \frac{z}{x^2+y^2+z^2}\right)\hk,</me>
+ or prove none exists.
+</p></statement>
+<hint><p>
+<m>\displaystyle\int\frac{x}{x^2+y^2+z^2}\,\dee{x}</m> can be evaluated by inspection, or with the substitution <m>u=x^2+y^2+z^2</m>.
+</p></hint>
+<answer><p>
+<m>\varphi = \frac12\ln(x^2+y^2+z^2)</m>
+</p></answer>
+<solution><p>
+If <m>\varphi</m> is a potential for <m>\vF</m>, then:
+<ul>
+<li> <m>\pdiff{\varphi}{x}=\frac{x}{x^2+y^2+z^2}</m>, so <m>\varphi = \frac12\ln(x^2+y^2+z^2)+\psi_1(y,z)</m>
+</li>
+<li> <m>\pdiff{\varphi}{y}=\frac{y}{x^2+y^2+z^2}</m>, so <m>\varphi = \frac12\ln(x^2+y^2+z^2)+\psi_2(x,z)</m>
+</li>
+<li> <m>\pdiff{\varphi}{z}=\frac{z}{x^2+y^2+z^2}</m>, so <m>\varphi = \frac12\ln(x^2+y^2+z^2)+\psi_2(x,y)</m>
+</li>
+</ul>
+So, for instance, <m>\varphi= \frac{1}{2}\ln(x^2+y^2+z^2)</m> is a potential for <m>\vF</m>.
+</p>
+
+</solution>
+</exercise>
+
+<exercise>
+<statement><p>
+Determine whether or not each of the following vector
+fields are conservative. Find the potential if it is.
+<ol label="a">
+<li>
+   <m>\vF(x,y,z)=x\hi-2y\hj+3z\hk</m>
+</li>
+<li>
+   <m>\vF(x,y)=\frac{x\hi-y\hj}{x^2+y^2}</m>
+</li>
+</ol>
+</p></statement>
+
+<answer><p>
+(a) <m>\vF</m> is conservative with potential
+   <m>\phi(x,y,z)=\half x^2-y^2+\frac{3}{2}z^2+C</m> for any constant <m>C</m>.
+</p>
+
+<p>(b) <m>\vF</m> is not conservative.
+</p></answer>
+<solution><p>
+(a) We shall show that <m>\vF(x,y,z)</m> is conservative
+by finding a potential for it. <m>\varphi(x,y,z)</m> is a potential for this <m>\vF</m>
+if and only if
+<md>
+<mrow>
+\pdiff{\varphi}{x}(x,y,z) &amp;= x
+</mrow><mrow>
+\pdiff{\varphi}{y}(x,y,z) &amp;= -2y
+</mrow><mrow>
+\pdiff{\varphi}{z}(x,y,z) &amp;= 3z
+</mrow>
+</md>
+Integrating the first of these equations gives
+<me>
+\varphi(x,y,z) = \frac{x^2}{2} + f(y,z)
+</me>
+Substituting this into the second equation gives
+<me>
+\pdiff{f}{y}(y,z)
+   = -2y
+</me>
+which integrates to
+<me>
+f(y,z) = -y^2+ g(z)
+</me>
+Finally, substituting <m>\varphi(x,y,z) = \frac{x^2}{2} -y^2 + g(z)</m>
+into the last equation gives
+<me>
+ g'(z) = 3z
+</me>
+which integrates to
+<me>
+g(z) = \frac{3}{2} z^2 +C
+</me>
+with <m>C</m> being an arbitrary constant.
+So, <m>\vF(x,y,z)</m> is conservative and
+<m>\varphi(x,y,z)=\half x^2-y^2+\frac{3}{2}z^2</m> is one allowed potential.
+</p>
+
+<p>(b)
+The field <m>\vF= F_1\,\hi + F_2\,\hj</m> can be conservative
+only if it passes the screening test
+<me>
+\pdiff{F_1}{y}=\pdiff{F_2}{x}
+</me>
+In this case
+<me>
+\pdiff{F_1}{y}
+=\frac{\partial }{\partial y}\Big(\frac{x}{x^2+y^2}\Big)
+=-\frac{2xy}{{(x^2+y^2)}^2}
+</me>
+is different from
+<me>
+\pdiff{F_2}{x}
+=\frac{\partial }{\partial x}\Big(\frac{-y}{x^2+y^2}\Big)
+=\frac{2xy}{{(x^2+y^2)}^2}
+</me>
+for all <m>(x,y)</m> with <m>x</m> and <m>y</m> both nonzero.
+So <m>\vF</m> is not conservative.
+</p></solution>
+</exercise>
+
+<exercise>
+<statement><p>
+Let
+<m>\vF= e^{(z^2)}\,\hi+2Byz^3\,\hj
+          +\big(Axze^{(z^2)}+3By^2z^2\big)\,\hk</m>.
+<ol label="a">
+<li>
+For what values of the constants <m>A</m> and <m>B</m> is the
+vector field <m>\vF</m> conservative on <m>\bbbr^3</m>?
+</li>
+<li>
+If <m>A</m> and <m>B</m> have values found in (a),
+    find a potential function for <m>\vF</m>.
+</li>
+</ol>
+</p></statement>
+
+<hint><p>
+For what values of the constants <m>A</m> and <m>B</m> does the
+vector field <m>\vF</m> pass the screening test
+<m>\vnabla\times\vF=\vZero</m>?
+</p></hint>
+
+<answer><p>
+(a)
+<m>A=2</m>, <m>B</m> is arbitrary.
+</p>
+
+<p>(b)
+<m>\varphi(x,y,z)=xe^{(z^2)}+By^2 z^3+C</m>
+for any constant <m>C</m>.
+</p></answer>
+
+<solution><p>
+By Theorem <xref ref="thm_screenConserv"/> in the CLP-4 text,
+the field <m>\vF= F_1\,\hi + F_2\,\hj + F_3\,\hk</m> is conservative
+only if it passes the screening test
+<m>\vnabla\times\vF=\vZero</m>. That is, if and only if
+<md>
+<mrow>
+\pdiff{F_1}{y}=\pdiff{F_2}{x}\qquad
+\pdiff{F_1}{z}=\pdiff{F_3}{x}\qquad
+\pdiff{F_2}{z}=\pdiff{F_3}{y}
+</mrow>
+</md>
+or,
+<md>
+<mrow>
+\pdiff{}{y}\big(e^{(z^2)}\big)
+&amp;=\pdiff{}{x}\big(2Byz^3\big) &amp;
+&amp;\iff &amp;
+0 &amp; =0
+
+</mrow><mrow>
+
+\pdiff{}{z}\big(e^{(z^2)}\big)
+&amp;=\pdiff{}{x}\big(Axze^{(z^2)}+3By^2z^2\big) &amp;
+&amp;\iff &amp;
+2ze^{(z^2)} &amp; =Aze^{(z^2)}
+
+</mrow><mrow>
+
+\pdiff{}{z}\big(2Byz^3\big)
+&amp;=\pdiff{}{y}\big(Axze^{(z^2)}+3By^2z^2\big) &amp;
+&amp;\iff &amp;
+6Bye^{(z^2)}&amp; =6Bye^{(z^2)}
+</mrow>
+</md>
+Hence only <m>A=2</m> works. We shall see in part (b) that any <m>B</m> works.
+</p>
+
+<p>(b) When <m>A=2</m>, and <m>B</m> is any real number.
+<me>
+\vF=e^{(z^2)}\,\hi+2Byz^3\,\hj
+          +\big(2xze^{(z^2)}+3By^2z^2\big)\,\hk
+</me>
+<m>\varphi(x,y,z)</m> is a potential for this <m>\vF</m> if and only if
+<md>
+<mrow>
+\pdiff{\varphi}{x}(x,y,z) &amp;= e^{(z^2)}
+</mrow><mrow>
+\pdiff{\varphi}{y}(x,y,z) &amp;= 2Byz^3
+</mrow><mrow>
+\pdiff{\varphi}{z}(x,y,z) &amp;= 2xze^{(z^2)}+3By^2z^2
+</mrow>
+</md>
+Integrating the first of these equations gives
+<me>
+\varphi(x,y,z) = xe^{(z^2)} + f(y,z)
+</me>
+Substituting this into the second equation gives
+<me>
+\pdiff{f}{y}(y,z)
+   = 2Byz^3
+</me>
+which integrates to
+<me>
+f(y,z) = By^2 z^3 + g(z)
+</me>
+Finally, substituting <m>\varphi(x,y,z) = xe^{(z^2)}+By^2 z^3 + g(z)</m>
+into the last equation gives
+<me>
+2xze^{(z^2)} + 3By^2z^2 + g'(z)
+   = 2xze^{(z^2)}+3By^2z^2\qquad\text{or}\quad
+g'(z) = 0
+</me>
+which integrates to
+<me>
+g(z) = C
+</me>
+with <m>C</m> being an arbitrary constant.
+So, for each  real number <m>B</m>,
+<m>\varphi(x,y,z)=xe^{(z^2)}+By^2 z^3</m> is one allowed potential.
+</p></solution>
+</exercise>
+</exercisegroup>
+
+<exercisegroup><introduction><application/></introduction>
+
+<exercise>
+<statement><p>
+Find the velocity field for a two dimensional incompressible
+fluid when there is a point source of strength <m>m</m> at the origin. That is, fluid
+is emitted from the origin at area rate <m>2\pi m</m> <m>{\rm cm}^2</m>/sec.
+Show that this velocity field is conservative and find its potential.
+</p></statement>
+
+<hint><p>
+Review Example <xref ref="eg_ptSource"/> in the CLP-4 text.
+</p></hint>
+
+<answer><p>
+<m>\vv=m\frac{x\hi+y\hj}{x^2+y^2}</m>
+</p><p>
+<m>\varphi=\half m\ln(x^2+y^2)+C</m> for any constant <m>C</m>
+</p></answer>
+
+<solution><p>
+ In each second <m>2\pi m</m> <m>{\rm cm}^2</m> of fluid crosses each
+circle of radius <m>r</m> (and hence circumference <m>2\pi r</m>) centred on the
+origin. So the speed of flow at radius <m>r</m> is <m>\frac{m}{r}</m>. As the direction
+of flow is radially outward
+<md>
+<mrow>
+   \vv=m\frac{x\hi+y\hj}{x^2+y^2}
+</mrow>
+</md>
+<m>\varphi(x,y)</m> is a potential for this <m>\vF</m> if and only if
+<md>
+<mrow>
+\pdiff{\varphi}{x}(x,y) &amp;= m\frac{x}{x^2+y^2}
+</mrow><mrow>
+\pdiff{\varphi}{y}(x,y) &amp;= m\frac{y}{x^2+y^2}
+</mrow>
+</md>
+Integrating the first of these equations gives
+<me>
+\varphi(x,y) = \half m\ln(x^2+y^2) + f(y)
+</me>
+Substituting this into the second equation gives
+<me>
+m\frac{y}{x^2+y^2} + f'(y)
+   = m\frac{y}{x^2+y^2}\qquad\text{or}\quad
+f'(y) = 0
+</me>
+which integrates to
+<me>
+f(y) = C
+</me>
+with <m>C</m> an arbitrary constant. So one possible potential is
+<me>
+\varphi=\half m\ln(x^2+y^2)
+</me>
+</p>
+
+</solution>
+</exercise>
+
+<exercise>
+<statement><p>
+A particle of mass <m>10</m> kg moves in the force field <m>\vF=\vnabla\varphi</m>, where <m>\varphi(x,y,z)=-(x^2+y^2+z^2)</m>. When its potential energy is 0, the particle is at the origin, and  it moves with a velocity <m>2</m> m/s.
+</p>
+
+<p>Following Example<nbsp/><xref ref="eg_potentialEnergy"/>, give a region the particle can never escape.
+</p></statement>
+<hint><p>
+Following Example<nbsp/><xref ref="eg_potentialEnergy"/>, the particle can never escape the region
+<me>
+\Set{(x,y,z)}{\varphi(x,y,z)\ge -E}
+</me>
+where <m>E</m> is the energy of the system.
+</p></hint>
+<answer><p>
+It can never escape the sphere centred at the origin with radius <m>\sqrt{20}</m>.
+</p></answer>
+<solution>
+
+<p>Following Example<nbsp/><xref ref="eg_potentialEnergy"/>, the particle can never escape the region <m>\{(x,y,z) : \varphi(x,y,z)\ge -E\}</m>. So, we should find <m>E</m>, then figure out the region.
+</p>
+
+<p>The kinetic energy of the particle is <m>\frac{1}{2}m|\vv|^2</m>, so the total energy of the system (also the kinetic energy when the potential energy is 0) is <m>\frac{1}{2}(10)(2^2)=20</m> J.
+</p>
+
+<p>Therefore, a region it can never escape is
+<me>
+\Set{(x,y,z)}{\varphi(x,y,z)\ge -20}
+</me>
+that is,
+<me>
+\Set{(x,y,z)}{x^2+y^2+z^2 \le 20}
+</me>
+So, it can never escape the sphere centred at the origin with radius <m>\sqrt{20}</m>.
+</p></solution>
+</exercise>
+
+<exercise>
+<statement><p>
+A particle with constant mass <m>m=1/2</m> moves under a force field <m>\vF=\hj+3\sqrt[3]{z}\,\hk</m>. At position <m>(0,0,0)</m>, its speed is <m>1</m>. What is its speed at <m>(1,1,1)</m>?
+</p>
+
+<p>(You may assume without proof that the particle does indeed reach the point <m>(1,1,1)</m>.)
+</p>
+
+</statement>
+<hint><p>
+Example<nbsp/><xref ref="eg_potentialEnergy"/> tells us <m>\frac{1}{2} m |\vv(t)|^2 -\varphi\big(x(t),y(t),z(t)\big)=E</m> is a constant quantity, provided <m>\vF</m> is conservative with potential <m>\varphi(x,y,z)</m>.
+</p></hint>
+<answer><p>
+<m>\sqrt{14}</m>
+</p></answer>
+<solution><p>
+Example<nbsp/><xref ref="eg_potentialEnergy"/> tells us <m>\frac{1}{2} m |\vv(t)|^2 -\varphi\big(x(t),y(t),z(t)\big)=E</m> is a constant quantity, provided <m>\vF</m> is conservative with potential <m>\varphi</m>. So, it would be nice if <m>\vF</m> were conservative.
+</p>
+
+<p>If <m>\vF = \vnabla\varphi</m>, then
+<ul>
+<li> <m>\pdiff{\varphi}{x}=0</m>, so <m>\varphi = \psi_1(y,z)</m>
+</li>
+<li> <m>\pdiff{\varphi}{y}=1</m>, so <m>\varphi = y+\psi_2(x,z)</m>
+</li>
+<li> <m>\pdiff{\varphi}{z}=3z^{1/3}</m>, so <m>\varphi = \frac{9}{4}z^{4/3}+\psi_3(x,y)</m>
+</li>
+</ul>
+</p>
+
+<p>We can choose <m>\varphi(x,y,z)=y+\frac{9}{4}z^{4/3}</m>.
+So, <m>\frac{1}{2} m |\vv(t)|^2 -\varphi\big(x(t),y(t),z(t)\big)=E</m> is a constant quantity, as desired. Using the information that the particle has mass <m>1/2</m>, and speed <m>1</m> when it is at the origin:
+<md>
+<mrow>
+E&amp;=\frac{1}{2}\cdot\frac{1}{2}|1|^2-\varphi\big(0,0,0\big)=\frac{1}{4}
+</mrow>
+<intertext>When the particle is at <m>(1,1,1)</m>:</intertext><mrow>
+\frac{1}{4}&amp;=\frac{1}{2}\cdot\frac{1}{2}|\vv|^2-\varphi(1,1,1)=\frac{|\vv|^2}{4}-\left(1+\frac{9}{4}\right)
+</mrow><mrow>
+|\vv|&amp;=\sqrt{14}
+</mrow>
+</md>
+So, at the point <m>(1,1,1)</m>, the particle has speed <m>\sqrt{14}</m>.
+</p></solution>
+</exercise>
+
+<exercise>
+<statement><p>
+For some differentiable, real-valued functions <m>f,g,h:\mathbb R \to \mathbb R</m>, we define
+<me>
+\vF=2f(x)f'(x)\hi+g'(y)h(z)\hj+g(y)h'(z).</me>
+</p>
+
+<p>Verify that <m>\vF</m> is conservative.
+</p>
+
+</statement>
+<hint><p>
+Find a potential <m>\varphi</m>. Notice <m>f</m>, <m>g</m>, and <m>h</m> are functions of one variable each <mdash/> this simplifies things.
+</p></hint>
+<answer><p>
+<m>\varphi=f^2(x)+g(y)h(z)</m> is a potential for <m>\vF</m>, so <m>\vF</m> is conservative.
+</p></answer>
+<solution>
+
+<p>We can start with the screening test, Theorem<nbsp/><xref ref="thm_screen"/>.
+<md>
+<mrow>
+\mathbf\vnabla \times \vF &amp;=\Big(\pdiff{F_3}{y} -\pdiff{F_2}{z} \Big)\hi
++\Big(\pdiff{F_1}{z} -\pdiff{F_3}{x} \Big)\hj
++\Big(\pdiff{F_2}{x} -\pdiff{F_1}{y} \Big)\hk
+</mrow><mrow>
+&amp;=\Big(g'(y)h'(z)-g'(y)h'(z) \Big)\hi
++\Big(0 -0 \Big)\hj
++\Big(0 -0 \Big)\hk=\mathbf{0}
+</mrow>
+</md>
+</p>
+
+<p>So, it's possible that the field is conservative. Remember, this test alone isn't enough to tell us it's conservative. (Had the test come out differently, though, we'd be done.)
+</p>
+
+<p>Suppose <m>\vF=\vnabla\varphi(x,y,z)</m>. Then:
+<ul>
+<li> <m>\pdiff{\varphi}{x} = 2f(x)f'(x) </m>. By inspection, we see <m>\varphi = f^2(x)+ \psi_1(y,z)</m>. (We could also find this by evaluating <m>\int 2f(x)f'(x)\dee{x}</m> with the substitution <m>u=f(x)</m>.)
+</li>
+<li> <m>\pdiff{\varphi}{y} =  g'(y)h(z)</m>, so <m>\varphi=g(y)h(z)+\psi_2(x,z)</m>.
+</li>
+<li> <m>\pdiff{\varphi}{z} =  g(y)h'(z)</m>, so <m>\varphi=g(y)h(z)+\psi_2(x,y)</m>.
+</li>
+</ul>
+All together, we can choose <m>\varphi(x,y,z) = f^2(x)+g(y)h(z)</m>.
+</p>
+
+</solution>
+</exercise>
+
+<exercise>
+<statement><p>
+Describe the region in <m>\mathbb R^3</m> where the field
+<me>
+\vF=\left \lt  xy, xz,y^2+z \right \gt </me>
+</p>
+
+<p>has curl <m>\mathbf0</m>.
+</p></statement>
+<hint><p>
+Write the points with curl <m>\mathbf 0</m> as multiples of a constant vector.
+</p></hint>
+<answer><p>
+The line through the origin in the direction of the vector <m>(2,1,2)</m>.
+</p></answer>
+<solution><p>
+Following Definition<nbsp/><xref ref="def_curl"/>,
+The curl of a vector field is defined by
+<md>
+<mrow>
+\vnabla\times\vF
+&amp;=\Big(\pdiff{F_3}{y} -\pdiff{F_2}{z} \Big)\hi
++\Big(\pdiff{F_1}{z} -\pdiff{F_3}{x} \Big)\hj
++\Big(\pdiff{F_2}{x} -\pdiff{F_1}{y} \Big)\hk
+</mrow>
+<intertext>When <m>\vF=\left \lt  xy, xz,y^2+z \right \gt </m>,</intertext><mrow>
+\vnabla\times\vF&amp;=(2y-x)\hi+(0-0)\hj+(z-x)\hk
+</mrow>
+</md>
+When the curl is <m>0\hi+0\hj+0\hk</m>, we have <m>x=2y</m> and <m>x=z</m>. That is, our points are of the form <m>\left(2c,c,2c\right)</m> for any constant <m>c</m>. So, the region in question is the line through the origin in the direction of the vector <m>(2,1,2)</m>.
+</p></solution>
+</exercise>
+</exercisegroup>
+
+</exercises>

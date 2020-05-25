@@ -1,0 +1,274 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+
+<!-- Copyright 2018 Joel Feldman, Andrew Rechnitzer and Elyse Yeager -->
+<!-- This work is licensed under the Creative Commons Attribution-NonCommercial-ShareAlike 4.0 International License-->
+<!-- https://creativecommons.org/licenses/by-nc-sa/4.0 -->
+
+<exercises>
+<exercisegroup><introduction><conceptual/></introduction>
+
+<exercise>
+<statement><p>
+Suppose that the vector field <m>\vv(x,y)</m> sketched below represents the velocity of
+moving water at the point <m>(x,y)</m> in the first quadrant of the <m>xy</m>-plane.
+</p>
+
+<sidebyside width="75%">
+  <image source="pfigs/duckyField"/>
+</sidebyside>
+
+<p>
+  Sketch the path followed by a rubber ducky dropped in at the point
+<ol label="a">
+<li> <m>(0,2)</m>
+</li>
+<li> <m>(1,0)</m>
+</li>
+<li> <m>(1,2)</m>
+</li>
+</ol>
+</p>
+
+</statement>
+
+<answer>
+<sidebyside width="75%">
+<image source="pfigs/duckyField2"/>
+</sidebyside>
+
+</answer>
+
+<solution><p>
+(a) At every point of the positive <m>y</m>-axis, the velocity vector <m>\vv(0,y)</m>
+points straight down. So a rubber ducky placed in the water at <m>(0,2)</m>
+just floats straight down the positive <m>y</m>-axis towards the origin.
+</p>
+
+<sidebyside width="75%">
+  <image source="pfigs/duckyField2"/>
+</sidebyside>
+
+<p>
+(b) At every point of the positive <m>x</m>-axis, the velocity vector <m>\vv(x,0)</m>
+points straight to the right. So a rubber ducky placed in the water at <m>(1,0)</m>
+just floats rightward along the positive <m>x</m>-axis.
+</p>
+
+<p>
+(c) At every point of the first quadrant away from the axes, the
+velocity vector <m>\vv(x,y)</m> points downwards and towards the right. So a
+rubber ducky placed in the water at <m>(1,2)</m> always floats down and to
+the right. The closer the ducky gets to the <m>x</m>--axis the more rightward
+its motion becomes.
+</p>
+
+</solution>
+</exercise>
+
+<exercise>
+<statement><p>
+Find a vector field <m>\vv(x,y)</m> for which
+<md>
+<mrow>
+x(t) &amp;= e^{-t}\cos t
+</mrow><mrow>
+y(t) &amp;= e^{-t}\sin t
+</mrow>
+</md>
+is a field line.
+</p></statement>
+
+<hint><p>
+Express <m>x'(t)</m> and <m>y'(t)</m> purely in terms of <m>x(t)</m> and <m>y(t)</m>.
+</p></hint>
+
+<answer><p>
+<m>\vv(x,y) = (-x-y\,,\,x-y)</m>
+</p></answer>
+
+<solution><p>
+The derivatives
+<md alignment="alignat">
+<mrow>
+x'(t) &amp;= -e^{-t}\cos t - e^{-t}\sin t &amp;&amp;= -x(t)-y(t)
+</mrow><mrow>
+y'(t) &amp;= -e^{-t}\sin t + e^{-t}\cos t &amp;&amp;= -y(t)+x(t)
+</mrow>
+</md>
+So <m>\big(x(t),y(t)\big)</m> is a solution of the system of differential equations
+<md>
+<mrow>
+\diff{x}{t} &amp;= v_1(x,y) = -x-y
+</mrow><mrow>
+\diff{y}{t} &amp;= v_2(x,y) = \phantom{-}x-y
+</mrow>
+</md>
+So the vector field is <m>\vv(x,y) = \big(v_1(x,y)\,,\,v_2(x,y)\big)
+                                 = (-x-y\,,\,x-y)</m>.
+</p></solution>
+</exercise>
+</exercisegroup>
+
+<exercisegroup><introduction><procedural/></introduction>
+
+<exercise><title><fromexam>M317 2010A</fromexam></title>
+<statement><p>
+Consider the function <m>f(x,y) = xy</m>.
+<ol label="a">
+<li>
+Explicitly determine the field lines (flow lines) of
+<m>\vF(x,y) = \vnabla f</m>.
+</li>
+<li>
+Sketch the field lines of <m>\vF</m> and the level curves of <m>f</m> in the same diagram.
+</li>
+</ol>
+</p></statement>
+
+<hint><p>
+Review §<xref ref="sec_fieldLines"/>.
+</p></hint>
+
+<answer><p>
+(a) <m>\frac{x^2}{2} =\frac{y^2}{2} +C</m>
+</p>
+
+<sidebyside widths="5% 70%">
+  <p>(b)</p>
+    <image source="pfigs/OE10A_1"/>
+</sidebyside>
+</answer>
+
+<solution><p> (a) The field lines of <m>\vF(x,y) = \vnabla f
+=y\,\hi + x\,\hj</m> obey
+<md>
+<mrow>
+\frac{\dee{x}}{y} = \frac{\dee{y}}{x}
+\iff x\,\dee{x} = y\,\dee{y}
+\iff \frac{x^2}{2} =\frac{y^2}{2} +C
+</mrow>
+</md>
+for any constant <m>C</m>.
+</p>
+
+<p>(b)
+The sign data
+<md>
+<mrow>
+\hi\cdot\vF(x,y) = y
+    \left.\begin{cases}
+              \gt 0 &amp;\text{if } y \gt 0 \\
+             =0 &amp;\text{if } y=0 \\
+              \lt 0 &amp;\text{if } y \lt 0
+       \end{cases}\right\}
+</mrow><mrow>
+\hj\cdot\vF(x,y) = x
+    \left.\begin{cases}
+              \gt 0 &amp;\text{if } x \gt 0 \\
+             =0 &amp;\text{if } x=0 \\
+              \lt 0 &amp;\text{if } x \lt 0
+       \end{cases}\right\}
+</mrow>
+</md>
+is visually displayed in the figure on the left below. The arrows in the
+figure on the left gives us the direction of motion along
+the field lines <m>\frac{x^2}{2} =\frac{y^2}{2} +C</m> (in red) in the
+figure on the right below. Some equipotential curves <m>xy=C</m> are
+also sketched (in blue) in the figure on the right below.
+</p>
+
+<sidebyside width="45%">
+<image source="pfigs/OE10A_1Sign"/>
+<image source="pfigs/OE10A_1"/>
+</sidebyside>
+
+</solution>
+</exercise>
+
+<exercise><title><fromexam>M317 2003A</fromexam></title>
+<statement><p>
+Find the field line of the vector field
+<m>\vF= 2y\,\hi+ \frac{x}{y^2}\,\hj+e^y\hk</m> that passes through
+<m>(1,1,e)</m>.
+</p></statement>
+
+<answer><p>
+<m>x=y^2</m>, <m>z=e^y</m>
+</p></answer>
+
+<solution><p>
+The field lines obey
+<me>
+\frac{\dee{x}}{2y}=\frac{\dee{y}}{x/y^2}=\frac{\dee{z}}{e^y}
+\qquad\text{ if } x,y\ne 0
+</me>
+In particular
+<md>
+<mrow>
+\frac{\dee{x}}{2y}=\frac{y^2\,\dee{y}}{x}
+\implies
+x\,\dee{x}=2y^3\,\dee{y}
+\implies
+\frac{1}{2}x^2=\frac{1}{2}y^4+C
+</mrow>
+</md>
+Since <m>y=1</m> when <m>x=1</m>, <m>C=0</m>. So <m>x=y^2</m> and
+<me>
+\frac{\dee{y}}{x/y^2}=\frac{\dee{z}}{e^y}
+\implies
+e^ydy=dz
+\implies
+z=e^y+D
+</me>
+Since <m>z=e</m> when <m>y=1</m>, <m>D=0</m>. So the field line is
+<me>
+x=y^2 \qquad z=e^y
+</me>
+</p></solution>
+</exercise>
+
+<exercise><title><fromexam>M317 2001A</fromexam></title>
+<statement><p>
+ Find and sketch the field lines of the vector field
+<m>\vF= x\,\hi+ 3y\,\hj</m>.
+</p></statement>
+
+<answer><p>
+The field lines are <m>y=C'x^3</m> with <m>C'</m> a nonzero constant,
+as well as <m>x=0</m> and <m>y=0</m>.
+</p>
+
+<sidebyside width="75%">
+  <image source="pfigs/fline"/>
+</sidebyside>
+
+</answer>
+
+<solution><p>
+ The field lines obey
+<md>
+<mrow>
+&amp;\frac{\dee{x}}{x}=\frac{\dee{y}}{3y}\qquad\text{ if } x,y\ne 0
+</mrow><mrow>
+&amp;\implies 3\ln |x|=\ln |y|+C
+</mrow><mrow>
+&amp;\implies |x|^3=e^C|y|
+</mrow><mrow>
+&amp;\implies y=\pm e^{-C}x^3
+</mrow><mrow>
+&amp;\implies y=C'x^3
+</mrow>
+</md>
+with <m>C'</m> a nonzero constant.
+<m>x=0</m> and <m>y=0</m> are also field lines,
+since on the <m>y</m>-axis <m>\vF\parallel\hj</m> and
+on the <m>x</m>-axis <m>\vF\parallel\hi</m>.
+</p>
+
+<sidebyside width="75%">
+  <image source="pfigs/fline"/>
+</sidebyside>
+</solution>
+</exercise></exercisegroup>
+
+</exercises>
