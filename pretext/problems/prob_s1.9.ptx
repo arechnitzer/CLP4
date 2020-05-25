@@ -67,12 +67,15 @@ Both (i) and (ii) were proven in §<xref ref="sec_central_forces"/>. Here are th
 \vOm(t) = \vr(t)\times\vv(t)
 </me>
 By the product rule,
-<me>
-\diff{\vOm}{t}(t) =\diff{\ }{t}\big(\vr(t)\times\vv(t)\big)
+<md>
+<mrow>
+\diff{\vOm}{t}(t) &amp;=\diff{\ }{t}\big(\vr(t)\times\vv(t)\big)
 =\vv(t)\times\vv(t) + \vr(t)\times\va(t)
-=m\vr(t)\times f\big(r(t))\vr(t)\big)
+</mrow><mrow>
+&amp;=m\vr(t)\times f\big(r(t))\vr(t)\big)
 =\vZero
-</me>
+</mrow>
+</md>
 So <m>\vOm(t)</m> is in fact independent of <m>t</m>. It is a constant vector that
 we'll just denote <m>\vOm</m>.
 </p>
@@ -126,11 +129,12 @@ Writing <m>\vr(t) = r(t)\hat\vr\big(\theta(t)\big)</m> and then applying
 Lemma <xref ref="lem_polar"/>.b gives that
 <md>
 <mrow>
-\text{constant} = \big|\vr\times\vv\big|
+&amp;\text{constant} = \big|\vr\times\vv\big|
    = \Big|r\hat\vr\times\Big(\diff{r}{t}\ \hat\vr
              + r\ \diff{\theta}{t}\ \hat\vth\Big)\Big|
    =r^2\diff{\theta}{t}
-\qquad\text{since}\quad |\hat\vr\times\hat\vr|=0,\
+</mrow><mrow>
+&amp;\text{since}\quad |\hat\vr\times\hat\vr|=0,\
                         |\hat\vr\times\hat\vth|=1
 </mrow>
 </md>
@@ -141,7 +145,7 @@ a circular disk of radius <m>r</m>. (If <m>r(t)</m> were independent of <m>t</m>
 fraction <m>\frac{\dee{\theta}}{2\pi}</m> of the area of the full disk, which is
 </p>
 
-<sidebyside width="45%">
+<sidebyside widths="30% 30%" valign="middle">
   <p>
   <me>
   \frac{\dee{\theta}}{2\pi}\ \pi r^2 = \frac{1}{2}r^2\,\dee{\theta}
@@ -260,13 +264,16 @@ is also constant.
 <p>(b)
 By Lemma <xref ref="lem_polar"/>,
 the acceleration
-<me>
-\va(t) = \Big(\difftwo{r}{t}(t)-r(t)\Big(\diff{\theta}{t}(t)\Big)^2\Big)
+<md>
+<mrow>
+\va(t) &amp;= \Big(\difftwo{r}{t}(t)-r(t)\Big(\diff{\theta}{t}(t)\Big)^2\Big)
              \hat\vr\big(\theta(t)\big)
-   +\Big(r(t)\ \difftwo{\theta}{t}(t)
+</mrow><mrow>
+&amp;\hskip1in   +\Big(r(t)\ \difftwo{\theta}{t}(t)
           + 2 \diff{r}{t}(t)\diff{\theta}{t}(t)\Big)
                   \hat\vth\big(\theta(t)\big)
-</me>
+</mrow>
+</md>
 Because our object is subject to a central force, the acceleration
 <m>\va(t)</m> is parallel to <m>\hat\vr\big(\theta(t)\big)</m>. So the
 <m>\hat\vth\big(\theta(t)\big)</m> component of the acceleration is zero

@@ -34,15 +34,19 @@ with <m>0\le\theta_i \lt 2\pi</m>, for the point <m>(x_i,y_i)</m>.
 </p></statement>
 
 <answer><p>
-The left hand sketch below contains the points, <m>(x_1,y_1)</m>, <m>(x_3,y_3)</m>,
-<m>(x_5,y_5)</m>, that are on the axes. The right hand sketch below contains the
+The upper sketch below contains the points, <m>(x_1,y_1)</m>, <m>(x_3,y_3)</m>,
+<m>(x_5,y_5)</m>, that are on the axes. The lower sketch below contains the
 points, <m>(x_2,y_2)</m>, <m>(x_4,y_4)</m>, that are not on the axes.
 </p>
 
-<sidebyside width="45%">
+<sidebyside width="85%">
 <image source="pfigs/polar3A"/>
+</sidebyside>
+
+<sidebyside width="43%">
 <image source="pfigs/polar2A"/>
 </sidebyside>
+
 <p>
 <m>r_1 = 3</m>,        <m>\theta_1=0</m></p><p>
     <m>r_2 = \sqrt{2}</m>, <m>\theta_2=\frac{\pi}{4}</m></p><p>
@@ -52,15 +56,20 @@ points, <m>(x_2,y_2)</m>, <m>(x_4,y_4)</m>, that are not on the axes.
 </p></answer>
 
 <solution><p>
-The left hand sketch below contains the points, <m>(x_1,y_1)</m>, <m>(x_3,y_3)</m>,
-<m>(x_5,y_5)</m>, that are on the axes. The right hand sketch below contains the
+The upper sketch below contains the points, <m>(x_1,y_1)</m>, <m>(x_3,y_3)</m>,
+<m>(x_5,y_5)</m>, that are on the axes. The lower sketch below contains the
 points, <m>(x_2,y_2)</m>, <m>(x_4,y_4)</m>, that are not on the axes.
 </p>
 
-<sidebyside width="45%">
-  <image source="pfigs/polar3A"/>
-    <image source="pfigs/polar2A"/>
+
+<sidebyside width="85%">
+<image source="pfigs/polar3A"/>
 </sidebyside>
+
+<sidebyside width="43%">
+<image source="pfigs/polar2A"/>
+</sidebyside>
+
 
 <p>
 Recall that the polar coordinates <m>r</m>, <m>\theta</m>
@@ -68,25 +77,30 @@ are related to the cartesian coordinates <m>x</m>, <m>y</m>, by <m>x=r\cos\theta
 <m>y=r\sin\theta</m>. So <m>r=\sqrt{x^2+y^2}</m> and <m>\tan\theta=\frac{y}{x}</m>
 (assuming that <m>x\ne 0</m>) and
 <md alignment="alignat">
-<mrow>{5}
-(x_1,y_1) &amp;= (3,0) &amp;&amp;\implies &amp;r_1=3,\ \tan\theta_1=0
-                   &amp;&amp;\implies \theta_1&amp;=0
+<mrow>
+(x_1,y_1) &amp;= (3,0) &amp;&amp;\implies \quad r_1=3,\ \tan\theta_1=0
+</mrow><mrow>
+                   &amp;&amp;&amp;\implies \quad \theta_1=0
                    \text{ as $(x_1,y_1)$ is on the positive $x$-axis}
 </mrow><mrow>
-(x_2,y_2) &amp;= (1,1) &amp;&amp;\implies &amp;r_2=\sqrt{2},\ \tan\theta_2=1
-                   &amp;&amp;\implies \theta_2&amp;=\frac{\pi}{4}
+(x_2,y_2) &amp;= (1,1) &amp;&amp;\implies \quad r_2=\sqrt{2},\ \tan\theta_2=1
+</mrow><mrow>
+                   &amp;&amp;&amp;\implies \quad  \theta_2=\frac{\pi}{4}
                    \text{ as $(x_2,y_2)$ is in the first octant}
 </mrow><mrow>
-(x_3,y_3) &amp;= (0,1) &amp;&amp;\implies &amp;r_3=1,\ \cos\theta_3=0
-                   &amp;&amp;\implies \theta_3&amp;=\frac{\pi}{2}
+(x_3,y_3) &amp;= (0,1) &amp;&amp;\implies  \quad r_3=1,\ \cos\theta_3=0
+</mrow><mrow>
+                   &amp;&amp;&amp;\implies \quad  \theta_3=\frac{\pi}{2}
                    \text{ as $(x_3,y_3)$ is on the positive $y$-axis}
 </mrow><mrow>
-(x_4,y_4) &amp;= (-1,1) &amp;&amp;\implies &amp;r_4=\sqrt{2},\ \tan\theta_4=-1
-                   &amp;&amp;\implies \theta_4&amp;=\frac{3\pi}{4}
+(x_4,y_4) &amp;= (-1,1) &amp;&amp;\implies  \quad r_4=\sqrt{2},\ \tan\theta_4=-1
+</mrow><mrow>
+                   &amp;&amp;&amp;\implies \quad \theta_4=\frac{3\pi}{4}
                    \text{ as $(x_4,y_4)$ is in the third octant}
 </mrow><mrow>
-(x_5,y_5) &amp;= (-2,0) &amp;&amp;\implies &amp;r_5=2,\ \tan\theta_5=0
-                   &amp;&amp;\implies \theta_5&amp;=\pi
+(x_5,y_5) &amp;= (-2,0) &amp;&amp;\implies  \quad r_5=2,\ \tan\theta_5=0
+</mrow><mrow>
+                   &amp;&amp;&amp;\implies  \quad \theta_5=\pi
                    \text{ as $(x_5,y_5)$ is on the negative $x$-axis}
 </mrow>
 </md>
@@ -184,7 +198,7 @@ with polar coordinates <m>\theta=0</m>, <m>r \gt 0</m> and the pink half-line is
 of all points  with polar coordinates <m>\theta=0</m>, <m>r \lt 0</m>.
 </p>
 
-<sidebyside width="45%">
+<sidebyside widths="43% 43%">
 <image source="pfigs/polar6B"/>
 <image source="pfigs/polar6A"/>
 </sidebyside>
@@ -225,7 +239,7 @@ half-line is the set of all points  with polar coordinates
 </p>
 
 
-<sidebyside width="45%">
+<sidebyside width="35%">
   <image source="pfigs/polar4A"/>
   <image source="pfigs/polar4B"/>
 </sidebyside>
@@ -266,7 +280,7 @@ half-line is the set of all points  with polar coordinates
 <m>\theta=\frac{\pi}{4}</m>, <m>r \lt 0</m>.
 </p>
 
-<sidebyside width="45%">
+<sidebyside width="40%">
 <image source="pfigs/polar5A"/>
 <image source="pfigs/polar5B"/>
 </sidebyside>
@@ -326,7 +340,7 @@ Here is a sketch of <m>(x_i,y_i)</m>, <m>\he_r(\theta_i)</m>,
 <m>\he_\theta(\theta_i)</m> for <m>i =1,3,5</m> (the points on the axes)
 </p>
 
-<sidebyside width="75%">
+<sidebyside width="91%">
 <image source="pfigs/polar3"/>
 </sidebyside>
 
@@ -334,7 +348,7 @@ Here is a sketch of <m>(x_i,y_i)</m>, <m>\he_r(\theta_i)</m>,
 and here is a sketch (to a different scale) of <m>(x_i,y_i)</m>, <m>\he_r(\theta_i)</m>,
 <m>\he_\theta(\theta_i)</m> for <m>i =2,4</m> (the points off the axes).
 </p>
-<sidebyside width="75%">
+<sidebyside width="62%">
 <image source="pfigs/polar2"/>
 </sidebyside>
 
@@ -388,7 +402,7 @@ Here is a sketch of <m>(x_i,y_i)</m>, <m>\he_r(\theta_i)</m>,
 <m>\he_\theta(\theta_i)</m> for <m>i =1,3,5</m> (the points on the axes)
 </p>
 
-<sidebyside width="75%">
+<sidebyside width="91%">
 <image source="pfigs/polar3"/>
 </sidebyside>
 
@@ -397,7 +411,7 @@ and here is a sketch (to a different scale) of <m>(x_i,y_i)</m>, <m>\he_r(\theta
 <m>\he_\theta(\theta_i)</m> for <m>i =2,4</m> (the points off the axes).
 </p>
 
-<sidebyside width="75%">
+<sidebyside width="62%">
 <image source="pfigs/polar2"/>
 </sidebyside>
 
@@ -429,13 +443,14 @@ pictures. Cartesian coordinates are <m>(x, y)</m> and polar coordinates are
 
 <p>
 <md alignment="alignat">
-<mrow>{7}
+<mrow>
 &amp;\text{(a)}\quad&amp; r&amp;=2+\sin(4\theta) \qquad\qquad &amp;
-&amp;\text{(b)}\quad&amp; r&amp;=1+2\sin(4\theta)\qquad\qquad &amp;
-&amp;\text{(c)}\quad&amp; r&amp;=1
+&amp;\text{(b)}\quad&amp; r&amp;=1+2\sin(4\theta)
 </mrow><mrow>
+&amp;\text{(c)}\quad&amp; r&amp;=1\qquad\qquad &amp;
 &amp;\text{(d)}&amp; r&amp;=2\cos(\theta),\
-           -\tfrac{\pi}{2}\le\theta\le\tfrac{\pi}{2}\qquad\qquad &amp;
+           -\tfrac{\pi}{2}\le\theta\le\tfrac{\pi}{2}
+</mrow><mrow>
 &amp;\text{(e)}&amp; r&amp;=e^{\theta/10}+e^{-\theta/10}\qquad\qquad &amp;
 &amp;\text{(f)}&amp; r&amp;=\theta &amp;
 </mrow>
@@ -550,8 +565,9 @@ y(\theta)&amp;= f(\theta)\sin\theta
 \vv(\theta)=\vr'(\theta)&amp;= f'(\theta)\big[\cos\theta\ \hi + \sin\theta\ \hj\big]
           +f(\theta)\big[-\sin\theta\ \hi + \cos\theta\ \hj\big]
 </mrow><mrow>
-\va(\theta)=\vr''(\theta)&amp;= \big\{f''(\theta)-f(\theta)\big\}\big[\cos\theta\ \hi + \sin\theta\ \hj\big]
-             +2f'(\theta)\big[-\sin\theta\ \hi + \cos\theta\ \hj\big]
+\va(\theta)=\vr''(\theta)&amp;= \big\{f''(\theta)\!-\!f(\theta)\big\}\big[\cos\theta\,\hi 
+\!+\! \sin\theta\,\hj\big]
+             \!+\!2f'(\theta)\big[-\sin\theta\ \hi\!+\! \cos\theta\,\hj\big]
 </mrow>
 </md>
 The efficient way to compute <m>|\vv(\theta)|</m> and
@@ -572,22 +588,22 @@ obeying <m>\he_r(\theta)\times\he_\theta(\theta) =\hk</m> and
 <m>\he_r(\theta)\times\he_r(\theta) = \he_\theta(\theta)\times\he_\theta(\theta) =0</m>,
 <md>
 <mrow>
-|\vv(\theta)|^2=\vv(\theta)\cdot\vv(\theta)
-   &amp;=\big[f'(\theta)\,\he_r(\theta) +f(\theta)\,\he_\theta(\theta)\big]\cdot
-     \big[f'(\theta)\,\he_r(\theta) +f(\theta)\,\he_\theta(\theta)\big]
+|\vv(\theta)|^2&amp;=\vv(\theta)\!\cdot\!\vv(\theta)
+    \!=\!\big[f'(\theta)\,\he_r(\theta)\!+\!f(\theta)\,\he_\theta(\theta)\big]\!\cdot\!
+     \big[f'(\theta)\,\he_r(\theta) \!+\!f(\theta)\,\he_\theta(\theta)\big]
 </mrow><mrow>
-   &amp;=f'(\theta)^2\,\he_r(\theta)\cdot\he_r(\theta)
-     +f(\theta)^2\,\he_\theta(\theta)\cdot\he_\theta(\theta)
-     +2f'(\theta)\,f(\theta)\,\he_r(\theta)\cdot\he_\theta(\theta)
+   &amp;=\!f'(\theta)^2\,\he_r(\theta)\cdot\he_r(\theta)
+     \!+\!f(\theta)^2\,\he_\theta(\theta)\cdot\he_\theta(\theta)
+     \!+\!2f'(\theta)\,f(\theta)\,\he_r(\theta)\cdot\he_\theta(\theta)
 </mrow><mrow>
    &amp;=f'(\theta)^2+f(\theta)^2
 </mrow><mrow>
 |\vv(\theta)|&amp; = \sqrt{f'(\theta)^2+f(\theta)^2}
 </mrow><mrow>
-\vv(\theta)\times\va(\theta)
- &amp;=\big[f'(\theta)\,\he_r(\theta) +f(\theta)\,\he_\theta(\theta)\big]\times
-   \big[\big\{f''(\theta)-f(\theta)\big\}\,\he_r(\theta)
-             +2f'(\theta)\,\he_\theta(\theta)\big]
+\vv(\theta)\!\times\!\va(\theta)
+ &amp;=\big[f'(\theta)\,\he_r(\theta)\!+\!f(\theta)\,\he_\theta(\theta)\big]\!\times\!
+   \big[\big\{f''(\theta)\!-\!f(\theta)\big\}\,\he_r(\theta)
+             \!+\!2f'(\theta)\,\he_\theta(\theta)\big]
 </mrow><mrow>
  &amp;= 2f'(\theta)^2\,\he_r(\theta)\times\he_\theta(\theta)
   +f(\theta)[f''(\theta)-f(\theta)]\,\he_\theta(\theta)\times\he_r(\theta)

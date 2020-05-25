@@ -12,7 +12,7 @@
 <exercise>
 <statement><p>
 	The figure below represents a bead sliding down a wire. Sketch  vectors representing the normal force the wire exerts on the bead, and the force of gravity.
-</p><sidebyside>
+</p><sidebyside width="33%">
 <image><latex-image>\begin{tikzpicture}
 	\draw[thick, red] plot[domain=2:6]({\x},{-\x+2*cos(\x r)});
 	\draw (3.14,-5.14) node[vertex]{};
@@ -23,7 +23,7 @@
 <hint><p>
 Gravity pulls straight down, while the direction of the normal force depends on the curve of the wire. There is not enough information to know the magnitude of the forces, but you can approximate their directions.
 </p></hint>
-<answer><sidebyside>
+<answer><sidebyside width="33%">
 <image><latex-image>\begin{tikzpicture}
 		\draw[thick, red] plot[domain=2:6]({\x},{-\x+2*cos(\x r)});
 		\draw (3.14,-5.14) node[vertex](b){};
@@ -33,7 +33,7 @@ Gravity pulls straight down, while the direction of the normal force depends on 
 </sidebyside></answer>
 <solution><p>
 	We don't have enough information to gauge the size of the vectors, but we can figure out their direction. Gravity pulls straight down, so the vector <m>-mg\hj</m> points straight down. The normal force will be normal to the curve.
-	</p><sidebyside>
+	</p><sidebyside width="33%">
 <image><latex-image>\begin{tikzpicture}
 		\draw[thick, red] plot[domain=2:6]({\x},{-\x+2*cos(\x r)});
 		\draw (3.14,-5.14) node[vertex](b){};
@@ -64,7 +64,7 @@ In the definition <m>E=\frac12m|\vv|^2+mgy</m>,  <m>\vv</m> is the derivative of
 <exercise>
 <statement><p>
 A bead slides down a wire with the shape shown below, <m>x \lt 0</m>.
-</p><sidebyside>
+</p><sidebyside width="40%">
 <image><latex-image>\begin{tikzpicture}
 \YEaaxis{4}{.5}{.5}{4}
 \draw[thick, red] plot[domain=-4:0](\x,{\x*\x/4});
@@ -244,7 +244,7 @@ W\hN\Big|_{\theta=\pi/4}&amp;=\left(5-\frac{39.2}{5\sqrt 2}\right)\left(-\frac35
 <exercise>
 <statement><p>
 A bead of mass <m>\frac{1}{9.8}</m> kg slides down a  wire in the shape of the curve <m>\vr(\theta)=(\sin \theta , \sin \theta - \theta)</m>, <m>\theta \ge 0</m>, with coordinates measured in metres. The bead will break off the wire when the wire exerts a force of  100 N on the bead.
-</p><sidebyside>
+</p><sidebyside width="45%">
 <image><latex-image>\begin{tikzpicture}
 \YEaaxis{.5}{1}{5}{.5}
 \draw[thick, red] plot[domain=0:20, smooth, scale=0.25, samples=20]({sin(\x r)},{sin(\x r)-\x});
@@ -270,14 +270,18 @@ Equation<nbsp/><xref ref="eqn_normalForce"/> tells us the normal force exerted b
 <m>W=m\kappa|\vv|^2+mg\hj\cdot\hN</m>. So, we need to find <m>\kappa</m> and <m>\hj \cdot \hN</m> at the point <m>\theta=\frac{13\pi}{3}</m>.
 </p>
 
-<p>Note that <m>\theta</m> is the parameter used to describe the track, but it is <em>not</em> time. So <m>|\vv(\theta)|=\left|\diff{\vr}{\theta} \right|</m> is not the same as <m>|\vv|</m>, the <em>speed</em> of the bead.
+<p>Note that <m>\theta</m> is the parameter used to describe the track, but it is <em>not</em> time. So <m>|\vv(\theta)|=\left|\diff{\vr}{\theta} \right|</m> is not the same as <m>|\vv|=\left|\diff{\vr}{t} \right|</m>, the <em>speed</em> of the bead.
 <md>
 <mrow>
-\vr(\theta)&amp;=(\sin \theta , \sin \theta - \theta)&amp;
+\vr(\theta)&amp;=(\sin \theta , \sin \theta - \theta)
+</mrow><mrow>
 \vv(\theta)&amp;=(\cos \theta, \cos \theta -1)
-</mrow><mrow> |\vv(\theta)|=\diff{s}{\theta}&amp;=\sqrt{2\cos^2\theta-2\cos \theta+1}&amp;
+</mrow><mrow> |\vv(\theta)|=\diff{s}{\theta}&amp;=\sqrt{2\cos^2\theta-2\cos \theta+1}
+</mrow><mrow>
 \va(\theta)&amp;=(-\sin \theta, -\sin \theta)
-</mrow><mrow> |\vv \times \va|&amp;=|\sin \theta|&amp;
+</mrow><mrow> 
+|\vv \times \va|&amp;=|\sin \theta|
+</mrow><mrow>
 \ka(\theta)&amp;=\frac{|\vv\times\va|}{\left(\diff{s}{\theta}\right)^3}=\frac{|\sin \theta|}{(2\cos^2\theta-2\cos \theta+1)^{3/2}}
 </mrow><mrow>
 \ddiff{2}{s}{\theta}&amp;=\frac{\sin \theta (1-2\cos \theta)}{\sqrt{2\cos^2\theta-2\cos \theta+1}}
@@ -404,8 +408,7 @@ A bead, equipped with a jet pack, slides down the wire. The jet pack can exert a
 <p>Let the acceleration due to gravity be <m>g</m>, and let the mass of the bead with its jet pack be <m>m</m>. Give <m>U</m> as a function of <m>s</m>.
 </p>
 
-<p>Remark: most beads this author has seen did not have jet packs. However, in modelling a frictionful
-<fn>Frictionated? Frictiony? Befrictioned?</fn>
+<p>Remark: most beads this author has seen did not have jet packs. However, in modelling a frictionful<fn>Frictionated? Frictiony? Befrictioned?</fn>
  system, friction acts as a force that is directly opposing the direction of motion <mdash/> much like our jet pack.
 </p></statement>
 <hint><p>
@@ -419,7 +422,7 @@ There are now three forces acting on the bead: one parallel to <m>\hj</m> (exert
 </p></answer>
 <solution><p>
 We now have three forces acting on the bead, rather than the two in the text. The wire still exerts a normal force <m>W\hN</m> on the bead to keep it on the wire; gravity still exerts a force <m>-mg\hj</m> straight down. Now our jet-pack force also exerts a force parallel to the direction of the bead's motion, i.e. parallel to <m>\hT</m>. This force is <m>U\hT</m>.
-</p><sidebyside>
+</p><sidebyside width="20%">
 <image><latex-image>\begin{tikzpicture}
 \begin{scope}[rotate=-30]
 \draw[thick, red] plot[domain=-1.5:1.5](\x,{cos (\x r)});
@@ -477,7 +480,7 @@ If the snowmachine is moving at a constant speed, the tangential component of it
 <solution><p>
 (a)
 There are three forces acting on the snowmachine. If it's not accelerating, then <m>F=m\va=0</m>: that is, the forces all cancel out.
-</p><sidebyside>
+</p><sidebyside width="30%">
 <image><latex-image>\begin{tikzpicture}
 \draw[thick, red] plot[domain=0:3](\x,{cos( \x r});
 \draw (1.57,0) node[vertex](s){};
@@ -553,36 +556,40 @@ with coordinates measured in metres.
 	Follow the discussion in the text.
 </p>
 
-<p>	It's fine to leave part (b) pretty messy. Your answer for part (c) involves the root of a cubic function, but you don't need a high degree of accuracy to decide between the three options give.
+<p>	It's fine to leave part (b) pretty messy. Your answer for part (c) involves the root of a cubic function, but you don't need a high degree of accuracy to decide between the three options given.
 </p>
 
 </hint>
 <answer><p>
-(a) <m>y_S=\frac{E}{mg}</m>
+(a) <m>\displaystyle y_S=\frac{E}{mg}</m>
 </p><p>
-(b) <m>\frac{24\left(E-mgy_A\right)}{\left(9+7\left( \frac{y_A-3}{3}\right)^2 \right)^{3/2}} =4mg\left(\frac{ \frac{y_A-3}{3}}{\sqrt{9+7\left( \frac{y_A-3}{3}\right)^2}} \right) </m> (or equivalent)
+(b) <m>\displaystyle \frac{24\left(E-mgy_A\right)}{\left(9+7\left( \frac{y_A-3}{3}\right)^2 \right)^{3/2}} =4mg\left(\frac{ \frac{y_A-3}{3}}{\sqrt{9+7\left( \frac{y_A-3}{3}\right)^2}} \right) </m> (or equivalent)
 </p><p>
 (c) The skateboarder makes it up to the ceiling, but falls off rather than making it all the way around. Ouch.
 </p></answer>
 <solution><p>
 	We begin with the usual computations.
-	<md>
+<md>
 <mrow>
-		\vr(\theta)&amp;=(4\cos\theta,3(1+\sin\theta))
+	\vr(\theta)&amp;=(4\cos\theta,3(1+\sin\theta))
 </mrow><mrow>
-		\vv(\theta)=\vr'(\theta)&amp;=(-4\sin\theta,3\cos\theta) &amp; |\vv(\theta)|=\diff{s}{\theta}&amp;=\sqrt{16\sin^2\theta+9\cos^2\theta}=\sqrt{9+7\sin^2\theta}
+	\vv(\theta)=\vr'(\theta)&amp;=(-4\sin\theta,3\cos\theta) 
+</mrow><mrow> 
+        |\vv(\theta)|=\diff{s}{\theta}&amp;=\sqrt{16\sin^2\theta+9\cos^2\theta}=\sqrt{9+7\sin^2\theta}
 </mrow><mrow>
-		\va(\theta)&amp;=(-4\cos\theta,-3\sin\theta) &amp;
+	\va(\theta)&amp;=(-4\cos\theta,-3\sin\theta) 
 </mrow><mrow>
-		 |\vv(\theta) \times \va(\theta)|&amp;=12&amp;
-		\ka(\theta)&amp;=\frac{|\vv(\theta)\times\va(\theta)|}{\left(\diff{s}{\theta} \right)^3}=\frac{12}{(9+7\sin^2\theta)^{3/2}}
+	|\vv(\theta) \times \va(\theta)|&amp;=12
+</mrow><mrow>	
+        \ka(\theta)&amp;=\frac{|\vv(\theta)\times\va(\theta)|}{\left(\diff{s}{\theta} \right)^3}=\frac{12}{(9+7\sin^2\theta)^{3/2}}
 </mrow><mrow>
 		\hT(\theta)&amp;=\frac{(-4\sin\theta,3\cos\theta)}{\sqrt{9+7\sin^2\theta}}
-		&amp;
+</mrow><mrow>
 		\hT'(\theta)&amp;=\frac{(36\cos\theta,48\sin\theta)}{-(9\cos^2\theta+16\sin^2\theta)^{3/2}}
 </mrow><mrow>
-		|\hT'(\theta)|&amp;=\frac{12}{9\cos^2\theta+16\sin^2\theta} &amp;
-		\hN(\theta)&amp;= \frac{(3\cos\theta,4\sin\theta)}{-\sqrt{9\cos^2\theta+16\sin^2\theta}}
+		|\hT'(\theta)|&amp;=\frac{12}{9\cos^2\theta+16\sin^2\theta} 
+</mrow><mrow>
+        \hN(\theta)&amp;= \frac{(3\cos\theta,4\sin\theta)}{-\sqrt{9\cos^2\theta+16\sin^2\theta}}
 		</mrow>
 </md>
 	We want to find the height <m>y_S</m> where <m>|\vv|=0</m>, and the height <m>y_A</m> where <m>W=0</m>. Remember that <m>\vv</m> in these equations is the derivative of position with respect to <em>time</em>, and is not the same as <m>\vv(\theta)</m>.
@@ -699,8 +706,9 @@ independent of <m>t</m>.
 <md>
 <mrow>
 E(t)=E(0)
-\implies  \half m |\vv(t)|^2 +mg b\theta(t) = mg(2\pi b)
-\implies|\vv(t)|^2=2gb\big(2\pi-\theta(t)\big)
+&amp;\implies  \half m |\vv(t)|^2 +mg b\theta(t) = mg(2\pi b)
+</mrow><mrow>
+&amp;\implies|\vv(t)|^2=2gb\big(2\pi-\theta(t)\big)
 </mrow>
 </md>
 </p>

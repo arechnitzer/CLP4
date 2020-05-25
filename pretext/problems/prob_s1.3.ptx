@@ -15,7 +15,8 @@ Sketch the curve <m>\vr(t)=(3\sin t,3\cos t)</m>. At the point <m>(0,3)</m>, lab
 <hint><p>
 The curve is a circle, so you don't need to do any calculus.
 </p></hint>
-<answer><sidebyside>
+<answer>
+<sidebyside width="40%">
 <image><latex-image>\begin{tikzpicture}
 \YEaxis{2}{2}
 \YExcoord{.5}{1}
@@ -31,7 +32,7 @@ The curve is a circle, so you don't need to do any calculus.
 </answer>
 <solution><p>
 The curve is a circle of radius 3, centred at the origin. So, the <q>circle of best fit</q> is just the curve itself. <m>\hT</m> is the unit vector tangent to the circle in direction of increasing <m>t</m>, and <m>\hN</m> is the unit vector pointing towards the origin.
-</p><sidebyside>
+</p><sidebyside width="40%">
 <image><latex-image>\begin{tikzpicture}
 \YEaxis{2}{2}
 \YExcoord{.5}{1}
@@ -63,9 +64,11 @@ The arclength of <m>\vr(t)</m> traced out by an interval of <m>t</m> of length <
 <p>We can calculate the vectors tangent to the circle, then normalize them (i.e. make them length one) to find <m>\hT</m>.
 <md>
 <mrow>
-\vv(t)&amp;=\vr'(t)=(3\cos t, -3\sin t) &amp; \hT(s)&amp;=\vR'(s)=(\cos(s/3),-\sin(s/3))
+\vv(t)&amp;=\vr'(t)=(3\cos t, -3\sin t) 
 </mrow><mrow>
 \hT(t)&amp;=\frac{\vr'(t)}{|\vr'(t)|}=\frac{(3\cos t, -3\sin t)}{3}=(\cos t, -\sin t)
+</mrow><mrow>
+\hT(s)&amp;=\vR'(s)=(\cos(s/3),-\sin(s/3))
 </mrow>
 </md>
 Note <m>\vR'(s)</m>, because it's parametrized in terms of arclength, has derivative vectors of length one. So, we don't need to normalize them (although if we did, it wouldn't change anything).
@@ -113,7 +116,7 @@ When <m>t</m> is large, does the spiral locally look like a circle of large radi
 <solution><p>
 As <m>t</m> increases, the arms of the spiral <q>flatten out,</q> looking like a circle of bigger and bigger radius. So, we would expect the curvature to decrease: <m>\lim\limits_{t \to \infty}\ka(t)=0</m>.
 </p>
-<sidebyside width="75%">
+<sidebyside width="40%">
 <image source="pfigs/spiral2d"/>
 </sidebyside>
 
@@ -152,15 +155,22 @@ we found that the spiral <me>
 <m>\hT=\frac{\vv(t)}{|\vv(t)|}=\frac{\vr'(t)}{|\vr'(t)|}</m>
 </p></hint>
 <answer><p>
-<m> \diff{\hT}{t}=\frac1{\sqrt2}\big(-\sin t - \cos t , -\sin t + \cos t\big)</m></p><p>
-<m>\diff{\hT}{s}=\frac{1}{\sqrt{2}\,s}\left( -\sin \left(\ln\left( s/\sqrt{2}\right)\right)-\cos\left(\ln\left( s/\sqrt{2}\right)\right)) , -\sin \left(\ln\left( s/\sqrt{2}\right)\right)+\cos \left(\ln\left( s/\sqrt{2}\right)\right)\right)</m>
+<md> 
+<mrow>
+\diff{\hT}{t}&amp;=\frac1{\sqrt2}\big(-\sin t - \cos t , -\sin t + \cos t\big)
+</mrow><mrow>
+\diff{\hT}{s}&amp;
+=\frac{1}{\sqrt{2}\,s}\Big( -\sin \left(\ln\left( s/\sqrt{2}\right)\right)
+          -\cos\left(\ln\left( s/\sqrt{2}\right)\right)) , 
+</mrow><mrow>&amp;\hskip1in -\sin \left(\ln\left( s/\sqrt{2}\right)\right)+\cos \left(\ln\left( s/\sqrt{2}\right)\right)\Big)
+</mrow>
+</md>
 </p></answer>
 <solution><p>
 <md>
 <mrow>
 \hT(t)&amp;=\frac{\vv(t)}{|\vv(t)|}=\frac{\vr'(t)}{|\vr'(t)|}
-</mrow>
-<intertext>We use the chain rule to differentiate <m>\vr(t)</m>.</intertext><mrow>
+</mrow><mrow>
 &amp;=\frac{\big(e^t(\cos t - \sin t) , e^t(\cos t + \sin t)\big)}{\sqrt{e^{2t}(\cos t - \sin t)^2+e^{2t}(\cos t + \sin t)^2}}
 </mrow><mrow>
 &amp;=\frac1{\sqrt2}\big(\cos t - \sin t , \cos t + \sin t\big)
@@ -213,7 +223,7 @@ y = g(x) = r - \sqrt{r^2-x^2}
 </me>
 So
 <md alignment="alignat">
-<mrow>{3}
+<mrow>
 g'(x) &amp;=\frac{x}{\sqrt{r^2-x^2}} &amp;
 g'(0) &amp;=0
 </mrow><mrow>
@@ -228,13 +238,17 @@ As <m>f(x)</m> and <m>g(x)</m> have the same second order Taylor approximation a
 <p>We may parametrize the curve by <m>\vr(x) = x\,\hi + f(x)\,\hj</m>.
 So
 <md alignment="alignat">
-<mrow>{3}
+<mrow>
 \vr'(x)&amp; = \hi +f'(x)\,\hj\qquad &amp;
 \vr'(0)&amp; = \hi +f'(0)\,\hj = \hi
 </mrow><mrow>
 \vr''(x)&amp; = f''(x)\,\hj &amp;
 \vr''(0)&amp; = f''(0)\,\hj
-</mrow><mrow>
+</mrow>
+</md>
+and
+<md>
+<mrow>
 \ka(0)&amp; = \frac{|\vr'(0)\times\vr''(0)|}{|\vr'(0)|^3}
  = \frac{|f''(0)\,\hi\times\hj|}{|\hi|^3}
 =f''(0)
@@ -295,11 +309,17 @@ You can find the last two quantities by making use of the first three. Looking a
 </li>
 <li> <m>\diff{s}{t}=|\vv(t)|=\sqrt{e^{2t}+(2t+1)^2}</m>
 </li>
-<li> <m>\displaystyle\hT(t)=\frac{\vv(t)}{|\vv(t)|}=\frac{(e^t,2t+1)}{\sqrt{e^{2t}+(2t+1)^2}}=\left(
+<li> 
+<md>
+<mrow>
+\hT(t)&amp;=\frac{\vv(t)}{|\vv(t)|}=\frac{(e^t,2t+1)}{\sqrt{e^{2t}+(2t+1)^2}}
+</mrow><mrow>
+&amp;=\left(
  \frac{e^t}{\sqrt{e^{2t}+(2t+1)^2}},
  \frac{2t+1}{\sqrt{e^{2t}+(2t+1)^2}}
  \right)
-</m>
+</mrow>
+</md>
 </li>
 <li> <m>\displaystyle\ka(t)=\frac{|\vv(t) \times \va(t)|}{\left(\diff{s}{t}\right)^3}=\frac{\left| (e^t,2t+1)\times(e^t,2)\right|}{\sqrt{e^{2t}+(2t+1)^2}^3}=\dfrac{e^t|1-2t|}{(e^{2t}+(2t+1)^2)^{3/2}}</m>
 </li>
@@ -398,7 +418,7 @@ obvious from your formula for <m>\ka(t)</m>.
 =\frac{ab}{{[a^2\sin^2t+b^2\cos^2 t]}^{3/2}}
 </mrow>
 </md>
-Hence the maximum (minimum) curvature is achieved when the denominator
+So the maximum (minimum) curvature is achieved when the denominator
 is a minimum (maximum) which is the case when <m>\sin t =0</m> (<m>\cos t=0</m>).
 So <m>\ka_{\rm max}=\frac{a}{b^2}</m> and <m>\ka_{\rm min}=\frac{b}{a^2}</m>.
 </p></solution>
@@ -427,14 +447,17 @@ Parametrize the curve by <m>\vr(t) = t\,\hi +e^t\,\hj</m>. Then
 <md>
 <mrow>
 \vv(t) &amp; = \hi + e^t\,\hj  &amp;
-\vv(0) &amp; = \hi +\hj &amp;
+\vv(0) &amp; = \hi +\hj 
+</mrow><mrow>
 \frac{ds}{dt} &amp;=|\vv(t)|=\sqrt{1+e^{2t}} &amp;
+\frac{ds}{dt}(0) &amp;=\sqrt{2} 
+</mrow><mrow>
 \hT(t) &amp; = \frac{\vv(t)}{|\vv(t)|} = \frac{\hi+e^t\hj}{\sqrt{1+e^{2t}}}
+&amp;
+\hT(0) &amp; = \frac{\vv(0)}{|\vv(0)|} = \frac{\hi+\hj}{\sqrt{2}}
 </mrow><mrow>
 \va(t) &amp; =  e^t\,\hj  &amp;
-\va(0) &amp; = \hj \ &amp;
-\frac{ds}{dt}(0) &amp;=\sqrt{2} &amp;
-\hT(0) &amp; = \frac{\vv(0)}{|\vv(0)|} = \frac{\hi+\hj}{\sqrt{2}}
+\va(0) &amp; = \hj 
 </mrow>
 </md>
 </p>
@@ -516,8 +539,8 @@ For part (a), determine <m>\vr(0)</m>, <m>\vr(\pi)</m>, <m>\vr(2\pi)</m>, <m>\vr
 </p></hint>
 
 <answer>
-  <sidebyside widths="5% 70%">
-    <p>(a)</p>
+<p>(a)</p>
+  <sidebyside width="90%">
     <image source="pfigs/tack"/>
     </sidebyside>
 <p>
@@ -553,7 +576,7 @@ At time <m>t=4\pi</m>, <m>\vr(4\pi) = (4\pi,0)</m>. The thumbtack is back on the
 </ul>
 Here is a sketch of the curve.
 </p>
-<sidebyside width="75%">
+<sidebyside width="90%">
   <image source="pfigs/tack"/>
 </sidebyside>
 
@@ -697,9 +720,9 @@ The curve is <m>y=y(x)=\frac{x^3}{3}</m>. Since <m>y'(x) = x^2</m> and
 0&amp;=\diff{ }{x}\ka(x)^2
 =\diff{ }{x}\frac{4x^2}{{(1+x^4)}^3}
 =\frac{8x}{{(1+x^4)}^3} - 3\frac{16x^5}{{(1+x^4)}^4}
-=\frac{8x(1+x^4)-3\times 16x^5}{{(1+x^4)}^4}
 </mrow><mrow>
-&amp;=\frac{8x(1-5x^4)}{{(1+x^4)}^4}
+&amp;=\frac{8x(1+x^4)-3\times 16x^5}{{(1+x^4)}^4}
+=\frac{8x(1-5x^4)}{{(1+x^4)}^4}
 </mrow>
 </md>
 Note that <m>\ka(0)=0</m> and <m>\ka(x)\rightarrow 0</m> as <m>x\rightarrow\pm \infty</m>.

@@ -75,8 +75,10 @@ On this curve
 <md>
 <mrow>
 \vv(\theta) =\diff{\vr}{\theta}(\theta)&amp;= x'(\theta)\hi+ y'(\theta)\hj
-=\big[r'(\theta)\cos\theta-r(\theta)\sin\theta\big]\hi+
-\big[r'(\theta)\sin\theta+r(\theta)\cos\theta\big]\hj\cr
+</mrow><mrow>
+&amp;=\big[r'(\theta)\cos\theta-r(\theta)\sin\theta\big]\hi+
+\big[r'(\theta)\sin\theta+r(\theta)\cos\theta\big]\hj
+</mrow><mrow>
 \implies  \diff{s}{\theta}(\theta)
 &amp;=\sqrt{\big[r'(\theta)\cos\theta-r(\theta)\sin\theta\big]^2
 + \big[r'(\theta)\sin\theta+r(\theta)\cos\theta\big]^2}\cr
@@ -106,7 +108,8 @@ In this case <m>f(x,y)=1</m>, <m>r(\theta)=1+\cos\theta</m>, <m>\theta_1=0</m> a
 &amp;=\int_0^{2\pi} \sqrt{4\cos^2\frac{\theta}{2}}\,\dee{\theta}
 =2\int_0^{2\pi} \left|\cos\frac{\theta}{2}\right|\,\dee{\theta}
 =4\int_0^{\pi} \cos\frac{\theta}{2}\ \dee{\theta}
-=8 \sin\frac{\theta}{2}\bigg|_0^{\pi}
+</mrow><mrow>
+&amp;=8 \sin\frac{\theta}{2}\bigg|_0^{\pi}
 =8
 </mrow>
 </md>
@@ -132,7 +135,9 @@ Following Definition<nbsp/><xref ref="def_lineIntegral"/>:
 <mrow>
 \int_C \left(\frac{xy}{z}\right)\dee{s}&amp;=\int_1^2 \left(\frac{\frac23t^3 \cdot \sqrt{3}t^2}{ 3t} \right)\sqrt{(2t^2)^2+(2\sqrt3 t)^2+(3)^2}\,\dee{t}
 </mrow><mrow>
-&amp;=\int_1^2 \left(\frac{2}{ 3\sqrt 3} \,t^4\right)(2t^2+3)\,\dee{t} = \frac{4}{21\sqrt 3}(2^7-1) + \frac{2}{5\sqrt 3}(2^5-1)
+&amp;=\int_1^2 \left(\frac{2}{ 3\sqrt 3} \,t^4\right)(2t^2+3)\,\dee{t} 
+</mrow><mrow>
+&amp;= \frac{4}{21\sqrt 3}(2^7-1) + \frac{2}{5\sqrt 3}(2^5-1)
 </mrow>
 </md>
 </p></solution>
@@ -218,9 +223,9 @@ In this case <m>\vr(t)=t\hi+t^2\hj</m>, so that
 \int_\cC f(x,y,z)\,\dee{s}
 &amp;=\int_0^1 x(t)\cos z(t) \diff{s}{t}\,\dee{t}
 =\int_0^1 t(\cos 0) \sqrt{1+4t^2}\,\dee{t}
-=\frac{1}{8}\frac{ {(1+4t^2)}^{3/2}}{3/2}\bigg|_0^1
 </mrow><mrow>
-&amp;=\frac{5^{3/2}-1}{12}
+&amp;=\frac{1}{8}\frac{ {(1+4t^2)}^{3/2}}{3/2}\bigg|_0^1
+=\frac{5^{3/2}-1}{12}
 </mrow>
 </md>
 </p>
@@ -234,9 +239,9 @@ that
 \int_\cC f(x,y,z)\,\dee{s}
 &amp;=\int_1^2 \frac{x(t)+y(t)}{y(t)+z(t)} \, \diff{s}{t}\,\dee{t}
 =\int_1^2 \frac{t+{2\over 3}t^{3/2}}{{2\over3}t^{3/2}+t} \sqrt{2+t}\,\dee{t}
-=\frac{(2+t)^{3/2}}{3/2}\bigg|_1^2
 </mrow><mrow>
-&amp;=\frac{8-3^{3/2}}{3/2}
+&amp;=\frac{(2+t)^{3/2}}{3/2}\bigg|_1^2
+=\frac{8-3^{3/2}}{3/2}
 </mrow>
 </md>
 </p>
@@ -258,9 +263,8 @@ that
   In the figure below, we construct a triangle with <m>\theta=\arcsec t</m>; the hypotenuse has length <m>t</m>, while the side adjacent to <m>\theta</m> has length 1. By the Pythagorean Theorem, the remaining side has length <m>\sqrt{t^2-1}</m>, so <m>\sin\theta=\sin(\arcsec t)=\frac{\sqrt{t^2-1}}{t}</m>.
 </p>
 
-<sidebyside width="50%">
-  <image>
-<latex-image>
+<sidebyside width="33%">
+  <image><latex-image>
     \trigtri{\theta}{1}{\sqrt{t^2-1}}{t}
 </latex-image>
 </image>
@@ -394,7 +398,7 @@ Sketch <m>C</m> and determine the normal vectors from the sketch. You can use <m
 Here is a sketch of the rectangle <m>R</m>.
 </p>
 
-<sidebyside width="75%">
+<sidebyside width="58%">
   <image source="pfigs/OE16D_5"/>
 </sidebyside>
 
@@ -419,14 +423,15 @@ So
 <mrow>
 \int_C \vF\cdot\hn\,\dee{s}
 &amp;= \int_{L_1} \vF\cdot(-\hj)\,\dee{s}
-   +\int_{L_2} \vF\cdot \hi\,\dee{s}
-   +\int_{L_3} \vF\cdot(\hj)\,\dee{s}
-   +\int_{L_4} \vF\cdot(-\hi)\,\dee{s}
+   \!+\!\int_{L_2} \vF\cdot \hi\,\dee{s}
+   \!+\!\int_{L_3} \vF\cdot(\hj)\,\dee{s}
+   \!+\!\int_{L_4} \vF\cdot(-\hi)\,\dee{s}
 </mrow><mrow>
 &amp;= \int_0^3  -\overbrace{(-1)}^{y}e^x\,\dee{x}
    +\int_{-1}^1  \overbrace{(3)}^{x}y^2\,\dee{y}
    +\int^0_3  \overbrace{(1)}^{y}e^x\,\overbrace{(-\dee{x})}^{\dee{s}}
-   +\int^{-1}_1  \overbrace{(0)}^{x}y^2\,\overbrace{(-\dee{y})}^{\dee{s}}
+</mrow><mrow>
+&amp;\hskip1in   +\int^{-1}_1  \overbrace{(0)}^{x}y^2\,\overbrace{(-\dee{y})}^{\dee{s}}
 </mrow><mrow>
 &amp;=\big[e^3-1\big]+\big[1^3-(-1)^3\big] + \big[e^3-1\big]+0
 </mrow><mrow>
@@ -453,10 +458,11 @@ and
 <md>
 <mrow>
 \int_{L_3} \vF\cdot \hj\,\dee{s}
-=\int_0^1 \vF\big(\vr(t)\big)\cdot \hj\,\diff{s}{t}(t)\,\dee{t}
+&amp;=\int_0^1 \vF\big(\vr(t)\big)\cdot \hj\,\diff{s}{t}(t)\,\dee{t}
 =\int_0^1\overbrace{e^{3-3t}}^{y(t)e^{x(t)}}\,
 \overbrace{3}^{\diff{s}{t}(t)}\,\dee{t}
-=-e^{3-3t}\Big|_0^1
+</mrow><mrow>
+&amp;=-e^{3-3t}\Big|_0^1
 =e^3-1
 </mrow>
 </md>
@@ -503,9 +509,8 @@ and
 	(b) <m>\frac{1}{15}\big[(1+5\pi^2)^{3/2}-1\big]</m></p><p>
 	(c) <m>z=x^2+y^2</m>
 </p>
-
-<sidebyside widths="5% 70%">
-  <p>	(d)</p>
+<p>	(d)</p>
+<sidebyside width="25%">
 	<image source="pfigs/OE98D_1"/>
 </sidebyside>
 </answer>
@@ -536,9 +541,9 @@ and
 		\int_\cC \sqrt{x^2+y^2}\ \dee{s}
 		&amp;=\int_0^\pi \sqrt{x^2(t)+y^2(t)}\ \diff{s}{t}\ \dee{t}
 		=\int_0^\pi t\ \sqrt{1+5t^2}\ \dee{t}
-		=\left[\frac{1}{15}(1+5t^2)^{3/2}\right]_0^\pi
-</mrow><mrow>
-		&amp;=\frac{1}{15}\big[(1+5\pi^2)^{3/2}-1\big]
+                </mrow><mrow>
+		&amp;=\left[\frac{1}{15}(1+5t^2)^{3/2}\right]_0^\pi
+                =\frac{1}{15}\big[(1+5\pi^2)^{3/2}-1\big]
 	</mrow>
 </md>
 </p>
@@ -557,7 +562,7 @@ and
 	increases from <m>0</m> to <m>\pi^2</m>. So the curve <m>\cC</m> looks like
 </p>
 
-<sidebyside width="75%">
+<sidebyside width="25%">
   <image source="pfigs/OE98D_1"/>
 </sidebyside>
 
@@ -587,7 +592,9 @@ z(t)&amp;=\frac43 t^{3/2} &amp; z'(t)&amp;=2\sqrt{t}
 </md>
 <md>
 <mrow>
-\color{blue}{\sqrt{x'(t)^2+y'(t)^2+z'(t)^2}} &amp;=\sqrt{1+2t+t^2+1-2t+t^2+4t}=\sqrt{2(t^2+2t+1)}=\color{blue}{\sqrt{2}(t+1)}
+\color{blue}{\sqrt{x'(t)^2+y'(t)^2+z'(t)^2}} &amp;=\sqrt{1+2t+t^2+1-2t+t^2+4t}
+</mrow><mrow>
+&amp;=\sqrt{2(t^2+2t+1)}=\color{blue}{\sqrt{2}(t+1)}
 </mrow><mrow>
 \color{red}{\rho(x(t),y(t),z(t))}&amp;= \frac{x(t)+y(t)}{2}={\frac{(t+t^2/2 )+( t -  t^2/2)}{2}}=\color{red}{t}
 </mrow>
