@@ -7,7 +7,7 @@
   <package>palatino</package>
 	<package>mathrsfs</package>
 	<package>cancel</package>
-	<package>nicefrac</package>
+	<!-- <package>nicefrac</package> -->
 </latex-preamble>
 
 <macros>
@@ -55,11 +55,13 @@
   \newcommand{\va}{\mathbf{a}}
   \newcommand{\vb}{\mathbf{b}}
   \newcommand{\vc}{\mathbf{c}}
+  \newcommand{\vd}{\mathbf{d}}
   \newcommand{\ve}{\mathbf{e}}
   \newcommand{\vf}{\mathbf{f}}
   \newcommand{\vC}{\mathbf{C}}
   \newcommand{\vp}{\mathbf{p}}
   \newcommand{\vn}{\mathbf{n}}
+  \newcommand{\vt}{\mathbf{t}}
   \newcommand{\vu}{\mathbf{u}}
   %\newcommand{\vv}{\mathbf{v}}
   \newcommand{\vw}{\mathbf{w}}
@@ -81,6 +83,7 @@
   \newcommand{\cB}{\mathcal{B}}
   \newcommand{\cM}{\mathcal{M}}
   \newcommand{\cO}{\mathcal{O}}
+  \newcommand{\cR}{\mathcal{R}}
   \newcommand{\cS}{\mathcal{S}}
   \newcommand{\cT}{\mathcal{T}}
   \newcommand{\cV}{\mathcal{V}}
