@@ -94,7 +94,7 @@ the <m>z=0</m> cross-section is the parabola <m>2y=x^2</m>, <m>z=0</m>
 </ul>
 </p>
 
-<sidebyside width="75%">
+<sidebyside width="34%">
   <image source="pfigs/parabolicBowl"/>
 </sidebyside>
 
@@ -256,7 +256,7 @@ Which of the following are parameterizations of <m>S</m>?
 <li><p>
 <me>\vr(\phi,\theta) = 2\sin \phi\cos\theta\,\hi  +2\cos \phi\,\hj
                     +2\sin \phi\sin\theta\,\hk </me>
-<me>0\le\phi\le\frac{\pi}{4}, 0\le\theta\le2\pi</me>
+<me>0\le\phi\le\frac{\pi}{4},\ 0\le\theta\le2\pi</me>
 </p>
 </li>
 <li><p>
@@ -267,21 +267,21 @@ Which of the following are parameterizations of <m>S</m>?
 <li><p>
 <me>\vr(u,\theta) = u\sin\theta\,\hi  +u\cos \theta\,\hj
                     +\sqrt{2-u^2}\,\hk </me>
-<me>0\le u\le 2, 0\le\theta\le2\pi</me>
+<me>0\le u\le 2,\ 0\le\theta\le2\pi</me>
 </p>
 </li>
 <li><p>
 <me>\vr(\phi,\theta) = \sqrt{2}\sin \phi\cos\theta\,\hi
                    +\sqrt{2}\sin \phi\sin\theta\,\hj
                     +\sqrt{2}\cos \phi\,\hk </me>
-<me>0\le\phi\le\frac{\pi}{4}, 0\le\theta\le2\pi</me>
+<me>0\le\phi\le\frac{\pi}{4},\ 0\le\theta\le2\pi</me>
 </p>
 </li>
 <li><p>
 <me>\vr(\phi,z) = -\sqrt{2-z^2}\sin \phi\,\hi
                    +\sqrt{2-z^2}\cos \phi\,\hj
                     +z\,\hk </me>
-<me>0\le\phi\le2\pi, 1\le z\le\sqrt{2}</me>
+<me>0\le\phi\le2\pi,\ 1\le z\le\sqrt{2}</me>
 </p>
 </li>
 </ol>
@@ -457,79 +457,150 @@ with <m>z\ge 0</m>.
 <p>Consider the following parameterizations:
 <ol label="A">
 <li>
-<m>\vr(\theta, \phi)
+<md>
+<mrow>
+&amp;\vr(\theta, \phi)
   =\big(\sqrt{4}\cos\theta\sin\phi\,,\,
         \sqrt{4}\sin\theta\sin\phi\,,\,
-        \sqrt{4}\cos\phi\big),\qquad
-   0\le\theta\le2\pi,\quad
-   0\le\phi\le\pi/6</m>
+        \sqrt{4}\cos\phi\big)
+</mrow><mrow>
+&amp;   0\le\theta\le2\pi,\quad
+   0\le\phi\le\pi/6
+</mrow>
+</md>
 </li>
 <li>
-<m>\vr(\theta, \phi)
+<md>
+<mrow>
+&amp;\vr(\theta, \phi)
   =\big(\sqrt{4}\cos\theta\sin\phi\,,\,
         \sqrt{4}\sin\theta\sin\phi\,,\,
-        \sqrt{4}\cos\phi\big),\qquad
+        \sqrt{4}\cos\phi\big)
+</mrow><mrow>
+&amp;  
    0\le\theta\le2\pi,\quad
-   0\le\phi\le\pi/4</m>
+   0\le\phi\le\pi/4
+</mrow>
+</md>
 </li>
 <li>
-<m>\vr(\theta, \phi)
+<md>
+<mrow>
+&amp;\vr(\theta, \phi)
   =\big(\sqrt{4}\cos\theta\sin\phi\,,\,
         \sqrt{4}\sin\theta\sin\phi\,,\,
-        \sqrt{4}\cos\phi\big),\qquad
+        \sqrt{4}\cos\phi\big)
+</mrow><mrow>
+&amp;  
    0\le\theta\le2\pi,\quad
-   0\le\phi\le\pi/3</m>
+   0\le\phi\le\pi/3
+</mrow>
+</md>
 </li>
 <li>
-<m>\vr(\theta,z)
-   = \big(\sqrt{4-z^2}\cos\theta\,,\,\sqrt{4-z^2}\sin\theta\,,\,z\big)\qquad
+<md>
+<mrow>
+&amp;\vr(\theta,z)
+   = \big(\sqrt{4-z^2}\cos\theta\,,\,\sqrt{4-z^2}\sin\theta\,,\,z\big)
+</mrow><mrow>
+&amp;  
    0\le\theta\le2\pi,\quad
-   1\le z\le 2</m>
+   1\le z\le 2
+</mrow>
+</md>
 </li>
 <li>
-<m>\vr(\theta,z)
-   = \big(\sqrt{4-z^2}\cos\theta\,,\,\sqrt{4-z^2}\sin\theta\,,\,z\big)\qquad
+<md>
+<mrow>
+&amp;\vr(\theta,z)
+   = \big(\sqrt{4-z^2}\cos\theta\,,\,\sqrt{4-z^2}\sin\theta\,,\,z\big)
+</mrow><mrow>
+&amp;  
    0\le\theta\le2\pi,\quad
-   \sqrt{2}\le z\le 2</m>
+   \sqrt{2}\le z\le 2
+</mrow>
+</md>
 </li>
 <li>
-<m>\vr(\theta,z)
-   = \big(\sqrt{4-z^2}\cos\theta\,,\,\sqrt{4-z^2}\sin\theta\,,\,z\big)\qquad
+<md>
+<mrow>
+&amp;\vr(\theta,z)
+   = \big(\sqrt{4-z^2}\cos\theta\,,\,\sqrt{4-z^2}\sin\theta\,,\,z\big)
+</mrow><mrow>
+&amp;  
    0\le\theta\le2\pi,\quad
-   \sqrt{3}\le z\le 2</m>
+   \sqrt{3}\le z\le 2
+</mrow>
+</md>
 </li>
 <li>
-<m>\vr(\theta,z)
-   = \big(z\cos\theta\,,\,z\sin\theta\,,\,z\big)\qquad
+<md>
+<mrow>
+&amp;\vr(\theta,z)
+   = \big(z\cos\theta\,,\,z\sin\theta\,,\,z\big)
+</mrow><mrow>
+&amp;  
    0\le\theta\le2\pi,\quad
-   0\le z\le 1</m>
+   0\le z\le 1
+</mrow>
+</md>
 </li>
 <li>
-<m>\vr(\theta,z)
-   = \big(z\cos\theta\,,\,z\sin\theta\,,\,z\big)\qquad
+<md>
+<mrow>
+&amp;\vr(\theta,z)
+   = \big(z\cos\theta\,,\,z\sin\theta\,,\,z\big)
+</mrow><mrow>
+&amp;  
    0\le\theta\le2\pi,\quad
-   0\le z\le \sqrt{2}</m>
+   0\le z\le \sqrt{2}
+</mrow>
+</md>
 </li>
 <li>
-<m>\vr(\theta,z)
-   = \big(z\cos\theta\,,\,z\sin\theta\,,\,z\big)\qquad
+<md>
+<mrow>
+&amp;\vr(\theta,z)
+   = \big(z\cos\theta\,,\,z\sin\theta\,,\,z\big)
+</mrow><mrow>
+&amp;  
    0\le\theta\le2\pi,\quad
-   0\le z\le \sqrt{3}</m>
+   0\le z\le \sqrt{3}
+</mrow>
+</md>
 </li>
 <li>
-<m>\vr(x,y)
-   =\big(x\,,\,y\,,\,\sqrt{x^2+y2}\big)\qquad
-   x^2+y^2\le 1</m>
+<md>
+<mrow>
+&amp;\vr(x,y)
+   =\big(x\,,\,y\,,\,\sqrt{x^2+y^2}\big)
+</mrow><mrow>
+&amp;  
+   x^2+y^2\le 1
+</mrow>
+</md>
 </li>
 <li>
-<m>\vr(x,y)
-   =\big(x\,,\,y\,,\,\sqrt{x^2+y2}\big)\qquad
-   x^2+y^2\le \sqrt{2}</m>
+<md>
+<mrow>
+&amp;\vr(x,y)
+   =\big(x\,,\,y\,,\,\sqrt{x^2+y^2}\big)
+</mrow><mrow>
+&amp;  
+  x^2+y^2\le \sqrt{2}
+</mrow>
+</md>
 </li>
 <li>
-<m>\vr(x,y)
-   =\big(x\,,\,y\,,\,\sqrt{x^2+y2}\big)\qquad
-   x^2+y^2\le 2</m>
+<md>
+<mrow>
+&amp;\vr(x,y)
+   =\big(x\,,\,y\,,\,\sqrt{x^2+y^2}\big)
+</mrow><mrow>
+&amp;  
+   x^2+y^2\le 2
+</mrow>
+</md>
 </li>
 </ol>
 For each of the following, choose from above all of the valid
@@ -612,7 +683,8 @@ to lie inside <m>S_2</m> we need (recalling that all points of <m>S_1</m> have <
 x(\theta, \phi)^2 + y(\theta, \phi)^2 \le 1
 &amp;\iff 4\sin^2\phi \le 1
 \iff \sin\phi \le \frac{1}{2}
-\iff 0\le\phi\le \frac{\pi}{6}
+</mrow><mrow>
+&amp;\iff 0\le\phi\le \frac{\pi}{6}
 </mrow>
 </md>
 In the cases of D, E, F,  for <m>\vr(\theta, z)
@@ -637,8 +709,10 @@ to lie inside <m>S_3</m> we need (recalling that all points of <m>S_1</m> have <
 <mrow>
 x(\theta, \phi)^2 + y(\theta, \phi)^2 \le z(\theta,\phi)^2
 &amp;\iff 4\sin^2\phi \le 4\cos^2\phi
-\iff \tan\phi \le 1
-\iff 0\le\phi\le \frac{\pi}{4}
+</mrow><mrow>
+&amp;\iff \tan\phi \le 1
+</mrow><mrow>
+&amp;\iff 0\le\phi\le \frac{\pi}{4}
 </mrow>
 </md>
 In the cases of D, E, F,  for <m>\vr(\theta, z)
@@ -714,7 +788,7 @@ Parametrize a solid of rotation about a line not parallel to an axis. Maybe firs
 <li> Give a parametrized equation for the surface formed by rotating the circle from part (a) about the line <m>\vr(t)=4\hi+4\hj+t\hk</m>.
 </li>
 </ol>
-</p><sidebyside>
+</p><sidebyside width="33%">
 <image><latex-image>\begin{tikzpicture}
 \draw[help lines, - \gt ] (0,0)--(0,3.25) node[above]{$z$};
 \draw[help lines, - \gt ] (0,0)--(3.5,-1) node[right]{$x$};
@@ -734,7 +808,7 @@ Parametrize a solid of rotation about a line not parallel to an axis. Maybe firs
 (a) In the sketch below, the point <m>(x,y,z)</m> deviates from the centre <m>(2,2,4)</m> by <m>\sin\theta</m> units in the <m>\hk</m> direction, and by <m>\cos\theta</m> units in the <m>\sqrt \frac1{\sqrt 2}(\hi+\hj)</m> direction. So, <m>(x,y,z)=(2+\frac1{\sqrt 2}\cos\theta , 2+\frac1{\sqrt 2}\cos\theta , 4+\sin\theta)</m>.
 </p>
 
-<sidebyside>
+<sidebyside width="59%">
 <image><latex-image>\begin{tikzpicture}
 \draw[help lines, - \gt ] (0,0)--(0,6.25) node[above]{$z$};
 \draw[help lines, - \gt ] (0,0)--(6.5,-1) node[right]{$x$};
@@ -757,16 +831,20 @@ So, we can parametrize the circle as <m>(x,y,z)=(2+\frac1{\sqrt 2}\cos\theta , 2
 <p><alert>Remark</alert>: it's easy to check that this equation satisfies the two properties we desire. Since the <m>x</m>- and <m>y</m> coordinates match, it's in the plane <m>x=y</m>. To check that it's a circle centred at <m>(2,2,4)</m>, we note the distance from <m>(x,y,z)</m> to <m>(2,2,4)</m> is:
 <md>
 <mrow>
-d&amp;=\sqrt{(x-2)^2+(y-2)^2+(z-4)^2}=\sqrt{\left(\frac1{\sqrt 2}\cos\theta\right)^2+\left(\frac1{\sqrt 2}\cos\theta\right)^2+\left(\sin\theta\right)^2}
+d&amp;=\sqrt{(x-2)^2+(y-2)^2+(z-4)^2}
 </mrow><mrow>
-&amp;=\sqrt{\frac12\cos^2\theta+\frac12\cos^2\theta+\sin^2\theta}=\sqrt{\cos^2\theta+\sin^2\theta}=1
+&amp;=\sqrt{\left(\frac1{\sqrt 2}\cos\theta\right)^2+\left(\frac1{\sqrt 2}\cos\theta\right)^2+\left(\sin\theta\right)^2}
+</mrow><mrow>
+&amp;=\sqrt{\frac12\cos^2\theta+\frac12\cos^2\theta+\sin^2\theta}=\sqrt{\cos^2\theta+\sin^2\theta}
+</mrow><mrow>
+&amp;=1
 </mrow>
 </md>
 So, our points all have distance one from the same point <mdash/> that is, they lie on a circle of radius 1.
 </p>
 
 <p>(b) Consider a point <m>(x,y,z)=(2+\frac1{\sqrt 2}\cos\theta , 2+\frac1{\sqrt 2}\cos\theta , 4+\sin\theta)</m>, rotating <m>\phi</m> radians about the line <m>x=y=4</m>.
-</p><sidebyside>
+</p><sidebyside width="68%">
 <image><latex-image>\begin{tikzpicture}
 \draw[thick,  \lt - \gt ] (0,-3)--(0,3) node[above]{$\vr(t)=(4,4,t)$};
 \draw (-4,0) node[vertex, label=below:{$(2,2,4)$}](C){};
@@ -778,7 +856,16 @@ So, our points all have distance one from the same point <mdash/> that is, they 
 \draw (-.5,1.2) node{$\phi$};
 \end{tikzpicture}</latex-image></image>
 </sidebyside><p>
-The new position of the point has the same height, <m>z=4+\sin\theta</m>. Its distance from the line <m>x=y=4</m> is also preserved: <m>R=\sqrt{(x-4)^2+(y-4)^2+(z-z)^2}=\sqrt{(\frac1{\sqrt 2}\cos\theta-2)^2+(\frac1{\sqrt 2}\cos\theta-2)^2+0)}=\cos\theta-2\sqrt2</m>.
+The new position of the point has the same height, <m>z=4+\sin\theta</m>. Its distance from the line <m>x=y=4</m> is also preserved:
+<md>
+<mrow>
+R&amp;=\sqrt{(x-4)^2+(y-4)^2+(z-z)^2}
+</mrow><mrow>
+&amp;=\sqrt{(\frac1{\sqrt 2}\cos\theta-2)^2+(\frac1{\sqrt 2}\cos\theta-2)^2+0)}
+</mrow><mrow>
+&amp;=\cos\theta-2\sqrt2
+</mrow>
+</md>
 </p>
 
 <p>The circle traced out by a point <m>(x,y,z)=(2+\frac1{\sqrt2}\cos\theta,2+\frac{1}{\sqrt 2} \cos \theta,4+\sin\theta)</m> on the circle is centred at <m>(4,4,z)</m> with radius <m>\sqrt2(4-x)</m>, so it has equation <m>x=4+\sqrt2(2-\sqrt2\cos\theta)\cos\phi</m>, <m>y=4+\sqrt2(2-\sqrt2\cos\theta)\sin\phi</m>, <m>z=4\sin\theta</m>.
