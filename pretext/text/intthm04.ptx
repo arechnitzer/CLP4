@@ -1679,6 +1679,6 @@ This is one of Maxwell's electromagnetic field equations<fn>For the others, see 
 </p>
 </subsection>
 
-<!-- <xi:include href="../problems/prob_s4.4.ptx" /> -->
+<xi:include href="../problems/prob_s4.4.ptx" />
 
 </section>

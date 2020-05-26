@@ -81,6 +81,7 @@
   \newcommand{\vZero}{\mathbf{0}}
   \newcommand{\vPhi}{\mathbf{\Phi}}
   \newcommand{\cB}{\mathcal{B}}
+  \newcommand{\cL}{\mathcal{L}}
   \newcommand{\cM}{\mathcal{M}}
   \newcommand{\cO}{\mathcal{O}}
   \newcommand{\cR}{\mathcal{R}}
@@ -89,6 +90,8 @@
   \newcommand{\cV}{\mathcal{V}}
   \newcommand{\cX}{\mathcal{X}}
 
+  \newcommand{\Ha}{\hat{\mathbf{a}}}
+  %
   \newcommand{\he}{\hat{\mathbf{e}}}
   %\newcommand{\hi}{\hat{\mathbf{i}}}
   %\newcommand{\hj}{\hat{\mathbf{j}}}
