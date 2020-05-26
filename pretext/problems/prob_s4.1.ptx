@@ -1,0 +1,1307 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+
+<!-- Copyright 2018 Joel Feldman, Andrew Rechnitzer and Elyse Yeager -->
+<!-- This work is licensed under the Creative Commons Attribution-NonCommercial-ShareAlike 4.0 International License-->
+<!-- https://creativecommons.org/licenses/by-nc-sa/4.0 -->
+
+<exercises>
+
+<exercisegroup><introduction><conceptual/></introduction>
+
+<exercise><title><fromexam>M317 2012J</fromexam></title>
+<statement><p>
+Let <m>\vF = P\,\hi + Q\,\hj</m> be the two dimensional vector field
+shown below.
+</p>
+
+<p><ol label="a">
+<li><p>
+Assuming that the vector field in the picture is a force field, the work
+done by the vector field on a particle moving from point <m>A</m> to <m>B</m>
+along the given path is:
+<ol label="(A)">
+<li>  Positive
+</li>
+<li>  Negative
+</li>
+<li>  Zero
+</li>
+<li> Not enough information to determine.
+</li>
+</ol></p>
+</li>
+<li><p>
+Which statement is the most true about the line integral
+<m>\int_{C_2} \vF\cdot\dee{\vr}</m>:
+<ol label = "(A)">
+<li>  <m>\int_{C_2} \vF\cdot\dee{\vr} \gt 0</m>
+</li>
+<li>  <m>\int_{C_2} \vF\cdot\dee{\vr}=0</m>
+</li>
+<li>  <m>\int_{C_2} \vF\cdot\dee{\vr} \lt 0</m>
+</li>
+<li> Not enough information to determine.
+</li>
+</ol>
+</p>
+
+<sidebyside width="75%">
+  <image source="pfigs/OE12J_2"/>
+</sidebyside>
+
+<p>
+<m>\vnabla\cdot\vF</m> at the point <m>N</m> (in the picture) is:
+<ol label="(A)">
+<li> Positive
+</li>
+<li> Negative
+</li>
+<li> Zero
+</li>
+<li> Not enough information to determine.
+</li>
+</ol></p>
+</li>
+<li><p>
+<m>Q_x - P_y</m> at the point <m>Q</m> is:
+<ol label="(A)">
+<li> Positive
+</li>
+<li> Negative
+</li>
+<li> Zero
+</li>
+<li> Not enough information to determine.
+</li>
+</ol></p>
+</li>
+<li><p>
+Assuming that <m>\vF = P\,\hi + Q\,\hj</m>, which of the following
+statements is correct about <m>\frac{\partial P}{\partial x}</m>
+at the point <m>D</m>?
+<ol label="(A)">
+<li> <m>\frac{\partial P}{\partial x}=0</m>  at <m>D</m>.
+</li>
+<li> <m>\frac{\partial P}{\partial x} \gt 0</m>  at <m>D</m>.
+</li>
+<li> <m>\frac{\partial P}{\partial x} \lt 0</m>  at <m>D</m>.
+</li>
+<li> The sign of <m>\frac{\partial P}{\partial x}</m>
+at <m>D</m> can not be determined by the given information.
+</li>
+</ol></p>
+</li>
+</ol>
+</p>
+</statement>
+
+<answer><p>
+(a) A</p><p>
+(b) B</p><p>
+(c) C</p><p>
+(d) A</p><p>
+(e) B
+</p></answer>
+
+<solution><p>
+(a)
+A. The angle between <m>\vF</m> and <m>\dee{\vr}</m> is less than <m>90^\circ</m>
+along the entire path. So <m>\vF\cdot\dee{\vr} \gt 0</m> along the entire path and
+the work is positive.
+</p>
+
+<p>(b)
+B. <m>\vF</m> is perpendicular to <m>\dee{\vr}</m> along all of <m>C_2</m>.
+So <m>\int_{C_2} \vF\cdot\dee{\vr}=0</m>.
+</p>
+
+<p>(c)
+C. It looks like <m>P_x=Q_y=0</m> at <m>N</m>. So <m>\vnabla\cdot\vF=0</m> at <m>N</m>.
+</p>
+
+<p>(d)
+A. At <m>Q</m>, the vertical component of <m>\vF</m> is increasing from left to right
+(so that <m>Q_x \gt 0</m>) and the horizontal component of <m>\vF</m>  is decreasing
+from bottom to top (so that <m>P_y \lt 0</m>). So <m>Q_x - P_y \gt 0</m> at <m>N</m>.
+</p>
+
+<p>(e)
+B. At <m>D</m>,  the horizontal component of <m>\vF</m>  is increasing
+from left to right, so that <m>P_x \gt 0</m>.
+</p></solution>
+</exercise>
+
+<exercise>
+<statement><p>
+Does <m>\vnabla\times \vF</m> have to be perpendicular to <m>\vF</m>?
+</p></statement>
+
+<hint><p>
+Compute <m>\vnabla\times \vF</m> for some simple vector fields.
+</p></hint>
+
+<answer><p>
+No.
+</p></answer>
+
+<solution><p>
+No.  The vector field <m>\vF(x,y,z) = \hi +y\,\hk</m> has
+<md>
+<mrow>
+\vnabla\times \vF
+&amp;=\det\left[\begin{matrix} \hi &amp; \hj &amp; \hk
+</mrow><mrow>
+                           \pdiff{}{x} &amp; \pdiff{}{y} &amp; \pdiff{}{z}
+</mrow><mrow>
+                           1 &amp; 0 &amp; y
+            \end{matrix}\right]
+</mrow><mrow>
+&amp;=\hi
+</mrow>
+</md>
+has dot product <m>1</m> with <m>\vF(x,y,z)</m> (for all <m>x</m>, <m>y</m>, <m>z</m>) and
+so is not perpendicular to it.
+</p></solution>
+</exercise>
+
+<exercise>
+<statement><p>
+Verify the vector identities
+<ol label="a">
+<li>
+<m>\vnabla\cdot(f\vF)=f\vnabla\cdot\vF+\vF\cdot\vnabla f</m>
+</li>
+<li>
+<m>\vnabla\cdot(\vF\times\vG)
+                      =\vG\cdot(\vnabla\times\vF)-
+                       \vF\cdot(\vnabla\times\vG)</m>
+</li>
+<li>
+<m>\vnabla^2(fg)=f\,\vnabla^2 g+2\vnabla f\cdot\vnabla g+g\,\vnabla^2 f</m>
+</li>
+</ol>
+</p>
+
+</statement>
+
+<hint><p>
+For parts(a) and (b), write out the definitions of the left and right
+hand sides and observe that they are equal.
+Part (c) can be done easily by using other, simpler, vector identities.
+</p></hint>
+
+<answer>
+
+</answer>
+
+<solution><p>
+(a) By the product rule
+<md>
+<mrow>
+\vnabla\cdot(f\vF)
+&amp;=\pdiff{}{x}(fF_1)
+ +\pdiff{}{y}(fF_2)
+ +\pdiff{}{z}(fF_3)
+</mrow><mrow>
+&amp;=\phantom{+}f\pdiff{F_1}{x}
+ +f\pdiff{F_2}{y}
+ +f\pdiff{F_3}{z}
+</mrow><mrow>
+&amp;\phantom{=}+F_1\pdiff{f}{x}
+ +F_2\pdiff{f}{y}
+ +F_3\pdiff{f}{z}
+</mrow><mrow>
+&amp;=f\,\vnabla\cdot\vF+\vF\cdot\vnabla f
+</mrow>
+</md>
+</p>
+
+<p>(b) Again by the product rule
+<md>
+<mrow>
+\vnabla\cdot(\vF\times\vG)
+&amp;=\pdiff{}{x}(F_2G_3-F_3G_2)
+ +\pdiff{}{y}(F_3G_1-F_1G_3)
+ +\pdiff{}{z}(F_1G_2-F_2G_1)
+</mrow><mrow>
+&amp;=\phantom{+}\pdiff{F_2}{x}G_3
+        -\pdiff{F_3}{x}G_2
+ +\pdiff{F_3}{y}G_1
+        - \pdiff{F_1}{y}G_3
+ +\pdiff{F_1}{z}G_2
+       - \pdiff{F_2}{z}G_1
+</mrow><mrow>
+&amp;\phantom{=}+F_2\pdiff{G_3}{x}
+       -F_3\pdiff{G_2}{x}
+ +F_3\pdiff{G_1}{y}
+       -F_1\pdiff{G_3}{y}
+ +F_1\pdiff{G_2}{z}
+      - F_2\pdiff{G_1}{z}
+</mrow><mrow>
+&amp;=\phantom{+}
+  \left(\pdiff{F_3}{y}-\pdiff{F_2}{z}\right)G_1
+  +\left(\pdiff{F_1}{z}-\pdiff{F_3}{x}\right)G_2
+  +\left(\pdiff{F_2}{x}-\pdiff{F_1}{y}\right)G_3
+</mrow><mrow>
+&amp;\phantom{=}
+  -F_1\left(\pdiff{G_3}{y}-\pdiff{G_2}{z}\right)
+  -F_2\left(\pdiff{G_1}{z}-\pdiff{G_3}{x}\right)
+  -F_3\left(\pdiff{G_2}{x}-\pdiff{G_1}{y}\right)
+
+</mrow><mrow>
+&amp;=\vG\cdot(\vnabla\times\vF)-
+                       \vF\cdot(\vnabla\times\vG)
+</mrow>
+</md>
+</p>
+
+<p>(c) Recall that <m>\vnabla^2(fg) = \vnabla\cdot\big[\vnabla(fg)\big]</m>.
+First
+<md>
+<mrow>
+\vnabla(fg)
+&amp;=\hi\pdiff{}{x}(fg)
+ +\hj\pdiff{}{y}(fg)
+ +\hk\pdiff{}{z}(fg)
+</mrow><mrow>
+&amp;=\phantom{+}\hi g\pdiff{f}{x}
+ +\hj g\pdiff{f}{y}
+ +\hk g\pdiff{f}{z}
+</mrow><mrow>
+&amp;\phantom{=}+\hi f\frac{\partial g}{\partial x}
+ +\hj f\frac{\partial g}{\partial y}
+ +\hk f\frac{\partial g}{\partial z}
+</mrow><mrow>
+&amp;=g\vnabla f+f\vnabla g
+</mrow>
+</md>
+So by part (a), twice,
+<md>
+<mrow>
+\vnabla^2(fg)
+&amp; = \vnabla\cdot\big(g\vnabla f\big)
+   +\vnabla\cdot\big(f\vnabla g\big)
+</mrow><mrow>
+&amp;= g\big(\vnabla\cdot \vnabla f\big)
+          + \big(\vnabla g\big)\cdot\big(\vnabla f\big)
+   +f\big(\vnabla\cdot\vnabla g\big)
+       + \big(\vnabla f\big)\cdot\big(\vnabla g\big)
+</mrow><mrow>
+&amp;=f\,\vnabla^2 g+2\vnabla f\cdot\vnabla g+g\,\vnabla^2 f
+</mrow>
+</md>
+</p></solution>
+</exercise>
+</exercisegroup>
+
+<exercisegroup><introduction><procedural/></introduction>
+
+<exercise>
+<statement><p>
+Evaluate <m>\vnabla\cdot\vF</m> and <m>\vnabla\times\vF</m> for each of
+the following vector fields.
+<ol label="a">
+<li> <m>\vF=x\,\hi+y\,\hj+z\,\hk</m>
+</li>
+<li> <m>\vF=xy^2\hi-yz^2\hj+zx^2\hk</m>
+</li>
+<li> <m>\vF=\frac{x\hi+y\hj}{\sqrt{x^2+y^2}}</m>
+               (the polar basis vector <m>\hat{\bf r}</m> in 2d)
+</li>
+<li>
+<m>\vF=\frac{-y\hi+x\hj}{\sqrt{x^2+y^2}}</m>
+      (the polar basis vector <m>\hat{\pmb{\theta}}</m> in 2d)
+</li>
+</ol>
+</p>
+
+</statement>
+
+<answer><p>
+(a) <m>\vnabla\cdot\vF=3</m>, <m>\vnabla\times\vF=\vZero</m>
+</p>
+
+<p>(b) <m>\vnabla\cdot\vF=y^2-z^2+x^2</m>,
+    <m>\vnabla\times\vF=2yz\,\hi-2xz\,\hj-2xy\,\hk</m>
+</p>
+
+<p>(c) <m>\vnabla\cdot\vF=\frac{1}{\sqrt{x^2+y^2}}</m>,
+    <m>\vnabla\times\vF=\vZero</m>
+</p>
+
+<p>(d) <m>\vnabla\cdot\vF=0</m>, <m>\vnabla\times\vF=\frac{\hk}{\sqrt{x^2+y^2}}</m>
+</p>
+
+</answer>
+
+<solution><p>
+(a)
+By definition
+<md>
+<mrow>
+\vnabla\cdot(x\,\hi+y\,\hj+z\,\hk)
+&amp;=\pdiff{}{x}\big(x\big)
+  +\pdiff{}{y}\big(y\big)
+  +\pdiff{}{z}\big(z\big)
+=  3
+</mrow><mrow>
+\vnabla\times(x\,\hi+y\,\hj+z\,\hk)
+&amp;=\det\left[\begin{matrix}\hi &amp; \hj &amp; \hk \\
+                  \pdiff{}{x} &amp;
+                  \pdiff{}{y} &amp;
+                  \pdiff{}{z} \\
+                  x &amp; y &amp; z\end{matrix}\right]
+= \vZero
+</mrow>
+</md>
+</p>
+
+<p>(b)
+By definition
+<md>
+<mrow>
+\vnabla\cdot(xy^2\hi-yz^2\hj+zx^2\hk)
+&amp;=\pdiff{}{x}\big(xy^2\big)
+  +\pdiff{}{y}\big(-yz^2\big)
+  +\pdiff{}{z}\big(zx^2\big)
+=y^2-z^2+x^2
+</mrow><mrow>
+\vnabla\times(xy^2\hi-yz^2\hj+zx^2\hk)
+&amp;=\det\left[\begin{matrix}\hi &amp; \hj &amp; \hk \\
+                  \pdiff{}{x} &amp;
+                  \pdiff{}{y} &amp;
+                  \pdiff{}{z} \\
+                  xy^2 &amp; -yz^2 &amp; zx^2\end{matrix}\right]
+= 2yz\,\hi-2xz\,\hj-2xy\,\hk
+</mrow>
+</md>
+</p>
+
+<p>(c)
+By definition
+<md>
+<mrow>
+\vnabla\cdot\left(\frac{x}{\sqrt{x^2+y^2}}\hi+\frac{y}{\sqrt{x^2+y^2}}\hj\right)
+&amp;=\pdiff{}{x}\left(\frac{x}{\sqrt{x^2+y^2}}\right)
+  +\pdiff{}{y}\left(\frac{y}{\sqrt{x^2+y^2}}\right)
+</mrow><mrow>
+&amp;= \frac{1}{\sqrt{x^2+y^2}} - \frac{x^2}{{[x^2+y^2]}^{3/2}}
+   +\frac{1}{\sqrt{x^2+y^2}} - \frac{y^2}{{[x^2+y^2]}^{3/2}}
+</mrow><mrow>
+&amp;=\frac{x^2+y^2\ -x^2\ +x^2+y^2\ -\ y^2}{{[x^2+y^2]}^{3/2}}
+</mrow><mrow>
+&amp;=\frac{1}{\sqrt{x^2+y^2}}
+</mrow><mrow>
+\vnabla\times\left(\frac{x}{\sqrt{x^2+y^2}}\hi+\frac{y}{\sqrt{x^2+y^2}}\hj\right)
+&amp;=\det\left[\begin{matrix}\hi &amp; \hj &amp; \hk \\
+                  \pdiff{}{x} &amp;
+                  \pdiff{}{y} &amp;
+                  \pdiff{}{z} \\
+                  \frac{x}{\sqrt{x^2+y^2}} &amp;
+                  \frac{y}{\sqrt{x^2+y^2}} &amp; 0\end{matrix}\right]
+</mrow><mrow>
+&amp;=\left(- \frac{xy}{{[x^2+y^2]}^{3/2}}+ \frac{xy}{{[x^2+y^2]}^{3/2}}\right)\hk
+= \vZero
+</mrow>
+</md>
+</p>
+
+<p>(d)
+By definition
+<md>
+<mrow>
+\vnabla\cdot\left(-\frac{y}{\sqrt{x^2+y^2}}\hi+\frac{x}{\sqrt{x^2+y^2}}\hj\right)
+&amp;=\pdiff{}{x}\left(-\frac{y}{\sqrt{x^2+y^2}}\right)
+  +\pdiff{}{y}\left(\frac{x}{\sqrt{x^2+y^2}}\right)
+</mrow><mrow>
+&amp;=  \frac{xy}{{[x^2+y^2]}^{3/2}}
+   - \frac{xy}{{[x^2+y^2]}^{3/2}}
+=0
+</mrow><mrow>
+\vnabla\times\left(-\frac{y}{\sqrt{x^2+y^2}}\hi
+                         +\frac{x}{\sqrt{x^2+y^2}}\hj\right)
+&amp;=\det\left[\begin{matrix}\hi &amp; \hj &amp; \hk \\
+                  \pdiff{}{x} &amp;
+                  \pdiff{}{y} &amp;
+                  \pdiff{}{z} \\
+                  -\frac{y}{\sqrt{x^2+y^2}} &amp;
+                  \frac{x}{\sqrt{x^2+y^2}} &amp; 0\end{matrix}\right]
+</mrow><mrow>
+&amp;=\!\left(\!\frac{1}{\sqrt{x^2+y^2}} - \frac{x^2}{{[x^2+y^2]}^{3/2}}
+   +\frac{1}{\sqrt{x^2+y^2}} - \frac{y^2}{{[x^2+y^2]}^{3/2}}\!\right)\!\hk
+
+</mrow><mrow>
+&amp;= \frac{x^2+y^2\ -x^2\ +x^2+y^2\ -\ y^2}{{[x^2+y^2]}^{3/2}}\ \hk
+= \frac{\hk}{\sqrt{x^2+y^2}}
+</mrow>
+</md>
+</p></solution>
+</exercise>
+
+<exercise><title><fromexam>M317 2015A</fromexam></title>
+<statement><p>
+<ol label="a">
+<li>
+Compute and simplify <m>\vnabla\cdot\big(\frac{\vr}{r}\big)</m>
+for <m>\vr=(x,y,z)</m> and <m>r=|(x,y,z)|</m>. Express your answer in
+terms of <m>r</m>.
+</li>
+<li>
+Compute <m>\vnabla\times\big(yz\,\hi + 2xz\,\hj + e^{xy}\,\hk\big)</m>.
+</li>
+</ol>
+</p>
+
+</statement>
+
+<answer><p>
+(a) <m>\frac{2}{r}</m></p><p>
+(b) <m>\big(xe^{xy}-2x\big)\,\hi+y\big(1-e^{xy}\big)\,\hj+z\,\hk</m>
+</p></answer>
+
+<solution><p> (a)
+ We are to compute the divergence of <m>\frac{\vr}{r}
+=\frac{x\,\hi+y\,\hj+z\,\hk}{[x^2+y^2+z^2]^{1/2}}</m>. Since
+<md alignment="alignat">
+<mrow>
+\pdiff{}{x}\frac{x}{{[x^2+y^2+z^2]}^{1/2}}
+&amp;=\frac{1}{{[x^2+y^2+z^2]}^{1/2}}
+            -\frac{1}{2}\frac{x(2x)}{{[x^2+y^2+z^2]}^{3/2}}
+&amp;\,=\,\frac{y^2+z^2}{{[x^2+y^2+z^2]}^{3/2}}
+
+</mrow><mrow>
+\pdiff{}{y}\frac{y}{{[x^2+y^2+z^2]}^{1/2}}
+&amp;=\frac{1}{{[x^2+y^2+z^2]}^{1/2}}
+            -\frac{1}{2}\frac{y(2y)}{{[x^2+y^2+z^2]}^{3/2}}
+&amp;\,=\,\frac{x^2+z^2}{{[x^2+y^2+z^2]}^{3/2}}
+
+</mrow><mrow>
+\pdiff{}{z}\frac{z}{{[x^2+y^2+z^2]}^{1/2}}
+&amp;=\frac{1}{{[x^2+y^2+z^2]}^{1/2}}
+            -\frac{1}{2}\frac{z(2z)}{{[x^2+y^2+z^2]}^{3/2}}
+&amp;\,=\,\frac{x^2+y^2}{{[x^2+y^2+z^2]}^{3/2}}
+</mrow>
+</md>
+the specified divergence is
+<md>
+<mrow>
+\vnabla\left(\frac{\vr}{r}\right) &amp;= \frac{2x^2+2y^2+2z^2}{{[x^2+y^2+z^2]}^{3/2}}
+                               =\frac{2r^2}{r^3}
+                               =\frac{2}{r}
+</mrow>
+</md>
+</p>
+
+<p>(b)
+<md>
+<mrow>
+\vnabla\times\big(yz\,\hi + 2xz\,\hj + e^{xy}\,\hk\big)
+&amp;=\det\left[\begin{matrix}\hi&amp;\hj&amp;\hk\\
+     \pdiff{}{x}&amp;
+        \pdiff{}{y}&amp;
+        \pdiff{}{z}\\
+yz&amp;2xz&amp;e^{xy}\end{matrix}\right]
+=\big(xe^{xy}-2x\big)\,\hi-\big(ye^{xy}-y\big)\,\hj+z\,\hk
+</mrow>
+</md>
+</p>
+
+</solution>
+</exercise>
+
+<exercise><title><fromexam>M317 2008A</fromexam></title>
+<statement><p>
+In the following, we use the notation
+<m>\vr = x\,\hi + y\,\hj + z\,\hk</m>, <m>r = |\vr|</m>, and <m>k</m> is some number
+<m>k = 0, 1, -1, 2, -2, \dots</m>.
+<ol label="a">
+<li>
+Find the value <m>k</m> for which
+<me>
+\vnabla (r^k) = -3\frac{\vr}{r^5}
+</me>
+</li>
+<li>
+Find the value <m>k</m> for which
+<me>
+\vnabla  \cdot (r^k\vr) = 5r^2
+</me>
+</li>
+<li>
+Find the value <m>k</m> for which
+<me>
+\vnabla^2 (r^k) = \frac{2}{r^4}
+</me>
+</li>
+</ol>
+</p></statement>
+
+<hint><p>
+(c) can be done efficiently by using (a) and (b).
+</p></hint>
+
+<answer><p>
+(a) <m>k=-3</m></p><p>
+(b) <m>k=2</m></p><p>
+(c) <m>k=-2</m>
+</p></answer>
+
+<solution><p> (a)
+Since <m>r^k=\big(x^2+y^2+z^2\big)^{k/2}</m>,
+<md>
+<mrow>
+\pdiff{}{x} r^k
+   &amp; = 2x\ \frac{k}{2}\big(x^2+y^2+z^2\big)^{\frac{k}{2}-1}
+     = k\ (\vr\cdot\hi)\ r^{k-2}
+</mrow><mrow>
+\pdiff{}{y} r^k
+   &amp; = 2y\ \frac{k}{2}\big(x^2+y^2+z^2\big)^{\frac{k}{2}-1}
+     = k\ (\vr\cdot\hj)\ r^{k-2}
+</mrow><mrow>
+\pdiff{}{z} r^k
+   &amp; = 2z\ \frac{k}{2}\big(x^2+y^2+z^2\big)^{\frac{k}{2}-1}
+     = k\ (\vr\cdot\hk)\ r^{k-2}
+</mrow>
+</md>
+We want <m>k=-3</m>.
+</p>
+
+<p>(b) Using the computation in part (a)
+<md>
+<mrow>
+\vnabla  \cdot (r^k\vr)
+&amp;= \pdiff{}{x} (x r^k)
+  + \pdiff{}{y} (y r^k)
+  + \pdiff{}{z} (z r^k)
+</mrow><mrow>
+&amp;= 3r^k + x \pdiff{}{x} r^k
+  + y \pdiff{}{y} r^k
+  + z \pdiff{}{z} r^k
+</mrow><mrow>
+&amp;= 3r^k + x \big(kx\ r^{k-2}\big)
+  + y \big(ky\ r^{k-2}\big)
+  + z \big(kz\ r^{k-2}\big)
+</mrow><mrow>
+&amp;= \big(3+k\big)r^k
+</mrow>
+</md>
+We want <m>k=2</m>.
+</p>
+
+<p>(c) Recalling that
+<m>\vnabla^2 = \vnabla\cdot\vnabla</m>,
+<md>
+<mrow>
+\vnabla^2 (r^k )
+&amp;=\vnabla\cdot\big(\vnabla(r^k)\big)
+</mrow><mrow>
+&amp;=\vnabla\cdot(k r^{k-2}\,\vr) &amp;\text{by part (a)}
+</mrow><mrow>
+&amp;=k(3+k-2)r^{k-2} &amp;\text{by part (b),  but with $k$ replaced by $k-2$}
+</mrow>
+</md>
+We want <m>k=-2</m>.
+</p>
+
+</solution>
+</exercise>
+
+<exercise><title><fromexam>M317 2017A</fromexam></title>
+<statement><p>
+Let <m>\vr</m> be the vector field <m>\vr = x\,\hi + y\,\hj + z\,\hk</m> and let
+<m>r</m> be the function <m>r = |\vr|</m>. Let <m>\va</m> be the <em>constant</em>
+vector <m>\va = a_1\,\hi + a_2\,\hj + a_3\,\hk</m>. Compute and simplify
+the following quantities.
+Answers must be expressed in terms of <m>\va</m>, <m>\vr</m>, and <m>r</m>. There should
+be no <m>x</m>'s, <m>y</m>'s, or <m>z</m>'s in your answers.
+<ol label="a">
+<li>
+<m>\vnabla\cdot\vr</m>
+</li>
+<li>
+<m>\vnabla(r^2)</m>
+</li>
+<li>
+<m>\vnabla\times(\vr\times\va)</m>
+</li>
+<li>
+<m>\vnabla\cdot\big(\vnabla(r)\big)</m>
+</li>
+</ol>
+</p></statement>
+
+<answer><p>
+(a) <m>3</m></p><p>
+(b) <m>2\vr</m></p><p>
+(c) <m>-2\va</m></p><p>
+(d) <m>\frac{2}{r}</m>
+</p></answer>
+
+<solution><p> (a)
+<me>
+\vnabla\cdot\vr
+=\pdiff{x}{x}
+  +\pdiff{y}{y}
+  +\pdiff{z}{z}
+=3
+</me>
+</p>
+
+<p>(b)
+<me>
+\vnabla(r^2)
+=\left(\hi\pdiff{}{x}
+  +\hj\pdiff{}{y}
+  +\hk\pdiff{}{z} \right)
+\big(x^2+y^2+z^2\big)
+=2x\,\hi +2y\,\hj +2\,\hk
+=2\vr
+</me>
+</p>
+
+<p>(c) Since
+<me>
+\vr\times\va = \det\left[\begin{matrix}
+                         \hi &amp; \hj &amp; \hk \\
+                          x  &amp;  y  &amp; z   \\
+                         a_1 &amp; a_2 &amp; a_3
+                         \end{matrix}\right]
+              =\hi\big(a_3y-a_2z\big)
+              +\hj\big(a_1z-a_3x\big)
+              +\hk\big(a_2x-a_1y\big)
+</me>
+we have
+<md>
+<mrow>
+\vnabla\times(\vr\times\va)
+&amp;= \det\left[\begin{matrix}\hi&amp;\hj&amp;\hk \\
+     \pdiff{}{x}&amp;
+        \pdiff{}{y}&amp;
+        \pdiff{}{z} \\
+    a_3y-a_2z&amp; a_1z-a_3x &amp; a_2x-a_1y\end{matrix}\right]
+=-2a_1\,\hi -2a_2\,\hj -2a_3\,\hk
+</mrow><mrow>
+ &amp;=-2\va
+</mrow>
+</md>
+</p>
+
+<p>(d) Since
+<md>
+<mrow>
+\vnabla(r) &amp;= \left(\hi\pdiff{}{x}
+  +\hj\pdiff{}{y}
+  +\hk\pdiff{}{z} \right) \big(x^2+y^2+z^2\big)^{1/2}
+</mrow><mrow>
+&amp;=\hi\frac{x}{\big(x^2+y^2+z^2\big)^{1/2}}
+  +\hj\frac{y}{\big(x^2+y^2+z^2\big)^{1/2}}
+  +\hk\frac{x}{\big(x^2+y^2+z^2\big)^{1/2}}
+</mrow>
+</md>
+we have
+<md>
+<mrow>
+\vnabla\cdot\big(\vnabla(r)\big)
+&amp;= \pdiff{}{x} \frac{x}{\big(x^2+y^2+z^2\big)^{1/2}}
+   +\pdiff{}{y} \frac{y}{\big(x^2+y^2+z^2\big)^{1/2}}
+   +\pdiff{}{z} \frac{z}{\big(x^2+y^2+z^2\big)^{1/2}}
+</mrow><mrow>
+&amp;=  \frac{3}{\big(x^2+y^2+z^2\big)^{1/2}}
+   -\frac{1}{2}\frac{2x^2+2y^2+2z^2}{\big(x^2+y^2+z^2\big)^{3/2}}
+ =\frac{2}{\big(x^2+y^2+z^2\big)^{1/2}}
+ =\frac{2}{r}
+</mrow>
+</md>
+</p></solution>
+</exercise>
+
+<exercise><title><fromexam>M317 2017D</fromexam></title>
+<statement><p>
+Let
+<me>
+\vr = x\,\hi + y\,\hj + z\,\hk,\qquad
+r = |\vr|
+</me>
+<ol label="a">
+<li>
+Compute <m>a</m> where <m>\vnabla\big(\frac{1}{r}\big) =- r^a\,\vr</m>.
+</li>
+<li>
+Compute <m>a</m> where <m>\vnabla\cdot\big(r\,\vr\big) = ar</m>.
+</li>
+<li>
+Compute <m>a</m> where <m>\vnabla\cdot\big(\vnabla(r^3)\big) = ar</m>.
+</li>
+</ol>
+</p></statement>
+
+<answer><p>
+(a) <m>a=-3</m></p><p>
+(b) <m>a=4</m></p><p>
+(c) <m>a=12</m>
+</p></answer>
+
+<solution><p> (a)
+Since
+<md>
+<mrow>
+\vnabla\left(\frac{1}{r}\right)
+&amp;= \left(\hi\pdiff{}{x}
+  +\hj\pdiff{}{y}
+  +\hk\pdiff{}{z} \right) \big(x^2+y^2+z^2\big)^{-1/2}
+</mrow><mrow>
+&amp;=-\hi\frac{x}{\big(x^2+y^2+z^2\big)^{3/2}}
+  -\hj\frac{y}{\big(x^2+y^2+z^2\big)^{3/2}}
+  -\hk\frac{z}{\big(x^2+y^2+z^2\big)^{3/2}}
+</mrow><mrow>
+&amp;=-\hi\frac{x}{r^3}
+  -\hj\frac{y}{r^3}
+  -\hk\frac{x}{r^3}
+</mrow>
+</md>
+we have <m>a=-3</m>.
+</p>
+
+<p>(b) Since
+<md>
+<mrow>
+\vnabla\cdot\big(r\,\vr\big)
+&amp;= \pdiff{}{x} \Big[\big(x^2+y^2+z^2\big)^{1/2}x\Big]
+   +\pdiff{}{y}\Big[\big(x^2+y^2+z^2\big)^{1/2}y\Big]
+   +\pdiff{}{z} \Big[\big(x^2+y^2+z^2\big)^{1/2}z\Big]
+</mrow><mrow>
+&amp;=  3\big(x^2+y^2+z^2\big)^{1/2}
+   +\frac{1}{2}\frac{2x^2+2y^2+2z^2}{\big(x^2+y^2+z^2\big)^{1/2}}
+ =4\big(x^2+y^2+z^2\big)^{1/2}
+ =4r
+</mrow>
+</md>
+we have <m>a=4</m>.
+</p>
+
+<p>(c) Since
+<md>
+<mrow>
+\vnabla(r^3) &amp;= \left(\hi\pdiff{}{x}
+  +\hj\pdiff{}{y}
+  +\hk\pdiff{}{z} \right) \big(x^2+y^2+z^2\big)^{3/2}
+</mrow><mrow>
+&amp;=\hi\,3x\big(x^2+y^2+z^2\big)^{1/2}
+  +\hj\,3y\big(x^2+y^2+z^2\big)^{1/2}
+  +\hk\,3z\big(x^2+y^2+z^2\big)^{1/2}
+</mrow><mrow>
+&amp;=3r\vr
+</mrow>
+</md>
+we have
+<md>
+<mrow>
+\vnabla\cdot\big(\vnabla(r^3)\big)
+&amp;= \vnabla\cdot\big(3r\vr\big)
+= 3\,\vnabla\cdot\big(r\vr\big)
+= 3\,\big(4r\big) \qquad\text{by part (b)}
+</mrow><mrow>
+&amp;=  12 r
+</mrow>
+</md>
+so that <m>a=12</m>.
+</p></solution>
+</exercise>
+
+<exercise>
+<statement><p>
+Find, if possible, a vector field <m>\vA</m> that has <m>\hk</m>
+component <m>A_3=0</m> and that is a vector potential for
+<ol label="a">
+<li> <m>\vF=(1+yz)\hi+(2y+zx)\hj+(3z^2+xy)\hk</m>
+</li>
+<li> <m>\vG= yz\hi+zx\hj+xy\hk</m>
+</li>
+</ol>
+</p></statement>
+
+<answer><p>
+(a) <m>\vF</m> cannot have a vector potential.
+</p>
+
+<p>(b) Two solutions are
+<m>\vA=\frac{1}{2}(z^2-y^2)x\hi-\frac{1}{2} yz^2\hj</m> and
+<m>\vA=\frac{1}{2} xz^2\hi+\frac{1}{2}(x^2-z^2)y\hj</m>.
+</p>
+
+</answer>
+
+<solution><p>
+(a) Since
+<m>\vnabla\cdot\vF
+=\pdiff{}{x}(1+yz)+\pdiff{}{y}(2y+zx)+\pdiff{}{z}(3z^2+xy)=2+6z\ne 0</m>,
+<m>\vF</m> fails the screening test and cannot have a vector potential.
+</p>
+
+<p>(b) The vector field <m>\vA=A_1\hi+A_2\hj</m> is a vector
+potential for <m>\vG</m> if and only if <m>\vG=\vnabla\times\vA</m>,
+which is the case if and only if
+<md alignment="alignat">
+<mrow>
+-\pdiff{A_2}{z}&amp;= yz\quad &amp;
+      \iff&amp;\quad&amp;
+      &amp;A_2=-\frac{1}{2} yz^2+B_2(x,y)
+</mrow><mrow>
+\pdiff{A_1}{z}&amp;=zx &amp;
+       \iff&amp;\quad &amp;
+      &amp;A_1=\phantom{-}\frac{1}{2} xz^2+B_1(x,y)
+</mrow><mrow>
+\pdiff{A_2}{x}-\pdiff{A_1}{y} &amp;=xy &amp;
+     \iff&amp; &amp;  &amp;
+   \pdiff{B_2}{x} -\pdiff{B_1}{y}=xy
+</mrow>
+</md>
+There are infinitely many solutions to <m>\pdiff{B_2}{x}
+-\pdiff{B_1}{y}=xy</m>. In fact <m>B_2</m> is completely arbitrary.
+If one chooses <m>B_2=0</m>, then <m>B_1=-\frac{1}{2} xy^2</m> does the job. If one chooses
+<m>B_1=0</m>, then <m>B_2=\frac{1}{2} x^2y</m> does the job. Thus two solutions are
+<m>\vA=\frac{1}{2}(z^2-y^2)x\hi-\frac{1}{2} yz^2\hj</m> and
+<m>\vA=\frac{1}{2} xz^2\hi+\frac{1}{2}(x^2-z^2)y\hj</m>.
+</p></solution>
+</exercise>
+</exercisegroup>
+
+<exercisegroup><introduction><application/></introduction>
+
+<exercise><title><fromexam>M317 2006D</fromexam></title>
+<statement><p>
+Let
+<md>
+<mrow>
+\vF = \frac{-z}{x^2+z^2}\,\hi +y\,\hj +\frac{x}{x^2+z^2}\,\hk
+</mrow>
+</md>
+</p>
+
+<p><ol label="a">
+<li>
+Determine the domain of <m>\vF</m>.
+</li>
+<li>
+Determine the curl of <m>\vF</m>. Simplify if possible.
+</li>
+<li>
+Determine the divergence of <m>\vF</m>. Simplify if possible.
+</li>
+<li>
+Is <m>\vF</m> conservative? Give a reason for your answer.
+</li>
+</ol>
+</p></statement>
+
+<answer><p>
+(a) <m>D=\Set{(x,y,z)}{x^2+z^2\ne 0}</m></p><p>
+(b) <m>\vnabla\times\vF=\vZero</m> on <m>D</m></p><p>
+(c) <m>\vnabla\cdot\vF=1</m> on <m>D</m>
+</p>
+
+<p>(d) <m>\vF</m> is not conservative on the domain <m>D</m> of part (a).
+</p>
+
+</answer>
+
+<solution><p>(a) <m>\vF</m> is well-defined wherever the denominator
+<m>x^2+z^2</m> is nonzero. So the (largest possible) domain is
+<md>
+<mrow>
+D=\Set{(x,y,z)}{x^2+z^2\ne 0}
+</mrow>
+</md>
+</p>
+
+<p> (b)
+As preliminary computations, let's find
+<md>
+<mrow>
+\pdiff{}{z}\left(\frac{-z}{x^2+z^2}\right)
+&amp;=\frac{-1}{x^2+z^2}-\frac{2z(-z)}{{(x^2+z^2)}^2}
+=\frac{-x^2+z^2}{{(x^2+z^2)}^2}
+
+</mrow><mrow>
+\pdiff{}{x}\left(\frac{x}{x^2+z^2}\right)
+&amp;=\frac{1}{x^2+z^2}-\frac{2x(x)}{{(x^2+z^2)}^2}
+=\frac{-x^2+z^2}{{(x^2+y^2)}^2}
+</mrow>
+</md>
+So the curl of <m>\vF</m> is
+<md>
+<mrow>
+\vnabla\times\vF
+&amp;=\det\left[\begin{matrix}
+\hi &amp;\hj &amp;\hk \\
+\tfrac{\partial }{\partial x} &amp; \tfrac{\partial }{\partial y} &amp;
+                \tfrac{\partial }{\partial z} \\
+\frac{-z}{x^2+z^2} &amp; y &amp; \frac{x}{x^2+z^2}
+\end{matrix}
+\right]
+=-\left(\frac{-x^2+z^2}{{(x^2+y^2)}^2}
+  -\frac{-x^2+z^2}{{(x^2+y^2)}^2}\right)\hj
+=\vZero
+</mrow>
+</md>
+<em>on the domain of <m>\vF</m></em>.
+</p>
+
+<p> (c)
+As preliminary computations, let's find
+<md>
+<mrow>
+\pdiff{}{x}\left(\frac{-z}{x^2+z^2}\right)
+&amp;=-\frac{2x(-z)}{{(x^2+z^2)}^2}
+=\frac{2xz}{{(x^2+z^2)}^2}
+ </mrow><mrow>
+\pdiff{}{z}\left(\frac{x}{x^2+z^2}\right)
+&amp;=-\frac{2z(x)}{{(x^2+z^2)}^2}
+=\frac{-2xz}{{(x^2+y^2)}^2}
+</mrow>
+</md>
+So the divergence of <m>\vF</m> is
+<md>
+<mrow>
+\vnabla\cdot\vF
+&amp;=\pdiff{}{x}\left(\frac{-z}{x^2+z^2}\right)
+  +\pdiff{}{y}\left(y\right)
+  + \pdiff{}{z}\left(\frac{x}{x^2+z^2}\right)
+=1
+</mrow>
+</md>
+</p>
+
+<p> (d)
+By part (b), the vector field passes the conservative field screening test
+<m>\vnabla\times\vF=\vZero</m>. But we should still be suspicious because
+of the similarity of <m>\vF</m> to the vector field of
+Examples <xref ref="eg_screeningCounterexample"/> and <xref ref="eg_greenCC"/>
+in the CLP-4 text.
+</p>
+
+<p>So let's compute the line integral of <m>\vF</m> around the (closed) circle
+<m>y=0</m>, <m>x^2+z^2=1</m>, parametrized by
+<me>
+\vr(t) = \cos t\,\hi +\sin t\,\hk\qquad
+\vr'(t) = -\sin t\,\hi +\cos t\,\hk
+</me>
+The line integral is
+<md>
+<mrow>
+\int_C \vF \cdot \dee{\vr}
+&amp;=\int_0^{2\pi}\!\!\big\{
+       \overbrace{-\sin t}^{\frac{-z}{x^2+z^2}}\,\hi
+      +\overbrace{\cos t}^{\frac{x}{x^2+y^2}}\,\hk\big\}
+           \cdot
+  \big\{\overbrace{-\sin t\,\hi +\cos t\,\hk}^{\vr'(t)}\big\}\dee{t}
+</mrow><mrow>
+&amp;= \int_0^{2\pi}\dee{t}
+=2\pi
+</mrow>
+</md>
+As the integral of <m>\vF</m> around the simple closed curve <m>C</m>
+is not zero, <m>\vF</m> cannot be conservative on <m>D</m>.
+See Theorem <xref ref="thm_pathIndepConserv"/> and
+Examples <xref ref="eg_screeningCounterexample"/> and <xref ref="eg_greenCC"/>
+in the CLP-4 text.
+</p>
+
+</solution>
+</exercise>
+
+<exercise><title><fromexam>M317 2004A</fromexam></title>
+<statement><p>
+A physicist studies a vector field <m>\vF</m> in her lab. She
+knows from theoretical considerations that <m>\vF</m> must be of the form
+<m>\vF=\nabla\times\vG</m>, for some smooth vector field <m>\vG</m>. Experiments
+also show that <m>\vF</m> must be of the form
+<me>
+\vF(x,y,z)=(xz+xy)\hi+\alpha(yz-xy)\hj+\beta(yz+xz)\hk
+</me>
+where <m>\alpha</m> and <m>\beta</m> are constant.
+<ol label="a">
+<li>
+Determine <m>\alpha</m> and <m>\beta</m>.
+</li>
+<li>
+Further experiments show that <m>\vG=xyz\hi-xyz\hj+g(x,y,z)\hk</m>.
+Find the unknown function <m>g(x,y,z)</m>.
+</li>
+</ol>
+</p>
+
+</statement>
+
+<answer><p>
+(a) <m>\alpha=\beta=-1</m>
+</p>
+
+<p>(b)  Any function of the form <m>g(x,y,z)=xyz+w(z)</m> will work.
+</p></answer>
+
+<solution><p>
+(a)
+By the vector identity of Theorem <xref ref="thm_degTwoIdentities"/>.a
+in the CLP-4 text,
+<me>
+\nabla\cdot \vF=\nabla\cdot \nabla\times\vG=0
+</me>
+So we must have
+<me>
+0=\nabla\cdot\vF=\nabla\cdot \big((xz+xy)\hi+\alpha(yz-xy)\hj+\beta(yz+xz)\hk\big)
+=(z+y)+\alpha(z-x)+\beta(y+x)
+</me>
+This is true for all <m>(x,y,z)</m> if and only if <m>\alpha=\beta=-1</m>.
+</p>
+
+<p>(b) Since
+<me>
+\nabla\times\vG=\nabla\times\big(xyz\hi-xyz\hj+g(x,y,z)\hk\big)
+=(g_y+xy)\,\hi-(g_x-xy)\,hj+(-yz-xz)\,\hk
+</me>
+we will have that <m>\nabla\times\vG=\vF</m> if and only if
+<me>
+(g_y+xy)\,\hi-(g_x-xy)\,\hj+(-yz-xz)\,\hk=(xz+xy)\,\hi-(yz-xy)\,\hj-(yz+xz)\,\hk
+</me>
+which is the case if and only if
+<me>
+g_y=xz,\quad g_x=yz
+</me>
+The first equation, <m>g_y=xz</m>, is satisfied if and only if <m>g=xyz+h(x,z)</m>.
+The second equation is also satisfied if and only if
+<m>g_x=yz+h_x(x,z)=yz</m>. This is the case if and only if <m>h_x(x,z)=0</m>. That
+is, if and only if <m>h</m> is independent of <m>x</m>. Equivalently, if and only
+if <m>h(x,z)=w(z)</m> for some function <m>w(z)</m>. So, in fact, any function of
+the form <m>g(x,y,z)=xyz+w(z)</m> will work.
+</p>
+
+</solution>
+</exercise>
+
+<exercise>
+<statement><p>
+A rigid body rotates at an angular velocity of <m>\Om</m> rad/sec
+about an axis that passes through the origin and has direction <m>\Ha</m>. When
+you are standing at the head of <m>\Ha</m> looking towards the origin, the rotation
+is counterclockwise. Set <m>\vOm=\Om\Ha</m>.
+<ol label="a">
+<li>
+Show that the velocity of the point <m>\vr=(x,y,z)</m> on the body is <m>\vOm\times\vr</m>.
+</li>
+<li>
+Evaluate <m>\vnabla\times(\vOm\times\vr)</m> and
+<m>\vnabla\cdot(\vOm\times\vr)</m>, treating <m>\vOm</m> as a constant.
+</li>
+<li>
+Find the speed of the students in a classroom located at
+latitude <m>49^\circ</m> N due to the rotation of the Earth. Ignore the motion
+of the Earth about the Sun, the Sun in the Galaxy and so on. The radius
+of the Earth is 6378 km.
+</li>
+</ol>
+</p></statement>
+
+<hint><p>
+(a) Find the magnitude and direction of the velocity vector.
+Then verify that <m>\vOm\times\vr</m> has that magnitude and direction.
+</p></hint>
+
+<answer><p>
+(a) See the solution
+</p>
+
+<p>(b) <m>\vnabla\times(\vOm\times\vr)=2\vOm\qquad \vnabla\cdot(\vOm\times\vr)=0</m>
+</p><p>
+(c) <m>1095</m>km/hr
+</p>
+
+</answer>
+
+<solution><p>
+(a)
+ Denote by <m>\theta</m> the angle between <m>\Ha</m> and <m>\vr</m>.
+The point <m>\vr</m> is a distance <m>\ell=|\vr|\,\sin\theta</m> from the axis
+of rotation. So as the body rotates, the point sweeps out a circle of radius
+<m>\ell</m> centred on the axis of rotation.
+</p>
+
+<sidebyside width="75%">
+  <image source="pfigs/rigid"/>
+</sidebyside>
+
+<p>
+  In one second the point sweeps
+out an arc of this circle that subtends an angle of <m>\Om</m> radians. This arc
+is the fraction <m>\frac{\Om}{2\pi}</m> of a full circle and so has length
+<m>\frac{\Om}{2\pi}2\pi \ell=\Om\ell=\Om|\vr|\,\sin\theta</m>. Thus the point
+is moving with speed <m>\Om|\vr|\,\sin\theta</m>. The velocity vector of the
+point must have length <m>\Om|\vr|\,\sin\theta</m> and direction perpendicular
+to both <m>\Ha</m> and <m>\vr</m>. The vector
+<m>\vOm\times\vr</m> is perpendicular to both  <m>\vr</m> and <m>\vOm=\Om\Ha</m>
+and has length
+<m>\
+|\vOm|\,|\vr|\,\sin\theta
+=\Om|\vr|\,\sin\theta
+\ </m>
+as desired. So the velocity vector is either
+<m>\vOm\times\vr</m> or its negative. By the right hand rule it is <m>\vOm\times\vr</m>.
+</p>
+
+<p>(b) By vector identities
+<md>
+<mrow>
+\vnabla\cdot(\vF\times\vG)
+   &amp;=\vG\cdot(\vnabla\times\vF)-\vF\cdot(\vnabla\times\vG)
+</mrow><mrow>
+\vnabla\times(\vF\times\vG)
+   &amp;=\vF(\vnabla\cdot\vG)-(\vnabla\cdot\vF)\vG
++(\vG\cdot\vnabla)\vF-(\vF\cdot\vnabla)\vG
+</mrow>
+</md>
+(which are Theorems <xref ref="thm_divIdentities"/>(d)
+and <xref ref="thm_curlIdentities"/>(d))
+and the assumption that <m>\vOm</m> is constant
+<md>
+<mrow>
+\vnabla\times(\vOm\times\vr)&amp;=
+\vOm(\vnabla\cdot\vr)-(\vnabla\cdot\vOm)\vr
++(\vr\cdot\vnabla)\vOm-(\vOm\cdot\vnabla)\vr
+=\vOm(\vnabla\cdot\vr)-(\vOm\cdot\vnabla)\vr
+</mrow><mrow>
+\vnabla\cdot(\vOm\times\vr)&amp;=
+\vr\cdot(\vnabla\times\vOm)-
+\vOm\cdot(\vnabla\times\vr)
+=-\vOm\cdot(\vnabla\times\vr)
+</mrow>
+</md>
+Substituting in
+<md>
+<mrow>
+\vnabla\cdot\vr&amp;=\pdiff{x}{x}+
+\pdiff{y}{y}+\pdiff{z}{z}=3
+</mrow><mrow>
+\vnabla\times\vr
+&amp;=\big(\pdiff{z}{y}-\pdiff{y}{z}\big)\hi+
+\big(\pdiff{x}{z}-\pdiff{z}{x}\big)\hj
++\big(\pdiff{y}{x}-\pdiff{x}{y}\big)\hk
+=\vZero
+</mrow><mrow>
+(\vOm\cdot\vnabla)\vr&amp;=
+\big(\Om_1\pdiff{}{x}
++\Om_2\pdiff{}{y}
++\Om_3\pdiff{}{z}\big)
+\big(x\hi+y\hj+z\hk\big)
+=\Om_1\hi+\Om_2\hj+\Om_3\hk=\vOm
+</mrow>
+</md>
+gives
+<me>
+\vnabla\times(\vOm\times\vr)=2\,\vOm\qquad \vnabla\cdot(\vOm\times\vr)=0
+</me>
+</p>
+
+<p>(c)
+The students are a distance <m>6378\sin(90^\circ- 49^\circ)=
+6378\cos(49^\circ)=4184</m> km from the axis of rotation. The rate of rotation
+is <m>\Om =\frac{2\pi}{24}</m> radians per hour. In each hour the students
+sweep out an arc of <m>\frac{2\pi}{24}</m> radians from a circle of radius
+<m>4184</m> km. Their speed is <m>\frac{2\pi}{24}\times 4184=1095</m>km/hr.
+</p></solution>
+</exercise>
+
+<exercise>
+<statement><p>
+Suppose that the vector field <m>\vF</m> obeys <m>\vnabla\cdot \vF=0</m> in
+all of <m>\bbbr^3</m>. Let
+<me>
+\vr(t)=tx\,\hi+ty\,\hj+tz\,\hk,\qquad 0\le t\le 1
+</me>
+be a parametrization of the line segment from the origin to <m>(x,y,z)</m>. Define
+<me>
+\vG(x,y,z)=\int_0^1 t\,\vF\big(\vr(t)\big)\times\frac{d\vr}{dt}(t)\,dt
+</me>
+Show that <m>\vnabla\times \vG=\vF</m> throughout <m>\bbbr^3</m>.
+</p></statement>
+
+<answer><p>
+See the solution.
+</p></answer>
+
+<solution><p>
+We shall show that <m>\pdiff{G_3}{y}-\pdiff{G_2}{z}=F_1</m>. The other components
+are similar. First we have
+<md>
+<mrow>
+t\,\vF\big(\vr(t)\big)\times\diff{\vr}{t}(t)
+&amp;=t\,\vF\big(tx,ty,tz\big)\times\big(x\,\hi+y\,\hj+z\,\hk\big)
+=t\det\left[\begin{matrix}\hi  &amp; \hj &amp; \hk
+</mrow><mrow>
+                     F_1 &amp; F_2 &amp; F_3
+</mrow><mrow>
+                     x &amp; y &amp; z\end{matrix}\right]
+</mrow>
+</md>
+Reading off the <m>\hk</m> and <m>\hj</m> components of the determinant
+gives
+<md>
+<mrow>
+G_3(x,y,z)&amp;=\int_0^1 t\big[F_1\big(tx,ty,tz\big)\,y-F_2\big(tx,ty,tz\big)\,x\big]\,dt
+</mrow><mrow>
+G_2(x,y,z)&amp;=\int_0^1 t\big[F_3\big(tx,ty,tz\big)\,x-F_1\big(tx,ty,tz\big)\,z\big]\,dt
+</mrow>
+</md>
+So
+<md>
+<mrow>
+\pdiff{G_3}{y}
+&amp;=\int_0^1 t\Big[F_1\big(tx,ty,tz\big)+
+\frac{\partial F_1}{\partial y}\big(tx,ty,tz\big)\,ty
+-\frac{\partial F_2}{\partial y}\big(tx,ty,tz\big)\,tx\Big]\,dt
+</mrow><mrow>
+\pdiff{G_2}{z}&amp;=\int_0^1 t\Big[
+\frac{\partial F_3}{\partial z}\big(tx,ty,tz\big)\,tx
+-\frac{\partial F_1}{\partial z}\big(tx,ty,tz\big)\,tz
+-F_1\big(tx,ty,tz\big)\Big]\,dt
+</mrow><mrow>
+\Rightarrow
+\pdiff{G_3}{y}-\pdiff{G_2}{z}
+&amp;=\int_0^1 \Big[2t\,F_1\big(tx,ty,tz\big)+
+t^2y\,\frac{\partial F_1}{\partial y}\big(tx,ty,tz\big)
++t^2z\frac{\partial F_1}{\partial z}\big(tx,ty,tz\big)
+</mrow><mrow>
+&amp;\hskip1in
+-t^2x\,\frac{\partial F_2}{\partial y}\big(tx,ty,tz\big)
+-t^2x\,\frac{\partial F_3}{\partial z}\big(tx,ty,tz\big)\Big]\,dt
+</mrow>
+</md>
+Since, by hypothesis,
+   <m>\vnabla\cdot\vF=\frac{\partial F_1}{\partial x}
+   +\frac{\partial F_2}{\partial y}
+   +\frac{\partial F_3}{\partial z}=0</m>, the last two terms
+<md>
+<mrow>
+-t^2x\Big\{\frac{\partial F_2}{\partial y}\big(tx,ty,tz\big)
++\frac{\partial F_3}{\partial z}\big(tx,ty,tz\big)\Big\}
+=-t^2x\Big\{-\frac{\partial F_1}{\partial x}\big(tx,ty,tz\big)\Big\}
+</mrow>
+</md>
+so that
+<md>
+<mrow>
+&amp;\pdiff{G_3}{y}-\pdiff{G_2}{z}
+</mrow><mrow>
+&amp;\hskip0.25in=\int_0^1 \Big[2tF_1\big(tx,ty,tz\big)+
+t^2x\frac{\partial F_1}{\partial x}\big(tx,ty,tz\big)
++t^2y\frac{\partial F_1}{\partial y}\big(tx,ty,tz\big)
++t^2z\frac{\partial F_1}{\partial z}\big(tx,ty,tz\big)\Big]\,dt
+</mrow><mrow>
+&amp;\hskip0.25in=\int_0^1 \frac{d }{dt}\Big[ t^2 F_1(tx,ty,tz)\Big]\,dt
+=\Big[ t^2 F_1(tx,ty,tz)\Big]^{t=1}_{t=0}
+= F_1(x,y,z)
+</mrow>
+</md>
+</p></solution>
+</exercise></exercisegroup>
+
+</exercises>
