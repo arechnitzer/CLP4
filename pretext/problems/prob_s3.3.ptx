@@ -1,0 +1,3661 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+
+<!-- Copyright 2018 Joel Feldman, Andrew Rechnitzer and Elyse Yeager -->
+<!-- This work is licensed under the Creative Commons Attribution-NonCommercial-ShareAlike 4.0 International License-->
+<!-- https://creativecommons.org/licenses/by-nc-sa/4.0 -->
+
+<exercises>
+<exercisegroup>
+<introduction><conceptual/></introduction>
+
+<exercise>
+<statement><p>
+Let <m>0 \lt \theta \lt \frac{\pi}{2}</m>, and <m>a,b \gt 0</m>. Denote by <m>S</m> the part of
+the surface <m>z=y\,\tan\theta</m> with <m>0\le x\le a</m>, <m>0\le y\le b</m>.
+<ol label="a">
+<li>
+Find the surface area of <m>S</m> without using any calculus.
+</li>
+<li>
+Find the surface area of <m>S</m> by using (<xref ref="eq_SUdSgraph"/>).
+</li>
+</ol>
+</p>
+
+</statement>
+
+<hint><p>
+<m>S</m> is a very simple geometric object.
+</p></hint>
+
+<answer><p>
+<m>ab\sqrt{1+\tan^2\theta}=ab\sec\theta</m>
+</p></answer>
+
+<solution><p>
+(a) <m>S</m> is the part of the plane <m>z=y\,\tan\theta</m> that lies above the
+rectangle in the <m>xy</m>-plane with vertices <m>(0,0)</m>, <m>(a,0)</m>, <m>(0,b)</m>, <m>(a,b)</m>.
+So <m>S</m> is the rectangle with vertices <m>(0,0,0)</m>,
+<m>(a,0,0)</m>, <m>(0,b,b\tan\theta)</m>, <m>(a,b,b\tan\theta)</m>. So it has side lengths
+<md>
+<mrow>
+|(a,0,0) -(0,0,0)| &amp;=a
+</mrow><mrow>
+|(0,b,b\tan\theta) - (0,0,0)| &amp;=  \sqrt{b^2+b^2\tan^2\theta}
+</mrow>
+</md>
+and hence area <m>ab\sqrt{1+\tan^2\theta}=ab\sec\theta</m>.
+</p>
+
+<p>(b) <m>S</m> is the part of the surface <m>z=f(x,y)</m> with <m>f(x,y) = y\,\tan\theta</m>
+and with <m>(x,y)</m> running over
+<me>
+\cD =\Set{(x,y)}{0\le x\le a,\ 0\le y\le b}
+</me>
+Hence by (<xref ref="eq_SUdSgraph"/>)
+<me>
+\dee{S} = \sqrt{1+f_x(x,y)^2+f_y(x,y)^2}\ \dee{x}\,\dee{y}
+        = \sqrt{1+0^2+\tan^2\theta}\ \dee{x}\,\dee{y}
+</me>
+and
+<md>
+<mrow>
+\text{Area}(S)&amp;=\dblInt_S\dee{S}
+=\dblInt_\cD \sqrt{1+\tan^2\theta}\ \dee{x}\,\dee{y}
+</mrow><mrow>
+&amp;=\int_0^a\dee{x}\int_0^b\dee{y}\ \sqrt{1+\tan^2\theta}
+</mrow><mrow>
+&amp;=ab\sqrt{1+\tan^2\theta}=ab\sec\theta
+</mrow>
+</md>
+</p>
+
+</solution>
+</exercise>
+
+<exercise>
+<statement><p>
+Let <m>a,b,c  \gt  0</m>. Denote by <m>S</m> the triangle with vertices <m>(a,0,0)</m>,
+<m>(0,b,0)</m> and <m>(0,0,c)</m>.
+<ol label="a">
+<li>
+Find the surface area of <m>S</m> in three different ways, each using
+(<xref ref="eq_SUdSgraph"/>).
+</li>
+<li>
+Denote by <m>T_{xy}</m> the projection of <m>S</m> onto the <m>xy</m>-plane. (It is the
+triangle with vertices <m>(0,0,0)</m> <m>(a,0,0)</m> and <m>(0,b,0)</m>.) Similarly use
+<m>T_{xz}</m> to denote the projection of <m>S</m> onto the <m>xz</m>-plane and
+<m>T_{yz}</m> to denote the projection of <m>S</m> onto the <m>yz</m>-plane. Show that
+<me>
+\text{Area}(S) =\sqrt{\text{Area}(T_{xy})^2
+                     +\text{Area}(T_{xz})^2
+                     +\text{Area}(T_{yz})^2
+                     }
+</me>
+</li>
+</ol>
+</p></statement>
+
+<hint><p>
+The triangle is part of the plane <m>\frac{x}{a}+\frac{y}{b} +\frac{z}{c}=1</m>.
+</p></hint>
+
+<answer><p>
+(a) <m>\frac{1}{2}\sqrt{a^2b^2+a^2c^2+b^2c^2}</m>
+</p>
+
+<p>(b) See the solution.
+</p></answer>
+
+<solution><p>
+Note that all three vertices <m>(a,0,0)</m>, <m>(0,b,0)</m> and <m>(0,0,c)</m> lie on
+the plane <m>\frac{x}{a}+\frac{y}{b} +\frac{z}{c}=1</m>. So the triangle is
+part of that plane.
+</p>
+
+<p><em>Method 1.</em>
+ <m>S</m> is the part of the surface <m>z=f(x,y)</m> with
+<m>f(x,y) = c\left(1-\frac{x}{a}-\frac{y}{b}\right)</m>
+and with <m>(x,y)</m> running over the triangle <m>T_{xy}</m> in the <m>xy</m>-plane
+with vertices <m>(0,0,0)</m> <m>(a,0,0)</m> and <m>(0,b,0)</m>.
+Hence by the first part of (<xref ref="eq_SUdSgraph"/>),
+<md>
+<mrow>
+\text{Area}(S)&amp;=\dblInt_{T_{xy}} \sqrt{1+f_x(x,y)^2+f_y(x,y)^2}\ \dee{x}\,\dee{y}
+</mrow><mrow>
+&amp;=\dblInt_{T_{xy}}\ \sqrt{1+\frac{c^2}{a^2}+\frac{c^2}{b^2}}\
+\dee{x}\,\dee{y}
+</mrow><mrow>
+&amp;=\sqrt{1+\frac{c^2}{a^2}+\frac{c^2}{b^2}}\ A(T_{xy})
+</mrow>
+</md>
+where <m>A(T_{xy})</m> is the area of <m>T_{xy}</m>. Since the triangle <m>T_{xy}</m>
+has base <m>a</m> and height <m>b</m> (see the figure below), it has
+area <m>\frac{1}{2}ab</m>. So
+<me>
+\text{Area}(S)=\frac{1}{2}\sqrt{1+\frac{c^2}{a^2}+\frac{c^2}{b^2}}\ ab
+ =\frac{1}{2}\sqrt{a^2b^2+a^2c^2+b^2c^2}
+</me>
+</p>
+
+<sidebyside width="75%">
+  <image source="pfigs/triangleProjection"/>
+</sidebyside>
+
+<p>
+<em>Method 2.</em>
+ <m>S</m> is the part of the surface <m>x=g(y,z)</m> with
+<m>g(y,z) = a\left(1-\frac{y}{b}-\frac{z}{c}\right)</m>
+and with <m>(y,z)</m> running over the triangle <m>T_{yz}</m> in the <m>yz</m>-plane
+with vertices <m>(0,0,0)</m> <m>(0,b,0)</m> and <m>(0,0,c)</m>.
+Hence by the second part of (<xref ref="eq_SUdSgraph"/>),
+<md>
+<mrow>
+\text{Area}(S)&amp;=\dblInt_{T_{yz}} \sqrt{1+g_y(y,z)^2+g_z(y,z)^2}\ \dee{y}\,\dee{z}
+</mrow><mrow>
+&amp;=\dblInt_{T_{yz}}\ \sqrt{1+\frac{a^2}{b^2}+\frac{a^2}{c^2}}\
+\dee{y}\,\dee{z}
+</mrow><mrow>
+&amp;=\sqrt{1+\frac{a^2}{b^2}+\frac{a^2}{c^2}}\ A(T_{yz})
+</mrow>
+</md>
+where <m>A(T_{yz})</m> is the area of <m>T_{yz}</m>. Since <m>T_{yz}</m> has base <m>b</m> and
+height <m>c</m>, it has area <m>\frac{1}{2}bc</m>. So
+<me>
+\text{Area}(S)=\frac{1}{2}\sqrt{1+\frac{a^2}{b^2}+\frac{a^2}{c^2}}\ bc
+ =\frac{1}{2}\sqrt{a^2b^2+a^2c^2+b^2c^2}
+</me>
+</p>
+
+<p><em>Method 3.</em>
+ <m>S</m> is the part of the surface <m>y=h(x,z)</m> with
+<m>h(x,z) = b\left(1-\frac{x}{a}-\frac{z}{c}\right)</m>
+and with <m>(x,z)</m> running over the triangle <m>T_{xz}</m> in the <m>xz</m>-plane
+with vertices <m>(0,0,0)</m> <m>(a,0,0)</m> and <m>(0,0,c)</m>.
+Hence by the third part of (<xref ref="eq_SUdSgraph"/>),
+<md>
+<mrow>
+\text{Area}(S)&amp;=\dblInt_{T_{xz}} \sqrt{1+h_x(x,z)^2+h_z(x,z)^2}\ \dee{x}\,\dee{z}
+</mrow><mrow>
+&amp;=\dblInt_{T_{xz}}\ \sqrt{1+\frac{b^2}{a^2}+\frac{b^2}{c^2}}\
+\dee{x}\,\dee{z}
+</mrow><mrow>
+&amp;=\sqrt{1+\frac{b^2}{a^2}+\frac{b^2}{c^2}}\ A(T_{xz})
+</mrow>
+</md>
+where <m>A(T_{xz})</m> is the area of <m>T_{xz}</m>. Since <m>T_{xz}</m> has base <m>a</m> and
+height <m>c</m>, it has area <m>\frac{1}{2}ac</m>. So
+<me>
+\text{Area}(S)=\frac{1}{2}\sqrt{1+\frac{b^2}{a^2}+\frac{b^2}{c^2}}\ bc
+ =\frac{1}{2}\sqrt{a^2b^2+a^2c^2+b^2c^2}
+</me>
+</p>
+
+<p>(b) We have already seen in the solution to part (a) that
+<me>
+\text{Area}(T_{xy})=\frac{ab}{2}\qquad
+\text{Area}(T_{xz})=\frac{ac}{2}\qquad
+\text{Area}(T_{yz})=\frac{bc}{2}\qquad
+</me>
+Hence
+<md>
+<mrow>
+\text{Area}(S)
+&amp;=\sqrt{\frac{a^2b^2}{4}+\frac{a^2c^2}{4}+\frac{b^2c^2}{4}}
+</mrow><mrow>
+&amp;=\sqrt{\text{Area}(T_{xy})^2
+                     +\text{Area}(T_{xz})^2
+                     +\text{Area}(T_{yz})^2
+                     }
+</mrow>
+</md>
+</p>
+
+</solution>
+</exercise>
+
+<exercise>
+<statement><p>
+Let <m>a,h \gt 0</m>. Denote by <m>S</m> the part of the cylinder <m>x^2+z^2=a^2</m> with
+<m>x\ge 0</m>, <m>0\le y\le h</m> and <m>z\ge 0</m>.
+</p>
+
+<sidebyside width="75%">
+  <image source="pfigs/cylinderQ"/>
+</sidebyside>
+
+<p>
+<ol label="a">
+<li>
+Find the surface area of <m>S</m> without using any calculus.
+</li>
+<li>
+Parametrize <m>S</m> by
+<me>
+\vr(\theta,y) = a\,\cos\theta\ \hi +y\,\hj +a\sin\theta\ \hk\quad
+0\le\theta\le\frac{\pi}{2},\
+0\le y\le h
+</me>
+Find the surface area of <m>S</m> by using (<xref ref="eq_SUdSparam"/>).
+</li>
+</ol>
+</p>
+
+</statement>
+
+<hint><p>
+Flatten <m>S</m> out.
+</p></hint>
+
+<answer><p>
+<m>\frac{\pi ah}{2}</m>
+</p></answer>
+
+<solution><p>
+(a)
+Think of the cylinder as being a piece of paper that has been partially rolled
+up. If you flatten the piece of paper out, you get a rectangle
+with the length of one side being <m>h</m> and the length of the other side
+being one quarter of the circumference of a circle of radius <m>a</m>,
+i.e. <m>\frac{1}{4}(2\pi a)=\frac{\pi a}{2}</m>. So the area of <m>S</m> is
+<m>\frac{\pi a h}{2}</m>.
+</p>
+
+<p>(b) <m>S</m> is parametrized by
+<me>
+x(\theta,y)=a\cos\theta\qquad
+y(\theta,y)=y\qquad
+z(\theta,z)=a\sin\theta
+</me>
+with <m>(\theta,y)</m> running over
+<m>0\le \theta\le \frac{\pi}{2},\ 0\le y\le h</m>. Then,
+by (<xref ref="eq_SUdSparam"/>),
+<md>
+<mrow>
+\Big(\pdiff{x}{\theta},\pdiff{y}{\theta},\pdiff{z}{\theta}\Big)
+&amp;=(-a\sin\theta,0,a\cos\theta)
+</mrow><mrow>
+\Big(\pdiff{x}{y},\pdiff{y}{y},\pdiff{z}{y}\Big)
+&amp;=(0,1,0)
+</mrow><mrow>
+\dee{S}
+&amp;=
+ \Big|\Big(\pdiff{x}{\theta},\pdiff{y}{\theta},\pdiff{z}{\theta}\Big)
+\times\Big(\pdiff{x}{y},\pdiff{y}{y},\pdiff{z}{y}\Big)\Big|
+     \dee{\theta} \dee{y}
+</mrow><mrow>
+&amp;=\big|(-a\cos\theta,0,-a\sin\theta)\big|\,\dee{\theta}\,\dee{y}
+</mrow><mrow>
+&amp;=a\,\dee{\theta}\,\dee{y}
+</mrow>
+</md>
+So
+<md>
+<mrow>
+\text{Area}(S)&amp;=\dblInt_S\dee{S}
+=\int_0^{\pi/2}\dee{\theta}\int_0^h\dee{y}\ a
+=a\left(\frac{\pi}{2}\right)h
+</mrow>
+</md>
+</p>
+
+</solution>
+</exercise>
+</exercisegroup>
+
+<exercisegroup><introduction><procedural/></introduction>
+
+<exercise>
+<statement><p>
+Let <m>S</m> be the part of the surface <m>z = xy</m> lying inside the cylinder
+<m>x^2 + y^2 = 3</m>.  Find the moment of inertia of <m>S</m> about the
+<m>z</m>-axis, that is,
+<me>
+      I =  \dblInt_S (x^2 + y^2)\ \dee{S}
+</me>
+</p></statement>
+
+<answer><p>
+<m>\frac{116}{15}\pi</m>
+</p></answer>
+
+<solution><p>
+The surface is <m>z=f(x,y)</m> with <m>f(x,y)=xy</m>. So, by
+(<xref ref="eq_SUdSgraph"/>),
+<me>
+\dee{S}=\sqrt{1+f_x^2+f_y^2}\ \dee{x}\,\dee{y}
+         =\sqrt{1+x^2+y^2}\ \dee{x}\,\dee{y}
+</me>
+and
+<md>
+<mrow>
+I &amp;=  \dblInt_S (x^2 + y^2)\ \dee{S}
+  = \dblInt_{x^2+y^2\le 3} (x^2 + y^2)\ \sqrt{1+x^2+y^2}\ \dee{x}\,\dee{y}
+</mrow><mrow>
+  &amp;= \int_0^{2\pi}\dee{\theta}\int_0^{\sqrt{3}} \dee{r}\ r\ r^2\sqrt{1+r^2}
+</mrow>
+</md>
+We switched to polar coordinates in the last step.
+Making the change of variables <m>u=1+r^2</m>, <m>\dee{u}=2r\,\dee{r}</m>
+<md>
+<mrow>
+I = \pi \int_1^{4} \dee{u}\ (u-1)\sqrt{u}
+=\pi\left[\frac{2}{5}u^{5/2}-\frac{2}{3}u^{3/2}\right]_1^4
+=\pi\left[\frac{64}{5}-\frac{16}{3}-\frac{2}{5}+\frac{2}{3}\right]
+=\frac{116}{15}\pi
+</mrow>
+</md>
+</p></solution>
+</exercise>
+
+<exercise><title><fromexam>M253 2013D</fromexam></title>
+<statement><p>
+Find the surface area of the part of the paraboloid
+<m>z = a^2 - x^2 - y^2</m> which lies above the <m>xy</m>--plane.
+</p></statement>
+
+<answer><p>
+<m>\frac{\pi}{6}\big[{(1+4a^2)}^{3/2}-1\big]</m>
+</p></answer>
+
+<solution><p>
+First observe that any point <m>(x,y,z)</m> on the paraboliod lies above the <m>xy</m>-plane if and only if
+<me>
+0\le z = a^2-x^2-y^2
+\iff x^2+y^2\le a^2
+</me>
+That is, if and only if <m>(x,y)</m> lies in the circular disk of radius <m>a</m>
+centred on the origin. The equation of the paraboloid is of the form
+<m>z=f(x,y)</m> with <m>f(x,y)=a^2-x^2-y^2</m>. So, by
+(<xref ref="eq_SUdSgraph"/>),
+<md>
+<mrow>
+\text{Surface area}
+&amp;= \dblInt_{x^2+y^2\le a^2}\sqrt{1+f_x(x,y)^2+f_y(x,y)^2}\ \dee{x}\,\dee{y}
+</mrow><mrow>
+&amp;= \dblInt_{x^2+y^2\le a^2}\sqrt{1+4x^2+4y^2}\ \dee{x}\,\dee{y}
+</mrow>
+</md>
+Switching to polar coordinates,
+<md>
+<mrow>
+\text{Surface area}
+&amp;= \int_0^a\dee{r}\int_0^{2\pi}\dee{\theta}\ r\sqrt{1+4r^2}
+</mrow><mrow>
+&amp;= 2\pi \int_0^a\dee{r}\ r\sqrt{1+4r^2}
+</mrow><mrow>
+&amp;= 2\pi \int_1^{1+4a^2}\frac{\dee{s}}{8}\ \sqrt{s}\qquad
+\text{with }  s=1+4r^2, \dee{s}=8r\,\dee{r}
+</mrow><mrow>
+&amp;=\frac{\pi}{4}\ \frac{2}{3}s^{3/2}\bigg|_{s=1}^{s=1+4a^2}
+</mrow><mrow>
+&amp;=\frac{\pi}{6}\big[{(1+4a^2)}^{3/2}-1\big]
+</mrow>
+</md>
+</p>
+
+</solution>
+</exercise>
+
+<exercise><title><fromexam>M253 2014D</fromexam></title>
+<statement><p>
+Find the area of the portion of the cone <m>z^2 = x^2 + y^2</m>
+lying between the planes <m>z = 2</m> and <m>z = 3</m>.
+</p></statement>
+
+<answer><p>
+<m>5\sqrt{2}\pi</m>
+</p></answer>
+
+<solution><p>
+First observe that any point <m>(x,y,z)</m> on the cone lies between the
+planes <m>z=2</m> and <m>z=3</m> if and only if <m>4\le x^2+y^2\le 9</m>.
+</p>
+
+<p>The equation of the cone can be rewritten in the form
+<m>z=f(x,y)</m> with <m>f(x,y)=\sqrt{x^2+y^2}</m>. Note that
+<md>
+<mrow>
+f_x(x,y)=\frac{x}{\sqrt{x^2+y^2}}\qquad
+f_y(x,y)=\frac{y}{\sqrt{x^2+y^2}}
+</mrow>
+</md>
+So, by
+(<xref ref="eq_SUdSgraph"/>),
+<md>
+<mrow>
+\text{Surface area}
+&amp;= \dblInt_{4\le x^2+y^2\le 9}\sqrt{1+f_x(x,y)^2+f_y(x,y)^2}\ \dee{x}\,\dee{y}
+</mrow><mrow>
+&amp;= \dblInt_{4\le x^2+y^2\le 9}
+    \sqrt{1+\frac{x^2}{x^2+y^2}+\frac{y^2}{x^2+y^2}}\ \dee{x}\,\dee{y}
+</mrow><mrow>
+&amp;=\sqrt{2} \dblInt_{4\le x^2+y^2\le 9} \dee{x}\,\dee{y}
+</mrow>
+</md>
+Now the domain of integration is a circular washer with outside radius <m>3</m>
+and inside radius <m>2</m> and hence of area <m>\pi(3^2-2^2)=5\pi</m>. So the surface area is <m>5\sqrt{2}\pi</m>.
+</p>
+
+</solution>
+</exercise>
+
+<exercise><title><fromexam>M253 2015D</fromexam></title>
+<statement><p>
+Determine the surface area of the surface given by
+<m>z = \frac{2}{3}\big(x^{3/2} + y^{3/2}\big)</m>, over the square
+<m>0 \le  x \le  1</m>, <m>0 \le  y \le  1</m>.
+</p></statement>
+
+<answer><p>
+<m>\frac{4}{15}\big[9\sqrt{3}-8\sqrt{2}+1\big]</m>
+</p></answer>
+
+<solution><p>
+The equation of the surface is of the form
+<m>z=f(x,y)</m> with <m>f(x,y)=\frac{2}{3}\big(x^{3/2} + y^{3/2}\big)</m>. Note that
+<md>
+<mrow>
+f_x(x,y)=\sqrt{x}\qquad
+f_y(x,y)=\sqrt{y}
+</mrow>
+</md>
+So, by (<xref ref="eq_SUdSgraph"/>),
+<md>
+<mrow>
+\text{Surface area}
+&amp;= \int_0^1\dee{x}\int_0^1\dee{y}\ \sqrt{1+f_x(x,y)^2+f_y(x,y)^2}
+</mrow><mrow>
+&amp;= \int_0^1\dee{x}\int_0^1\dee{y}\ \sqrt{1+x+y}
+</mrow><mrow>
+&amp;= \int_0^1\dee{x}\ \Big[\frac{2}{3}(1+x+y)^{3/2}\Big]_{y=0}^{y=1}
+</mrow><mrow>
+&amp;= \frac{2}{3}\int_0^1\dee{x}\ \big[(2+x)^{3/2}-(1+x)^{3/2}\big]
+</mrow><mrow>
+&amp;= \frac{2}{3}\ \frac{2}{5}\Big[(2+x)^{5/2}-(1+x)^{5/2}\Big]_{x=0}^{x=1}
+</mrow><mrow>
+&amp;= \frac{4}{15} \big[3^{5/2}-2^{5/2}-2^{5/2}+1^{5/2}\big]
+</mrow><mrow>
+&amp;= \frac{4}{15}\big[9\sqrt{3}-8\sqrt{2}+1\big]
+</mrow>
+</md>
+</p></solution>
+</exercise>
+
+<exercise><title><fromexam>M253 2016D</fromexam></title>
+<statement><p>
+<ol label="a">
+<li>
+To find the surface area of the surface <m>z = f (x,y)</m> above the region <m>D</m>,
+we integrate <m>\dblInt_D F(x,y)\ \dee{A}</m>. What is <m>F(x,y)</m>?
+</li>
+<li><p>
+Consider a <q>Death Star</q>,  a ball of radius <m>2</m> centred at the origin
+with another ball of radius <m>2</m> centred at <m>(0, 0, 2\sqrt{3})</m> cut out of it.
+The diagram below shows the slice where <m>y = 0</m>.
+</p>
+
+<sidebyside width="75%">
+  <image source="pfigs/OE253_16D_2"/>
+</sidebyside>
+
+<p>
+<ol label="(i)">
+<li>
+The Rebels want to paint part of the surface of Death Star hot pink; specifically, the concave part (indicated with a thick line in the diagram).
+To help them determine how much paint is needed, carefully fill in the
+missing parts of this integral:
+<me>
+\text{surface area} =
+\int_{\fbox{$\vphantom{L}\qquad$}}^{\fbox{$\vphantom{L}\qquad$}}
+\int_{\fbox{$\vphantom{L}\qquad$}}^{\fbox{$\vphantom{L}\qquad$}}
+\fbox{$\vphantom{L}\qquad\qquad\qquad$}\ \dee{r}\,\dee{\theta}
+</me>
+</li>
+<li>
+What is the total surface area of the Death Star?
+</li>
+</ol></p>
+</li>
+</ol>
+</p></statement>
+
+<hint><p>
+The total surface area of (b) (ii) can be determined without evaluating
+any integrals.
+</p></hint>
+
+<answer><p>
+(a)  <m>F(x,y) = \sqrt{1+f_x(x,y)^2+f_y(x,y)^2}</m>
+</p><p>
+(b) (i) <m>\int_0^{2\pi}\dee{\theta}\int_0^1\dee{r}\ \frac{2r}{\sqrt{4-r^2}}</m>
+</p><p>
+(b) (ii) <m>\frac{32\pi}{3}</m>
+</p></answer>
+
+<solution><p>
+(a)
+By (<xref ref="eq_SUdSgraph"/>),
+<m>F(x,y) = \sqrt{1+f_x(x,y)^2+f_y(x,y)^2}</m>.
+</p>
+
+<p>(b)  (i) The <q>dimple</q> to be painted is part of the upper sphere
+<m>x^2+y^2+\big(z-2\sqrt{3}\big)^2=4</m>. It is on the bottom half of the sphere
+and so has equation <m>z=f(x,y)=2\sqrt{3}-\sqrt{4-x^2-y^2}</m>. Note that
+<md>
+<mrow>
+f_x(x,y) = \frac{x}{\sqrt{4-x^2-y^2}}\qquad
+f_y(x,y) = \frac{y}{\sqrt{4-x^2-y^2}}
+</mrow>
+</md>
+The point on the dimple with the largest value of <m>x</m> is
+<m>(1,0,\sqrt{3})</m>. (It is marked by a dot in the figure above.) The dimple
+is invariant under rotations around the <m>z</m>--axis and so has <m>(x,y)</m>
+running over <m>x^2+y^2\le 1</m>. So, by
+(<xref ref="eq_SUdSgraph"/>),
+<md>
+<mrow>
+\text{Surface area}
+&amp;= \dblInt_{x^2+y^2\le 1}\sqrt{1+f_x(x,y)^2+f_y(x,y)^2}\ \dee{x}\,\dee{y}
+</mrow><mrow>
+&amp;= \dblInt_{x^2+y^2\le 1}\sqrt{1+\frac{x^2}{4-x^2-y^2}
+                                +\frac{y^2}{4-x^2-y^2}}\ \dee{x}\,\dee{y}
+</mrow><mrow>
+&amp;= \dblInt_{x^2+y^2\le 1}\frac{2}{\sqrt{4-x^2-y^2}}\ \dee{x}\,\dee{y}
+</mrow>
+</md>
+Switching to polar coordinates,
+<md>
+<mrow>
+\text{Surface area}
+&amp;= \int_0^{2\pi}\dee{\theta}\int_0^1\dee{r}\ \frac{2r}{\sqrt{4-r^2}}
+</mrow>
+</md>
+</p>
+
+<p>(b) (ii) Observe that if we flip the dimple up by reflecting it
+in the plane <m>z=\sqrt{3}</m>, as in the figure below, the <q>Death Star</q>
+becomes a perfect ball of radius <m>2</m>.
+</p>
+<sidebyside width="75%">
+<image source="pfigs/OE253_16D_2a"/>
+</sidebyside>
+
+<p>
+The area of the pink dimple in the figure above is identical to the area
+of the blue cap in that figure. So the total surface area of the
+Death Star is exactly the surface area of a sphere of radius <m>2</m> and so
+is <m>\frac{4}{3}\pi 2^3=\frac{32\pi}{3}</m>.
+</p>
+
+</solution>
+</exercise>
+
+<exercise>
+<statement><p> [M200 2003A]
+Find the area of the cone <m>z^2=x^2+y^2</m> between <m>z=1</m> and <m>z=16</m>.
+</p></statement>
+
+<answer><p>
+<m>255\sqrt{2}\pi\approx 1132.9</m>
+</p></answer>
+
+<solution><p>
+On the upper half of the cone
+<me>
+z=f(x,y)=\sqrt{x^2+y^2}\qquad
+f_x(x,y)=\frac{x}{\sqrt{x^2+y^2}}\qquad
+f_y(x,y)=\frac{y}{\sqrt{x^2+y^2}}
+</me>
+so that
+<me>
+\dee{S}=\sqrt{1+f_x(x,y)^2+f_y(x,y)^2}\,\dee{x}\,\dee{y}
+=\sqrt{1+\frac{x^2}{x^2+y^2}+\frac{y^2}{x^2+y^2}}\,\dee{x}\,\dee{y}
+=\sqrt{2}\,\dee{x}\,\dee{y}
+</me>
+and
+<md>
+<mrow>
+\text{Area}&amp;= \dblInt_{1\le x^2+y^2\le 16^2}\sqrt{2}\,\dee{x}\,\dee{y}
+</mrow><mrow>
+&amp;=\sqrt{2}\,\Big[\text{area of }\Set{(x,y)}{x^2+y^2\le 16^2}-
+           \text{area of }\Set{(x,y)}{x^2+y^2\le 1}\Big]
+</mrow><mrow>
+&amp;=\sqrt{2}\,\big[\pi 16^2-\pi 1^2\big]
+=255\sqrt{2}\pi\approx 1132.9
+</mrow>
+</md>
+</p></solution>
+</exercise>
+
+<exercise>
+<statement><p> [M200 2001D]
+Find the surface area of that part of the hemisphere
+<m>z=\sqrt{a^2-x^2-y^2}</m> which lies within the cylinder <m>\big(x-\frac{a}{2}\big)^2+y^2=\big(\frac{a}{2}\big)^2</m>.
+</p></statement>
+
+<answer><p>
+<m>a^2[\pi-2]</m>
+</p></answer>
+
+<solution><p>
+We are to find the surface area of part of a hemisphere. On the hemisphere
+<md>
+<mrow>
+z=f(x,y)=\sqrt{a^2-x^2-y^2}\qquad
+f_x(x,y)=-\frac{x}{\sqrt{a^2-x^2-y^2}}\qquad
+f_y(x,y)=-\frac{y}{\sqrt{a^2-x^2-y^2}}
+</mrow>
+</md>
+so that
+<md>
+<mrow>
+\dee{S}&amp;=\sqrt{1+f_x(x,y)^2+f_y(x,y)^2}\,\dee{x}\,\dee{y}
+=\sqrt{1+\frac{x^2}{a^2-x^2-y^2}+\frac{y^2}{a^2-x^2-y^2}}\,\dee{x}\,\dee{y}
+</mrow><mrow>
+&amp;=\sqrt{\frac{a^2}{a^2-x^2-y^2}}\,\dee{x}\,\dee{y}
+</mrow>
+</md>
+In polar coordinates, this is <m>\dee{S}=\frac{a}{\sqrt{a^2-r^2}}\,r\,\dee{r}\,\dee{\theta}</m>.
+We are to find the surface area of the part of the hemisphere that is
+inside the cylinder, <m>x^2-ax+y^2=0</m>, which is polar coordinates is
+becomes <m>r^2-ar\cos\theta=0</m> or <m>r=a\cos\theta</m>. The top half of the domain of
+integration is sketched below.
+</p>
+
+<sidebyside width="75%">
+<image source="pfigs/OE01DQ7"/>
+</sidebyside>
+
+<p>
+So the
+<md>
+<mrow>
+{\rm Surface\ Area}
+&amp;= 2\int_0^{\pi/2}\dee{\theta}\int_0^{a\cos\theta}\dee{r}\ r
+                                      \frac{a}{\sqrt{a^2-r^2}}
+= 2a\int_0^{\pi/2}\dee{\theta}\ \Big[-\sqrt{a^2-r^2}\,\Big]_0^{a\cos\theta}
+
+</mrow><mrow>
+&amp;= 2a\int_0^{\pi/2}\dee{\theta}\ \big[a-a\sin\theta\big]
+</mrow><mrow>
+&amp;= 2a^2\Big[\theta+\cos\theta\Big]_0^{\pi/2}
+=a^2[\pi-2]
+</mrow>
+</md>
+</p></solution>
+</exercise>
+
+<exercise>
+<statement><p>
+The cylinder <m>\ x^2+y^2=2x\ </m> cuts out a portion
+<m>S</m> of the upper half of the cone <m>\ x^2+y^2=z^2</m>. Compute
+<me>
+\dblInt_S(x^4-y^4+y^2z^2-z^2x^2+1)\,\dee{S}
+</me>
+</p></statement>
+
+<hint><p>
+On <m>S</m>, <m>(x,y)</m> runs over the interior of <m>x^2+y^2=2x</m>,
+or equivalently, the interior of <m>(x-1)^2+y^2=1</m>.
+</p></hint>
+
+<answer><p>
+<m>\sqrt{2}\ \pi</m>
+</p></answer>
+
+<solution><p>
+The upper half cone obeys <m>f(x,y,z)=x^2+y^2-z^2=0</m>. So,
+by (<xref ref="eq_SUdSimplicit"/>),
+<me>
+\dee{S}=\left|\frac{\vnabla f}{\vnabla f\cdot\hk}\right|\dee{x}\,\dee{y}
+=\left|\frac{2x\hi+2y\hj-2z\hk}{-2z}\right|\dee{x}\,\dee{y}
+=\frac{\sqrt{x^2+y^2+z^2}}{z}\dee{x}\,\dee{y}
+</me>
+But on the cone <m>x^2+y^2=z^2</m>, and <m>z \gt 0</m>, so that
+<me>
+\dee{S}=\frac{\sqrt{x^2+y^2+z^2}}{z}\dee{x}\,\dee{y}
+=\frac{\sqrt{2z^2}}{z}\dee{x}\,\dee{y}
+=\sqrt{2}\,\dee{x}\,\dee{y}
+</me>
+and
+<md>
+<mrow>
+x^4-y^4+y^2z^2-z^2x^2+1
+&amp;=x^4-y^4+y^2\big(x^2+y^2\big)-\big(x^2+y^2)x^2+1
+=1
+</mrow>
+</md>
+We have to integrate <m>(x,y)</m> over the interior of <m>x^2+y^2=2x</m>,
+or equivalently, the interior of <m>(x-1)^2+y^2=1</m>,
+which is the disk
+<me>
+D=\Set{(x,y)}{(x-1)^2+y^2\le 1}
+</me>
+So
+<md>
+<mrow>
+\dblInt_S\overbrace{(x^4-y^4+y^2z^2-z^2x^2+1)}^{=1}\,\dee{S}
+&amp;=\sqrt{2}\dblInt_D \dee{x}\,\dee{y}
+=\sqrt{2}\ \text{Area}(D)
+=\sqrt{2}\ \pi
+</mrow>
+</md>
+</p></solution>
+</exercise>
+
+<exercise>
+<statement><p>
+Find the surface area of the torus obtained by rotating the
+circle <m>(x-R)^2+z^2=r^2</m> (the circle is contained in the <m>xz</m>-plane)
+ about the <m>z</m>-axis.
+</p></statement>
+
+<hint><p>
+See Example <xref ref="SURdonut"/> for a parametrization
+of the torus.
+</p></hint>
+
+<answer><p>
+<m>(2\pi)^2 Rr</m>
+</p></answer>
+
+<solution><p>
+As we saw in Example <xref ref="SURdonut"/>,
+the torus may be parametrized by
+<me>
+\vr(\theta,\psi)
+  = (R+r\cos\theta)\cos\psi\,\hi
+    +(R+r\cos\theta)\sin\psi\,\hj
+    + r\sin\theta\,\hk\qquad
+0\le\theta,\psi\le 2\pi
+</me>
+Then
+<me>
+\pdiff{\vr}{\psi}=(R+r\cos\theta)\big[-\sin\psi\hi+\cos\psi\hj\big]\qquad
+\pdiff{\vr}{\theta}=r\big[-\sin\theta\cos\psi\,\hi-\sin\theta\sin\psi\,\hj
+               +\cos\theta\,\hk\big]
+</me>
+and
+<md>
+<mrow>
+\pdiff{\vr}{\psi}\times\pdiff{\vr}{\theta}
+&amp;=r(R+r\cos\theta)\ \big[-\sin\psi\hi+\cos\psi\hj\big]\times
+           \big[-\sin\theta\cos\psi\,\hi-\sin\theta\sin\psi\,\hj
+               +\cos\theta\,\hk\big]
+</mrow><mrow>
+&amp;=r(R+r\cos\theta)\det\left[\begin{matrix}
+                 \hi   &amp;   \hj               &amp;   \hk
+</mrow><mrow>
+            -\sin\psi  &amp; \cos\psi            &amp; 0
+</mrow><mrow>
+   -\sin\theta\cos\psi &amp; -\sin\theta\sin\psi &amp; \cos\theta
+    \end{matrix}\right]
+</mrow><mrow>
+&amp;=r(R+r\cos\theta) \big[\cos\psi\cos\theta\,\hi +\sin\psi\cos\theta\,\hj
+                          +\sin\theta\,\hk\big]
+</mrow>
+</md>
+As <m>\big[\cos\psi\cos\theta\,\hi +\sin\psi\cos\theta\,\hj
+                          +\sin\theta\,\hk\big]</m> is a unit vector,
+(we could have shortened this computation by observing that <m>-\sin\psi\,\hi+\cos\psi\,\hj</m> and
+ <m>-\sin\theta\cos\psi\,\hi-\sin\theta\sin\psi\,\hj+\cos\theta\,\hk</m>
+are mutually perpendicular unit vectors, so that their cross product is
+automatically a unit vector) and
+<me>
+\left|\pdiff{\vr}{\psi}\times\pdiff{\vr}{\theta}\right|
+=r(R+r\cos\theta)
+\implies \dee{S}=r(R+r\cos\theta)\,d\psi\,\dee{\theta}
+</me>
+The total surface area of the torus is
+<me>
+r\int_0^{2\pi}\dee{\theta}\int_0^{2\pi}d\psi\,(R+r\cos\theta)
+=2\pi r \int_0^{2\pi}\dee{\theta}\,(R+r\cos\theta)
+=(2\pi)^2 Rr
+</me>
+</p></solution>
+</exercise>
+
+<exercise>
+<statement><p>
+A spherical shell of radius <m>a</m> is centred at the origin.
+Find the centroid (i.e. the centre of mass with constant density)
+of the part of the sphere that lies in the first octant.
+</p></statement>
+
+<hint><p>
+Call the part of the sphere in the first octant <m>S</m>.
+By definition, the centroid is  <m>(\bar x,\bar y,\bar z)</m> with
+<me>
+\bar x = \frac{\dblInt_S x\ \dee{S}}{\dblInt_S \ \dee{S}}\qquad
+\bar y = \frac{\dblInt_S y\ \dee{S}}{\dblInt_S \ \dee{S}}\qquad
+\bar z = \frac{\dblInt_S z\ \dee{S}}{\dblInt_S \ \dee{S}}
+</me>
+The integrals will be easy if you use spherical coordinates.
+You can reduce the number of integrals evaluated by using symmetry.
+</p></hint>
+
+<answer><p>
+<m>\left(\frac{a}{2}\,,\,\frac{a}{2}\,,\,\frac{a}{2}\right)</m>
+</p></answer>
+
+<solution><p>
+By symmetry, the centroid <m>(\bar x,\bar y,\bar z)</m>
+obeys <m>\bar x=\bar y=\bar z</m>. Parametrize the sphere
+using spherical coordinates.
+<me>
+\vr(\theta,\varphi) = a\sin\varphi\cos\theta\,\hi
+                     +a\sin\varphi\sin\theta\,\hj
+                     +a\cos\varphi\,\hk
+</me>
+Then
+<md>
+<mrow>
+\pdiff{\vr}{\theta}
+       =-a\sin\varphi\sin\theta\,\hi+a\sin\varphi\cos\theta\,\hj\qquad
+\pdiff{\vr}{\varphi}
+       =a\cos\varphi\cos\theta\,\hi+a\cos\varphi\sin\theta\,\hj
+               -a\sin\varphi\,\hk
+</mrow>
+</md>
+so that
+<md>
+<mrow>
+\pdiff{\vr}{\theta}\times\pdiff{\vr}{\varphi}
+&amp;=\det\left[\begin{matrix}
+                    \hi   &amp;       \hj               &amp;   \hk \\
+  -a\sin\varphi\sin\theta &amp; a\sin\varphi\cos\theta  &amp; 0 \\
+   a\cos\varphi\cos\theta &amp; a\cos\varphi\sin\theta  &amp; -a\sin\varphi
+    \end{matrix}\right]
+
+</mrow><mrow>
+&amp;=-a^2\sin^2\varphi\cos\theta\,\hi-a^2\sin^2\varphi\sin\theta\,\hj
+           -a^2\sin\varphi\cos\varphi\,\hk
+</mrow><mrow>
+\implies \dee{S}&amp;=\left|\pdiff{\vr}{\theta}\times\pdiff{\vr}{\varphi}\right|
+              \,\dee{\theta}\,\dee{\varphi}
+           =a^2\sin\varphi\,\dee{\theta}\,\dee{\varphi}
+</mrow>
+</md>
+As the surface area of the part of the sphere in the first octant is
+<m>\frac{1}{8}4\pi a^2=\frac{\pi a^2}{2}</m>
+<md>
+<mrow>
+\bar x=\bar y=\bar z
+&amp;=\frac{\dblInt_S z\,\dee{S}}{\dblInt_S\,\dee{S}}
+=\frac{1}{\pi a^2/2}\int_0^{\pi/2}\dee{\theta}\int_0^{\pi/2}\dee{\varphi} \
+(a^2\sin\varphi)(\overbrace{a\cos\varphi}^{z})
+</mrow><mrow>
+&amp;=\frac{2a}{\pi}\frac{\pi}{2}\int_0^{\pi/2}\dee{\varphi} \ \sin\varphi\cos\varphi
+=a\bigg[\frac{1}{2}\sin^2\varphi\bigg]_0^{\pi/2}
+=\frac{a}{2}
+</mrow>
+</md>
+</p></solution>
+</exercise>
+
+<exercise>
+<statement><p>
+Find the area of
+ that part of the cylinder <m>x^2+y^2=2ay</m> lying outside <m>z^2=x^2+y^2</m>.
+</p></statement>
+
+<hint><p>
+Before parametrizing the cylinder, express
+<m>x^2+y^2=2ay</m> in cylindrical coordinates.
+</p></hint>
+
+<answer><p>
+<m>16a^2</m>
+</p></answer>
+
+<solution><p>
+In cylindrical coordinates
+<me>
+x=r\cos\theta\qquad
+y=r\sin\theta\qquad
+z=z
+</me>
+In these coordinates the equation, <m>x^2+y^2=2ay</m>, of the cylinder
+becomes
+<me>
+r^2=2ar\sin\theta\qquad\text{or}\qquad r=2a\sin\theta
+</me>
+That is, <m>r=f(\theta)</m> with <m>f(\theta) =2a\sin\theta</m>.
+Parametrize the cylinder by
+<m>\vr(\theta,z) = x(\theta,z)\,\hi + y(\theta,z)\,\hj + z(\theta,z)\,\hk</m>
+with
+<md>
+<mrow>
+x(\theta,z)&amp;=f(\theta)\cos\theta=2a\sin\theta\cos\theta=a\sin2\theta
+</mrow><mrow>
+y(\theta,z)&amp;=f(\theta)\sin\theta=2a\sin\theta\sin\theta=a(1-\cos2\theta)
+</mrow><mrow>
+z(\theta,z)&amp;=z
+</mrow>
+</md>
+Under this parametrization,
+<md>
+<mrow>
+\pdiff{\vr}{\theta}=2a\cos2\theta\,\hi+2a\sin2\theta\,\hj\qquad
+\pdiff{\vr}{z}=\hk
+&amp;\implies \pdiff{\vr}{\theta}\times\pdiff{\vr}{z}
+=-2a\cos2\theta\,\hj+2a\sin2\theta\,\hi
+</mrow><mrow>
+&amp;\implies \dee{S}=\left|\pdiff{\vr}{\theta}\times\pdiff{\vr}{z}\right|\,
+                         \dee{\theta}\,\dee{z}
+                 =2a\,\dee{\theta}\,\dee{z}
+</mrow>
+</md>
+We still have to determine the limits of integration.
+The figure on the left below provides a top view of the cylinder.
+</p>
+
+<sidebyside width="45%">
+  <image source="pfigs/coneCylA"/>
+  <image source="pfigs/coneCyl"/>
+</sidebyside>
+
+<p>
+From it we see that <m>0\le\theta\le\pi</m>.
+The cone <m>z^2=x^2+y^2=r^2</m> (i.e. <m>z=\pm r</m>)
+and the cylinder <m>r=2a\sin\theta</m> intersect at
+<m>z^2=r^2=4a^2\sin^2\theta</m>.
+So, for each fixed <m>\theta</m>, <m>z</m> runs from <m>-2a\sin\theta</m> to <m>z=+2a\sin\theta</m>.
+(See the figure on the right above. It shows a constant <m>\theta</m>
+cross-section.) Finally,
+<md>
+<mrow>
+{\rm Area} &amp;= \int_{|z|\le 2a\sin\theta}2a\,\dee{\theta}\,\dee{z}
+=2a\int_0^\pi \!\!\dee{\theta}\int_{-2a\sin\theta}^{2a\sin\theta} \!\!\!\dee{z}
+=8a^2\int_0^\pi \!\!\dee{\theta}\ \sin\theta
+=8a^2\Big[-\cos\theta\Big]_0^\pi
+</mrow><mrow>
+&amp;=16a^2
+</mrow>
+</md>
+</p></solution>
+</exercise>
+
+<exercise><title><fromexam>M317 2000D</fromexam></title>
+<statement><p>
+Let <m>a</m> and <m>b</m> be positive constants, and let <m>\cS</m> be
+the part of the conical surface
+<me>
+a^2 z^2 = b^2(x^2+y^2)
+</me>
+where <m>0\le z\le b</m>.
+Consider the surface integral
+<me>
+I = \dblInt_\cS (x^2+y^2)\,\dee{S}.
+</me>
+<ol label="a">
+<li>
+Express <m>I</m> as a double integral over a disk
+in the <m>xy</m>-plane.
+</li>
+<li>
+Use the parametrization <m>x=t\cos\theta</m>, <m>y=t\sin\theta</m>, etc.,
+to express <m>I</m> as a double integral over a suitable region in the
+<m>t\theta</m>-plane.
+</li>
+<li>
+Evaluate <m>I</m> using the method of your choice.
+</li>
+</ol>
+</p>
+
+</statement>
+
+<answer><p>
+<m>\frac{\pi}{ 2}a^3\sqrt{a^2+b^2}</m>
+</p></answer>
+
+<solution><p>
+(a)
+This right circular cone symmetric about the <m>z</m>-axis projects down
+onto a disk <m>\cD</m> in the plane <m>z=0</m>.  Setting <m>z=b</m> gives
+<me>
+\cD=\Set{(x,y,z)}{x^2 + y^2 \le a^2,\  z=0}
+</me>
+Since <m>G(x,y,z) = b^2(x^2+y^2)-a^2z^2</m> is constant on <m>\cS</m>, the
+area elements <m>\dee{S}</m> on <m>\cS</m> are related to area elements
+<m>\dee{x}\dee{y}</m> on <m>\cD</m> as follows:
+<me>
+\dee{S} = \frac{|\nabla G(x,y,z)|}{ |\nabla G(x,y,z)\cdot\hk|}\,\dee{x}\dee{y}
+= \frac{2|(b^2 x,b^2 y,-a^2 z)|}{2|a^2z|}\,\dee{x}\dee{y}
+= \frac{\sqrt{b^4(x^2+y^2)+a^4 z^2}}{ a^2 z}\,\dee{x}\dee{y}
+</me>
+by (<xref ref="eq_SUdSimplicit"/>).
+The defining equation for <m>\cS</m> gives <m>z=\frac{b}{ a}\sqrt{x^2+y^2}</m>,
+so
+<me>
+\dee{S}
+= \frac{\sqrt{b^4(x^2+y^2)+a^2 b^2(x^2+y^2)}}{ a\sqrt{b^2(x^2+y^2)}}\,\dee{x}\dee{y}
+= \frac{1}{ a}\sqrt{a^2+b^2}\,\dee{x}\dee{y}.
+</me>
+Hence <m>I = \frac{\sqrt{a^2+b^2}}{ a}\dblInt_\cD(x^2+y^2)\,\dee{x}\dee{y}</m>.
+</p>
+
+<p>(b)
+Or, parametrize the surface <m>\cS</m> using <m>\theta</m> and <m>t</m> as
+follows:
+<me>
+x = t\cos\theta,\
+y=t\sin\theta,\
+z = \frac{b}{ a}\sqrt{x^2+y^2} = \frac{b}{ a}t,
+\qquad
+0\le\theta\le 2\pi,\ 0\le t\le a.
+\tag{$*$}
+</me>
+Then we have, by (<xref ref="eq_SUdSparam"/>),
+<md>
+<mrow>
+&amp;\frac{\partial\vr}{\partial t}\times\frac{\partial\vr}{\partial\theta}
+= \det\left[\begin{matrix} \hi &amp; \hj &amp; \hk \\
+\cos\theta &amp; \sin\theta &amp; b/a \\
+-t\sin\theta &amp; t\cos\theta &amp; 0 \end{matrix}\right]
+= \big(-\frac{b}{ a}t\cos\theta, -\frac{b}{ a}t\sin\theta, t\big),
+
+</mrow><mrow>
+\text{ so}\quad
+&amp;\dee{S} = \Big|\frac{\partial\vr}{\partial t}\times
+            \frac{\partial\vr}{\partial\theta}\Big|\,\dee{t}\,\dee{\theta}
+= t\sqrt{1+b^2/a^2}\,\dee{t}\,\dee{\theta}.
+</mrow>
+</md>
+It follows that for the rectangular region <m>\cR</m> of the
+<m>t\theta</m>-plane described in<nbsp/><m>(*)</m>,
+<me>
+I = \dblInt_\cR \big(t^2\big)t\sqrt{1+b^2/a^2}\,\dee{t}\,\dee{\theta}.
+</me>
+</p>
+
+<p>(c)
+Using polar coordinates in<nbsp/>(a) would give
+<me>
+I
+= \frac{\sqrt{a^2+b^2}}{ a}
+  \int_{\theta=0}^{2\pi} \int_{r=0}^a r^2\,r\,\dee{r}\,\dee{\theta}
+=\frac{\pi}{ 2}a^3\sqrt{a^2+b^2}.
+</me>
+Direct integration in<nbsp/>(b) gives the same thing, because
+<me>
+I
+= \dblInt_\cD \big(t^2\big)t\sqrt{1+b^2/a^2}\,\dee{t}\,\dee{\theta}
+= \frac{\sqrt{a^2+b^2}}{ a}\int_{\theta=0}^{2\pi} \int_{t=0}^a
+t^3\,\dee{t}\,\dee{\theta}.
+</me>
+</p></solution>
+</exercise>
+
+<exercise>
+<statement><p>
+Evaluate, for each of the following,
+ the flux <m>\ \dblInt_S\vF\cdot\hn \,\dee{S}\ </m> where <m>\hn</m> is
+the outward normal to the surface <m>S</m>.
+<ol label="a">
+<li>
+<m>\ \vF={(x^2+y^2+z^2)}^n(x\,\hi+y\,\hj+z\,\hk)\ </m>
+and the surface <m>S</m> is the sphere <m>x^2+y^2+z^2=a^2</m>.
+</li>
+<li>
+<m>\ \vF=x\,\hi+y\,\hj+z\,\hk\ </m>
+and <m>S</m> is the surface of the rectangular box <m>0\le x\le a</m>, <m>0\le y\le
+b</m>, <m>0\le z\le c</m>.
+</li>
+<li>
+<m>\ \vF=y\,\hi+z\,\hk\ </m>
+and <m>S</m> is the surface of the solid cone <m>0\le z\le 1-\sqrt{x^2+y^2}</m>.
+</li>
+</ol>
+</p></statement>
+
+<hint><p>
+(a) The integral can be easily evaluated by using that the sphere
+has surface area <m>4\pi a^2</m>.
+</p>
+
+<p>(c) Use cylindrcial coordinates for the top part of the cone.
+</p></hint>
+
+<answer><p>
+(a) <m>4\pi a^{2n+3}</m></p><p>
+(b) <m>3abc</m></p><p>
+(c) <m>\frac{\pi}{3}</m>
+</p></answer>
+
+<solution><p>
+(a) The surface is <m>g(x,y,z)=x^2+y^2+z^2-a^2=0</m>. So,
+on the surface of the sphere,
+<md>
+<mrow>
+\hn =\frac{\vnabla g}{|\vnabla g|}=\frac{x\hi+y\hj+z\hk}{\sqrt{x^2+y^2+z^2}}
+&amp;\ \Rightarrow\   \vF\cdot\hn = \big(x^2+y^2+z^2\big)^{n++1-1/2}
+={\big(a^2\big)}^{n+1/2}=a^{2n+1}
+</mrow><mrow>
+&amp;\ \Rightarrow\  \dblInt_S\vF\cdot\hn \,\dee{S}\ =a^{2n+1}\dblInt_S\,\dee{S}
+=a^{2n+1}\text{Area}(S)
+=4\pi a^{2n+3}
+</mrow>
+</md>
+since the surface area of a sphere of radius <m>a</m> is <m>4\pi a^2</m>.
+</p>
+
+<p>(b) The box has six faces.
+<md>
+<mrow>
+S_1&amp;=\Set{(x,y,z)}{0\le x\le a,\ 0\le y\le b,\ z=c}\quad
+   \text{with outward normal } \hn=\hk
+</mrow><mrow>
+S_2&amp;=\Set{(x,y,z)}{0\le x\le a,\ 0\le y\le b,\ z=0}\quad
+   \text{with outward normal } \hn=-\hk
+</mrow><mrow>
+S_3&amp;=\Set{(x,y,z)}{0\le x\le a,\ 0\le z\le c,\ y=b}\quad
+   \text{with outward normal } \hn=\hj
+</mrow><mrow>
+S_4&amp;=\Set{(x,y,z)}{0\le x\le a,\ 0\le z\le c,\ y=0}\quad
+   \text{with outward normal } \hn=-\hj
+</mrow><mrow>
+S_5&amp;=\Set{(x,y,z)}{0\le y\le b,\ 0\le z\le c,\ x=a}\quad
+   \text{with outward normal } \hn=\hi
+</mrow><mrow>
+S_6&amp;=\Set{(x,y,z)}{0\le y\le b,\ 0\le z\le c,\ x=0}\quad
+   \text{with outward normal } \hn=-\hi
+</mrow>
+</md>
+</p>
+
+<sidebyside width="75%">
+<image source="pfigs/cubeDTT"/>
+</sidebyside>
+
+<p>
+For <m>S_1</m>, i.e. the <m>z=c</m> face, and <m>S_2</m>, i.e. the <m>z=0</m> face,
+<md alignment="alignat">
+<mrow>
+\int_{\Atop{z=c}{\rm face}}\vF\cdot\hn\, \dee{S}
+&amp;=\int_{\Atop{z=c}{\rm face}}\big(x\,\hi+y\,\hj+c\,\hk\big)\cdot \hk \  \dee{x}\,\dee{y}
+&amp;&amp;=c\int_{\Atop{z=c}{\rm face}}\dee{x}\,\dee{y}
+=abc
+
+</mrow><mrow>
+\int_{\Atop{z=0}{\rm face}}\vF\cdot\hn\, \dee{S}
+&amp;=\int_{\Atop{z=0}{\rm face}}\big(x\,\hi+y\,\hj+0\,\hk\big)\cdot(-\hk)\  \dee{x}\,\dee{y}
+&amp;&amp;=0
+</mrow>
+</md>
+because the <m>z=c</m> face has area <m>ab</m>.
+Similarly,
+<me>
+\int_{\Atop{x=0}{\rm face}}\vF\cdot\hn\, \dee{S}
+=\int_{\Atop{y=0}{\rm face}}\vF\cdot\hn\, \dee{S}
+=0\qquad
+\int_{\Atop{x=a}{\rm face}}\vF\cdot\hn\, \dee{S}
+=\int_{\Atop{y=b}{\rm face}}\vF\cdot\hn\, \dee{S}
+=abc
+</me>
+The total flux is <m>3abc</m>.
+</p>
+
+<p>(c)
+The base of the cone is <m>\Set{(x,y,z)}{x^2+y^2\le1,\ z=0}</m>
+and has (outward) normal <m>\hn=-\hk</m>. So
+The flux through the base is
+<me>
+\int_{{\rm base}}\vF\cdot\hn\, \dee{S}
+=\dblInt_{x^2+y^2\le 1}(y\hi)\cdot(-\hk)\,\dee{x}\,\dee{y}=0
+</me>
+In cylindrical coordinates
+<m>x=r\cos\theta</m>,
+<m>y=r\sin\theta</m>,
+<m>z=z</m>
+and the equation <m>z=1-\sqrt{x^2+y^2}</m> of the top part of the cone
+becomes <m>z=1-r</m>. So we may parametrize the top part of the cone by
+<me>
+\vr(r,\theta)=r\cos\theta\,\hi+r\sin\theta\,\hj
++(1-r)\,\hk
+\qquad\text{with } 0\le\theta\le 2\pi,\ 0\le r\le 1
+</me>
+Then
+<md>
+<mrow>
+\pdiff{\vr}{r}&amp;=\cos\theta\,\hi+\sin\theta\,\hj-\hk
+</mrow><mrow>
+\pdiff{\vr}{\theta}&amp;=-r\sin\theta\,\hi+r\cos\theta\,\hj
+</mrow><mrow>
+\pdiff{\vr}{r}\times\pdiff{\vr}{\theta}
+&amp;=\det\left[\begin{matrix}
+                    \hi   &amp; \hj   &amp; \hk
+</mrow><mrow>
+               \cos\theta &amp; \sin\theta &amp; -1
+</mrow><mrow>
+               -r\sin\theta &amp; r\cos\theta &amp; 0 \end{matrix}\right]
+</mrow><mrow>
+&amp;= -r\cos\theta\,\hi-r\sin\theta\,\hj+r\,\hk
+</mrow><mrow>
+\implies \hn\,\dee{S}&amp;=\pdiff{\vr}{r}\times\pdiff{\vr}{\theta}
+                      \, \dee{r}\,\dee{\theta}
+</mrow><mrow>
+&amp;=\big(-r\cos\theta\,\hi-r\sin\theta\,\hj+r\hk\big)\, \dee{r}\,\dee{\theta}
+</mrow>
+</md>
+by (<xref ref="SUR_paramGraph"/>).
+We have the orientation correct because the <m>\hk</m> component of <m>\hn</m> is
+positive. The flux through the top, as well as the total flux, is
+<md>
+<mrow>
+\int_{{\rm top}}\vF\cdot\hn\, \dee{S}
+&amp;=\int_0^1 \dee{r}\int_0^{2\pi}\dee{\theta}\
+                   \big(\overbrace{r\sin\theta}^{y}\,\hi
+                   +\overbrace{(1-r)}^{z}\,\hk\big)
+\cdot\big(-r\cos\theta\,\hi-r\sin\theta\,\hj+r\,\hk\big)
+</mrow><mrow>
+&amp;=\int_0^1 \dee{r}\int_0^{2\pi}\dee{\theta}\ \big(-r^2\sin\theta\cos\theta+r(1-r)\big)
+
+</mrow><mrow>
+&amp;= -\bigg[\int_0^1 \dee{r}\ r^2\bigg]
+         \bigg[\int_0^{2\pi}\dee{\theta}\ \frac{1}{2}\sin(2\theta)\bigg]
+   +2\pi \int_0^1 \dee{r}\big[r-r^2\big]
+</mrow><mrow>
+&amp;=-\frac{1}{3}\times 0+2\pi\Big[\frac{1}{2}-\frac{1}{3}\Big]
+=\frac{\pi}{3}
+</mrow>
+</md>
+</p></solution>
+</exercise>
+
+<exercise><title><fromexam>M317 2000A</fromexam></title>
+<statement><p>
+ Let <m>\cS</m> be the part of the surface <m>x^2+y^2+2z=2</m> that
+lies above the square <m>-1\le x\le 1</m>, <m>-1\le y\le 1</m>.
+<ol label="a">
+<li>
+Find <m>\ds\dblInt_\cS \frac{x^2+y^2}{\sqrt{1+x^2+y^2}}\ \dee{S}</m>.
+</li>
+<li>
+Find the flux of <m>\vF=x\hi+y\hj+z\hk</m> upward through <m>\cS</m>.
+</li>
+</ol>
+</p></statement>
+
+<answer><p>
+(a) <m>\frac{8}{3}</m></p><p>
+(b) <m>\frac{16}{3}</m>
+</p></answer>
+
+<solution><p>
+Let <m>G(x,y,z) = x^2+y^2+2z</m>. Then,
+by (<xref ref="eq_SUdSimplicit"/>),
+<md>
+<mrow>
+\hn\,\dee{S}&amp;=\frac{\vnabla G}{\vnabla G\cdot\hk}\ \dee{x}\dee{y}
+=\frac{2x\hi+2y\hj+2\hk}{2}\,\dee{x}\dee{y}
+=(x\hi+y\hj+\hk)\,\dee{x}\dee{y}
+</mrow><mrow>
+\frac{x^2+y^2}{\sqrt{1+x^2+y^2}}\ \dee{S}
+&amp;=\frac{x^2+y^2}{\sqrt{1+x^2+y^2}}\ \sqrt{1+x^2+y^2}\,\dee{x}\dee{y}
+=(x^2+y^2)\ \dee{x}\dee{y}
+</mrow><mrow>
+\vF\cdot\hn\,\dee{S}
+&amp;=\big[x\hi+y\hj+z\hk\big]\cdot\big[x\hi+y\hj+\hk\big]\,\dee{x}\dee{y}
+=\big[x^2+y^2+z\big]\,\dee{x}\dee{y}
+</mrow><mrow>
+&amp;=\Big[1+\frac{1}{2}(x^2+y^2)\Big]\,\dee{x}\dee{y}
+</mrow>
+</md>
+since <m>z=1-\half(x^2+y^2)</m> on <m>\cS</m>.
+</p>
+
+<p>(a)
+<md>
+<mrow>
+\dblInt_\cS \frac{x^2+y^2}{\sqrt{1+x^2+y^2}}\ \dee{S}
+&amp;=\dblInt_\cS (x^2+y^2)\ \dee{x}\dee{y}
+=4\int_0^1\dee{x}\int_0^1\dee{y}\ (x^2+y^2)
+</mrow><mrow>
+&amp;=4\int_0^1\dee{x}\ \big(x^2+\frac{1}{3}\big)
+=4\Big(\frac{1}{3}+\frac{1}{3}\Big)
+=\frac{8}{3}
+</mrow>
+</md>
+</p>
+
+<p>(b)
+<me>
+\dblInt_\cS \vF\cdot\hn\,\dee{S}
+=\int_{-1}^1\dee{x}\int_{-1}^1\dee{y}\ \Big[1+\frac{1}{2}(x^2+y^2)\Big]
+=2\times 2+\frac{1}{2}\times\frac{8}{3}
+=\frac{16}{3}
+</me>
+</p></solution>
+</exercise>
+
+<exercise><title><fromexam>M317 1999A</fromexam></title>
+<statement><p>
+Let <m>\cS</m> be the part of the surface <m>z=xy</m> that
+lies above the square <m>0\le x\le 1</m>, <m>0\le y\le 1</m> in the <m>xy</m>-plane.
+<ol label="a">
+<li>
+Find <m>\ds\dblInt_\cS \frac{x^2y}{\sqrt{1+x^2+y^2}}\ \dee{S}</m>.
+</li>
+<li>
+Find the flux of <m>\vF=x\hi+y\hj+\hk</m> upward through <m>\cS</m>.
+</li>
+</ol>
+</p></statement>
+
+<answer><p>
+(a) <m>\frac{1}{6}</m></p><p>
+(b) <m>\frac{1}{2}</m>
+</p></answer>
+
+<solution><p>
+ Let <m>G(x,y,z) = z-xy</m>. Then, using
+(<xref ref="eq_SUdSimplicit"/>),
+<md>
+<mrow>
+\hn\,\dee{S}&amp;=\frac{\vnabla G}{\vnabla G\cdot\hk}\ \dee{x}\dee{y}
+=\frac{-y\hi-x\hj+\hk}{1}\,\dee{x}\dee{y}
+=(-y\hi-x\hj+\hk)\,\dee{x}\dee{y}
+</mrow><mrow>
+\frac{x^2y}{\sqrt{1+x^2+y^2}}\ \dee{S}
+&amp;=\frac{x^2y}{\sqrt{1+x^2+y^2}}\ \sqrt{y^2+x^2+1}\,\dee{x}\dee{y}
+=x^2y\ \dee{x}\dee{y}
+</mrow><mrow>
+\vF\cdot\hn\,\dee{S}
+&amp;=\big[x\hi+y\hj+\hk\big]\cdot\big[-y\hi-x\hj+\hk\big]\,\dee{x}\dee{y}
+=\big[1-2xy\big]\,\dee{x}\dee{y}
+</mrow>
+</md>
+</p>
+
+<p>(a)
+<md>
+<mrow>
+\dblInt_\cS \frac{x^2y}{\sqrt{1+x^2+y^2}}\ \dee{S}
+&amp;=\dblInt_\cS x^2y\ \dee{x}\dee{y}
+=\int_0^1\dee{x}\int_0^1\dee{y}\ x^2y
+=\int_0^1\dee{x}\ \half x^2
+=\frac{1}{6}
+</mrow>
+</md>
+</p>
+
+<p>(b)
+<me>
+\dblInt_\cS \vF\cdot\hn\,\dee{S}
+=\int_0^1\dee{x}\int_0^1\dee{y}\ [1-2xy]
+=\int_0^1 \dee{x}\ [1-x]
+=1-\frac{1}{2}
+=\frac{1}{2}
+</me>
+</p></solution>
+</exercise>
+
+<exercise><title><fromexam>M317 2002A</fromexam></title>
+<statement><p>
+ Find the area of the part of the surface <m>z=y^{3/2}</m> that
+lies above <m>0\le x,y\le 1</m>.
+</p></statement>
+
+<answer><p>
+<m>\frac{8}{27}\left[\left(\frac{13}{4}\right)^{3/2}-1\right]</m>
+</p></answer>
+
+<solution><p>
+For the surface <m>z=f(x,y)=y^{3/2}</m>,
+<me>
+\dee{S}=\sqrt{1+f_x^2+f_y^2}\ \dee{x}\dee{y}
+=\sqrt{1+\Big(\frac{3}{2}\sqrt{y}\Big)^2}\ \dee{x}\dee{y}
+=\sqrt{1+\frac{9}{4}y}\ \dee{x}\dee{y}
+</me>
+by (<xref ref="eq_SUdSgraph"/>).
+So the area is
+<md>
+<mrow>
+\int_0^1\dee{x}\int_0^1\dee{y}\ \sqrt{1+\frac{9}{4}y}
+&amp;=\int_0^1\dee{x}\ \frac{8}{27}\Big[\Big(1+\frac{9}{4}y\Big)^{3/2}\Big]_0^1
+=\int_0^1\dee{x}\ \frac{8}{27}\Big[\Big(\frac{13}{4}\Big)^{3/2}-1\Big]
+</mrow><mrow>
+&amp;=\frac{8}{27}\left[\left(\frac{13}{4}\right)^{3/2}-1\right]
+</mrow>
+</md>
+</p></solution>
+</exercise>
+
+<exercise><title><fromexam>M317 1998D</fromexam></title>
+<statement><p>
+ Let <m>\cS</m> be spherical cap which consists of the part of
+the sphere <m>x^2+y^2+(z-2)^2=4</m> which lies under the plane <m>z=1</m>. Let
+<m>f(x,y,z)=(2-z)(x^2+y^2)</m>. Calculate
+<me>
+\dblInt_\cS f(x,y,z)\,\dee{S}
+</me>
+</p>
+
+</statement>
+
+<hint><p>
+Beware of signs. Note that <m>0\le z\le 1</m> on <m>\cS</m>.
+</p></hint>
+
+<answer><p>
+<m>9\pi</m>
+</p></answer>
+
+<solution><p>
+The surface is a sphere of radius <m>2</m> centered on <m>(0,0,2)</m>,
+The plane <m>z=1</m> intersects the sphere on the circle <m>x^2+y^2=3</m>.
+Let <m>F(x,y,z)=x^2+y^2+(z-2)^2</m>. Then, by (<xref ref="eq_SUdSimplicit"/>)
+in the CLP-4 text,
+<md>
+<mrow>
+\dee{S}&amp;=\Big|\frac{\vnabla F}{\vnabla F\cdot\hk}\Big|\,\dee{x}\dee{y}
+=\Big|\frac{2x\hi+2y\hj+2(z-2)\hk}{2(z-2)}\Big|\,\dee{x}\dee{y}
+=\Big|\frac{x\hi+y\hj+(z-2)\hk}{(z-2)}\Big|\,\dee{x}\dee{y}
+</mrow><mrow>
+&amp;=\frac{\sqrt{x^2+y^2+(z-2)^2}}{|z-2|}\,\dee{x}\dee{y}
+=\frac{2}{|z-2|}\,\dee{x}\dee{y}
+</mrow>
+</md>
+since <m>x^2+y^2+(z-2)^2=4</m> on <m>\cS</m>. On <m>\cS</m>, <m>z\le 2</m>, so
+<m>|z-2|=2-z</m> and
+<me>
+\dblInt_\cS f(x,y,z)\,\dee{S}
+=\dblInt_{x^2+y^2\le 3} (2-z)(x^2+y^2)\,\frac{2}{|z-2|}\,\dee{x}\dee{y}
+=2\dblInt_{x^2+y^2\le 3} (x^2+y^2)\,\dee{x}\dee{y}
+</me>
+Switching to polar coordinates
+<me>
+\dblInt_\cS f(x,y,z)\,\dee{S}
+=2\int_0^{\sqrt{3}}\dee{r}\ r\int_0^{2\pi}\dee{\theta}\  r^2
+=2(2\pi)\frac{r^4}{4}\Big|_0^{\sqrt{3}}
+=9\pi
+</me>
+</p></solution>
+</exercise>
+
+<exercise><title><fromexam>M317 2013D</fromexam></title>
+<statement><p><ol label="a">
+<li>
+Find a parametrization of the surface <m>S</m> of the cone whose vertex is
+at the point <m>(0, 0, 3)</m>, and whose base is the circle <m>x^2 + y^2 = 4</m>
+in the <m>xy</m>-plane. Only the cone surface belongs to <m>S</m>, not the base.
+Be careful to include the domain for the parameters.
+</li>
+<li>
+Find the <m>z</m>-coordinate of the centre of mass of the surface <m>S</m> from (a).
+</li>
+</ol>
+</p></statement>
+
+<hint><p>
+The <m>z</m>-coordinate of the centre of mass is the weighted average of the
+<m>z</m>-coordinate over the cone. Since a density has not been specified,
+we assume that it is a constant. We may take the density to be <m>1</m>, so the
+<m>z</m>-coordinate of the centre of mass is <m>\dblInt_S z\,\dee{S}/
+\dblInt_S \dee{S}</m>.
+</p></hint>
+
+<answer><p>
+(a) <m>\vr(\theta,z) = \frac{2}{3}(3-z)\cos\theta\ \hi
+                +\frac{2}{3}(3-z)\sin\theta\ \hj
+                +z\,\hk\qquad
+0\le\theta \lt 2\pi,\quad 0\le z\le 3.</m>
+</p>
+
+<p> (b) <m>1</m>
+</p>
+
+</answer>
+
+<solution><p> (a)
+Each (horizontal) constant <m>z</m> cross-section is a circle centred on the
+<m>z</m>-axis. The radius varies linearly from <m>2</m>, when <m>z=0</m> to <m>0</m>, when
+<m>z=3</m>. So the radius at height <m>z</m> is <m>\frac{2}{3}(3-z)</m> and we can use
+<md>
+<mrow>
+\vr(\theta,z) = \frac{2}{3}(3-z)\cos\theta\ \hi
+                +\frac{2}{3}(3-z)\sin\theta\ \hj
+                +z\,\hk\qquad
+0\le\theta \lt 2\pi,\quad 0\le z\le 3
+</mrow>
+</md>
+as the parametrization.
+</p>
+
+<p> (b)
+By symmetry the centre of mass will lie on the <m>z</m>-axis.
+We are only asked for the <m>z</m>-coordinate anyway. The <m>z</m>-coordinate
+of the centre of mass is the weighted average of <m>z</m> over the cone.
+Since a density has not been specified,
+we assume that it is a constant. We may take the density to be <m>1</m>, so the
+<m>z</m>-coordinate of the centre of mass is <m>\dblInt_S z\,\dee{S}/
+\dblInt_S \dee{S}</m>.
+</p>
+
+<p>Since
+<md>
+<mrow>
+\tfrac{\partial\vr}{\partial\theta}
+&amp;=\big(-\tfrac{2}{3}(3-z)\sin\theta\,,\,
+        \tfrac{2}{3}(3-z)\cos\theta\,,\,
+          0 \big)
+</mrow><mrow>
+\tfrac{\partial\vr}{\partial z}
+&amp;=\big(-\tfrac{2}{3}\cos\theta\,,\,
+       -\tfrac{2}{3}\sin\theta\,,\,
+          1 \big)
+</mrow><mrow>
+\tfrac{\partial\vr}{\partial\theta} \times \tfrac{\partial\vr}{\partial z}
+&amp;=\big(\tfrac{2}{3}(3-z)\cos\theta\,,\,
+       \tfrac{2}{3}(3-z)\sin\theta\,,\,
+       \tfrac{4}{9}(3-z)\big)
+</mrow>
+</md>
+the element of surface area for this parametrization is
+<md>
+<mrow>
+\dee{S} &amp;=
+\big|\tfrac{\partial\vr}{\partial\theta}\times
+      \tfrac{\partial\vr}{\partial z} \big|\dee{\theta}\dee{z}
+=\tfrac{2}{3}(3-z)\big|(\cos\theta\,,\,\sin\theta\,,\,\tfrac{2}{3}\big)\big|
+    \dee{\theta}\dee{z}
+</mrow><mrow>
+&amp;=\tfrac{2\sqrt{13}}{9}(3-z) \dee{\theta}\dee{z}
+</mrow>
+</md>
+So the surface area, <m>\dblInt_S \dee{S}</m>, of the cone is
+<md>
+<mrow>
+\int_0^3\dee{z}\int_0^{2\pi}\dee{\theta}\ \tfrac{2\sqrt{13}}{9}(3-z)
+&amp;=\tfrac{4\sqrt{13}}{9}\pi\int_0^3\dee{z}\ (3-z)
+=-\tfrac{2\sqrt{13}}{9}\pi(3-z)^2\Big|_0^3
+</mrow><mrow>
+&amp;=2\sqrt{13}\pi
+</mrow>
+</md>
+and the <m>z</m>-coordinate of the centre of mass is
+<md>
+<mrow>
+\bar z
+&amp;=\frac{1}{2\sqrt{13}\pi}
+  \int_0^3\dee{z}\int_0^{2\pi}\dee{\theta}\ \tfrac{2\sqrt{13}}{9}(3-z) z
+=\frac{2}{9}\int_0^3\dee{z}\ (3z-z^2)
+=\frac{2}{9}{\Big[\frac{3z^2}{2}-\frac{z^3}{3}\Big]}_0^3
+</mrow><mrow>
+&amp;=\frac{2}{9}\frac{27}{6}
+=1
+</mrow>
+</md>
+This is a little less than half way up the cone, which is reasonable since
+the cone is <q>bottom heavy</q>.
+</p></solution>
+</exercise>
+
+<exercise><title><fromexam>M317 2008D</fromexam></title>
+<statement><p>
+Let <m>S</m> be the surface of a cone of height <m>a</m> and base radius <m>a</m>.
+The surface <m>S</m> does not include the base of the cone or the interiour
+of the cone. Find the centre of mass of <m>S</m>.
+</p>
+
+<p>Locate the cone in a coordinate system so that its base is in the
+<m>xy</m>-plane, and its vertex on the <m>z</m>-axis. So the vertex will
+be the point <m>(0, 0, a)</m>. The base is a circle of radius <m>a</m> in the
+<m>xy</m>-plane with centre at the origin. The cone surface is characterized
+by the fact that for every point of <m>S</m>, the distance from the <m>z</m>-axis
+and the distance from the <m>xy</m>-plane add up to <m>a</m>.
+</p>
+
+</statement>
+
+<hint><p>
+Use cylindrcal coordinates. Note that because of the symmetry of the cone,
+only the <m>z</m>-component of the centre of mass requires an integral
+to be calculated. The <m>z</m>-coordinate of the centre of mass is
+the weighted average of the <m>z</m>-coordinate over the cone. That is
+<m>\bar z =\dblInt_S z\,\dee{S}/\dblInt_S\dee{S}</m>.
+</p></hint>
+
+<answer><p>
+<m>\big(0,0,\frac{a}{3}\big)</m>
+</p></answer>
+
+<solution><p>
+Each constant <m>z</m> cross-section of the cone is a circle. When
+<m>z=0</m>, that circle has radius <m>a</m>. When <m>z=a</m> that circle has radius <m>0</m>.
+Thus the radius decreases linearly from <m>a</m> to <m>0</m> as <m>z</m> increases from
+<m>0</m> to <m>a</m>. So the radius at height <m>z</m> is <m>a-z</m> and we can parametrize
+the cone by
+<me>
+\vr(\theta,z)
+  = (a-z)\cos\theta\,\hi + (a-z)\sin\theta\,\hj + z\,\hk\qquad
+0\le\theta \lt 2\pi,\ 0\le z\le a
+</me>
+Since
+<md>
+<mrow>
+\tfrac{\partial\vr}{\partial\theta}
+&amp;=\big(-(a-z)\sin\theta\,,\,
+        (a-z)\cos\theta\,,\,
+          0 \big)
+</mrow><mrow>
+\tfrac{\partial\vr}{\partial z}
+&amp;=\big(-\cos\theta\,,\,
+       -\sin\theta\,,\,
+          1 \big)
+</mrow><mrow>
+\tfrac{\partial\vr}{\partial\theta} \times \tfrac{\partial\vr}{\partial z}
+&amp;=\big((a-z)\cos\theta\,,\,
+       (a-z)\sin\theta\,,\,
+       a-z\big)
+</mrow>
+</md>
+the element of surface area for this parametrization is
+<md>
+<mrow>
+\dee{S} &amp;=
+\big|\tfrac{\partial\vr}{\partial\theta}\times
+      \tfrac{\partial\vr}{\partial z} \big|\dee{\theta}\dee{z}
+=(a-z)\big|(\cos\theta\,,\,\sin\theta\,,\,1\big)\big|
+    \dee{\theta}\dee{z}
+</mrow><mrow>
+&amp;=\sqrt{2}(a-z)\, \dee{\theta}\dee{z}
+</mrow>
+</md>
+by (<xref ref="eq_SUdSparam"/>).
+So the surface area of the cone is
+<md>
+<mrow>
+\dblInt_S\dee{S}
+&amp;=\int_0^a\dee{z}\int_0^{2\pi}\dee{\theta}\ \sqrt{2}(a-z)
+</mrow><mrow>
+&amp;=2\sqrt{2}\,\pi\int_0^a\dee{z}\ (a-z)
+=-\sqrt{2}\,\pi(a-z)^2\Big|_0^a
+</mrow><mrow>
+&amp;=\sqrt{2}\,\pi a^2
+</mrow>
+</md>
+and the <m>z</m>-coordinate of the centre of mass is
+<md>
+<mrow>
+\bar z
+&amp;= \frac{\dblInt_S z\,\dee{S}}{\dblInt_S\dee{S}}
+ =\frac{1}{\sqrt{2}\,\pi a^2}
+  \int_0^a\dee{z}\int_0^{2\pi}\dee{\theta}\ \sqrt{2}(a-z) z
+=\frac{2}{a^2}\int_0^a\dee{z}\ (az-z^2)
+</mrow><mrow>
+&amp;=\frac{2}{a^2}{\Big[\frac{az^2}{2}-\frac{z^3}{3}\Big]}_0^a
+=\frac{2}{a^2}\frac{a^3}{6}
+=\frac{a}{3}
+</mrow>
+</md>
+This is a little less than half way up the cone, which is reasonable since
+the cone is <q>bottom heavy</q>.
+</p>
+
+</solution>
+</exercise>
+
+<exercise><title><fromexam>M317 2001A</fromexam></title>
+<statement><p>
+Let <m>S</m> be the portion of the elliptical cylinder <m>x^2+\frac{1}{4}y^2=1</m>
+lying between the planes <m>z=0</m> and <m>z=1</m> and let <m>\hn</m> denote the outward
+normal to <m>S</m>. Let <m>\vF=x\,\hi+xyz\,\hj+zy^4\,\hk</m>.
+Calculate the flux integral
+<m>\dblInt_S \vF\cdot\hn\, \dee{S}</m> directly, using an
+appropriate parameterization of <m>S</m>.
+</p></statement>
+
+<answer><p>
+<m>2\pi</m>
+</p></answer>
+
+<solution><p>
+Parametrize the surface by
+<me>
+x(\theta,z)=\cos\theta\qquad
+y(\theta,z)=2\sin\theta\qquad
+z(\theta,z)=z
+</me>
+with <m>(\theta,z)</m> running over
+<m>0\le \theta\le 2\pi,\ 0\le z\le 1</m>. Then,
+by (<xref ref="eq_SUdSparam"/>),
+<md>
+<mrow>
+\Big(\pdiff{x}{\theta},\pdiff{y}{\theta},
+\pdiff{z}{\theta}\Big)
+&amp;=(-\sin\theta,2\cos\theta,0)
+</mrow><mrow>
+\Big(\pdiff{x}{z},\pdiff{y}{z},
+\pdiff{z}{z}\Big)
+&amp;=(0, 0,1)
+</mrow><mrow>
+\hat\vn\, \dee{S}
+&amp;=
+\pm \Big(\pdiff{x}{\theta},\pdiff{y}{\theta},
+\pdiff{z}{\theta}\Big)
+\times\Big(\pdiff{x}{z},\pdiff{y}{z},
+\pdiff{z}{z}\Big)\dee{\theta} \dee{z}
+</mrow><mrow>
+&amp;=(2\cos\theta,\sin\theta,0)\,\dee{\theta}\,\dee{z}
+\qquad \text{($+$ for outward normal)}
+</mrow><mrow>
+\vF\big(x(\theta,z),y(\theta,z),z(\theta,z)\big)
+    &amp;=\cos\theta\,\hi+2z\sin\theta\cos\theta\,\hj+16z\sin^4\theta\,\hk
+</mrow>
+</md>
+ So
+<md>
+<mrow>
+\dblInt_S \vF\cdot\hn\, \dee{S}
+&amp;=\int_0^1 \dee{z}\int_0^{2\pi}\dee{\theta}\ \big[2\cos^2\theta+2z\sin^2\theta\cos\theta\big]
+</mrow><mrow>
+&amp;=\int_0^1 \dee{z}\int_0^{2\pi}\dee{\theta}\ \big[1+\cos(2\theta)+2z\sin^2\theta\cos\theta\big]
+</mrow><mrow>
+&amp;=\int_0^1 \dee{z}\  \Big[\theta+\frac{1}{2} \sin(2\theta)+\frac{2}{3}z\sin^3\theta\Big]_0^{2\pi}
+=2\pi
+</mrow>
+</md>
+For an efficient, sneaky, way to evaluate
+<m>\int_0^{2\pi} \cos^2 \theta\ \dee{\theta}</m>, see Example
+<xref ref="eg_workIntegalB"/>.
+</p></solution>
+</exercise>
+
+<exercise><title><fromexam>M317 2008A</fromexam></title>
+<statement><p>Evaluate the flux integral
+<me>
+\dblInt_S \vF \cdot\hn\, \dee{S}
+</me>
+where <m>\vF(x, y, z) = (x+1)\,\hi+(y +1)\,\hj+2z\,\hk</m>, and
+<m>S</m> is the part of the paraboloid <m>z = 4-x^2 -y^2</m>
+that lies above the triangle <m>0 \le x \le 1</m>, <m>0 \le y \le 1 - x</m>.
+<m>S</m> is oriented so that its unit normal has a negative <m>z</m>-component.
+</p></statement>
+
+<hint><p>
+Review (<xref ref="eq_SUdSgraph"/>).
+</p></hint>
+
+<answer><p>
+<m>-\frac{14}{3}</m>
+</p></answer>
+
+<solution><p>
+By (<xref ref="eq_SUdSgraph"/>), with
+<m>f(x,y) = 4-x^2-y^2</m>,
+<md>
+<mrow>
+\hn\,\dee{S} &amp;=\pm \big(-f_x\,,\,-f_y\,,\, 1\big)\dee{x}\dee{y}
+</mrow><mrow>
+&amp;=\pm\big(2x\,,\,2y\,,\, 1\big)\,\dee{x}\dee{y}
+</mrow>
+</md>
+To get the downward pointing normal, we want the minus sign.
+Set
+<me>
+T=\Set{(x,y)}{0\le x\le1,\ 0\le y\le 1-x}
+</me>
+Then
+<md>
+<mrow>
+\dblInt_S \vF \cdot\hn\, \dee{S}
+&amp;=-\dblInt_T \big(x+1\,,\,y+1\,,\, 2\overbrace{(4-x^2-y^2)}^{z}\big)
+       \cdot\big(2x\,,\,2y\,,\, 1\big)\,\dee{x}\dee{y}
+</mrow><mrow>
+&amp;=-\dblInt_T \big(8+2x+2y\big)\,\dee{x}\dee{y}
+</mrow><mrow>
+&amp;=-\int_0^1\dee{x}\int_0^{1-x}\dee{y}\ \big(8+2x+2y\big)
+</mrow><mrow>
+&amp;=-\int_0^1\dee{x}\ \big(8(1-x)+2x(1-x)+(1-x)^2\big)
+</mrow><mrow>
+&amp;=-\int_0^1\dee{x}\ \big(9-8x-x^2\big)
+</mrow><mrow>
+&amp;=-\Big(9-4-\frac{1}{3}\Big)=-\frac{14}{3}
+</mrow>
+</md>
+</p>
+
+</solution>
+</exercise>
+
+<exercise><title><fromexam>M317 2007A</fromexam></title>
+<statement><p>
+Evaluate the surface integral
+<me>
+\dblInt_S xy^2\ \dee{S}
+</me>
+where <m>S</m> is the part of the sphere <m>x^2 + y^2 + z^2 = 2</m> for which
+<m>x \ge \sqrt{y^2 + z^2}</m>.
+</p></statement>
+
+<hint><p>
+Don't be afraid to tweak spherical coordinates so as to fit the
+condition <m>x \ge \sqrt{y^2 + z^2}</m> well. To do so, first use a sketch
+to develop a geometric interpretation of <m>\frac{\sqrt{y^2 + z^2}}{x}</m>.
+</p></hint>
+
+<answer><p>
+<m>\frac{\sqrt{2}\,\pi}{4}</m>
+</p></answer>
+
+<solution><p> First we have to parametrize <m>S</m>. It is natural
+to use spherical coordinates with <m>\rho=\sqrt{2}</m>. However if we use
+the standard spherical coordinates
+<md>
+<mrow>
+x=\sqrt{2}\,\sin\varphi\cos\theta \qquad
+y=\sqrt{2}\,\sin\varphi\sin\theta \qquad
+z=\sqrt{2}\,\cos\varphi
+</mrow>
+</md>
+the condition <m>x \ge \sqrt{y^2 + z^2}</m>, i.e.  <m>\frac{\sqrt{y^2 + z^2}}{x}\le 1</m>,
+becomes <m>\frac{\sqrt{\sin^2\varphi\sin^2\theta+\cos^2\varphi}}{\sin\varphi\cos\theta}
+\le 1</m>, which is very complicated. So let's back up
+and think a bit before we compute. From the sketch below
+</p>
+
+<sidebyside width="75%">
+  <image source="pfigs/sphericalX"/>
+</sidebyside>
+
+<p>
+we see that <m>\frac{\sqrt{y^2 + z^2}}{x}</m> is the tangent of the
+angle between the radius vector <m>(x,y,z)</m> and the <m>x</m>-axis. The
+angle between the radius vector <m>(x,y,z)</m> and the <m>z</m>-axis (not the <m>x</m>-axis)
+is exactly spherical coordinate <m>\varphi</m>. So let's modify spherical
+coordinates to make the <m>x</m>-axis play the role of the <m>z</m>-axis.
+The easy way to do is to just rename <m>x=Z</m>, <m>y=X</m>, <m>z=Y</m>. Then the integral
+we are to compute becomes <m>\dblInt_S ZX^2\ \dee{S}</m>, and the
+condition <m>x \ge \sqrt{y^2 + z^2}</m> becomes <m>Z \ge \sqrt{X^2 + Y^2}</m>.
+Under the parametrization
+<md>
+<mrow>
+X=\sqrt{2}\,\sin\varphi\cos\theta \qquad
+Y=\sqrt{2}\,\sin\varphi\sin\theta \qquad
+Z=\sqrt{2}\,\cos\varphi
+</mrow>
+</md>
+the condition <m>Z \ge \sqrt{X^2 + Y^2}</m> is
+<m>\frac{\sqrt{X^2 + Y^2}}{Z}=\frac{\sin\varphi}{\cos\varphi}\le 1</m>,
+which is turn is <m>0\le\varphi\le\frac{\pi}{4}</m>. As
+<m>\dee{S}=2\sin\varphi\,\dee{\theta}\dee{\varphi}</m>
+(see Appendix <xref ref="ap_spherCoord"/> and recall that <m>\rho=\sqrt{2}</m>) the specified integral
+is
+<md>
+<mrow>
+\dblInt_S xy^2\ \dee{S}
+&amp;=\dblInt_S ZX^2\ \dee{S}
+=2\int_0^{\pi/4}\dee{\varphi}\ \sin\varphi \int_0^{2\pi}\dee{\theta}\
+\big(\sqrt{2}\,\cos\varphi\big)\big(\sqrt{2}\,\sin\varphi\cos\theta\big)^2
+
+</mrow><mrow>
+&amp;=4\sqrt{2} \left\{\int_0^{\pi/4}\dee{\varphi}\ \cos\varphi\sin^3\varphi\right\}
+            \left\{\int_0^{2\pi}\dee{\theta}\, \cos^2\theta\right\}
+</mrow><mrow>
+&amp;=4\sqrt{2} \left\{\int_0^{\pi/4}\dee{\varphi}\ \cos\varphi\sin^3\varphi\right\}
+           \left\{\int_0^{2\pi}\dee{\theta}\,\frac{\cos(2\theta)+1}{2}\right\}
+</mrow><mrow>
+&amp;=4\sqrt{2} \left[\frac{\sin^4\varphi}{4}\right]_0^{\pi/4}
+     \left[\frac{\sin(2\theta)}{4}+\frac{\theta}{2}\right]_0^{2\pi}
+</mrow><mrow>
+&amp;= \frac{\sqrt{2}\,\pi}{4}
+</mrow>
+</md>
+For an efficient, sneaky, way to evaluate
+<m>\int_0^{2\pi} \cos^2 \theta\ \dee{\theta}</m>, see Example
+<xref ref="eg_workIntegalB"/>.
+</p></solution>
+</exercise>
+
+<exercise><title><fromexam>M317 2006D, 2012J</fromexam></title>
+<statement><p>
+Let <m>S</m> be the surface given by the equation
+<md>
+<mrow>
+x^2 + z^2 = \sin^2y
+</mrow>
+</md>
+lying between the planes <m>y = 0</m> and <m>y = \pi</m>. Evaluate the integral
+<md>
+<mrow>
+\dblInt_S\sqrt{1 + \cos^2y}\, \dee{S}
+</mrow>
+</md>
+</p></statement>
+
+<hint><p>
+The surface <m>S</m> may be parametrized by observing that, for each fixed
+<m>y</m>, <m>x^2 + z^2 = \sin^2y</m> is a circle.
+</p></hint>
+
+<answer><p>
+<m>\frac{16}{3}\pi</m>
+</p></answer>
+
+<solution><p>
+Here is a sketch of the part of <m>S</m> that is in the first octant.
+</p>
+
+<sidebyside width="75%">
+  <image source="pfigs/OE06D_3"/>
+</sidebyside>
+
+<p>
+For each fixed <m>y</m>, <m>x^2+z^2=\sin^2y</m> is a circle of
+radius <m>\sin y</m>. (It's the blue circle in the sketch above.)
+So we may parametrize the surface by
+<md>
+<mrow>
+\vr(\theta,y)
+=\big(\sin y\,\cos\theta\,,\, y \,,\, \sin y\,\sin\theta\big)\qquad
+0\le\theta \lt 2\pi,\ 0\le y\le \pi
+</mrow>
+</md>
+Then, by (<xref ref="eq_SUdSparam"/>),
+<md>
+<mrow>
+\frac{\partial \vr}{\partial\theta}
+ &amp;= \big(-\sin y\,\sin\theta\,,\, 0 \,,\, \sin y\,\cos\theta\big)
+</mrow><mrow>
+\frac{\partial \vr}{\partial y}
+ &amp;= \big(\cos y\,\cos\theta\,,\, 1 \,,\, \cos y\,\sin\theta\big)
+</mrow><mrow>
+\frac{\partial \vr}{\partial\theta} \times
+     \frac{\partial \vr}{\partial y}
+&amp;=\big(-\sin y\,\cos\theta\,,\, \sin y\,\cos y\,,\,-\sin y\,\sin\theta \big)
+</mrow><mrow>
+\dee{S}
+&amp;= \left|\frac{\partial \vr}{\partial\theta} \times
+     \frac{\partial \vr}{\partial y}\right|\dee{\theta}\,\dee{y}
+=\sin y\sqrt{1+\cos^2 y}\ \dee{\theta}\ \dee{y}
+</mrow>
+</md>
+So the specified integral is
+<md>
+<mrow>
+\dblInt_S\sqrt{1 + \cos^2y}\, \dee{S}
+&amp;= \int_0^\pi\dee{y} \int_0^{2\pi}\dee{\theta}\
+                \sin y\big\{1+\cos^2 y\big\}
+</mrow><mrow>
+&amp;= 2\pi \int_0^\pi\dee{y}\
+                \sin y\big\{1+\cos^2 y\big\}
+</mrow><mrow>
+&amp;= - 2\pi \int_1^{-1} \dee{u}\ \big\{1+u^2\big\}
+           \quad\text{with }u=\cos y,\ \dee{u}=-\sin y\,\dee{y}
+</mrow><mrow>
+&amp;= 4\pi \int_0^1 \dee{u}\ \big\{1+u^2\big\}
+</mrow><mrow>
+&amp;=4\pi\left[u+\frac{u^3}{3}\right]_0^1
+</mrow><mrow>
+&amp;= \frac{16}{3}\pi
+</mrow>
+</md>
+</p>
+
+</solution>
+</exercise>
+
+<exercise><title><fromexam>M317 2006A</fromexam></title>
+<statement><p>
+Let <m>S</m> be the part of the paraboloid <m>z=1-x^2-y^2</m> lying above the
+<m>xy</m>-plane. At <m>(x,y,z)</m> <m>S</m> has density
+<md>
+<mrow>
+\rho(x,y,z) = \frac{z}{\sqrt{5-4z}}
+</mrow>
+</md>
+Find the centre of mass of <m>S</m>.
+</p></statement>
+
+<hint><p>
+By symmetry, the centre of mass will lie on the <m>z</m>-axis.
+By definition, the <m>z</m>-coordinate of the centre of mass is the weighted
+average of <m>z</m> over <m>S</m>, which is
+<me>
+\bar z = \frac{\dblInt_S z\,\rho(x,y,z)\ \dee{S}}
+              {\dblInt_S \rho(x,y,z)\ \dee{S}}
+</me>
+</p></hint>
+
+<answer><p>
+<m>\big(0,0,\frac{2}{3}\big)</m>
+</p></answer>
+
+<solution><p>
+The paraboloid is
+<me>
+S = \Set{(x,y,z)}{z=1-x^2-y^2,\ z\ge 0}
+  = \Set{(x,y,z)}{z=1-x^2-y^2,\ x^2+y^2\le 1}
+</me>
+By (<xref ref="eq_SUdSgraph"/>), the paraboloid has
+<md>
+<mrow>
+\dee{S} &amp; = \sqrt{1+f_x(x,y)^2 + f_y(x,y)^2}\,\dee{x}\dee{y}
+\qquad\text{with } z = f(x,y) = 1-x^2-y^2
+</mrow><mrow>
+        &amp; = \sqrt{1+4x^2 +4y^2}\,\dee{x}\dee{y}
+</mrow>
+</md>
+By symmetry, the centre of mass will lie on the <m>z</m>-axis.
+By definition, the <m>z</m>-coordinate of the centre of mass is the weighted
+average of <m>z</m> over <m>S</m>, which is
+<me>
+\bar z = \frac{\dblInt_S z\,\rho(x,y,z)\ \dee{S}}
+              {\dblInt_S \rho(x,y,z)\ \dee{S}}
+</me>
+On <m>S</m>,
+<md>
+<mrow>
+\rho(x,y,z) = \frac{z}{\sqrt{5-4z}}
+            = \frac{1-x^2-y^2}{\sqrt{1+4x^2+4y^2}}
+</mrow>
+</md>
+so that
+<md>
+<mrow>
+\rho(x,y,z)\ \dee{S}
+= (1-x^2-y^2)\,\dee{x}\dee{y}
+</mrow>
+</md>
+So, using polar coordinates, the denominator of <m>\bar z</m> is
+<md>
+<mrow>
+\dblInt_S \rho(x,y,z)\ \dee{S}
+     &amp;= \dblInt_{x^2+y^2\le 1} (1-x^2-y^2)\,\dee{x}\dee{y}
+     =\int_0^1\dee{r}\, r\int_0^{2\pi}\dee{\theta}\,  (1-r^2)
+</mrow><mrow>
+    &amp;= 2\pi\int_0^1 r(1-r^2)\ \dee{r}
+</mrow><mrow>
+    &amp; = 2\pi \Big[\frac{r^2}{2}-\frac{r^4}{4}\Big]_0^1
+</mrow><mrow>
+    &amp;=\frac{\pi}{2}
+</mrow>
+</md>
+and the numerator of <m>\bar z</m> is
+<md>
+<mrow>
+\dblInt_S z \rho(x,y,z)\ \dee{S}
+     &amp;= \dblInt_{x^2+y^2\le 1} {(1-x^2-y^2)}^2\,\dee{x}\dee{y}
+     =\int_0^1\dee{r}\, r\int_0^{2\pi}\dee{\theta}\,  {(1-r^2)}^2
+</mrow><mrow>
+    &amp;= 2\pi\int_0^1 r{(1-r^2)}^2\ \dee{r}
+</mrow><mrow>
+    &amp; = 2\pi \Big[\frac{r^2}{2}-2\frac{r^4}{4}+\frac{r^6}{6}\Big]_0^1
+</mrow><mrow>
+    &amp;=\frac{\pi}{3}
+</mrow>
+</md>
+and
+<me>
+\bar z = \frac{\pi/3}{\pi/2}=\frac{2}{3}
+</me>
+</p></solution>
+</exercise>
+
+<exercise><title><fromexam>M317 2005D</fromexam></title>
+<statement><p>
+Let <m>S</m> be the part of the plane
+<me>
+x + y + z =2
+</me>
+that lies in the first octant oriented so that <m>\hn</m> has a positive
+<m>\hk</m> component. Let
+<me>
+\vF = x\,\hi + y\,\hj + z\,\hk
+</me>
+Evaluate the flux integral
+<me>
+\dblInt_S \vF\cdot\hn\, \dee{S}
+</me>
+</p></statement>
+
+<answer><p>
+<m>4</m>
+</p></answer>
+
+<solution><p>
+The equation of the plane is <m>z=f(x,y) = 2-x-y</m>. So by
+(<xref ref="eq_SUdSgraph"/>),
+<me>
+\hn\,\dee{S} = \big[-f_x(x,y)\,\hi - f_y(x,y)\,\hj + \hk\big]\ \dee{x}\dee{y}
+             = \big[\hi + \hj + \hk\big]\ \dee{x}\dee{y}
+</me>
+A point <m>(x,y,z)</m> on the plane lies in the first octant if and only if
+<me>
+x\ge 0\quad\text{and}\quad
+y\ge 0\quad\text{and}\quad
+z=2-x-y\ge 0
+</me>
+So the domain of integration is the triangle
+</p>
+
+<sidebyside width="45%">
+<p><m>
+ T = \Set{(x,y)}{x\ge 0,\ y\ge 0,\ x+y\le 2}
+</m></p>
+<image source="pfigs/OE05D_6"/>
+</sidebyside>
+
+<p>
+and
+<md>
+<mrow>
+\dblInt_S \vF\cdot\hn\, \dee{S}
+&amp;=\dblInt_T \big[x\,\hi+y\,\hj +(\overbrace{2-x-y}^{z})\,\hk\big]
+         \cdot\big[\hi + \hj + \hk\big]\ \dee{x}\dee{y}
+</mrow><mrow>
+&amp; = 2 \dblInt_T \dee{x}\dee{y}
+</mrow><mrow>
+&amp; = 2 \frac{1}{2}(2)(2) = 4
+</mrow>
+</md>
+</p>
+
+</solution>
+</exercise>
+
+<exercise><title><fromexam>M317 2005A</fromexam></title>
+<statement><p>
+Find the net flux <m>\dblInt_S \vF\cdot\hn\,\dee{S}</m> of the vector field
+<m>\vF(x,y,z) = (x,y,z)</m> upwards (with respect to the <m>z</m>-axis) through
+the surface <m>S</m> parametrized <m>\vr = \big(uv^2\,,\,u^2v\,,\,uv\big)</m>
+for <m>0\le u\le 1</m>, <m>0\le v\le 3</m>.
+</p></statement>
+
+<answer><p>
+<m>\frac{81}{16}</m>
+</p></answer>
+
+<solution><p> Since
+<md>
+<mrow>
+\tfrac{\partial\vr}{\partial u}
+&amp;=\big(v^2\,,\,
+       2uv\,,\,
+        v \big)
+</mrow><mrow>
+\tfrac{\partial\vr}{\partial v}
+&amp;=\big(2uv\,,\,
+        u^2\,,\,
+        u \big)
+</mrow><mrow>
+\tfrac{\partial\vr}{\partial u} \times \tfrac{\partial\vr}{\partial v}
+&amp;=\big(u^2v\,,\,
+       uv^2\,,\,
+       -3u^2v^2\big)
+</mrow>
+</md>
+(<xref ref="eq_SUdSparam"/>) gives
+<me>
+\hn\,\dee{S} = \pm  \big(u^2v\,,\,
+       uv^2\,,\,
+       -3u^2v^2\big)\,\dee{u}\dee{v}
+</me>
+We are told that <m>\hn</m> should have a positive <m>z</m>-component, so
+<me>
+\hn\,\dee{S} = -  \big(u^2v\,,\, uv^2\,,\, -3u^2v^2\big)\,\dee{u}\dee{v}
+ = \big(-u^2v\,,\, -uv^2\,,\, 3u^2v^2\big)\,\dee{u}\dee{v}
+</me>
+and
+<md>
+<mrow>
+\dblInt_S \vF\cdot\hn\,\dee{S}
+&amp;=\dblInt_S \overbrace{(uv^2\,,\,u^2v\,,\,uv)}^{\vF}\cdot
+         \big(-u^2v\,,\, -uv^2\,,\, 3u^2v^2\big)\,\dee{u}\dee{v}
+</mrow><mrow>
+&amp;=\int_0^1\dee{u}\int_0^3\dee{v}\ u^3v^3
+=\left[\int_0^1\dee{u}\ u^3 \right]\  \left[\int_0^3\dee{v}\ v^3\right]
+</mrow><mrow>
+&amp;=\frac{1}{4}\ \frac{3^4}{4}
+=\frac{81}{16}
+</mrow>
+</md>
+</p></solution>
+</exercise>
+
+<exercise><title><fromexam>M317 2015A</fromexam></title>
+<statement><p>
+Let <m>S</m> be the surface obtained by revolving the curve
+<m>z = e^y</m> , <m>0 \le y \le 1</m>, around the <m>y</m>-axis, with the
+orientation of <m>S</m> having <m>\hn</m> pointing toward the <m>y</m>-axis.
+<ol label="a">
+<li>
+Draw a picture of <m>S</m> and find a parameterization of <m>S</m>.
+</li>
+<li>
+Compute the integral <m>\dblInt_S e^y\, \dee{S}</m>.
+</li>
+<li>
+Compute the flux integral <m>\dblInt_S\vF\cdot\hn\,\dee{S}</m>
+where <m>\vF= (x, 0, z)</m>.
+</li>
+</ol>
+</p></statement>
+
+<answer><p>
+(a) <m>
+\vr(Y,\theta) = e^Y\sin\theta\,\hi + Y\,\hj +e^Y\cos\theta\,\hk\qquad
+0\le Y\le 1,\ 0\le\theta\le 2\pi
+</m>
+</p>
+<sidebyside width="75%">
+  <image source="pfigs/revB"/>
+</sidebyside>
+
+<p>
+(b) <m>\frac{2\pi}{3}\Big[(1+e^2)^{3/2}-2^{3/2}\Big]</m></p><p>
+(c) <m>\pi\big(1-e^2\big)</m>
+</p></answer>
+
+<solution><p> (a)
+We start by just sketching the curve <m>z=e^y</m>, considering the <m>yz</m>-plane as
+the plane <m>x=0</m> in <m>\bbbr^3</m>. This curve is the red curve
+in the figure below.
+Concentrate on any one point on that curve. It is the blue dot at <m>(0,Y,e^Y)</m>
+</p>
+
+<sidebyside width="75%">
+<image source="pfigs/revA"/>
+</sidebyside>
+
+<p>
+in the figure. When our curve is rotated about the <m>y</m>-axis, the blue dot
+sweeps out a circle. The circle that the blue dot sweeps out
+<ul>
+<li>
+lies in the vertical plane <m>y=Y</m> and
+</li>
+<li>
+is centred on the <m>y</m>-axis and
+</li>
+<li>
+has radius <m>e^Y</m>.
+</li>
+</ul>
+We can parametrize the circle swept out in the usual way. Here
+is an end view of the circle (looking down the <m>y</m>-axis), with
+the parameter, named <m>\theta</m>, indicated.
+</p>
+
+<sidebyside width="75%">
+<image source="pfigs/revEnd"/>
+</sidebyside>
+
+<p>
+The coordinates of the red dot are <m>\big(e^Y\sin\theta\,,\,Y\,,\,e^Y\cos\theta\big)</m>. This also gives
+a parametrization of the surface of revolution
+<md>
+<mrow>
+x(Y,\theta) &amp; = e^Y\sin\theta
+</mrow><mrow>
+y(Y,\theta) &amp; = Y
+</mrow><mrow>
+z(Y,\theta) &amp; = e^Y\cos\theta
+</mrow><mrow>
+&amp;0\le Y\le 1,\qquad 0\le\theta \lt 2\pi
+</mrow>
+</md>
+Finally here is a sketch of the part of the surface in the first octant,
+<m>x,y,z\ge 0</m>.
+</p>
+
+<sidebyside width="75%">
+<image source="pfigs/revB"/>
+</sidebyside>
+
+<p>
+(b) We are using the parametrization
+<me>
+\vr(Y,\theta) = e^Y\sin\theta\,\hi + Y\,\hj +e^Y\cos\theta\,\hk\qquad
+0\le Y\le 1,\ 0\le\theta\le 2\pi
+</me>
+so that
+<me>
+\frac{\partial\vr}{\partial Y}\times\frac{\partial\vr}{\partial\theta}
+= \det\left[\begin{matrix} \hi &amp; \hj &amp; \hk \\
+e^Y\sin\theta &amp; 1 &amp; e^Y\cos\theta \\
+e^Y\cos\theta &amp; 0 &amp; -e^Y\sin\theta \end{matrix}\right]
+= \big(-e^Y\sin\theta, e^{2Y}, -e^Y\cos\theta\big),
+</me>
+and, by (<xref ref="eq_SUdSparam"/>),
+<md>
+<mrow>
+\dee{S} = \Big|\frac{\partial\vr}{\partial Y}\times
+            \frac{\partial\vr}{\partial\theta}\Big|\,\dee{Y}\dee{\theta}
+= \sqrt{e^{2Y}+e^{4Y}}\,\dee{Y}\,\dee{\theta}
+= e^Y\sqrt{1+e^{2Y}}\,\dee{Y}\dee{\theta}
+</mrow>
+</md>
+So the integral is
+<md>
+<mrow>
+\dblInt_S e^y\, \dee{S}
+&amp;=\int_0^1\dee{Y}\int_0^{2\pi}\dee{\theta}\ e^{2Y}\sqrt{1+e^{2Y}}
+=2\pi \int_0^1\dee{Y}\ e^{2Y}\sqrt{1+e^{2Y}}
+=\frac{2\pi}{3}\Big[1+e^{2Y}\Big]^{3/2}\bigg|_0^1
+</mrow><mrow>
+&amp;=\frac{2\pi}{3}\Big[(1+e^2)^{3/2}-2^{3/2}\Big]
+</mrow>
+</md>
+</p>
+
+<p>(c) Again, we are using the parametrization
+<me>
+\vr(Y,\theta) = e^Y\sin\theta\,\hi + Y\,\hj +e^Y\cos\theta\,\hk\qquad
+0\le Y\le 1,\ 0\le\theta\le 2\pi
+</me>
+so that
+<me>
+\frac{\partial\vr}{\partial Y}\times\frac{\partial\vr}{\partial\theta}
+= \big(-e^Y\sin\theta, e^{2Y}, -e^Y\cos\theta\big),
+</me>
+and, by (<xref ref="eq_SUdSparam"/>),
+<md>
+<mrow>
+\hn\,\dee{S} = \pm\frac{\partial\vr}{\partial Y}\times
+            \frac{\partial\vr}{\partial\theta}\,\dee{Y}\dee{\theta}
+= \pm\big(-e^Y\sin\theta, e^{2Y}, -e^Y\cos\theta\big)\,\dee{Y}\,\dee{\theta}
+</mrow>
+</md>
+We choose the <q><m>+</m></q> sign so that <m>\hn</m> points towards the <m>y</m>-axis.
+As an example, when <m>0\le\theta\le\frac{\pi}{2}</m>, then <m>z=e^Y\cos\theta \gt 0</m>
+while the <m>z</m>-coordinate of <m>\hn</m> is <m>-e^y\cos\theta \lt 0</m>. So the integral is
+<md>
+<mrow>
+\dblInt_S\vF\cdot\hn\,\dee{S}
+&amp;=\int_0^1\dee{Y}\int_0^{2\pi}\dee{\theta}\
+\big(\overbrace{e^Y\sin\theta}^{x},0,\overbrace{e^Y\cos\theta}^{z}\big)
+           \cdot\big(-e^Y\sin\theta, e^{2Y}, -e^Y\cos\theta\big)
+</mrow><mrow>
+&amp;=-\int_0^1\dee{Y}\int_0^{2\pi}\dee{\theta}\ e^{2Y}
+=-2\pi\int_0^1\dee{Y}\ e^{2Y}
+</mrow><mrow>
+&amp;=-\pi\big(e^2-1\big)
+=\pi\big(1-e^2\big)
+</mrow>
+</md>
+</p></solution>
+</exercise>
+
+<exercise><title><fromexam>M317 2011A</fromexam></title>
+<statement><p>
+Compute the net outward flux of the vector field
+<me>
+\vF = \frac{\vr}{|\vr|}
+    = \frac{x\,\hi+y\,\hj+z\,\hk}{\sqrt{x^2+y^2+z^2}}
+</me>
+across the boundary of the region <em>between</em> the spheres of
+radius <m>1</m> and radius <m>2</m> centred at the origin.
+</p></statement>
+
+<answer><p>
+<m>12\pi</m>
+</p></answer>
+
+<solution><p>
+Write
+<me>
+V=\Set{(x,y,z)}{ 1\le x^2+y^2+z^2\le 4}
+</me>
+The boundary of <m>V</m> consists of two parts <mdash/>
+the sphere, <m>S_2</m>, of radius <m>2</m>, centred on the origin,
+with (outward) normal <m>\hn=\frac{\vr}{|\vr|}=\frac{\vr}{2}</m>,
+and the sphere  <m>S_1</m> of radius <m>1</m>, centred on the origin,
+with (inward) normal <m>\hn = -\vr</m>, So,
+<md>
+<mrow>
+\dblInt_{\partial V} \vF\cdot\hn\,\dee{S}
+&amp;=\dblInt_{S_2} \frac{\vr}{|\vr|}\cdot\frac{\vr}{2}\,\dee{S}
+-\dblInt_{S_1} \frac{\vr}{|\vr|}\cdot\vr\,\dee{S}
+</mrow><mrow>
+&amp;=\dblInt_{S_2} \dee{S}
+   -\dblInt_{S_1} \dee{S}
+</mrow><mrow>
+&amp;=4\pi(2)^2 -4\pi(1)^2
+</mrow><mrow>
+&amp;=12\pi
+</mrow>
+</md>
+</p></solution>
+</exercise>
+
+<exercise><title><fromexam>M317 2016D</fromexam></title>
+<statement><p>
+Evaluate the surface integral <m>\dblInt_S z^2\,\dee{S}</m> where <m>S</m> is the
+part of the cone <m>x^2+y^2=4z^2</m> where <m>0 \le x \le y</m> and <m>0 \le z \le 1</m>.
+</p></statement>
+
+<answer><p>
+<m>\frac{\sqrt{5}\ \pi}{8}</m>
+</p></answer>
+
+<solution><p>
+The part of the cone that has some fixed value, <m>Z</m>, of <m>z</m> with <m>0\le Z\le 1</m>
+is the part of the circle <m>\Set{(x,y,z)}{x^2+y^2=4Z^2, z=Z}</m> of radius <m>2Z</m>
+that has <m>0\le x\le y</m>. Here is a sketch of the top view of that part of that
+circle.
+</p>
+
+<sidebyside width="75%">
+<image source="pfigs/OE16D_7"/>
+</sidebyside>
+
+<p>
+So we can parametrize <m>S</m> by
+<me>
+\vr(\theta,Z) = 2Z\sin\theta\,\hi +2Z\cos\theta\,\hj + Z\,\hk\qquad
+0\le\theta\le\frac{\pi}{4},\ 0\le Z\le 1
+</me>
+So
+<md>
+<mrow>
+\frac{\partial\vr}{\partial\theta}
+&amp;= 2Z\cos\theta\,\hi -2Z\sin\theta\,\hj
+</mrow><mrow>
+\frac{\partial\vr}{\partial Z}
+&amp;= 2\sin\theta\,\hi +2\cos\theta\,\hj + \hk
+</mrow>
+</md>
+so that
+<me>
+\frac{\partial\vr}{\partial\theta}\times\frac{\partial\vr}{\partial Z}
+= \det\left[\begin{matrix} \hi &amp; \hj &amp; \hk \\
+2Z\cos\theta &amp; -2Z\sin\theta &amp; 0 \\
+2\sin\theta &amp; 2\cos\theta &amp; 1\end{matrix}\right]
+= \big(-2Z\sin\theta, -2Z\cos\theta, 4Z\big),
+</me>
+and, by (<xref ref="eq_SUdSparam"/>),
+<md>
+<mrow>
+\dee{S} = \left|\frac{\partial\vr}{\partial\theta}\times
+            \frac{\partial\vr}{\partial Z}\right|\,\dee{\theta}\dee{Z}
+= \sqrt{20}\,Z\,\dee{\theta}\dee{Z}
+</mrow>
+</md>
+and
+<md>
+<mrow>
+\dblInt_S z^2\,\dee{S}
+&amp;=\sqrt{20} \int_0^1\dee{Z}\int_0^{\pi/4}\dee{\theta}\ Z^3
+=\sqrt{20}\ \frac{\pi}{4}\ \frac{1}{4}
+=\frac{\sqrt{5}\ \pi}{8}
+</mrow>
+</md>
+</p></solution>
+</exercise>
+
+<exercise><title><fromexam>M317 2017A</fromexam></title>
+<statement><p>
+Compute the flux integral <m>\dblInt_S \vF\cdot\hn\,\dee{S}</m>, where
+<me>
+\vF = \Big(-\frac{1}{2}x^3 - xy^2 \,,\, -\frac{1}{2} y^3 \,,\, z^2\Big)
+</me>
+and <m>S</m> is the part of the paraboloid <m>z = 5 - x^2 - y^2</m>
+lying inside the cylinder <m>x^2 + y^2 \le 4</m>,
+with orientation pointing downwards.
+</p></statement>
+
+<answer><p>
+<m>-20\,\pi</m>
+</p></answer>
+
+<solution><p>
+We'll start by parametrizing <m>S</m>. Note that as <m>x^2+y^2</m>
+runs from <m>0</m> to <m>4</m>, <m>z</m> runs from <m>5</m> to <m>1</m>, and that, for each
+fixed <m>1\le Z\le 5</m>, the cross-section of <m>S</m> with <m>z=Z</m>
+is the circle <m>x^2+y^2=5-Z</m>, <m>z=Z</m>. So we may parametrize <m>S</m> by
+<me>
+\vr(\theta, Z) = \sqrt{5-Z}\cos\theta\,\hi
+                +\sqrt{5-Z}\sin\theta\,\hj
+                +Z\,\hk\qquad
+0\le\theta\le 2\pi,\ 1\le Z\le 5
+</me>
+Since
+<md>
+<mrow>
+\frac{\partial\vr}{\partial\theta}
+&amp;= -\sqrt{5-Z}\sin\theta\,\hi +\sqrt{5-Z}\cos\theta\,\hj
+</mrow><mrow>
+\frac{\partial\vr}{\partial Z}
+&amp;= -\frac{1}{2\sqrt{5-Z}}\cos\theta\,\hi -\frac{1}{2\sqrt{5-Z}}\sin\theta\,\hj
+  + \hk
+</mrow>
+</md>
+so that
+<me>
+\frac{\partial\vr}{\partial\theta}\times\frac{\partial\vr}{\partial Z}
+= \det\left[\begin{matrix} \hi &amp; \hj &amp; \hk \\
+-\sqrt{5-Z}\sin\theta &amp; \sqrt{5-Z}\cos\theta &amp; 0 \\
+-\frac{1}{2\sqrt{5-Z}}\cos\theta &amp;-\frac{1}{2\sqrt{5-Z}}\sin\theta &amp; 1
+         \end{matrix}\right]
+= \big(\sqrt{5-Z}\cos\theta\,,\,\sqrt{5-Z}\sin\theta\,,\, 1/2\big),
+</me>
+(<xref ref="eq_SUdSparam"/>) gives
+<md>
+<mrow>
+\hn\,\dee{S} = \pm \frac{\partial\vr}{\partial\theta}\times
+            \frac{\partial\vr}{\partial Z}\,\dee{\theta}\dee{Z}
+= \pm \big(\sqrt{5-Z}\cos\theta\,,\,\sqrt{5-Z}\sin\theta\,,\, 1/2\big)
+          \,\dee{\theta}\dee{Z}
+</mrow>
+</md>
+Choosing the minus sign to give the downward pointing normal
+<md>
+<mrow>
+&amp;\dblInt_S \vF\cdot\hn\,\dee{S}
+</mrow><mrow>
+&amp;=-\int_1^5\hskip-3pt\dee{Z}\int_0^{2\pi}\hskip-6.5pt\dee{\theta}\
+    \Big(-\frac{1}{2}\overbrace{[5-Z]^{3/2}\cos^3\theta}^{x^3}
+           - \overbrace{[5-Z]^{3/2}\cos\theta\sin^2\theta}^{xy^2} \,,\,
+         -\frac{1}{2}\overbrace{[5-Z]^{3/2}\sin^3\theta}^{y^3} \,,\,
+         \overbrace{Z^2}^{z^2}\Big)
+</mrow><mrow>
+&amp;\hskip4in \cdot
+    \big(\sqrt{5-Z}\cos\theta\,,\,\sqrt{5-Z}\sin\theta\,,\, 1/2\big)
+</mrow><mrow>
+&amp;=-\int_1^5\hskip-3pt\dee{Z}\int_0^{2\pi}\hskip-6.5pt\dee{\theta}\
+    \Big(-\frac{1}{2}[5-Z]^2\cos^4\theta
+           - [5-Z]^2\cos^2\theta\sin^2\theta
+         -\frac{1}{2}[5-Z]^2\sin^4\theta
+         +\frac{1}{2}Z^2\Big)
+</mrow>
+</md>
+Since
+<me>
+\frac{1}{2}\cos^4\theta + \cos^2\theta\sin^2\theta +\frac{1}{2}\sin^4\theta
+=\frac{1}{2}\big(\cos^2\theta+\sin^2\theta\big)^2=\frac{1}{2}
+</me>
+the flux
+<md>
+<mrow>
+\dblInt_S \vF\cdot\hn\,\dee{S}
+&amp;=\int_1^5\hskip-3pt\dee{Z}\int_0^{2\pi}\hskip-6.5pt\dee{\theta}\
+    \Big(\frac{1}{2}[5-Z]^2 -\frac{1}{2} Z^2\Big)
+=\pi \int_1^5\hskip-3pt\dee{Z}\ \Big([5-Z]^2 -Z^2\Big)
+</mrow><mrow>
+&amp;=\pi\left[-\frac{1}{3}[5-Z]^3 - \frac{Z^3}{3}\right]_1^5
+=\pi \left[\frac{4^3}{3}-\frac{5^3}{3}+\frac{1}{3}\right]
+=-20\,\pi
+</mrow>
+</md>
+</p></solution>
+</exercise>
+
+<exercise><title><fromexam>M317 2003A</fromexam></title>
+<statement><p>
+Let the thin shell <m>S</m> consist of the part of the surface <m>z^2=2xy</m>
+with <m>x\ge 1</m>, <m>y\ge 1</m> and <m>z\le 2</m>. Find the mass of <m>S</m> if it has surface
+density given by <m>\rho(x,y,z)=3z</m> kg per unit area.
+</p></statement>
+
+<answer><p>
+<m>3</m>
+</p></answer>
+
+<solution><p>
+The surface is <m>z=f(x,y)</m> with <m>f(x,y)=\sqrt{2xy}</m>. Since
+<m>f_x=\sqrt{\frac{y}{2x}}</m> and <m>f_y=\sqrt{\frac{x}{2y}}</m>,
+(<xref ref="eq_SUdSgraph"/>) gives
+<md>
+<mrow>
+\dee{S}&amp;=\sqrt{1+f_x^2+f_y^2}\,\dee{x}\dee{y}
+=\sqrt{1+\frac{y}{2x}+\frac{x}{2y}}\,\dee{x}\dee{y}
+=\sqrt{\frac{2xy+y^2+x^2}{2xy}}\,\dee{x}\dee{y}
+</mrow><mrow>
+&amp;=\frac{x+y}{\sqrt{2xy}}\,\dee{x}\dee{y}
+</mrow>
+</md>
+On the shell, <m>z^2=2xy\le 4</m>. So the <m>x</m> and <m>y</m> components of
+points <m>(x,y,z)</m> on the shell run over the region <m>x\ge 1</m>, <m>y\ge 1</m>,
+<m>xy\le 2</m>, which
+is sketched below
+</p>
+
+<sidebyside width="75%">
+<image source="pfigs/OE03A_4"/>
+</sidebyside>
+
+<p>
+So the mass is
+<md>
+<mrow>
+\dblInt_S \rho(x,y,z)\,dS
+&amp;=\int_1^2\dee{x}\int_1^{2/x}\dee{y}\ 3f(x,y)\frac{x+y}{\sqrt{2xy}}
+=\int_1^2\dee{x}\int_1^{2/x}\dee{y}\ 3(x+y)
+</mrow><mrow>
+&amp;=3\int_1^2\dee{x}\ \left[xy+\frac{1}{2} y^2\right]_1^{2/x}
+=3\int_1^2 \dee{x}\ \left[2+\frac{2}{x^2}-x-\frac{1}{2}\right]
+</mrow><mrow>
+&amp;=3\left\{\frac{3}{2}-\frac{2}{x}\bigg|_1^2-\frac{x^2}{2}\bigg|^2_1\right\}
+=3\left\{\frac{3}{2}-1+2-2+\frac{1}{2}\right\}
+</mrow><mrow>
+&amp;=3
+</mrow>
+</md>
+</p></solution>
+</exercise>
+
+<exercise><title><fromexam>M317 2003A</fromexam></title>
+<statement><p>
+Let <m>S</m> be the portion of the paraboloid <m>x=y^2 + z^2</m> that satisfies
+<m>x \le 2 y </m>. Its unit normal vector <m>\hn</m> is so chosen that
+<m>\hn \cdot \hi  \gt  0</m>. Find the flux of
+<m>\vF =  2\,\hi +  z\,\hj + y\,\hk</m> out of <m>S</m>.
+</p></statement>
+
+<answer><p>
+<m>2\pi</m>
+</p></answer>
+
+<solution><p>
+Since <m>x=g(y,z)</m> with <m>g(x,y)=y^2+z^2</m>,
+(<xref ref="eq_SUdSgraph"/>) gives
+<me>
+\hn\,\dee{S}=\pm (1,-g_y,-g_z)\,\dee{y}\dee{z}
+=\pm (1,-2y,-2z)\,\dee{y}\dee{z}
+</me>
+We choose the <m>+</m> sign so that <m>\hn \cdot \hi  \gt  0</m>. Furthermore
+<md>
+<mrow>
+S&amp;=\Set{(x,y,z)}{x=y^2+z^2,\ x\le 2y}
+</mrow><mrow>
+&amp;=\Set{(x,y,z)}{x=y^2+z^2,\ y^2+z^2\le 2y}
+</mrow><mrow>
+&amp;=\Set{(x,y,z)}{x=y^2+z^2,\ (y-1)^2+z^2\le 1}
+</mrow><mrow>
+&amp;=\Set{(x,y,z)}{x=y^2+z^2,\ (y,z)\text{ in }D}
+</mrow>
+</md>
+where <m>D=\Set{(x,y)}{(y-1)^2+z^2\le 1}</m> is a disk with radius <m>1</m>. Hence
+<me>
+\dblInt_S \vF \cdot \hn\ \dee{S}
+ = \dblInt_D (2, z, y) \cdot  (1,-2 y, -2z)\ \dee{y} \dee{z}
+ = \dblInt_D (2 - 4yz)\ \dee{y} \dee{z}
+</me>
+Since <m>-4yz</m> is odd under <m>z\rightarrow -z</m> the integral of <m>-4yz</m> is zero and
+<me>
+\dblInt_S \vF \cdot \hn\, \dee{S}= 2\,\text{Area}(D)=2\pi
+</me>
+</p></solution>
+</exercise>
+
+<exercise><title><fromexam>M317 2001D</fromexam></title>
+<statement><p>
+Let <m>S</m> denote the portion of the paraboloid
+<m>z=1-\frac{1}{4}x^2-y^2</m> for which <m>z\ge 0</m>. Orient <m>S</m> so that its unit
+normal has a positive <m>\hat k</m> component. Let
+<me>
+\vF(x,y,z) = (3y^2+z)\,\hi+(x-x^2)\,\hj+\hk
+</me>
+Evaluate the surface integral <m>\dblInt_S\nabla\times\vF\cdot\hn\,\dee{S}</m>.
+</p></statement>
+
+<answer><p>
+<m>2\pi</m>
+</p></answer>
+
+<solution><p>
+For the specified <m>\vF</m> and the surface
+<m>x=f(x,y)=1-\frac{1}{4}x^2-y^2</m>, by (<xref ref="eq_SUdSgraph"/>),
+<md>
+<mrow>
+\hn\,\dee{S}&amp;=\big(-f_x\,\hi-f_y\,\hj+\hk\big)\,\dee{x}\dee{y}
+=\Big(\frac{x}{2}\,\hi+2y\,\hj+\hk\Big)\,\dee{x}\dee{y}
+</mrow><mrow>
+\nabla\times\vF&amp;=\det\left[\begin{matrix}\hi&amp;\hj&amp;\hk \\
+     \frac{\partial }{\partial x}&amp;
+        \frac{\partial }{\partial y}&amp;
+        \frac{\partial }{\partial z} \\
+3y^2+z&amp;x-x^2&amp;1\end{matrix}\right]
+</mrow><mrow>
+&amp;=\hj+(1-2x-6y)\,\hk
+</mrow><mrow>
+\nabla\times\vF\cdot\hn\,\dee{S}&amp;= (2y+1-2x-6y)\,\dee{x}\dee{y}= (1-2x-4y)\,\dee{x}\dee{y}
+</mrow>
+</md>
+The domain of integration is <m>1-\frac{1}{4}x^2-y^2\ge 0</m> or
+<m>\frac{1}{4}x^2+y^2\le 1</m>. This is an ellipse. Call it <m>D</m>.
+So
+<me>
+\dblInt_S\nabla\times\vF\cdot\hn\,\dee{S}
+=\dblInt_D (1-2x-4y)\,\dee{x}\dee{y}
+</me>
+The integrals over <m>D</m> of <m>x</m>, which is odd under <m>x\rightarrow-x</m>,
+and of <m>y</m>, which is odd under <m>y\rightarrow -y</m>, are both zero.
+As the ellipse <m>D</m> has area <m>A=\pi\times 2\times 1=2\pi</m>
+<me>
+\dblInt_S\nabla\times\vF\cdot\hn\,\dee{S}
+=\dblInt_D (1-2x-4y)\,\dee{x}\dee{y}
+=A
+=2\pi
+</me>
+</p></solution>
+</exercise>
+
+<exercise>
+<statement><p>
+Let <m>S</m> be the boundary of the apple core bounded by the sphere
+<m>x^2+y^2+z^2=16</m> and the hyperboloid <m>x^2+y^2-z^2=8</m>.
+Find the flux integral
+<m>\ \dblInt_S\vF\cdot\hn \,dS\ </m> where
+<m>\vF=x\,\hi+y\,\hj+z\,\hk</m>
+and <m>\hn</m> is
+the outward normal to the surface <m>S</m>.
+</p></statement>
+
+<hint><p>
+You can use the the cylindrical coordinates <m>\theta</m> and <m>z</m> to
+parametrize the hyperboloid.
+</p></hint>
+
+<answer><p>
+<m>192\pi</m>
+</p></answer>
+
+<solution><p>
+ Due to the symmetry of the surface and the vector field under reflection in the <m>xy</m>-plane, i.e. under <m>z\rightarrow -z</m>, it is sufficient
+to compute the integral over the upper half of the surface, where <m>z \ge 0</m>,
+and then multiply the result by 2. The upper half of the surface consists
+of two pieces, <m>S_1</m> and <m>S_2</m>, where <m>S_1</m> is the part on the sphere and
+<m>S_2</m> is the part on the hyperboloid.
+<m>S_1</m> and <m>S_2</m> intersect on a circle. The circle is obtained
+by imposing the two equations <m>x^2+y^2+z^2=16</m> and <m>x^2+y^2-z^2=8</m>
+simultaneously. Thus we have <m>x^2+y^2=12</m> and <m>z=2</m>, or in cylindrical coordinates <m>r=\sqrt{12}</m>, <m>z=1</m>, on the circle. Here is a sketch of a
+cross-section of the apple core.
+</p>
+
+<sidebyside width="75%">
+<image source="pfigs/applecore"/>
+</sidebyside>
+
+<p>
+Let <m>\phi_1</m> be the angle between <m>z</m>-axis and the cone formed by
+connecting the circle to the origin. We have <m>\tan \phi_1 = \sqrt {12}/2 = \sqrt 3</m>.  Thus <m>\phi_1 = \pi/3</m>.
+</p>
+
+<p>We'll use spherical coordinates to compute the flux integral
+<m>\ \dblInt_{S_1}\vF\cdot\hn \,dS\ </m>. As the spherical coordinate
+<m>\rho=4</m> on all of <m>S_1</m>, we can paramerize <m>S_1</m> by
+<md>
+<mrow>
+\vr(\theta,\varphi) &amp; = 4\cos\theta\sin\varphi \,\hi
+                      + 4\sin\theta\sin\varphi \,\hj
+                      + 4\cos\varphi \,\hk\qquad
+0 \le \theta \le 2 \pi,\
+0 \le \phi \le \pi/3
+</mrow>
+</md>
+So
+<md>
+<mrow>
+\frac{\partial\vr}{\partial\theta}
+&amp;= -4\sin\theta\sin\varphi \,\hi
+                      + 4\cos\theta\sin\varphi \,\hj
+</mrow><mrow>
+\frac{\partial\vr}{\partial\varphi}
+&amp;= 4\cos\theta\cos\varphi \,\hi
+                      + 4\sin\theta\cos\varphi \,\hj
+                      - 4\sin\varphi \,\hk
+</mrow><mrow>
+\frac{\partial\vr}{\partial\theta}\times\frac{\partial\vr}{\partial\varphi}
+&amp;= \det\left[\begin{matrix} \hi &amp; \hj &amp; \hk
+</mrow><mrow>
+-4\sin\theta\sin\varphi &amp; 4\cos\theta\sin\varphi &amp; 0
+</mrow><mrow>
+4\cos\theta\cos\varphi &amp; 4\sin\theta\cos\varphi &amp; -4\sin\varphi
+             \end{matrix}\right]
+</mrow><mrow>
+&amp;= -16\big(\cos\theta\sin^2\varphi\,,\, \sin\theta\sin^2\varphi\,,\,
+                    \sin\varphi\cos\varphi\big)
+</mrow><mrow>
+&amp;= -4\,(\sin\varphi)\,\vr(\theta,\varphi)
+</mrow>
+</md>
+and, by (<xref ref="eq_SUdSparam"/>),
+<md>
+<mrow>
+\hn\,\dee{S} &amp;= \pm\frac{\partial\vr}{\partial\theta}\times
+            \frac{\partial\vr}{\partial\varphi}\,\dee{\theta}\dee{\varphi}
+= \mp 4\,(\sin\varphi)\,\vr(\theta,\varphi)\,\dee{\theta}\dee{\varphi}
+</mrow>
+</md>
+To get the outward pointing normal, i.e. the normal point in the same direction
+as <m>\vr(\theta,\varphi)</m>, we take the plus sign. As <m>\vF = \vr(\theta,\varphi)</m>,
+<me>
+\vF\cdot \hn\,\dee{S}
+= 4\overbrace{|\vr(\theta,\varphi)|^2}^{4^2}\ \sin\varphi\,\dee{\theta}\,\dee{\varphi}
+= 64 \sin\varphi\,\dee{\theta}\,\dee{\varphi}
+</me>
+and
+<md>
+<mrow>
+\dblInt_{S_1}\vF\cdot\hn \,dS
+= 64 \int_{0}^{2\pi} \dee{\theta} \int_{0}^{\pi/3}\dee{\varphi}\  \sin \varphi
+= 64 \cdot 2\pi \Big[ - \cos \varphi \Big]_0^{\pi/3}
+= 64 \pi
+</mrow>
+</md>
+</p>
+
+<p>The surface <m>S_2</m> can be parametrized using the cylindrical coordinates
+<m>\theta</m> and <m>z</m>. Indeed, we have
+<me>
+r= \sqrt {x^2+y^2}= (8+z^2)^{1/2}
+</me>
+for the hyperboloid  and we always have <m>x=r \cos \theta</m> and
+<m>y= r \sin \theta</m>.
+Thus the hyperboloid has the following parametrization:
+<md>
+<mrow>
+\vR(\theta,z) = (8+z^2)^{1/2} \cos \theta \, \hi +
+(8+z^2)^{1/2} \sin \theta \, \hj + z \,\hk
+</mrow>
+</md>
+The range for the parameters of <m>S_2</m> is <m>0 \le \theta \le 2\pi</m> and
+<m>0  \le z \le 2</m>. We have
+<md>
+<mrow>
+\pdiff{\vR}{\theta} &amp;= -(8+z^2)^{1/2} \sin \theta \, \hi +
+                   (8+z^2)^{1/2} \cos \theta \, \hj + 0 \,\hk
+</mrow><mrow>
+\pdiff{\vR}{z} &amp;= z(8+z^2)^{-1/2} \cos \theta \, \hi
+        + z(8+z^2)^{-1/2} \sin \theta \, \hj +  \,\hk
+</mrow>
+</md>
+and
+<md>
+<mrow>
+\pdiff{\vR}{\theta} \times \pdiff{\vR}{z}
+&amp;=\det\left[\begin{matrix}\hi &amp; \hj &amp; \hk \\
+             -(8+z^2)^{1/2} \sin \theta &amp; (8+z^2)^{1/2} \cos \theta  &amp; 0 \\
+           z(8+z^2)^{-1/2} \cos \theta &amp; z(8+z^2)^{-1/2} \sin \theta &amp; 1
+    \end{matrix}\right]
+</mrow><mrow>
+&amp;= (8+z^2)^{1/2} \cos \theta \,\hi + (8+z^2)^{1/2} \sin\theta\,\hj - z \,\hk
+</mrow><mrow>
+&amp;=x\,\hi + y\,\hj -z\,\hk
+</mrow>
+</md>
+Note that <m>\pdiff{\vR}{\theta} \times \pdiff{\vR}{z}</m> is pointing
+downward (since <m>z \gt 0</m>) and hence outward.
+Since <m>F \cdot \left(\pdiff{\vR}{\theta} \times \pdiff{\vR}{z} \right)
+= (x,y,z) \cdot (x,y,-z) =  x^2 + y^2 - z^2 = 8</m> on <m>S_2</m>,
+we have
+<me>
+ \dblInt_{S_2}\vF\cdot\hn \,\dee{S}
+=  \ \dblInt_{S_2} \vF \cdot (\vR_\theta \times \vR_z) \, d \theta\, \dee{z}
+=\int_0^2 \dee{z} \int_0^{2\pi}\dee{\theta}\ 8
+= 32 \pi
+</me>
+Finally, the flux integral over the whole apple core surface is
+<me>
+2  \left(\dblInt_{S_1}\vF\cdot\hn \,dS
++ \dblInt_{S_2}\vF\cdot\hn \,dS\right)
+= 2\big(64\pi+32\pi\big)
+=192\pi
+</me>
+</p></solution>
+</exercise>
+</exercisegroup>
+
+<exercisegroup><introduction><application/></introduction>
+
+<exercise><title><fromexam>M317 2012D</fromexam></title>
+<statement><p><ol label="a">
+<li>
+Consider the surface <m>S</m> given by the equation
+<me>
+x^2 + z^2 = \cos^2 y
+</me>
+Find an equation for the tangent plane to <m>S</m> at the point
+<m>\big(\frac{1}{2} , \frac{\pi}{4} , \frac{1}{2} \big)</m>.
+</li>
+<li>
+Compute the integral
+<me>
+\dblInt_S \sin y\ \dee{S}
+</me>
+where <m>S</m> is the part of the surface from (a) lying between the planes
+<m>y = 0</m> and <m>y = \frac{1}{2}\pi</m>.
+</li>
+</ol>
+</p></statement>
+
+<hint><p>
+(a)  Review §<xref ref="sec_tangentPlanes"/>.
+</p>
+
+<p>(b)  Review §<xref ref="subsec_paramSurfaces"/>.
+</p></hint>
+
+<answer><p>
+(a) <m>x+y+z = 1+\pi/4</m></p><p>
+(b) <m>\frac{2\pi}{3}\big[2\sqrt{2}-1\big]</m>
+</p>
+
+</answer>
+
+<solution><p> (a)
+The specified surface is of the form
+<me>
+G(x,y,z) = x^2 + z^2 - \cos^2 y = 0
+</me>
+So one normal vector at the point
+       <m>\big(\frac{1}{2} , \frac{\pi}{4} , \frac{1}{2} \big)</m>
+is
+<me>
+\vnabla G\left(\frac{1}{2} , \frac{\pi}{4} , \frac{1}{2} \right)
+=\big(2x \,,\, 2\sin y\cos y \,,\, 2z \big)\Big|_{
+             \big(\frac{1}{2} , \frac{\pi}{4} , \frac{1}{2} )}
+=(1,1,1)
+</me>
+and an equation for the tangent plane at
+   <m>\big(\frac{1}{2} , \frac{\pi}{4} , \frac{1}{2} \big)</m>
+is
+<md>
+<mrow>
+(1,1,1)\cdot\big(x-1/2\,,\,y-\pi/4\,,\, z-1/2\big) =0\quad\text{or}\quad
+x+y+z = 1+\pi/4
+</mrow>
+</md>
+</p>
+
+<p> (b) For each fixed <m>y</m>, <m>x^2+z^2=\cos^2y</m> is a circle of
+radius <m>|\cos y|</m>. So we may parametrize the surface by
+<md>
+<mrow>
+\vr(\theta,y)
+=\big(\cos y\,\cos\theta\,,\, y \,,\, \cos y\,\sin\theta\big)\qquad
+0\le\theta \lt 2\pi,\ 0\le y\le \frac{\pi}{2}
+</mrow>
+</md>
+Then
+<md>
+<mrow>
+\frac{\partial \vr}{\partial\theta}
+ &amp;= \big(-\cos y\,\sin\theta\,,\, 0 \,,\, \cos y\,\cos\theta\big)
+</mrow><mrow>
+\frac{\partial \vr}{\partial y}
+ &amp;= \big(-\sin y\,\cos\theta\,,\, 1 \,,\, -\sin y\,\sin\theta\big)
+</mrow><mrow>
+\frac{\partial \vr}{\partial\theta} \times
+     \frac{\partial \vr}{\partial y}
+&amp;=\big(-\cos y\,\cos\theta\,,\, -\sin y\,\cos y\,,\,-\cos y\,\sin\theta \big)
+</mrow><mrow>
+\dee{S}
+&amp;= \left|\frac{\partial \vr}{\partial\theta} \times
+     \frac{\partial \vr}{\partial y}\right|\dee{\theta}\,\dee{y}
+=\cos y\sqrt{1+\sin^2 y}\,\dee{\theta}\,\dee{y}
+</mrow>
+</md>
+So the specified integral is
+<md>
+<mrow>
+\dblInt_S \sin y\ \dee{S}
+&amp;= \int_0^{\frac{\pi}{2}}\dee{y} \int_0^{2\pi}\dee{\theta}\
+                \cos y\sqrt{1+\sin^2 y}\,\sin y
+</mrow><mrow>
+&amp;= 2\pi \int_0^{\frac{\pi}{2}}\dee{y}\
+                \sqrt{1+\sin^2 y}\,\sin y\cos y
+</mrow><mrow>
+&amp;= \pi \int_1^2 \dee{u}\ \sqrt{u}
+           \quad\text{with }u=1+\sin^2 y,\ \dee{u}=2\sin y\cos y\,\dee{y}
+</mrow><mrow>
+&amp;=\pi\left[\frac{u^{3/2}}{3/2}\right]_1^2
+</mrow><mrow>
+&amp;= \frac{2\pi}{3}\big[2\sqrt{2}-1\big]
+</mrow>
+</md>
+</p>
+
+</solution>
+</exercise>
+
+<exercise><title><fromexam>M317 2011D</fromexam></title>
+<statement><p>
+Let <m>f</m> be a function on <m>\bbbr^3</m> such that all its first order
+partial derivatives are continuous. Let <m>S</m> be the surface
+<m>\Set{(x, y, z)} {f(x,y,z) = c}</m> for some <m>c \in \bbbr</m>.
+Assume that <m>\vnabla f \ne \vZero</m> on <m>S</m>. Let <m>\vF</m> be the gradient field
+<m>\vF = \vnabla f</m>.
+</p>
+
+<p><ol label="a">
+<li>
+Let <m>C</m> be a piecewise smooth curve contained in <m>S</m>
+(not necessarily closed).
+Must it be true that <m>\int_C \vF \cdot \dee{\vr} = 0</m>? Explain why.
+</li>
+<li>
+Prove that for any vector field <m>\vG</m>,
+<me>
+\dblInt_S (\vF \times \vG) \cdot\hn\, \dee{S} = 0.
+</me>
+</li>
+</ol>
+</p></statement>
+
+<hint><p>
+(a) Review §<xref ref="sec_pathIndep"/>.
+</p>
+
+<p>(b) Use Lemma <xref ref="lem_equipotential"/>
+to show that the integrand is identically zero.
+</p>
+
+</hint>
+
+<answer><p>
+(a) Yes. See the solution for the explanation.</p><p>
+(b) See the solution for the proof.
+</p></answer>
+
+<solution><p> (a) By definition <m>\vF</m> is a conservative vector field with
+potential <m>f</m>. Suppose that the curve <m>C</m> starts at <m>P_1</m>, on <m>S</m>, and
+ends at <m>P_2</m>, on <m>S</m>. Then <m>f(P_1)=f(P_2)=c</m> and, by
+Theorem <xref ref="thm_workIntegral"/>,
+<me>
+\int_C \vF \cdot \dee{\vr}
+= f(P_2) - f(P_1)
+=c - c
+=0
+</me>
+</p>
+
+<p> (b) Since <m>\vF=\vnabla f</m>, <m>\vF</m> is normal to the level surfaces
+of <m>f</m> by Lemma <xref ref="lem_equipotential"/>.
+So, at any point of <m>S</m>,
+<m>\vF</m> is a scalar multiple of <m>\hn</m> and <m>\vF\times\vG</m> is perpendicular to
+<m>\hn</m>. Thus <m>(\vF \times \vG) \cdot\hn=0</m> and
+<me>
+\dblInt_S (\vF \times \vG) \cdot\hn\, \dee{S} = 0.
+</me>
+</p></solution>
+</exercise>
+
+<exercise><title><fromexam>M317 2011A</fromexam></title>
+<statement><p>
+<ol label="a">
+<li><p>
+Give parametric descriptions of the form
+<m>\vr(u, v) = \big(x(u,v)\,,\, y(u,v)\,,\, z(u,v)\big)</m>
+for the following surfaces. Be sure to state the domains of your
+parametrizations.
+<ol label="(i)">
+<li>
+The part of the plane <m>2x + 4y + 3z = 16</m> in the first octant
+<me>
+\Set{(x, y, z)}{ x \ge 0,\  y \ge 0,\  z \ge 0}
+</me>
+</li>
+<li>
+The cap of the sphere <m>x^2 + y^2 + z^2 = 16</m> for <m>4/\sqrt{2} \le z \le 4</m>.
+</li>
+<li>
+The hyperboloid <m>z^2 = 1 + x^2 + y^2</m> for <m>1 \le z \le 10</m>.
+</li>
+</ol></p>
+</li>
+<li>
+Use your parametrization from part (a) to compute the surface area
+of the cap of the sphere <m>x^2 + y^2 + z^2 = 16</m> for <m>4/\sqrt{2} \le z \le 4</m>.
+</li>
+</ol>
+</p></statement>
+
+<answer><p>
+(a) (i) <m>\vr(u,v) = \Big(u\,,\, v\,,\, \frac{1}{3}(16-2u-4v)\Big)\,\hk\qquad
+u\ge 0,\ v\ge 0,\ u+2v\le 8</m>
+</p>
+
+<p>(a) (ii) <m>\vr(u,v) = \big(4\cos u\sin v\,,\,
+                     4\sin u\sin v\,,\,
+                     4\cos v\big)\qquad
+           0\le u\le 2\pi,\ 0\le v\le \frac{\pi}{4}</m>
+</p>
+
+<p>(a) (iii) <m>\vr(u,v) = \big(u\,,\, v\,,\, \sqrt{1 + u^2 + v^2}\big)\qquad
+u^2+v^2\le 99</m>
+</p>
+
+<p>or <m>\vr(u,v) = \big(u\cos v\,,\, u\sin v\,,\, \sqrt{1 + u^2}\big)\qquad
+0\le v\le 2\pi,\ 0\le u\le\sqrt{99}</m>
+</p>
+
+<p>(b) <m>32\pi\Big[1-\frac{1}{\sqrt{2}}\Big]</m>
+</p></answer>
+
+<solution><p>
+(a) (i) Here is a sketch of the part of the plane in question.
+</p>
+
+<sidebyside width="75%">
+<image source="pfigs/OE11A_7ai"/>
+</sidebyside>
+
+<p>
+We can use <m>x</m> and <m>y</m> as parameters. As we can rewrite the equation of the
+plane as <m>z = \frac{1}{3}\big(16-2x-4y\big)</m>, we have
+the parametrization
+<me>
+\vr(x,y) = x\,\hi +y\,\hj +\frac{1}{3}\big(16-2x-4y\big)\,\hk
+</me>
+In terms of <m>x</m> and <m>y</m>, the condition <m>z= \frac{1}{3}\big(16-2x-4y\big)\ge 0</m>
+is <m>16-2x-4y\ge 0</m> or <m>x+2y\le 8</m>. So the domain is
+<me>
+\Set{(x,y)}{x\ge 0,\ y\ge 0,\ x+2y\le 8}
+</me>
+Renaming <m>x</m> to <m>u</m> and <m>y</m> to <m>v</m>, the parametrization is also
+<me>
+\vr(u,v) = \Big(u\,,\, v\,,\, \frac{1}{3}(16-2u-4v)\Big)\,\hk\qquad
+u\ge 0,\ v\ge 0,\ u+2v\le 8
+</me>
+</p>
+
+<p>(a) (ii) Here is a sketch of the part of the cap in the first octant.
+</p>
+<sidebyside width="75%">
+<image source="pfigs/OE11A_7aii"/>
+</sidebyside>
+
+<p>
+The full sphere can be parametrized (using spherical coordinates with
+<m>\rho=4</m>) by
+<me>
+\vr(\theta,\varphi) = 4\cos\theta\sin\varphi\,\hi
+                     +4\sin\theta\sin\varphi\,\hj
+                     +4\cos\varphi\,\hk\qquad
+0\le\theta\le 2\pi,\ 0\le\varphi\le \pi
+</me>
+In these coordinates, the condition  <m>4/\sqrt{2} \le z \le 4</m> is
+<md>
+<mrow>
+\frac{4}{\sqrt{2}} \le 4\cos\varphi \le 4
+&amp;\iff \frac{1}{\sqrt{2}} \le \cos\varphi \le 1
+</mrow><mrow>
+&amp;\iff 0\le\varphi\le\frac{\pi}{4}
+</mrow>
+</md>
+So our parametrization is
+<me>
+\vr(\theta,\varphi) = 4\cos\theta\sin\varphi\,\hi
+                     +4\sin\theta\sin\varphi\,\hj
+                     +4\cos\varphi\,\hk\qquad
+0\le\theta\le 2\pi,\ 0\le\varphi\le \frac{\pi}{4}
+</me>
+Renaming <m>\theta</m> to <m>u</m> and <m>\varphi</m> to <m>v</m>, the parametrization is also
+<me>
+\vr(u,v) = \big(4\cos u\sin v\,,\,
+                     4\sin u\sin v\,,\,
+                     4\cos v\big)\qquad
+0\le u\le 2\pi,\ 0\le v\le \frac{\pi}{4}
+</me>
+</p>
+
+<p>
+(a) (iii) Here is a sketch of the hyperboloid.
+</p>
+
+<sidebyside width="75%">
+<image source="pfigs/OE11A_7aiii"/>
+</sidebyside>
+
+<p>
+If we use <m>x</m> and <m>y</m> as parameters, then, since
+<m>z = \sqrt{1 + x^2 + y^2}</m>, we have the parametrization
+<me>
+\vr(x,y) = x\,\hi +y\,\hj +\sqrt{1 + x^2 + y^2}\,\hk
+</me>
+In terms of <m>x</m> and <m>y</m>, the condition <m>1\le z\le 10</m> is
+<me>
+1\le \sqrt{1 + x^2 + y^2}\le 10\qquad \text{or}\qquad 0\le x^2+y^2\le 99
+</me>
+So the domain is
+<me>
+\Set{(x,y)}{x^2+y^2\le 99}
+</me>
+Renaming <m>x</m> to <m>u</m> and <m>y</m> to <m>v</m>, the parametrization is also
+<me>
+\vr(u,v) = \big(u\,,\, v\,,\, \sqrt{1 + u^2 + v^2}\big)\qquad
+u^2+v^2\le 99
+</me>
+</p>
+
+<p>Alternatively, if we replace <m>x</m> and <m>y</m> with the polar coordinates
+<m>r</m> and <m>\theta</m>, we get the parametrization
+<me>
+\vr(r,\theta) = r\cos\theta\,\hi +r\sin\theta\,\hj +\sqrt{1 + r^2}\,\hk
+\qquad 0\le\theta\le 2\pi,\ 0\le r\le\sqrt{99}
+</me>
+Renaming <m>r</m> to <m>u</m> and <m>\theta</m> to <m>v</m>, the parametrization is also
+<me>
+\vr(u,v) = \big(u\cos v\,,\, u\sin v\,,\, \sqrt{1 + u^2}\big)\qquad
+0\le v\le 2\pi,\ 0\le u\le\sqrt{99}
+</me>
+</p>
+
+<p>(b) Let's use the parametrization
+<me>
+\vr(\theta,\varphi) = 4\cos\theta\sin\varphi\,\hi
+                     +4\sin\theta\sin\varphi\,\hj
+                     +4\cos\varphi\,\hk\qquad
+0\le\theta\le 2\pi,\ 0\le\varphi\le \frac{\pi}{4}
+</me>
+from part (a) (ii),
+so that
+<md>
+<mrow>
+\frac{\partial\vr}{\partial\theta}\times\frac{\partial\vr}{\partial\varphi}
+&amp;= \det\left[\begin{matrix} \hi &amp; \hj &amp; \hk
+</mrow><mrow>
+-4\sin\theta\sin\varphi &amp; 4\cos\theta\sin\varphi &amp; 0
+</mrow><mrow>
+4\cos\theta\cos\varphi &amp; 4\sin\theta\cos\varphi &amp; -4\sin\varphi
+             \end{matrix}\right]
+</mrow><mrow>
+&amp;= -16\big(\cos\theta\sin^2\varphi\,,\, \sin\theta\sin^2\varphi\,,\,
+                    \sin\varphi\cos\varphi\big)
+</mrow>
+</md>
+and, by (<xref ref="eq_SUdSparam"/>),
+<md>
+<mrow>
+\dee{S} &amp;= \Big|\frac{\partial\vr}{\partial\theta}\times
+            \frac{\partial\vr}{\partial\varphi}\Big|\,\dee{\theta}\dee{\varphi}
+= 16\sin\varphi\sqrt{\cos^2\theta\sin^2\varphi
+                   + \sin^2\theta\sin^2\varphi
+                   +\cos^2\varphi}\,\dee{\theta}\dee{\varphi}
+</mrow><mrow>
+&amp;= 16\sin\varphi\,\dee{\theta}\dee{\varphi}
+</mrow>
+</md>
+So the area is
+<md>
+<mrow>
+\text{Area}
+=\dblInt_S \dee{S}
+&amp;=\int_0^{\pi/4}\dee{\varphi}\int_0^{2\pi}\dee{\theta}\ 16\sin\varphi
+=32\pi \int_0^{\pi/4}\dee{\varphi}\ \sin\varphi
+=32\pi \Big[-\cos\varphi\Big]_0^{\pi/4}
+</mrow><mrow>
+&amp;=32\pi\Big[1-\frac{1}{\sqrt{2}}\Big]
+</mrow>
+</md>
+</p></solution>
+</exercise>
+
+<exercise><title><fromexam>M317 2017D</fromexam></title>
+<statement><p>
+Let <m>S</m> be the part of the sphere <m>x^2+y^2+z^2=2</m> where <m>y\ge 1</m>, oriented away from the origin.
+<ol label="a">
+<li>
+Compute
+<me>
+\dblInt_S y^3\,\dee{S}
+</me>
+</li>
+<li>
+Compute
+<me>
+\dblInt_S \big(xy\,\hi + xz\,\hj + zy\,\hk\big)\cdot\hn\,\dee{S}
+</me>
+</li>
+</ol>
+</p></statement>
+
+<answer><p>
+(a) <m>\frac{\pi}{2}</m></p><p>
+(b) <m>\frac{\pi}{4}+\frac{2}{3}</m>
+</p></answer>
+
+<solution>
+
+<p><em>Solution 1 <mdash/> using tweaked spherical coordinates</em>.
+</p>
+
+<p>First we have to parametrize <m>S</m>. It is natural
+to use spherical coordinates with <m>\rho=\sqrt{2}</m>. However if we use
+the standard spherical coordinates
+<md>
+<mrow>
+x=\sqrt{2}\,\sin\varphi\cos\theta \qquad
+y=\sqrt{2}\,\sin\varphi\sin\theta \qquad
+z=\sqrt{2}\,\cos\varphi
+</mrow>
+</md>
+the condition <m>y\ge 1</m> becomes <m>\sin\varphi\sin\theta\ge\frac{1}{\sqrt{2}}</m>, which is very complicated. So let's back up
+and think a bit before we compute. The condition <m>z\ge 1</m>, as opposed to
+<m>y\ge 1</m>, is easy to implement in spherical coordinates. It is
+<m>\cos\varphi\ge \frac{1}{\sqrt{2}}</m> or <m>0\le\varphi\le\frac{\pi}{4}</m>.
+So let's modify spherical coordinates to make the <m>y</m>-axis play the
+role of the <m>z</m>-axis, by just exchanging <m>y</m> and <m>z</m> in the parametrization.
+<md>
+<mrow>
+x=\sqrt{2}\,\sin\varphi\cos\theta \qquad
+y=\sqrt{2}\,\cos\varphi\qquad
+z=\sqrt{2}\,\sin\varphi\sin\theta
+</mrow>
+</md>
+The condition <m>y\ge 1</m> is then <m>\sqrt{2}\cos\varphi\ge 1</m>, which is
+turn is <m>0\le\varphi\le\frac{\pi}{4}</m>. Since we have just exchanged
+<m>y</m> and <m>z</m> we could probably just guess <m>\hn\,\dee{S}</m> and <m>\dee{S}</m>
+from standard spherical coordinates. (See Appendix <xref ref="ap_spherCoord"/> and recall that <m>\rho=\sqrt{2}</m>.)  But to be on the safe
+side, let's derive them.
+We are using the parametrization
+<me>
+\vr(\theta, \varphi) = \sqrt{2}\,\sin\varphi\cos\theta\,\hi
+                +\sqrt{2}\,\cos\varphi\,\hj
+                +\sqrt{2}\,\sin\varphi\sin\theta\,\hk\qquad
+0\le\theta\le 2\pi,\ 0\le \varphi\le \frac{\pi}{4}
+</me>
+Since
+<md>
+<mrow>
+\frac{\partial\vr}{\partial\theta}
+&amp;= -\sqrt{2}\,\sin\varphi\sin\theta\,\hi
+           +\sqrt{2}\,\sin\varphi\cos\theta\,\hk
+</mrow><mrow>
+\frac{\partial\vr}{\partial\varphi}
+&amp;= \sqrt{2}\,\cos\varphi\cos\theta\,\hi - \sqrt{2}\,\sin\varphi\,\hj
+  + \sqrt{2}\,\cos\varphi\sin\theta\,\hk
+</mrow>
+</md>
+so that
+<md>
+<mrow>
+\frac{\partial\vr}{\partial\theta}\times\frac{\partial\vr}{\partial\varphi}
+&amp;= \det\left[\begin{matrix} \hi &amp; \hj &amp; \hk \\
+-\sqrt{2}\,\sin\varphi\sin\theta &amp; 0  &amp;
+                 \sqrt{2}\,\sin\varphi\cos\theta \\
+\sqrt{2}\,\cos\varphi\cos\theta &amp;- \sqrt{2}\,\sin\varphi &amp;
+                \sqrt{2}\,\cos\varphi\sin\theta
+         \end{matrix}\right]
+</mrow><mrow>
+&amp;= 2\sin^2\varphi\cos\theta\,\hi +2\sin\varphi\cos\varphi\,\hj
+             + 2\sin^2\varphi\sin\theta\,\hk
+</mrow>
+</md>
+(<xref ref="eq_SUdSparam"/>) gives
+<md alignment="alignat">
+<mrow>
+\hn\,\dee{S} &amp;= \pm \frac{\partial\vr}{\partial\theta}\times
+            \frac{\partial\vr}{\partial\varphi}\,\dee{\theta}\dee{\varphi}
+&amp;&amp;= \pm 2\sin\varphi
+   \big(\sin\varphi\cos\theta\,,\,\cos\varphi\,,\, \sin\varphi\sin\theta\big)
+          \,\dee{\theta}\dee{\varphi}
+</mrow><mrow>
+\dee{S} &amp;= \left|\frac{\partial\vr}{\partial\theta}\times
+       \frac{\partial\vr}{\partial\varphi}\right|\,\dee{\theta}\dee{\varphi}
+&amp;&amp;= 2\sin\varphi \,\dee{\theta}\dee{\varphi}
+</mrow>
+</md>
+Choose the plus sign to give the outward pointing normal.
+</p>
+
+<p>(a)
+The specified integral is
+<md>
+<mrow>
+\dblInt_S y^3\ \dee{S}
+&amp;=2\int_0^{\pi/4}\dee{\varphi} \int_0^{2\pi}\dee{\theta}\
+          \sin\varphi\ \overbrace{\big(\sqrt{2}\,\cos\varphi\big)^3}^{y^3}
+</mrow><mrow>
+&amp;=8\sqrt{2}\,\pi \int_0^{\pi/4}\dee{\varphi}\ \sin\varphi\cos^3\varphi
+</mrow><mrow>
+&amp;=8\sqrt{2}\,\pi \left[-\frac{\cos^4\varphi}{4}\right]_0^{\pi/4}
+</mrow><mrow>
+&amp;= 2\sqrt{2}\,\pi\left[1-\frac{1}{4}\right]
+=\frac{3}{\sqrt{2}}\pi
+</mrow>
+</md>
+</p>
+
+<p>(b)
+The specified integral is
+<md>
+<mrow>
+&amp;\dblInt_S \big(xy\,\hi + xz\,\hj + zy\,\hk\big)\cdot\hn\,\dee{S}
+</mrow><mrow>
+&amp;\hskip0.25in=
+   2\int_0^{\pi/4}\dee{\varphi} \int_0^{2\pi}\dee{\theta}\ \sin\varphi\
+   \big(2\sin\varphi\cos\varphi\cos\theta\,,\,
+      2\sin^2\varphi\sin\theta\cos\theta\,,\,
+      2\sin\varphi\cos\varphi\sin\theta\big)\cdot
+</mrow><mrow>&amp;\hskip4.3in
+\big(\sin\varphi\cos\theta\,,\,\cos\varphi\,,\, \sin\varphi\sin\theta\big)
+</mrow><mrow>
+&amp;\hskip0.25in=
+   4\int_0^{\pi/4}\dee{\varphi} \int_0^{2\pi}\dee{\theta}\
+   \Big\{\sin^3\varphi\cos\varphi\cos^2\theta
+        +\sin^3\varphi\cos\varphi\sin\theta\cos\theta
+        +\sin^3\varphi\cos\varphi\sin^2\theta
+   \Big\}
+</mrow><mrow>
+&amp;\hskip0.25in= 4
+   \left[\int_0^{\pi/4}\dee{\varphi}\ \sin^3\varphi\cos\varphi\right]
+   \left[\int_0^{2\pi}\dee{\theta}\ \big(1+\sin\theta\cos\theta\big)\right]
+</mrow><mrow>
+&amp;\hskip0.25in= 4\left[\frac{\sin^4\varphi}{4}\right]_0^{\pi/4}
+                 \left[\theta+\frac{\sin^2\theta}{2}\right]_0^{2\pi}
+</mrow><mrow>
+&amp;\hskip0.25in= 4\times \frac{1}{16}\times (2\pi)
+=\frac{\pi}{2}
+</mrow>
+</md>
+</p>
+
+<p><em>Solution 2 <mdash/> parametrizing by <m>x</m> and <m>z</m></em>.
+</p>
+
+<p>We can also parametrize <m>S</m> by using <m>x</m> and <m>z</m> as parameters.
+On <m>S</m>,
+<ul>
+<li>
+<m>y=\sqrt{2-x^2-z^2}</m> and
+</li>
+<li>
+<m>y</m> runs over the range <m>1\le y\le\sqrt{2}</m>. Correspondingly,
+<m>x^2+z^2=2-y^2</m> runs over <m>0\le x^2+z^2\le 1</m>
+</li>
+</ul>
+So we can use the parametrization
+<me>
+\vr(x,z) = x\,\hi +\sqrt{2-x^2-z^2}\,\hj +z\,\hk\qquad
+0\le x^2+z^2\le 1
+</me>
+Since
+<md>
+<mrow>
+\frac{\partial\vr}{\partial x}
+&amp;= \hi -\frac{x}{\sqrt{2-x^2-z^2}}\,\hj
+</mrow><mrow>
+\frac{\partial\vr}{\partial z}
+&amp;= -\frac{z}{\sqrt{2-x^2-z^2}}\,\hj  + \hk
+</mrow>
+</md>
+so that
+<md>
+<mrow>
+\frac{\partial\vr}{\partial x}\times\frac{\partial\vr}{\partial z}
+&amp;= \det\left[\begin{matrix} \hi &amp; \hj &amp; \hk \\
+1 &amp; -\frac{x}{\sqrt{2-x^2-z^2}}  &amp;  0 \\
+0 &amp; -\frac{z}{\sqrt{2-x^2-z^2}} &amp; 1  \end{matrix}\right]
+</mrow><mrow>
+&amp;= -\frac{x}{\sqrt{2-x^2-z^2}}\,\hi - \hj
+             -\frac{z}{\sqrt{2-x^2-z^2}}\,\hk
+</mrow>
+</md>
+(<xref ref="eq_SUdSparam"/>) gives
+<md alignment="alignat">
+<mrow>{3}
+\hn\,\dee{S} &amp;= \pm \frac{\partial\vr}{\partial x}\times
+            \frac{\partial\vr}{\partial z}\,\dee{x}\dee{z}
+&amp;&amp;= \mp
+   \left(\frac{x}{\sqrt{2-x^2-z^2}}\,,1\,,\, \frac{z}{\sqrt{2-x^2-z^2}}\right)
+          \,\dee{x}\dee{z}
+</mrow><mrow>
+\dee{S} &amp;= \left|\frac{\partial\vr}{\partial x}\times
+       \frac{\partial\vr}{\partial z}\right|\,\dee{x}\dee{z}
+&amp;&amp;= \sqrt{1+\frac{x^2+z^2}{2-x^2-z^2}}\,\dee{x}\dee{z}
+    =\frac{\sqrt{2}}{\sqrt{2-x^2-z^2}}\,\dee{x}\dee{z}
+</mrow>
+</md>
+Choose the plus sign to give the outward pointing normal.
+</p>
+
+<p>(a)
+The specified integral is
+<md>
+<mrow>
+\dblInt_S y^3\ \dee{S}
+&amp;=\dblInt_{x^2+z^2\le 1}\dee{x}\dee{z}\ \frac{\sqrt{2}}{\sqrt{2-x^2-z^2}}
+          \overbrace{\big(2-x^2-z^2\big)^{3/2}}^{y^3}
+</mrow><mrow>
+&amp;=\sqrt{2}\dblInt_{x^2+z^2\le 1}\dee{x}\dee{z}\ \big(2-x^2-z^2\big)
+</mrow>
+</md>
+Switching to polar coordinates with <m>x=r\cos\theta</m> and <m>z=r\sin\theta</m>,
+<md>
+<mrow>
+\dblInt_S y^3\ \dee{S}
+&amp;= \sqrt{2}\int_0^{2\pi}\dee{\theta}\int_0^1\dee{r}\ r(2-r^2)
+</mrow><mrow>
+&amp;= \sqrt{2}\ (2\pi)\ \left[r^2-\frac{r^4}{4}\right]_0^1
+= \sqrt{2}\ (2\pi)\ \left[\frac{3}{4}\right]
+=\frac{3}{\sqrt{2}}\pi
+</mrow>
+</md>
+</p>
+
+<p>(b)
+The specified integral is
+<md>
+<mrow>
+&amp;\dblInt_S \big(xy\,\hi + xz\,\hj + zy\,\hk\big)\cdot\hn\,\dee{S}
+</mrow><mrow>
+&amp;\hskip0.25in=
+   \dblInt_{x^2+z^2\le 1}\dee{x}\dee{z}\
+   \big(x\sqrt{2-x^2-z^2}\,,\,
+      xz\,,\,
+      z\sqrt{2-x^2-z^2}\big)\cdot
+</mrow><mrow>&amp;\hskip3in
+\left(\frac{x}{\sqrt{2-x^2-z^2}}\,,1\,,\, \frac{z}{\sqrt{2-x^2-z^2}}\right)
+</mrow><mrow>
+&amp;\hskip0.25in=
+   \dblInt_{x^2+z^2\le 1}\dee{x}\dee{z}\
+   \big\{x^2 +xz +z^2
+   \big\}
+</mrow>
+</md>
+Switching to polar coordinates with <m>x=r\cos\theta</m> and <m>z=r\sin\theta</m>,
+<md>
+<mrow>
+\dblInt_S \big(xy\,\hi + xz\,\hj + zy\,\hk\big)\cdot\hn\,\dee{S}
+&amp;=\int_0^{2\pi}\dee{\theta}\int_0^1\dee{r}\
+    r(r^2\cos^2\theta +r^2\sin\theta\cos\theta +r^2\sin^2\theta)
+</mrow><mrow>
+&amp;=
+   \left[\int_0^1\dee{r}\ r^3\right]
+   \left[\int_0^{2\pi}\dee{\theta}\ \big(1+\sin\theta\cos\theta\big)\right]
+</mrow><mrow>
+&amp;= \left[\frac{r^4}{4}\right]_0^1
+                 \left[\theta+\frac{\sin^2\theta}{2}\right]_0^{2\pi}
+</mrow><mrow>
+&amp;= \frac{1}{4}\times (2\pi)
+=\frac{\pi}{2}
+</mrow>
+</md>
+</p>
+
+</solution>
+</exercise>
+
+<exercise><title><fromexam>M317 1998D</fromexam></title>
+<statement><p>
+ Let <m>\cS</m> be the part of the surface <m>(x+y+1)^2+z^2=4</m>
+which lies in the first octant. Find the flux of <m>\vF</m> downwards through
+<m>\cS</m> where
+<me>
+\vF=xy\,\hi+(z-xy)\,\hj
+</me>
+</p></statement>
+
+<answer><p>
+<m>-\frac{5}{6}</m>
+</p></answer>
+
+<solution><p>
+First observe that,
+<ul>
+<li>
+because <m>(x+y+1)^2\ge 0</m>,
+ all points on <m>(x+y+1)^2+z^2=4</m> have <m>|z|\le 2</m>
+and that,
+</li>
+<li>
+for <m>|z_0|\le 2</m>, the surface <m>(x+y+1)^2+z^2=4</m>
+intersects the horizontal plane <m>z=z_0</m> on <m>(x+y+1)^2 = 4-z_0^2</m>,
+i.e. on the two lines <m>x+y=\pm\sqrt{4-z_0^2}-1</m>, <m>z=z_0</m>.
+</li>
+<li>
+The line <m>x+y=\pm\sqrt{4-z_0^2}-1</m>, <m>z=z_0</m>
+intersects the first octant if and only if <m>z_0\ge0</m> and
+<m>\pm\sqrt{4-z_0^2}-1\ge 0</m>.
+</li>
+<li>
+Thus <m>x+y=-\sqrt{4-z_0^2}-1</m>, <m>z=z_0</m> never intersects the first octant and
+</li>
+<li>
+ <m>x+y=\sqrt{4-z_0^2}-1</m>, <m>z=z_0</m>
+intersects the first octant if and only if <m>0\le z_0\le \sqrt{3}</m>.
+</li>
+<li> When <m>z_0=0</m>, the line <m>x+y=\sqrt{4-z_0^2}-1</m>, <m>z=z_0</m>
+is <m>x+y=1</m>, <m>z=0</m>.
+</li>
+<li> When <m>z_0=\sqrt{3}</m>, the line <m>x+y=\sqrt{4-z_0^2}-1</m>, <m>z=z_0</m>
+is <m>x+y=0</m>, <m>z=2</m>.
+</li>
+<li> So as <m>(x,y,z)</m> runs over <m>\cS</m>, <m>(x,y)</m> runs over the
+triangle <m>x\ge0</m>, <m>y\ge 0</m>, <m>x+y\le 1</m>.
+</li>
+</ul>
+Let <m>G(x,y,z)=(x+y+1)^2+z^2</m>. Then
+<me>
+\hn\,\dee{S}=\pm\frac{\vnabla G}{\vnabla G\cdot\hk}\ \dee{x}\dee{y}
+=\pm\frac{2(x+y+1)\hi+2(x+y+1)\hj+2z\hk}{2z}\,\dee{x}\dee{y}
+</me>
+For the downward normal, we need the minus sign, so
+<md>
+<mrow>
+\vF\cdot\hn\,\dee{S}
+&amp;=-\big[xy\,\hi+(z-xy)\,\hj\big]\cdot
+  \Big[\frac{(x+y+1)\hi+(x+y+1)\hj+z\hk}{z}\Big]\,\dee{x}\dee{y}
+</mrow><mrow>
+&amp;=-\frac{1}{z}\big[xy(x+y+1)+(z-xy)(x+y+1)\big]\,\dee{x}\dee{y}
+</mrow><mrow>
+&amp;=-\frac{1}{z}\big[z(x+y+1)\big]\,\dee{x}\dee{y}
+</mrow><mrow>
+&amp;=-(x+y+1)\,\dee{x}\dee{y}
+</mrow>
+</md>
+The domain of integration is <m>x\ge 0,\ y\ge 0,\ x+y\le 1</m>, so
+<md>
+<mrow>
+\dblInt_\cS\vF\cdot\hn\,\dee{S}
+&amp;=-\int_0^1 \dee{x}\int_0^{1-x} \dee{y} \ (x+y+1)
+=-\int_0^1 \dee{x}\ \Big[(1+x)(1-x)+\frac{1}{2}(1-x)^2\Big]
+</mrow><mrow>
+&amp;=-\int_0^1 \dee{x}\ \Big[\frac{3}{2}-x-\frac{1}{2} x^2\Big]
+=-\Big[\frac{3}{2}-\frac{1}{2}-\frac{1}{6}\Big]
+=-\frac{5}{6}
+</mrow>
+</md>
+</p></solution>
+</exercise></exercisegroup>
+
+</exercises>
