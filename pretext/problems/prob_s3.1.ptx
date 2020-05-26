@@ -1,0 +1,788 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+
+<!-- Copyright 2018 Joel Feldman, Andrew Rechnitzer and Elyse Yeager -->
+<!-- This work is licensed under the Creative Commons Attribution-NonCommercial-ShareAlike 4.0 International License-->
+<!-- https://creativecommons.org/licenses/by-nc-sa/4.0 -->
+
+<exercises>
+<exercisegroup>
+<introduction><conceptual/></introduction>
+
+<exercise>
+<statement><p>
+Parametrize the surface given by <m>z=e^{x+1}+xy</m> in terms of <m>x</m> and <m>y</m>.
+</p></statement>
+<hint><p>
+Your answer will have the form <m>\vr(x,y)= \psi_1(x,y)\hi+ \psi_2(x,y)\hj+ \psi_3(x,y)\hk</m>.
+</p></hint>
+<answer><p>
+ <m>\vr(x,y)= x\hi+ y\hj+ (e^{x+1}+xy)\hk</m>
+</p></answer>
+<solution><p>
+This parametrization is almost trivial. We know it will have the form <m>\vr(x,y)= \psi_1(x,y)\hi+ \psi_2(x,y)\hj+ \psi_3(x,y)\hk</m> where <m>\psi_1</m> gives the <m>x</m>-component (i.e. <m>x</m>), <m>\psi_2</m> gives the <m>y</m>-component (i.e. <m>y</m>), and <m>\psi_3</m> gives the <m>z</m>-component (i.e. <m>e^{x+1}+xy</m>). So,
+ <m>\vr(x,y)= x\hi+ y\hj+ (e^{x+1}+xy)\hk</m>
+</p></solution>
+</exercise>
+
+<exercise><title><fromexam>M317 2010D</fromexam></title>
+<statement><p>
+Let <m>S</m> be the surface given by
+<me>
+\vr(u, v) = \big( u + v\,,\, u^2 + v^2 \,,\, u - v\big),\qquad
+-2 \le u \le 2,\ -2 \le v \le 2
+</me>
+This is a surface you are familiar with. What surface is it (it may be
+just a portion of one of the following)?
+sphere /
+helicoid /
+ellipsoid /
+saddle /
+parabolic bowl /
+cylinder /
+cone /
+plane
+</p></statement>
+
+<answer><p>
+      parabolic bowl
+</p></answer>
+
+<solution><p>
+Our parametrization is
+<md>
+<mrow>
+x(u,v) &amp;= u+v
+</mrow><mrow>
+y(u,v) &amp;= u^2+v^2
+</mrow><mrow>
+z(u,v) &amp;= u-v
+</mrow>
+</md>
+<ul>
+<li>
+Adding <m>x(u,v)</m> and <m>z(u,v)</m> gives <m>x(u,v)+z(u,v) = 2u</m>.
+</li>
+<li>
+Subtracting <m>z(u,v)</m> from <m>x(u,v)</m> gives <m>x(u,v)-z(u,v) = 2v</m>.
+</li>
+</ul>
+So <m>u=\frac{1}{2}\big(x(u,v)+z(u,v)\big)</m> and
+        <m>v=\frac{1}{2}\big(x(u,v)-z(u,v)\big)</m>. So on our surface
+<md>
+<mrow>
+y(u,v) &amp;= u^2+v^2 = \frac{1}{4}\big(x(u,v)+z(u,v)\big)^2
+                  +\frac{1}{4}\big(x(u,v)-z(u,v)\big)^2
+</mrow><mrow>
+ &amp;= \frac{1}{2} x(u,v)^2 + \frac{1}{2} z(u,v)^2
+</mrow>
+</md>
+All points of our surface lie on <m>2y= x^2+z^2</m>. This is a parabolic bowl:
+<ul>
+<li>
+no points have <m>y \lt 0</m> and
+</li>
+<li>
+the <m>y=Y</m> (with <m>Y \gt  0</m>) cross-section is the circle
+<m>x^2+z^2=2Y</m>, <m>y=Y</m>
+</li>
+<li>
+the <m>x=0</m> cross-section is the parabola <m>2y=z^2</m>, <m>x=0</m>
+</li>
+<li>
+the <m>z=0</m> cross-section is the parabola <m>2y=x^2</m>, <m>z=0</m>
+</li>
+</ul>
+</p>
+
+<sidebyside width="75%">
+  <image source="pfigs/parabolicBowl"/>
+</sidebyside>
+
+</solution>
+</exercise>
+</exercisegroup>
+
+<exercisegroup><introduction><procedural/></introduction>
+
+<exercise><title><fromexam>M317 2009A</fromexam></title>
+<statement><p>
+Suppose <m>S</m> is the part of the hyperboloid <m>x^2 + y^2 - 2z^2 = 1</m>
+that lies inside the cylinder <m>x^2 + y^2 = 9</m> and above the plane <m>z = 1</m>
+(i.e. for which <m>z \ge 1</m>).
+</p>
+
+<p>Which of the following are parameterizations of <m>S</m>?
+</p>
+
+<p><ol label="a">
+<li>
+The vector function
+<me>
+\vr(u,v) = u\,\hi  + v\,\hj +\frac{\sqrt{u^2+v^2-1}}{\sqrt{2}}\,\hk
+</me>
+with domain <m>D=\Set{(u,v)}{ 2 \le u^2+v^2 \le 9}</m>.
+</li>
+<li>
+The vector function
+<me>
+\vr(u,v) = u\sin v\,\hi  - u\cos v\,\hj +\sqrt{\frac{u^2}{2}-\frac{1}{2}}\,\hk
+</me>
+with domain <m>D=\Set{(u,v)}{ \sqrt{3} \le u\le 3,\ 0\le v\le 2\pi}</m>.
+</li>
+<li>
+The vector function
+<me>
+\vr(u,v) = \sqrt{1+2v^2}\cos u\,\hi  + \sqrt{1+2v^2} \sin u\,\hj +v\,\hk
+</me>
+with domain <m>D=\Set{(u,v)}{ 0\le u\le 2\pi,\ 1\le v\le 2}</m>.
+</li>
+<li>
+The vector function
+<me>
+\vr(u,v) = \sqrt{1+u}\sin v\,\hi  + \sqrt{1+u} \cos v\,\hj
+                                  +\sqrt{\frac{u}{2}}\,\hk
+</me>
+with domain <m>D=\Set{(u,v)}{ 2\le u\le 8,\ 0\le v\le 2\pi}</m>.
+</li>
+<li>
+The vector function
+<me>
+\vr(u,v) = \sqrt{u}\cos v\,\hi  - \sqrt{u} \sin v\,\hj
+                                  +\frac{\sqrt{u+1}}{\sqrt{2}}\,\hk
+</me>
+with domain <m>D=\Set{(u,v)}{ 3\le u\le 9,\ 0\le v\le 2\pi}</m>.
+</li>
+</ol>
+</p></statement>
+
+<hint><p>
+First think about what properties <m>\vr(u,v)</m> has to have in order to be
+a parametrization.
+</p></hint>
+
+<answer><p>
+(a) No</p><p>
+(b) Yes</p><p>
+(c) Yes</p><p>
+(d) Yes</p><p>
+(e) No
+</p></answer>
+
+<solution><p>
+Note that, since <m>x^2+y^2=1+2z^2</m> on <m>S</m>, the condition <m>z\ge 1</m> is
+equivalent to <m>x^2+y^2\ge 3</m>, <m>z\ge 0</m>. So the hyperboloid is
+<m>\Set{(x,y,z)}{x^2+y^2=1+2z^2,\ 3\le x^2+y^2\le 9, z\ge 0}</m>.
+</p>
+
+<p>(a) No. Under this parametrization, the condition <m>3\le x^2+y^2\le 9</m>
+is <m>3\le u^2+v^2\le 9</m>, not <m>2\le u^2+v^2\le 9</m>.
+</p>
+
+<p> (b) Yes. Under this parametrization, <m>x=u\sin v</m>, <m>y=-u\cos v</m>
+and <m>z=\sqrt{\frac{u^2}{2}-\frac{1}{2}}</m>. So
+<ul>
+<li>
+<m>x^2+y^2-2z^2 = u^2-2\left(\frac{u^2}{2}-\frac{1}{2}\right) = 1</m>,
+as desired.
+</li>
+<li>  The condition <m>x^2+y^2\le 9</m> is equivalent to <m>u\le 3</m>, since
+<m>u\ge 0</m>.
+</li>
+<li>  The condition <m>x^2+y^2\ge 3</m> is equivalent to <m>u\ge\sqrt{3}</m>,
+since <m>u\ge 0</m>.
+</li>
+<li>  <m>z=\sqrt{\frac{u^2}{2}-\frac{1}{2}}\ge 0</m>
+</li>
+</ul>
+</p>
+
+<p> (c) Yes. Under this parametrization, <m>x=\sqrt{1+2v^2}\cos u</m>,
+<m>y=\sqrt{1+2v^2}\sin u</m> and <m>z=v</m>. So
+<ul>
+<li>
+<m>x^2+y^2-2z^2 = 1+2v^2 -2v^2 = 1</m>,
+as desired.
+</li>
+<li>  The condition <m>x^2+y^2\le 9</m> is equivalent to <m>1+2v^2\le 9</m>,
+which is equivalent to <m>v\le 2</m>, since <m>v\ge 0</m>.
+</li>
+<li>  The condition <m>x^2+y^2\ge 3</m>  is equivalent to <m>1+2v^2\ge 3</m>,
+which is equivalent to <m>v\ge 1</m>, since <m>v\ge 0</m>.
+</li>
+<li>  <m>z=v\ge 0</m>
+</li>
+</ul>
+</p>
+
+<p> (d) Yes. Under this parametrization, <m>x=\sqrt{1+u}\sin v</m>,
+<m>y=\sqrt{1+u}\cos v</m> and <m>z=\sqrt{u/2}</m>. So
+<ul>
+<li>
+<m>x^2+y^2-2z^2 = 1+u -2(u/2) = 1</m>,
+as desired.
+</li>
+<li>  The condition <m>x^2+y^2\le 9</m> is equivalent to <m>1+u\le 9</m>,
+which is equivalent to <m>u\le 8</m>.
+</li>
+<li>  The condition <m>x^2+y^2\ge 3</m>  is equivalent to <m>1+u\ge 3</m>,
+which is equivalent to <m>u\ge 2</m>.
+</li>
+<li>  <m>z=\sqrt{u/2}\ge 0</m>
+</li>
+</ul>
+</p>
+
+<p> (e) No. Under this parametrization, <m>x=\sqrt{u}\cos v</m>,
+<m>y=-\sqrt{u}\sin v</m> and <m>z=\sqrt{(u+1)/2}</m>. So
+<ul>
+<li>
+<m>x^2+y^2-2z^2 = u -2(u+1)/2 = -1</m>, not <m>+1</m>
+</li>
+</ul>
+</p>
+
+</solution>
+</exercise>
+
+<exercise><title><fromexam>M317 2008A</fromexam></title>
+<statement><p>
+Suppose the surface <m>S</m> is the part of the sphere <m>x^2 + y^2 + z^2 = 2</m>
+that lies inside the cylinder
+<m>x^2 + y^2 = 1</m> and for which <m>z \ge 0</m>.
+Which of the following are parameterizations of <m>S</m>?
+</p>
+
+<p><ol label="a">
+<li><p>
+<me>\vr(\phi,\theta) = 2\sin \phi\cos\theta\,\hi  +2\cos \phi\,\hj
+                    +2\sin \phi\sin\theta\,\hk </me>
+<me>0\le\phi\le\frac{\pi}{4}, 0\le\theta\le2\pi</me>
+</p>
+</li>
+<li><p>
+<me>\vr(x,y) = x\,\hi -y\,\hj +\sqrt{2-x^2-y^2}\,\hk </me>
+<me>x^2+y^2\le 1</me>
+</p>
+</li>
+<li><p>
+<me>\vr(u,\theta) = u\sin\theta\,\hi  +u\cos \theta\,\hj
+                    +\sqrt{2-u^2}\,\hk </me>
+<me>0\le u\le 2, 0\le\theta\le2\pi</me>
+</p>
+</li>
+<li><p>
+<me>\vr(\phi,\theta) = \sqrt{2}\sin \phi\cos\theta\,\hi
+                   +\sqrt{2}\sin \phi\sin\theta\,\hj
+                    +\sqrt{2}\cos \phi\,\hk </me>
+<me>0\le\phi\le\frac{\pi}{4}, 0\le\theta\le2\pi</me>
+</p>
+</li>
+<li><p>
+<me>\vr(\phi,z) = -\sqrt{2-z^2}\sin \phi\,\hi
+                   +\sqrt{2-z^2}\cos \phi\,\hj
+                    +z\,\hk </me>
+<me>0\le\phi\le2\pi, 1\le z\le\sqrt{2}</me>
+</p>
+</li>
+</ol>
+</p></statement>
+
+<hint><p>
+First think about what properties <m>\vr</m> has to have in order to be
+a parametrization.
+</p></hint>
+
+<answer><p>
+(a) No.</p><p>
+(b) Yes.</p><p>
+(c) No.</p><p>
+(d) Yes.</p><p>
+(e) Yes.
+</p></answer>
+
+<solution><p>
+(a) No. <m>z=\sin\phi\sin \theta</m> is negative when
+<m>0  \lt \phi\le\frac{\pi}{4}</m>, <m>\pi  \lt  \theta  \lt 2\pi</m>.
+</p>
+
+<p>(b) Yes. Note that <m>x^2+\big(-y\big)^2+\big(\sqrt{2-x^2-y^2}\big)^2=2</m>
+and that, for <m>x^2+y^2\le 1</m>, we have both <m>x^2+(-y)^2\le 1</m> and
+<m>\sqrt{2-x^2-y^2}\ge 0</m>.
+</p>
+
+<p>(c) No. <m>(u\sin\theta)^2+(u\cos\theta)^2=u^2 \gt 1</m> for <m>1 \lt u\le 2</m>.
+Also <m>\sqrt{2-u^2}</m> is not defined for <m>\sqrt{2} \lt u\le 2</m>.
+</p>
+
+<p>(d) Yes. Note that
+<ul>
+<li>
+<m>\big(\sqrt{2}\sin \phi\cos\theta\big)^2
+ +\big(\sqrt{2}\sin \phi\sin\theta\big)^2
+ +\big(\sqrt{2}\cos \phi\big)^2=2</m>
+</li>
+<li>
+For <m>0\le\phi\le\frac{\pi}{4}</m>, we have <m>z=\sqrt{2}\cos \phi \gt 0</m>.
+</li>
+<li>
+As <m>\phi</m> runs from <m>0</m> to <m>\frac{\pi}{4}</m>, <m>r(\phi)=\sqrt{2}\sin\phi</m>
+runs from <m>0</m> to <m>1</m>, so that
+        <m>\big(x=r(\phi)\cos\theta\,,\,y=r(\phi)\sin\theta\big)</m>
+covers all of <m>x^2+y^2\le1</m> as <m>\phi</m> runs from <m>0</m> to <m>\frac{\pi}{4}</m>
+and <m>\theta</m> runs from <m>0</m> to <m>2\pi</m>.
+</li>
+</ul>
+</p>
+
+<p>(e)
+Yes. Note that
+<ul>
+<li>
+<m>\big(-\sqrt{2-z^2}\sin \phi\big)^2
+ +\big(\sqrt{2-z^2}\cos \phi\big)^2
+ +\big(z\big)^2=2</m>
+</li>
+<li>
+For <m>1\le z\le\sqrt{2}</m>, we have obviously have <m>z \gt 0</m>.
+</li>
+<li>
+As <m>z</m> runs from <m>1</m> to <m>\sqrt{2}</m>, <m>r(z)=\sqrt{2-z^2}</m>
+runs from <m>1</m> to <m>0</m>, so that <m>\big(x=-r(z)\sin\phi\,,\,y=r(z)\cos\phi\big)</m>
+covers all of <m>x^2+y^2\le1</m> as <m>z</m> runs from <m>1</m> to <m>\sqrt{2}</m>
+and <m>\phi</m> runs from <m>0</m> to <m>2\pi</m>.
+</li>
+</ul>
+</p></solution>
+</exercise>
+
+<exercise><title><fromexam>M317 2005D</fromexam></title>
+<statement><p>
+Let <m>S</m> be the part of the paraboloid <m>z + x^2 + y^2 = 4</m> lying between
+the planes <m>z = 0</m> and <m>z = 1</m>. For each of the following, indicate
+whether or not it correctly parameterizes the surface <m>S</m>.
+<ol label="a">
+<li>
+<m>\vr(u,v) = u\,\hi + v\,\hj + (4 - u^2 - v^2)\,\hk</m>,
+<m>0 \le u^2 + v^2 \le 1</m>
+</li>
+<li>
+<m>\vr(u,v) = (\sqrt{4-u}\,\cos v)\,\hi + (\sqrt{4-u}\, \sin v)\,\hj + u\,\hk</m>,
+
+<m>0 \le u \le 1</m>, <m>0 \le v \le 2\pi</m>
+</li>
+<li>
+<m>\vr(u, v) = (u \cos v)\,\hi + (u \sin v)\,\hj + (4 - u^2 )\,\hk</m>,
+<m>\sqrt{3} \le u \le 2</m>, <m>0 \le v \le 2\pi</m>
+</li>
+</ol>
+</p></statement>
+
+<hint><p>
+First think about what properties <m>\vr(u,v)</m> has to have in order to be
+a parametrization.
+</p></hint>
+
+<answer><p>
+(a) No</p><p>
+(b) Yes</p><p>
+(c) Yes
+</p></answer>
+
+<solution><p>
+(a) No. When <m>u=v=0</m>, <m>z=4</m> is not between <m>0</m> and <m>1</m>.
+</p>
+
+<p>(b) Yes. Note that when <m>x=\sqrt{4-u}\,\cos v</m>,
+                        <m>y=\sqrt{4-u}\,\sin v</m> and
+                        <m>z= u</m> with
+                        <m>0 \le u \le 1</m>, <m>0 \le v \le 2\pi</m>,
+<ul>
+<li>
+  <m>z+x^2+y^2=4</m>
+</li>
+<li>
+  <m>0\le z=u\le 1</m>
+</li>
+<li>
+  For each fixed <m>z=u</m> between <m>0</m> and <m>1</m>,
+  <m>(x,y)</m> runs once around the circle <m>x^2+y^2 =4-z =4-u</m>
+   as <m>v</m> runs from <m>0</m> to <m>2\pi</m>.
+</li>
+</ul>
+</p>
+
+<p>(c) Yes. Note that when <m>x=u\,\cos v</m>,
+                        <m>y=u\,\sin v</m> and
+                        <m>z= 4-u^2</m>, with
+                        <m>\sqrt{3} \le u \le 2</m>, <m>0 \le v \le 2\pi</m>
+<ul>
+<li>
+  <m>z+x^2+y^2=4</m>
+</li>
+<li>
+  <m>0\le z=4-u^2\le 1</m>
+</li>
+<li>
+  For each fixed <m>z=4-u^2</m> between <m>0</m> and <m>1</m>,
+  <m>(x,y)</m> runs once around the circle <m>x^2+y^2 =4-z =u^2</m>
+   as <m>v</m> runs from <m>0</m> to <m>2\pi</m>.
+</li>
+</ul>
+</p>
+
+</solution>
+</exercise>
+</exercisegroup>
+
+<exercisegroup><introduction><application/></introduction>
+
+<exercise><title><fromexam>M317 2015A</fromexam></title>
+<statement><p>
+Consider the following surfaces
+<ul>
+<li>
+<m>S_1</m> is the hemisphere given by the equation <m>x^2 + y^2 + z^2 = 4</m>
+with <m>z\ge 0</m>.
+</li>
+<li>
+<m>S_2</m> is the cylinder given by the equation <m>x^2 + y^2 = 1</m>.
+</li>
+<li>
+<m>S_3</m> is the cone given by the equation <m>z^2 = x^2 + y^2</m>
+with <m>z\ge 0</m>.
+</li>
+</ul>
+</p>
+
+<p>Consider the following parameterizations:
+<ol label="A">
+<li>
+<m>\vr(\theta, \phi)
+  =\big(\sqrt{4}\cos\theta\sin\phi\,,\,
+        \sqrt{4}\sin\theta\sin\phi\,,\,
+        \sqrt{4}\cos\phi\big),\qquad
+   0\le\theta\le2\pi,\quad
+   0\le\phi\le\pi/6</m>
+</li>
+<li>
+<m>\vr(\theta, \phi)
+  =\big(\sqrt{4}\cos\theta\sin\phi\,,\,
+        \sqrt{4}\sin\theta\sin\phi\,,\,
+        \sqrt{4}\cos\phi\big),\qquad
+   0\le\theta\le2\pi,\quad
+   0\le\phi\le\pi/4</m>
+</li>
+<li>
+<m>\vr(\theta, \phi)
+  =\big(\sqrt{4}\cos\theta\sin\phi\,,\,
+        \sqrt{4}\sin\theta\sin\phi\,,\,
+        \sqrt{4}\cos\phi\big),\qquad
+   0\le\theta\le2\pi,\quad
+   0\le\phi\le\pi/3</m>
+</li>
+<li>
+<m>\vr(\theta,z)
+   = \big(\sqrt{4-z^2}\cos\theta\,,\,\sqrt{4-z^2}\sin\theta\,,\,z\big)\qquad
+   0\le\theta\le2\pi,\quad
+   1\le z\le 2</m>
+</li>
+<li>
+<m>\vr(\theta,z)
+   = \big(\sqrt{4-z^2}\cos\theta\,,\,\sqrt{4-z^2}\sin\theta\,,\,z\big)\qquad
+   0\le\theta\le2\pi,\quad
+   \sqrt{2}\le z\le 2</m>
+</li>
+<li>
+<m>\vr(\theta,z)
+   = \big(\sqrt{4-z^2}\cos\theta\,,\,\sqrt{4-z^2}\sin\theta\,,\,z\big)\qquad
+   0\le\theta\le2\pi,\quad
+   \sqrt{3}\le z\le 2</m>
+</li>
+<li>
+<m>\vr(\theta,z)
+   = \big(z\cos\theta\,,\,z\sin\theta\,,\,z\big)\qquad
+   0\le\theta\le2\pi,\quad
+   0\le z\le 1</m>
+</li>
+<li>
+<m>\vr(\theta,z)
+   = \big(z\cos\theta\,,\,z\sin\theta\,,\,z\big)\qquad
+   0\le\theta\le2\pi,\quad
+   0\le z\le \sqrt{2}</m>
+</li>
+<li>
+<m>\vr(\theta,z)
+   = \big(z\cos\theta\,,\,z\sin\theta\,,\,z\big)\qquad
+   0\le\theta\le2\pi,\quad
+   0\le z\le \sqrt{3}</m>
+</li>
+<li>
+<m>\vr(x,y)
+   =\big(x\,,\,y\,,\,\sqrt{x^2+y2}\big)\qquad
+   x^2+y^2\le 1</m>
+</li>
+<li>
+<m>\vr(x,y)
+   =\big(x\,,\,y\,,\,\sqrt{x^2+y2}\big)\qquad
+   x^2+y^2\le \sqrt{2}</m>
+</li>
+<li>
+<m>\vr(x,y)
+   =\big(x\,,\,y\,,\,\sqrt{x^2+y2}\big)\qquad
+   x^2+y^2\le 2</m>
+</li>
+</ol>
+For each of the following, choose from above all of the valid
+parameterization of each of the given surfaces. Note that there
+may be one or more valid parameterization for each
+surface, and not necessarily all of the above parameterizations
+will be used.
+<ol label="a">
+<li>
+The part of <m>S_1</m> contained inside <m>S_2</m>:
+</li>
+<li>
+The part of <m>S_1</m> contained inside <m>S_3</m>:
+</li>
+<li>
+The part of <m>S_3</m> contained inside <m>S_2</m>:
+</li>
+<li>
+The part of <m>S_3</m> contained inside <m>S_1</m>:
+</li>
+</ol>
+</p></statement>
+
+<answer><p>
+(a) A, F</p><p>
+(b) B, E</p><p>
+(c) G, J</p><p>
+(d) H, L
+</p></answer>
+
+<solution><p>
+First note that,
+<ul>
+<li>
+for A, B and C, <m>\vr(\theta, \phi)
+=x(\theta, \phi)\,\hi+ y(\theta, \phi)\,\hj+z(\theta, \phi)\,\hk</m>
+obeys
+<me>
+x(\theta, \phi)^2+ y(\theta, \phi)^2+z(\theta, \phi)^2 = 4
+</me>
+and so lies on <m>S_1</m>
+</li>
+<li>
+for D, E and F, <m>\vr(\theta, z)
+=x(\theta, z)\,\hi+ y(\theta, z)\,\hj+z(\theta, z)\,\hk</m>
+obeys
+<me>
+x(\theta, z)^2+ y(\theta, z)^2=4-z(\theta, z)^2
+</me>
+and so lies on <m>S_1</m>
+</li>
+<li>
+for G, H and I, <m>\vr(\theta, z)
+=x(\theta, z)\,\hi+ y(\theta, z)\,\hj+z(\theta, z)\,\hk</m>
+obeys
+<me>
+x(\theta, z)^2+ y(\theta, z)^2=z(\theta, z)^2
+</me>
+and so lies on <m>S_3</m>
+</li>
+<li>
+for J, K and L, <m>\vr(x, y)
+=x(x, y)\,\hi+ y(x, y)\,\hj+z(x, y)\,\hk</m>
+obeys
+<me>
+x(x, y)^2+ y(x, y)^2=z(x, y)^2
+</me>
+and so lies on <m>S_3</m>
+</li>
+</ul>
+</p>
+
+<p>(a) To get a part of <m>S_1</m>, we need to use one of the parametrizations
+A, B, C, D, E, F.
+In the cases of A, B, C,  for <m>\vr(\theta, \phi)
+=x(\theta, \phi)\,\hi+ y(\theta, \phi)\,\hj+z(\theta, \phi)\,\hk</m>
+to lie inside <m>S_2</m> we need (recalling that all points of <m>S_1</m> have <m>z(\theta,\phi)\ge 0</m> and hence <m>0\le\phi\le\frac{\pi}{2}</m>)
+<md>
+<mrow>
+x(\theta, \phi)^2 + y(\theta, \phi)^2 \le 1
+&amp;\iff 4\sin^2\phi \le 1
+\iff \sin\phi \le \frac{1}{2}
+\iff 0\le\phi\le \frac{\pi}{6}
+</mrow>
+</md>
+In the cases of D, E, F,  for <m>\vr(\theta, z)
+=x(\theta, z)\,\hi+ y(\theta, z)\,\hj+z(\theta, z)\,\hk</m>
+to lie inside <m>S_2</m> we need (recalling that all points of <m>S_1</m> have <m>z(\theta,z)\ge 0</m> and hence <m>z\ge 0</m>)
+<md>
+<mrow>
+x(\theta, z)^2 + y(\theta, z)^2 \le 1
+&amp;\iff 4-z^2 \le 1
+\iff z \ge \sqrt{3}
+</mrow>
+</md>
+So parametrizations A and F work.
+</p>
+
+<p>(b) To get a part of <m>S_1</m>, we need to use one of the parametrizations
+A, B, C, D, E, F.
+In the cases of A, B, C,  for <m>\vr(\theta, \phi)
+=x(\theta, \phi)\,\hi+ y(\theta, \phi)\,\hj+z(\theta, \phi)\,\hk</m>
+to lie inside <m>S_3</m> we need (recalling that all points of <m>S_1</m> have <m>z(\theta,\phi)\ge 0</m> and hence <m>0\le\phi\le\frac{\pi}{2}</m>)
+<md>
+<mrow>
+x(\theta, \phi)^2 + y(\theta, \phi)^2 \le z(\theta,\phi)^2
+&amp;\iff 4\sin^2\phi \le 4\cos^2\phi
+\iff \tan\phi \le 1
+\iff 0\le\phi\le \frac{\pi}{4}
+</mrow>
+</md>
+In the cases of D, E, F,  for <m>\vr(\theta, z)
+=x(\theta, z)\,\hi+ y(\theta, z)\,\hj+z(\theta, z)\,\hk</m>
+to lie inside <m>S_3</m> we need (recalling that all points of <m>S_1</m> have <m>z(\theta,z)\ge 0</m> and hence <m>z\ge 0</m>)
+<md>
+<mrow>
+x(\theta, z)^2 + y(\theta, z)^2 \le z(\theta, z)^2
+&amp;\iff 4-z^2 \le z^2
+\iff z \ge \sqrt{2}
+</mrow>
+</md>
+So parametrizations B and E work.
+</p>
+
+<p>(c) To get a part of <m>S_3</m>, we need to use one of the parametrizations
+G, H, I, J, K, L.
+In the cases of G, H, I,  for <m>\vr(\theta, z)
+=x(\theta, z)\,\hi+ y(\theta, z)\,\hj+z(\theta, z)\,\hk</m>
+to lie inside <m>S_2</m> we need  (recalling that all points of <m>S_3</m> have <m>z\ge 0</m>)
+<md>
+<mrow>
+x(\theta, z)^2 + y(\theta, z)^2 \le 1
+&amp;\iff z^2 \le 1
+\iff 0\le z\le 1
+</mrow>
+</md>
+In the cases of J, K, L,  for <m>\vr(x, y)
+=x(x, y)\,\hi+ y(x, y)\,\hj+z(x, y)\,\hk</m>
+to lie inside <m>S_3</m> we need
+<md>
+<mrow>
+x(x, y)^2 + y(x, y)^2 \le 1
+&amp;\iff x^2+y^2 \le 1
+</mrow>
+</md>
+So parametrizations G and J work.
+</p>
+
+<p>(d) To get a part of <m>S_3</m>, we need to use one of the parametrizations
+G, H, I, J, K, L.
+In the cases of G, H, I,  for <m>\vr(\theta, z)
+=x(\theta, z)\,\hi+ y(\theta, z)\,\hj+z(\theta, z)\,\hk</m>
+to lie inside <m>S_1</m> we need  (recalling that all points of <m>S_3</m> have <m>z\ge 0</m>)
+<md>
+<mrow>
+x(\theta, z)^2 + y(\theta, z)^2+ z(\theta, z)^2 \le 4
+&amp;\iff 2z^2 \le 4
+\iff 0\le z\le \sqrt{2}
+</mrow>
+</md>
+In the cases of J, K, L,  for <m>\vr(x, y)
+=x(x, y)\,\hi+ y(x, y)\,\hj+z(x, y)\,\hk</m>
+to lie inside <m>S_3</m> we need
+<md>
+<mrow>
+x(x, y)^2 + y(x, y)^2 + z(x, y)^2 \le 4
+&amp;\iff 2x^2+2y^2 \le 4
+</mrow>
+</md>
+So parametrizations H and L work.
+</p></solution>
+</exercise>
+
+<exercise>
+<statement><p>
+Parametrize a solid of rotation about a line not parallel to an axis. Maybe first show that the plane you're rotating is normal to that axis.
+</p>
+
+<p><ol label="a">
+<li> Give a parametric equation for the circle of radius 1, centred at <m>(2,2,4)</m>, lying in the plane <m>x=y</m>.
+</li>
+<li> Give a parametrized equation for the surface formed by rotating the circle from part (a) about the line <m>\vr(t)=4\hi+4\hj+t\hk</m>.
+</li>
+</ol>
+</p><sidebyside>
+<image><latex-image>\begin{tikzpicture}
+\draw[help lines, - \gt ] (0,0)--(0,3.25) node[above]{$z$};
+\draw[help lines, - \gt ] (0,0)--(3.5,-1) node[right]{$x$};
+\draw[help lines, - \gt ] (0,0)--(3.5,1) node[right]{$y$};
+\fill[opacity=0.2, blue] (0,0)rectangle(3,3);
+\draw (1,2) node[red,vertex]{};
+\draw[red] (1,1.5) node[label=below:{$(2,2,4)$}]{};
+\draw (1,2) node[shape=circle,draw, fill, fill opacity=0.2, minimum size=1cm]{};
+\draw[ \lt - \gt , very thick] (2,-.5)--(2,3.5) node[above]{$\vr(t)=(4,4,t)$};
+\end{tikzpicture}</latex-image></image>
+</sidebyside></statement>
+
+<answer><p>
+(a) <m>(x,y,z)=(2+\frac1{\sqrt 2}\cos\theta , 2+\frac1{\sqrt 2}\cos\theta , 4+\sin\theta)</m>, <m>0 \le \theta \le 2\pi</m>.
+</p></answer>
+<solution><p>
+(a) In the sketch below, the point <m>(x,y,z)</m> deviates from the centre <m>(2,2,4)</m> by <m>\sin\theta</m> units in the <m>\hk</m> direction, and by <m>\cos\theta</m> units in the <m>\sqrt \frac1{\sqrt 2}(\hi+\hj)</m> direction. So, <m>(x,y,z)=(2+\frac1{\sqrt 2}\cos\theta , 2+\frac1{\sqrt 2}\cos\theta , 4+\sin\theta)</m>.
+</p>
+
+<sidebyside>
+<image><latex-image>\begin{tikzpicture}
+\draw[help lines, - \gt ] (0,0)--(0,6.25) node[above]{$z$};
+\draw[help lines, - \gt ] (0,0)--(6.5,-1) node[right]{$x$};
+\draw[help lines, - \gt ] (0,0)--(6.5,1) node[right]{$y$};
+\fill[opacity=0.2, blue] (0,0)rectangle(6,6);
+\YEycoord{4}{4}
+\draw (1.8,-.2)--(1.8,-.4) node[below]{2};
+\draw (1.8,.2)--(1.8,.4) node[above]{2};
+\draw[dashed] (1.8,-.3)--(3.6,0)--(1.8,.3);
+\draw[red] (3.6,4) node[vertex,label=below:{$(2,2,4)$}](C){};
+\draw (C) node[shape=circle,draw, fill, fill opacity=0.2, minimum size=2cm]{};
+\draw[- \gt ] (C)--(4.6,4) node[right]{$\frac1{\sqrt 2}(\hi+\hj)$};
+\draw[] (C)--(4.3,4.7)node[vertex, label=above right:{$(x,y,z)$}]{};
+\draw (C)+(.4,.2) node{$\theta$};
+\end{tikzpicture}</latex-image></image>
+</sidebyside><p>
+So, we can parametrize the circle as <m>(x,y,z)=(2+\frac1{\sqrt 2}\cos\theta , 2+\frac1{\sqrt 2}\cos\theta , 4+\sin\theta)</m>, with <m>0 \le \theta \le 2\pi</m>.
+</p>
+
+<p><alert>Remark</alert>: it's easy to check that this equation satisfies the two properties we desire. Since the <m>x</m>- and <m>y</m> coordinates match, it's in the plane <m>x=y</m>. To check that it's a circle centred at <m>(2,2,4)</m>, we note the distance from <m>(x,y,z)</m> to <m>(2,2,4)</m> is:
+<md>
+<mrow>
+d&amp;=\sqrt{(x-2)^2+(y-2)^2+(z-4)^2}=\sqrt{\left(\frac1{\sqrt 2}\cos\theta\right)^2+\left(\frac1{\sqrt 2}\cos\theta\right)^2+\left(\sin\theta\right)^2}
+</mrow><mrow>
+&amp;=\sqrt{\frac12\cos^2\theta+\frac12\cos^2\theta+\sin^2\theta}=\sqrt{\cos^2\theta+\sin^2\theta}=1
+</mrow>
+</md>
+So, our points all have distance one from the same point <mdash/> that is, they lie on a circle of radius 1.
+</p>
+
+<p>(b) Consider a point <m>(x,y,z)=(2+\frac1{\sqrt 2}\cos\theta , 2+\frac1{\sqrt 2}\cos\theta , 4+\sin\theta)</m>, rotating <m>\phi</m> radians about the line <m>x=y=4</m>.
+</p><sidebyside>
+<image><latex-image>\begin{tikzpicture}
+\draw[thick,  \lt - \gt ] (0,-3)--(0,3) node[above]{$\vr(t)=(4,4,t)$};
+\draw (-4,0) node[vertex, label=below:{$(2,2,4)$}](C){};
+\draw (C) node[shape=circle, draw, minimum size=4cm]{};
+\draw (C)+(1.4,1.4) node[vertex, label=left:{$(x,y,z)$}](X){};
+\draw (X) arc (180:540:2.6cm and 1cm);
+\draw (X) arc (180:250:2.6cm and 1cm) node[vertex](Y){};
+\draw[dashed] (X)--(0,1.4) node[midway, above]{R}--(Y);
+\draw (-.5,1.2) node{$\phi$};
+\end{tikzpicture}</latex-image></image>
+</sidebyside><p>
+The new position of the point has the same height, <m>z=4+\sin\theta</m>. Its distance from the line <m>x=y=4</m> is also preserved: <m>R=\sqrt{(x-4)^2+(y-4)^2+(z-z)^2}=\sqrt{(\frac1{\sqrt 2}\cos\theta-2)^2+(\frac1{\sqrt 2}\cos\theta-2)^2+0)}=\cos\theta-2\sqrt2</m>.
+</p>
+
+<p>The circle traced out by a point <m>(x,y,z)=(2+\frac1{\sqrt2}\cos\theta,2+\frac{1}{\sqrt 2} \cos \theta,4+\sin\theta)</m> on the circle is centred at <m>(4,4,z)</m> with radius <m>\sqrt2(4-x)</m>, so it has equation <m>x=4+\sqrt2(2-\sqrt2\cos\theta)\cos\phi</m>, <m>y=4+\sqrt2(2-\sqrt2\cos\theta)\sin\phi</m>, <m>z=4\sin\theta</m>.
+</p></solution>
+</exercise></exercisegroup>
+
+</exercises>
