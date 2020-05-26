@@ -1103,7 +1103,7 @@ where
 </li>
 <li> are mutually perpendicular.
 </li>
-</ul></p>
+</ol></p>
 </li>
 </ul>
 </p>
@@ -1673,6 +1673,6 @@ This is one of Maxwell's electromagnetic field equations
 </p>
 </subsection>
 
-<!-- <xi:include href="../problems/prob_s4.4.ptx" /> -->
+<xi:include href="../problems/prob_s4.4.ptx" />
 
 </section>

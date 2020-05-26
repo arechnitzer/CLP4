@@ -64,8 +64,8 @@ at <m>(0,0,0)</m>. So it is reasonable to say that <m>S_1</m> and <m>S_2</m> are
 </solution>
 </exercise>
 
-<exercise>
-<statement><p>xml:id="tan_line_plane"
+<exercise xml:id="tan_line_plane">
+<statement><p>
 Let the point <m>\vr_0= (x_0,y_0,z_0)</m> lie on the surface <m>G(x,y,z)=0</m>.
 Assume that <m>\vnabla G(x_0,y_0,z_0)\ne\vZero</m>. Suppose that the
 parametrized curve <m>\vr(t)=\big(x(t),y(t),z(t)\big)</m> is contained in the surface
