@@ -288,7 +288,7 @@ and end at <m>(1,0)</m>, the two integrals <m>\int_{\cC_1}\vF\cdot\dee{\vr}</m> 
 
 </example>
 
-<example xml:id="eg_workIntegalC">
+<example xml:id="eg_workIntegralC">
 <title>Example <xref ref="eg_screeningCounterexample"/>, again</title>
 <p>
 In Example <xref ref="eg_screeningCounterexample"/>, we saw that the vector field
