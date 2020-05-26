@@ -196,7 +196,7 @@ horizontal vectors  (those with <m>\vv(x,y)\cdot\hj=0</m>) occur at every point 
 Similarly, vectors point down when they're above the line <m>y=x</m>, and the point up when they're below the line <m>y=x</m>.
 </p>
 
-<sidebyside>
+<sidebyside width="55%">
 <image><latex-image>\begin{tikzpicture}[scale=0.6]
 \fill[blue, opacity=0.3] (-5,5)|-(5,-5);
 \draw[blue, dashed] (-5,5)--(5.5,-5.5);
@@ -224,7 +224,7 @@ Similarly, vectors point down when they're above the line <m>y=x</m>, and the po
 \end{tikzpicture}</latex-image></image>
 </sidebyside>
 
-<sidebyside>
+<sidebyside width="55%">
 <image><latex-image>\begin{tikzpicture}[scale=0.6]
 \fill[blue, opacity=0.3] (-5,-5)-|(5,5);
 \draw[blue,dashed] (-5,-5)--(5.5,5.5) ;
@@ -295,7 +295,7 @@ Since all conveyors point towards the origin, the direction of motion of an obje
 Let <m>\vF = P\,\hi + Q\,\hj</m> be the two-dimensional vector field sketched below.
 </p>
 
-<sidebyside width="75%">
+<sidebyside width="51%">
 <image source="pfigs/VFe"/>
 </sidebyside>
 
@@ -487,7 +487,7 @@ Start with the regions where <m>\vv(x,y)\cdot\hi</m> and <m>\vv(x,y)\cdot\hj</m>
 
 <answer>
 
-<sidebyside>
+<sidebyside width="82%">
 <image><latex-image>\begin{tikzpicture}
 \YEaxis{5}{5}
 \foreach \x in {-3,...,3}{\foreach \y in {-4,...,4}{
@@ -509,7 +509,7 @@ Start with the regions where <m>\vv(x,y)\cdot\hi</m> and <m>\vv(x,y)\cdot\hj</m>
 </sidebyside></answer>
 
 <solution><p>
-Beginning as in the text, we note
+Beginning as in Example <xref ref="eg_Vortex"/>, we note
 <me>\vv(x,y)\cdot\hi=x^2 \begin{cases}
  \gt 0 &amp; x \neq 0\\
 =0 &amp; x=0
@@ -522,7 +522,7 @@ Beginning as in the text, we note
 \end{cases}.</me>
 That leads to the following picture:
 </p>
-<sidebyside>
+<sidebyside width="43%">
 <image><latex-image>\begin{tikzpicture}
 \YEaxis{2.5}{2.5}
 \foreach \x in {-1,0,1}{\foreach \y in {-1,0,1}{
@@ -545,7 +545,7 @@ That leads to the following picture:
 <p>
 This gives us a general idea to start with. Refining, we notice that when <m>x^2 \gt |y|</m>, then the vector <m>\vv(x,y)</m> will be more horizontal than vertical. As we move away from the <m>y</m>-axis in a horizontal line, the difference between <m>x^2</m> and <m>|y|</m> grows, so the vectors get more and more horizontal. However, for a fixed value of <m>x</m>, vectors farther from the axis will be more vertical than vectors closer to it.
 </p>
-<sidebyside>
+<sidebyside width="82%">
 <image><latex-image>\begin{tikzpicture}
 \YEaxis{5}{5}
 \foreach \x in {-3,...,3}{\foreach \y in {-4,...,4}{
@@ -579,7 +579,7 @@ Sketch the <em>direction</em> field of
 
 <answer>
 
-<sidebyside>
+<sidebyside width="66%">
 <image><latex-image>\begin{tikzpicture}
 \YEaaxis{3}{5}{3}{5}
 \foreach \x in {-1,-.5,0,.5,1,1.5,2}{\foreach \y in {-1,-.5,0,.5,1,1.5,2}{
@@ -621,7 +621,7 @@ Sketch the <em>direction</em> field of
 <p>Note <m>\vv(x,y)\cdot \hi</m> is the distance from <m>(x,y)</m> to the origin, while <m>\vv(x,y)\cdot\hj</m> is the distance from <m>(x,y)</m> to the point <m>(1,1)</m>. Both these numbers are always nonnegative. This leads to the following sketch:
 </p>
 
-<sidebyside>
+<sidebyside width="66%">
 <image><latex-image>\begin{tikzpicture}
 \YEaaxis{3}{5}{3}{5}
 \foreach \x in {-1,-.5,0,.5,1,1.5,2}{\foreach \y in {-1,-.5,0,.5,1,1.5,2}{
@@ -658,7 +658,7 @@ When <m>(x,y)</m> is far from the origin, its distance from <m>(0,0)</m> is almo
 <p>At <m>(0,0)</m>, <m>v(0,0)\cdot \hi=0</m>, so our vector is horizontal; similarly, <m>v(1,1)\cdot\hj=0</m> so this vector is horizontal. Vectors very near to <m>(0,0)</m> are nearly horizontal, while vectors near to <m>(1,1)</m> are nearly vertical.
 </p>
 
-<sidebyside>
+<sidebyside width="66%">
 <image><latex-image>\begin{tikzpicture}
 \YEaaxis{3}{5}{3}{5}
 \foreach \x in {-1,-.5,0,.5,1,1.5,2}{\foreach \y in {-1,-.5,0,.5,1,1.5,2}{
@@ -692,7 +692,7 @@ When <m>(x,y)</m> is far from the origin, its distance from <m>(0,0)</m> is almo
 For the direction field, we normalize our vectors to have unit length.
 </p>
 
-<sidebyside>
+<sidebyside width="66%">
 <image><latex-image>\begin{tikzpicture}
 \YEaaxis{3}{5}{3}{5}
 \foreach \x in {-1,-.5,0,.5,1,1.5,2}{\foreach \y in {-1,-.5,0,.5,1,1.5,2}{
@@ -742,7 +742,7 @@ Chop the plane up into eight regions using the two coordinate axes and the lines
 
 <answer>
 
-<sidebyside>
+<sidebyside width="58%">
 <image><latex-image>\begin{tikzpicture}
 \YEaxis{3.5}{3.5}
 \foreach \x in {-3,-2.5,...,3.1}{
@@ -771,7 +771,7 @@ Chop the plane up into eight regions using the two coordinate axes and the lines
 
 <solution><p>
 The sign of <m>\vv(x,y) \cdot \hi = x(x+y)</m> depends on the signs of <m>x</m> and <m>x+y</m>. When they have the same signs, <m>\vv(x,y)\cdot \hi</m> is positive, so <m>\vv(x,y)</m> points to the right; when they have different signs, <m>\vv(x,y)</m> points to the left.
-</p><sidebyside>
+</p><sidebyside width="59%">
 <image><latex-image>\begin{tikzpicture}
 \draw (0,-3)--(0,3) node[above]{$y$};
 \draw (-3,3)--(3,-3) node[right]{$y=-x$};
@@ -790,7 +790,7 @@ The sign of <m>\vv(x,y) \cdot \hi = x(x+y)</m> depends on the signs of <m>x</m> 
 Similarly, the sign of <m>\vv(x,y) \cdot \hj = y(y-x)</m> depends on the signs of <m>y</m> and <m>y-x</m>.
 </p>
 
-<sidebyside>
+<sidebyside width="56%">
 <image><latex-image>\begin{tikzpicture}
 \draw (-3,0)--(3,0) node[right]{$x$};
 \draw (-3,-3)--(3,3) node[right]{$y=x$};
@@ -809,7 +809,7 @@ Similarly, the sign of <m>\vv(x,y) \cdot \hj = y(y-x)</m> depends on the signs o
 All together:
 </p>
 
-<sidebyside>
+<sidebyside width="59%">
 <image><latex-image>\begin{tikzpicture}
 \YEaxis{3}{3}
 \draw[help lines] (-3,-3)--(3,3) node[right]{$y=x$};
@@ -836,7 +836,7 @@ Refining, we notice that  as we move straight up or down, <m>|\vv(x,y)\cdot \hi|
 <p>Similarly, <m>|\vv(x,y)\cdot \hj|</m> has its minima along the lines <m>y=x</m> and <m>y=0</m>, so the vectors become more strongly horizontal as we approach <m>y=x</m> horizontally.
 </p>
 
-<sidebyside>
+<sidebyside width="58%">
 <image><latex-image>\begin{tikzpicture}
 \YEaxis{3.5}{3.5}
 \foreach \x in {-3,-2.5,...,3.1}{
@@ -878,7 +878,7 @@ What is the geometric interpretation of each summand?
 
 <answer>
 
-<sidebyside>
+<sidebyside width="82%">
 <image><latex-image>\begin{tikzpicture}
 \YEaxis{5}{5}
 \draw (0,0) node[vertex]{};
@@ -932,7 +932,7 @@ What is the geometric interpretation of each summand?
 	Along the <m>x</m>-axis outside of <m>[0,1]</m>, the vector pointing away from the point <m>(0,0)</m> is the same as the  vector pointing away from the point <m>(1,0)</m>. So, <m>v(x,0)=(-2/3,0)</m> for <m>x \lt 0</m> and <m>v(x,0)=(2/3,0)</m> for <m>x \gt 1</m>.
 </p>
 
-<sidebyside>
+<sidebyside width="82%">
 <image><latex-image>\begin{tikzpicture}
 \YEaxis{5}{2}
 \draw (0,0) node[vertex]{};
@@ -950,7 +950,7 @@ What is the geometric interpretation of each summand?
  As the distance from <m>(x,y)</m> to the origin grows, the vector pointing away from <m>(0,0)</m> looks more and more like the vector pointing away from <m>(1,0)</m>. So, our vectors far away from the origin look like vectors of length about 2/3, pointing away from the origin.
 </p>
 
-<sidebyside>
+<sidebyside width="82%">
 <image><latex-image>\begin{tikzpicture}
 \YEaxis{5}{5}
 \draw (0,0) node[vertex]{};
@@ -1017,21 +1017,18 @@ drawing a figure like Figure <xref ref="fig_sourceField"/>.
 </p></hint>
 
 <answer>
-<sbsgroup widths="10% 70%">
-	<sidebyside>
-	<p>(a)</p>
+<p>(a)</p>
+	<sidebyside width="40%">
 	<image source="pfigs/VFf"/>
 	</sidebyside>
-	<sidebyside>
-	<p>(b)</p>
+<p>(b)</p>
+	<sidebyside width="37%">
 	<image source="pfigs/VFg"/>
 	</sidebyside>
-	<sidebyside>
-	<p>(c)</p>
+<p>(c)</p>
+	<sidebyside width="41%">
 	<image source="pfigs/VFh"/>
 	</sidebyside>
-</sbsgroup>
-
 </answer>
 
 <solution><p>
@@ -1040,7 +1037,7 @@ The vector field <m>\vv(x,y) = x\,\hi+y\,\hj</m> is the same as the radius
 vector. It points radially outward and has length growing linearly with
 the distance from the origin.
 </p>
-<sidebyside width="75%">
+<sidebyside width="40%">
 <image source="pfigs/VFf"/>
 </sidebyside>
 
@@ -1059,7 +1056,7 @@ linearly with the distance from the <m>y</m>-axis.
 </ul>
 It is sketched in the figure on the left below.
 </p>
-<sidebyside width="45%">
+<sidebyside widths="37% 41%" valign="middle">
 <image source="pfigs/VFg"/>
 <image source="pfigs/VFh"/>
 </sidebyside>
@@ -1090,7 +1087,7 @@ It is sketched in the figure on the right above.
 <exercise>
 <statement><p>
 A body of mass <m>M</m> exerts a force of magnitude <m>\frac{GM}{D^2}</m> on a particle  of unit mass distance <m>D</m> away from itself, where <m>G</m> is a physical constant. The force acts in the direction from the particle to the body.
-</p><sidebyside>
+</p><sidebyside width="23%">
 <image><latex-image>\begin{tikzpicture}
 \draw (0,0) node[shape=circle, draw]{$M$};
 \draw (2,1) node[vertex]{};
@@ -1137,7 +1134,7 @@ A particle of unit mass at position <m>(x,y)</m> has distance <m>D_1=\sqrt{x^2+y
 A pole leans against a vertical wall. The pole has length 2, and it touches the wall at height <m>H=1</m>. The pole slides down, still touching the wall, with its height decreasing at a rate of <m>\diff{H}{t}=0.5</m>.
 </p>
 
-<sidebyside>
+<sidebyside width="63%">
 <image><latex-image>\begin{tikzpicture}
 \YEaaxis{.5}{7}{.5}{3.5}
 \draw[ultra thick] (5,0)--(0,3);
@@ -1158,7 +1155,7 @@ Find a vector function <m>\vv:\mathbb [0,2] \to \mathbb R^2</m> for the velocity
 <p>The frame is lifted from the centre of the circle. The edges of the frame drag on the ground, keeping the frame in the shape of a right circular cone that is becoming taller and thinner.
 </p>
 
-<sidebyside>
+<sidebyside widths="48% 20%" valign="middle">
 <image><latex-image>\begin{tikzpicture}
 \draw (0,0) node[vertex]{};
 \filldraw[fill opacity=0.2] (0,0)--(-2,-1) arc(180:360:2cm and .75cm)--(0,0);
@@ -1166,9 +1163,6 @@ Find a vector function <m>\vv:\mathbb [0,2] \to \mathbb R^2</m> for the velocity
 \draw (0,0)--(1,-1.65);
 \draw[thick,- \gt ] (3,-.5)--(4,-.5);
 \end{tikzpicture}</latex-image></image>
-</sidebyside>
-
-<sidebyside>
 <image><latex-image>\begin{tikzpicture}
 \draw (0,0) node[vertex]{};
 \filldraw[fill opacity=0.2] (0,0)--(-1,-2) arc(180:360:1cm and .375cm)--(0,0);
@@ -1208,7 +1202,7 @@ b. <m>\vV(x,y,z)=\left(
 	Consider a point <m>P</m> on the pole that is a distance <m>p</m> away from the bottom end. Use this point to make a smaller right triangle, as in the picture below.
 </p>
 
-<sidebyside>
+<sidebyside width="52%">
 <image><latex-image>\begin{tikzpicture}
 \YEaaxis{.5}{5.5}{.5}{3.5}
 \draw[thick] (5,0)-|(0,3)--cycle;
@@ -1255,7 +1249,7 @@ Let's start by seeing what we can salvage from our work on part a.
 As in part a., consider a point <m>P</m> on one of the poles, <m>p</m> metres from the bottom end.
 </p>
 
-<sidebyside>
+<sidebyside width="73%">
 <image><latex-image>\begin{tikzpicture}[xscale=1.25]
 \draw[thick] (5,0)-|(0,3)--cycle;
 \draw (0,3) node[vertex, label=left:{$(0,0,H)$}]{};
@@ -1278,7 +1272,7 @@ Let <m>P</m> have position <m>(x,y,z)</m>. Noting that <m>\diff{H}{t}</m> is now
 <p>where the second coordinate is <m>z</m> and the first coordinate refers to the (horizontal) line in the direction of the vector <m>(x,y,0)</m>.
 </p>
 
-<sidebyside>
+<sidebyside width="71%">
 <image><latex-image>\begin{tikzpicture}[scale=2]
 \draw[help lines, - \gt ] (0,-1)--(0,1.5) node[above]{$z$};
 \draw (0,1) node[vertex, label=above right:{$(0,0,H)$}]{};

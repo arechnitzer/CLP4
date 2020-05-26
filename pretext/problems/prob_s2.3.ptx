@@ -47,7 +47,7 @@ For each of the following fields, decide which of the following holds:
 <li> The screening test for conservative vector fields does not tell us whether <m>\vF</m> is conservative or not.
 </li>
 </ol>
-(The screening test is Theorem<nbsp/><xref ref="thm_screen"/> in the text.)
+(The screening test is Theorem<nbsp/><xref ref="thm_screen"/>.)
 </p>
 
 <p>
@@ -224,7 +224,7 @@ Is <m>\vF</m> conservative on <m>D</m>? Give reasons for your answer.
 </statement>
 
 <hint><p>
-Note that the domain is <m>D=\Set{(x,y)}{x \gt 1}</m>. Compare to Example<nbsp/><xref ref="eg_screeningCounterexample"/> in the text.
+Note that the domain is <m>D=\Set{(x,y)}{x \gt 1}</m>. Compare to Example<nbsp/><xref ref="eg_screeningCounterexample"/>.
 </p></hint>
 
 <answer><p>
@@ -238,7 +238,7 @@ that takes values between <m>-\frac{\pi}{2}</m> and <m>\frac{\pi}{2}</m>).
 Note that <m>\varphi(x,y)</m> is well-defined, with all partial derivatives
 continuous, on <m>D</m> since <m>x \gt 1</m> there. Then
 <md alignment="alignat">
-<mrow>{3}
+<mrow>
 \pdiff{\varphi}{x}(x,y)
 &amp;= \frac{-\frac{y}{x^2}}{1+\big(\frac{y}{x}\big)^2}
 &amp;&amp;= -\frac{y}{x^2+y^2}
@@ -459,7 +459,7 @@ for any constant <m>C</m>.
 </p></answer>
 
 <solution><p>
-By Theorem <xref ref="thm_screenConserv"/> in the CLP-4 text,
+By Theorem <xref ref="thm_screenConserv"/>,
 the field <m>\vF= F_1\,\hi + F_2\,\hj + F_3\,\hk</m> is conservative
 only if it passes the screening test
 <m>\vnabla\times\vF=\vZero</m>. That is, if and only if
@@ -553,7 +553,7 @@ Show that this velocity field is conservative and find its potential.
 </p></statement>
 
 <hint><p>
-Review Example <xref ref="eg_ptSource"/> in the CLP-4 text.
+Review Example <xref ref="eg_ptSource"/>.
 </p></hint>
 
 <answer><p>

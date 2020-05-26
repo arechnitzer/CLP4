@@ -44,7 +44,7 @@ fourth side by <m>\vr(y)=y\,\hj</m> with <m>y</m> running from <m>1</m> to <m>0<
 </ul>
 </p>
 
-<sidebyside width="75%">
+<sidebyside width="30%">
   <image source="pfigs/square"/>
 </sidebyside>
 
@@ -54,7 +54,8 @@ So
 <mrow>
 \int_\cC x^2y^2\,\dee{x}+x^3y\,\dee{y}
 &amp;=\int_0^1 x^2\times 0^2\,\dee{x} +\int_0^1 1^3\times y\,\dee{y}
-+\int_1^0 x^2\times 1^2\,\dee{x} +\int_1^0 0^3\times y\,\dee{y}
++\int_1^0 x^2\times 1^2\,\dee{x} 
+</mrow><mrow>&amp;\hskip2in+\int_1^0 0^3\times y\,\dee{y}
 </mrow><mrow>
 &amp;=\frac{1}{2}-\frac{1}{3}
 =\frac{1}{6}
@@ -180,7 +181,7 @@ Since <m>\vF</m> is conservative, <m>\int_C\vF\cdot\dee{\vr}=0</m> over any clos
 Let <m>P_1</m> and <m>P_2</m> be points in <m>\mathbb R^2</m>. Let <m>A</m> and <m>B</m> be paths from <m>P_1</m> to <m>P_2</m>, as shown below.
 </p>
 
-<sidebyside>
+<sidebyside width="42%">
 <image><latex-image>\begin{tikzpicture}
 \draw[ultra thick, blue] plot[smooth, domain=-.79:3.93]({2*sin( \x r)},{2*sin( (\x*2) r)});
 \draw[ultra thick, blue,- \gt ] plot[smooth, domain=-.45:-.5]({2*sin( \x r)},{2*sin( (\x*2) r)});
@@ -218,7 +219,7 @@ is <m>\int_C\vF\cdot\dee{\vr}=0</m> for all closed paths <m>C</m>?
 </p></statement>
 
 <hint><p>
-Review Theorem<nbsp/><xref ref="thm_pathIndepConserv"/> in the text.
+Review Theorem<nbsp/><xref ref="thm_pathIndepConserv"/>.
 </p></hint>
 
 <answer><p>
@@ -239,7 +240,8 @@ that <m>\vF</m> pass the screening test
         \frac{\partial }{\partial y}&amp;
         \frac{\partial }{\partial z}\\
         e^x \sin y &amp; ae^x \cos y + bz &amp; cx\end{matrix}\right]
-= -b\,\hi-c\,\hj+\big(ae^x\cos y-e^x\cos y\big)\,\hk
+</mrow><mrow>
+&amp;= -b\,\hi-c\,\hj+\big(ae^x\cos y-e^x\cos y\big)\,\hk
 </mrow>
 </md>
 which is the case if and only if <m>b=c=0</m> and <m>a=1</m>.
@@ -253,7 +255,7 @@ those vector fields is conservative. Determine which three vector fields
 are not conservative and explain why.
 </p>
 
-<sbsgroup widths="5% 40% 5% 40%">
+<sbsgroup widths="5% 45% 5% 45%">
   <sidebyside>
   <p>(a)</p> <image source="pfigs/VFa"/>
   <p>(b)</p> <image source="pfigs/VFb"/>
@@ -267,7 +269,7 @@ are not conservative and explain why.
 </statement>
 
 <hint><p>
-Review Theorem<nbsp/><xref ref="thm_pathIndepConserv"/> in the text.
+Review Theorem<nbsp/><xref ref="thm_pathIndepConserv"/>.
 </p></hint>
 
 <answer><p>
@@ -286,7 +288,7 @@ So <m>\vF\cdot\diff{\vr}{t} \gt 0</m> at every point of <m>\cC</m> and
 As a consequence  <m>\vF</m> is not conservative.
 </p>
 
-<sidebyside widths="5% 40% 5% 40%">
+<sidebyside widths="5% 45% 5% 45%">
 <p>(a)</p> <image source="pfigs/VFas"/>
 <p>(b)</p> <image source="pfigs/VFbs"/>
 </sidebyside>
@@ -337,7 +339,7 @@ So <m>\cC</m> is a closed curve with <m>\oint_{\cC}\vF\cdot \dee{\vr} \gt 0</m>
 and  <m>\vF</m> is not conservative.
 </p>
 
-<sidebyside>
+<sidebyside widths="5% 45% 5% 45%">
 <p>(c)</p> <image source="pfigs/VFcs"/>
 <p>(d)</p> <image source="pfigs/VFd"/>
 </sidebyside>
@@ -442,9 +444,11 @@ So the curl of <m>\vF</m> is
 \frac{x-2y}{x^2+y^2} &amp; \frac{2x + y}{x^2+y^2} &amp; z
 \end{matrix}
 \right]
-=\left(\frac{-2x^2+2y^2-2xy}{{(x^2+y^2)}^2}
+</mrow><mrow>
+&amp;=\left(\frac{-2x^2+2y^2-2xy}{{(x^2+y^2)}^2}
   -\frac{-2x^2+2y^2-2xy}{{(x^2+y^2)}^2}\right)\hk
-=\vZero
+</mrow><mrow>
+&amp;=\vZero
 </mrow>
 </md>
 <em>on the domain of <m>\vF</m></em>.
@@ -464,6 +468,8 @@ with <m>0\le\theta\le 2\pi</m>. So the integral is
       +\overbrace{\frac{4\cos t + 2\sin t}{4}}^{\frac{2x+y}{x^2+y^2}}\,\hj
       + \overbrace{3}^{z}\,\hk\bigg\}
            \cdot
+</mrow><mrow>
+&amp;\hskip3in
   \Big\{\overbrace{-2\sin t\,\hi +2\cos t\,\hj}^{\vr'(t)}\Big\}\dee{t}
 </mrow><mrow>
 &amp;=\int_0^{2\pi}
@@ -607,7 +613,8 @@ Then <m>\vv(t)=\diff{\vr}{t}(t)=\hi+2t\,\hj</m> and
 &amp;=\int_0^1 \vF\big(x(t),y(t)\big)\cdot \diff{\vr}{t}(t)\ \dee{t}
 =\int_0^1\big[t^3\,\hi-t^2\,\hj\big]
 \cdot\big[\hi+2t\,\hj\big]\,\dee{t}
-=\int_0^1\big[-t^3\big]\,\dee{t}
+</mrow><mrow>
+&amp;=\int_0^1\big[-t^3\big]\,\dee{t}
 </mrow><mrow>
 &amp;=-\frac{1}{4}
 </mrow>
@@ -683,13 +690,16 @@ Parametrize the curve using <m>y</m> as a parameter. Then <m>y=t</m>, <m>x=2y=2t
 </mrow>
 </md>
 Then
-<me>
+<md>
+<mrow>
 \int_\cC \vF\cdot \dee{\vr}
-=\int_1^2 \vF(\vr(t))\cdot \vr'(t)\ \dee{t}
+&amp;=\int_1^2 \vF(\vr(t))\cdot \vr'(t)\ \dee{t}
 =\int_1^2 \big(8t^2-32\big)\ \dee{t}
 = \left[\frac{8}{3}t^3-32t\right]_1^2
-=-\frac{40}{3}
-</me>
+</mrow><mrow>
+&amp;=-\frac{40}{3}
+</mrow>
+</md>
 </p>
 
 </solution>
@@ -769,8 +779,8 @@ Exploit the fact that, for the value of <m>\la</m> found in part (a), <m>\vF+\la
 (a), (b) The curls of <m>\vF</m> and <m>\vG</m> are
 <md>
 <mrow>
-\vnabla\times\vF
-&amp;= \det\left[\begin{matrix}
+&amp;\vnabla\times\vF
+= \det\left[\begin{matrix}
                        \hi &amp;       \hj        &amp;   \hk
 </mrow><mrow>
                \pdiff{}{x} &amp;   \pdiff{}{y}    &amp;  \pdiff{}{z}
@@ -778,12 +788,12 @@ Exploit the fact that, for the value of <m>\la</m> found in part (a), <m>\vF+\la
                   6x^2yz^2 &amp; 2x^3z^2 + 2y - xz &amp;  4x^3yz
             \end{matrix}\right]
 </mrow><mrow>
-&amp;=(4x^3z-4x^3z+x)\,\hi-(12x^2yz-12x^2yz)\,\hj+(6x^2z^2-z-6x^2z^2)\,\hk
+&amp;\hskip0.25in=(4x^3z-4x^3z+x)\,\hi-(12x^2yz-12x^2yz)\,\hj+(6x^2z^2-z-6x^2z^2)\,\hk
 </mrow><mrow>
-&amp;=x\,\hi-z\,\hk
+&amp;\hskip0.25in=x\,\hi-z\,\hk
 </mrow><mrow>
-\vnabla\times\vG
-&amp;=\det\left[\begin{matrix}
+&amp;\vnabla\times\vG
+=\det\left[\begin{matrix}
                    \hi       &amp;   \hj       &amp;  \hk
 </mrow><mrow>
                  \pdiff{}{x} &amp; \pdiff{}{y} &amp;  \pdiff{}{z}
@@ -791,7 +801,7 @@ Exploit the fact that, for the value of <m>\la</m> found in part (a), <m>\vF+\la
                           yz &amp;      0      &amp; xy
 \end{matrix}\right]
 </mrow><mrow>
-&amp;=x\hi-z\,\hk
+&amp;\hskip0.25in=x\hi-z\,\hk
 </mrow>
 </md>
 Hence the screening test for
@@ -853,14 +863,14 @@ So we may parametrize the curve by
 <m>\vr(x)=x\,\hi+e^{x^2}\,\hj+x\,\hk</m>, <m>0\le x\le 1</m>. Hence
 <md>
 <mrow>
-\int_C\vF\cdot \dee{\vr}
-&amp;=\int_C(\vF-\vG)\cdot \dee{\vr}+\int_C\vG\cdot \dee{\vr}
+&amp;\int_C\vF\cdot \dee{\vr}
+=\int_C(\vF-\vG)\cdot \dee{\vr}+\int_C\vG\cdot \dee{\vr}
 </mrow><mrow>
-&amp;=\Big[2x^3yz^2-xyz+y^2\Big]_{(0,1,0)}^{(1,e,1)}
+&amp;\hskip0.25in=\Big[2x^3yz^2-xyz+y^2\Big]_{(0,1,0)}^{(1,e,1)}
 +\int_0^1\overbrace{[xe^{x^2}\hi + xe^{x^2}\hk]}^{\vG(\vr(x))}\cdot
    \overbrace{[\hi+2xe^{x^2}\,\hj+\hk]}^{\diff{\vr}{x}}\ \dee{x}
 </mrow><mrow>
-&amp;=e+e^2-1+\int_0^1 2xe^{x^2}\ \dee{x}
+&amp;\hskip0.25in=e+e^2-1+\int_0^1 2xe^{x^2}\ \dee{x}
 =e+e^2-1+\Big[e^{x^2}\Big]_0^1
 =e^2+2e-2
 </mrow>
@@ -896,12 +906,12 @@ and the work is
 <mrow>
 \int\vF\cdot\dee{\vr}
 &amp;=\int_0^1 \vF\big(\vr(t)\big)\cdot \vr'(t)\,\dee{t}
-=\int_0^1\big(2t-t^2\,,\, t-(1-t)^2 \,,\,(1-t)-4t^2\big)\cdot(2,1,-1)\,\dee{t}
-
+</mrow><mrow>
+&amp;=\int_0^1\big(2t-t^2\,,\, t-(1-t)^2 \,,\,(1-t)-4t^2\big)\cdot(2,1,-1)\,\dee{t}
 </mrow><mrow>
 &amp;=\int_0^1\big(4t-2t^2 \ +\ t-1+2t-t^2 \ -\ 1+t+4t^2\big)\,\dee{t}
-=\int_0^1\big(t^2+8t-2\big)\,\dee{t}
-
+</mrow><mrow>
+&amp;=\int_0^1\big(t^2+8t-2\big)\,\dee{t}
 </mrow><mrow>
 &amp;=\frac{1}{3}+4-2
 =\frac{7}{3}
@@ -944,7 +954,7 @@ Then
 \vF\big(\vr(\theta)\big)&amp;=\cos\theta\,\hi+\sin\theta\,\hj+\cos^3\theta\,\hk
 </mrow><mrow>
 \vF\big(\vr(\theta)\big)\cdot\vr\,'(\theta)&amp;=\sin\theta\cos^2\theta
-</mrow
+</mrow>
 </md>
 so that
 <md>
@@ -953,7 +963,8 @@ so that
 &amp;=\int_P\vF\cdot \dee{\vr}
 =\int_0^{\pi/4}\vF\big(\vr(\theta)\big)\cdot\vr\,'(\theta)\ \dee{\theta}
 =\int_0^{\pi/4}\sin\theta\cos^2\theta\ \dee{\theta}
-=-\frac{1}{3}\cos^3\theta\Big|_0^{\pi/4}
+</mrow><mrow>
+&amp;=-\frac{1}{3}\cos^3\theta\Big|_0^{\pi/4}
 </mrow><mrow>
 &amp;=\frac{1}{3}\big[1-\frac{1}{2^{3/2}}\big]\approx 0.2155
 </mrow>
@@ -1053,7 +1064,7 @@ is not conservative. So we'll evaluate the integral directly.
 First, using the figure,
 </p>
 
-<sidebyside width="75%">
+<sidebyside width="56%">
 <image source="pfigs/OE10D_2"/>
 </sidebyside>
 
@@ -1077,9 +1088,10 @@ Making the substitution <m>u=\cos\theta</m>, <m>\dee{u} =-\sin\theta\,\dee{\thet
 <md>
 <mrow>
 \int_C xy\,\dee{y}
-=\int_1^{-1} (1-u)\, u\, (-\dee{u})
+&amp;=\int_1^{-1} (1-u)\, u\, (-\dee{u})
 =\int_{-1}^1 (u-u^2)\,\dee{u}
-=-2 \int_0^1 u^2\,\dee{u}
+</mrow><mrow>
+&amp;=-2 \int_0^1 u^2\,\dee{u}
 =-2 \frac{1^3}{3}=-\frac{2}{3}
 </mrow>
 </md>
@@ -1168,13 +1180,13 @@ So <m>\vF</m> is indeed conservative with one potential being
 <m>\varphi(x,y) = ye^x + x\sin y -\cos y</m> and the line integral is
 <md>
 <mrow>
-\int_C (ye^x + \sin y)\,\dee{x} + (e^x + \sin y + x \cos y)\,\dee{y}
-&amp;=\int_C \vF\cdot\dee{\vr}
+&amp;\int_C (ye^x + \sin y)\,\dee{x} + (e^x + \sin y + x \cos y)\,\dee{y}
+=\int_C \vF\cdot\dee{\vr}
 =\varphi(x,y)\Big|^{(0,\pi/2)}_{(1,0)}
 </mrow><mrow>
-&amp;=\Big[ye^x + x\sin y -\cos y\Big]^{(0,\pi/2)}_{(1,0)}
+&amp;\hskip1in=\Big[ye^x + x\sin y -\cos y\Big]^{(0,\pi/2)}_{(1,0)}
 </mrow><mrow>
-&amp;=1+\frac{\pi}{2}
+&amp;\hskip1in=1+\frac{\pi}{2}
 </mrow>
 </md>
 </p>
@@ -1217,7 +1229,7 @@ Note that
 Here is a sketch of <m>C</m>.
 </p>
 
-<sidebyside width="75%">
+<sidebyside width="53%">
   <image source="pfigs/OE06D_1"/>
 </sidebyside>
 
@@ -1252,7 +1264,8 @@ So
 =\int_0^1 \overbrace{(1-t)}^{x}
          \overbrace{(t)}^{z}
           \overbrace{(1)}^{z'(t)}\,\dee{t}
-=\int_0^1 (t-t^2)\,\dee{t}
+</mrow><mrow>
+&amp;=\int_0^1 (t-t^2)\,\dee{t}
 </mrow><mrow>
 &amp;=\frac{1}{2}-\frac{1}{3} =\frac{1}{6}
 </mrow>
@@ -1269,7 +1282,8 @@ So
 =\int_0^1 \overbrace{(t)}^{y}
          \overbrace{(1-t)}^{z}
           \overbrace{(1)}^{y'(t)}\,\dee{t}
-=\int_0^1 (t-t^2)\,\dee{t}
+</mrow><mrow>
+&amp;=\int_0^1 (t-t^2)\,\dee{t}
 </mrow><mrow>
 &amp;=\frac{1}{2}-\frac{1}{3} =\frac{1}{6}
 </mrow>
@@ -1286,7 +1300,8 @@ So
 =\int_0^1 \overbrace{(t)}^{x}
          \overbrace{(1-t)}^{y}
           \overbrace{(1)}^{x'(t)}\,\dee{t}
-=\int_0^1 (t-t^2)\,\dee{t}
+</mrow><mrow>
+&amp;=\int_0^1 (t-t^2)\,\dee{t}
 </mrow><mrow>
 &amp;=\frac{1}{2}-\frac{1}{3} =\frac{1}{6}
 </mrow>
@@ -3024,7 +3039,7 @@ On <m>L_3</m>, <m>x=1</m> is a constant (so that <m>\dee{x}=0</m>)
 <p>	That is, we consider the family of functions <m>y=ax^2+bx+c</m> with <m>2=4a+2b+c</m> and <m>1=a+b+c</m>. Subtracting the equation <m>a+b+c=1</m> from the
 equation <m>4a+2b+c=2</m> (in order to eliminate <m>c</m>) gives
 	<md alignment="alignat">
-<mrow>{6}
+<mrow>
 	&amp;&amp;(4a+2b+c)-(a+b+c)&amp;=(2)-(1)
 </mrow><mrow>
 	 \implies&amp;&amp; 3a+b&amp;=1

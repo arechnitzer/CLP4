@@ -203,7 +203,7 @@ Equation<nbsp/><xref ref="eqn_normalForce"/> tells us the normal force exerted b
 </p></answer>
 <solution><p>
 Equation<nbsp/><xref ref="eqn_normalForce"/> tells us the normal force exerted by the track is <m>W\hN</m>, where
-<m>W=m\ka|\vv|^2+mg\hk\cdot \hat\vN</m>. (Note in our problem, the vertical direction is <m>\hk</m>, not <m>\hj</m> as in the text.) So, we ought to find <m>\ka</m> and <m>\vN</m>.
+<m>W=m\ka|\vv|^2+mg\hk\cdot \hat\vN</m>. (Note in our problem, the vertical direction is <m>\hk</m>, not <m>\hj</m> as in §<xref ref="sec_bead"/>.) So, we ought to find <m>\ka</m> and <m>\vN</m>.
 <md>
 <mrow>
 \vr(\theta)&amp;=(3 \cos \theta, 5\sin\theta, 4+4\cos\theta)
@@ -333,7 +333,7 @@ A skier is gliding down a hill. The hill can be described as <m>\vr(t)=(\ln t, 1
 
 </statement>
 <hint><p>
-According to the equation in the text, the skiier will become airborne when:
+According to the equation in §<xref ref="sec_skier"/>, the skiier will become airborne when:
 <me>
 |\vv| \gt \sqrt{\frac{g}{\kappa}|\hj\cdot\hN|}</me>
 </p>
@@ -347,7 +347,7 @@ According to the equation in the text, the skiier will become airborne when:
 <m>|\vv|  \gt  504</m> kph
 </p></answer>
 <solution><p>
-According to the equation in the text, the skier will become airborne when:
+According to the equation in §<xref ref="sec_skier"/>, the skier will become airborne when:
 <me>
 |\vv| \gt \sqrt{\frac{g}{\kappa}|\hj\cdot\hN|}</me>
 </p>
@@ -421,7 +421,7 @@ There are now three forces acting on the bead: one parallel to <m>\hj</m> (exert
 <m>U={mg\diff{y}{s}}</m>
 </p></answer>
 <solution><p>
-We now have three forces acting on the bead, rather than the two in the text. The wire still exerts a normal force <m>W\hN</m> on the bead to keep it on the wire; gravity still exerts a force <m>-mg\hj</m> straight down. Now our jet-pack force also exerts a force parallel to the direction of the bead's motion, i.e. parallel to <m>\hT</m>. This force is <m>U\hT</m>.
+We now have three forces acting on the bead, rather than the two in §<xref ref="sec_bead"/>. The wire still exerts a normal force <m>W\hN</m> on the bead to keep it on the wire; gravity still exerts a force <m>-mg\hj</m> straight down. Now our jet-pack force also exerts a force parallel to the direction of the bead's motion, i.e. parallel to <m>\hT</m>. This force is <m>U\hT</m>.
 </p><sidebyside width="20%">
 <image><latex-image>\begin{tikzpicture}
 \begin{scope}[rotate=-30]
@@ -553,7 +553,7 @@ with coordinates measured in metres.
 </ol>
 </p></statement>
 <hint><p>
-	Follow the discussion in the text.
+	Follow the discussion in §<xref ref="sec_skateBoarder"/>.
 </p>
 
 <p>	It's fine to leave part (b) pretty messy. Your answer for part (c) involves the root of a cubic function, but you don't need a high degree of accuracy to decide between the three options given.

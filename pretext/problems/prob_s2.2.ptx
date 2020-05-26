@@ -13,7 +13,7 @@ Suppose that the vector field <m>\vv(x,y)</m> sketched below represents the velo
 moving water at the point <m>(x,y)</m> in the first quadrant of the <m>xy</m>-plane.
 </p>
 
-<sidebyside width="75%">
+<sidebyside width="60%">
   <image source="pfigs/duckyField"/>
 </sidebyside>
 
@@ -32,7 +32,7 @@ moving water at the point <m>(x,y)</m> in the first quadrant of the <m>xy</m>-pl
 </statement>
 
 <answer>
-<sidebyside width="75%">
+<sidebyside width="60%">
 <image source="pfigs/duckyField2"/>
 </sidebyside>
 
@@ -44,7 +44,7 @@ points straight down. So a rubber ducky placed in the water at <m>(0,2)</m>
 just floats straight down the positive <m>y</m>-axis towards the origin.
 </p>
 
-<sidebyside width="75%">
+<sidebyside width="60%">
   <image source="pfigs/duckyField2"/>
 </sidebyside>
 
@@ -132,9 +132,8 @@ Review §<xref ref="sec_fieldLines"/>.
 <answer><p>
 (a) <m>\frac{x^2}{2} =\frac{y^2}{2} +C</m>
 </p>
-
-<sidebyside widths="5% 70%">
-  <p>(b)</p>
+<p>(b)</p>
+<sidebyside width="41%">
     <image source="pfigs/OE10A_1"/>
 </sidebyside>
 </answer>
@@ -177,7 +176,7 @@ figure on the right below. Some equipotential curves <m>xy=C</m> are
 also sketched (in blue) in the figure on the right below.
 </p>
 
-<sidebyside width="45%">
+<sidebyside widths="41% 41%" valign="middle">
 <image source="pfigs/OE10A_1Sign"/>
 <image source="pfigs/OE10A_1"/>
 </sidebyside>
@@ -238,7 +237,7 @@ The field lines are <m>y=C'x^3</m> with <m>C'</m> a nonzero constant,
 as well as <m>x=0</m> and <m>y=0</m>.
 </p>
 
-<sidebyside width="75%">
+<sidebyside width="33%">
   <image source="pfigs/fline"/>
 </sidebyside>
 
@@ -265,7 +264,7 @@ since on the <m>y</m>-axis <m>\vF\parallel\hj</m> and
 on the <m>x</m>-axis <m>\vF\parallel\hi</m>.
 </p>
 
-<sidebyside width="75%">
+<sidebyside width="33%">
   <image source="pfigs/fline"/>
 </sidebyside>
 </solution>
