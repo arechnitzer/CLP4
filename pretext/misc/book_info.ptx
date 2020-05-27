@@ -114,6 +114,7 @@
   \newcommand{\Om}{\Omega}
   \newcommand{\om}{\omega}
   \newcommand{\vOm}{\pmb{\Omega}}
+  \newcommand{\vom}{\pmb{\omega}}
   \newcommand{\svOm}{\pmb{\scriptsize\Omega}}
   \newcommand{\al}{\alpha}
   \newcommand{\be}{\beta}
