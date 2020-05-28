@@ -242,7 +242,7 @@ is
 <md>
 <mrow>
 \vnabla\!\times\![\phi\vnabla\psi+\psi\vnabla\phi]
-&amp;=\vnabla\phi\!\times\1\vnabla\psi+\phi\vnabla\!\times\!(\vnabla\psi)
+&amp;=\vnabla\phi\!\times\!\vnabla\psi+\phi\vnabla\!\times\!(\vnabla\psi)
 +\vnabla\psi\!\times\!\vnabla\phi+\psi\vnabla\!\times\!(\vnabla\phi)
 </mrow><mrow>
 &amp;=\vnabla\phi\times\vnabla\psi
