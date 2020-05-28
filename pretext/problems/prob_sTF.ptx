@@ -1,14 +1,12 @@
 <?xml version="1.0" encoding="UTF-8" ?>
 
 <chapter><title>True/False and Other Short Questions</title>
-
-<introduction>
+<section><title>True/False and Other Short Questions</title>
   <p>
     Here is a collection of True/False and other short answer questions that involve the
     material in the main body of this text.
   </p>
-</introduction>
-
+</section>
 <exercises>
 
 <exercise><title><fromexam>M317 2013D</fromexam></title>
