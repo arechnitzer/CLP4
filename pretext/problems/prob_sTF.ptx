@@ -109,9 +109,9 @@ Theorem <xref ref="thm_divIdentities"/>.c.
 </p>
 
 <p>  (d) False. The trap here is that <m>\vF</m> need not be defined
-at the origin. We saw, in Example <xref ref="eg_fluxIntegralA"/> of the CLP-4 text, that the point source <m>\vF_S=\frac{m\vr}{|\vr|^3}</m> had flux
+at the origin. We saw, in Example <xref ref="eg_fluxIntegralA"/>, that the point source <m>\vF_S=\frac{m\vr}{|\vr|^3}</m> had flux
 <m>4\pi m</m> through every sphere centred on the  origin. We also saw,
-in Example <xref ref="eg_divThmD"/> of the CLP-4 text, that the divergence
+in Example <xref ref="eg_divThmD"/>, that the divergence
 <m>\vnabla\cdot\vF_S=0</m> everywhere except at the origin (where it is not defined).
 So if we choose <m>m</m> to be a very big negative number (say <m>-10^{100}</m>)
 and add in a very small vector field with positive divergence
@@ -161,14 +161,13 @@ centred on <m>\vc</m>.
 
 <p>  (g) False. We saw in Examples
 <xref ref="eg_screeningCounterexample"/> and
-<xref ref="eg_greenCC"/> of the CLP-4 text that the given vector
+<xref ref="eg_greenCC"/> that the given vector
 field is not conservative.
 </p>
 
 <p>  (h) False. For example, if <m>P=-y</m>, then
 <m>\oint_C\vF\cdot\dee{\vr}=-\oint_C y\,\dee{x}</m>
-is the area inside <m>C</m>. See Corollary <xref ref="cor_greens"/>
-in the CLP-4 text.
+is the area inside <m>C</m>. See Corollary <xref ref="cor_greens"/>.
 </p>
 
 <p>  (i) False.
@@ -301,7 +300,8 @@ So
 a_2 z - a_3 y &amp; -a_1 z + a_3 x &amp; a_1 y - a_2 x
 \end{matrix}
 \right]
-=2 a_1\hi + 2 a_2\hj + 2 a_3\hk
+</mrow><mrow>
+&amp;=2 a_1\hi + 2 a_2\hj + 2 a_3\hk
 </mrow>
 </md>
 is nonzero, unless the constant vector <m>\va=\vZero</m>.
@@ -333,10 +333,9 @@ False. For example, if <m>\vF = x^2\hi</m>, then
 
 <p>  (d)
 False. The trap here is that <m>\vF</m> need not be defined
-at the origin. We saw, in Example <xref ref="eg_fluxIntegralA"/> of the CLP-4
-text, that the point source <m>\vF=\frac{m\vr}{|\vr|^3}</m> had flux
+at the origin. We saw, in Example <xref ref="eg_fluxIntegralA"/>, that the point source <m>\vF=\frac{m\vr}{|\vr|^3}</m> had flux
 <m>4\pi m</m> through every sphere centred on the  origin. We also saw,
-in Example <xref ref="eg_divThmD"/> of the CLP-4 text, that the divergence
+in Example <xref ref="eg_divThmD"/>, that the divergence
 <m>\vnabla\cdot\vF=0</m> everywhere except at the origin (where it is not defined).
 </p>
 
@@ -375,7 +374,7 @@ which implies that <m>\dblInt_H \vF\cdot\hn\,\dee{S}  \gt
 
 <p>  (g)
 False. The trap here is that the curve is in <m>\bbbr^3</m>, not <m>\bbbr^2</m>.
-As we saw in Example <xref ref="eg_helixTwist"/> of the CLP-4 text,
+As we saw in Example <xref ref="eg_helixTwist"/>,
 a helix has constant curvature, but does not lie in a plane and so
 is not part of a circle.
 </p>
@@ -384,7 +383,7 @@ is not part of a circle.
 False. Even if we restrict <m>\vF</m> to the <m>xy</m>-plane (i.e. to <m>z=0</m>),
 this vector field is not conservative. We saw that in Examples
 <xref ref="eg_screeningCounterexample"/> and
-<xref ref="eg_greenCC"/> of the CLP-4 text.
+<xref ref="eg_greenCC"/>.
 </p>
 
 <p>  (i)
@@ -402,10 +401,8 @@ But if the closed curve <m>C</m> consists of the line segments
 <m>L_3</m> from <m>(1,0,1)</m> to <m>(0,0,1)</m>, followed by
 </li>
 <li>
-<sidebyside width="45%">
-  <p>
-<m>L_4</m> from <m>(0,0,1)</m> back to <m>(0,0,0)</m>,
-</p>
+<p><m>L_4</m> from <m>(0,0,1)</m> back to <m>(0,0,0)</m>.</p>
+<sidebyside width="25%">
 <image source="pfigs/OE12D_8h"/>
 </sidebyside>
 </li>
@@ -523,8 +520,7 @@ is zero, while <m>|\vr''(t)|=1</m>.
 </p>
 
 <p>  (c) True.
-This is (half of) Theorem  <xref ref="thm_screenConserv"/> in
-the CLP-4 text.
+This is (half of) Theorem  <xref ref="thm_screenConserv"/>.
 </p>
 
 <p>  (d) False. The statement <m>\vnabla\times(\vnabla\cdot F) = 0</m>
@@ -555,7 +551,7 @@ In the curve shown below (a helix lying in the surface of a cone), is the
 curvature increasing, decreasing, or constant as z increases?
 </p>
 
-<sidebyside width="75%">
+<sidebyside width="35%">
   <image source="pfigs/helixCone"/>
 </sidebyside>
 </li>
@@ -564,7 +560,7 @@ Of the two functions shown below, one is a function <m>f(x)</m> and one is its
 curvature <m>\kappa(x)</m>. Which is which?
 </p>
 
-<sidebyside width="75%">
+<sidebyside width="41%">
   <image source="pfigs/OE10D_10b"/>
 </sidebyside>
 </li>
@@ -574,6 +570,7 @@ and the saddle <m>xz = y</m>. Parametrise <m>C</m>. (Be sure to specify the doma
 your parametrisation.)
 </li>
 <li>
+<p>
 Let <m>H</m> be the helical ramp (also known as a helicoid) which revolves around
 the <m>z</m>-axis in a clockwise direction viewed from above, beginning
 at the y-axis when <m>z = 0</m>, and rising <m>2\pi</m> units each time it makes
@@ -596,6 +593,7 @@ function you have chosen parametrizes S. (Hint: Only one of the following functi
 <m>\vr(u, v) = \big(u \sin v, u \cos v, v\big)</m>
 </li>
 </ol>
+</p>
 </li>
 <li>
 Write down a parametrized curve of zero curvature and arclength <m>1</m>.
@@ -624,7 +622,7 @@ everywhere on the domain of <m>\vF</m>. Consider
 the five curves <m>R</m>, <m>S</m>, <m>T</m>, <m>U</m>, and <m>V</m> shown in the picture.
 </p>
 
-<sidebyside width="75%">
+<sidebyside width="52%">
   <image source="pfigs/OE10D_10i"/>
 </sidebyside>
 <p>
@@ -658,7 +656,7 @@ Is the <m>\hk^{\rm th}</m> component of <m>\vnabla\times\vF</m> at <m>P</m>
 positive, negative or zero?
 </p>
 
-<sidebyside width="75%">
+<sidebyside width="54%">
   <image source="pfigs/shearField"/>
 </sidebyside>
 </li>
@@ -862,10 +860,9 @@ the arrow on <m>T</m>.
 <me>
 \vG(x,y) = -\frac{y}{x^2+y^2}\hi + \frac{x}{x^2+y^2}\hj
 </me>
-We saw, in Example <xref ref="eg_screeningCounterexample"/> of
-the CLP-4 text, that <m>\vnabla\times\vG=\vZero</m>
+We saw, in Example <xref ref="eg_screeningCounterexample"/>, that <m>\vnabla\times\vG=\vZero</m>
 except at the origin where it is not defined.
-We also saw, in Example <xref ref="eg_greenCC"/> of the CLP-4 text,
+We also saw, in Example <xref ref="eg_greenCC"/>,
 that <m>\oint_{C}\vG\cdot\dee{\vr}=2\pi</m> for any counterclockwise oriented
 circle centred on the origin.
 </p>
@@ -888,7 +885,7 @@ So, by Stokes' theorem
 and (1) is true.
 </p>
 
-<sidebyside width="45%">
+<sidebyside width="48%">
   <image source="pfigs/OE10D_10i1"/>
  <image source="pfigs/OE10D_10i3"/>
 </sidebyside>
@@ -896,7 +893,7 @@ and (1) is true.
 <li> (2): False. Choose a coordinate system so that <m>Q</m> is at the origin
 and choose <m>\vF=\vG</m>.
 We saw, in Examples <xref ref="eg_screeningCounterexample"/> and
-<xref ref="eg_greenCC"/> of the CLP-4 text, that the curl of
+<xref ref="eg_greenCC"/>, that the curl of
 <m>\vG</m> vanished everywhere except at the origin, where it was not defined,
 but that <m>\int_R \vG\cdot\dee{\vr} \ne 0</m>.
 </li>
@@ -914,7 +911,7 @@ So now both parts (3) and (4) reduce to the claim that
 = \int_R \vG\cdot\dee{\vr}</m>.
 </p>
 
-<p>We saw, in Example <xref ref="eg_greenCC"/> of the CLP-4 text, that  <m>\int_R \vG\cdot\dee{\vr} = 2\pi</m>.
+<p>We saw, in Example <xref ref="eg_greenCC"/>, that  <m>\int_R \vG\cdot\dee{\vr} = 2\pi</m>.
 </p>
 
 <p>To finish off the counterexample,
@@ -964,7 +961,7 @@ on <m>P</m>, like the blue curve in the figure below, but much smaller.
 Call the square (the inside of <m>\cC</m>) <m>S</m>.
 </p>
 
-<sidebyside width="75%">
+<sidebyside width="54%">
   <image source="pfigs/shearFieldb"/>
 </sidebyside>
 
@@ -1078,7 +1075,7 @@ skip this part. If you have, read the statement very carefully.
 <p>(h) Read the statement very carefully. It does not specify that <m>C</m> is closed.
 </p>
 
-<p>(i) Review §<xref ref="sec_CurveCompendium"/> of the CLP-4 text.
+<p>(i) Review §<xref ref="sec_CurveCompendium"/>.
 </p>
 
 </hint>
@@ -1122,7 +1119,7 @@ with domain <m>\Set{(x,y,z)}{ (x,y)\ne  (0,0)}</m>. That is, the domain is
 <m>\vr(t)</m>. That's the blue point in the figure below.
 </p>
 
-<sidebyside width="75%">
+<sidebyside width="42%">
   <image source="pfigs/circleCentreC"/>
 </sidebyside>
 
@@ -1146,8 +1143,7 @@ vector in the opposite direction to the radius vector from the centre
 </li>
 <li>
 The osculating circle lies in the plane that best fits the curve
-near <m>\vr(t_0)</m>. (See the beginning of §<xref ref="sec_Curve3d"/>
-in the CLP-4 text.) So the unit tangents to the osculating circle
+near <m>\vr(t_0)</m>. (See the beginning of §<xref ref="sec_Curve3d"/>.) So the unit tangents to the osculating circle
 at <m>\vr(t_0)</m> are perpendicular to both <m>\hat\vN(t_0)</m> and
 <m>\hat\vB(t_0)</m> and so are either <m>\hat\vT(t_0)</m> or <m>-\hat\vT(t_0)</m>,
 depending on how we orient the osculating circle.
@@ -1160,8 +1156,7 @@ the <em>square</em> of the period proportional to the cube of the
 major axis of the orbit.
 </p>
 
-<p>(e) True. That's part (a) of Theorem <xref ref="thm_degTwoIdentities"/>
-in the CLP-4 text.
+<p>(e) True. That's part (a) of Theorem <xref ref="thm_degTwoIdentities"/>.
 </p>
 
 <p>(f) True. Every domain contains closed surfaces. This has nothing to do
@@ -1308,7 +1303,7 @@ The left hand side, <m>(\vnabla f ) \times (\vnabla f )</m>, is zero
 because <m>(\vnabla f )</m> is parallel to itself and the right hand side
 <m>\vnabla  \times (\vnabla f )</m> is zero by
 Theorem <xref ref="thm_degTwoIdentities"/>.b (the screening test for
-conservative fields) of the CLP-4 text.
+conservative fields).
 </p>
 
 <p>  (e) True. The curve
@@ -1345,7 +1340,7 @@ The vector field
 is plotted below.
 </p>
 
-<sidebyside width="75%">
+<sidebyside width="95%">
   <image source="pfigs/OE08A_3"/>
 </sidebyside>
 
@@ -1553,7 +1548,7 @@ Every <m>\vr_2(t)</m> with <m>t \lt  0</m>  has <m>z \lt 0</m>.
 </p>
 
 <p>(d) False. The curve need not even lie in a plane. For example, as we
-saw in Example <xref ref="eg_helixTwist"/>  of the CLP-4 text, the helix
+saw in Example <xref ref="eg_helixTwist"/>, the helix
 <m>\vr(t) = a\cos t\,\hi +b\sin t\,\hj + bt\,\hk</m> has constant curvature
 <m>\ka=\frac{a}{a^2+b^2}</m> but is not a circle.
 </p>
@@ -1573,7 +1568,7 @@ saw in Example <xref ref="eg_helixTwist"/>  of the CLP-4 text, the helix
 were conservative, its restriction, <m>\frac{-y}{x^2+y^2} \hi+ \frac{x}{x^2+y^2} \hj</m>,
 to the <m>xy</m>-plane would also be conservative. But we saw in
 Examples  <xref ref="eg_screeningCounterexample"/> and
-<xref ref="eg_greenCC"/> of the CLP-4 text that the vector
+<xref ref="eg_greenCC"/> that the vector
 field <m>\frac{-y}{x^2+y^2} \hi+ \frac{x}{x^2+y^2} \hj</m> is not conservative.
 </p>
 
@@ -1706,12 +1701,12 @@ point continuously in <m>D</m>.
 </p>
 
 <p>(b) False. The curve need not even lie in a plane. For example, as we
-saw in Example <xref ref="eg_helixTwist"/> of the CLP-4 text,
+saw in Example <xref ref="eg_helixTwist"/>,
 the helix <m>\vr(t) = a\cos t\,\hi +b\sin t\,\hj + bt\,\hk</m> has constant
 curvature <m>\ka=\frac{a}{a^2+b^2}</m> but is not a circle.
 </p>
 
-<p>(c) True. See Theorem <xref ref="thm_pathIndepConserv"/> of the CLP-4 text.
+<p>(c) True. See Theorem <xref ref="thm_pathIndepConserv"/>.
 </p>
 
 <p>(d) False. The vector field
@@ -2019,17 +2014,17 @@ Read all of the statements very carefully. The details are critical.
 </p>
 
 <p>(c) True. If <m>\vnabla f = 0</m>, then
-<md>
+<md alignment="alignat">
 <mrow>
-\frac{\partial f}{\partial x}(x,y,z)&amp;=0 &amp;&amp;\implies &amp;
+\frac{\partial f}{\partial x}(x,y,z)&amp;=0 &amp;&amp;\quad\implies\quad &amp;
          f(x,y,z)&amp;=g(y,z)
 </mrow><mrow>
-\frac{\partial f}{\partial y}(x,y,z)&amp;=0 &amp;&amp;\implies &amp;
-                 \frac{\partial g}{\partial y}(y,z)&amp;=0 &amp;&amp;\implies &amp;
+\frac{\partial f}{\partial y}(x,y,z)&amp;=0 &amp;&amp;\quad\implies\quad &amp;
+                 \frac{\partial g}{\partial y}(y,z)&amp;=0 &amp;&amp;\quad\implies\quad &amp;
          g(y,z)&amp;=h(z)
 </mrow><mrow>
-\frac{\partial f}{\partial z}(x,y,z)&amp;=0 &amp;&amp;\implies &amp;
-                 h'(z)&amp;=0 &amp;&amp;\implies &amp;
+\frac{\partial f}{\partial z}(x,y,z)&amp;=0 &amp;&amp;\quad\implies\quad &amp;
+                 h'(z)&amp;=0 &amp;&amp;\quad\implies\quad &amp;
          h(z)&amp;=C
 </mrow>
 </md>
@@ -2051,8 +2046,7 @@ Then, by the divergence theorem,
 </p>
 
 <p>(f) True. If <m>\int_C \vF\cdot \dee{\vr} = 0</m> for every closed curve <m>C</m>,
-then <m>\vF</m> is conservative by Theorem  <xref ref="thm_pathIndepConserv"/>
-in the CLP-4 text.
+then <m>\vF</m> is conservative by Theorem  <xref ref="thm_pathIndepConserv"/>.
 Consequently, <m>\vnabla \times\vF = 0</m> by Theorem <xref ref="thm_screen"/>.
 </p>
 
@@ -2071,7 +2065,7 @@ If the constant <m>|\vv|</m> is zero, then <m>\hat\vT</m> is not defined at all
 </p>
 
 <p>(h) False. The trap here is that the curve is in <m>\bbbr^3</m>, not <m>\bbbr^2</m>.
-As we saw in Example <xref ref="eg_helixTwist"/> of the CLP-4 text,
+As we saw in Example <xref ref="eg_helixTwist"/>,
 a helix has constant curvature, but does not lie in a plane and so
 is not part of a circle.
 </p>
@@ -2088,7 +2082,7 @@ S_2=\Set{(x,y,0)}{x^2+y^2\le 1}
 also with upward pointing normal.
 </p>
 
-<sidebyside width="75%">
+<sidebyside width="30%">
   <image source="pfigs/OE05D_2i"/>
 </sidebyside>
 
@@ -2098,7 +2092,7 @@ Set
 V=\Set{(x,y,z)}{0\le z\le \sqrt{x^2+y^2},\ x^2+y^2\le 1}
 </me>
 Then the boundary, <m>\partial V</m>, of <m>V</m> consists of two parts, namely <m>S_1</m>
-(with normal pointing upwards) and <m>S_2</m> (but with normal pointing downwards).  The divergence theorem (Theorem <xref ref="thm_divThm"/> of the CLP-4 text)
+(with normal pointing upwards) and <m>S_2</m> (but with normal pointing downwards).  The divergence theorem (Theorem <xref ref="thm_divThm"/>)
 gives
 <md>
 <mrow>
@@ -2112,8 +2106,7 @@ then <m>\dblInt_{S_1} \vF \cdot \hn\,\dee{S}
 -\dblInt_{S_2} \vF \cdot \hn\,\dee{S}</m> is definitely nonzero.
 </p>
 
-<p>(j) True. This is one of Kepler's laws. See §<xref ref="sec_central_forces"/>
-in the CLP-4 text.
+<p>(j) True. This is one of Kepler's laws. See §<xref ref="sec_central_forces"/>.
 </p>
 
 </solution>
@@ -2149,8 +2142,7 @@ It's (b).
                       hand side is a vector.
 (c) is also gibberish <mdash/> the left hand side is a vector while the right
                       hand side is a scalar.
-(b) is the vector identity of Theorem <xref ref="thm_divIdentities"/>.c
-in the CLP-4 text.
+(b) is the vector identity of Theorem <xref ref="thm_divIdentities"/>.c.
 </p></solution>
 </exercise>
 
@@ -2285,7 +2277,8 @@ For any constant vector <m>\vom=(\omega_1,\omega_2,\omega_3)</m>,
 x   &amp;  y  &amp; z
 \end{matrix}
 \right]
-= (\omega_2 z - \omega_3 y)\hi
+</mrow><mrow>
+&amp;= (\omega_2 z - \omega_3 y)\hi
  -(\omega_1 z - \omega_3 x)\hj
  +(\omega_1 y - \omega_2 x)\hj
 </mrow>
@@ -2303,14 +2296,14 @@ So
 \omega_2 z - \omega_3 y &amp; -\omega_1 z + \omega_3 x &amp; \omega_1 y - \omega_2 x
 \end{matrix}
 \right]
-=2 \omega_1\hi + 2 \omega_2\hj + 2 \omega_3\hk
+</mrow><mrow>
+&amp;=2 \omega_1\hi + 2 \omega_2\hj + 2 \omega_3\hk
 </mrow>
 </md>
 is nonzero, unless the constant vector <m>\vom=\vZero</m>.
 </p>
 
-<p>(i) True. The given equation is equivalent (by the vector identity Theorem <xref ref="thm_divIdentities"/>.c in
-the CLP-4 text) to
+<p>(i) True. The given equation is equivalent (by the vector identity Theorem <xref ref="thm_divIdentities"/>.c) to
 <me>
 \tripInt_\Om \vnabla\cdot\big(f\vF\big)\,\dee{V}
  =\dblInt_{\partial\Om} f\vF\cdot\hn\,\dee{S}
@@ -2319,7 +2312,7 @@ which is true by the divergence theorem.
 </p>
 
 <p>(j) False. One of the variants of the divergence theorem given
-in Theorem <xref ref="thm_divVrn"/> of the CLP-4 text is
+in Theorem <xref ref="thm_divVrn"/> is
 <me>
 \dblInt_{\partial\Om} f\hn\,\dee{S}
   = \tripInt_\Om \vnabla f\,\dee{V}
@@ -2413,8 +2406,7 @@ be strictly positive. That is <m>x(t)^2 + y(t)^2 + z(t)^2 = a^2</m>
 for some constant <m>a \gt 0</m>.
 </p>
 
-<p>(d) False. The curvature (see §<xref ref="sec_CurveCompendium"/>
-in the CLP-4 text) is
+<p>(d) False. The curvature (see §<xref ref="sec_CurveCompendium"/>) is
 <me>
 \ka(t)= \frac{\Big|\diff{\hat\vT}{t}(t)\Big|}{|\vr'(t)|}
 </me>
@@ -2442,6 +2434,7 @@ Compute <m>\vnabla\cdot\big(x^2 y\,\hi + e^y \sin x\,\hj + e^{zx}\,\hk\big)</m>
 Compute <m>\vnabla\times(\cos x^2\,\hi - y^3 z\,\hj + xz\,\hk\big)</m>
 </li>
 <li>
+<p>
 Let
 <me>
 \vF = \frac{x}{x^2+y^2}\hi +\frac{y}{x^2+y^2}\hj +z^2\,\hk
@@ -2471,6 +2464,7 @@ Choose one of the following:
 <li> Not enough information to determine
 </li>
 </ol>
+</p>
 </li>
 <li>
 True or False? If the speed of a particle is constant then the
@@ -2601,8 +2595,7 @@ defined for every <m>(x, y, z)</m>. Then,
 </p></answer>
 
 <solution><p>
-(a) True. By the vector identity of Theorem <xref ref="thm_curlIdentities"/>.c
-in the CLP-4 text,
+(a) True. By the vector identity of Theorem <xref ref="thm_curlIdentities"/>.c,
 <md>
 <mrow>
 \vnabla\times(f \vnabla f )
@@ -2633,7 +2626,7 @@ on the same straight line for all <m>s</m>.
 </p>
 
 <p>(d) False. The trap here is that the curve is in <m>\bbbr^3</m>, not <m>\bbbr^2</m>.
-As we saw in Example <xref ref="eg_helixTwist"/> of the CLP-4 text,
+As we saw in Example <xref ref="eg_helixTwist"/>,
 a helix has constant curvature, but does not lie in a plane and so
 is not part of a circle.
 </p>
@@ -2659,8 +2652,7 @@ theorem.
 </p>
 
 <p>(g) True. Let <m>S</m> be the boundary of the solid region <m>V</m>.
-Then, by the divergence theorem (Theorem <xref ref="thm_divVrn"/>
-of the CLP-4 text),
+Then, by the divergence theorem (Theorem <xref ref="thm_divVrn"/>),
 <md>
 <mrow>
 \dblInt_S\vnabla\times\vF\cdot\hn\,\dee{S}
@@ -2715,14 +2707,17 @@ Let <m>\vF</m> be the vector field. We are assuming
 that  <m>\vF=\nabla\phi</m> for some potential function <m>\phi</m>. If <m>S</m> is any
 smooth closed surface, with <m>S</m> being the boundary of the solid <m>V</m>, then,
 by the divergence theorem, the outward flux of <m>\vF</m> through <m>S</m> is
-<me>
+<md>
+<mrow>
 \dblInt_S \vF\cdot\hn\ \dee{S}
-=\tripInt_V \nabla\cdot\vF\ \dee{V}
+&amp;=\tripInt_V \nabla\cdot\vF\ \dee{V}
 =\tripInt_V \nabla\cdot\nabla \phi\ \dee{V}
-=\tripInt_V \big(\tfrac{\partial^2 }{\partial x^2}
+</mrow><mrow>
+&amp;=\tripInt_V \big(\tfrac{\partial^2 }{\partial x^2}
 +\tfrac{\partial^2 }{\partial y^2}
 +\tfrac{\partial^2 }{\partial z^2}\big)\phi\ \dee{V}
-</me>
+</mrow>
+</md>
 If, for example, <m>\phi=x^2</m>, then
 <m>\big(\frac{\partial^2 }{\partial x^2}
 +\frac{\partial^2 }{\partial y^2}
@@ -2761,8 +2756,7 @@ and the work done by a conservative field around any closed curve
 is zero.
 </p>
 
-<p>(b) False. By the vector identity Theorem <xref ref="thm_degTwoIdentities"/>.a
-in the CLP-4 text, we have
+<p>(b) False. By the vector identity Theorem <xref ref="thm_degTwoIdentities"/>.a, we have
 <me>
   \vnabla\cdot(\vnabla\times\vF)=0
 </me>
@@ -3075,8 +3069,7 @@ Hence
 </p>
 
 <p>(c)
-By Stokes' theorem (Theorem <xref ref="thm_Stokes"/> in the
-CLP-4 text),
+By Stokes' theorem (Theorem <xref ref="thm_Stokes"/>),
 <md>
 <mrow>
 \oint_{\partial D} \vF\cdot \dee{\vr}=\dblInt_D \vG\cdot \hn\,\dee{S}

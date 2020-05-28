@@ -20,7 +20,7 @@ as follows.
 The derivative of the vector valued function <m>\vr(t)</m> is defined to be
 </p>
 
-<sidebyside width="45%">
+<sidebyside widths="50% 35%" valign="middle">
 <p>
 <me>
 \vr'(t) =  \diff{\vr}{t}(t)=\lim_{h\rightarrow 0}\frac{\vr(t+h)-\vr(t)}{h}
@@ -102,7 +102,7 @@ The numerator, <m>\vr(t+h)-\vr(t)</m>, is the vector with head at <m>\vr(t+h)</m
 and tail at <m>\vr(t)</m>.
 </p>
 
-<sidebyside>
+<sidebyside width="50%">
 <image source="figs/parCurveDeriv"/>
 </sidebyside>
 
@@ -149,7 +149,7 @@ Denote by <m>s(t)</m> the length of the part of the curve between
 <m>\vr(0)</m> and <m>\vr(t)</m>.Then
 </p>
 
-<sidebyside>
+<sidebyside widths="50% 45%" valign="middle">
 <p><md>
 <mrow>
 \diff{s}{t}(t)&amp;=\Big|\diff{\vr}{t}(t)\Big|
@@ -192,8 +192,7 @@ particle at time <m>t</m>, then
        &amp;= \diff{s}{t}(t)=|\vv(t)|=|\vr'(t)|=\sqrt{(x'(t)^2+y'(t)^2+z'(t)^2}
 </mrow><mrow>
 \text{acceleration at time } t
-       &amp;=\va(t)=\vr'(t)=\vv'(t)=\big(x'(t)\,,\,y'(t)\,,\,z'(t)\big)
-</mrow><mrow>
+       &amp;=\va(t)=\vr'(t)=\vv'(t)=\big(x''(t)\,,\,y''(t)\,,\,z''(t)\big)
 </mrow>
 <intertext>and the distance travelled between times <m>T_0</m> and <m>T</m> is</intertext><mrow>
   s(T)-s(T_0)&amp;= \int_{T_0}^T \Big|\diff{\vr}{t}(t)\Big|\,\dee{t}
@@ -233,15 +232,13 @@ s(\Theta)-s(0)&amp;= \int_{0}^\Theta \big|\vr'(\theta)\big|\,\dee{\theta}
           =a\Theta
 </mrow>
 </md>
-As
-<fn>You might guess that <m>\Theta</m> is a capital Greek theta. You'd be right.</fn>
+As<fn>You might guess that <m>\Theta</m> is a capital Greek theta. You'd be right.</fn>
  <m>s(\Theta)</m> is the arc length of the part of the circle with
 <m>0\le\theta\le\Theta</m>, the circumference of the whole circle is
 <me>
 s(2\pi) = 2\pi a
 </me>
-which is reassuring, since this formula has been known
-<fn>The earliest known written approximations of <m>\pi</m>, in Egypt and Babylon, date
+which is reassuring, since this formula has been known<fn>The earliest known written approximations of <m>\pi</m>, in Egypt and Babylon, date
 from 1900--1600BC. The first recorded algorithm for rigorously evaluating <m>\pi</m>
 was developed by Archimedes around 250 BC. The first use of the symbol <m>\pi</m>,
 for the ratio between the circumference of a circle and its diameter,
@@ -249,7 +246,7 @@ in print was in 1706 by William Jones.</fn>
 for thousands of years.
 </p>
 
-<sidebyside>
+<sidebyside width="66%">
 <image source="figs/parCircleT"/>
 </sidebyside>
 
@@ -265,8 +262,7 @@ of the whole circle, and so should have length <m>\frac{\Theta}{2\pi}\times
 </me>
 so that the tangent to the circle at any point is perpendicular
 to the radius vector of the circle at that point. This is another geometric fact
-that has been known
-<fn>It is Proposition 18 in Book 3 of Euclid's Elements. It was published around 300BC.</fn>
+that has been known<fn>It is Proposition 18 in Book 3 of Euclid's Elements. It was published around 300BC.</fn>
  for thousands of years.
 </p></example>
 
@@ -292,7 +288,7 @@ just increases linearly.
 Our curve is the helix
 </p>
 
-<sidebyside>
+<sidebyside width="45%">
 <image source="figs/helix4"/>
 </sidebyside>
 
@@ -325,8 +321,7 @@ s(\pi)-s(0)&amp;= \int_{0}^\pi \big|\vr'(t)\big|\,\dee{t}
 
 <example xml:id="eg_astroid">
 <p>
-In this example, we find the perimeter of the astroid
-<fn>
+In this example, we find the perimeter of the astroid<fn>
 Astroid should not be confused with asteroid, though both words derive
 from the Greek word for star.</fn>
 <me>
@@ -381,7 +376,8 @@ By Lemma <xref ref="lem_CVtanArclen"/>
 Here <m>\sgn\!\big(\!\sin t\cos t\big)</m> means <q>the sign of <m>\sin t\cos t</m></q>, i.e <m>+1</m> when <m>\sin t\cos t \gt 0</m> and <m>-1</m> when <m>\sin t\cos t \lt 0</m>. So
 <md>
 <mrow>
-\hat\vT(t)
+&amp;\hat\vT(t)
+</mrow><mrow>
  &amp;=\left.\begin{cases}1&amp;\text{if } \sin t \gt 0,\ \cos t \gt 0
                               \text{ or } \sin t \lt 0,\ \cos t \lt 0
 </mrow><mrow>
@@ -434,9 +430,7 @@ circumnavigates the origin exactly once as <m>t</m> runs from <m>0</m> to <m>2\p
 </li>
 <li>
   <p>
-Something weird happens at those values of <m>t</m> where <m>\sin t\cos t</m> changes sign
-<fn>Like a cross-walk sign.</fn>
-,
+Something weird happens at those values of <m>t</m> where <m>\sin t\cos t</m> changes sign<fn>Like a cross-walk sign.</fn>,
 i.e. at <m>t=0</m>, <m>\frac{\pi}{2}</m>, <m>\pi</m>, <m>\frac{3\pi}{2}</m>, etc. Namely <m>\hat T(t)</m>
 flips. To be precise
 <md>
@@ -453,7 +447,7 @@ and at <m>t=\frac{\pi}{2}</m>, i.e. at <m>\vr(\frac{\pi}{2}) = a\hj</m>, and so 
 while the astroid looks somewhat like a circle, it has cusps at <m>\pm a\hi</m> and <m>\pm a\hj</m>. Here is the sketch.
 </p>
 
-<sidebyside>
+<sidebyside width="60%">
 <image source="figs/astroid4"/>
 </sidebyside>
 </li>
@@ -466,10 +460,11 @@ arc length of the part of the astroid in the first quadrant, and then multiply b
 \text{perimeter}
 &amp;=4\int_0^{\pi/2}\diff{s}{t}\ \dee{t}
  = 4\int_0^{\pi/2}3a\sin t\cos t\ \dee{t}
- = 6a\int_0^{\pi/2}\sin(2t)\ \dee{t}
 </mrow><mrow>
- &amp;=6a\Big[-\frac{\cos(2t)}{2}\Big]_0^{\pi/2}
-=6a
+ &amp; = 6a\int_0^{\pi/2}\sin(2t)\ \dee{t}
+=6a\Big[-\frac{\cos(2t)}{2}\Big]_0^{\pi/2}
+</mrow><mrow>
+ &amp;=6a
 </mrow>
 </md>
 </li>
@@ -490,11 +485,9 @@ In this example, we will explore a little further what can happen when
 <p>Suppose that you are out for a walk and that your position
 at time <m>t</m> is <m>\vr(t)</m>. If at some time you have nonzero velocity,
 it is very hard for you to  change your direction of motion
-discontinuously
-<fn>For your velocity to jump
+discontinuously<fn>For your velocity to jump
 discontinuously, your acceleration has to be infinite, which requires an
-infinite force. You might not look so healthy afterwards</fn>
-. On the other hand, when
+infinite force. You might not look so healthy afterwards</fn>. On the other hand, when
 <m>\vr'(t)=0</m>, you are not moving at all and it is easy for you to turn and
 leave in any direction you choose. You could reverse direction completely,
 or make a sharp left turn, or not change direction at all. Here are examples
@@ -517,7 +510,7 @@ of all of these. They all have <m>\vr'(t)=0</m>. They are sketched below.
 </md>
 </p>
 
-<sidebyside width="32%">
+<sidebyside widths="30% 18% 23%" valign="middle">
 <image source="figs/cuspA"/>
 <image source="figs/cuspB"/>
 <image source="figs/nocusp"/>
@@ -546,7 +539,7 @@ and at the same time <m>z(t)</m>  also increases linearly.
 Our curve is the <q>corkscrew</q>
 </p>
 
-<sidebyside>
+<sidebyside width="60%">
 <image source="figs/corkscrew"/>
 </sidebyside>
 
@@ -557,11 +550,15 @@ By Lemma <xref ref="lem_CVtanArclen"/>
 \vr(t) &amp;= t\cos t\,\hi + t\sin t\,\hj +t\,\hk
 </mrow><mrow>
 \vr'(t) &amp;= [\cos t -t\sin t ]\hi +[\sin t+t\cos t]\hj + \hk
+</mrow>
+</md>
+so that
+<md>
+<mrow>
+&amp;\diff{s}{t}(t)=\big|\vr'(t)\big|
 </mrow><mrow>
-\diff{s}{t}(t)&amp;=\big|\vr'(t)\big|
-</mrow><mrow>
-&amp;= \sqrt{\big(\cos^2t-2 t\sin t\cos t +t^2\sin^2 t\big)
-             +\big(\sin^2t+2 t\sin t\cos t +t^2\cos^2 t\big)+1}
+&amp;= \sqrt{\big(\cos^2t\!-\!2 t\sin t\cos t\!+\!t^2\sin^2 t\big)
+             \!+\!\big(\sin^2t\!+\!2 t\sin t\cos t \!+\!t^2\cos^2 t\big)\!+\!1}
 </mrow><mrow>
 &amp;=\sqrt{2+t^2}
 </mrow>
@@ -625,7 +622,8 @@ s(\sqrt{2})-s(0)
         \Big[\frac{2w}{1-w^2}+\ln\frac{1+w}{1-w}\Big]_{0}^{1/\sqrt{2}}
 = \frac{1}{2}
         \Big[2\sqrt{2}+\ln\frac{\sqrt{2}+1}{\sqrt{2}-1}\Big]
-\approx 2.2956
+</mrow><mrow>
+&amp;\approx 2.2956
 </mrow>
 </md>
 Ooof!

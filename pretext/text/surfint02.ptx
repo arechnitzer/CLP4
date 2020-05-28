@@ -16,8 +16,7 @@ In general, a good way to specify a plane is to supply
 <ul>
 <li>
 a nonzero vector <m>\vn</m> (called a normal vector) perpendicular to the
-plane<fn>
-Alternatively, you could find two vectors that are in the
+plane<fn>Alternatively, you could find two vectors that are in the
 plane (and not parallel to each other), and then construct a normal vector
 by taking their cross product.
 </fn> (to determine the orientation of the plane)
@@ -35,7 +34,7 @@ lies entirely in the plane and so is perpendicular to <m>\vn</m>. This gives
 the following very neat the equation for the plane.
 </p>
 
-<sidebyside width="45%">
+<sidebyside widths="45% 30%" valign="middle">
 <p><me>
 \vn\cdot(x-x_0\,,\,y-y_0\,,\,z-z_0) = 0
 </me></p>
@@ -139,7 +138,7 @@ is a curve on the surface (the red curve in the figure on the right below) that
 passes through <m>(x_0,y_0,z_0)</m> (the black dot in the figure) when <m>u=u_0</m>.
 </p>
 
-<sidebyside>
+<sidebyside widths="48% 48%">
 <image source="figs/surfaceSlice"/>
 <image source="figs/saddleA"/>
 </sidebyside>
@@ -246,9 +245,10 @@ Applying the chain rule gives
 <md>
 <mrow>
 \frac{\partial G}{\partial x}\big(x(t),y(t),z(t)\big)\diff{x}{t}(t)
-+\frac{\partial G}{\partial y}\big(x(t),y(t),z(t)\big)\diff{y}{t}(t)
-+\frac{\partial G}{\partial z}\big(x(t),y(t),z(t)\big)\diff{z}{t}(t)
-&amp;=0
+&amp;+\frac{\partial G}{\partial y}\big(x(t),y(t),z(t)\big)\diff{y}{t}(t)
+</mrow><mrow>
+&amp;+\frac{\partial G}{\partial z}\big(x(t),y(t),z(t)\big)\diff{z}{t}(t)
+=0
 </mrow>
 </md>
 The left hand side is exactly the dot product
@@ -341,8 +341,7 @@ and there is clearly a problem.
 
 <p>More generally, if
 <m>\vT_u\times\vT_v=\vZero</m> (or <m>\vnabla G(x_0,y_0,z_0)=\vZero</m>), then
-either
-<fn>We saw the same dichotomy when considering what happened
+either<fn>We saw the same dichotomy when considering what happened
 for a curve when <m>\vr'(t)=0</m>. See Example <xref ref="eg_zeroSpeed"/>.
 </fn>
 <ul>
@@ -350,8 +349,7 @@ for a curve when <m>\vr'(t)=0</m>. See Example <xref ref="eg_zeroSpeed"/>.
 the surface fails to have a tangent plane at <m>(x_0,y_0,z_0)</m>, or
 </li>
 <li>
-our parametrization is screwy
-<fn>Of course <q>screwy</q> is not a mathematically precise word. One way a parametrization
+our parametrization is screwy<fn>Of course <q>screwy</q> is not a mathematically precise word. One way a parametrization
 <m>\vr(u,v)</m> could be <q>screwy</q> is if it failed to give a
 one-to-one correspondence between parameter values <m>(u,v)</m> and points
 on (part of) the surface. For example, polar coordinates
@@ -374,7 +372,7 @@ increases linearly as we move away from the <m>xy</m>-plane. Our surface
 is a cone. It does not have a tangent plane at <m>(0,0,0)</m>.
 </p>
 
-<sidebyside>
+<sidebyside width="30%">
 <image source="figs/cone"/>
 </sidebyside>
 
@@ -394,13 +392,12 @@ Our surface is again a stack of circles. The radius of the circle
 in the <m>xy</m>-plane is <m>1</m>. The radius increases as we move away from the <m>xy</m>-plane. Here is a sketch of the surface.
 </p>
 
-<sidebyside>
+<sidebyside width="25%">
 <image source="figs/hyperboloid1"/>
 </sidebyside>
 
 <p>
-It is called a hyperboloid
-<fn>There are also hyperboloids of two sheets. See Appendix <xref ref="app_quadric"/>.
+It is called a hyperboloid<fn>There are also hyperboloids of two sheets. See Appendix <xref ref="app_quadric"/>.
 </fn> of one sheet.
 </p>
 
@@ -432,7 +429,7 @@ invariant under rotation about the <m>z</m>-axis.
 So it is natural to parametrize the surface using cylindrical coordinates.
 </p>
 
-<sidebyside width="45%">
+<sidebyside widths="45% 30%" valign="middle">
 <p><md>
 <mrow>
 x &amp;= r\cos\theta
@@ -455,8 +452,7 @@ parametrization by exploiting the hyperbolic trig functions
 \sinh u = \frac{1}{2}\big(e^u-e^{-u}\big) \qquad
 \cosh u = \frac{1}{2}\big(e^u+e^{-u}\big)
 </me>
-The functions have properties
-<fn>
+The functions have properties<fn>
   This is no accident: <m>\cosh u = \cos(iu)</m> and <m>\sinh u = -i\sin(iu)</m>,
   where <m>i</m> is the usual complex number that obeys <m>i^2=-1</m>.
 </fn> that are very

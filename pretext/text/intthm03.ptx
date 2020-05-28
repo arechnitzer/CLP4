@@ -9,8 +9,7 @@
 
 
 <p>Our next variant of the fundamental theorem of calculus is
-Green's
-<fn>George Green (1793<ndash/>1841) was a British
+Green's<fn>George Green (1793<ndash/>1841) was a British
 mathematical-physicist. He spent much of the early part of his life
 working in his father's bakery and grain mill. He was finally admitted
 as an undergraduate to Cambridge in 1832, aged nearly forty.</fn>
@@ -60,7 +59,7 @@ many points.
 Here are sketches of some examples.
 </p>
 
-<sidebyside width="22%">
+<sidebyside widths="20% 26% 20% 23%" valign="middle">
 <image source="figs/curve1"/>
     <image source="figs/curve2"/>
     <image source="figs/curve3"/>
@@ -89,7 +88,7 @@ the boundary, <m>C</m>, of <m>R</m> consist of a finite number of piecewise smoo
 </ul>
 </p>
 
-<sidebyside>
+<sidebyside widths="25%  27%" valign="middle">
 <image source="figs/greens1"/>
 <image source="figs/dcircleE"/>
 </sidebyside>
@@ -158,7 +157,7 @@ Notice that <m>V</m> is exactly the volume obtained by expanding <m>R</m> vertic
 upward by one unit.
 </p>
 
-<sidebyside>
+<sidebyside width="45%">
 <image source="figs/greens2"/>
 </sidebyside>
 
@@ -254,7 +253,7 @@ rather than
 <m>\hn</m> really is the <em>outward</em> pointing normal, as we see from the sketch
 </p>
 
-<sidebyside>
+<sidebyside width="45%">
 <image source="figs/greens3"/>
 </sidebyside>
 
@@ -262,25 +261,25 @@ rather than
 We can now compute the surface integral directly.
 <md>
 <mrow>
-\dblInt_{\partial V} \vG\cdot\hn\,\dee{S}
-&amp;=\dblInt_{\text{side}} \vG\cdot\hn\,\dee{S}
+&amp;\dblInt_{\partial V} \vG\cdot\hn\,\dee{S}
+=\dblInt_{\text{side}} \vG\cdot\hn\,\dee{S}
 </mrow><mrow>
-&amp;=\int_a^b\dee{t}\int_0^1\dee{z}\ \vG\big(\vR(t,z)\big)\cdot
+&amp;\hskip0.25in=\int_a^b\dee{t}\int_0^1\dee{z}\ \vG\big(\vR(t,z)\big)\cdot
           \big(-x'(t)\hj +y'(t)\hi\big)
 
 </mrow><mrow>
-&amp;=\int_a^b\dee{t}\int_0^1\dee{z}\
+&amp;\hskip0.25in=\int_a^b\dee{t}\int_0^1\dee{z}\
          \big(F_2(x(t),y(t))\,\hi -F_1(x(t),y(t))\,\hj\big)\cdot
           \big(-x'(t)\hj +y'(t)\hi\big)
 </mrow><mrow>
-&amp;=\int_a^b\dee{t}\
+&amp;\hskip0.25in=\int_a^b\dee{t}\
          \big[F_2(x(t),y(t))\,y'(t) +F_1(x(t),y(t))\,x'(t)\big]
 
 </mrow><mrow>
 &amp;\hskip2in \text{since the integrand is independent of } z
 
 </mrow><mrow>
-&amp;=\oint_{C} \big[F_1(x,y)\,\dee{x} +F_2(x,y)\,\dee{y}\big]
+&amp;\hskip0.25in=\oint_{C} \big[F_1(x,y)\,\dee{x} +F_2(x,y)\,\dee{y}\big]
 </mrow>
 </md>
 This is exactly the left
@@ -296,7 +295,7 @@ Evaluate
 </me>
 where <m>C</m> is the curve given in the figure
 </p>
-<sidebyside>
+<sidebyside width="39%">
 <image source="figs/greensSquare"/>
 </sidebyside>
 
@@ -360,13 +359,16 @@ This is just Green's theorem applied first with
                 - \frac{\partial F_1}{\partial y} = 1
 </me>
 so that Green's theorem gives
-<me>
+<md>
+<mrow>
 \oint_{C} \big[F_1(x,y)\,\dee{x} +F_2(x,y)\,\dee{y}\big]
- =\dblInt_{R}\Big(\frac{\partial F_2}{\partial x}
+ &amp;=\dblInt_{R}\Big(\frac{\partial F_2}{\partial x}
                 - \frac{\partial F_1}{\partial y}\Big)\ \dee{x}\dee{y}
  =\dblInt_{R}\ \dee{x}\dee{y}
- = \text{Area}(R)
-</me>
+</mrow><mrow>
+&amp; = \text{Area}(R)
+</mrow>
+</md>
 </p>
 
 </proof>
@@ -377,7 +379,7 @@ In this example we will use Green's theorem to compute the area enclosed
 by the astroid <m>x^{2/3} + y^{2/3} = a^{2/3}</m>.
 </p>
 
-<sidebyside>
+<sidebyside width="29%">
 <image source="figs/astroid6"/>
 </sidebyside>
 
@@ -459,7 +461,7 @@ parametrization of <m>C</m> just distorts the circle, straightening the sides a 
 as depicted here.
 </p>
 
-<sidebyside>
+<sidebyside width="28%">
 <image source="figs/dcircleA"/>
 </sidebyside>
 
@@ -528,7 +530,8 @@ our integral is
 <mrow>
 \oint_C\vB\cdot\dee{\vr}
 &amp;=\oint_C\big[\vB_1\,\dee{x} +\vB_2\,\dee{y}\big]
-=\int_0^{2\pi}\big[\vB_1\big(x(t),y(t)\big)\,x'(t)
+</mrow><mrow>
+&amp;=\int_0^{2\pi}\big[\vB_1\big(x(t),y(t)\big)\,x'(t)
             +\vB_2\,\big(x(t),y(t)\big)\,y'(t)\big]\dee{t}
 
 </mrow><mrow>
@@ -539,8 +542,7 @@ our integral is
             \dee{t}
 </mrow>
 </md>
-This is a very ugly looking integral
-<fn>Indeed!</fn>.
+This is a very ugly looking integral<fn>Indeed!</fn>.
 But even if we can't evaluate the
 integral, we can see that the integrand is strictly positive,
 and that forces <m>\oint_C\vB\cdot\vr \gt 0</m>. Because
@@ -642,12 +644,12 @@ We can explicitly compute
 <md>
 <mrow>
 \oint_{C_a}\vB\cdot\dee{\vr}
-
 &amp;=\int_0^{2\pi}\Big[\frac{-a\sin t\,\hi+a\cos t\,\hj}
                             {a^2\cos^2t+a^2\sin^2t}\Big]
            \cdot\big[-a\sin t\,\hi+a\cos t\,\hj\big]
            \dee{t}
-=\int_0^{2\pi}\dee{t}=2\pi
+</mrow><mrow>
+&amp;=\int_0^{2\pi}\dee{t}=2\pi
 </mrow>
 </md>
 </li>
@@ -656,7 +658,7 @@ Pick an <m>a</m> that is small enough that <m>C_a</m> lies entirely inside <m>C<
 apply Green's theorem with the region, <m>R_a</m>, that is between <m>C</m> and <m>C_a</m>.
 </p>
 
-<sidebyside>
+<sidebyside width="45%">
 <image source="figs/dcircleB"/>
 </sidebyside>
 
@@ -688,100 +690,7 @@ and so
 </ul>
 </p>
 
-<!-- <p>\intremark{
-\noindent
-<em>Why Green's theorem applies to <m>R_a</m>:</em>
-</p>
 
-<p><ul>
-<li>sep1pt \parskip0pt \parsep0pt
-</li>
-<li>
-Remove from <m>R_a</m> a narrow path joining the central hole and the outside world
-as in the figure
-</p>
-
-<p><image source="figs/dcircleC"/>
-\noindent Call the resulting region <m>R_\veps</m>, when the path has width <m>\veps</m>,
-and denote by <m>C_\veps</m> the bounding curve of <m>R_\veps</m>.
-Theorem <xref ref="thm_Green"/> does apply to <m>R_\veps</m>, so
-<md>
-<mrow>
-\oint_{C_\veps}\vB\cdot\dee{\vr}
-=\dblInt_{R_\veps}\Big(\frac{\partial B_2}{\partial x}
-                - \frac{\partial B_1}{\partial y}\Big)\ \dee{x}\dee{y}
-=0
-</mrow>
-</md>
-</li>
-<li>  Now take the limit <m>\veps\rightarrow 0</m>. This gives
-<md>
-<mrow>
-\oint_{C_0}\vB\cdot\dee{\vr}
-=\lim_{\veps\rightarrow 0}\oint_{C_\veps}\vB\cdot\dee{\vr}
-</p>
-
-<p>=0
-</mrow>
-</md>
-where <m>C_0</m> is the curve in the figure
-</p>
-
-<p><image source="figs/dcircleD"/>
-\noindent
-Pick any point <m>P_0</m> on the original curve <m>C</m>. The curve <m>C_0</m>
-<ul>
-<li>sep1pt \parskip0pt \parsep0pt
-</li>
-<li>
-first
-<fn>It doesn't matter where <m>C_0</m> starts from.
-For concreteness, we can start it at the point, <m>P_0=(\sin 1,0,0)</m>, where
-the original curve <m>C</m> intersects the positive <m>x</m>-axis.</fn>
-</p>
-
-<p>follows the original curve <m>C</m> from <m>P_0</m> counterclockwise to the point <m>P_1</m>
-on the negative <m>x</m>-axis.
-</li>
-<li>
-Then it follows the negative <m>x</m>-axis towards the origin until it
-hits <m>C_a</m> at the point <m>P_2</m>.
-</li>
-<li>
-Then it circumnavigates <m>C_a</m> once clockwise, returning to <m>P_2</m>.
-</li>
-<li>
-Then it follows the negative <m>x</m>-axis away from the origin until it
-returns to <m>P_1</m>.
-</li>
-<li>
-Finally it follows <m>C</m> back to its starting point.
-</li>
-</ul>
-</li>
-<li>
-So
-<md>
-<mrow>
-0=\oint_{C_0}\vB\cdot\dee{\vr}
-&amp;=\oint_{C}\vB\cdot\dee{\vr}
- +\oint_{\overline{P_1 P_2}}\vB\cdot\dee{\vr}
- +\oint_{-C_a}\vB\cdot\dee{\vr}
- +\oint_{\overline{P_2 P_1}}\vB\cdot\dee{\vr}
-</mrow><mrow>
-&amp;=\oint_{C}\vB\cdot\dee{\vr}
- +\oint_{\overline{P_1 P_2}}\vB\cdot\dee{\vr}
- +\oint_{-C_a}\vB\cdot\dee{\vr}
- -\oint_{\overline{P_1 P_2}}\vB\cdot\dee{\vr}
-</mrow><mrow>
-&amp;=\oint_{C}\vB\cdot\dee{\vr}
- +\oint_{-C_a}\vB\cdot\dee{\vr}
-</mrow>
-</md>
-as desired.
-</li>
-</ul>
-} -->
 </solution>
 </example>
 

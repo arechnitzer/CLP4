@@ -45,7 +45,7 @@ Which statement is the most true about the line integral
 </ol>
 </p>
 
-<sidebyside width="75%">
+<sidebyside width="85%">
   <image source="pfigs/OE12J_2"/>
 </sidebyside>
 
@@ -219,35 +219,34 @@ Part (c) can be done easily by using other, simpler, vector identities.
 <p>(b) Again by the product rule
 <md>
 <mrow>
-\vnabla\cdot(\vF\times\vG)
-&amp;=\pdiff{}{x}(F_2G_3-F_3G_2)
+&amp;\vnabla\cdot(\vF\times\vG)
+</mrow><mrow>&amp;\hskip0.25in=\pdiff{}{x}(F_2G_3-F_3G_2)
  +\pdiff{}{y}(F_3G_1-F_1G_3)
  +\pdiff{}{z}(F_1G_2-F_2G_1)
 </mrow><mrow>
-&amp;=\phantom{+}\pdiff{F_2}{x}G_3
+&amp;\hskip0.25in=\phantom{+}\pdiff{F_2}{x}G_3
         -\pdiff{F_3}{x}G_2
  +\pdiff{F_3}{y}G_1
         - \pdiff{F_1}{y}G_3
  +\pdiff{F_1}{z}G_2
        - \pdiff{F_2}{z}G_1
 </mrow><mrow>
-&amp;\phantom{=}+F_2\pdiff{G_3}{x}
+&amp;\hskip0.25in\phantom{=}+F_2\pdiff{G_3}{x}
        -F_3\pdiff{G_2}{x}
  +F_3\pdiff{G_1}{y}
        -F_1\pdiff{G_3}{y}
  +F_1\pdiff{G_2}{z}
       - F_2\pdiff{G_1}{z}
 </mrow><mrow>
-&amp;=\phantom{+}
+&amp;\hskip0.25in=\phantom{+}
   \left(\pdiff{F_3}{y}-\pdiff{F_2}{z}\right)G_1
   +\left(\pdiff{F_1}{z}-\pdiff{F_3}{x}\right)G_2
   +\left(\pdiff{F_2}{x}-\pdiff{F_1}{y}\right)G_3
 </mrow><mrow>
-&amp;\phantom{=}
+&amp;\hskip0.25in\phantom{=}
   -F_1\left(\pdiff{G_3}{y}-\pdiff{G_2}{z}\right)
   -F_2\left(\pdiff{G_1}{z}-\pdiff{G_3}{x}\right)
   -F_3\left(\pdiff{G_2}{x}-\pdiff{G_1}{y}\right)
-
 </mrow><mrow>
 &amp;=\vG\cdot(\vnabla\times\vF)-
                        \vF\cdot(\vnabla\times\vG)
@@ -364,7 +363,8 @@ By definition
 &amp;=\pdiff{}{x}\big(xy^2\big)
   +\pdiff{}{y}\big(-yz^2\big)
   +\pdiff{}{z}\big(zx^2\big)
-=y^2-z^2+x^2
+</mrow><mrow>
+&amp;=y^2-z^2+x^2
 </mrow><mrow>
 \vnabla\times(xy^2\hi-yz^2\hj+zx^2\hk)
 &amp;=\det\left[\begin{matrix}\hi &amp; \hj &amp; \hk \\
@@ -372,7 +372,8 @@ By definition
                   \pdiff{}{y} &amp;
                   \pdiff{}{z} \\
                   xy^2 &amp; -yz^2 &amp; zx^2\end{matrix}\right]
-= 2yz\,\hi-2xz\,\hj-2xy\,\hk
+</mrow><mrow>
+&amp;= 2yz\,\hi-2xz\,\hj-2xy\,\hk
 </mrow>
 </md>
 </p>
@@ -381,27 +382,30 @@ By definition
 By definition
 <md>
 <mrow>
-\vnabla\cdot\left(\frac{x}{\sqrt{x^2+y^2}}\hi+\frac{y}{\sqrt{x^2+y^2}}\hj\right)
-&amp;=\pdiff{}{x}\left(\frac{x}{\sqrt{x^2+y^2}}\right)
+&amp;\vnabla\cdot\left(\frac{x}{\sqrt{x^2+y^2}}\hi+\frac{y}{\sqrt{x^2+y^2}}\hj\right)
+</mrow><mrow>
+&amp;\hskip0.5in=\pdiff{}{x}\left(\frac{x}{\sqrt{x^2+y^2}}\right)
   +\pdiff{}{y}\left(\frac{y}{\sqrt{x^2+y^2}}\right)
 </mrow><mrow>
-&amp;= \frac{1}{\sqrt{x^2+y^2}} - \frac{x^2}{{[x^2+y^2]}^{3/2}}
+&amp;\hskip0.5in= \frac{1}{\sqrt{x^2+y^2}} - \frac{x^2}{{[x^2+y^2]}^{3/2}}
    +\frac{1}{\sqrt{x^2+y^2}} - \frac{y^2}{{[x^2+y^2]}^{3/2}}
 </mrow><mrow>
-&amp;=\frac{x^2+y^2\ -x^2\ +x^2+y^2\ -\ y^2}{{[x^2+y^2]}^{3/2}}
+&amp;\hskip0.5in=\frac{x^2+y^2\ -x^2\ +x^2+y^2\ -\ y^2}{{[x^2+y^2]}^{3/2}}
 </mrow><mrow>
-&amp;=\frac{1}{\sqrt{x^2+y^2}}
+&amp;\hskip0.5in=\frac{1}{\sqrt{x^2+y^2}}
 </mrow><mrow>
-\vnabla\times\left(\frac{x}{\sqrt{x^2+y^2}}\hi+\frac{y}{\sqrt{x^2+y^2}}\hj\right)
-&amp;=\det\left[\begin{matrix}\hi &amp; \hj &amp; \hk \\
+&amp;\vnabla\times\left(\frac{x}{\sqrt{x^2+y^2}}\hi+\frac{y}{\sqrt{x^2+y^2}}\hj\right)
+</mrow><mrow>
+&amp;\hskip0.5in=\det\left[\begin{matrix}\hi &amp; \hj &amp; \hk \\
                   \pdiff{}{x} &amp;
                   \pdiff{}{y} &amp;
                   \pdiff{}{z} \\
                   \frac{x}{\sqrt{x^2+y^2}} &amp;
                   \frac{y}{\sqrt{x^2+y^2}} &amp; 0\end{matrix}\right]
 </mrow><mrow>
-&amp;=\left(- \frac{xy}{{[x^2+y^2]}^{3/2}}+ \frac{xy}{{[x^2+y^2]}^{3/2}}\right)\hk
-= \vZero
+&amp;\hskip0.5in=\left(- \frac{xy}{{[x^2+y^2]}^{3/2}}+ \frac{xy}{{[x^2+y^2]}^{3/2}}\right)\hk
+</mrow><mrow>
+&amp;\hskip0.5in= \vZero
 </mrow>
 </md>
 </p>
@@ -410,29 +414,33 @@ By definition
 By definition
 <md>
 <mrow>
-\vnabla\cdot\left(-\frac{y}{\sqrt{x^2+y^2}}\hi+\frac{x}{\sqrt{x^2+y^2}}\hj\right)
-&amp;=\pdiff{}{x}\left(-\frac{y}{\sqrt{x^2+y^2}}\right)
+&amp;\vnabla\cdot\left(-\frac{y}{\sqrt{x^2+y^2}}\hi+\frac{x}{\sqrt{x^2+y^2}}\hj\right)
+</mrow><mrow>
+&amp;\hskip0.3in=\pdiff{}{x}\left(-\frac{y}{\sqrt{x^2+y^2}}\right)
   +\pdiff{}{y}\left(\frac{x}{\sqrt{x^2+y^2}}\right)
 </mrow><mrow>
-&amp;=  \frac{xy}{{[x^2+y^2]}^{3/2}}
+&amp;\hskip0.3in=  \frac{xy}{{[x^2+y^2]}^{3/2}}
    - \frac{xy}{{[x^2+y^2]}^{3/2}}
-=0
 </mrow><mrow>
-\vnabla\times\left(-\frac{y}{\sqrt{x^2+y^2}}\hi
+&amp;\hskip0.3in=0
+</mrow><mrow>
+&amp;\vnabla\times\left(-\frac{y}{\sqrt{x^2+y^2}}\hi
                          +\frac{x}{\sqrt{x^2+y^2}}\hj\right)
-&amp;=\det\left[\begin{matrix}\hi &amp; \hj &amp; \hk \\
+</mrow><mrow>
+&amp;\hskip0.3in=\det\left[\begin{matrix}\hi &amp; \hj &amp; \hk \\
                   \pdiff{}{x} &amp;
                   \pdiff{}{y} &amp;
                   \pdiff{}{z} \\
                   -\frac{y}{\sqrt{x^2+y^2}} &amp;
                   \frac{x}{\sqrt{x^2+y^2}} &amp; 0\end{matrix}\right]
 </mrow><mrow>
-&amp;=\!\left(\!\frac{1}{\sqrt{x^2+y^2}} - \frac{x^2}{{[x^2+y^2]}^{3/2}}
+&amp;\hskip0.3in=\!\left(\!\frac{1}{\sqrt{x^2+y^2}} - \frac{x^2}{{[x^2+y^2]}^{3/2}}
    +\frac{1}{\sqrt{x^2+y^2}} - \frac{y^2}{{[x^2+y^2]}^{3/2}}\!\right)\!\hk
 
 </mrow><mrow>
-&amp;= \frac{x^2+y^2\ -x^2\ +x^2+y^2\ -\ y^2}{{[x^2+y^2]}^{3/2}}\ \hk
-= \frac{\hk}{\sqrt{x^2+y^2}}
+&amp;\hskip0.3in= \frac{x^2+y^2\ -x^2\ +x^2+y^2\ -\ y^2}{{[x^2+y^2]}^{3/2}}\ \hk
+</mrow><mrow>
+&amp;\hskip0.3in= \frac{\hk}{\sqrt{x^2+y^2}}
 </mrow>
 </md>
 </p></solution>
@@ -462,24 +470,25 @@ Compute <m>\vnabla\times\big(yz\,\hi + 2xz\,\hj + e^{xy}\,\hk\big)</m>.
 <solution><p> (a)
  We are to compute the divergence of <m>\frac{\vr}{r}
 =\frac{x\,\hi+y\,\hj+z\,\hk}{[x^2+y^2+z^2]^{1/2}}</m>. Since
-<md alignment="alignat">
+<md>
 <mrow>
 \pdiff{}{x}\frac{x}{{[x^2+y^2+z^2]}^{1/2}}
 &amp;=\frac{1}{{[x^2+y^2+z^2]}^{1/2}}
             -\frac{1}{2}\frac{x(2x)}{{[x^2+y^2+z^2]}^{3/2}}
-&amp;\,=\,\frac{y^2+z^2}{{[x^2+y^2+z^2]}^{3/2}}
-
+</mrow><mrow>
+&amp;=\frac{y^2+z^2}{{[x^2+y^2+z^2]}^{3/2}}
 </mrow><mrow>
 \pdiff{}{y}\frac{y}{{[x^2+y^2+z^2]}^{1/2}}
 &amp;=\frac{1}{{[x^2+y^2+z^2]}^{1/2}}
             -\frac{1}{2}\frac{y(2y)}{{[x^2+y^2+z^2]}^{3/2}}
-&amp;\,=\,\frac{x^2+z^2}{{[x^2+y^2+z^2]}^{3/2}}
-
+</mrow><mrow>
+&amp;=\frac{x^2+z^2}{{[x^2+y^2+z^2]}^{3/2}}
 </mrow><mrow>
 \pdiff{}{z}\frac{z}{{[x^2+y^2+z^2]}^{1/2}}
 &amp;=\frac{1}{{[x^2+y^2+z^2]}^{1/2}}
             -\frac{1}{2}\frac{z(2z)}{{[x^2+y^2+z^2]}^{3/2}}
-&amp;\,=\,\frac{x^2+y^2}{{[x^2+y^2+z^2]}^{3/2}}
+</mrow><mrow>
+&amp;=\frac{x^2+y^2}{{[x^2+y^2+z^2]}^{3/2}}
 </mrow>
 </md>
 the specified divergence is
@@ -501,7 +510,8 @@ the specified divergence is
         \pdiff{}{y}&amp;
         \pdiff{}{z}\\
 yz&amp;2xz&amp;e^{xy}\end{matrix}\right]
-=\big(xe^{xy}-2x\big)\,\hi-\big(ye^{xy}-y\big)\,\hj+z\,\hk
+</mrow><mrow>
+&amp;=\big(xe^{xy}-2x\big)\,\hi-\big(ye^{xy}-y\big)\,\hj+z\,\hk
 </mrow>
 </md>
 </p>
@@ -666,9 +676,9 @@ be no <m>x</m>'s, <m>y</m>'s, or <m>z</m>'s in your answers.
                           x  &amp;  y  &amp; z   \\
                          a_1 &amp; a_2 &amp; a_3
                          \end{matrix}\right]
-              =\hi\big(a_3y-a_2z\big)
-              +\hj\big(a_1z-a_3x\big)
-              +\hk\big(a_2x-a_1y\big)
+              =\hi\big(a_3y\!-\!a_2z\big)
+              +\hj\big(a_1z\!-\!a_3x\big)
+              +\hk\big(a_2x\!-\!a_1y\big)
 </me>
 we have
 <md>
@@ -679,7 +689,8 @@ we have
         \pdiff{}{y}&amp;
         \pdiff{}{z} \\
     a_3y-a_2z&amp; a_1z-a_3x &amp; a_2x-a_1y\end{matrix}\right]
-=-2a_1\,\hi -2a_2\,\hj -2a_3\,\hk
+</mrow><mrow>
+&amp;=-2a_1\,\hi -2a_2\,\hj -2a_3\,\hk
 </mrow><mrow>
  &amp;=-2\va
 </mrow>
@@ -704,12 +715,15 @@ we have
 \vnabla\cdot\big(\vnabla(r)\big)
 &amp;= \pdiff{}{x} \frac{x}{\big(x^2+y^2+z^2\big)^{1/2}}
    +\pdiff{}{y} \frac{y}{\big(x^2+y^2+z^2\big)^{1/2}}
-   +\pdiff{}{z} \frac{z}{\big(x^2+y^2+z^2\big)^{1/2}}
+</mrow><mrow>
+&amp;\hskip1in +\pdiff{}{z} \frac{z}{\big(x^2+y^2+z^2\big)^{1/2}}
 </mrow><mrow>
 &amp;=  \frac{3}{\big(x^2+y^2+z^2\big)^{1/2}}
    -\frac{1}{2}\frac{2x^2+2y^2+2z^2}{\big(x^2+y^2+z^2\big)^{3/2}}
- =\frac{2}{\big(x^2+y^2+z^2\big)^{1/2}}
- =\frac{2}{r}
+</mrow><mrow>
+&amp; =\frac{2}{\big(x^2+y^2+z^2\big)^{1/2}}
+</mrow><mrow>
+&amp; =\frac{2}{r}
 </mrow>
 </md>
 </p></solution>
@@ -745,16 +759,16 @@ Compute <m>a</m> where <m>\vnabla\cdot\big(\vnabla(r^3)\big) = ar</m>.
 Since
 <md>
 <mrow>
-\vnabla\left(\frac{1}{r}\right)
-&amp;= \left(\hi\pdiff{}{x}
+&amp;\vnabla\left(\frac{1}{r}\right)
+= \left(\hi\pdiff{}{x}
   +\hj\pdiff{}{y}
   +\hk\pdiff{}{z} \right) \big(x^2+y^2+z^2\big)^{-1/2}
 </mrow><mrow>
-&amp;=-\hi\frac{x}{\big(x^2+y^2+z^2\big)^{3/2}}
+&amp;\hskip0.25in=-\hi\frac{x}{\big(x^2+y^2+z^2\big)^{3/2}}
   -\hj\frac{y}{\big(x^2+y^2+z^2\big)^{3/2}}
   -\hk\frac{z}{\big(x^2+y^2+z^2\big)^{3/2}}
 </mrow><mrow>
-&amp;=-\hi\frac{x}{r^3}
+&amp;\hskip0.25in=-\hi\frac{x}{r^3}
   -\hj\frac{y}{r^3}
   -\hk\frac{x}{r^3}
 </mrow>
@@ -768,12 +782,15 @@ we have <m>a=-3</m>.
 \vnabla\cdot\big(r\,\vr\big)
 &amp;= \pdiff{}{x} \Big[\big(x^2+y^2+z^2\big)^{1/2}x\Big]
    +\pdiff{}{y}\Big[\big(x^2+y^2+z^2\big)^{1/2}y\Big]
-   +\pdiff{}{z} \Big[\big(x^2+y^2+z^2\big)^{1/2}z\Big]
+</mrow><mrow>
+&amp;\hskip1in +\pdiff{}{z} \Big[\big(x^2+y^2+z^2\big)^{1/2}z\Big]
 </mrow><mrow>
 &amp;=  3\big(x^2+y^2+z^2\big)^{1/2}
    +\frac{1}{2}\frac{2x^2+2y^2+2z^2}{\big(x^2+y^2+z^2\big)^{1/2}}
- =4\big(x^2+y^2+z^2\big)^{1/2}
- =4r
+</mrow><mrow>
+&amp; =4\big(x^2+y^2+z^2\big)^{1/2}
+</mrow><mrow>
+&amp; =4r
 </mrow>
 </md>
 we have <m>a=4</m>.
@@ -782,15 +799,15 @@ we have <m>a=4</m>.
 <p>(c) Since
 <md>
 <mrow>
-\vnabla(r^3) &amp;= \left(\hi\pdiff{}{x}
+&amp;\vnabla(r^3) = \left(\hi\pdiff{}{x}
   +\hj\pdiff{}{y}
   +\hk\pdiff{}{z} \right) \big(x^2+y^2+z^2\big)^{3/2}
 </mrow><mrow>
-&amp;=\hi\,3x\big(x^2+y^2+z^2\big)^{1/2}
+&amp;\hskip0.1in=\hi\,3x\big(x^2+y^2+z^2\big)^{1/2}
   +\hj\,3y\big(x^2+y^2+z^2\big)^{1/2}
   +\hk\,3z\big(x^2+y^2+z^2\big)^{1/2}
 </mrow><mrow>
-&amp;=3r\vr
+&amp;\hskip0.1in=3r\vr
 </mrow>
 </md>
 we have
@@ -941,7 +958,8 @@ So the curl of <m>\vF</m> is
 \right]
 =-\left(\frac{-x^2+z^2}{{(x^2+y^2)}^2}
   -\frac{-x^2+z^2}{{(x^2+y^2)}^2}\right)\hj
-=\vZero
+</mrow><mrow>
+&amp;=\vZero
 </mrow>
 </md>
 <em>on the domain of <m>\vF</m></em>.
@@ -976,8 +994,7 @@ So the divergence of <m>\vF</m> is
 By part (b), the vector field passes the conservative field screening test
 <m>\vnabla\times\vF=\vZero</m>. But we should still be suspicious because
 of the similarity of <m>\vF</m> to the vector field of
-Examples <xref ref="eg_screeningCounterexample"/> and <xref ref="eg_greenCC"/>
-in the CLP-4 text.
+Examples <xref ref="eg_screeningCounterexample"/> and <xref ref="eg_greenCC"/>.
 </p>
 
 <p>So let's compute the line integral of <m>\vF</m> around the (closed) circle
@@ -1003,8 +1020,7 @@ The line integral is
 As the integral of <m>\vF</m> around the simple closed curve <m>C</m>
 is not zero, <m>\vF</m> cannot be conservative on <m>D</m>.
 See Theorem <xref ref="thm_pathIndepConserv"/> and
-Examples <xref ref="eg_screeningCounterexample"/> and <xref ref="eg_greenCC"/>
-in the CLP-4 text.
+Examples <xref ref="eg_screeningCounterexample"/> and <xref ref="eg_greenCC"/>.
 </p>
 
 </solution>
@@ -1042,28 +1058,37 @@ Find the unknown function <m>g(x,y,z)</m>.
 
 <solution><p>
 (a)
-By the vector identity of Theorem <xref ref="thm_degTwoIdentities"/>.a
-in the CLP-4 text,
+By the vector identity of Theorem <xref ref="thm_degTwoIdentities"/>.a,
 <me>
 \nabla\cdot \vF=\nabla\cdot \nabla\times\vG=0
 </me>
 So we must have
-<me>
-0=\nabla\cdot\vF=\nabla\cdot \big((xz+xy)\hi+\alpha(yz-xy)\hj+\beta(yz+xz)\hk\big)
-=(z+y)+\alpha(z-x)+\beta(y+x)
-</me>
+<md>
+<mrow>
+0&amp;=\nabla\cdot\vF=\nabla\cdot \big((xz+xy)\hi+\alpha(yz-xy)\hj+\beta(yz+xz)\hk\big)
+</mrow><mrow>
+&amp;=(z+y)+\alpha(z-x)+\beta(y+x)
+</mrow>
+</md>
 This is true for all <m>(x,y,z)</m> if and only if <m>\alpha=\beta=-1</m>.
 </p>
 
 <p>(b) Since
-<me>
-\nabla\times\vG=\nabla\times\big(xyz\hi-xyz\hj+g(x,y,z)\hk\big)
-=(g_y+xy)\,\hi-(g_x-xy)\,hj+(-yz-xz)\,\hk
-</me>
+<md>
+<mrow>
+\nabla\times\vG&amp;=\nabla\times\big(xyz\hi-xyz\hj+g(x,y,z)\hk\big)
+</mrow><mrow>
+&amp;=(g_y+xy)\,\hi-(g_x-xy)\,hj+(-yz-xz)\,\hk
+</mrow>
+</md>
 we will have that <m>\nabla\times\vG=\vF</m> if and only if
-<me>
-(g_y+xy)\,\hi-(g_x-xy)\,\hj+(-yz-xz)\,\hk=(xz+xy)\,\hi-(yz-xy)\,\hj-(yz+xz)\,\hk
-</me>
+<md>
+<mrow>
+&amp;(g_y+xy)\,\hi-(g_x-xy)\,\hj+(-yz-xz)\,\hk
+</mrow><mrow>
+&amp;\hskip1in=(xz+xy)\,\hi-(yz-xy)\,\hj-(yz+xz)\,\hk
+</mrow>
+</md>
 which is the case if and only if
 <me>
 g_y=xz,\quad g_x=yz
@@ -1126,7 +1151,7 @@ of rotation. So as the body rotates, the point sweeps out a circle of radius
 <m>\ell</m> centred on the axis of rotation.
 </p>
 
-<sidebyside width="75%">
+<sidebyside width="30%">
   <image source="pfigs/rigid"/>
 </sidebyside>
 
@@ -1164,10 +1189,11 @@ and <xref ref="thm_curlIdentities"/>(d))
 and the assumption that <m>\vOm</m> is constant
 <md>
 <mrow>
-\vnabla\times(\vOm\times\vr)&amp;=
-\vOm(\vnabla\cdot\vr)-(\vnabla\cdot\vOm)\vr
+\vnabla\times(\vOm\times\vr)
+&amp;=\vOm(\vnabla\cdot\vr)-(\vnabla\cdot\vOm)\vr
 +(\vr\cdot\vnabla)\vOm-(\vOm\cdot\vnabla)\vr
-=\vOm(\vnabla\cdot\vr)-(\vOm\cdot\vnabla)\vr
+</mrow><mrow>
+&amp;=\vOm(\vnabla\cdot\vr)-(\vOm\cdot\vnabla)\vr
 </mrow><mrow>
 \vnabla\cdot(\vOm\times\vr)&amp;=
 \vr\cdot(\vnabla\times\vOm)-
@@ -1192,7 +1218,8 @@ Substituting in
 +\Om_2\pdiff{}{y}
 +\Om_3\pdiff{}{z}\big)
 \big(x\hi+y\hj+z\hk\big)
-=\Om_1\hi+\Om_2\hj+\Om_3\hk=\vOm
+</mrow><mrow>
+&amp;=\Om_1\hi+\Om_2\hj+\Om_3\hk=\vOm
 </mrow>
 </md>
 gives
@@ -1235,7 +1262,8 @@ are similar. First we have
 <mrow>
 t\,\vF\big(\vr(t)\big)\times\diff{\vr}{t}(t)
 &amp;=t\,\vF\big(tx,ty,tz\big)\times\big(x\,\hi+y\,\hj+z\,\hk\big)
-=t\det\left[\begin{matrix}\hi  &amp; \hj &amp; \hk
+</mrow><mrow>
+&amp;=t\det\left[\begin{matrix}\hi  &amp; \hj &amp; \hk
 </mrow><mrow>
                      F_1 &amp; F_2 &amp; F_3
 </mrow><mrow>
@@ -1263,11 +1291,15 @@ So
 \frac{\partial F_3}{\partial z}\big(tx,ty,tz\big)\,tx
 -\frac{\partial F_1}{\partial z}\big(tx,ty,tz\big)\,tz
 -F_1\big(tx,ty,tz\big)\Big]\,dt
-</mrow><mrow>
-\Rightarrow
+</mrow>
+</md>
+so that
+<md>
+<mrow>
 \pdiff{G_3}{y}-\pdiff{G_2}{z}
-&amp;=\int_0^1 \Big[2t\,F_1\big(tx,ty,tz\big)+
-t^2y\,\frac{\partial F_1}{\partial y}\big(tx,ty,tz\big)
+&amp;=\int_0^1 \Big[2t\,F_1\big(tx,ty,tz\big)
+</mrow><mrow>
+&amp;\hskip1in+t^2y\,\frac{\partial F_1}{\partial y}\big(tx,ty,tz\big)
 +t^2z\frac{\partial F_1}{\partial z}\big(tx,ty,tz\big)
 </mrow><mrow>
 &amp;\hskip1in
@@ -1291,14 +1323,17 @@ so that
 <mrow>
 &amp;\pdiff{G_3}{y}-\pdiff{G_2}{z}
 </mrow><mrow>
-&amp;\hskip0.25in=\int_0^1 \Big[2tF_1\big(tx,ty,tz\big)+
-t^2x\frac{\partial F_1}{\partial x}\big(tx,ty,tz\big)
+&amp;\hskip0.25in=\int_0^1 \Big[2tF_1\big(tx,ty,tz\big)
+ +t^2x\frac{\partial F_1}{\partial x}\big(tx,ty,tz\big)
 +t^2y\frac{\partial F_1}{\partial y}\big(tx,ty,tz\big)
+</mrow><mrow>
+&amp;\hskip3.5in
 +t^2z\frac{\partial F_1}{\partial z}\big(tx,ty,tz\big)\Big]\,dt
 </mrow><mrow>
 &amp;\hskip0.25in=\int_0^1 \frac{d }{dt}\Big[ t^2 F_1(tx,ty,tz)\Big]\,dt
 =\Big[ t^2 F_1(tx,ty,tz)\Big]^{t=1}_{t=0}
-= F_1(x,y,z)
+</mrow><mrow>
+&amp;\hskip0.25in= F_1(x,y,z)
 </mrow>
 </md>
 </p></solution>

@@ -11,7 +11,7 @@
 <exercise>
 <statement><p>
 In the sketch below of a three-dimensional curve and its osculating circle at a point, label <m>\hT</m> and <m>\hN</m>. Will <m>\hB</m> be pointing out of the paper towards the reader, or into the paper away from the reader?
-</p><sidebyside>
+</p><sidebyside width="40%">
 <image><latex-image>\begin{tikzpicture}
 \draw[thick] plot[domain=0:5]({sin(\x r)},\x);
 \draw(.707,2.36) node[vertex]{};
@@ -23,7 +23,7 @@ In the sketch below of a three-dimensional curve and its osculating circle at a 
 <hint><p>
 	Use the right-hand rule to figure out how <m>\hB</m> is oriented.
 </p></hint>
-<answer><sidebyside>
+<answer><sidebyside width="40%">
 <image><latex-image>\begin{tikzpicture}
 	\draw[thick] plot[domain=0:5]({sin(\x r)},\x);
 	\draw(.707,2.36) node[vertex]{};
@@ -36,7 +36,7 @@ In the sketch below of a three-dimensional curve and its osculating circle at a 
 </p></answer>
 <solution><p>
 	<m>\hT</m> is tangent to the curve, while <m>\hN</m> is perpendicular to it.
-	</p><sidebyside>
+	</p><sidebyside width="40%">
 <image><latex-image>\begin{tikzpicture}
 		\draw[thick] plot[domain=0:5]({sin(\x r)},\x);
 		\draw(.707,2.36) node[vertex]{};
@@ -82,7 +82,7 @@ In the sketch below of a three-dimensional curve and its osculating circle at a 
 <statement><p>
 	Which curve (or curves) below have positive torsion, which have negative torsion, and which have zero torsion?
 	 The arrows indicate the direction of increasing <m>t</m>.
-</p><sidebyside>
+</p><sidebyside width="40%">
 <image><latex-image>\begin{tikzpicture}
 \draw[thick, - \gt ] plot[domain=0:14, smooth, scale=0.5, samples=50]({-2*sin(\x r)-cos(\x r)},{\x/2-cos(\x r)});
 \draw (0,-2) node{$\va(t)=(\cos t, -2\sin t, t/2)$};
@@ -92,7 +92,7 @@ In the sketch below of a three-dimensional curve and its osculating circle at a 
 	\end{tikzpicture}</latex-image></image>
 </sidebyside>
 
-<sidebyside>
+<sidebyside width="40%">
 <image><latex-image>\begin{tikzpicture}
 \draw[thick, - \gt ] plot[domain=-14:0, smooth, scale=0.5, samples=50]({-2*sin(-\x r)-cos(\x r)},{-\x/2-cos(\x r)});
 \draw (0,-2) node{$\vb(t)=(\cos t, 2\sin t, -t/2)$};
@@ -102,7 +102,7 @@ In the sketch below of a three-dimensional curve and its osculating circle at a 
 \end{tikzpicture}</latex-image></image>
 </sidebyside>
 
-<sidebyside>
+<sidebyside width="40%">
 <image><latex-image>\begin{tikzpicture}
 \draw[thick, - \gt ] plot[domain=0:16, smooth, scale=0.5, samples=50]({\x*sin(\x r)/6},{\x/3*cos(\x r)});
 \draw (0,-3.5) node{$\vc(t)=(0, t/2\sin t, t\cos t)$};
@@ -256,7 +256,11 @@ It is not necessary to compute anything.
 (a), (b)
 </p>
 
-<p><image source="pfigs/parabolicBowlB"/>
+<sidebyside width="46%">
+<image source="pfigs/parabolicBowlB"/>
+</sidebyside>
+
+<p>
 (c)
 The torsion is zero.
 </p></answer>
@@ -265,7 +269,11 @@ The torsion is zero.
 (a), (b): <m>\hT</m> points in the direction of the curve; <m>\hN</m> is perpendicular to it, in the same plane, pointing towards the centre of curvature. Using the right-hand rule in the picture, we see <m>\hB</m> is pointing to the left.
 </p>
 
-<p><image source="pfigs/parabolicBowlB"/>
+<sidebyside width="46%">
+<image source="pfigs/parabolicBowlB"/>
+</sidebyside>
+
+<p>
 (c)
 The torsion is zero, since the curve lies in a plane (the plane <m>x=y</m>).
 </p></solution>
@@ -311,11 +319,13 @@ Both parts of this question make use of the quantity <m>\diff{s}{t}</m>.
 As
 <md>
 <mrow>
-\vr'(t)&amp;=\big(e^t + e^{-t}\big)\,\hi + \big(e^t - e^{-t}\big)\,\hj +2\,\hk &amp;
+\vr'(t)&amp;=\big(e^t + e^{-t}\big)\,\hi + \big(e^t - e^{-t}\big)\,\hj +2\,\hk 
+</mrow><mrow>
 \diff{s}{t}(t) &amp;=|\vr'(t)|= \sqrt{4+2e^{2t}+2e^{-2t}}
                 =\sqrt{2}\big(e^t+e^{-t}\big)
 </mrow><mrow>
-\vr''(t)&amp;=\big(e^t - e^{-t}\big)\,\hi + \big(e^t + e^{-t}\big)\,\hj   &amp;
+\vr''(t)&amp;=\big(e^t - e^{-t}\big)\,\hi + \big(e^t + e^{-t}\big)\,\hj  
+</mrow><mrow>
 \vr'(t)\times\vr''(t)&amp;=-2\big(e^t + e^{-t}\big)\,\hi
           + 2\big(e^t - e^{-t}\big)\,\hj +4\,\hk
 </mrow>
@@ -630,12 +640,12 @@ the curvature
 	\hat\vN(t) = \frac{\va}{|\va|}=-\cos t\,\hi-\sin t\,\hj
 	</mrow>
 </md>
-	So radius of curvature is <m>\frac{1}{\ka}=2</m> and the centre of  curvature is
+	So the radius of curvature is <m>\frac{1}{\ka}=2</m> and the centre of  curvature is
 	<md>
 <mrow>
-	\left[\vr(t) +\frac{1}{\ka(t)}\hat\vN(t)\right]_{t=\frac{\pi}{6}}
-	&amp;=\left[\big(\cos t\,\hi +\sin t\,\hj + t\hk \big)
-	+2 \big( -\cos t\,\hi-\sin t\,\hj\big)\right]_{t=\frac{\pi}{6}}
+	\left[\vr(t)\!+\!\frac{1}{\ka(t)}\hat\vN(t)\right]_{t=\frac{\pi}{6}}
+	&amp;=\left[\big(\cos t\,\hi \!+\!\sin t\,\hj \!+\! t\hk \big)
+	+2 \big( -\cos t\,\hi\!-\!\sin t\,\hj\big)\right]_{t=\frac{\pi}{6}}
 </mrow><mrow>
 	&amp;=\left[-\cos t\,\hi
 	-\sin t\,\hj
@@ -1084,8 +1094,13 @@ Perhaps we'd rather not differentiate <m>\hT(t)</m>.
 <mrow>
 \hB &amp;= \dfrac{\vv(t) \times \va(t)}{|\vv(t) \times \va(t)|} \quad\text{and}\quad \hN=\hB \times \hT
 </mrow>
-<intertext> Using our previous work:</intertext><mrow>
-\hB(2)&amp;=\frac{\vv(2) \times \va(2)}{|\vv(2)\times\va(2)|} = \frac{-\sqrt2\hi+4\hj-4\sqrt2\hk}{\sqrt{2+16+32}}=\frac{1}{5}\left(-\hi+{2\sqrt2}\hj-4\hk\right)
+</md>
+Using our previous work:
+<md>
+<mrow>
+\hB(2)&amp;=\frac{\vv(2) \times \va(2)}{|\vv(2)\times\va(2)|} = \frac{-\sqrt2\hi+4\hj-4\sqrt2\hk}{\sqrt{2+16+32}}
+</mrow><mrow>
+&amp;=\frac{1}{5}\left(-\hi+{2\sqrt2}\hj-4\hk\right)
 </mrow><mrow>
 \hT(2)&amp;=\frac{1}{5}\left(4\hi+2\sqrt2\hj+\hk \right)
 </mrow><mrow>
@@ -1134,7 +1149,7 @@ First parametrize <m>x^2+y^2=1</m> in the standard way. You don't need calculus 
 <p>(c) <m>\text{maximum curvature }=\sqrt{3}</m>
     at <m>\frac{\hi}{\sqrt{2}}+\frac{\hj}{\sqrt{2}}+(1-\sqrt{2})\,\hk</m>
     and <m>-\frac{\hi}{\sqrt{2}}-\frac{\hj}{\sqrt{2}}+(1 + \sqrt{2})\,\hk</m>
- <m>\text{\hskip0.25in minimum curvature }= \frac{1}{3}</m>
+ and <m>\text{minimum curvature }= \frac{1}{3}</m>
 
          at <m>-\frac{\hi}{\sqrt{2}}+\frac{\hj}{\sqrt{2}}+\hk</m>
          and <m>\frac{\hi}{\sqrt{2}}-\frac{\hj}{\sqrt{2}}+\hk</m>
@@ -1200,19 +1215,19 @@ which in turn is the case when <m>\theta=\frac{\pi}{4},\frac{5\pi}{4}</m>
 </li>
 </ul>
 So
-<md>
+<md alignment="alignat">
 <mrow>
 \text{maximum curvature }&amp;= \frac{\sqrt{3}}{[2-1]^{3/2}}=\sqrt{3} &amp;&amp;
-\text{at }\qquad\frac{\hi}{\sqrt{2}}+\frac{\hj}{\sqrt{2}}+(1-\sqrt{2})\,\hk
+\text{at }\frac{\hi}{\sqrt{2}}+\frac{\hj}{\sqrt{2}}+(1-\sqrt{2})\,\hk
 </mrow><mrow>
 &amp; &amp;&amp;
-\text{and }\quad-\frac{\hi}{\sqrt{2}}-\frac{\hj}{\sqrt{2}}+(1+\sqrt{2})\,\hk
+\text{and }-\frac{\hi}{\sqrt{2}}-\frac{\hj}{\sqrt{2}}+(1+\sqrt{2})\,\hk
 </mrow><mrow>
-\text{minimum curvature }&amp;= \frac{\sqrt{3}}{[2-(-1)]^{3/2}}=\frac{1}{3} &amp;&amp;
-\text{at }\qquad-\frac{\hi}{\sqrt{2}}+\frac{\hj}{\sqrt{2}}+\hk
+\text{minimum curvature }&amp;= \frac{\sqrt{3}}{[2-(-1)]^{3/2}}=\frac{1}{3}\quad &amp;&amp;
+\text{at }-\frac{\hi}{\sqrt{2}}+\frac{\hj}{\sqrt{2}}+\hk
 </mrow><mrow>
 &amp; &amp;&amp;
-\text{and }\qquad\frac{\hi}{\sqrt{2}}-\frac{\hj}{\sqrt{2}}+\hk
+\text{and }\frac{\hi}{\sqrt{2}}-\frac{\hj}{\sqrt{2}}+\hk
 </mrow>
 </md>
 </p>
@@ -1264,7 +1279,8 @@ so, from  §<xref ref="sec_CurveCompendium"/>,
 \diff{s}{t}(t)\, \ka(t)\,\hat\vN(t) &amp;= \hat\vT'(t)
                  =\frac{4t\,\hi + 2\,\hj }{2t^2+1}
                   -4t\frac{2t^2\,\hi + 2t\,\hj + \hk}{{(2t^2+1)}^2}
-                 =\frac{4t\,\hi + (-4t^2+2)\,\hj -4t\, \hk}{{(2t^2+1)}^2}
+               </mrow><mrow>
+                 &amp;=\frac{4t\,\hi + (-4t^2+2)\,\hj -4t\, \hk}{{(2t^2+1)}^2}
 </mrow><mrow>
 &amp;=2\frac{2t\,\hi - (2t^2-1)\,\hj -2t\, \hk}{{(2t^2+1)}^2}
 </mrow>
@@ -1579,7 +1595,8 @@ First some preliminary computations.
 <mrow>
 \vr(t) &amp;=\frac{t^3}{3}\,\hi + \frac{t^2}{\sqrt{2}}\,\hj + t\,\hk
 </mrow><mrow>
-\vr'(t) &amp;=t^2\,\hi + \sqrt{2} t\,\hj + \hk &amp;
+\vr'(t) &amp;=t^2\,\hi + \sqrt{2} t\,\hj + \hk 
+</mrow><mrow>
 |\vr'(t)|&amp;= \sqrt{t^4+2t^2+1} =t^2+1
 </mrow><mrow>
 \vr''(t) &amp;=2t\,\hi + \sqrt{2}\,\hj
@@ -1945,7 +1962,8 @@ Use <m>\hT</m> and <m>\hN</m> to compute <m>\hB</m>.
 \vr(t)&amp;=\big(\cos^3t,\sin^3t,2\sin^2t\big)
 </mrow><mrow>
 \vv(t)&amp;=\big(-3\cos^2t\sin t,3\sin^2t\cos t,4\sin t\cos t\big)
-=\sin t\cos t (-3\cos t,3\sin t, 4)
+</mrow><mrow>
+&amp;=\sin t\cos t (-3\cos t,3\sin t, 4)
 </mrow><mrow>
 |\vv(t)|&amp;=\sin t\cos t\sqrt{9\cos^2t+9\sin^2t+16}=5\sin t\cos t
 </mrow>
@@ -1969,19 +1987,20 @@ we have
 <mrow>
 \hat\vT(t) &amp;= \frac{\vv(t)}{|\vv(t)|}
            =\frac{1}{5}(-3\cos t,3\sin t, 4) &amp;
-\hat\vT\big(\frac{\pi}{6}\big)
+\hat\vT\Big(\frac{\pi}{6}\Big)
            &amp;=\frac{1}{5}\Big(-\frac{3}{2},\frac{3\sqrt{3}}{2}, 4\Big)
 </mrow><mrow>
 \hat\vT'(t) &amp;=\frac{1}{5}(3\sin t,3\cos t, 0) &amp;
-\hat\vT'\big(\frac{\pi}{6}\big)
+\hat\vT'\Big(\frac{\pi}{6}\Big)
            &amp;=\frac{1}{5}\Big(\frac{3\sqrt{3}}{2}, \frac{3}{2}, 0\Big)
-            = \frac{3}{10} \Big(\sqrt{3}, 1, 0\Big)
 </mrow><mrow>
-\hat\vN\big(\frac{\pi}{6}\big) &amp;= \frac{\hat\vT'\big(\frac{\pi}{6}\big)}
+&amp; &amp; &amp;= \frac{3}{10} \Big(\sqrt{3}, 1, 0\Big)
+</mrow><mrow>
+\hat\vN\Big(\frac{\pi}{6}\Big) &amp;= \frac{\hat\vT'\big(\frac{\pi}{6}\big)}
                                      {|\hat\vT'\big(\frac{\pi}{6}\big)|}
                   =\frac{1}{2}\big(\sqrt{3},1,0\big) &amp;
 \hat\vB(\frac{\pi}{6}\big)
-&amp;= \hat\vT\big(\frac{\pi}{6}\big)\times
+&amp;= \hat\vT\Big(\frac{\pi}{6}\Big)\times
              \hat\vN\big(\frac{\pi}{6}\big)
 </mrow><mrow>
 &amp; &amp; &amp;=\frac{1}{10}\big(-4,4\sqrt{3},-6)
@@ -2328,22 +2347,22 @@ Compute the unit normal vector <m>\vN(t)</m>.
 Show that the binormal vector <m>\vB</m> to this curve does not depend on
 <m>t</m> and is one of the following vectors:
 <me>
-\text{\textcircled{1}}\ \left[\begin{matrix}
+\text{(1)}\ \left[\begin{matrix}
                   1/2 \\
                   -\sqrt{3}/2 \\
                  0
                 \end{matrix}\right]\qquad
-\text{\textcircled{2}}\ \left[\begin{matrix}
+\text{(2)}\ \left[\begin{matrix}
                   0  \\
                   \sqrt{3}/2 \\
                   1/2
                 \end{matrix}\right]\qquad
-\text{\textcircled{3}}\ \left[\begin{matrix}
+\text{(3)}\ \left[\begin{matrix}
                   0 \\
                   -\sqrt{3}/2 \\
                   1/2
                 \end{matrix}\right]\qquad
-\text{\textcircled{4}}\ \left[\begin{matrix}
+\text{(4)}\ \left[\begin{matrix}
                   0\\
                   -1/2 \\
                   \sqrt{3}/2
@@ -2352,8 +2371,8 @@ Show that the binormal vector <m>\vB</m> to this curve does not depend on
 This implies that <m>C</m> is a plane curve.
 </li>
 <li>
-According to your choice of vector \textcircled{1}, \textcircled{2},
-\textcircled{3} or \textcircled{4}, give the equation of the plane
+According to your choice of vector (1), (2),
+(3) or (4), give the equation of the plane
 containing <m>C</m>.
 </li>
 <li>
@@ -2436,7 +2455,11 @@ a positive constant real number.
     <m>\vr(t) = t\,\vu + t^2 \,\vv</m>
 </p>
 
-<p><image source="pfigs/OE16A_6h"/>
+<sidebyside width="53%">
+<image source="pfigs/OE16A_6h"/>
+</sidebyside>
+
+<p>
 The curve <m>\big(a(t),b(t)\big)=(t,t^2)</m> is the curve <m>y=x^2</m>.
 It is <q>curviest</q> at the origin, which is consistent with part (f).
 It becomes flatter and flatter as <m>|t|</m> increases, but never achieves
@@ -2502,7 +2525,7 @@ The unit binormal is
 &amp;=-\frac{\sqrt{3}}{2}\hj +\frac{1}{2}\hk
 </mrow>
 </md>
-which is \textcircled{3}.
+which is (3).
 </p>
 
 <p> (d)
@@ -2548,7 +2571,8 @@ Since <m>\vu=2\,\hi</m> and <m>\vv=\hj+\sqrt{3}\,\hk</m>,
 <mrow>
 \vr(t) = t\,\vu + t^2 \,\vv
 = a(t)\vu + b(t)\vv + c(t)\vw
-\qquad\text{ with }a(t)=t,\ b(t)=t^2,\ c(t)=0
+</mrow><mrow>
+&amp;\qquad\text{ with }a(t)=t,\ b(t)=t^2,\ c(t)=0
 </mrow>
 </md>
 The curve <m>\big(a(t),b(t)\big)=(t,t^2)</m> is the curve <m>y=x^2</m>.
@@ -2556,13 +2580,9 @@ It is <q>curviest</q> at the origin, which is consistent with part (f).
 It becomes flatter and flatter as <m>|t|</m> increases, but never achieves
 <q>perfect flatness</q>, which is consistent with (g).
 </p>
-
-<p><image source="pfigs/OE16A_6h"/>
-\intremark{
-Aside from an overall factor of <m>\frac{1}{2}</m>, the change of coordinates
-is orthogonal.
-}
-</p>
+<sidebyside width="53%">
+<image source="pfigs/OE16A_6h"/>
+</sidebyside>
 
 </solution>
 </exercise>
@@ -2601,7 +2621,11 @@ See the solution.
 <solution><p>
 The three unit vectors <m>\hat\vT</m>, <m>\hat\vN</m> and <m>\hat\vB</m> are
 mutually perpendicular and form a right handed triple.
+</p>
+<sidebyside width="25%">
 <image source="pfigs/OE17D_5"/>
+</sidebyside>
+<p>
 So
 <me>
 \hat\vN = \hat\vB\times\hat\vT \qquad
@@ -2710,14 +2734,17 @@ since
 |\vv\times\va| = \sqrt{104} = 2\sqrt{26}.
 </me>
 This leads to
-<me>
-\hat\vN = \hat\vB\times\hat\vT
+<md>
+<mrow>
+\hat\vN &amp;= \hat\vB\times\hat\vT
 =\frac{1}{\sqrt{78}} \left|\begin{matrix}\hi &amp; \hj &amp; \hk \\
 -1 &amp; 2 &amp; 2\sqrt2 \\
 0  &amp; 2 &amp; -\sqrt2 \end{matrix}\right|
 = -\frac{1}{\sqrt{78}}\big(6\sqrt2,\sqrt2,2\big)
-= -\frac{1}{\sqrt{39}}\big(6,1,\sqrt2\big).
-</me>
+</mrow><mrow>
+&amp;= -\frac{1}{\sqrt{39}}\big(6,1,\sqrt2\big).
+</mrow>
+</md>
 Finally,
 <me>
 \kappa = \frac{|\vv\times\va|}{v^3}

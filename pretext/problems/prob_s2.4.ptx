@@ -44,7 +44,7 @@ fourth side by <m>\vr(y)=y\,\hj</m> with <m>y</m> running from <m>1</m> to <m>0<
 </ul>
 </p>
 
-<sidebyside width="75%">
+<sidebyside width="30%">
   <image source="pfigs/square"/>
 </sidebyside>
 
@@ -54,7 +54,8 @@ So
 <mrow>
 \int_\cC x^2y^2\,\dee{x}+x^3y\,\dee{y}
 &amp;=\int_0^1 x^2\times 0^2\,\dee{x} +\int_0^1 1^3\times y\,\dee{y}
-+\int_1^0 x^2\times 1^2\,\dee{x} +\int_1^0 0^3\times y\,\dee{y}
++\int_1^0 x^2\times 1^2\,\dee{x} 
+</mrow><mrow>&amp;\hskip2in+\int_1^0 0^3\times y\,\dee{y}
 </mrow><mrow>
 &amp;=\frac{1}{2}-\frac{1}{3}
 =\frac{1}{6}
@@ -180,7 +181,7 @@ Since <m>\vF</m> is conservative, <m>\int_C\vF\cdot\dee{\vr}=0</m> over any clos
 Let <m>P_1</m> and <m>P_2</m> be points in <m>\mathbb R^2</m>. Let <m>A</m> and <m>B</m> be paths from <m>P_1</m> to <m>P_2</m>, as shown below.
 </p>
 
-<sidebyside>
+<sidebyside width="42%">
 <image><latex-image>\begin{tikzpicture}
 \draw[ultra thick, blue] plot[smooth, domain=-.79:3.93]({2*sin( \x r)},{2*sin( (\x*2) r)});
 \draw[ultra thick, blue,- \gt ] plot[smooth, domain=-.45:-.5]({2*sin( \x r)},{2*sin( (\x*2) r)});
@@ -218,7 +219,7 @@ is <m>\int_C\vF\cdot\dee{\vr}=0</m> for all closed paths <m>C</m>?
 </p></statement>
 
 <hint><p>
-Review Theorem<nbsp/><xref ref="thm_pathIndepConserv"/> in the text.
+Review Theorem<nbsp/><xref ref="thm_pathIndepConserv"/>.
 </p></hint>
 
 <answer><p>
@@ -239,7 +240,8 @@ that <m>\vF</m> pass the screening test
         \frac{\partial }{\partial y}&amp;
         \frac{\partial }{\partial z}\\
         e^x \sin y &amp; ae^x \cos y + bz &amp; cx\end{matrix}\right]
-= -b\,\hi-c\,\hj+\big(ae^x\cos y-e^x\cos y\big)\,\hk
+</mrow><mrow>
+&amp;= -b\,\hi-c\,\hj+\big(ae^x\cos y-e^x\cos y\big)\,\hk
 </mrow>
 </md>
 which is the case if and only if <m>b=c=0</m> and <m>a=1</m>.
@@ -253,7 +255,7 @@ those vector fields is conservative. Determine which three vector fields
 are not conservative and explain why.
 </p>
 
-<sbsgroup widths="5% 40% 5% 40%">
+<sbsgroup widths="5% 45% 5% 45%">
   <sidebyside>
   <p>(a)</p> <image source="pfigs/VFa"/>
   <p>(b)</p> <image source="pfigs/VFb"/>
@@ -267,7 +269,7 @@ are not conservative and explain why.
 </statement>
 
 <hint><p>
-Review Theorem<nbsp/><xref ref="thm_pathIndepConserv"/> in the text.
+Review Theorem<nbsp/><xref ref="thm_pathIndepConserv"/>.
 </p></hint>
 
 <answer><p>
@@ -286,7 +288,7 @@ So <m>\vF\cdot\diff{\vr}{t} \gt 0</m> at every point of <m>\cC</m> and
 As a consequence  <m>\vF</m> is not conservative.
 </p>
 
-<sidebyside widths="5% 40% 5% 40%">
+<sidebyside widths="5% 45% 5% 45%">
 <p>(a)</p> <image source="pfigs/VFas"/>
 <p>(b)</p> <image source="pfigs/VFbs"/>
 </sidebyside>
@@ -337,7 +339,7 @@ So <m>\cC</m> is a closed curve with <m>\oint_{\cC}\vF\cdot \dee{\vr} \gt 0</m>
 and  <m>\vF</m> is not conservative.
 </p>
 
-<sidebyside>
+<sidebyside widths="5% 45% 5% 45%">
 <p>(c)</p> <image source="pfigs/VFcs"/>
 <p>(d)</p> <image source="pfigs/VFd"/>
 </sidebyside>
@@ -442,9 +444,11 @@ So the curl of <m>\vF</m> is
 \frac{x-2y}{x^2+y^2} &amp; \frac{2x + y}{x^2+y^2} &amp; z
 \end{matrix}
 \right]
-=\left(\frac{-2x^2+2y^2-2xy}{{(x^2+y^2)}^2}
+</mrow><mrow>
+&amp;=\left(\frac{-2x^2+2y^2-2xy}{{(x^2+y^2)}^2}
   -\frac{-2x^2+2y^2-2xy}{{(x^2+y^2)}^2}\right)\hk
-=\vZero
+</mrow><mrow>
+&amp;=\vZero
 </mrow>
 </md>
 <em>on the domain of <m>\vF</m></em>.
@@ -464,6 +468,8 @@ with <m>0\le\theta\le 2\pi</m>. So the integral is
       +\overbrace{\frac{4\cos t + 2\sin t}{4}}^{\frac{2x+y}{x^2+y^2}}\,\hj
       + \overbrace{3}^{z}\,\hk\bigg\}
            \cdot
+</mrow><mrow>
+&amp;\hskip3in
   \Big\{\overbrace{-2\sin t\,\hi +2\cos t\,\hj}^{\vr'(t)}\Big\}\dee{t}
 </mrow><mrow>
 &amp;=\int_0^{2\pi}
@@ -607,7 +613,8 @@ Then <m>\vv(t)=\diff{\vr}{t}(t)=\hi+2t\,\hj</m> and
 &amp;=\int_0^1 \vF\big(x(t),y(t)\big)\cdot \diff{\vr}{t}(t)\ \dee{t}
 =\int_0^1\big[t^3\,\hi-t^2\,\hj\big]
 \cdot\big[\hi+2t\,\hj\big]\,\dee{t}
-=\int_0^1\big[-t^3\big]\,\dee{t}
+</mrow><mrow>
+&amp;=\int_0^1\big[-t^3\big]\,\dee{t}
 </mrow><mrow>
 &amp;=-\frac{1}{4}
 </mrow>
@@ -683,13 +690,16 @@ Parametrize the curve using <m>y</m> as a parameter. Then <m>y=t</m>, <m>x=2y=2t
 </mrow>
 </md>
 Then
-<me>
+<md>
+<mrow>
 \int_\cC \vF\cdot \dee{\vr}
-=\int_1^2 \vF(\vr(t))\cdot \vr'(t)\ \dee{t}
+&amp;=\int_1^2 \vF(\vr(t))\cdot \vr'(t)\ \dee{t}
 =\int_1^2 \big(8t^2-32\big)\ \dee{t}
 = \left[\frac{8}{3}t^3-32t\right]_1^2
-=-\frac{40}{3}
-</me>
+</mrow><mrow>
+&amp;=-\frac{40}{3}
+</mrow>
+</md>
 </p>
 
 </solution>
@@ -769,8 +779,8 @@ Exploit the fact that, for the value of <m>\la</m> found in part (a), <m>\vF+\la
 (a), (b) The curls of <m>\vF</m> and <m>\vG</m> are
 <md>
 <mrow>
-\vnabla\times\vF
-&amp;= \det\left[\begin{matrix}
+&amp;\vnabla\times\vF
+= \det\left[\begin{matrix}
                        \hi &amp;       \hj        &amp;   \hk
 </mrow><mrow>
                \pdiff{}{x} &amp;   \pdiff{}{y}    &amp;  \pdiff{}{z}
@@ -778,12 +788,12 @@ Exploit the fact that, for the value of <m>\la</m> found in part (a), <m>\vF+\la
                   6x^2yz^2 &amp; 2x^3z^2 + 2y - xz &amp;  4x^3yz
             \end{matrix}\right]
 </mrow><mrow>
-&amp;=(4x^3z-4x^3z+x)\,\hi-(12x^2yz-12x^2yz)\,\hj+(6x^2z^2-z-6x^2z^2)\,\hk
+&amp;\hskip0.25in=(4x^3z-4x^3z+x)\,\hi-(12x^2yz-12x^2yz)\,\hj+(6x^2z^2-z-6x^2z^2)\,\hk
 </mrow><mrow>
-&amp;=x\,\hi-z\,\hk
+&amp;\hskip0.25in=x\,\hi-z\,\hk
 </mrow><mrow>
-\vnabla\times\vG
-&amp;=\det\left[\begin{matrix}
+&amp;\vnabla\times\vG
+=\det\left[\begin{matrix}
                    \hi       &amp;   \hj       &amp;  \hk
 </mrow><mrow>
                  \pdiff{}{x} &amp; \pdiff{}{y} &amp;  \pdiff{}{z}
@@ -791,7 +801,7 @@ Exploit the fact that, for the value of <m>\la</m> found in part (a), <m>\vF+\la
                           yz &amp;      0      &amp; xy
 \end{matrix}\right]
 </mrow><mrow>
-&amp;=x\hi-z\,\hk
+&amp;\hskip0.25in=x\hi-z\,\hk
 </mrow>
 </md>
 Hence the screening test for
@@ -853,14 +863,14 @@ So we may parametrize the curve by
 <m>\vr(x)=x\,\hi+e^{x^2}\,\hj+x\,\hk</m>, <m>0\le x\le 1</m>. Hence
 <md>
 <mrow>
-\int_C\vF\cdot \dee{\vr}
-&amp;=\int_C(\vF-\vG)\cdot \dee{\vr}+\int_C\vG\cdot \dee{\vr}
+&amp;\int_C\vF\cdot \dee{\vr}
+=\int_C(\vF-\vG)\cdot \dee{\vr}+\int_C\vG\cdot \dee{\vr}
 </mrow><mrow>
-&amp;=\Big[2x^3yz^2-xyz+y^2\Big]_{(0,1,0)}^{(1,e,1)}
+&amp;\hskip0.25in=\Big[2x^3yz^2-xyz+y^2\Big]_{(0,1,0)}^{(1,e,1)}
 +\int_0^1\overbrace{[xe^{x^2}\hi + xe^{x^2}\hk]}^{\vG(\vr(x))}\cdot
    \overbrace{[\hi+2xe^{x^2}\,\hj+\hk]}^{\diff{\vr}{x}}\ \dee{x}
 </mrow><mrow>
-&amp;=e+e^2-1+\int_0^1 2xe^{x^2}\ \dee{x}
+&amp;\hskip0.25in=e+e^2-1+\int_0^1 2xe^{x^2}\ \dee{x}
 =e+e^2-1+\Big[e^{x^2}\Big]_0^1
 =e^2+2e-2
 </mrow>
@@ -896,12 +906,12 @@ and the work is
 <mrow>
 \int\vF\cdot\dee{\vr}
 &amp;=\int_0^1 \vF\big(\vr(t)\big)\cdot \vr'(t)\,\dee{t}
-=\int_0^1\big(2t-t^2\,,\, t-(1-t)^2 \,,\,(1-t)-4t^2\big)\cdot(2,1,-1)\,\dee{t}
-
+</mrow><mrow>
+&amp;=\int_0^1\big(2t-t^2\,,\, t-(1-t)^2 \,,\,(1-t)-4t^2\big)\cdot(2,1,-1)\,\dee{t}
 </mrow><mrow>
 &amp;=\int_0^1\big(4t-2t^2 \ +\ t-1+2t-t^2 \ -\ 1+t+4t^2\big)\,\dee{t}
-=\int_0^1\big(t^2+8t-2\big)\,\dee{t}
-
+</mrow><mrow>
+&amp;=\int_0^1\big(t^2+8t-2\big)\,\dee{t}
 </mrow><mrow>
 &amp;=\frac{1}{3}+4-2
 =\frac{7}{3}
@@ -944,7 +954,7 @@ Then
 \vF\big(\vr(\theta)\big)&amp;=\cos\theta\,\hi+\sin\theta\,\hj+\cos^3\theta\,\hk
 </mrow><mrow>
 \vF\big(\vr(\theta)\big)\cdot\vr\,'(\theta)&amp;=\sin\theta\cos^2\theta
-</mrow
+</mrow>
 </md>
 so that
 <md>
@@ -953,7 +963,8 @@ so that
 &amp;=\int_P\vF\cdot \dee{\vr}
 =\int_0^{\pi/4}\vF\big(\vr(\theta)\big)\cdot\vr\,'(\theta)\ \dee{\theta}
 =\int_0^{\pi/4}\sin\theta\cos^2\theta\ \dee{\theta}
-=-\frac{1}{3}\cos^3\theta\Big|_0^{\pi/4}
+</mrow><mrow>
+&amp;=-\frac{1}{3}\cos^3\theta\Big|_0^{\pi/4}
 </mrow><mrow>
 &amp;=\frac{1}{3}\big[1-\frac{1}{2^{3/2}}\big]\approx 0.2155
 </mrow>
@@ -1053,7 +1064,7 @@ is not conservative. So we'll evaluate the integral directly.
 First, using the figure,
 </p>
 
-<sidebyside width="75%">
+<sidebyside width="56%">
 <image source="pfigs/OE10D_2"/>
 </sidebyside>
 
@@ -1077,9 +1088,10 @@ Making the substitution <m>u=\cos\theta</m>, <m>\dee{u} =-\sin\theta\,\dee{\thet
 <md>
 <mrow>
 \int_C xy\,\dee{y}
-=\int_1^{-1} (1-u)\, u\, (-\dee{u})
+&amp;=\int_1^{-1} (1-u)\, u\, (-\dee{u})
 =\int_{-1}^1 (u-u^2)\,\dee{u}
-=-2 \int_0^1 u^2\,\dee{u}
+</mrow><mrow>
+&amp;=-2 \int_0^1 u^2\,\dee{u}
 =-2 \frac{1^3}{3}=-\frac{2}{3}
 </mrow>
 </md>
@@ -1168,13 +1180,13 @@ So <m>\vF</m> is indeed conservative with one potential being
 <m>\varphi(x,y) = ye^x + x\sin y -\cos y</m> and the line integral is
 <md>
 <mrow>
-\int_C (ye^x + \sin y)\,\dee{x} + (e^x + \sin y + x \cos y)\,\dee{y}
-&amp;=\int_C \vF\cdot\dee{\vr}
+&amp;\int_C (ye^x + \sin y)\,\dee{x} + (e^x + \sin y + x \cos y)\,\dee{y}
+=\int_C \vF\cdot\dee{\vr}
 =\varphi(x,y)\Big|^{(0,\pi/2)}_{(1,0)}
 </mrow><mrow>
-&amp;=\Big[ye^x + x\sin y -\cos y\Big]^{(0,\pi/2)}_{(1,0)}
+&amp;\hskip1in=\Big[ye^x + x\sin y -\cos y\Big]^{(0,\pi/2)}_{(1,0)}
 </mrow><mrow>
-&amp;=1+\frac{\pi}{2}
+&amp;\hskip1in=1+\frac{\pi}{2}
 </mrow>
 </md>
 </p>
@@ -1217,7 +1229,7 @@ Note that
 Here is a sketch of <m>C</m>.
 </p>
 
-<sidebyside width="75%">
+<sidebyside width="53%">
   <image source="pfigs/OE06D_1"/>
 </sidebyside>
 
@@ -1252,7 +1264,8 @@ So
 =\int_0^1 \overbrace{(1-t)}^{x}
          \overbrace{(t)}^{z}
           \overbrace{(1)}^{z'(t)}\,\dee{t}
-=\int_0^1 (t-t^2)\,\dee{t}
+</mrow><mrow>
+&amp;=\int_0^1 (t-t^2)\,\dee{t}
 </mrow><mrow>
 &amp;=\frac{1}{2}-\frac{1}{3} =\frac{1}{6}
 </mrow>
@@ -1269,7 +1282,8 @@ So
 =\int_0^1 \overbrace{(t)}^{y}
          \overbrace{(1-t)}^{z}
           \overbrace{(1)}^{y'(t)}\,\dee{t}
-=\int_0^1 (t-t^2)\,\dee{t}
+</mrow><mrow>
+&amp;=\int_0^1 (t-t^2)\,\dee{t}
 </mrow><mrow>
 &amp;=\frac{1}{2}-\frac{1}{3} =\frac{1}{6}
 </mrow>
@@ -1286,7 +1300,8 @@ So
 =\int_0^1 \overbrace{(t)}^{x}
          \overbrace{(1-t)}^{y}
           \overbrace{(1)}^{x'(t)}\,\dee{t}
-=\int_0^1 (t-t^2)\,\dee{t}
+</mrow><mrow>
+&amp;=\int_0^1 (t-t^2)\,\dee{t}
 </mrow><mrow>
 &amp;=\frac{1}{2}-\frac{1}{3} =\frac{1}{6}
 </mrow>
@@ -1622,11 +1637,14 @@ Alternatively, <m>\varphi</m> can be found
 by antidifferentiating its partial derivatives.
 <md>
 <mrow>
-\frac{\partial \varphi}{\partial x}(x,y,z) &amp;= z + e^y &amp; \implies \varphi(x,y,z)&amp;=zx+xe^y+\psi_1(y,z)
+\frac{\partial \varphi}{\partial x}(x,y,z) &amp;= z + e^y 
+</mrow><mrow>&amp;\hskip1in \implies \varphi(x,y,z)=zx+xe^y+\psi_1(y,z)
 </mrow><mrow>
-\frac{\partial \varphi}{\partial y}(x,y,z) &amp;= xe^y - e^z \sin y &amp; \implies \varphi(x,y,z)&amp;=xe^y+e^z\cos y+\psi_2(x,z)
+\frac{\partial \varphi}{\partial y}(x,y,z) &amp;= xe^y - e^z \sin y
+</mrow><mrow>&amp;\hskip1in \implies \varphi(x,y,z)=xe^y+e^z\cos y+\psi_2(x,z)
 </mrow><mrow>
-\frac{\partial \varphi}{\partial z}(x,y,z) &amp;= 1 + x + e^z \cos y &amp; \implies \varphi(x,y,z)&amp;=z+zx+e^z\cos y+\psi_3(x,y)
+\frac{\partial \varphi}{\partial z}(x,y,z) &amp;= 1 + x + e^z \cos y 
+</mrow><mrow>&amp;\hskip1in \implies \varphi(x,y,z)=z+zx+e^z\cos y+\psi_3(x,y)
 </mrow>
 </md>
 We'd like a single function <m>\varphi(x,y,z)</m> that simultaneously obeys all three of these equations.
@@ -1870,6 +1888,7 @@ y^2 e^{3z} +Axy^3 &amp; 2xye^{3z}+3x^2y^2 &amp; Bxy^2e^{3z}\end{matrix}\right|
 </mrow><mrow>
 &amp;=\big(2Bxy e^{3z}-6xy e^{3z}\big)\,\hi
    -\big(By^2 e^{3z}-3y^2e^{3z}\big)\,\hj
+</mrow><mrow>&amp;\hskip1in
    +\big(2ye^{3z}+6xy^2- 2ye^{3z}-3Axy^2\big)\,\hk
 </mrow>
 </md>
@@ -1880,11 +1899,14 @@ So <m>\vF</m> is conservative if and only if <m>A=2</m> and <m>B=3</m>.
 <md>
 <mrow>
 \frac{\partial \varphi}{\partial x}(x,y,z)
-            &amp;= y^2 e^{3z} +2xy^3 &amp;\implies \varphi(x,y,z)&amp;=xy^2e^{3z}+x^2y^3+\psi_1(y,z)
+            &amp;= y^2 e^{3z} +2xy^3 
+</mrow><mrow>&amp;\hskip1in \implies \varphi(x,y,z)=xy^2e^{3z}+x^2y^3+\psi_1(y,z)
 </mrow><mrow>
-\frac{\partial \varphi}{\partial y}(x,y,z) &amp;= 2xye^{3z}+3x^2y^2 &amp;\implies \varphi(x,y,z)&amp;=xy^2e^{3z}+x^2y^3+\psi_2(x,z)
+\frac{\partial \varphi}{\partial y}(x,y,z) &amp;= 2xye^{3z}+3x^2y^2 
+</mrow><mrow>&amp;\hskip1in \implies \varphi(x,y,z)=xy^2e^{3z}+x^2y^3+\psi_2(x,z)
 </mrow><mrow>
-\frac{\partial \varphi}{\partial z}(x,y,z) &amp;= 3xy^2e^{3z}&amp;\implies \varphi(x,y,z)&amp;=xy^2e^{3z}+\psi_3(x,y)
+\frac{\partial \varphi}{\partial z}(x,y,z) &amp;= 3xy^2e^{3z}
+</mrow><mrow>&amp;\hskip1in \implies \varphi(x,y,z)=xy^2e^{3z}+\psi_3(x,y)
 </mrow>
 </md>
 Let's guess that
@@ -1907,23 +1929,24 @@ So
 <mrow>
 &amp;\int_C (y^2 e^{3z} + xy^3)\,\dee{x} + (2xye^{3z} + 3x^2 y^2 )\,\dee{y}
                  + 3xy^2 e^{3z}\,\dee{z}
-= \int_C \vF\cdot\dee{\vr} - \int_C xy^3\,\dee{\vr}
 </mrow><mrow>
-&amp;\hskip1in = \varphi\big(\vr(1)\big) - \varphi\big(\vr(0)\big)
+&amp;\hskip0.25in = \int_C \vF\cdot\dee{\vr} - \int_C xy^3\,\dee{\vr}
+</mrow><mrow>
+&amp;\hskip0.25in = \varphi\big(\vr(1)\big) - \varphi\big(\vr(0)\big)
      -\int_0^1 \overbrace{e^{2t}\big(e^{-t}\big)^3\,\hi}^{xy^3\,\hi}\cdot
            \Big(\overbrace{2e^{2t}\,\hi-e^{-t}\,\hj+\frac{1}{1+t}\,\hk}^
                 {\vr'(t)}\Big)\ \dee{t}
 </mrow><mrow>
-&amp;\hskip1in = \varphi\big(e^2,\frac{1}{e},\ln 2\big) - \varphi\big(1,1,0\big)
+&amp;\hskip0.25in = \varphi\big(e^2,\frac{1}{e},\ln 2\big) - \varphi\big(1,1,0\big)
               - \int_0^1 2e^t\,\dee{t}
 </mrow><mrow>
-&amp;\hskip1in = \big\{e^2\big(\frac{1}{e}\big)^2 e^{3\ln 2}
+&amp;\hskip0.25in = \big\{e^2\big(\frac{1}{e}\big)^2 e^{3\ln 2}
                   +e^4\big(\frac{1}{e}\big)^3\big\}
               -\big(1+1\big) -2(e-1)
 </mrow><mrow>
-&amp;\hskip1in = 2^3 + e -2 -2e+2
+&amp;\hskip0.25in = 2^3 + e -2 -2e+2
 </mrow><mrow>
-&amp;\hskip1in = 8-e
+&amp;\hskip0.25in = 8-e
 </mrow>
 </md>
 </p></solution>
@@ -1988,23 +2011,21 @@ That is,
 <md>
 <mrow>
 \frac{\partial }{\partial y}\left(2x\sin(\pi y)-e^z\right)
-&amp;=\frac{\partial }{\partial x}\left(ax^2\cos(\pi y)-3e^z\right) &amp;
-&amp;\iff &amp;
-2\pi x\cos(\pi y) &amp; =2a x\cos(\pi y)
-
+&amp;=\frac{\partial }{\partial x}\left(ax^2\cos(\pi y)-3e^z\right) 
+</mrow><mrow>&amp;\hskip1in
+\iff \quad
+2\pi x\cos(\pi y)  =2a x\cos(\pi y)
 </mrow><mrow>
-
 \frac{\partial }{\partial z}\left(2x\sin(\pi y)-e^z\right)
-&amp;=-\frac{\partial }{\partial x}\left(x+by\right)e^z &amp;
-&amp;\iff &amp;
--e^z &amp; =-e^z
-
+&amp;=-\frac{\partial }{\partial x}\left(x+by\right)e^z 
+</mrow><mrow>&amp;\hskip1in
+\iff \quad-e^z =-e^z
 </mrow><mrow>
-
 \frac{\partial }{\partial z}\left(ax^2\cos(\pi y)-3e^z\right)
-&amp;=-\frac{\partial }{\partial y}\left(x+by\right)e^z &amp;
-&amp;\iff &amp;
--3e^z &amp; =-be^z
+&amp;=-\frac{\partial }{\partial y}\left(x+by\right)e^z 
+</mrow><mrow>&amp;\hskip1in
+\iff \quad
+-3e^z =-be^z
 </mrow>
 </md>
 Hence only <m>a=\pi,\ b=3</m> works.
@@ -2025,11 +2046,14 @@ Here <m>\varphi</m> was guessed. Alternatively, it can be found
 by antidifferentiating the partial derivatives of <m>\vF</m>.
 <md>
 <mrow>
-\frac{\partial \varphi}{\partial x}(x,y,z) &amp;= 2x\sin(\pi y)-e^z &amp;\implies \varphi(x,y,z)&amp;=x^2\sin(\pi y)-xe^z+\psi_1(y,z)
+\frac{\partial \varphi}{\partial x}(x,y,z) &amp;= 2x\sin(\pi y)-e^z 
+</mrow><mrow>&amp;\implies \varphi(x,y,z)=x^2\sin(\pi y)-xe^z+\psi_1(y,z)
 </mrow><mrow>
-\frac{\partial \varphi}{\partial y}(x,y,z) &amp;= \pi x^2\cos(\pi y)-3e^z &amp;\implies \varphi(x,y,z)&amp;=x^2\sin(\pi y)-3ye^z+\psi_2(x,z)
+\frac{\partial \varphi}{\partial y}(x,y,z) &amp;= \pi x^2\cos(\pi y)-3e^z 
+</mrow><mrow>&amp;\implies \varphi(x,y,z)=x^2\sin(\pi y)-3ye^z+\psi_2(x,z)
 </mrow><mrow>
-\frac{\partial \varphi}{\partial z}(x,y,z) &amp;= -(x+3y)e^z &amp; \implies \varphi(x,y,z)&amp;=-xe^z-3ye^z+\psi_3(x,y)
+\frac{\partial \varphi}{\partial z}(x,y,z) &amp;= -(x+3y)e^z </mrow><mrow>
+&amp;\implies \varphi(x,y,z)=-xe^z-3ye^z+\psi_3(x,y)
 </mrow>
 </md>
 Summing the distinct terms on the right hand sides of the three equations
@@ -2040,12 +2064,16 @@ above, we guess
 </p>
 
 <p>(c) By part (b),
-<me>
+<md>
+<mrow>
 \int _C\vF\cdot \dee{\vr}
-=\varphi(1,1,\ln 2)-\varphi(0,0,0)
-=\left(\sin\pi-e^{\ln 2}-3e^{\ln 2}\right)-\left(\sin(0)-0-0\right)
-=-8
-</me>
+&amp;=\varphi(1,1,\ln 2)-\varphi(0,0,0)
+</mrow><mrow>
+&amp;=\left(\sin\pi-e^{\ln 2}-3e^{\ln 2}\right)-\left(\sin(0)-0-0\right)
+</mrow><mrow>
+&amp;=-8
+</mrow>
+</md>
 </p>
 
 <p>(d)
@@ -2123,7 +2151,7 @@ f(x,y,z) = ye^{yz} +g(x,y)
 Substituting this into the second equation gives
 <me>
 e^{yz} + yze^{yz} +\frac{\partial g}{\partial y}(x,y) = \cos^2 x + (1 + yz) e^{yz}
-\qquad\text{or}\qquad
+\quad\text{or}\quad
 \frac{\partial g}{\partial y}(x,y)=\cos^2 x
 </me>
 which forces
@@ -2147,7 +2175,8 @@ works for any constant <m>C</m>.
 \int_C \vF \cdot \dee{\vr}
 &amp;= \int_C \vnabla f \cdot \dee{\vr}
 =f\big(\pi, e^\pi , 0\big) -f\big(0, 1, -\pi^2\big)
-=\Big[ye^{yz} + y\cos^2 x\Big]^{(\pi, e^\pi , 0)}_{(0, 1, -\pi^2 )}
+</mrow><mrow>
+&amp;=\Big[ye^{yz} + y\cos^2 x\Big]^{(\pi, e^\pi , 0)}_{(0, 1, -\pi^2 )}
 </mrow><mrow>
 &amp;=\big(2e^\pi\big)-\big(e^{-\pi^2}+1\big)
 </mrow>
@@ -2268,6 +2297,8 @@ e^{yz} &amp; xze^{yz} + ze^y &amp; xye^{yz} + e^y
 </mrow><mrow>
 &amp;= \big[(xe^{yz}+xyze^{yz}+e^y)-(xe^{yz}+xyze^{yz}+e^y)\big]\,\hi
     -\big[ye^{yz}-ye^{yz}\big]\,\hj
+</mrow><mrow>
+&amp;\hskip1in
     + \big[ze^{yz}-ze^{yz}\big]\,\hk
 </mrow><mrow>
 &amp;= \vZero
@@ -2377,7 +2408,8 @@ As <m>f(x,y) = y\sin(x^2)+\cos(y)</m> is a potential for <m>\vF</m>
 \int_C\vF\cdot\dee{\vr}
 &amp;=f\big(\vr(\pi)\big) -f\big(\vr(\frac{\pi}{2})\big)
 =f\big(0,\pi\big) -f\big(1,\frac{\pi}{2}\big)
-=\big(-1\big)-\Big(\frac{\pi}{2}\sin(1)\Big)
+</mrow><mrow>
+&amp;=\big(-1\big)-\Big(\frac{\pi}{2}\sin(1)\Big)
 </mrow><mrow>
 &amp;=-1 -\frac{\pi}{2}\sin(1)
 </mrow>
@@ -2447,11 +2479,14 @@ The choices from<nbsp/>(a) give
 We find a potential <m>\varphi</m> for <m>\vF</m> by antidifferentiating its partial derivatives.
 <md>
 <mrow>
-\frac{\partial \varphi}{\partial x}(x,y,z) &amp;= 2xyz + z^2 - 2y^2 &amp;\implies \varphi(x,y,z)&amp;=x^2yz+xz^2-2xy^2+\psi_1(y,z)
+\frac{\partial \varphi}{\partial x}(x,y,z) &amp;= 2xyz + z^2 - 2y^2 
+</mrow><mrow>&amp;\implies \varphi(x,y,z)=x^2yz+xz^2-2xy^2+\psi_1(y,z)
 </mrow><mrow>
-\frac{\partial \varphi}{\partial y}(x,y,z) &amp;= x^2 z - 4xy  &amp;\implies \varphi(x,y,z)&amp;=x^2yz-2xy^2+\psi_2(x,z)
+\frac{\partial \varphi}{\partial y}(x,y,z) &amp;= x^2 z - 4xy  
+</mrow><mrow>&amp;\implies \varphi(x,y,z)=x^2yz-2xy^2+\psi_2(x,z)
 </mrow><mrow>
-\frac{\partial \varphi}{\partial z}(x,y,z) &amp;= x^2y + 2xz + qz^3 &amp;\implies \varphi(x,y,z)&amp;=x^2yz+xz^2+\frac{q}{4}z^4+\psi_3(x,y)
+\frac{\partial \varphi}{\partial z}(x,y,z) \varphi(x,y,z)&amp;= x^2y + 2xz + qz^3 
+</mrow><mrow>&amp;\implies \varphi(x,y,z)=x^2yz+xz^2+\frac{q}{4}z^4+\psi_3(x,y)
 </mrow>
 </md>
 All together, <m>\vF=\nabla\varphi</m> for
@@ -2704,11 +2739,13 @@ with <m>-3\le x \le 3</m>.
 \int_C (x^2 + y)\,\dee{x} + x\,\dee{y}
 &amp;=\int_{-3}^3 \big(x^2\ +\  \overbrace{9-x^2}^{y}\
           +x\overbrace{(-2x)}^{\diff{y}{x}}\big)\,\dee{x}
-=\int_{-3}^3 \big(9-2x^2\big)\,\dee{x}
+</mrow><mrow>
+&amp;=\int_{-3}^3 \big(9-2x^2\big)\,\dee{x}
 </mrow><mrow>
 &amp;=2\int_0^3 \big(9-2x^2\big)\,\dee{x}
 =2\left(27-2\frac{3^3}{3}\right)
-=18
+</mrow><mrow>
+&amp;=18
 </mrow>
 </md>
 </p>
@@ -2718,7 +2755,7 @@ integral directly. Label the four sides of the square <m>L_1</m>, <m>L_2</m>, <m
 <m>L_4</m> as in the figure
 </p>
 
-<sidebyside width="75%">
+<sidebyside width="33%">
   <image source="pfigs/OE11D_4"/>
 </sidebyside>
 
@@ -2863,7 +2900,8 @@ The work done between time <m>t=0</m> and time <m>t=\pi/2</m> is
 <mrow>
 \int_0^{\pi/2} \vF(t)\cdot \dee{\vr}
 &amp;=\int_0^{\pi/2} \vF(t)\cdot \diff{\vr}{t}(t)\,\dee{t}
-=\int_0^{\pi/2} [\hj-\sin t\,\hk]\cdot [\hi+t\,\hj+\cos t\,\hk]\,\dee{t}
+</mrow><mrow>
+&amp;=\int_0^{\pi/2} [\hj-\sin t\,\hk]\cdot [\hi+t\,\hj+\cos t\,\hk]\,\dee{t}
 </mrow><mrow>
 &amp;= \int_0^{\pi/2} [t -\sin t\cos t]\,\dee{t}
 =\Big[\frac{t^2}{2}+\frac{1}{2}\cos^2 t\Big]_0^{\pi/2}
@@ -2944,7 +2982,7 @@ The work done between time <m>t=0</m> and time <m>t=\pi/2</m> is
 </p>
 
 <p>	<alert>Solution 1:</alert>
-	</p><sidebyside>
+	</p><sidebyside width="38%">
 <image><latex-image>\begin{tikzpicture}[scale=1.25]
 		\YEaaxis{.5}{3}{1}{3}
 		\draw (2,2) node[vertex,label=above:{$(2,2)$}](A){};
@@ -3004,6 +3042,7 @@ On <m>L_3</m>, <m>x=1</m> is a constant (so that <m>\dee{x}=0</m>)
 	\int_{C_Y} \vF\cdot\dee{\vr}
 	&amp;= \int_{L_1}\hskip-5pt \big\{(3y\,\dee{x} + (x-1)\dee{y}\big\}
 	+ \int_{L_2}\hskip-5pt \big\{(3y\,\dee{x} + (x-1)\dee{y}\big\}
+        </mrow><mrow>&amp; \hskip1in
 	+ \int_{L_3}\hskip-5pt \big\{(3y\,\dee{x} + (x-1)\dee{y}\big\}
 </mrow><mrow>
 	&amp;= \int_2^Y \dee{y}
@@ -3024,7 +3063,7 @@ On <m>L_3</m>, <m>x=1</m> is a constant (so that <m>\dee{x}=0</m>)
 <p>	That is, we consider the family of functions <m>y=ax^2+bx+c</m> with <m>2=4a+2b+c</m> and <m>1=a+b+c</m>. Subtracting the equation <m>a+b+c=1</m> from the
 equation <m>4a+2b+c=2</m> (in order to eliminate <m>c</m>) gives
 	<md alignment="alignat">
-<mrow>{6}
+<mrow>
 	&amp;&amp;(4a+2b+c)-(a+b+c)&amp;=(2)-(1)
 </mrow><mrow>
 	 \implies&amp;&amp; 3a+b&amp;=1
@@ -3044,7 +3083,7 @@ equation <m>4a+2b+c=2</m> (in order to eliminate <m>c</m>) gives
 	<m>y=ax^2+(1-3a)x+2a</m> for some constant <m>a</m> are parabolas that pass through <m>(1,1)</m> and <m>(2,2)</m>.
 </p>
 
-<sidebyside>
+<sidebyside width="62%">
 <image><latex-image>\begin{tikzpicture}[scale=1.25]
 		\YEaaxis{.5}{3}{1}{3}
 		\draw (2,2) node[vertex,label=above:{$(2,2)$}](A){};
@@ -3066,7 +3105,8 @@ equation <m>4a+2b+c=2</m> (in order to eliminate <m>c</m>) gives
 </mrow><mrow>
 	\vr'(x)&amp;=\big( 1,\ 2ax+1-3a\big)
 </mrow><mrow>
-	\vF(\vr(x))\cdot \vr'(x)&amp;=\big(3ax^2+3(1-3a)x+6a\big)\ +\
+	\vF(\vr(x))\cdot \vr'(x)&amp;=\big(3ax^2+3(1-3a)x+6a\big)
+         </mrow><mrow>&amp;\hskip1in +
 	\big( 2ax^2+(1-3a)x-2ax+(3a-1)\big)
 </mrow><mrow>
 	&amp;=5ax^2+(4-14a)x+(9a-1)
@@ -3126,7 +3166,7 @@ equation <m>4a+2b+c=2</m> (in order to eliminate <m>c</m>) gives
 	Here <m>Y</m> is a parameter.
 </p>
 
-<sidebyside width="75%">
+<sidebyside width="49%">
   <image source="pfigs/OE11D_6"/>
 </sidebyside>
 
@@ -3176,7 +3216,7 @@ equation <m>4a+2b+c=2</m> (in order to eliminate <m>c</m>) gives
 <p>	A partial ellipse running from <m>(0,0)</m> to <m>(2,2)</m> can be described by <m>\vr(t)=(\cos t+1\, , \, A\sin t)</m> for a constant <m>A</m>, with <m>t</m> running from <m>\pi</m> to 0. (To find this: we centre a circle of radius 1 at the point <m>(1,0)</m>, then multiply its <m>y</m>-coordinate by <m>A</m>.)
 </p>
 
-<sidebyside>
+<sidebyside width="44%">
 <image><latex-image>\begin{tikzpicture}
 		\YEaaxis{.5}{4.5}{.5}{2}
 		\YEycoord{1}{$A$}
@@ -3188,9 +3228,13 @@ equation <m>4a+2b+c=2</m> (in order to eliminate <m>c</m>) gives
 	In this case, <m>\vF(\vr(t))=(2A\sin t + 2,0)</m> and <m>\vr'(t)=(-\sin t , A\cos t)</m>, so
 	<md>
 <mrow>
-	\vF(\vr(t))\cdot\vr'(t)&amp;=-\sin t (2A\sin 2 +2)=-A(2\sin^2t)-2\sin t=-A(1-\cos2t)-2\sin t
+	\vF(\vr(t))\cdot\vr'(t)&amp;=-\sin t (2A\sin 2 +2)=-A(2\sin^2t)-2\sin t
 </mrow><mrow>
-	\int \vF \cdot \dee\vr&amp;=\int_{\pi}^0\big( A(\cos2t-1)-2\sin t \big)\dee{t}=\left[A\left(\frac12\sin(2t)-t\right) +2\cos t\right]_{\pi}^0
+	&amp;=-A(1-\cos2t)-2\sin t
+</mrow><mrow>
+	\int \vF \cdot \dee\vr&amp;=\int_{\pi}^0\big( A(\cos2t-1)-2\sin t \big)\dee{t}
+</mrow><mrow>
+	&amp;=\left[A\left(\frac12\sin(2t)-t\right) +2\cos t\right]_{\pi}^0
 </mrow><mrow>
 	&amp;=A\pi+4
 	</mrow>
@@ -3304,16 +3348,18 @@ for all points <m>(x,y,z)</m> on <m>S</m>, we have
 <md>
 <mrow>
 \int_C \vG \cdot \dee{\vr}
-=\int_a^b \vG\big(\vr(t)\big)\cdot \diff{\vr}{t}(t)\ \dee{t}
+&amp;=\int_a^b \vG\big(\vr(t)\big)\cdot \diff{\vr}{t}(t)\ \dee{t}
 =\int_a^b \vH\big(\vr(t)\big)\cdot \diff{\vr}{t}(t)\ \dee{t}
-=\int_C \vH \cdot \dee{\vr}
+</mrow><mrow>
+&amp;=\int_C \vH \cdot \dee{\vr}
 </mrow>
 </md>
 So we may replace <m>\vG</m> with
 <md>
 <mrow>
 \vH(x,y,z) &amp;= \vG(x,y,2+x^2-3y^2)
-  = \big[x(2+x^2-3y^2) +axy^2\big]\hi +y(2+x^2-3y^2)\hj
+</mrow><mrow>
+  &amp;= \big[x(2+x^2-3y^2) +axy^2\big]\hi +y(2+x^2-3y^2)\hj
 </mrow><mrow>
   &amp;= (2x+x^3 -3xy^2 +axy^2)\hi +(2y+yx^2-3y^3)\hj
 </mrow>
@@ -3411,8 +3457,8 @@ and the conservative vector field of part (c). The resulting integral can be dir
 <solution><p> (a) The curl of <m>\vF</m> is
 <md>
 <mrow>
-\vnabla\times\vF
-&amp;=\det\left[\begin{matrix}
+&amp;\vnabla\times\vF
+=\det\left[\begin{matrix}
 \hi &amp;\hj &amp;\hk
 </mrow><mrow>
 \pdiff{}{x} &amp; \pdiff{}{y} &amp;
@@ -3422,12 +3468,12 @@ and the conservative vector field of part (c). The resulting integral can be dir
 \end{matrix}
 \right]
 </mrow><mrow>
-&amp;= 0\,\hi +[-bx\cos(x^2 z)+bx^3z\sin(x^2 z)
+&amp;\hskip0.25in= 0\,\hi +[-bx\cos(x^2 z)+bx^3z\sin(x^2 z)
             -2x\cos(x^2 z) +2x^3z\sin(x^2 z)]\,\hj
 </mrow><mrow>
 &amp;\hskip1in + [e^{3x^2} +6x^2e^{3x^2}-(1 + ax^2 )e^{3x^2}]\,\hk
 </mrow><mrow>
-&amp;= [-(b+2)x\cos(x^2 z)+(b+2)x^3z\sin(x^2 z)]\,\hj
+&amp;\hskip0.25in= [-(b+2)x\cos(x^2 z)+(b+2)x^3z\sin(x^2 z)]\,\hj
            + (6-a)x^2e^{3x^2}\,\hk
 </mrow>
 </md>
@@ -3462,11 +3508,14 @@ g(x,z) = \sin(x^2 z) + h(x)
 </me>
 Finally, substituting <m>f(x,y,z) = xye^{3x^2} +\sin(x^2 z) + h(x)</m>
 into the first equation gives
-<me>
+<md>
+<mrow>
 (1+6x^2)ye^{3x^2} +2xz\cos(x^2 z) + h'(x)
-=(1 + 6x^2 )ye^{3x^2} + 2xz \cos(x^2 z)\quad\text{or}\quad
+&amp;=(1 + 6x^2 )ye^{3x^2} + 2xz \cos(x^2 z)
+</mrow><mrow>&amp;\text{or}\quad
 h'(x) = 0
-</me>
+</mrow>
+</md>
 So <m>h(x) = C</m> and hence <m>f(x,y,z) = xye^{3x^2} +\sin(x^2 z) + C</m>
 works for any constant <m>C</m>.
 </p>
@@ -3480,7 +3529,8 @@ So
 &amp;\int_C \Big(ye^{3x^2} + 2xz\cos(x^2 z)\Big) \dee{x}
           + xe^{3x^2} \dee{y}
           + x^2 \cos(x^2 z) \dee{z}
- = \int_C \vnabla f\cdot\dee{\vr} -6\int_Cx^2ye^{3x^2}\,\dee{x}
+</mrow><mrow>
+&amp;\hskip1in = \int_C \vnabla f\cdot\dee{\vr} -6\int_Cx^2ye^{3x^2}\,\dee{x}
 </mrow><mrow>
 &amp;\hskip1in= f(1,1,1) -f(0,0,0) -6\int_0^1 t^3e^{3t^2}\,\dee{t}
 </mrow><mrow>
@@ -3650,25 +3700,21 @@ This field is conservative if and only if it passes the screening test
 \frac{\partial F_2}{\partial z}=\frac{\partial F_3}{\partial y}
 </me>
 That is,
-<md>
+<md alignment="alignat">
 <mrow>
 \frac{\partial }{\partial y}(Ax^3y^2z)
 &amp;=\frac{\partial }{\partial x}\big(z^3+Bx^4yz\big) &amp;
-&amp;\iff &amp;
+&amp;\ \iff\  &amp;
 2Ax^3yz &amp; =4Bx^3yz
-
 </mrow><mrow>
-
 \frac{\partial }{\partial z}(Ax^3y^2z)
 &amp;=\frac{\partial }{\partial x}\big(3yz^2-x^4y^2\big) &amp;
-&amp;\iff &amp;
+&amp;\ \iff\  &amp;
 Ax^3y^2 &amp; =-4x^3y^2
-
 </mrow><mrow>
-
 \frac{\partial }{\partial z}\big(z^3+Bx^4yz\big)
 &amp;=\frac{\partial }{\partial y}\big(3yz^2-x^4y^2\big) &amp;
-&amp;\iff &amp;
+&amp;\ \iff\  &amp;
 3z^2+Bx^4y&amp; =3z^2-2x^4y
 </mrow>
 </md>
@@ -3720,11 +3766,14 @@ Parametrize <m>\cC</m> by <m>\vr(x)=x\,\hi-x\,\hj+x^2\,\hk</m> with <m>0\le x\le
 <m>\diff{\vr}{x}=\hi-\hj+2x\,\hk</m>
 <md>
 <mrow>
-&amp;\int_\cC(z\hi+x^4yz\,\hj)\cdot \dee{\vr}
-=\int_0^1(x^2\hi-x^7\,\hj)\cdot \big(\hi-\hj+2x\,\hk\big)\ \dee{x}
-=\int_0^1(x^2+x^7)\ \dee{x}
-=\frac{1}{3}+\frac{1}{8}
-=\frac{11}{24}
+\int_\cC(z\hi+x^4yz\,\hj)\cdot \dee{\vr}
+&amp;=\int_0^1(x^2\hi-x^7\,\hj)\cdot \big(\hi-\hj+2x\,\hk\big)\ \dee{x}
+</mrow><mrow>
+&amp;=\int_0^1(x^2+x^7)\ \dee{x}
+</mrow><mrow>
+&amp;=\frac{1}{3}+\frac{1}{8}
+</mrow><mrow>
+&amp;=\frac{11}{24}
 </mrow><mrow>
 &amp;\implies J=-2+\frac{11}{24}=-\frac{37}{24}\approx-1.5417
 </mrow>
@@ -3739,7 +3788,7 @@ Parametrize <m>\cC</m> by <m>\vr(x)=x\,\hi-x\,\hj+x^2\,\hk</m> with <m>0\le x\le
 <m>(1,0,0)</m>.
 </p>
 
-<sidebyside width="75%">
+<sidebyside width="40%">
   <image source="pfigs/OE00A_2"/>
 </sidebyside>
 
@@ -3812,18 +3861,21 @@ By Newton's law of motion, <m>m\vr''(t)=\vF(t)</m>.
 <solution><p>
 (a) By Newton's law of motion
 <me>
-m\va =\vF\quad
-\implies\quad
-2\vv'(t) = \big(4t\,,\,6t^2\,,\,-4t\big) \quad
-\implies\quad
+m\va =\vF\ 
+\implies\ 
+2\vv'(t) = \big(4t\,,\,6t^2\,,\,-4t\big) \ 
+\implies\ 
 \vv'(t) = \big(2t\,,\,3t^2\,,\,-2t\big)
 </me>
 So
-<me>
-\vv(t) = \vv(0) +\int_0^t \vv'(u)\, \dee{u}
+<md>
+<mrow>
+\vv(t) &amp;= \vv(0) +\int_0^t \vv'(u)\, \dee{u}
        = (0,0,0) + \int_0^t \big(2u\,,\,3u^2\,,\,-2u\big) \, \dee{u}
-       = \big(t^2\,,\,t^3\,,\,-t^2\big)
-</me>
+</mrow><mrow>
+       &amp;= \big(t^2\,,\,t^3\,,\,-t^2\big)
+</mrow>
+</md>
 </p>
 
 <p>(b) From part (a), <m>\vr'(t) = \vv(t) = \big(t^2\,,\,t^3\,,\,-t^2\big)</m>.
@@ -3874,7 +3926,8 @@ The curvature is (see \S<xref ref="sec_CurveCompendium"/>)
 <mrow>
 \int_{t=0}^{t=T} \vF(t)\cdot \dee{\vr}
 &amp;=\int_0^T \vF(t)\cdot \diff{\vr}{t}(t)\,\dee{t}
-=\int_0^T \big(4t\,,\,6t^2\,,\,-4t\big)\cdot
+</mrow><mrow>
+&amp;=\int_0^T \big(4t\,,\,6t^2\,,\,-4t\big)\cdot
 \big(t^2\,,\,t^3\,,\,-t^2\big)\,\dee{t}
 </mrow><mrow>
 &amp;= \int_0^T \big(8t^3+6t^5\big)\,\dee{t}
@@ -3941,7 +3994,9 @@ The curvature is (see \S<xref ref="sec_CurveCompendium"/>)
 </mrow><mrow>
 	\vv(t)=\vr'(t)&amp;=\big(2\sqrt{2}t^{1/2},2\sqrt{2}t^{1/2},2-2t\big)
 </mrow><mrow>
-	|\vv|&amp;=\sqrt{8t+8t+4-8t+4t^2}=\sqrt{4(1+2t+t^2)}= 2|1+t|=2(1+t)
+	|\vv|&amp;=\sqrt{8t+8t+4-8t+4t^2}=\sqrt{4(1+2t+t^2)}
+</mrow><mrow>
+             &amp;= 2|1+t|=2(1+t)
 	</mrow>
 </md>
 	So the distance travelled is
@@ -3987,7 +4042,8 @@ The curvature is (see \S<xref ref="sec_CurveCompendium"/>)
 	\int_0^2\!\! \vF\cdot \dee{\vr}
 	&amp;=\int_0^2\!\! \vF(t)\cdot \diff{\vr}{t}(t)\,\dee{t}
 	=-\int_0^2 |\vv(t)|^2\vv(t)\cdot \vv(t)\,\dee{t}
-	=-\int_0^2 |\vv(t)|^4\,\dee{t}
+	</mrow><mrow>
+        &amp;=-\int_0^2 |\vv(t)|^4\,\dee{t}
 </mrow><mrow>
 	&amp;=-2^4\int_0^2 (1+t)^4\,\dee{t}
 	=-\frac{16}{5}(1+t)^5\Big|_0^2
@@ -4036,18 +4092,22 @@ The curvature is (see \S<xref ref="sec_CurveCompendium"/>)
 	=2\big(1+u(t)\big)\diff{u}{t}
 </mrow><mrow>
 	&amp;\implies \diff{u}{t}=\frac{3}{2(1+u(t))}
-	\implies \difftwo{u}{t}=-\frac{3}{2(1+u(t))^2}\diff{u}{t}
+</mrow><mrow>
+	&amp;	\implies \difftwo{u}{t}=-\frac{3}{2(1+u(t))^2}\diff{u}{t}
 	=-\frac{9}{4(1+u(t))^3}
 	</mrow>
 </md>
 	At the apex <m>u=1</m> so that <m>\diff{u}{t}=\frac{3}{4}</m> and
 	<m>\difftwo{u}{t}=-\frac{9}{32}</m>. The bird's acceleration is
-	<me>
-	\difftwo{\vR}{t}(t)=\diff{}{t}\Big(\diff{\vR}{t}(t)\Big)
+	<md>
+        <mrow>
+	\difftwo{\vR}{t}(t)&amp;=\diff{}{t}\Big(\diff{\vR}{t}(t)\Big)
 	=\diff{ }{t}\Big(\diff{\vr}{u}(u(t))\diff{u}{t}(t)\Big)
-	=\difftwo{\vr}{u}\Big(\diff{u}{t}\Big)^2
+	</mrow><mrow>
+        &amp;=\difftwo{\vr}{u}\Big(\diff{u}{t}\Big)^2
 	+\diff{\vr}{u}\difftwo{u}{t}
-	</me>
+	</mrow>
+        </md>
 	From part (a)
 	<md>
 <mrow>
@@ -4070,7 +4130,8 @@ The curvature is (see \S<xref ref="sec_CurveCompendium"/>)
 	\difftwo{\vR}{t}
 	&amp;=\difftwo{\vr}{u}\Big(\diff{u}{t}\Big)^2
 	+\diff{\vr}{u}\difftwo{u}{t}
-	=\big(\sqrt{2},\sqrt{2},-2\big)\Big(\frac{3}{4}\Big)^2
+        </mrow><mrow>
+	&amp;	=\big(\sqrt{2},\sqrt{2},-2\big)\Big(\frac{3}{4}\Big)^2
 	+\big(2\sqrt{2},2\sqrt{2},0\big)\Big(-\frac{9}{32}\Big)
   </mrow><mrow>
 	&amp;=\Big(0,0,-\frac{9}{8}\Big)

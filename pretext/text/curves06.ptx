@@ -30,7 +30,7 @@ and <m>\vr\big(t_\ell\big)</m> by <m>\rho\big(\vr(t_\ell)\big)
 \big|\vr\big(t_{\ell-1}\big)-\vr\big(t_\ell\big)\big|</m>.
 </p>
 
-<sidebyside>
+<sidebyside width="50%">
 <image source="figs/parCurveL"/>
 </sidebyside>
 </li>
@@ -46,14 +46,11 @@ This gives us, as an approximate mass for <m>\cC</m> of
 </li>
 </ul>
 Then we take the limit as <m>n\rightarrow\infty</m>.
-Assuming
-<fn>We could
+Assuming<fn>We could
 relax these conditions somewhat by instead assuming that <m>\vr'(t)</m>
 and <m>\rho(t)</m> are bounded and are continuous except at a finite number
 of points. (<m>\vr'(t)</m> need not exist at all at those points.)</fn>
-</p>
-
-<p> that <m>\vr(t)</m> is continuously differentiable and that <m>\rho(\vr)</m>
+that <m>\vr(t)</m> is continuously differentiable and that <m>\rho(\vr)</m>
 is continuous we get
 <me>
 \text{Mass of } \cC = \int_a^b \rho\big(\vr(t)\big) \Big|\diff{\vr}{t}(t)\Big|\,\dee{t}
@@ -90,8 +87,7 @@ and for a function <m>g(x,y)</m>, we define
 
 <example xml:id="eg_CofMass">
 <p>
-Suppose that we have a helical wire
-<fn>For example, your favourite
+Suppose that we have a helical wire<fn>For example, your favourite
 solenoid or spring or slinky.</fn>
 <me>
 \vr(t) = \big(x(t)\,,\,y(t)\,,\,z(t)\big)
@@ -122,8 +118,10 @@ For the given curve
  \big(x'(t)\,,\,y'(t)\,,\,z'(t)\big) &amp;=\big(-a\sin t\,,\,a\cos t\,,\, b\big)
 </mrow><mrow>
 \diff{s}{t}(t) &amp;=\sqrt{x'(t)^2+y'(t)^2+z'(t)^2}
-                  =\sqrt{a^2\sin^2t+a^2\cos^2t+b^2}
-                  =\sqrt{a^2+b^2}
+</mrow><mrow>
+               &amp;=\sqrt{a^2\sin^2t+a^2\cos^2t+b^2}
+</mrow><mrow>
+               &amp;=\sqrt{a^2+b^2}
 </mrow>
 </md>
 so that

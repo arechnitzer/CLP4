@@ -18,7 +18,7 @@ if <m>\hn</m> is a correctly oriented unit normal vector to <m>S</m>.
 Add to each sketch a typical such normal vector.
 </p>
 
-<sidebyside widths="5% 25% 5% 25% 5% 25%">
+<sidebyside widths="5% 27% 5% 27% 5% 22%">
 <p>(a)</p> <image source="pfigs/stokesOrientA"/>
 <p>(b)</p> <image source="pfigs/stokesOrientB"/>
 <p>(c)</p> <image source="pfigs/stokesOrientC"/>
@@ -30,7 +30,7 @@ Add to each sketch a typical such normal vector.
 One approach is to first do
 </p>
 
-<sidebyside width="75%">
+<sidebyside width="26%">
 <image source="pfigs/stokesOrientAh"/>
 </sidebyside>
 
@@ -39,7 +39,7 @@ Then imagine slowly deforming the sketch to the get specified <m>S</m>'s
 </p></hint>
 
 <answer>
-  <sidebyside widths="5% 25% 5% 25% 5% 25%">
+  <sidebyside widths="5% 27% 5% 27% 5% 22%">
   <p>(a)</p> <image source="pfigs/stokesOrientAs"/>
   <p>(b)</p> <image source="pfigs/stokesOrientBs"/>
   <p>(c)</p> <image source="pfigs/stokesOrientCs"/>
@@ -49,13 +49,13 @@ Then imagine slowly deforming the sketch to the get specified <m>S</m>'s
 <solution><p>
 One approach is to first consider
 </p>
-<sidebyside width="75%">
+<sidebyside width="26%">
 <image source="pfigs/stokesOrientAh"/>
 </sidebyside>
 <p>
 The correct normal to this surface is sketched in
 </p>
-<sidebyside width="75%">
+<sidebyside width="26%">
 <image source="pfigs/stokesOrientAhs"/>
 </sidebyside>
 <p>
@@ -76,7 +76,7 @@ Now pretend that the surface <m>S</m> is made of rubber and that <m>\hn</m> is g
 of part (b). This gives the solutions to parts (a) and (b).
 </p>
 
-<sidebyside widths="5% 40% 5% 40%">
+<sidebyside widths="5% 27% 5% 27%">
   <p>(a)</p> <image source="pfigs/stokesOrientAs"/>
   <p>(b)</p> <image source="pfigs/stokesOrientBs"/>
 </sidebyside>
@@ -85,7 +85,7 @@ of part (b). This gives the solutions to parts (a) and (b).
 To deal with part (c), we can first rotate the flat disk that we considered above to get
 </p>
 
-<sidebyside width="75%">
+<sidebyside width="18%">
 <image source="pfigs/stokesOrientCh"/>
 </sidebyside>
 
@@ -94,8 +94,10 @@ We can push on this <m>S</m> to deform it to the <m>S</m> of part (c). This give
 the solution to part (c).
 </p>
 
-<sidebyside widths="10% 70%">
-<p>(c)</p>  <image source="pfigs/stokesOrientCs"/>
+<p>(c)</p>
+
+<sidebyside width="22%">
+  <image source="pfigs/stokesOrientCs"/>
 </sidebyside>
 
 </solution>
@@ -118,7 +120,7 @@ the boundary, <m>C</m>, of <m>R</m> consist of a single piecewise smooth, simple
 </li>
 </ul></p>
 
-<sidebyside width="75%">
+<sidebyside width="27%">
   <image source="pfigs/greens1"/>
 </sidebyside>
 </li>
@@ -149,13 +151,12 @@ See the solution.
 <solution><p> Think of the <m>xy</m>-plane as being the plane <m>z=0</m> in <m>\bbbr^3</m>.
 </p>
 
-<sidebyside width="75%">
+<sidebyside width="37%">
   <image source="pfigs/stokesGreen"/>
 </sidebyside>
 
 <p>
-    We are going to apply Stokes' theorem (Theorem <xref ref="thm_Stokes"/>
-in the CLP-4 text) with <m>S</m> being the given region <m>R</m> in the <m>xy</m>-plane
+    We are going to apply Stokes' theorem (Theorem <xref ref="thm_Stokes"/>) with <m>S</m> being the given region <m>R</m> in the <m>xy</m>-plane
 and with <m>\vF(x,y,z) = F_1(x,y)\,\hi +F_2(x,y)\,\hj</m>.
 Then
 <ul>
@@ -184,9 +185,10 @@ So Stokes' theorem gives
 <md>
 <mrow>
 \oint_{C} \big[F_1(x,y)\,\dee{x} +F_2(x,y)\,\dee{y}\big]
-=\oint_{\partial S}\vF\cdot \dee{\vr}
+&amp;=\oint_{\partial S}\vF\cdot \dee{\vr}
   =\dblInt_{S}\vnabla\times\vF\cdot\hn\ \dee{S}
-=\dblInt_{R}\Big(\frac{\partial F_2}{\partial x}
+</mrow><mrow>
+&amp;=\dblInt_{R}\Big(\frac{\partial F_2}{\partial x}
                 - \frac{\partial F_1}{\partial y}\Big)\ \dee{x}\dee{y}
 </mrow>
 </md>
@@ -239,12 +241,14 @@ Another way to see that <m>\vnabla\times[\phi\vnabla\psi+\psi\vnabla\phi]=\vZero
 is
 <md>
 <mrow>
-\vnabla\times[\phi\vnabla\psi+\psi\vnabla\phi]
-&amp;=\vnabla\phi\times\vnabla\psi+\phi\vnabla\times(\vnabla\psi)
-+\vnabla\psi\times\vnabla\phi+\psi\vnabla\times(\vnabla\phi)
+\vnabla\!\times\![\phi\vnabla\psi+\psi\vnabla\phi]
+&amp;=\vnabla\phi\!\times\!\vnabla\psi+\phi\vnabla\!\times\!(\vnabla\psi)
++\vnabla\psi\!\times\!\vnabla\phi+\psi\vnabla\!\times\!(\vnabla\phi)
 </mrow><mrow>
 &amp;=\vnabla\phi\times\vnabla\psi
-+\vnabla\psi\times\vnabla\phi\qquad\text{since } \phi\vnabla\times(\vnabla\psi)=\psi\vnabla\times(\vnabla\phi)=\vZero
++\vnabla\psi\times\vnabla\phi
+</mrow><mrow>
+&amp;\hskip1in\text{since } \phi\vnabla\times(\vnabla\psi)=\psi\vnabla\times(\vnabla\phi)=\vZero
 </mrow><mrow>
 &amp;=\vZero
 </mrow>
@@ -432,25 +436,25 @@ and can be parametrized
 </me>
 </p>
 
-<sidebyside width="75%">
+<sidebyside width="28%">
 <image source="pfigs/OE11A_4"/>
 </sidebyside>
 
 <p>
-So, by Stokes' theorem (Theorem <xref ref="thm_Stokes"/> in the CLP-4 text)
+So, by Stokes' theorem (Theorem <xref ref="thm_Stokes"/>)
 <md>
 <mrow>
-\dblInt_S\vnabla\times\vF\cdot\hn\,\dee{S}
-&amp;=\oint_{\partial S}\vF\cdot\dee{\vr}
+&amp;\dblInt_S\vnabla\times\vF\cdot\hn\,\dee{S}
+=\oint_{\partial S}\vF\cdot\dee{\vr}
 </mrow><mrow>
-&amp;=\int_0^{2\pi} (\overbrace{-2\sin\theta\,\hi+2\cos\theta\,\hj-2\cos\theta\,\hk}^
+&amp;\hskip0.5in=\int_0^{2\pi} (\overbrace{-2\sin\theta\,\hi+2\cos\theta\,\hj-2\cos\theta\,\hk}^
                {\vF(\vr(\theta))})\cdot
      (\overbrace{-2\sin\theta\,\hi+2\cos\theta\,\hj}^
                 {\vr'(\theta)})\ \dee{\theta}
 </mrow><mrow>
-&amp;=4\int_0^{2\pi}\dee{\theta}
+&amp;\hskip0.5in=4\int_0^{2\pi}\dee{\theta}
 </mrow><mrow>
-&amp;=8\pi
+&amp;\hskip0.5in=8\pi
 </mrow>
 </md>
 </p></solution>
@@ -484,24 +488,24 @@ Let <m>\cC</m> be this circle, oriented by the parametrization <m>x(t)=2\cos t</
 <m>y(t)=2\sin t</m>, <m>z(t)=0</m>. By Stokes' theorem
 <md>
 <mrow>
-\dblInt_{\cS}\vnabla\times\vF\cdot\hn\,\dee{S}
-&amp;=\int_{\cC}\vF\cdot \dee{\vr}
+&amp;\dblInt_{\cS}\vnabla\times\vF\cdot\hn\,\dee{S}
+=\int_{\cC}\vF\cdot \dee{\vr}
 =\int_0^{2\pi}\vF(2\cos t,2\sin t,0)\cdot \diff{\vr}{t}(t)\ \dee{t}
 </mrow><mrow>
-&amp;=\int_0^{2\pi}\big[0\,\hi+2\cos t(3+2\sin t)\,\hj+2\sin t\,\hk\big]\cdot
+&amp;\hskip0.25in=\int_0^{2\pi}\big[0\,\hi+2\cos t(3+2\sin t)\,\hj+2\sin t\,\hk\big]\cdot
 \big[-2\sin t\,\hi+2\cos t\hj\big]\ \dee{t}
 </mrow><mrow>
-&amp;=\int_0^{2\pi}\big[12\cos^2 t+8\cos^2t\sin t\big]\ \dee{t}
+&amp;\hskip0.25in=\int_0^{2\pi}\big[12\cos^2 t+8\cos^2t\sin t\big]\ \dee{t}
 </mrow><mrow>
-&amp;=\int_0^{2\pi}\big[6+6\cos(2t)+8\cos^2t\sin t\big]\ \dee{t}
+&amp;\hskip0.25in=\int_0^{2\pi}\big[6+6\cos(2t)+8\cos^2t\sin t\big]\ \dee{t}
 </mrow><mrow>
-&amp;=\Big[6t+3\sin(2t) -\frac{8}{3}\cos^3 t\Big]_0^{2\pi}
+&amp;\hskip0.25in=\Big[6t+3\sin(2t) -\frac{8}{3}\cos^3 t\Big]_0^{2\pi}
 =12\pi
 </mrow>
 </md>
 For an efficient, sneaky, way to evaluate
 <m>\int_0^{2\pi} \cos^2 t\,\dee{t}</m>, see Example
-<xref ref="eg_workIntegalB"/> in the CLP-4 text.
+<xref ref="eg_workIntegralB"/>.
 </p>
 </solution>
 
@@ -520,7 +524,7 @@ For an efficient, sneaky, way to evaluate
 </ul>
 </p>
 
-<sidebyside width="75%">
+<sidebyside width="27%">
 <image source="pfigs/OE98D_6"/>
 </sidebyside>
 
@@ -586,7 +590,7 @@ For this surface
 \hn\,\dee{S}=\big(-f_x(x,y)\,\hi -f_y(x,y)\,\hj +\hk\big)\dee{x}\dee{y}
    = \big(2x\,\hi+2y\,\hj+\hk\big)\,\dee{x}\dee{y}
 </me>
-by (<xref ref="eq_SUdSgraph"/>) in the CLP-4 text. As <m>(x,y,z)</m> runs over
+by (<xref ref="eq_SUdSgraph"/>). As <m>(x,y,z)</m> runs over
 <m>S</m>, <m>(x,y)</m> runs over the circular disk
 <me>
 D = \Set{(x,y)}{x^2+(y-1)^2\le 1}
@@ -608,7 +612,7 @@ xz &amp; x &amp; yz
 &amp;=z\,\hi+x\,\hj+\hk
 </mrow>
 </md>
-so that, by Stokes' theorem  (Theorem <xref ref="thm_Stokes"/> in the CLP-4 text),
+so that, by Stokes' theorem  (Theorem <xref ref="thm_Stokes"/>),
 <md>
 <mrow>
 \oint_{\cC}\vF\cdot \dee{\vr}
@@ -661,7 +665,7 @@ is the boundary of the square <m>-1\le x,y\le 1</m>, <m>z=0</m>, oriented
 counterclockwise. Here is a sketch of <m>C</m>.
 </p>
 
-<sidebyside width="75%">
+<sidebyside width="36%">
 <image source="pfigs/singGnA"/>
 </sidebyside>
 
@@ -670,16 +674,16 @@ Apply Stokes' theorem. Observing that <m>z=0</m> on <m>C</m>
 so that <m>\vF = -y\,\hi +x^3\,\hj</m>,
 <md>
 <mrow>
-\dblInt_S\vnabla\times\vF\cdot\hn\,\dee{S}
-&amp;=\oint_C\vF\cdot \dee{\vr}
+&amp;\dblInt_S\vnabla\times\vF\cdot\hn\,\dee{S}
+=\oint_C\vF\cdot \dee{\vr}
 =\oint_C[-y\,\hi+x^3\hj]\cdot \dee{\vr}
 </mrow><mrow>
-&amp;=\underbrace{\int_{-1}^1 -(-1)\,\dee{x}}_{y=-1{\rm\ side}}
+&amp;\hskip0.5in=\underbrace{\int_{-1}^1 -(-1)\,\dee{x}}_{y=-1{\rm\ side}}
    +\underbrace{\int_{-1}^1 (1)^3\,\dee{y}}_{x=1{\rm\ side}}
    + \underbrace{\int^{-1}_1 -(1)\,\dee{x}}_{y=1{\rm\ side}}
    + \underbrace{\int^{-1}_1 (-1)^3\,\dee{y}}_{x=-1{\rm\ side}}
 </mrow><mrow>
-&amp;=8
+&amp;\hskip0.5in=8
 </mrow>
 </md>
 </p></solution>
@@ -704,26 +708,28 @@ of the line integral. So, try Stokes' theorem.
 
 <solution><p>
 We shall apply Stokes' Theorem. The curl of <m>\vF</m> is
-<me>
-\vnabla\times\vF=\det\left[\begin{matrix}\hi &amp; \hj &amp; \hk \\
+<md>
+<mrow>
+\vnabla\times\vF&amp;=\det\left[\begin{matrix}\hi &amp; \hj &amp; \hk \\
                   \pdiff{}{x} &amp;
                   \pdiff{}{y} &amp;
                   \pdiff{}{z} \\
-                  e^{x^2} - yz &amp; \sin y - yz &amp; xz + 2y\end{matrix}\right]
-=(2+y)\,\hi-(z+y)\,\hj+(0+z)\,\hk
-</me>
+                  e^{x^2} - yz &amp; \sin y - yz &amp; xz + 2y\end{matrix}\right|
+</mrow><mrow>&amp;=(2+y)\,\hi-(z+y)\,\hj+(0+z)\,\hk
+</mrow>
+</md>
 The curve <m>C</m> is a triangle. All three vertices of the triangle obey
 <m>x+y+z=1</m>. So the triangle is the boundary
 of the surface <m>S=\Set{(x,y,z)}{x\ge 0,\ y\ge 0,\ z=1-x-y\ge 0}</m>.
 </p>
 
-<sidebyside width="75%">
+<sidebyside width="23%">
 <image source="pfigs/domainTriangleA"/>
 </sidebyside>
 
 <p>
 The equation of the surface is <m>z=f(x,y)=1-x-y</m>.
-So, by (<xref ref="eq_SUdSgraph"/>) in the CLP-4 text,
+So, by (<xref ref="eq_SUdSgraph"/>),
 <md>
 <mrow>
 \hn\ \dee{S}
@@ -736,12 +742,18 @@ Here <m>\hn</m> is the upward pointing unit normal.
 The set of points <m>(x,y)</m> for which there is a corresponding <m>(x,y,z)</m>
 in <m>S</m> is  <m>T=\Set{(x,y)}{x\ge 0,\ y\ge 0,\ x+y\le 1}</m>, which is a triangle
 of area <m>\frac{1}{2}</m>.
-Since <m>\vnabla\times\vF\cdot\hn\,\dee{S}
-=[(2+y)\hi-(z+y)\hj+(0+z)\hk]\cdot(\hi+\hj+\hk)\,\dee{x}\,\dee{y}
-= 2\,\dee{x}\,\dee{y}</m>,
+Since 
 <md>
 <mrow>
-
+\vnabla\times\vF\cdot\hn\,\dee{S}
+&amp;=[(2+y)\hi-(z+y)\hj+(0+z)\hk]\cdot(\hi+\hj+\hk)\,\dee{x}\,\dee{y}
+</mrow><mrow>
+&amp;= 2\,\dee{x}\,\dee{y}
+</mrow>
+</md>
+we have
+<md>
+<mrow>
 \oint_C\vF\cdot \dee{\vr}&amp;=\dblInt_S\vnabla\times\vF\cdot\hn\,\dee{S}
 </mrow><mrow>
 &amp;=\dblInt_T 2\ \dee{x}\,\dee{y}
@@ -771,8 +783,7 @@ counter-clockwise when viewed from high on the  <m>z</m>-axis.
 </p></answer>
 
 <solution><p>
-Stokes' theorem, which is Theorem <xref ref="thm_Stokes"/>
-in the CLP-4 text, says that <m>\oint_C\vF\cdot \dee{\vr}
+Stokes' theorem, which is Theorem <xref ref="thm_Stokes"/>, says that <m>\oint_C\vF\cdot \dee{\vr}
 =\dblInt_S\nabla\times\vF\cdot\hn\,\dee{S}</m> for any surface <m>S</m> whose boundary is
 <m>C</m>. For the given vector field
 <md>
@@ -802,13 +813,12 @@ S &amp;= \Set{(x,y,z)}{z=y,\ \tfrac{x^2}{4}+\tfrac{y^2}{2}+\tfrac{z^2}{2}\le 1}
 to be the part of the plane <m>z=y</m> bounded by the ellipsoid.
 </p>
 
-<sidebyside width="75%">
+<sidebyside width="71%">
   <image source="pfigs/OE01DQ4"/>
 </sidebyside>
 
 <p>
-As <m>S</m> is part of the plane <m>z=f(x,y)=y</m>, (<xref ref="eq_SUdSgraph"/>)
-of the CLP-4 text, gives that
+As <m>S</m> is part of the plane <m>z=f(x,y)=y</m>, (<xref ref="eq_SUdSgraph"/>), gives that
 <md>
 <mrow>
 \hn\,\dee{S} &amp;=\pm \big(-f_x\,,\,-f_y\,,\, 1\big)\dee{x}\dee{y}
@@ -880,7 +890,7 @@ counterclockwise direction as observed from the positive <m>x</m>-axis.
 The curve of part (a) encloses a triangle.
 </p>
 
-<sidebyside width="75%">
+<sidebyside width="40%">
 <image source="pfigs/OE16D_9"/>
 </sidebyside>
 
@@ -900,7 +910,7 @@ So let's do part (b) first.
 
 <p>(b) We are not told explicitly what <m>C_2</m> is, so we certainly can't
 do a direct evaluation. Instead, let's use Stokes' theorem
-(Theorem <xref ref="thm_Stokes"/> in the CLP-4 text). The curl of <m>\vF</m> is
+(Theorem <xref ref="thm_Stokes"/>). The curl of <m>\vF</m> is
 <md>
 <mrow>
 \vnabla\times\vF
@@ -925,7 +935,8 @@ So, by Stokes' theorem,
 <mrow>
 I_2 &amp;= \int_{C_2}\vF\cdot\dee{\vr}
     =\dblInt_R \vnabla\times\vF\cdot\hn\,\dee{S}
-    =\dblInt_R \big(2y\,\hi +2z\,\hj +2x\,\hk\big)\cdot
+</mrow><mrow>
+&amp;    =\dblInt_R \big(2y\,\hi +2z\,\hj +2x\,\hk\big)\cdot
                \frac{\hi+\hj+\hk}{\sqrt{3}}\,\dee{S}
 </mrow><mrow>
 &amp;=\frac{2}{\sqrt{3}}\dblInt_R \big(\overbrace{y + z + x}^
@@ -984,21 +995,25 @@ Compute the line integral <m>\int_C \vF\cdot\dee{\vr}</m> where
 </p></statement>
 
 <answer>
-<sidebyside widths="10% 70%">
-  <p>(a)</p><image source="pfigs/OE17A_5"/>
+<p>(a)</p>
+<sidebyside width="40%">
+  <image source="pfigs/OE17A_5"/>
 </sidebyside>
 
 <p>
 (b) <m>S=\Set{(x,y,z)}{x^2+y^2+z^2=4,\ x\ge 0,\ y\ge 0,\ z\ge 0}</m>
 with
-<me>
-\vr(\theta,\varphi)
+<md>
+<mrow>
+&amp;\vr(\theta,\varphi)
 = 2\cos\theta\sin\varphi\ \hi
 + 2\sin\theta\sin\varphi\ \hj
-+ 2\cos\varphi\ \hk,\qquad
-0\le\theta\le\frac{\pi}{2},\
++ 2\cos\varphi\ \hk
+</mrow><mrow>
+&amp;0\le\theta\le\frac{\pi}{2},\
 0\le\varphi\le\frac{\pi}{2}
-</me>
+</mrow>
+</md>
 and
 <me>
 \hn = \cos\theta\sin\varphi\ \hi
@@ -1032,7 +1047,7 @@ ending at <m>(2,0,0)</m>.
 </ul>
 Here is a sketch.
 </p>
-<sidebyside width="75%">
+<sidebyside width="40%">
   <image source="pfigs/OE17A_5"/>
 </sidebyside>
 
@@ -1043,14 +1058,17 @@ to choose
 S=\Set{(x,y,z)}{x^2+y^2+z^2=4,\ x\ge 0,\ y\ge 0,\ z\ge 0}
 </me>
 and to parametrize <m>S</m> using spherical coordinates
-<me>
-\vr(\theta,\varphi)
+<md>
+<mrow>
+&amp;\vr(\theta,\varphi)
 = 2\cos\theta\sin\varphi\ \hi
 + 2\sin\theta\sin\varphi\ \hj
-+ 2\cos\varphi\ \hk,\qquad
-0\le\theta\le\frac{\pi}{2},\
++ 2\cos\varphi\ \hk
+</mrow><mrow>
+&amp;0\le\theta\le\frac{\pi}{2},\
 0\le\varphi\le\frac{\pi}{2}
-</me>
+</mrow>
+</md>
 Since
 <md>
 <mrow>
@@ -1076,12 +1094,13 @@ so that
    -4\sin\varphi\cos\varphi\ \hk
 </mrow>
 </md>
-(<xref ref="eq_SUdSparam"/>) in the CLP-4 text gives
+(<xref ref="eq_SUdSparam"/>) gives
 <md>
 <mrow>
-\hn\,\dee{S} = \pm \frac{\partial\vr}{\partial\theta}\times
+\hn\,\dee{S} &amp;= \pm \frac{\partial\vr}{\partial\theta}\times
             \frac{\partial\vr}{\partial\varphi}\,\dee{\theta}\dee{\varphi}
-= \mp 4\big(\cos\theta\sin\varphi\ \hi
+</mrow><mrow>
+&amp;= \mp 4\big(\cos\theta\sin\varphi\ \hi
             +\sin\theta\sin\varphi\ \hj
             +\cos\varphi\ \hk\big)
           \sin\varphi\ \dee{\theta}\dee{\varphi}
@@ -1092,11 +1111,12 @@ of <m>C</m>. So we choose the <m>+</m> sign.
 <md>
 <mrow>
 \hn\,\dee{S}
-= 4\big(\cos\theta\sin\varphi\ \hi
+&amp;= 4\big(\cos\theta\sin\varphi\ \hi
             +\sin\theta\sin\varphi\ \hj
             +\cos\varphi\ \hk\big)
           \sin\varphi\ \dee{\theta}\dee{\varphi}
-=2\,\vr(\theta,\varphi)\sin\varphi\ \dee{\theta}\dee{\varphi}
+</mrow><mrow>
+&amp;=2\,\vr(\theta,\varphi)\sin\varphi\ \dee{\theta}\dee{\varphi}
 </mrow>
 </md>
 </p>
@@ -1115,24 +1135,25 @@ theorem, we compute
 &amp;= -4\,\hk
 </mrow>
 </md>
-So, by Stokes' theorem (Theorem <xref ref="thm_Stokes"/> in the CLP-4 text),
+So, by Stokes' theorem (Theorem <xref ref="thm_Stokes"/>),
 <md>
 <mrow>
-\int_C\vF\cdot\dee{\vr}
-&amp;=\dblInt_S\vnabla\times\vF\cdot\hn\,\dee{S}
+&amp;\int_C\vF\cdot\dee{\vr}
+=\dblInt_S\vnabla\times\vF\cdot\hn\,\dee{S}
 </mrow><mrow>
-&amp;= \int_0^{\pi/2}\dee{\varphi}\int_0^{\pi/2}\dee{\theta}\
+&amp;\hskip0.1in= \int_0^{\pi/2}\hskip-5pt\dee{\varphi}
+                         \int_0^{\pi/2}\hskip-5pt\dee{\theta}\
 \big(-4\hk\big)\cdot
 \big(\cos\theta\sin\varphi\ \hi
             +\sin\theta\sin\varphi\ \hj
             +\cos\varphi\ \hk\big)\
           4\sin\varphi
 </mrow><mrow>
-&amp;=-16 \int_0^{\pi/2}\dee{\varphi}\int_0^{\pi/2}\dee{\theta}\
+&amp;\hskip0.1in=-16 \int_0^{\pi/2}\dee{\varphi}\int_0^{\pi/2}\dee{\theta}\
               \cos\varphi\sin\varphi
 =16\ \frac{\pi}{2}\ \frac{\cos^2\varphi}{2}\bigg|_0^{\pi/2}
 </mrow><mrow>
-&amp;=-4\pi
+&amp;\hskip0.1in=-4\pi
 </mrow>
 </md>
 </p></solution>
@@ -1178,7 +1199,7 @@ orientations of <m>S_2</m> and of the contour(s) of integration.
 <solution><p>
  (a)
 The boundary, <m>\partial S_1</m>, of <m>S_1</m> as specified in Stokes' theorem (Theorem
-<xref ref="thm_Stokes"/> in the CLP-4 text) is the circle
+<xref ref="thm_Stokes"/>) is the circle
 <m>\sqrt{x^2+y^2}=4</m>, <m>z=4</m> oriented <em>clockwise</em> when viewed from high on
 the <m>z</m>-axis. That is, we can parametrize <m>\partial S_1</m> by
 <md>
@@ -1191,6 +1212,7 @@ So
 <mrow>
 \vF\big(\vr(t)\big)\cdot\dee{\vr}
 &amp;= \big(16\sin t \,,\, 16\cos t \,,\, -16\sin t\cos t \cos(-16\sin t)  \big)
+</mrow><mrow>&amp;\hskip2in
       \cdot
    \big(-4\sin t \,,\, -4\cos t \,,\, 0\big)\,\dee{t}
 </mrow><mrow>
@@ -1208,7 +1230,7 @@ and, by Stokes' theorem,
 </md>
 </p>
 
-<sidebyside width="45%">
+<sidebyside widths="26% 29%" valign="middle">
   <image source="pfigs/conePa"/>
  <image source="pfigs/conePb"/>
 </sidebyside>
@@ -1244,7 +1266,8 @@ and, by Stokes' theorem,
 \dblInt_{S_2} \vnabla\times\vF \cdot \hn\,\dee{S}
 &amp;= \oint_{\partial S_{2a}} \vF\big(\vr(t)\big)\cdot\dee{\vr}
    +\oint_{\partial S_{2b}} \vF\big(\vr(t)\big)\cdot\dee{\vr}
-= -128\pi +  \int_0^{2\pi} \dee{t}
+</mrow><mrow>
+&amp;= -128\pi +  \int_0^{2\pi} \dee{t}
 </mrow><mrow>
 &amp;=-126\pi
 </mrow>
@@ -1281,7 +1304,7 @@ the part of the plane <m>z=x+4</m> that is contained in the cylinder
 The part of <m>C</m> and <m>S</m> that are in the first octant are sketched below.
 </p>
 
-<sidebyside width="75%">
+<sidebyside width="45%">
  <image source="pfigs/OE15A_5"/>
 </sidebyside>
 
@@ -1298,7 +1321,7 @@ So,
 0 &amp; 1 &amp; 0 \end{matrix}\right]
 = \big(-1, 0, 1\big)
 </me>
-and, by (<xref ref="eq_SUdSparam"/>) in the CLP-4 text,
+and, by (<xref ref="eq_SUdSparam"/>),
 <md>
 <mrow>
 \hn\,\dee{S} = -\frac{\partial\vr}{\partial x}\times
@@ -1326,13 +1349,14 @@ x^3 + 2y &amp; \sin(y) + z &amp;  x + \sin(z^2)
 &amp;= -\hi -\hj -2\hk
 </mrow>
 </md>
-Stokes' theorem (Theorem <xref ref="thm_Stokes"/> in the CLP-4 text) gives
+Stokes' theorem (Theorem <xref ref="thm_Stokes"/>) gives
 <md>
 <mrow>
 \oint_C\vF\cdot\dee{\vr}
 &amp;=\dblInt_S\vnabla\times\vF\cdot\hn\,\dee{S}
 =\dblInt_S (-1,-1,-2)\cdot(1,0,-1)\,\dee{x}\dee{y}
-=\dblInt_S \dee{x}\dee{y}
+</mrow><mrow>
+&amp;=\dblInt_S \dee{x}\dee{y}
 =4\pi
 </mrow>
 </md>
@@ -1375,7 +1399,7 @@ All three vertices of part (a) lie in the plane of part (b).
 plane <m>x+y+z=2</m>. So the entire path lies in that plane too.
 </p>
 
-<sidebyside width="75%">
+<sidebyside width="38%">
 <image source="pfigs/OE13D_4"/>
 </sidebyside>
 
@@ -1413,7 +1437,8 @@ and, by Stokes' theorem,
 &amp;=\dblInt_S\vnabla\times\vF\cdot\hn\,\dee{S}
 =\frac{2}{\sqrt{3}}\dblInt_S(x+y+z)\,\dee{S}
 =\frac{4}{\sqrt{3}}\dblInt_S\dee{S}
-=\frac{4}{\sqrt{3}}\text{Area}(S)
+</mrow><mrow>
+&amp;=\frac{4}{\sqrt{3}}\text{Area}(S)
 </mrow>
 </md>
 The triangle <m>S</m> is half of the prallelogram with sides <m>(0,2,0)-(2,0,0)
@@ -1443,7 +1468,8 @@ Let <m>\tilde S</m> be the specified surface. Then, as in part (a),
 &amp;=\dblInt_{\tilde S}\vnabla\times\vF\cdot\hn\,\dee{S}
 =\frac{2}{\sqrt{3}}\dblInt_{\tilde S}(x+y+z)\,\dee{S}
 =\frac{4}{\sqrt{3}}\dblInt_{\tilde S}\dee{S}
-=\frac{4}{\sqrt{3}}\text{Area}(\tilde S)
+</mrow><mrow>
+&amp;=\frac{4}{\sqrt{3}}\text{Area}(\tilde S)
 </mrow><mrow>
 &amp;=4\sqrt{3}
 </mrow>
@@ -1506,8 +1532,7 @@ Write
 <me>
 S=\Set{(x,y,z)}{z=f(x,y)=1-x^2y,\ x^2+y^2\le 1}
 </me>
-For <m>S</m>, with the upward pointing normal, by (<xref ref="eq_SUdSgraph"/>)
-of the CLP-4 text,
+For <m>S</m>, with the upward pointing normal, by (<xref ref="eq_SUdSgraph"/>),
 <md>
 <mrow>
 \hn\,\dee{S} &amp;=\big(-f_x\,,\,-f_y\,,\, 1\big)\dee{x}\dee{y}
@@ -1526,8 +1551,9 @@ and, by Stokes' theorem,
 <md>
 <mrow>
 \int_C \vF\cdot\dee{\vr}
-=\dblInt_S \vnabla\times\vF\cdot\hn\,\dee{S}
-=\dblInt_{x^2+y^2\le 1}
+&amp;=\dblInt_S \vnabla\times\vF\cdot\hn\,\dee{S}
+</mrow><mrow>
+&amp;=\dblInt_{x^2+y^2\le 1}
   \big\{4x^2y + x^2-3x^2y + 1-x^2y\big\}\,\dee{x}\dee{y}
 </mrow>
 </md>
@@ -1567,7 +1593,7 @@ and
 </me>
 For an efficient, sneaky, way to evaluate
 <m>\int_0^{2\pi} \cos^2\theta\,\dee{\theta}</m>,
-see Example <xref ref="eg_workIntegalB"/> in the CLP-4 text.
+see Example <xref ref="eg_workIntegralB"/>.
 </p></solution>
 </exercise>
 
@@ -1609,7 +1635,7 @@ z^2 &amp; x^2 &amp; y^2
 = 2y\,\hi + 2z\,\hj +2x\,\hk
 </mrow>
 </md>
-and, by (<xref ref="eq_SUdSimplicit"/>) of the CLP-4 text with
+and, by (<xref ref="eq_SUdSimplicit"/>) with
 <m>G(x,y,z)=x+y+z</m>,
 <md>
 <mrow>
@@ -1624,7 +1650,7 @@ and, by (<xref ref="eq_SUdSimplicit"/>) of the CLP-4 text with
 Because <m>C</m> is oriented in a clockwise direction as
 </p>
 
-<sidebyside width="75%">
+<sidebyside width="43%">
 <image source="pfigs/stokes8"/>
 </sidebyside>
 
@@ -1639,12 +1665,14 @@ On <m>S</m> we have <m>x+y+z=1</m>, so that Stokes' theorem gives
 <mrow>
 \oint_C\vF\cdot\dee{\vr}
 &amp;=\dblInt_S (\vnabla\times\vF)\cdot\hn\,\dee{S}
-=\dblInt_S 2(y\,\hi+z\,\hj+x\,\hk)\cdot
+</mrow><mrow>
+&amp;=\dblInt_S 2(y\,\hi+z\,\hj+x\,\hk)\cdot
         \left(-\frac{1}{\sqrt{3}}\right) \big(\hi+\hj+\hk)\,\dee{S}
 </mrow><mrow>
 &amp;=-\frac{2}{\sqrt{3}}\dblInt_S (y+z+x)\,\dee{S}
 =-\frac{2}{\sqrt{3}}\dblInt_S \dee{S}
-=-\frac{10}{\sqrt{3}}
+</mrow><mrow>
+&amp;=-\frac{10}{\sqrt{3}}
 </mrow>
 </md>
 since <m>S</m> has area <m>5</m>.
@@ -1703,7 +1731,7 @@ That's suggestive. Next we need to find a surface whose boundary is <m>C</m>.
 First, here is a sketch of <m>C</m>.
 </p>
 
-<sidebyside width="75%">
+<sidebyside width="51%">
 <image source="pfigs/OE08A_8"/>
 </sidebyside>
 
@@ -1782,7 +1810,8 @@ to help gauge if Stokes' theorem would be easier.
 z + \sin z &amp; x^3 - x^2 y &amp; x \cos z - y
 \end{matrix}
 \right]
-=-\hi +\hj +(3x^2-2xy)\,\hk
+</mrow><mrow>
+&amp;=-\hi +\hj +(3x^2-2xy)\,\hk
 </mrow>
 </md>
 That's a lot simpler than <m>\vF</m>.
@@ -1791,7 +1820,7 @@ For the surface <m>z=f(x,y)=xy^2</m>, with downward pointing normal (since <m>C<
 \hn\,\dee{S} = -\big(-f_x,-f_y,1\big)\,\dee{x}\dee{y}
 =\big(y^2,2xy,-1\big)\,\dee{x}\dee{y}
 </me>
-by (<xref ref="eq_SUdSgraph"/>) of the CLP-4 text,
+by (<xref ref="eq_SUdSgraph"/>),
 So, writing
 <md>
 <mrow>
@@ -1828,7 +1857,7 @@ and
 <m>\int_0^{2\pi}\sin^2\theta\,\dee{\theta}
         =\int_0^{2\pi}\cos^2\theta\,\dee{\theta}
         =\pi</m>.
-(See Example <xref ref="eg_workIntegalB"/> in the CLP-4 text.)
+(See Example <xref ref="eg_workIntegralB"/>.)
 </p></solution>
 </exercise>
 
@@ -1859,7 +1888,7 @@ Here is a sketch of the part of <m>S</m> in the first octant.
 </p>
 
 
-<sidebyside width="75%">
+<sidebyside width="46%">
   <image source="pfigs/OE06A_6"/>
 </sidebyside>
 
@@ -1873,21 +1902,21 @@ It is parametrized by
 So Stokes' theorem gives
 <md>
 <mrow>
-\dblInt_S \vnabla\times\vF\cdot\hn\,\dee{S}
-  &amp; = \oint_{\partial S}\vF\cdot\dee{\vr}
+&amp;\dblInt_S \vnabla\times\vF\cdot\hn\,\dee{S}
+  = \oint_{\partial S}\vF\cdot\dee{\vr}
 </mrow><mrow>
-  &amp; = \int_0^{2\pi} \Big(\overbrace{
+  &amp;\hskip0.5in = \int_0^{2\pi} \Big(\overbrace{
         -\sin^2\theta\,\hi +\cos^3\theta\,\hj+(\text{mess})\hk
                }^{\vF(\vr(t))}\Big)\cdot
    \big(\overbrace{-\sin\theta\,\hi+\cos\theta\,\hj}^{\vr'(t)}\big)\
      \dee{\theta}
 </mrow><mrow>
-  &amp;=\int_0^{2\pi}\big(\sin^3\theta +\cos^4\theta\big)\,\dee{\theta}
+  &amp;\hskip0.5in=\int_0^{2\pi}\big(\sin^3\theta +\cos^4\theta\big)\,\dee{\theta}
 </mrow>
 </md>
 The integral of any odd power of <m>\sin\theta</m> or <m>\cos\theta</m>
 over <m>0\le\theta\le 2\pi</m> is zero.
-(See Example <xref ref="eg_stokesD"/> in the CLP-4 text.)
+(See Example <xref ref="eg_stokesD"/>.)
 In particular, <m>\int_0^{2\pi}\sin^3\theta\,\dee{\theta} =0</m>.
 To integrate <m>\cos^4\theta</m> we use the trig identity
 <md>
@@ -1950,14 +1979,15 @@ Stokes' theorem, let's compute the curl
 x \sin y &amp; - y \sin x &amp; (x - y)z^2
 \end{matrix}
 \right]
-=-z^2\,\hi-z^2\,\hj -(y\cos x +x\cos y)\hk
+</mrow><mrow>
+&amp;=-z^2\,\hi-z^2\,\hj -(y\cos x +x\cos y)\hk
 </mrow>
 </md>
 Next we need to find a surface whose boundary is <m>C</m>.
 First, here is a sketch of <m>C</m>.
 </p>
 
-<sidebyside width="75%">
+<sidebyside width="54%">
 <image source="pfigs/OE05D_8"/>
 </sidebyside>
 
@@ -2024,8 +2054,9 @@ Compute the work integral <m>\int_C\vF\cdot\dee{\vr}</m>.
 </p></statement>
 
 <answer>
-<sidebyside widths="10% 70%">
-  <p>(a)</p><image source="pfigs/OE17D_4"/>
+<p>(a)</p>
+<sidebyside width="58%">
+  <image source="pfigs/OE17D_4"/>
 </sidebyside>
 
 <p>
@@ -2034,7 +2065,7 @@ Compute the work integral <m>\int_C\vF\cdot\dee{\vr}</m>.
 
 <solution><p> (a) Here is a sketch.</p>
 
-<sidebyside width="75%">
+<sidebyside width="58%">
   <image source="pfigs/OE17D_4"/>
 </sidebyside>
 
@@ -2058,7 +2089,8 @@ Stokes' theorem. First, we compute the curl
 </mrow><mrow>
 &amp;= \Big(5(x+1)-\frac{3}{1+x}\Big)\,\hi
   -\Big(5(y+2)-\frac{2}{1+y}\Big)\,\hj
-  +\Big(-\frac{3z}{(1+x)^2}+\frac{2z}{(1+y)^2}\Big)\,\hk
+</mrow><mrow>
+&amp;\hskip1in  +\Big(-\frac{3z}{(1+x)^2}+\frac{2z}{(1+y)^2}\Big)\,\hk
 </mrow>
 </md>
 Next we need to find a surface <m>S</m> whose boundary is <m>C</m>.
@@ -2091,7 +2123,8 @@ So Stokes' theorem gives
 <mrow>
 \int_C\vF\cdot\dee{\vr}
 &amp;=\dblInt_S  \vnabla\times\vF\cdot\hn\,\dee{S}
-=\dblInt_{S_x}  \overbrace{\vnabla\times\vF\cdot(-\hj)}^{8}\,\dee{S}
+</mrow><mrow>
+&amp;=\dblInt_{S_x}  \overbrace{\vnabla\times\vF\cdot(-\hj)}^{8}\,\dee{S}
   + \dblInt_{S_y}  \overbrace{\vnabla\times\vF\cdot(-\hi)}^{-2}\,\dee{S}
 </mrow><mrow>
 &amp;=8\,\text{Area}(S_x)  -2\,\text{Area}(S_y)
@@ -2130,14 +2163,15 @@ oriented counter clockwise as usual. It may be parametrized by
 </mrow><mrow>
 &amp;=-\int_0^{2\pi}\sin^2\theta\,\dee{\theta}
 =-\int_0^{2\pi}\dee{\theta}\,\frac{1-\cos(2\theta)}{2}
-=-\left[\frac{\theta}{2}-\frac{\sin(2\theta)}{4}\right]_0^{2\pi}
+</mrow><mrow>
+&amp;=-\left[\frac{\theta}{2}-\frac{\sin(2\theta)}{4}\right]_0^{2\pi}
 </mrow><mrow>
 &amp;=-\pi
 </mrow>
 </md>
 For an efficient, sneaky, way to evaluate
 <m>\int_0^{2\pi}\dee{\theta}\ \sin^2\theta</m>, see Example
-<xref ref="eg_workIntegalB"/> in the CLP-4 text.
+<xref ref="eg_workIntegralB"/>.
 </p></solution>
 </exercise>
 
@@ -2153,7 +2187,7 @@ x^2 + y^2 + 2(z-1)^2 = 6,\qquad z\ge 0.
 <p>Define
 <me>
 \vG = \nabla\times\vF,
-\qquad{\rm where}\qquad
+\quad\text{where}\quad
 \vF = (xz - y^3\cos z)\,\hi + x^3 e^z\,\hj + xyze^{x^2+y^2+z^2}\,\hk.
 </me>
 Find <m>\dblInt_\cS \vG\cdot \hn\dee{S}</m>.
@@ -2175,13 +2209,16 @@ counterclockwise when viewed from the positive <m>z</m>-axis.
 <p><em>Method I <mdash/> double Stokes':</em>
 Let <m>\cD</m> denote the plane disk <m>x^2+y^2\le 4</m>, <m>z=0</m>.
 Using Stokes' theorem twice gives
-<me>
+<md>
+<mrow>
 \dblInt_\cS \vG\cdot \hn\,\dee{S}
-= \dblInt_\cS \nabla\times\vF\cdot \hn\,\dee{S}
+&amp;= \dblInt_\cS \nabla\times\vF\cdot \hn\,\dee{S}
 = \oint_\cC \vF\cdot \dee{\vr}
 = \dblInt_\cD \nabla\times\vF\cdot \hn\,\dee{S}
-= \dblInt_\cD \vG\cdot \hn\,\dee{S}
-</me>
+</mrow><mrow>
+&amp;= \dblInt_\cD \vG\cdot \hn\,\dee{S}
+</mrow>
+</md>
 Now in <m>\cD</m> we have <m>\hn=\hk</m> and <m>z=0</m>, so on this surface,
 <md>
 <mrow>
@@ -2196,12 +2233,15 @@ Now in <m>\cD</m> we have <m>\hn=\hk</m> and <m>z=0</m>, so on this surface,
 </mrow>
 </md>
 Hence, using polar coordinates,
-<me>
+<md>
+<mrow>
 \dblInt_\cS \vG\cdot \hn\,\dee{S}
-= \dblInt_\cD 3(x^2+y^2)\,\dee{x}\dee{y}
+&amp;= \dblInt_\cD 3(x^2+y^2)\,\dee{x}\dee{y}
 = 3\int_{\theta=0}^{2\pi} \int_{r=0}^2 (r^2)\,r\,\dee{r}\,\dee{\theta}
-= 3(2\pi)(4)= 24\pi
-</me>
+</mrow><mrow>
+&amp;= 3(2\pi)(4)= 24\pi
+</mrow>
+</md>
 </p>
 
 <p><em>Method II <mdash/> single Stokes':</em>
@@ -2224,10 +2264,10 @@ Then since <m>z=0</m> on <m>\cC</m>,
 <md>
 <mrow>
 \dblInt_\cS \vG\cdot \hn\,\dee{S}
-&amp;= \int_{0}^{2\pi}\big(
-\overbrace{-(2\sin\theta)^3\,\hi + (2\cos\theta)^3\,\hj}^
+&amp;= \int_{0}^{2\pi}\!\!\big(
+\overbrace{-(2\sin\theta)^3\,\hi \!+\! (2\cos\theta)^3\,\hj}^
                                           {\vF\big(\vr(\theta)\big)}\big)
-\cdot \big(\overbrace{-2\sin\theta\,\hi + 2\cos\theta\,\hj}^{\vr'(\theta)}\big)
+\cdot \big(\overbrace{-2\sin\theta\,\hi \!+\! 2\cos\theta\,\hj}^{\vr'(\theta)}\big)
  \,\dee{\theta}
 
 </mrow><mrow>
@@ -2305,16 +2345,18 @@ z^2&amp;x^2&amp;y^2\end{matrix}\right|
 Let <m>D</m> be the disk in the plane <m>x+y+z=3</m> whose boundary is <m>C</m> and let
 <m>\hn=\frac{1}{\sqrt{3}}(\hi+\hj+\hk)</m> be the upward unit normal to <m>D</m>.
 If the circle is oriented counterclockwise, when viewed from above,
-then, by Stokes' theorem  (Theorem <xref ref="thm_Stokes"/> in the CLP-4 text),
+then, by Stokes' theorem  (Theorem <xref ref="thm_Stokes"/>),
 <md>
 <mrow>
 \oint_C \vF\cdot \dee{\vr}
 &amp;=\dblInt_D \vnabla\times\vF\cdot\hn\ \dee{S}
-=\frac{1}{\sqrt{3}}
+</mrow><mrow>
+&amp;=\frac{1}{\sqrt{3}}
 \dblInt_D \big(2y\,\hi+2z\,\hj+2x\,\hk\big)\cdot(\hi+\hj+\hk)\ \dee{S}
 </mrow><mrow>
 &amp;=\frac{1}{\sqrt{3}}\dblInt_D2\overbrace{\big(x+y+z\big)}^{=3\text{ on } D}\ \dee{S}
-=2\sqrt{3}\dblInt_D \dee{S}
+</mrow><mrow>
+&amp;=2\sqrt{3}\dblInt_D \dee{S}
 =2\sqrt{3}\pi R^2
 </mrow>
 </md>
@@ -2359,11 +2401,13 @@ and <m>\hn=\hk</m> on <m>S'</m> and <m>z=-1</m> on <m>S'</m>
 \dblInt_{S'}\vnabla\times\vF\cdot\hn\, \dee{S}
 &amp;=\int_{-1}^1 \dee{x}\int_{-1}^1 \dee{y}\
          \big(\cdots,\cdots,y^2-xz\big)\cdot\hk\Big|_{z=-1}
-=\int_{-1}^1 \dee{x}\int_{-1}^1 \dee{y}\  (y^2+x)
+</mrow><mrow>
+&amp;=\int_{-1}^1 \dee{x}\int_{-1}^1 \dee{y}\  (y^2+x)
 </mrow><mrow>
 &amp;=\int_{-1}^1 \dee{x}\int_{-1}^1 \dee{y}\  y^2
 =2\times 2\int_0^1\dee{y}\ y^2
-=\frac{4}{3}
+</mrow><mrow>
+&amp;=\frac{4}{3}
 </mrow>
 </md>
 </p>
@@ -2375,7 +2419,7 @@ The boundary of <m>S</m> is the square <m>C</m>, with sides <m>C_1</m>, <m>\cdot
 in the sketch
 </p>
 
-<sidebyside width="75%">
+<sidebyside width="45%">
 <image source="pfigs/cubeS"/>
 </sidebyside>
 
@@ -2392,7 +2436,8 @@ Since <m>\vr'(x) = \hi</m>, and <m>y=z=-1</m> on <m>C_1</m>,
 \int_{C_1}\vF\cdot \dee{\vr}
 &amp;=\int_{-1}^1 \vF\big(\vr(x)\big)\cdot\vr'(x)\ \dee{x}
 =\int_{-1}^1 \vF\big(\vr(x)\big)\cdot\hi\ \dee{x}
-=\int_{-1}^1\overbrace{x(-1)(-1)}^{xyz}\ \dee{x}
+</mrow><mrow>
+&amp;=\int_{-1}^1\overbrace{x(-1)(-1)}^{xyz}\ \dee{x}
 </mrow><mrow>
 &amp;=0\qquad\text{(since $x$ is odd)}
 </mrow>
@@ -2415,9 +2460,9 @@ Since <m>\vr'(x) = \hi</m>, and <m>y=1</m>, <m>z=-1</m> on <m>C_3</m>,
 <md>
 <mrow>
 \int_{C_3}\vF\cdot \dee{\vr}
-=\int^{-1}_1 \vF\big(\vr(x)\big)\cdot\hi\ \dee{x}
+=\int^{-1}_1\!\! \vF\big(\vr(x)\big)\cdot\hi\ \dee{x}
 =\int^{-1}_1\overbrace{x\ (1)(-1)}^{xyz}\ \dee{x}
-=0\qquad\text{(since $x$ is odd)}
+=0\quad\text{(since $x$ is odd)}
 </mrow>
 </md>
 Parametrize <m>C_4</m> by <m>y</m>. That is, <m>\vr(y)= -\hi + y\,\hj -\hk</m>, with
@@ -2494,18 +2539,19 @@ Since <m>u\ge 0</m>, we do indeed have the upward pointing normal.
 So, Stokes' theorem tells us
 <md>
 <mrow>
-\int_C y\,\dee{x}-x\,\dee{y}+ xy\,\dee{z}
-&amp;=\int_C\vF\cdot \dee{\vr}
+&amp;\int_C y\,\dee{x}-x\,\dee{y}+ xy\,\dee{z}
+=\int_C\vF\cdot \dee{\vr}
 =\dblInt_S \vnabla\times\vF\cdot\hn\,\dee{S}
 </mrow><mrow>
-&amp;=\int_0^1 \dee{u} \int_0^{2\pi} \dee{v}\  \big(u\cos v, -u\sin v, -2\big)
+&amp;\hskip0.5in=\int_0^1 \dee{u} \int_0^{2\pi} \dee{v}\  \big(u\cos v, -u\sin v, -2\big)
 \cdot\big(\sin v, -\cos v, u\big)
 </mrow><mrow>
-&amp;=\int_0^1 \dee{u} \int_0^{2\pi} \dee{v}\ \big(2u\sin v\cos v-2u\big)
-=\left[\int_0^1 \dee{u} \ u\right]
+&amp;\hskip0.5in=\int_0^1 \dee{u} \int_0^{2\pi} \dee{v}\ \big(2u\sin v\cos v-2u\big)
+</mrow><mrow>
+&amp;\hskip0.5in=\left[\int_0^1 \dee{u} \ u\right]
     \left[\int_0^{2\pi} \dee{v}\ \big(\sin 2v-2\big)\right]
 </mrow><mrow>
-&amp;=\half(-4\pi)=-2\pi
+&amp;\hskip0.5in=\half(-4\pi)=-2\pi
 </mrow>
 </md>
 </p></solution>
@@ -2664,7 +2710,7 @@ from <m>(2,0,0)</m> to <m>(0,0,0)</m>. In the figure below, <m>C</m> is the red 
 and <m>\tilde C</m> is <m>C</m> plus the blue line segment.
 </p>
 
-<sidebyside width="75%">
+<sidebyside width="44%">
 <image source="pfigs/OE12D_4"/>
 </sidebyside>
 
@@ -2684,17 +2730,17 @@ and with normal vector <m>-\hk</m>.
 So, by Stokes' theorem
 <md>
 <mrow>
-\int_C \vF\cdot\dee{\vr} + \int_L \vF\cdot\dee{\vr}
-&amp;=  \int_{\partial S} \vF\cdot\dee{\vr}
+&amp;\int_C \vF\cdot\dee{\vr} + \int_L \vF\cdot\dee{\vr}
+=  \int_{\partial S} \vF\cdot\dee{\vr}
 = \dblInt_S \vnabla\times \vF\cdot\hn\,\dee{S}
 </mrow><mrow>
-&amp;= \dblInt_{T_1} \vnabla\times \vF\cdot(-\hi)\,\dee{S}
+&amp;\hskip0.5in= \dblInt_{T_1} \vnabla\times \vF\cdot(-\hi)\,\dee{S}
   + \dblInt_{T_2} \vnabla\times \vF\cdot(-\hk)\,\dee{S}
 </mrow><mrow>
-&amp;= \dblInt_{T_1} (1-2xz)\,\hj\cdot(-\hi)\,\dee{S}
+&amp;\hskip0.5in= \dblInt_{T_1} (1-2xz)\,\hj\cdot(-\hi)\,\dee{S}
   + \dblInt_{T_2} (1-2xz)\,\hj\cdot(-\hk)\,\dee{S}
 </mrow><mrow>
-&amp;=0
+&amp;\hskip0.5in=0
 </mrow>
 </md>
 Consequently the integral of interest
@@ -2703,7 +2749,7 @@ Consequently the integral of interest
 \int_C \vF\cdot\dee{\vr}
 &amp;=- \int_L \vF\cdot\dee{\vr}
 =- \int_2^0 (2+x^2)\,\dee{x}
-\qquad\text{since } \dee{y}=\dee{z}=z=0  \text{ on } L
+\quad\text{since } \dee{y}=\dee{z}=z=0  \text{ on } L
 </mrow><mrow>
 &amp;=\int_0^2 (2+x^2)\,\dee{x}
 ={\left[2x+\frac{x^3}{3}\right]}_0^2
@@ -2804,7 +2850,7 @@ Then Stokes' theorem gives
 </md>
 </p>
 
-<sidebyside width="45%">
+<sidebyside width="33%">
 <image source="pfigs/OE12D_6a"/>
 <image source="pfigs/OE12D_6b"/>
 </sidebyside>
@@ -2971,7 +3017,7 @@ The boundary of <m>S</m> is <m>C</m>. Because of the clockwise orientation
 of <m>C</m>, we assign the normal vector <m>-\hk</m> to <m>S</m>. See the sketch below
 </p>
 
-<sidebyside width="75%">
+<sidebyside width="37%">
   <image source="pfigs/OE10D_5"/>
 </sidebyside>
 
@@ -2983,13 +3029,16 @@ theorem,
 \oint_C\vF\cdot\dee{\vr}
 &amp;=\dblInt_S \vnabla\times\vF\cdot\hn\,\dee{S}
 = \dblInt_S \vnabla\times\vF\cdot(-\hk)\,\dee{S}
-= -\dblInt_S \big(2x-\tfrac{1}{x}\big)\,\dee{S}
+</mrow><mrow>
+&amp;= -\dblInt_S \big(2x-\tfrac{1}{x}\big)\,\dee{S}
 </mrow><mrow>
 &amp;= -\int_2^4\dee{x}\int_2^4\dee{y}\ \big(2x-\tfrac{1}{x}\big)
  =-\int_2^4\dee{x}\ 2\big(2x-\tfrac{1}{x}\big)
- = - 2\Big[x^2-\ln x\Big]_2^4
 </mrow><mrow>
-&amp;=-2\big[12-\ln 2\big] =2\ln 2-24
+&amp; = - 2\Big[x^2-\ln x\Big]_2^4
+=-2\big[12-\ln 2\big] 
+</mrow><mrow>
+&amp;=2\ln 2-24
 </mrow>
 </md>
 </p>
@@ -3024,7 +3073,7 @@ for which <m>z \ge 0</m>, oriented so that its normal vector has a positive <m>z
 </p></statement>
 
 <hint><p>
-Review §<xref ref="sec_vectorPotential"/> in the CLP-4 text.
+Review §<xref ref="sec_vectorPotential"/>.
 </p></hint>
 
 <answer><p>
@@ -3035,7 +3084,7 @@ Review §<xref ref="sec_vectorPotential"/> in the CLP-4 text.
 <solution><p>
 (a)
 By the vector identity <m>\vnabla\cdot\big(\vnabla\times\vG\big)=0</m>
-(Theorem <xref ref="thm_degTwoIdentities"/>.a of the CLP-4 text).
+(Theorem <xref ref="thm_degTwoIdentities"/>.a).
 So we must have
 <md>
 <mrow>
@@ -3080,7 +3129,7 @@ or equivalently,
 </mrow>
 </md>
 Let's also require that <m>G_3=0</m>. (If this is mysterious to you,
-review §<xref ref="sec_vectorPotential"/> in the CLP-4 text.)
+review §<xref ref="sec_vectorPotential"/>.)
 Then the equations above simplify to
  <md>
 <mrow>
@@ -3233,7 +3282,7 @@ theorem could provide an efficient way to compute the integral.
 The left figure below contains a sketch of <m>C</m>.
 </p>
 
-<sidebyside width="45%">
+<sidebyside width="48%">
   <image source="pfigs/OE06D_2"/>
  <image source="pfigs/OE06D_2b"/>
 </sidebyside>
@@ -3249,9 +3298,10 @@ So Stokes' theorem gives
 <md>
 <mrow>
 \int_C \vF \cdot\dee{\vr} + \int_L \vF \cdot\dee{\vr}
-= \dblInt_R  \vnabla\times\vF \cdot(-\hk)\ \dee{S}
+&amp;= \dblInt_R  \vnabla\times\vF \cdot(-\hk)\ \dee{S}
 = \dblInt_R  (\hk) \cdot(-\hk)\ \dee{S}
-= -\text{Area}(R)
+</mrow><mrow>
+&amp;= -\text{Area}(R)
 </mrow>
 </md>
 <m>R</m> is the union of <m>5</m> triangles, each of height <m>1</m> and base <m>1</m>.
@@ -3268,19 +3318,20 @@ we can parametrize <m>-L</m> by <m>\vr(t) = t(5,5)</m>, <m>0\le t\le 1</m> and
 &amp;=\int_0^1 \overbrace{\big(5t\,\hi + (10t-10)\,\hj\big)}^{\vF(\vr(t))}
               \cdot\overbrace{(5\,\hi+5\,\hj)}^{\vr'(t)}\ \dee{t}
 =\int_0^1 5\big(15t-10\big) \dee{t}
-=25\left(\frac{3}{2}-2\right)
 </mrow><mrow>
-&amp;=-\frac{25}{2}
+&amp;=25\left(\frac{3}{2}-2\right)
+=-\frac{25}{2}
 </mrow>
 </md>
 All together
 <md>
 <mrow>
 \int_C \vF \cdot\dee{\vr}
-= -\text{Area}(R) - \int_L \vF \cdot\dee{\vr}
+&amp;= -\text{Area}(R) - \int_L \vF \cdot\dee{\vr}
 = -\text{Area}(R) + \int_{-L} \vF \cdot\dee{\vr}
 =-\frac{5}{2}-\frac{25}{2}
-=-15
+</mrow><mrow>
+&amp;=-15
 </mrow>
 </md>
 </p></solution>
@@ -3335,7 +3386,7 @@ S = \Set{(x,y,z)}{x^2+y^2\le 4,\ z=x^2}
 </me>
 with upward pointing normal.
 For the surface <m>z=f(x,y) = x^2</m>,
-(<xref ref="eq_SUdSgraph"/>) in the CLP-4 text gives
+(<xref ref="eq_SUdSgraph"/>) gives
 <md>
 <mrow>
 \hn\, \dee{S} &amp; = \pm\big[-f_x(x,y)\,\hi - f_y(x,y)\,\hj + \hk\big]\
@@ -3350,12 +3401,13 @@ Since we want the upward pointing normal
 \hn\, \dee{S} &amp; = \big[-2x\,\hi+\hk\big]\,\dee{x}\dee{y}
 </mrow>
 </md>
-So by Stokes' theorem (Theorem <xref ref="thm_Stokes"/> in the CLP-4 text)
+So by Stokes' theorem (Theorem <xref ref="thm_Stokes"/>)
 <md>
 <mrow>
 \oint_C\vF\cdot\dee{\vr}
 &amp;=\dblInt_S \vnabla\times\vF \cdot \hn\,\dee{S}
-=\dblInt_{x^2+y^2\le 4} \big(-x\,\hi + \overbrace{x^2}^{z}\hk\big)\cdot
+</mrow><mrow>
+&amp;=\dblInt_{x^2+y^2\le 4} \big(-x\,\hi + \overbrace{x^2}^{z}\hk\big)\cdot
 \big[-2x\,\hi+\hk\big]\,\dee{x}\dee{y}
 </mrow><mrow>
 &amp;=3\dblInt_{x^2+y^2\le 4} x^2\,\dee{x}\dee{y}
@@ -3378,7 +3430,7 @@ Switching to polar coordinates
 </md>
 For an efficient, sneaky, way to evaluate
 <m>\int_0^{2\pi} \cos^2 t\ \dee{t}</m> see Example
-<xref ref="eg_workIntegalB"/> in the CLP-4 text.
+<xref ref="eg_workIntegralB"/>.
 </p>
 
 </solution>
@@ -3553,12 +3605,13 @@ The curl of the vector field <m>\vF=z\,\hi+x\,\hj-y\,\hk</m> is
 The unit normal to the plane <m>x+y+z=1</m>, with positive <m>\hk</m> component as
 required by Stokes' theorem in this case, is <m>\hn=\frac{1}{\sqrt{3}}(1,1,1)</m>.
 If we denote by <m>D</m> the circular disk <m>x+y+z=1</m>, <m>x^2+y^2+z^2\le 1</m>, then
-Stokes' theorem (Theorem <xref ref="thm_Stokes"/> in the CLP-4 text) says
+Stokes' theorem (Theorem <xref ref="thm_Stokes"/>) says
 <md>
 <mrow>
 \oint_C z\,\dee{x}+x\,\dee{y}-y\,\dee{z}=\oint_C \vF\cdot \dee{\vr}
 &amp;=\dblInt_D\vnabla\times\vF\cdot\hn\,\dee{S}
-=\dblInt_D(-1,1,1)\cdot\frac{1}{\sqrt{3}}(1,1,1)\,\dee{S}
+</mrow><mrow>
+&amp;=\dblInt_D(-1,1,1)\cdot\frac{1}{\sqrt{3}}(1,1,1)\,\dee{S}
 </mrow><mrow>
 &amp;=\frac{1}{\sqrt{3}}{\rm Area}(D)
 </mrow>
@@ -3570,12 +3623,13 @@ and that the distance from  <m>\frac{1}{3}(1,1,1)</m> to any point <m>(x,y,z)</m
 obeying <m>x+y+z=1</m> and <m>x^2+y^2+z^2=1</m>, namely
 <md>
 <mrow>
-\sqrt{{\Big(x-\frac{1}{3}\Big)}^2+{\Big(y-\frac{1}{3}\Big)}^2
+&amp;\sqrt{{\Big(x-\frac{1}{3}\Big)}^2+{\Big(y-\frac{1}{3}\Big)}^2
 +{\Big(z-\frac{1}{3}\Big)}^2}
-&amp;=\sqrt{x^2+y^2+z^2-\frac{2}{3}(x+y+z)+\frac{3}{9}}
+</mrow><mrow>
+&amp;\hskip1in=\sqrt{x^2+y^2+z^2-\frac{2}{3}(x+y+z)+\frac{3}{9}}
 =\sqrt{1-\frac{2}{3}+\frac{1}{3}}
 </mrow><mrow>
-&amp;=\sqrt{\frac{2}{3}}
+&amp;\hskip1in=\sqrt{\frac{2}{3}}
 </mrow>
 </md>
 is the same. This also tells us that <m>D</m> has radius
@@ -3674,7 +3728,7 @@ and from <m>(0,0,0)</m> to <m>(-1,0,1)</m>. Here is a sketch. <m>\cP</m> is
 in blue.
 </p>
 
-<sidebyside width="75%">
+<sidebyside width="43%">
   <image source="pfigs/halfCone"/>
 </sidebyside>
 
@@ -3704,7 +3758,7 @@ let
 Here is a sketch. <m>\cL</m> is in blue and <m>\cR</m> is shaded.
 </p>
 
-<sidebyside width="75%">
+<sidebyside width="47%">
   <image source="pfigs/halfConeB"/>
 </sidebyside>
 
@@ -3784,10 +3838,12 @@ Any point, <m>(x,y,z)</m>, which satisfies both <m>x+y+z=1</m> and <m>x^2+y^2+z^
 obeys
 <md>
 <mrow>
-\left(x-\frac{1}{3}\right)^2+\left(y-\frac{1}{3}\right)^2
+&amp;\left(x-\frac{1}{3}\right)^2+\left(y-\frac{1}{3}\right)^2
 +\left(z-\frac{1}{3}\right)^2
-=x^2+y^2+z^2-\frac{2}{3}(x+y+z)+3\frac{1}{9}
-=1-\frac{2}{3} +\frac{1}{3}=\frac{2}{3}
+</mrow><mrow>
+&amp;\hskip1in=x^2+y^2+z^2-\frac{2}{3}(x+y+z)+3\frac{1}{9}
+</mrow><mrow>
+&amp;\hskip1in=1-\frac{2}{3} +\frac{1}{3}=\frac{2}{3}
 </mrow>
 </md>
 That is, any point on the boundary of <m>S'</m> is a distance <m>\sqrt{\frac{2}{3}}</m>

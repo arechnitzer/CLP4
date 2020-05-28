@@ -14,12 +14,17 @@ dimensions, starting with the circle in the <m>xy</m>-plane that has radius <m>\
 and is centred on the origin. This is easy to parametrize:
 </p>
 
-<sidebyside width="45%">
+<sidebyside widths="40% 50%" valign="middle">
   <image source="figs/circle1"/>
-<p><me>
-\vr(t)=\rho\cos t\,\hi+ \rho\sin t\,\hj
-\qquad 0\le t\le 2\pi
-</me></p>
+<p>
+<md>
+<mrow>
+&amp;\vr(t)=\rho\cos t\,\hi+ \rho\sin t\,\hj
+</mrow><mrow>
+&amp;0\le t\le 2\pi
+</mrow>
+</md>
+</p>
 </sidebyside>
 
 <p>
@@ -28,12 +33,17 @@ Now let's move the circle so that its centre is at some general point
 is still parallel to the <m>xy</m>-plane, we just translate by <m>\vc</m>:
 </p>
 
-<sidebyside width="45%">
+<sidebyside widths="36% 50%" valign="middle">
 <image source="figs/circle2"/>
-<p><me>
-\vr(t)=\vc+\rho\cos t\,\hi+ \rho\sin t\,\hj
-\qquad 0\le t\le 2\pi
-</me></p>
+<p>
+<md>
+<mrow>
+&amp;\vr(t)=\vc+\rho\cos t\,\hi+ \rho\sin t\,\hj
+</mrow><mrow>
+&amp; 0\le t\le 2\pi
+</mrow>
+</md>
+</p>
 </sidebyside>
 
 <p>
@@ -50,12 +60,17 @@ parametrizing a general circle is to replace <m>\hi</m> and <m>\hj</m> by two ne
 </ol>
 </p>
 
-<sidebyside width="45%">
+<sidebyside widths="40% 50%" valign="middle">
   <image source="figs/circle3"/>
-<p><me>
+<p>
+<md>
+<mrow>
+&amp;
 \vr(t)=\vc+\rho\cos t\,\hi'+ \rho\sin t\,\hj'
-\qquad 0\le t\le 2\pi
-</me></p>
+</mrow><mrow>
+&amp; 0\le t\le 2\pi
+</mrow>
+</md></p>
 </sidebyside>
 <p>
 To check that this is correct, observe that
@@ -124,14 +139,15 @@ Substituting in <m>\vc=(0,0,0)</m>, <m>\rho=2</m>, <m>\hi'=(1,0,0)</m> and
 <m>\hj'=\frac{1}{\sqrt{2}}(0,1,1)</m> gives
 </p>
 
-<sidebyside width="45%">
+<sidebyside  widths="40% 50%" valign="middle">
 <image source="figs/circle4"/>
 <p><md>
 <mrow>
 \vr(t)&amp;=2\cos t\,(1,0,0)+ 2\sin t\,\frac{1}{\sqrt{2}}(0,1,1)
 </mrow><mrow>
 &amp;=2\big(\cos t, \frac{\sin t}{\sqrt{2}},\frac{\sin t}{\sqrt{2}}\big)
-\qquad 0\le t\le 2\pi
+</mrow><mrow>
+&amp; 0\le t\le 2\pi
 </mrow>
 </md></p>
 </sidebyside>
@@ -177,24 +193,31 @@ Since the plane of the circle is <m>x+y+z=3</m>, the vector
 So we may take <m>\hk'=\frac{1}{\sqrt{3}}(1,1,1)</m>.
 </li>
 <li>
-Then <m>\hj'=\hk'\times\hi'
+Then 
+<md>
+<mrow>
+\hj'&amp;=\hk'\times\hi'
 =\frac{1}{\sqrt{18}}(1,1,1)\times(2,-1,-1)=\frac{1}{\sqrt{18}}(0,3,-3)
-=\frac{1}{\sqrt{2}}(0,1,-1)</m>.
+</mrow><mrow>
+&amp;
+=\frac{1}{\sqrt{2}}(0,1,-1)
+</mrow>
+</md>
 </li>
 </ul>
 Substituting in <m>\vc=(1,1,1)</m>, <m>\rho=\sqrt{6}</m>, <m>\hi'=\frac{1}{\sqrt{6}}(2,-1,-1)</m>
 and  <m>\hj'=\frac{1}{\sqrt{2}}(0,1,-1)</m> gives
-</p>
-
-<sidebyside width="45%">
-  <image source="figs/circle5"/>
-<p><md>
+<md>
 <mrow>
 \vr(t)&amp;=(1,1,1)+\sqrt{6}\cos t\,\frac{1}{\sqrt{6}}(2,-1,-1)
         + \sqrt{6}\sin t\,\frac{1}{\sqrt{2}}(0,1,-1)\cr
 &amp;=\big(1+2\cos t, 1-\cos t+\sqrt{3}\sin t,1-\cos t-\sqrt{3}\sin t\big)
 </mrow>
-</md></p>
+</md>
+</p>
+
+<sidebyside width="40%">
+  <image source="figs/circle5"/>
 </sidebyside>
 
 <p>

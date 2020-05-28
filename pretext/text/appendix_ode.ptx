@@ -12,7 +12,7 @@
 <li>
 A <term>differential equation</term> is an equation for an
 unknown function that contains the derivatives of that unknown function.
-For example <m>y'(t)+y(t)=0</m> is a differential equation for the unknown
+For example <m>y''(t)+y(t)=0</m> is a differential equation for the unknown
 function <m>y(t)</m>.
 </li>
 <li>
@@ -22,38 +22,38 @@ appear. That is, if the unknown function has only a single independent
 variable. A differential equation is called a <term>partial differential
 equation</term> (often shortened to <q>PDE</q>) if partial derivatives
 appear. That is, if the unknown function has more than one independent
-variable. For example <m>y'(t)+y(t)=0</m> is an ODE while
+variable. For example <m>y''(t)+y(t)=0</m> is an ODE while
 <m>\frac{\partial^2 u}{\partial\, t^2}(x,t)=c^2
 \frac{\partial^2 u}{\partial\, x^2}(x,t)</m> is a PDE.
 </li>
 <li>
 The <term>order</term> of a differential equation is the order of the
-highest derivative that appears. For example <m>y'(t)+y(t)=0</m>
+highest derivative that appears. For example <m>y''(t)+y(t)=0</m>
 is a second order ODE.
 </li>
 <li><p>
 An ordinary differential equation that is of the form
 <men xml:id="eqn_ODEordern">
-a_0(t) y^{(n)}(t) + a_1(t) y^{(n-1)}(t)+\cdots+a_{n-1}(t) y'(t) +a_n(t)y(t)
+a_0(t) y^{(n)}(t) + a_1(t) y^{(n-1)}(t)+\cdots +a_n(t)y(t)
 =F(t)
 </men>
 with given coefficient functions <m>a_0(t)</m>, <m>\cdots</m>, <m>a_n(t)</m> and <m>F(t)</m>
 is said to be <term>linear</term>. Otherwise, the ODE is said to be <term>nonlinear</term>.
-For example, <m>y'(t)^2+y(t)=0</m>, <m>y'(t)y'(t)+y(t)=0</m> and <m>y'(t)=e^{y(t)}</m>
+For example, <m>y'(t)^2+y(t)=0</m>, <m>y'(t)y''(t)+y(t)=0</m> and <m>y'(t)=e^{y(t)}</m>
 are all nonlinear.
 </p></li>
 <li>
 The ODE <xref ref="eqn_ODEordern"/> is said to have <term>constant coefficients</term> if
 the coefficients  <m>a_0(t)</m>, <m>a_1(t)</m>, <m>\cdots</m>, <m>a_n(t)</m> are all constants. Otherwise,
 it is said to have <term>variable coefficients</term>. For example,
-the ODE <m>y'(t)+7y(t)=\sin t</m> is constant coefficient, while
-<m>y'(t)+ty(t)=\sin t</m> is variable coefficient.
+the ODE <m>y''(t)+7y(t)=\sin t</m> is constant coefficient, while
+<m>y''(t)+ty(t)=\sin t</m> is variable coefficient.
 </li>
 <li>
 The ODE <xref ref="eqn_ODEordern"/> is said to be <term>homogeneous</term> if <m>F(t)</m>
 is identically zero. Otherwise, it is said to be <term>inhomogeneous</term> or
-<term>nonhomogeneous</term>. For example, the ODE <m>y'(t)+7y(t)=0</m> is homogeneous,
-while  <m>y'(t)+7y(t)=\sin t</m> is inhomogeneous. A homogeneous ODE always
+<term>nonhomogeneous</term>. For example, the ODE <m>y''(t)+7y(t)=0</m> is homogeneous,
+while  <m>y''(t)+7y(t)=\sin t</m> is inhomogeneous. A homogeneous ODE always
 has the trivial solution <m>y(t)=0</m>.
 </li>
 <li>
@@ -131,7 +131,7 @@ of capacitance <m>C</m> and a voltage source arranged in series, as shown below.
 Here <m>R</m>, <m>L</m> and <m>C</m> are all nonnegative constants.
 </p>
 
-<sidebyside>
+<sidebyside width="50%">
 <image source="figs/RLC"/>
 </sidebyside>
 
@@ -143,8 +143,7 @@ If <m>i(t)</m> is the current flowing at time <m>t</m> in the loop as shown and
 <m>q(t)</m> is the charge on the capacitor, then the voltages across <m>R</m>, <m>L</m>
 and <m>C</m>, respectively, at time <m>t</m> are
 <m>Ri(t)</m>, <m>L\diff{i}{t}(t)</m> and <m>y(t)=\frac{q(t)}{C}</m>. By the Kirchhoff's
-law
-<fn>Gustav Robert Kirchhoff (1824--1887) was a German physicist.</fn>
+law<fn>Gustav Robert Kirchhoff (1824--1887) was a German physicist.</fn>
 that says that the voltage between any two points has to be independent
 of the path used to travel between the two points, these three voltages
 must add up to <m>x(t)</m> so that
@@ -161,12 +160,12 @@ This just says that the capacitor cannot create or destroy charge on
 its own; all charging of the capacitor must come from the current.
 Substituting <xref ref="eqn_RLCiq"/> into <xref ref="eqn_RLCrlc"/> gives
 <me>
- LCy'(t) + RCy'(t) + y(t) = x(t)
+ LCy''(t) + RCy'(t) + y(t) = x(t)
 </me>
 As a concrete example, we'll take  an ac voltage source and choose the
 origin of time so that <m>x(0)=0</m>, <m>x(t)=E_0\sin(\om t)</m>. Then the differential equation becomes
 <men xml:id="eqn_ODERy">
-LCy'(t)+RCy'(t)+y(t)=E_0\sin(\om t)
+LCy''(t)+RCy'(t)+y(t)=E_0\sin(\om t)
 </men>
 This is a second order, linear, constant coefficient ODE. So we know,
 from Theorem <xref ref="thm_odeMain"/>, that the general solution is of the form
@@ -184,7 +183,7 @@ constants and
 <m>y_1(t)</m>, <m>y_2(t)</m> are any two independent solutions of the corresponding
 homogeneous equation
 <men xml:id="eqn_ODERyh">
-LCy'(t)+RCy'(t)+y(t)=0
+LCy''(t)+RCy'(t)+y(t)=0
 <!-- % \tag{<xref ref="eqn_ODERy"/> $ _{\rm h}$} -->
 </men>
 </li>
@@ -199,17 +198,17 @@ three functions: <m>y_1(t)</m>, <m>y_2(t)</m> and <m>y_p(t)</m>.
 <em>Finding <m>y_1(t)</m> and <m>y_2(t)</m>:</em>
 The best way to find <m>y_1</m> and <m>y_2</m> is to guess them.
 Any solution, <m>y_h(t)</m>, of <xref ref="eqn_ODERyh"/> has to have the property that <m>y_h(t)</m>,
-<m>RCy_h'(t)</m> and <m>LCy_h'(t)</m> cancel each other out for all <m>t</m>. We choose our guess
-so that <m>y_h(t)</m>, <m>y_h'(t)</m> and <m>y_h'(t)</m> are all proportional to a single
+<m>RCy_h'(t)</m> and <m>LCy_h''(t)</m> cancel each other out for all <m>t</m>. We choose our guess
+so that <m>y_h(t)</m>, <m>y_h'(t)</m> and <m>y_h''(t)</m> are all proportional to a single
 function of <m>t</m>. Then it will be easy to see if <m>y_h(t)</m>, <m>RCy_h'(t)</m> and
-<m>LCy_h'(t)</m> all cancel. All derivatives of the function <m>e^{rt}</m> are again proportional to <m>e^{rt}</m>. Hence we try <m>y_h(t)=e^{rt}</m>, with the constant
+<m>LCy_h''(t)</m> all cancel. All derivatives of the function <m>e^{rt}</m> are again proportional to <m>e^{rt}</m>. Hence we try <m>y_h(t)=e^{rt}</m>, with the constant
 <m>r</m> to the determined. This guess is a solution of <xref ref="eqn_ODERyh"/>
 if and only if
 <men xml:id="eqn_ODERroots">
 \begin{split}
-LCr^2e^{rt}+RCre^{rt}+e^{rt}=0
-&amp;\iff LCr^2+RCr+1 =0 \\
-&amp;\iff  r=\frac{-RC\pm\sqrt{R^2C^2-4LC}}{2LC}\equiv r_{1,2}
+&amp;LCr^2e^{rt}+RCre^{rt}+e^{rt}=0
+\iff LCr^2+RCr+1 =0 \\
+&amp;\hskip0.5in\iff  r=\frac{-RC\pm\sqrt{R^2C^2-4LC}}{2LC}\equiv r_{1,2}
 \end{split}
 </men>
 How we proceed depends on the sign of <m>R^2C^2-4LC</m>. That is, whether
@@ -244,17 +243,16 @@ as the complimentray solution.  However we can also rewrite
 by using that <m>e^{\pm i\theta}=\cos\theta\pm i\sin\theta</m>:
 <md>
 <mrow>
-C_1 e^{r_1t}+C_2e^{r_2 t}
-  &amp;=e^{-\rho t}\big[C_1e^{i\nu t}+C_2e^{-i\nu t}\big]
+&amp;C_1 e^{r_1t}+C_2e^{r_2 t}
+  =e^{-\rho t}\big[C_1e^{i\nu t}+C_2e^{-i\nu t}\big]
 </mrow><mrow>
-  &amp;=e^{-\rho t}\big[C_1\big\{\cos(\nu t)+i\sin(\nu t)\big\}+
+  &amp;\hskip0.5in=e^{-\rho t}\big[C_1\big\{\cos(\nu t)+i\sin(\nu t)\big\}+
                C_2\big\{\cos(\nu t)-i\sin(\nu t)\big\}\big]
 </mrow><mrow>
-  &amp;=e^{-\rho t}\big[D_1\cos(\nu t)+D_2\sin(\nu t)\big]
+  &amp;\hskip0.5in=e^{-\rho t}\big[D_1\cos(\nu t)+D_2\sin(\nu t)\big]
 </mrow>
 </md>
-where
-<fn>Don't make the mistake of thinking that <m>C_1</m>
+where<fn>Don't make the mistake of thinking that <m>C_1</m>
 and <m>C_2</m> have to be real numbers, forcing <m>D_2</m> to be pure  imaginary.
 In most applications, <m>D_1</m> and <m>D_2</m> will be pure real and <m>C_1</m> and
 <m>C_2</m> will be complex.</fn>
@@ -271,9 +269,9 @@ coordinates of that point <m>A</m> and <m>\theta</m> so that <m>D_1=A\cos\theta<
 =\cos \alpha\cos\beta-\sin \alpha\sin \beta</m>, with <m>\alpha=\nu t</m> and <m>\beta=-\theta</m>,
 <men xml:id="eqn_RLCampPhase">
 \begin{split}
-e^{-\rho t}\big[D_1\cos(\nu t)+D_2\sin(\nu t)\big]
-&amp;=e^{-\rho t}\big[A\cos(\nu t)\cos\theta+A\sin(\nu t)\sin\theta\big]\\
-&amp;=Ae^{-\rho t}\cos(\nu t-\theta)
+&amp;e^{-\rho t}\big[D_1\cos(\nu t)+D_2\sin(\nu t)\big]\\
+&amp;\hskip0.5in=e^{-\rho t}\big[A\cos(\nu t)\cos\theta+A\sin(\nu t)\sin\theta\big]\\
+&amp;\hskip0.5in=Ae^{-\rho t}\cos(\nu t-\theta)
 \end{split}
 </men>
 We have, in effect, replaced the two arbitrary constants <m>D_1</m> and <m>D_2</m>,
@@ -287,11 +285,9 @@ be determined by initial conditions.
 Then <m>R^2C^2-4LC=0</m> so that <m>r_1=r_2</m>. We may take
 <m>y_1=e^{r_1t}</m>, but <m>e^{r_2t}=e^{r_1t}</m> is certainly not a second independent
 solution. So we still need to find <m>y_2</m>.
-Here is a trick (called reduction of order
-<fn>The modern method of reduction of order was created by the French mathematician, physicist
+Here is a trick (called reduction of order<fn>The modern method of reduction of order was created by the French mathematician, physicist
 and music theorist Jean le Rond d'Alembert (1717-1783). The interested reader
-can easily search out more about his life.</fn>
-) for finding
+can easily search out more about his life.</fn>) for finding
 the other solutions:
 look for solutions of the form  <m>v(t)e^{-r_1 t}</m>. Here <m>e^{-r_1 t}</m>
 is the solution we have already found and <m>v(t)</m> is to be determined.
@@ -301,7 +297,7 @@ substitute that <m>\frac{R}{L}=2\rho</m> and
 <m>\frac{1}{LC}=\frac{R^2}{4L^2}=\rho^2</m>.  (Recall that we are assuming
 that <m>R^2=\frac{4L}{C}</m>.) So (<xref ref="eqn_ODERy"/><m>_{\rm h}</m>) is equivalent to
 <me>
-y_h'(t)+2\rho\,y_h'(t)+\rho^2\,y_h(t)=0
+y_h''(t)+2\rho\,y_h'(t)+\rho^2\,y_h(t)=0
 </me>
 Substitute in
 <md>
@@ -310,23 +306,23 @@ y_h(t)&amp;=\ \ \  v(t)e^{-\rho t}
 </mrow><mrow>
 y_h'(t)&amp;= -\rho v(t)e^{-\rho t}+\phantom{2\rho}v'(t)e^{-\rho t}
 </mrow><mrow>
-y_h'(t)&amp;= \phantom{-}\rho^2 v(t)e^{-\rho t}-2\rho v'(t)e^{-\rho t}
-                  +v'(t)e^{-\rho t}
+y_h''(t)&amp;= \phantom{-}\rho^2 v(t)e^{-\rho t}-2\rho v'(t)e^{-\rho t}
+                  +v''(t)e^{-\rho t}
 </mrow>
 </md>
 So when <m>y_h(t)=v(t)e^{-\rho t}</m>,
 <md>
 <mrow>
-&amp;y_h'(t)+2\rho\,y_h'(t)+\rho^2\,y_h(t)
+&amp;y_h''(t)+2\rho\,y_h'(t)+\rho^2\,y_h(t)
 </mrow><mrow>
-&amp;\hskip1in=\big[\rho^2\!-\!2\rho^2\!+\!\rho^2\big]v(t)e^{-\rho t}
-       +\big[-2\rho\!+\!2\rho\big]v'(t)e^{-\rho t}+v'(t)e^{-\rho t}
+&amp;\hskip0.5in=\big[\rho^2\!-\!2\rho^2\!+\!\rho^2\big]v(t)e^{-\rho t}
+       +\big[-2\rho\!+\!2\rho\big]v'(t)e^{-\rho t}+v''(t)e^{-\rho t}
 </mrow><mrow>
-&amp;\hskip1in=v'(t)e^{-\rho t}
+&amp;\hskip0.5in=v''(t)e^{-\rho t}
 </mrow>
 </md>
 Thus <m>v(t)e^{-\rho t}</m> is a solution of (<xref ref="eqn_ODERy"/><m>_{\rm h}</m>) whenever the function
-<m>v'(t)=0</m> for all <m>t</m>. But, for any values of the constants <m>C_1</m> and <m>C_2</m>,
+<m>v''(t)=0</m> for all <m>t</m>. But, for any values of the constants <m>C_1</m> and <m>C_2</m>,
 <m>v(t)=C_1+C_2t</m> has vanishing second derivative
 so <m>\big(C_1+C_2t\big)e^{-\rho t}=\big(C_1+C_2t\big)e^{-r_1 t}</m> solves
 (<xref ref="eqn_ODERy"/><m>_{\rm h}</m>). This is of the form  <m>C_1y_1(t)+C_2y_2(t)</m> with
@@ -347,14 +343,18 @@ and phase <m>\varphi</m> to be determined.
 <p>For <m>y_p(t)</m> to be a solution, we need
 <md>
 <mrow>
-LCy_p'(t)+RCy_p'(t)+y_p(t)
+LCy_p''(t)+RCy_p'(t)+y_p(t)
    &amp;=E_0 \sin(\om t)
-</mrow><mrow>
--LC\om^2\mathcal{A}\sin(\om t-\varphi)+RC\om \mathcal{A}\cos(\om t-\varphi)
+</mrow>
+</md>
+or
+<md>
+<mrow>
+&amp;-LC\om^2\mathcal{A}\sin(\om t-\varphi)+RC\om \mathcal{A}\cos(\om t-\varphi)
 +\mathcal{A}\sin(\om t-\varphi)
-&amp;=E_0 \sin(\om t)
+</mrow><mrow>&amp;\hskip2in=E_0 \sin(\om t)
 </mrow><mrow>
-&amp;=E_0 \sin(\om t-\varphi+\varphi)
+&amp;\hskip2in=E_0 \sin(\om t-\varphi+\varphi)
 </mrow>
 </md>
 and hence, applying <m>\sin(A+B)=\sin A\cos B+\cos A\sin B</m> with <m>A=\om
@@ -362,7 +362,7 @@ t-\varphi</m> and <m>B=\varphi</m>,
 <md>
 <mrow>
 &amp;\big(1-LC\om^2\big)\mathcal{A}\sin(\om t-\varphi)+RC\om \mathcal{A}\cos(\om t-\varphi)
-</mrow><mrow>&amp;\hskip2in
+</mrow><mrow>&amp;\hskip1in
 =E_0 \cos(\varphi)\sin(\om t-\varphi)
 + E_0 \sin(\varphi)\cos(\om t-\varphi)
 </mrow>
@@ -399,7 +399,7 @@ amplitudes <m>\mathcal{A}</m>. Here is a graph of <m>\mathcal{A}</m> against <m>
 with all other parameters held fixed.
 </p>
 
-<sidebyside>
+<sidebyside width="50%">
 <image source="figs/resonance"/>
 </sidebyside>
 
@@ -407,16 +407,14 @@ with all other parameters held fixed.
 Note that there is a small range of frequencies that give a large
 amplitude response. This is the phenomenon of resonance. It is exploited
 in the design of radio and television tuning circuitry. It has also been
-dramatically illustrated in, for example, the collapse
-<fn>There are videos of the collapse on the web.</fn>
+dramatically illustrated in, for example, the collapse<fn>There are videos of the collapse on the web.</fn>
  of the Tacoma narrows bridge.
 </p></example>
 
 <example xml:id="exBVP"><title>Boundary Value Problems</title>
 <p>
 By part (b) of Theorem <xref ref="thm_odeMain"/>, an initial value problem consisting
-of an <m>n^{\rm th}</m> order linear ODE with reasonable
-<fn>For example, continuous.</fn>
+of an <m>n^{\rm th}</m> order linear ODE with reasonable<fn>For example, continuous.</fn>
  coefficients and <m>n</m>
 initial conditions always has exactly one solution. We shall now see that
 a boundary value problem may have no solutions at all. Or it may have exactly
@@ -432,8 +430,7 @@ We shall then impose various boundary conditions and see what happens.
 <me>
 r^2e^{rt}+e^{rt}=0\iff r^2+1=0\iff r=\pm i
 </me>
-where <m>i</m> (which electrical engineers often denote
-<fn>This is to avoid confusion with the current, which is typically called <m>i</m>.</fn>
+where <m>i</m> (which electrical engineers often denote<fn>This is to avoid confusion with the current, which is typically called <m>i</m>.</fn>
   <m>j</m>) is a square root
 of <m>-1</m>. Thus the general solution to the second order linear ODE  <xref ref="eqnbvODE"/>
 is <m>y(t)=C'_1 e^{it}+C'_2e^{-it}</m>, with <m>C_1'</m> and <m>C_2'</m> arbitrary constants.

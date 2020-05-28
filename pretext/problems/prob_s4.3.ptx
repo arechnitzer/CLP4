@@ -80,7 +80,7 @@ The boundary of <m>R</m>, oriented counterclockwise, is the union of four
 line segments.
 </p>
 
-<sidebyside width="45%">
+<sidebyside widths="45% 30%" valign="middle">
 <p>
   <md>
   <mrow>C_1 \text{ from } (0,0) \text{ to } (1,0)</mrow>
@@ -128,7 +128,7 @@ where <m>\vF=F_1\,\hi+F_2\,\hj</m>, <m>\hn</m> is the outward unit normal to <m>
 is the arclength along <m>C</m>.
 </p>
 
-<sidebyside width="75%">
+<sidebyside width="45%">
 <image source="pfigs/GreenDiv"/>
 </sidebyside>
 </statement>
@@ -189,7 +189,7 @@ Use the right hand rule to check that <m>\vr'(s)\times\hk</m> is
 </ul>
 </p>
 
-<sidebyside width="75%">
+<sidebyside width="35%">
 <image source="pfigs/GreenDivB"/>
 </sidebyside>
 
@@ -200,7 +200,8 @@ So, by Green's theorem,
 \oint_C\vF\cdot\hn\,\dee{s}
 &amp;=\oint_C\left[F_1\,\diff{y}{s}-F_2\,\diff{x}{s}\right]\,\dee{s}
 =\oint_C\left[-F_2\,\dee{x}+F_1\,\dee{y}\right]
-=\dblInt_R\left[\pdiff{}{x}F_1-\pdiff{}{y}(-F_2)\right]\ \dee{x}\,\dee{y}
+</mrow><mrow>
+&amp;=\dblInt_R\left[\pdiff{}{x}F_1-\pdiff{}{y}(-F_2)\right]\ \dee{x}\,\dee{y}
 </mrow><mrow>
 &amp;=\dblInt_R\vnabla\cdot\vF\ \dee{x}\,\dee{y}
 </mrow>
@@ -241,9 +242,11 @@ Use direct evaluation!
 <md>
 <mrow>
 \frac{1}{2\pi}\oint_C \frac{x\,\dee{y}-y\,\dee{x}}{x^2+y^2}
-=\frac{1}{2\pi}\int_0^{2\pi} \frac{a^2\cos^2\theta\,\dee{\theta}+a^2\sin^2\theta\,\dee{\theta}}
+&amp;=\frac{1}{2\pi}\int_0^{2\pi} \frac{a^2\cos^2\theta\,\dee{\theta}+a^2\sin^2\theta\,\dee{\theta}}
              {a^2\cos^2\theta+a^2\sin^2\theta}
-=\frac{1}{2\pi}\int_0^{2\pi}\dee{\theta}=1
+=\frac{1}{2\pi}\int_0^{2\pi}\dee{\theta}
+</mrow><mrow>
+&amp;=1
 </mrow>
 </md>
 </p>
@@ -252,7 +255,7 @@ Use direct evaluation!
 with <m>y=-1</m>, one with <m>x=1</m>, one with <m>y=1</m> and one with <m>x=-1</m>.
 </p>
 
-<sidebyside width="75%">
+<sidebyside width="40%">
 <image source="pfigs/singGnA"/>
 </sidebyside>
 <p>
@@ -281,9 +284,10 @@ so that the integral
 \frac{1}{2\pi}\oint_C \frac{x\,\dee{y}-y\,\dee{x}}{x^2+y^2}
 &amp;=\frac{1}{2\pi}\overbrace{\int_{-1}^1 \frac{-(-1)\dee{x}}{x^2+1}}^{y=-1{\rm\ part}}
 +\frac{1}{2\pi}\overbrace{\int_{-1}^1 \frac{(1)\dee{y}}{1+y^2}}^{x=+1{\rm\ part}}
+</mrow><mrow>
+&amp;\hskip0.25in
 +\frac{1}{2\pi}\overbrace{\int^{-1}_1 \frac{-(1)\dee{x}}{x^2+1}}^{y=+1{\rm\ part}}
 +\frac{1}{2\pi}\overbrace{\int^{-1}_1 \frac{(-1)\dee{y}}{1+y^2}}^{x=-1{\rm\ part}}
-
 </mrow><mrow>
 &amp;=4\frac{1}{2\pi}\arctan x\bigg|_{-1}^1
 =\frac{2}{\pi}\Big[\frac{\pi}{4}+\frac{\pi}{4}\Big]
@@ -303,7 +307,7 @@ the outer semicircle gives
 </me>
 </p>
 
-<sidebyside width="75%">
+<sidebyside width="55%">
 <image source="pfigs/singGnB"/>
 </sidebyside>
 
@@ -390,13 +394,16 @@ and
 <m>\pdiff{}{y}\Big( \frac{-y}{x^2+y^2}\Big)</m>
 are well-defined and equal everywhere in <m>R</m>. So by Green's
 theorem
-<me>
+<md>
+<mrow>
 \frac{1}{2\pi}\oint_C \frac{x\,\dee{y}-y\,\dee{x}}{x^2+y^2}
-=\frac{1}{2\pi}\dblInt_R\left[
+&amp;=\frac{1}{2\pi}\dblInt_R\left[
    \pdiff{}{x}\Big( \frac{x}{x^2+y^2}\Big)
  -\pdiff{}{y}\Big( \frac{-y}{x^2+y^2}\Big)\right]\dee{x}\, \dee{y}
-=0
-</me>
+</mrow><mrow>
+&amp;=0
+</mrow>
+</md>
 which is the answer we got before.
 </p>
 
@@ -416,7 +423,7 @@ The other part is <m>C_a</m>, but oriented clockwise rather than
 counterclockwise. We'll call it <m>-C_a</m>.
 </p>
 
-<sidebyside width="75%">
+<sidebyside width="37%">
   <image source="pfigs/singGnC"/>
 </sidebyside>
 
@@ -426,13 +433,16 @@ Again the partial derivatives
 and
 <m>\pdiff{}{y}\Big( \frac{-y}{x^2+y^2}\Big)</m>
 are well-defined and equal everywhere in <m>R</m>. So by Green's theorem
-<me>
+<md>
+<mrow>
 \frac{1}{2\pi}\oint_{\partial R} \frac{x\,\dee{y}-y\,\dee{x}}{x^2+y^2}
-=\frac{1}{2\pi}\dblInt_R\left[
+&amp;=\frac{1}{2\pi}\dblInt_R\left[
    \pdiff{}{x}\Big( \frac{x}{x^2+y^2}\Big)
  -\pdiff{}{y}\Big( \frac{-y}{x^2+y^2}\Big)\right]\dee{x}\, \dee{y}
-=0
-</me>
+</mrow><mrow>
+&amp;=0
+</mrow>
+</md>
 Consequently
 <md>
 <mrow>
@@ -473,7 +483,7 @@ using Green's theorem.
 <p>
 Here is a sketch of <m>C</m>.
 </p>
-<sidebyside width="75%">
+<sidebyside width="30%">
 <image source="pfigs/square3"/>
 </sidebyside>
 
@@ -505,12 +515,15 @@ this segment is
 The third line segment may be parametrized
 <m>\vr(t)=(3-t,3),\ 0\le t\le 3</m>. So the line integral along
 this segment is
-<me>
+<md>
+<mrow>
 \int_0^3 \vF(\vr(t))\cdot\diff{\vr}{t}\ \dee{t}
-=\int_0^3 \big(9(3-t)^2\,,\, 6(3-t)\big)\cdot(-1\,,\,0)\ \dee{t}
-=-\int_0^3 9(3-t)^2\ \dee{t}
+&amp;=\int_0^3 \big(9(3-t)^2\,,\, 6(3-t)\big)\cdot(-1\,,\,0)\ \dee{t}
+</mrow><mrow>
+&amp;=-\int_0^3 9(3-t)^2\ \dee{t}
 =-81
-</me>
+</mrow>
+</md>
 </li>
 <li>
 The final line segment may be parametrized
@@ -571,7 +584,7 @@ Try Green's theorem.
 Call the trapezoid <m>T</m>.
 </p>
 
-<sidebyside width="75%">
+<sidebyside width="26%">
 <image source="pfigs/trapGn"/>
 </sidebyside>
 
@@ -629,11 +642,14 @@ denote the half-disk <m>0\le y\le \sqrt{4-x^2}</m>,
 <mrow>
 &amp;\ds\oint_{\cC} \Big(\frac{1}{3}x^2y^3-x^4y\Big)\,\dee{x}
 +\big(xy^4+x^3y^2\big)\,\dee{y}
+</mrow><mrow>
+&amp;\hskip1in
 =\dblInt_D\Big[\pdiff{}{x}\big(xy^4+x^3y^2\big)
 -\pdiff{}{y}\Big(\frac{1}{3}x^2y^3-x^4y\Big) \Big] \dee{x} \dee{y}
 </mrow><mrow>
 &amp;\hskip1in=\dblInt_D\big(x^4+2x^2y^2+y^4\big)\ \dee{x} \dee{y}
-=\dblInt_D\big(x^2+y^2\big)^2\ \dee{x} \dee{y}
+</mrow><mrow>
+&amp;=\dblInt_D\big(x^2+y^2\big)^2\ \dee{x} \dee{y}
 </mrow>
 </md>
 Switching to polar coordinates
@@ -643,7 +659,8 @@ Switching to polar coordinates
 +\big(xy^4+x^3y^2\big)\,\dee{y}
 &amp;=\int_0^2 dr\ r\int_0^{\pi}\dee{\theta}\ r^4
 ={\pi\frac{r^6}{6}\bigg|}_0^2
-=\frac{32}{3}\pi
+</mrow><mrow>
+&amp;=\frac{32}{3}\pi
 </mrow>
 </md>
 </p>
@@ -664,13 +681,13 @@ I&amp;=\int_{\cC_2} \Big(\frac{1}{3}x^2y^3-x^4y\Big)\,\dee{x}
 +\big(xy^4+x^3y^2\big)\,\dee{y}
 </mrow><mrow>
 &amp;=\int_0^\pi\Big[ \Big(\frac{1}{3}x(\theta)^2y(\theta)^3-x(\theta)^4y(\theta)\Big)\,x'(\theta)
+</mrow><mrow>
+&amp;\hskip2in
 +\big(x(\theta)y(\theta)^4+x(\theta)^3y(\theta)^2\big)y'(\theta)\Big]
           \dee{\theta}
-
 </mrow><mrow>
 &amp;=\int_0^\pi\Big[ \Big(\frac{1}{3}2^5\cos^2\theta\sin^3\theta-2^5\cos^4\theta\sin\theta\Big)\,
                  (-2\sin\theta)
-
 </mrow><mrow>&amp;\hskip2in
 +\big(2^5\cos\theta\sin^4\theta+2^5\cos^3\theta\sin^2\theta\big)\,
                (2\cos\theta)\Big]\dee{\theta}
@@ -719,7 +736,7 @@ Let's use Green's theorem. The
 rectangle, which we shall denote <m>\cR</m>, is
 </p>
 
-<sidebyside width="45%">
+<sidebyside widths="45% 51%" valign="middle">
   <p><m>\cR=\set{(x,y)}{1\le x\le 3,\ 0\le y\le 1}</m></p>
 <image source="pfigs/domainPlgmB"/>
 </sidebyside>
@@ -728,21 +745,22 @@ rectangle, which we shall denote <m>\cR</m>, is
 So Green's theorem gives
 <md>
 <mrow>
-\oint_\cC\big(3y^2+2xe^{y^2}\big)\,\dee{x} + \big(2yx^2 e^{y^2}\big)\,\dee{y}
-&amp;=\dblInt_\cR \Big[
+&amp;\oint_\cC\big(3y^2+2xe^{y^2}\big)\,\dee{x} + \big(2yx^2 e^{y^2}\big)\,\dee{y}
+</mrow><mrow>
+&amp;\hskip1in=\dblInt_\cR \Big[
       \pdiff{}{x}\big(2yx^2 e^{y^2}\big)
      -\pdiff{}{y}\big(3y^2+2xe^{y^2}\big)
    \Big]\,\dee{x} \dee{y}
 </mrow><mrow>
-&amp;=\dblInt_\cR \Big[
+&amp;\hskip1in=\dblInt_\cR \Big[
       4xy e^{y^2}
      -6y -4xye^{y^2}
    \Big]\,\dee{x} \dee{y}
 </mrow><mrow>
-&amp; = -6 \int_1^3 \dee{x}\int_0^1 \dee{y}\ y
+&amp;\hskip1in = -6 \int_1^3 \dee{x}\int_0^1 \dee{y}\ y
        = -6 \int_1^3 \dee{x}\ \frac{1}{2}
 </mrow><mrow>
-&amp;=-6
+&amp;\hskip1in=-6
 </mrow>
 </md>
 </p></solution>
@@ -773,8 +791,8 @@ Do not compute the integral directly.
 </p></hint>
 
 <answer>
-<sidebyside widths="10% 70%">
-  <p>(a)</p>
+<p>(a)</p>
+<sidebyside width="57%">
   <image source="pfigs/OE16A_1a"/>
 </sidebyside>
 <p>
@@ -791,7 +809,7 @@ x^2 + 4x + 4 = 4 - x^2
 So the curves intersect at <m>(0,4)</m> and  <m>(-2,0)</m>. Here is a sketch.
 </p>
 
-<sidebyside width="75%">
+<sidebyside width="57%">
 <image source="pfigs/OE16A_1"/>
 </sidebyside>
 
@@ -848,7 +866,7 @@ complicated. So let's try Green's theorem. The curve <m>C</m> is the
 boundary of the triangle
 </p>
 
-<sidebyside width="45%">
+<sidebyside widths="50% 30%" valign="middle">
 <p><m>  T = \Set{(x,y)}{0\le x\le 1, 0\le y\le 2x}
 </m></p>
 <image source="pfigs/OE10D_4"/>
@@ -910,7 +928,7 @@ don't evaluate this integral directly.
 Here is a sketch of the two curves in question.
 </p>
 
-<sidebyside width="75%">
+<sidebyside width="33%">
   <image source="pfigs/OE09A_4"/>
 </sidebyside>
 
@@ -927,8 +945,7 @@ and
 <me>
 R=\Set{(x,y)}{x^2 - 4x+3 \le y\le 3 - x^2 + 2x,\ 0\le x\le 3}
 </me>
-By Green's theorem, which is Theorem <xref ref="thm_Green"/>
-in the CLP-4 text,
+By Green's theorem, which is Theorem <xref ref="thm_Green"/>,
 <md>
 <mrow>
 \int_C \big(2xe^y + \sqrt{2 + x^2}\big)\, \dee{x}
@@ -984,7 +1001,7 @@ So let's try Green's theorem. Denote by <m>T</m>, the triangle
 </p>
 
 
-<sidebyside width="45%">
+<sidebyside widths="50% 33%" valign="middle">
   <p><m>T = \Set{(x,y)}{0\le x\le 1,\ -2x\le y\le 2x}</m></p>
   <image source="pfigs/OE06A_4"/>
 </sidebyside>
@@ -1098,7 +1115,7 @@ R = \Set{(x,y)}{-2\le x\le 2,\ \tfrac{x^2}{4}+1\le y\le 2}
 Here is a sketch of <m>R</m>.
 </p>
 
-<sidebyside width="75%">
+<sidebyside width="60%">
   <image source="pfigs/OE15A_3"/>
 </sidebyside>
 <p>
@@ -1128,10 +1145,12 @@ on all of <m>R</m>. So, by Green's theorem (Theorem <xref ref="thm_Green"/>),
 </mrow><mrow>
 &amp;=\int_{-L}\vF\cdot\dee{\vr}
   =\int_{-2}^2 \vF_1\,\dee{x}
+</mrow><mrow>
+&amp;
   =-\int_{-2}^2\frac{2}{x^2+4} \,\dee{x}\quad\text{since $y=2$ on $L$}
 </mrow><mrow>
 &amp;=-\int_{-1}^1\frac{4}{4u^2+4} \,\dee{x}
-\qquad\text{with } x=2u, \dee{x}=2\dee{u}
+\quad\text{with } x=2u, \dee{x}=2\dee{u}
 </mrow><mrow>
 &amp;=-\arctan u\Big|_{-1}^1 =-\frac{\pi}{2}
 </mrow>
@@ -1148,7 +1167,7 @@ R = \Set{(x,y)}{-2\le x\le 2,\ x^2-2\le y\le 2}
 </me>
 This <m>R</m> is sketched below.
 </p>
-<sidebyside width="75%">
+<sidebyside width="52%">
   <image source="pfigs/OE15A_3b1"/>
 </sidebyside>
 <p>
@@ -1179,7 +1198,7 @@ W = \Set{(x,y)}{-2\le x\le 2,\ x^2-2\le y\le 2,\ x^2+y^2\ge\rho^2}
 that is sketched below.
 </p>
 
-<sidebyside width="75%">
+<sidebyside width="52%">
  <image source="pfigs/OE15A_3b2"/>
 </sidebyside>
 
@@ -1195,12 +1214,13 @@ is well-defined and zero throughout <m>W</m>. So, by Green's theorem
 (Theorem <xref ref="thm_Green"/>),
 <md>
 <mrow>
-\int_C \frac{-y}{x^2+y^2}\dee{x} + \frac{x}{x^2+y^2}\dee{y}
-&amp;=\dblInt_W \Big(\pdiff{}{x} \vF_2 -
+&amp;\int_C \frac{-y}{x^2+y^2}\dee{x} + \frac{x}{x^2+y^2}\dee{y}
+</mrow><mrow>
+&amp;\hskip0.5in=\dblInt_W \Big(\pdiff{}{x} \vF_2 -
           \pdiff{}{y} \vF_1 \Big)\dee{x}\dee{y}
  - \int_L\vF\cdot\dee{\vr}- \int_{-C_\rho}\vF\cdot\dee{\vr}
 </mrow><mrow>
-&amp;=\int_{-L}\vF\cdot\dee{\vr}
+&amp;\hskip0.5in=\int_{-L}\vF\cdot\dee{\vr}
   + \int_{C_\rho}\vF\cdot\dee{\vr}
 </mrow>
 </md>
@@ -1223,7 +1243,8 @@ to evaluate
                {\vF(\vr(\theta))}\Big)
  \cdot\big(\overbrace{-\rho\sin\theta\,\hi +\rho\cos\theta\,\hj}^
                      {\vr'(\theta)}\big)\,\dee{\theta}
-=\int_0^{2\pi}\dee{\theta}
+</mrow><mrow>
+&amp;=\int_0^{2\pi}\dee{\theta}
 </mrow><mrow>
 &amp;=2\pi
 </mrow>
@@ -1242,7 +1263,7 @@ All together
 two different values for the integrals along two paths, both of which start
 at <m>(-2,2)</m> and end at <m>(2,2)</m>. So <m>\vF</m> does not have the
 <q>path independence</q> property of Theorem <xref ref="thm_pathIndepConserv"/>.c
-in the CLP-4 text and cannot be conservative.
+and cannot be conservative.
 </p></solution>
 </exercise>
 
@@ -1300,7 +1321,7 @@ R= \Set{(x,y)}{0\le x\le 3,\ x^2 - 4x + 3 \le y\le  3 - x^2 + 2x}
 It is sketched below.
 </p>
 
-<sidebyside width="75%">
+<sidebyside width="68%">
 <image source="pfigs/OE12J_7"/>
 </sidebyside>
 
@@ -1319,7 +1340,8 @@ By Green's theorem  (Theorem <xref ref="thm_Green"/>),
 &amp;\hskip1in = \dblInt_R \big(2x(2+e^y) - 2xe^y\big)\,\dee{x}\dee{y}
 </mrow><mrow>
 &amp;\hskip1in =4 \int_0^3\dee{x}\int_{x^2 - 4x + 3}^{3 - x^2 + 2x}\dee{y}\  x
-=4 \int_0^3\dee{x}\ x\big[(3 - x^2 + 2x) - (x^2 - 4x + 3)\big]
+</mrow><mrow>
+&amp;=4 \int_0^3\dee{x}\ x\big[(3 - x^2 + 2x) - (x^2 - 4x + 3)\big]
 </mrow><mrow>
 &amp;\hskip1in =4 \int_0^3\dee{x}\ \big(6x^2-2x^3\big)
 = 4\big(2\times 3^3-\frac{1}{2}3^4\big)
@@ -1373,7 +1395,7 @@ I_2 = \int_{C_2} \vF\cdot\dee{\vr}
 </me>
 </p>
 
-<sidebyside width="45%">
+<sidebyside widths="43% 43%" valign="middle">
 <image source="pfigs/OE16D_4a"/>
 <image source="pfigs/OE16D_4b"/>
 </sidebyside>
@@ -1480,7 +1502,7 @@ and, as <m>Q_x-P_y</m> is well-defined and zero throughout <m>R_5</m>,
 So <m>\int_{C_4} \vF\cdot\dee{\vr} = \int_{C_\rho} \vF\cdot\dee{\vr}=\pi</m>.
 </p>
 
-<sidebyside width="45%">
+<sidebyside widths="43% 43%" valign="middle">
   <image source="pfigs/OE16D_4c"/>
    <image source="pfigs/OE16D_4d"/>
 </sidebyside>
@@ -1558,7 +1580,8 @@ So
 &amp;=\int_0^{2\pi} \overbrace{\frac{1}{R}
    \left\{\big(\cos\theta+\sin\theta\big)\hi
            +\big(\sin\theta-\cos\theta\big)\hj\right\}}^{\vF(\vr(\theta))}
-       \cdot
+</mrow><mrow>
+&amp;\hskip2in       \cdot
      \big(\overbrace{-R\sin\theta\,\hi+R\cos\theta\,\hj}^{\vr'(\theta)}\big)
            \,\dee{\theta}
 
@@ -1582,7 +1605,7 @@ test <m>\vnabla\times\vF=\vZero</m> at <m>(x,y)=(0,0)</m>.
 region in the figure
 </p>
 
-<sidebyside width="75%">
+<sidebyside width="37%">
 <image source="pfigs/OE17A_6a"/>
 </sidebyside>
 
@@ -1614,7 +1637,7 @@ the region <m>\cR</m> defined by removing the interior of the circle <m>C_r</m>
 from the interior of the triangle <m>C</m>. It is the grey region sketched below.
 </p>
 
-<sidebyside width="75%">
+<sidebyside width="53%">
 <image source="pfigs/OE17A_6b"/>
 </sidebyside>
 
@@ -1692,7 +1715,8 @@ gives
 <mrow>
 \int_C \sqrt{1+x^3}\,\dee{x} +\big(2xy^2 + y^2\big)\,\dee{y}
 &amp; = \int_C F_1(x,y)\,\dee{x}+F_2(x,y)\,\dee{y}
-  = \dblInt_R \Big(\frac{\partial F_2}{\partial x}
+</mrow><mrow>
+&amp;  = \dblInt_R \Big(\frac{\partial F_2}{\partial x}
            - \frac{\partial F_1}{\partial y}\Big)\ \dee{x}\dee{y}
 </mrow><mrow>
 &amp;= 2 \dblInt_R y^2\ \dee{x}\dee{y}
@@ -1707,7 +1731,8 @@ Switching to polar coordinates
 </mrow><mrow>
 &amp;= 2\left[\int_0^{2\pi}\dee{\theta}\ \sin^2\theta\right]
    \left[\int_0^1\dee{r}\ r^3\right]
-=2\ \pi\ \frac{1}{4}
+</mrow><mrow>
+&amp;=2\ \pi\ \frac{1}{4}
 =\frac{\pi}{2}
 </mrow>
 </md>
@@ -1722,7 +1747,7 @@ To do the <m>\theta</m> integral, we have used
 </md>
 For an efficient, sneaky, way to evaluate
 <m>\int_0^{2\pi} \sin^2 \theta\ \dee{\theta}</m>, see Example
-<xref ref="eg_workIntegalB"/>.
+<xref ref="eg_workIntegralB"/>.
 </p>
 
 <p>(b) It is again natural to use Green's theorem.
@@ -1735,7 +1760,7 @@ R = \Set{(x,y)}{x^2+y^2\le 1,\ x\ge 0}
 Here is a sketch of <m>R</m>.
 </p>
 
-<sidebyside width="75%">
+<sidebyside width="40%">
  <image source="pfigs/OE17D_7"/>
 </sidebyside>
 
@@ -1767,7 +1792,9 @@ on all of <m>R</m>. So, by Green's theorem (Theorem <xref ref="thm_Green"/>),
 </mrow><mrow>
 &amp;\hskip0.25in\text{by symmetry for the first integral and}
 </mrow><mrow>
-&amp;\hskip0.25in\text{since $x=0$ and $\dee{x}=0$ in the second integral}
+&amp;\hskip0.25in\text{since $x=0$ and $\dee{x}=0$ in the}
+</mrow><mrow>
+&amp;\hskip0.25in\text{second integral}
 </mrow><mrow>
 &amp;=\frac{\pi}{4} + \frac{2}{3}
 </mrow>
@@ -1803,7 +1830,7 @@ some ingenuity). Try to find all three.
 <solution><p>
 First, here is a sketch of the curve <m>C</m>.
 </p>
-<sidebyside width="75%">
+<sidebyside width="27%">
   <image source="pfigs/OE07A_6"/>
 </sidebyside>
 
@@ -1828,7 +1855,8 @@ So the integral is
 </mrow><mrow>
 &amp;\hskip0.5in
   =\int_{-\pi/2}^{\pi/2}\Big\{ \big[x(t)^2 +y(t) e^{x(t)}\big]\diff{x}{t}(t)
-                        +  \big[x(t) \cos(y(t)) + e^{x(t)}\big]\diff{y}{t}(t)
+</mrow><mrow>
+&amp;\hskip2in     +  \big[x(t) \cos(y(t)) + e^{x(t)}\big]\diff{y}{t}(t)
                         \Big\}\dee{t}
 </mrow><mrow>
 &amp;\hskip0.5in
@@ -1862,7 +1890,7 @@ So the integral is
 </md>
 For an efficient, sneaky, way to evaluate
 <m>\int_{-\pi/2}^{\pi/2} \cos^2 t\ \dee{t}</m> see Example
-<xref ref="eg_workIntegalB"/>.
+<xref ref="eg_workIntegralB"/>.
 </p></li>
 <li><p> <em>Green's (or Stokes') theorem:</em>
 The curve <m>C</m> is not closed so we cannot apply Green's theorem directly.
@@ -1876,7 +1904,7 @@ is the line <m>L</m> from <m>\big(0,\frac{\pi}{2}\big)</m>
 to <m>\big(0,-\frac{\pi}{2}\big)</m>.
 </p>
 
-<sidebyside width="75%">
+<sidebyside width="28%">
   <image source="pfigs/OE07A_6b"/>
 </sidebyside>
 
@@ -1888,6 +1916,8 @@ So Green's theorem gives
 </mrow><mrow>
 &amp;\hskip0.25in=\dblInt_R \Big\{\pdiff{}{x}(x \cos y + e^x )
           -\pdiff{}{y}(x^2 + y e^x )\Big\}\dee{x}\dee{y}
+</mrow><mrow>
+&amp;\hskip0.5in
 -\int_L (x^2 + y e^x ) \,\dee{x} + (x \cos y + e^x ) \,\dee{y}
 </mrow><mrow>
 &amp;\hskip0.25in=\dblInt_R \cos y\ \dee{x}\dee{y}  -  \int_L \,\dee{y}\qquad
@@ -1988,13 +2018,16 @@ Use this to calculate the area inside the curve
 <solution><p>
 Call the region enclosed by the curve <m>R</m>. By Green's theorem,
 Theorem <xref ref="thm_Green"/>,
-<me>
+<md>
+<mrow>
 \frac{1}{2}\oint_C x\,\dee{y}-y\,\dee{x}
-=\frac{1}{2}\dblInt_R\Big(\pdiff{}{x}x
+&amp;=\frac{1}{2}\dblInt_R\Big(\pdiff{}{x}x
 -\pdiff{}{y}(-y)\Big)\ \dee{x}\dee{y}
 =\frac{1}{2}\dblInt_R 2\ \dee{x}\dee{y}
-=A
-</me>
+</mrow><mrow>
+&amp;=A
+</mrow>
+</md>
 as desired. The curve <m>x^{2/3}+y^{2/3}=1</m> may be parametrized in the
 counterclockwise orientation by <m>x(\theta)=\cos^3\theta</m>, <m>y(\theta)=\sin^3\theta</m>,
 <m>0\le\theta\le 2\pi</m>. Then
@@ -2003,7 +2036,8 @@ counterclockwise orientation by <m>x(\theta)=\cos^3\theta</m>, <m>y(\theta)=\sin
 A&amp;=\frac{1}{2}\oint_C x\,\dee{y}-y\,\dee{x}
 </mrow><mrow>
 &amp;=\frac{1}{2}\int_0^{2\pi}\big( x(\theta)y'(\theta)-y(\theta)x'(\theta)\big)\ \dee{\theta}
-=\frac{1}{2}\int_0^{2\pi}\big( 3\cos^4\theta\sin^2\theta+3\sin^4\theta\cos^2\theta\big)\ \dee{\theta}
+</mrow><mrow>
+&amp;=\frac{1}{2}\int_0^{2\pi}\big( 3\cos^4\theta\sin^2\theta+3\sin^4\theta\cos^2\theta\big)\ \dee{\theta}
 </mrow><mrow>
 &amp;=\frac{3}{2}\int_0^{2\pi}\sin^2\theta\cos^2\theta\ \dee{\theta}
 =\frac{3}{8}\int_0^{2\pi}\sin^2(2\theta)\ \dee{\theta}
@@ -2038,12 +2072,15 @@ Write <m>\oint_C\vF\cdot \dee{\vr}-A\oint_C\vG\cdot \dee{\vr}
 <solution><p>
 If we use <m>D</m> to denote the disk inside the circle <m>C</m>
 then we want
-<me>
+<md>
+<mrow>
 \oint_C\vF\cdot \dee{\vr}-A\oint_C\vG\cdot \dee{\vr}
-=\oint_C(\vF-A\vG)\cdot \dee{\vr}
-=\dblInt_D \Big[\pdiff{}{x}(\vF-A\vG)_2
+&amp;=\oint_C(\vF-A\vG)\cdot \dee{\vr}
+</mrow><mrow>
+&amp;=\dblInt_D \Big[\pdiff{}{x}(\vF-A\vG)_2
 -\pdiff{}{y}(\vF-A\vG)_1\Big]\,\dee{x}\dee{y}
-</me>
+</mrow>
+</md>
 to vanish for all disks <m>D</m>. We used Green's theorem, which is Theorem
 <xref ref="thm_Green"/>,  in the last step.
 This is the case if and only if
@@ -2106,7 +2143,8 @@ Note that <m>\vF(x,y)</m> is not defined at <m>(x,y)=(0,0)</m>.
 \oint_C\vF\cdot \dee{\vr}
 &amp;=\int_0^{2\pi}\vF\big(\vr(\theta)\big)\cdot \diff{\vr}{\theta}(\theta)\ \dee{\theta}
 =-\int_0^{2\pi}\sin^2\theta\ \dee{\theta}
-=-\int_0^{2\pi}\frac{1-\cos(2\theta)}{2}\ \dee{\theta}
+</mrow><mrow>
+&amp;=-\int_0^{2\pi}\frac{1-\cos(2\theta)}{2}\ \dee{\theta}
 </mrow><mrow>
 &amp;=-{\Big[\frac{\theta}{2}-\frac{\sin(2\theta)}{4}\Big]}_0^{2\pi}
 =-\pi
@@ -2114,7 +2152,7 @@ Note that <m>\vF(x,y)</m> is not defined at <m>(x,y)=(0,0)</m>.
 </md>
 For an efficient, sneaky, way to evaluate
 <m>\int_0^{2\pi} \sin^2\theta\ \dee{\theta}</m> see Example
-<xref ref="eg_workIntegalB"/>.
+<xref ref="eg_workIntegralB"/>.
 </p>
 
 <p>(b) Denote by <m>W</m> the washer shaped region between the circle
@@ -2130,17 +2168,17 @@ It is sketched below. By Green's theorem
 For the specified <m>\vF</m>
 <md>
 <mrow>
-\pdiff{}{x}\vF_2
+&amp;\pdiff{}{x}\vF_2
 -\pdiff{}{y}\vF_1
-&amp;=-\pdiff{}{x}\frac{xy^2}{ {(x^2+y^2)}^2}
+=-\pdiff{}{x}\frac{xy^2}{ {(x^2+y^2)}^2}
 -\pdiff{}{y}\frac{y^3}{ {(x^2+y^2)}^2}
 </mrow><mrow>
-&amp;=-\frac{y^2}{ {(x^2+y^2)}^2}+2\frac{xy^2(2x)}{ {(x^2+y^2)}^3}
+&amp;\hskip0.5in=-\frac{y^2}{ {(x^2+y^2)}^2}+2\frac{xy^2(2x)}{ {(x^2+y^2)}^3}
 -\frac{3y^2}{ {(x^2+y^2)}^2}+2\frac{y^3(2y)}{ {(x^2+y^2)}^3}
 </mrow><mrow>
-&amp;=\frac{-y^2(x^2+y^2)+4x^2y^2-3y^2(x^2+y^2)+4y^4}{ {(x^2+y^2)}^3}
+&amp;\hskip0.5in=\frac{-y^2(x^2+y^2)+4x^2y^2-3y^2(x^2+y^2)+4y^4}{ {(x^2+y^2)}^3}
 </mrow><mrow>
-&amp;=0
+&amp;\hskip0.5in=0
 </mrow>
 </md>
 Consequently
@@ -2151,7 +2189,7 @@ Consequently
 </me>
 </p>
 
-<sidebyside width="75%">
+<sidebyside width="30%">
   <image source="pfigs/OE01DQ6"/>
 </sidebyside>
 
@@ -2201,7 +2239,7 @@ denote by <m>W</m> the washer shaped region between the circle
 <m>\cC_2</m> and the circle <m>\cC_3</m>. It is sketched below.
 </p>
 
-<sidebyside width="75%">
+<sidebyside width="43%">
   <image source="pfigs/OE01AQ5"/>
 </sidebyside>
 
@@ -2267,7 +2305,7 @@ Evaluate <m>\int_\cC x\,\dee{s}</m>.
 <m>\cC_3</m> be the curve <m>y=1-x^2</m> from <m>(1,0)</m> to <m>(0,1)</m>.
 </p>
 
-<sidebyside width="75%">
+<sidebyside width="26%">
   <image source="pfigs/OE00AQ3"/>
 </sidebyside>
 
@@ -2310,11 +2348,14 @@ All together
 \int_\cC \vF\cdot \dee{\vr}
 &amp;=\dblInt_R\Big[\pdiff{}{x}\big(x^2+\cos(y^2)\big)
 -\pdiff{}{y}\big(\sin(x^2)-xy\big) \Big]\ \dee{x} \dee{y}
-=\dblInt_R3x\ \dee{x} \dee{y}
+</mrow><mrow>
+&amp;=\dblInt_R3x\ \dee{x} \dee{y}
 </mrow><mrow>
 &amp;=3\int_0^1 \dee{x}\int_0^{1-x^2}\dee{y}\ x
-=3\int_0^1 \dee{x}\ (1-x^2) x
-=3\Big[\frac{1}{2}-\frac{1}{4}\Big]=\frac{3}{4}
+</mrow><mrow>
+&amp;=3\int_0^1 \dee{x}\ (1-x^2) x
+</mrow><mrow>
+&amp;=3\Big[\frac{1}{2}-\frac{1}{4}\Big]=\frac{3}{4}
 </mrow>
 </md>
 </p></solution>
@@ -2329,6 +2370,7 @@ Let <m>C</m> be the curve defined by the intersection of the surfaces
 Show that <m>C</m> is a simple closed curve.
 </li>
 <li>
+<p>
 Evaluate <m>\oint_C \vF \cdot \dee{\vr}</m> where
 <ol label="(i)">
 <li>
@@ -2338,6 +2380,7 @@ Evaluate <m>\oint_C \vF \cdot \dee{\vr}</m> where
   <m>\vF = y^2\,\hi + x^2\,\hj + 3 e^z\,\hk</m>.
 </li>
 </ol>
+</p>
 </li>
 </ol>
 </p></statement>
@@ -2393,10 +2436,10 @@ is conservative (with potential <m>3e^z</m>).
 So <m>\oint_C\vG\cdot\dee{\vr}=0</m> and, using the parametrization
 <md>
 <mrow>
-\vr(\theta) &amp;= \Big[\frac{1}{2} +\frac{1}{\sqrt{2}}\cos\theta\Big]\hi
-             +\Big[\frac{1}{2} +\frac{1}{\sqrt{2}}\sin\theta\Big]\hj
-             +\Big[1 +\frac{1}{\sqrt{2}}\sin\theta
-                     +\frac{1}{\sqrt{2}}\cos\theta\Big]\hk
+\vr(\theta) &amp;= \Big[\frac{1}{2}\!+\!\frac{1}{\sqrt{2}}\cos\theta\Big]\hi
+             +\Big[\frac{1}{2}\! +\!\frac{1}{\sqrt{2}}\sin\theta\Big]\hj
+             +\Big[1 \!+\!\frac{1}{\sqrt{2}}\sin\theta
+                     \!+\!\frac{1}{\sqrt{2}}\cos\theta\Big]\hk
 </mrow><mrow>
 \vr'(\theta) &amp;= -\frac{1}{\sqrt{2}}\sin\theta\,\hi
                 +\frac{1}{\sqrt{2}}\cos\theta\,\hj
@@ -2407,13 +2450,13 @@ So <m>\oint_C\vG\cdot\dee{\vr}=0</m> and, using the parametrization
 of part (a), we have
 <md>
 <mrow>
-\oint_C\vF\cdot\dee{\vr}
-&amp;= \oint_C(\vF-\vG)\cdot\dee{\vr}
+&amp;\oint_C\vF\cdot\dee{\vr}
+= \oint_C(\vF-\vG)\cdot\dee{\vr}
 </mrow><mrow>
-&amp;= \int_0^{2\pi} \big[y(\theta)^2x'(\theta) +x(\theta)^2y'(\theta)\big]
+&amp;\hskip0.25in= \int_0^{2\pi} \big[y(\theta)^2x'(\theta) +x(\theta)^2y'(\theta)\big]
            \dee{\theta}
 </mrow><mrow>
-&amp;= \int_0^{2\pi} \Big\{-\Big[\frac{1}{2} +\frac{1}{\sqrt{2}}\sin\theta\Big]^2
+&amp;\hskip0.25in= \int_0^{2\pi} \Big\{-\Big[\frac{1}{2} +\frac{1}{\sqrt{2}}\sin\theta\Big]^2
                                \frac{1}{\sqrt{2}}\sin\theta
                        +\Big[\frac{1}{2} +\frac{1}{\sqrt{2}}\cos\theta\Big]^2
                                \frac{1}{\sqrt{2}}\cos\theta\Big\}
@@ -2433,7 +2476,7 @@ in the  text),
 &amp;=0
 </mrow>
 </md>
-since  (see Example <xref ref="eg_workIntegalB"/> in the  text)
+since  (see Example <xref ref="eg_workIntegralB"/> in the  text)
 <me>
 \int_0^{2\pi}\cos^2\theta\ \dee{\theta}
 =\int_0^{2\pi}\sin^2\theta\ \dee{\theta}
@@ -2463,12 +2506,15 @@ the sign of the integrand of the integral over <m>R</m>.
 
 <solution><p>
 By Green's Theorem
-<me>
+<md>
+<mrow>
 \oint_C(y^3-y)\,\dee{x}-2x^3\,\dee{y}
-=\dblInt_R\Big[\pdiff{}{x}(-2x^3)
+&amp;=\dblInt_R\Big[\pdiff{}{x}(-2x^3)
 -\pdiff{}{y}(y^3-y)\Big]\ \dee{x}\,\dee{y}
-=\dblInt_R\Big[1-6x^2-3y^2\Big]\ \dee{x}\,\dee{y}
-</me>
+</mrow><mrow>
+&amp;=\dblInt_R\Big[1-6x^2-3y^2\Big]\ \dee{x}\,\dee{y}
+</mrow>
+</md>
 where <m>R</m> is the region in the <m>xy</m>-plane whose boundary is <m>C</m>. Observe
 that the integrand <m>1-6x^2-3y^2</m> is positive in the elliptical region
  <m>6x^2+3y^2\le 1</m> and negative outside of it. To maximize the integral

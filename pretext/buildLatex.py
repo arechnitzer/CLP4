@@ -12,6 +12,7 @@ import lxml.etree as ET
 
 # Hopefully only these paths need setting
 pretextPath = "/home/andrew/Projects/mathbook"
+#pretextPath = "/home/feldman/pretext/mathbook"
 # source file
 sourceFile = "./clp_4_vc.ptx"
 # output file

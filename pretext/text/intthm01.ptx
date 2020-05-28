@@ -11,10 +11,8 @@
 <p><q>Gradient, divergence and curl</q>, commonly called <q>grad, div and curl</q>,
  refer to a very widely used family of differential operators and related notations that we'll get to shortly. We will
 later see that each has a <q>physical</q> significance. But even if they
-were only shorthand
-<fn>Good shorthand is not only more brief,
-but also aids understanding <q>of the forest by hiding the trees</q>.</fn>
-,
+were only shorthand<fn>Good shorthand is not only more brief,
+but also aids understanding <q>of the forest by hiding the trees</q>.</fn>,
 they would be worth using.
 </p>
 
@@ -23,10 +21,11 @@ one of Maxwell's equations (relating the electric field <m>\vE</m> and
 the magnetic field <m>\vB</m>) written without the use this notation is
 <md>
 <mrow>
-\Big(\frac{\partial E_3}{\partial y} -\frac{\partial E_2}{\partial z}\Big)\hi
+&amp;\Big(\frac{\partial E_3}{\partial y} -\frac{\partial E_2}{\partial z}\Big)\hi
 -\Big(\frac{\partial E_3}{\partial x} -\frac{\partial E_1}{\partial z}\Big)\hj
 +\Big(\frac{\partial E_2}{\partial x} -\frac{\partial E_1}{\partial y}\Big)\hk
-=-\frac{1}{c}\Big(\frac{\partial B_1}{\partial t} \hi
+</mrow><mrow>
+&amp;\hskip2.5in=-\frac{1}{c}\Big(\frac{\partial B_1}{\partial t} \hi
 +\frac{\partial B_2}{\partial t} \hj
 +\frac{\partial B_3}{\partial t} \hk\Big)
 </mrow>
@@ -83,8 +82,7 @@ Note that the input, <m>\vF</m>, for the curl is a vector-valued function,
 and the output, <m>\vnabla\times\vF</m>, is a again a vector-valued function.
 </li>
 <li>
-The Laplacian
-<fn>Pierre-Simon Laplace (1749<ndash/>1827)
+The Laplacian<fn>Pierre-Simon Laplace (1749<ndash/>1827)
 was a French mathematician and astronomer. He is also the Laplace of
 Laplace's equation, the Laplace transform, and the Laplace-Bayes estimator.
 He was Napoleon's examiner when Napoleon attended the Ecole Militaire
@@ -121,8 +119,7 @@ but are introduced in the optional §<xref ref="sec_unified"/>.
 <example xml:id="eg_ITmaxwell">
 <p>
 As an example of an application in which both the divergence and curl appear,
-we have Maxwell's equations
-<fn>To be picky, these are Maxwell's
+we have Maxwell's equations<fn>To be picky, these are Maxwell's
 equations in the absence of a material medium and in Gaussian units.
 </fn>
 <fn>One important consequence of Maxwell's equations is that
@@ -158,7 +155,7 @@ Two computationally extremely important properties of the derivative
 <mrow>
 \diff{\ }{x}\big(af(x)+bg(x)\big) &amp;=a\diff{f}{x}(x)+b\diff{g}{x}(x)
 </mrow><mrow>
-\diff{\ }{x}\big(f(x)\,g(x)\big) &amp;=\diff{f}{x}(x)\,g(x)+f(x)\,\diff{g}{x}(x)
+\diff{\ }{x}\big(f(x)\,g(x)\big) &amp;=g(x)\,\diff{f}{x}(x)+f(x)\,\diff{g}{x}(x)
 </mrow>
 </md>
 Gradient, divergence and curl also have properties like these, which
@@ -187,8 +184,7 @@ where <m>g(\vx)\ne 0</m>.
 (\vnabla\times\vF)\times\vG+(\vG\cdot\vnabla)\vF+(\vF\cdot\vnabla)\vG</m>
 </p>
 
-<p>Here
-<fn>This is really the only definition that makes sense. For example
+<p>Here<fn>This is really the only definition that makes sense. For example
 <m>\vG\cdot(\vnabla\vF)</m> does not make sense because you can't take the gradient
 of a vector-valued function.
 </fn>
@@ -412,11 +408,14 @@ For example, the proof of Theorem <xref ref="thm_curlIdentities"/>.c is
 </mrow><mrow>
 &amp;=\sum_{n=1}^3\frac{\partial f}{\partial x_n}\hi_n\times\vF
 +f\sum_{n=1}^3\frac{\partial }{\partial x_n}\hi_n\times\vF
-\qquad\text{(by Theorem <xref ref="thm_DIFFalgebra"/>.b)}
 </mrow><mrow>
 &amp;=(\vnabla f)\times\vF + f\,\vnabla\times\vF
 </mrow>
 </md>
+In the second line we used Theorem <xref ref="thm_DIFFalgebra"/>.b.
+</p>
+
+<p>
 For Theorem <xref ref="thm_divIdentities"/>.d, the computation is also easy if
 one uses the fact that
 <me>
@@ -442,7 +441,7 @@ First write out the left hand side as
 +\sum_{n=1}^3\hi_n\Big(\vF\cdot\frac{\partial\vG}{\partial x_n}\Big)
 </mrow>
 </md>
-Them rewrite <m>\va\times(\vb\times\vc)=(\vc\cdot\va)\vb-(\vb\cdot\va)\vc</m>,
+Then rewrite <m>\va\times(\vb\times\vc)=(\vc\cdot\va)\vb-(\vb\cdot\va)\vc</m>,
 which is Lemma <xref ref="lem_tripProd"/>.b below, as
 <me>
 (\vc\cdot\va)\vb=\va\times(\vb\times\vc)+(\vb\cdot\va)\vc
@@ -456,7 +455,8 @@ Applying it once with
 &amp;=\sum_{n=1}^3\bigg[
      \vG\times\Big(\hi_n\times\frac{\partial\vF}{\partial x_n}\Big)
      +(\vG\cdot\hi_n)\frac{\partial\vF}{\partial x_n}\bigg]
-+\sum_{n=1}^3\bigg[
+</mrow><mrow>
+&amp;\hskip1in+\sum_{n=1}^3\bigg[
      \vF\times\Big(\hi_n\times\frac{\partial\vG}{\partial x_n}\Big)
      +(\vF\cdot\hi_n)\frac{\partial\vG}{\partial x_n}\bigg]
 </mrow><mrow>
@@ -471,8 +471,9 @@ We use the same trick. Write out the left hand side as
 <md>
 <mrow>
 \vnabla\times(\vF\times\vG)
-=\sum_{n=1}^3\hi_n\times\frac{\partial }{\partial x_n}(\vF\times\vG)
-=\sum_{n=1}^3\hi_n\times\Big(\frac{\partial\vF}{\partial x_n}\times\vG\Big)
+&amp;=\sum_{n=1}^3\hi_n\times\frac{\partial }{\partial x_n}(\vF\times\vG)
+</mrow><mrow>
+&amp;=\sum_{n=1}^3\hi_n\times\Big(\frac{\partial\vF}{\partial x_n}\times\vG\Big)
 +\sum_{n=1}^3\hi_n\times\Big(\vF\times\frac{\partial\vG}{\partial x_n}\Big)
 </mrow>
 </md>
@@ -502,7 +503,6 @@ Substituting in
 -\frac{\partial F_1}{\partial z}\Big)\hj
 +\Big(\frac{\partial F_2}{\partial x}
 -\frac{\partial F_1}{\partial y}\Big)\hk
-</mrow><mrow>
 </mrow>
 <intertext>gives</intertext><mrow>
 \vnabla\cdot\big(\vnabla\times F\big)
@@ -543,10 +543,12 @@ Substituting in
 -\Big(\frac{\partial }{\partial x}\frac{\partial f}{\partial z}
 -\frac{\partial }{\partial z}\frac{\partial f}{\partial x}\Big)
 \hj
-+\Big(\frac{\partial }{\partial x}\frac{\partial f}{\partial y}
+</mrow><mrow>
+&amp;\hskip1in+\Big(\frac{\partial }{\partial x}\frac{\partial f}{\partial y}
 -\frac{\partial }{\partial y}\frac{\partial f}{\partial x}\Big)
 \hk
-=0
+</mrow><mrow>
+&amp;=0
 </mrow>
 </md>
 </p>
@@ -592,7 +594,8 @@ By Theorem <xref ref="thm_divIdentities"/>.c,
 &amp;=\sum_{\ell=1}^3\hi_\ell\frac{\partial } {\partial x_\ell}
        \times\bigg(\sum_{m=1}^3 \hi_m\frac{\partial } {\partial x_m}
        \times\sum_{n=1}^3\hi_n F_n\bigg)
-=\sum_{\ell,m,n=1}^3\hi_\ell\times \big(\hi_m\times\hi_n\big)\
+</mrow><mrow>
+&amp;=\sum_{\ell,m,n=1}^3\hi_\ell\times \big(\hi_m\times\hi_n\big)\
           \frac{\partial^2  F_n }
                            {\partial x_\ell\partial x_m}
 </mrow>
@@ -604,8 +607,7 @@ we have
           =(\hi_\ell\cdot\hi_n)\hi_m -(\hi_\ell\cdot\hi_m)\hi_n
           =\delta_{\ell,n}\hi_m -\delta_{\ell,m}\hi_n
 </me>
-where
-<fn><m>\delta_{m,n}
+where<fn><m>\delta_{m,n}
 </m> is called the Kronecker delta function.
 It is named after the German number theorist and logician Leopold Kronecker
 (1823<ndash/>1891). He is reputed to have said <q>God made the integers. All else is the work of man.</q></fn>
@@ -745,7 +747,9 @@ On the other hand, the right hand side
 <mrow>
 (\va\cdot\vc)\vb-(\va\cdot\vb)\vc
 \ =\ &amp;(a_1c_1+a_2c_2+a_3c_3)(b_1\hi+b_2\hj+b_3\hk)
--(a_1b_1+a_2b_2+a_3b_3)(c_1\hi+c_2\hj+c_3\hk)\cr
+</mrow><mrow>
+&amp;\hskip0.5in-(a_1b_1+a_2b_2+a_3b_3)(c_1\hi+c_2\hj+c_3\hk)
+</mrow><mrow>
 =\ &amp;
 \hi\ \big[\color{blue}{a_1b_1c_1}
          +a_2b_1c_2+a_3b_1c_3-
@@ -800,10 +804,8 @@ When <m>\vF = \vnabla\times\vA</m>, <m>\vA</m> is called a <em>vector potential<
 for <m>\vF</m>. We shall see in Theorem <xref ref="thm_screenVector"/>, below,
 that, conversely, if <m>\vF(\vx)</m> is defined and has continuous first
 order partial derivatives on all of <m>\bbbr^3</m>, and if <m>\vnabla\cdot\vF=0</m>,
-then <m>\vF</m> has a vector potential
-<fn>Does this remind you of
-Theorem <xref ref="thm_screenConserv"/>? It should.
-</fn>. The vector identity
+then <m>\vF</m> has a vector potential<fn>Does this remind you of
+Theorem <xref ref="thm_screenConserv"/>? It should.</fn>. The vector identity
 Theorem <xref ref="thm_degTwoIdentities"/>.a is indeed another screening test.
 </p>
 
@@ -1028,8 +1030,7 @@ is zero <mdash/> just choose <m>\psi = -\int \vA_3\, \dee{z}</m>. We have just p
 <lemma xml:id="lem_A3zero">
 <statement><p>
 If the vector field <m>\vB</m> has a vector potential, then, in particular,
-there is a vector potential <m>\vA</m> for <m>\vB</m> with
-<fn>There is
+there is a vector potential <m>\vA</m> for <m>\vB</m> with<fn>There is
 nothing special about the subscript <m>3</m> here. By precisely the same
 argument, we could come up with another vector potential whose
 second component is zero, and with a third vector potential whose
@@ -1151,8 +1152,7 @@ This vector field obeys
 and so passes the screening test of Theorem <xref ref="thm_screenVector"/>.
 We'll now find a vector potential <m>\vA= A_1\,\hi + A_2\,\hj + A_3\,\hk</m>
 for <m>\vB</m>. As in the last example, we'll simplify the computations
-by further requiring
-<fn>Of course, we could equally well pick
+by further requiring<fn>Of course, we could equally well pick
 <m>A_1=0</m> or <m>A_2=0</m>.</fn>
  that <m>A_3=0</m>.
 </p>
@@ -1195,12 +1195,10 @@ if and only if <m>M(x,y)</m> and <m>N(x,y)</m> obey
  =2x
 </mrow>
 </md>
-All of the <m>z</m>'s in this equation have cancelled out
-<fn>If the <m>z</m>'s had not cancelled out, no <m>N(x,y)</m> and <m>M(x,y)</m>, which after all are
+All of the <m>z</m>'s in this equation have cancelled out<fn>If the <m>z</m>'s had not cancelled out, no <m>N(x,y)</m> and <m>M(x,y)</m>, which after all are
 independent of <m>z</m>,
 could satisfy the equation. That would have been a sure sign of a
-user error.</fn>
-, and we can choose, for example,
+user error.</fn>, and we can choose, for example,
 <m>M(x,y)=0</m> and  <m>N(x,y) = x^2</m>. So we have found a vector potential. Namely
 <me>
 \vA = (z^2-2xz) \hi +(x^2-2xz)\hj
@@ -1260,11 +1258,12 @@ So all three equations are satisfied if and only only if we
 can find <m>M(x,y)</m> and <m>N(x,y)</m> that obey
 <md>
 <mrow>
-\frac{\partial }{\partial x}\Big(
+&amp;\frac{\partial }{\partial x}\Big(
      \overbrace{-\int_0^z B_1(x,y,\tilde z)\ \dee{\tilde z} +N(x,y)}^{A_2(x,y,z)}\Big)
+</mrow><mrow>&amp;\hskip1in
 -\frac{\partial }{\partial y}\Big(
      \overbrace{\int_0^z B_2(x,y,\tilde z)\ \dee{\tilde z} +M(x,y)}^{A_1(x,y,z)}\Big)
-&amp;=B_3(x,y,z)
+=B_3(x,y,z)
 </mrow>
 </md>
 which is the case if and only if
@@ -1302,8 +1301,9 @@ so that the right hand side is
          B_3(x,y,z)
         + \int_0^z\Big(-\frac{\partial B_3}{\partial z}(x,y,\tilde z) \Big)
                                         \ \dee{\tilde z}
-       = B_3(x,y,z) +\Big[-B_3(x,y,\tilde z\Big]^{\tilde z=z}_{\tilde z=0}
-       =B_3(x,y,0)
+       &amp;= B_3(x,y,z) +\Big[-B_3(x,y,\tilde z\Big]^{\tilde z=z}_{\tilde z=0}
+</mrow><mrow>
+       &amp;=B_3(x,y,0)
 </mrow>
 </md>
 by the fundamental theorem of calculus. So we just have to choose <m>M</m> and <m>N</m> to
@@ -1352,10 +1352,9 @@ is <m>f(x,y,z)</m>, then the temperature that you measure at time <m>t</m> is <m
 &amp;\hskip0.3in
   =\frac{\partial f}{\partial x}\big(x(t),y(t),z(t)\big) \diff{x}{t}(t)
   +\frac{\partial f}{\partial y}\big(x(t),y(t),z(t)\big) \diff{y}{t}(t)
-  +\frac{\partial f}{\partial z}\big(x(t),y(t),z(t)\big) \diff{z}{t}(t)
-
-</mrow><mrow>&amp;\hskip4in \text{(by the chain rule)}
-
+</mrow><mrow>
+&amp;\hskip1in  +\frac{\partial f}{\partial z}\big(x(t),y(t),z(t)\big) \diff{z}{t}(t)
+\qquad \text{(by the chain rule)}
 </mrow><mrow>
 &amp;\hskip0.3in=\vnabla f\big(\vr(t)\big)\cdot\vr'(t)
 </mrow><mrow>
@@ -1396,7 +1395,7 @@ In conclusion
 <mrow>
 \vnabla f(\vr_0)
 &amp; \text{ has direction }
-&amp; \left\{
+&amp;&amp; \left\{
 \begin{array}{l}
 \text{direction of maximum rate of change}\\
 \text{of $f$ at $\vr_0$}
@@ -1404,7 +1403,7 @@ In conclusion
 </mrow><mrow>
 &amp;
 \text{ has magnitude }
-&amp;
+&amp;&amp;
 \left\{
 \begin{array}{l}
 \text{magnitude of maximum rate of change} \\
@@ -1465,8 +1464,7 @@ Once we have that lemma we can use that
 </li>
 <li><p>  by Lemma <xref ref="lem_fluxInterp"/>,
 <m>\dblInt_{S_\veps}\vv(x,y,z)\cdot\hn(x,y,z)\,\dee{S}</m> is the
-rate
-<fn>Lemma <xref ref="lem_fluxInterp"/> is being applied with the
+rate<fn>Lemma <xref ref="lem_fluxInterp"/> is being applied with the
 density <m>\rho</m> set equal to one, so, more precisely, the rate is
 the number of units of volume of fluid exiting <m>S_\veps</m> per unit time</fn>
 at which fluid is exiting <m>S_\veps</m>
@@ -1491,10 +1489,7 @@ to conclude that
 \end{array} \right.
 </mrow>
 <mrow>
-&amp;
-=\left\{
-\text{strength of the source at $\vr_0$}
-\right.
+&amp;=\text{strength of the source at $\vr_0$}
 </mrow>
 </md>
 </p>
@@ -1519,11 +1514,13 @@ Here is the critical computation.
 </lemma>
 
 <proof><title>Proof. (Optional)</title>
-<p>
-<fn>There is another, easier to understand, proof of this result given in §<xref ref="sec_interpBis"/>. We cannot give that proof here because it uses the divergence theorem, which we will get to later in the chapter.</fn>
+
+<p>Here is one proof<fn>There is another, easier to understand, proof of this result given in §<xref ref="sec_interpBis"/>. We cannot give that proof here because it uses the divergence theorem, which we will get to later in the chapter.</fn> of Lemma
+<xref ref="lem_divInterp"/>.
 </p>
 
-<p>By translating our coordinate system, it suffices to consider
+<p>
+By translating our coordinate system, it suffices to consider
 <m>\vr_0=(x_0,y_0,z_0) = (0,0,0)</m>. Then
 <md>
 <mrow>
@@ -1548,8 +1545,7 @@ where
 </mrow>
 </md>
 and the error term <m>\vR(x,y,z)</m> is bounded by a constant
-times
-<fn> Terms like <m>xy</m>, <m>xz</m> and <m>yz</m> are not needed
+times<fn> Terms like <m>xy</m>, <m>xz</m> and <m>yz</m> are not needed
 because, for example, <m>|xy|\le \frac{1}{2}(x^2+y^2)</m>. This inequality
 is equivalent to <m>\big(|x|-|y|\big)^2\ge 0</m>.</fn>
 <m>x^2+y^2+z^2</m>. In particular there is a constant <m>K</m> so that, on <m>S_\veps</m>,
@@ -1559,8 +1555,9 @@ is equivalent to <m>\big(|x|-|y|\big)^2\ge 0</m>.</fn>
 So
 <md>
 <mrow>
-\dblInt_{S_\veps}\vv(x,y,z)\cdot\hn(x,y,z)\,\dee{S}
-&amp;= \frac{1}{\veps} \dblInt_{S_\veps}\big(
+&amp;\dblInt_{S_\veps}\vv(x,y,z)\cdot\hn(x,y,z)\,\dee{S}
+</mrow><mrow>
+&amp;\hskip1in= \frac{1}{\veps} \dblInt_{S_\veps}\big(
    \vA + \vB\,x +\vC\,y +\vD\, z +\vR(x,y,z)
 \big)\cdot (x,y,z)\,\dee{S}
 </mrow>
@@ -1593,12 +1590,12 @@ Because <m>S_\veps</m> is invariant under <m>x\rightarrow -x</m> and under
 <m>y\rightarrow -y</m> and under <m>z\rightarrow -z</m> we have
 <md>
 <mrow>
-\dblInt_{S_\veps} x\,\dee{S}
-=\dblInt_{S_\veps} y\,\dee{S}
-=\dblInt_{S_\veps} z\,\dee{S}
-=\dblInt_{S_\veps} xy\,\dee{S}
-=\dblInt_{S_\veps} xz\,\dee{S}
-=\dblInt_{S_\veps} yz\,\dee{S}
+\dblInt_{S_\veps}\!\! x\,\dee{S}
+=\dblInt_{S_\veps}\!\! y\,\dee{S}
+=\dblInt_{S_\veps}\!\! z\,\dee{S}
+=\dblInt_{S_\veps}\!\! xy\,\dee{S}
+=\dblInt_{S_\veps}\!\! xz\,\dee{S}
+=\dblInt_{S_\veps}\!\! yz\,\dee{S}
 =0
 </mrow>
 </md>
@@ -1609,20 +1606,19 @@ which is a relief. We are now left with
 &amp;= \frac{1}{\veps} \dblInt_{S_\veps}\big(
     \vB\cdot\hi\,x^2 +\vC\cdot\hj\,y^2 +\vD\cdot\hk\, z^2
      \big)\,\dee{S}
-</mrow><mrow>&amp;\hskip2in
+</mrow><mrow>&amp;\hskip1in
 +\frac{1}{\veps} \dblInt_{S_\veps}\vR(x,y,z)\cdot (x,y,z)\,\dee{S}
 </mrow>
 </md>
-As well <m>S_\veps</m> is invariant
-<fn>Spheres have lots of symmetry!</fn>
+As well <m>S_\veps</m> is invariant<fn>Spheres have lots of symmetry!</fn>
 under the interchange of <m>x</m> and <m>y</m>
 and also under the interchange of <m>x</m> and <m>z</m>. Consequently
 <md>
 <mrow>
 \dblInt_{S_\veps} x^2\,\dee{S}
-=\dblInt_{S_\veps} y^2\,\dee{S}
+&amp;=\dblInt_{S_\veps} y^2\,\dee{S}
 =\dblInt_{S_\veps} z^2\,\dee{S}
-&amp;=\frac{1}{3}\dblInt_{S_\veps}\big[x^2+y^2+ z^2\big]\,\dee{S}
+=\frac{1}{3}\dblInt_{S_\veps}\big[x^2+y^2+ z^2\big]\,\dee{S}
 </mrow><mrow>
 &amp;=\frac{1}{3}\dblInt_{S_\veps}\veps^2\,\dee{S}
 \qquad\text{since $x^2+y^2+z^2=\veps^2$ on } S_\veps
@@ -1636,20 +1632,23 @@ So far, we have
 <mrow>
 &amp;\dblInt_{S_\veps}\vv(x,y,z)\cdot\hn(x,y,z)\,\dee{S}
 = \frac{4}{3}\pi\veps^3 \big(\vB\cdot\hi +\vC\cdot\hj +\vD\cdot\hk\big)
-+\frac{1}{\veps} \dblInt_{S_\veps}\vR(x,y,z)\cdot (x,y,z)\,\dee{S}
+</mrow><mrow>
+&amp;\hskip2in+\frac{1}{\veps} \dblInt_{S_\veps}\vR(x,y,z)\cdot (x,y,z)\,\dee{S}
 </mrow><mrow>
 &amp;\hskip0.75in= \frac{4}{3}\pi\veps^3 \vnabla\cdot\vv(\vZero)
 +\frac{1}{\veps} \dblInt_{S_\veps}\vR(x,y,z)\cdot (x,y,z)\,\dee{S}
-\quad\text{(review the definitions of } \vB, \vC, \vD)
+</mrow><mrow>
+&amp;\hskip2in\text{(review the definitions of } \vB, \vC, \vD)
 </mrow>
 </md>
 which implies
 <md>
 <mrow>
-\lim_{\veps\rightarrow 0}
+&amp;\lim_{\veps\rightarrow 0}
      \frac{1}{\frac{4}{3}\pi\veps^3}
            \dblInt_{S_\veps}\vv(x,y,z)\cdot\hn(x,y,z)\,\dee{S}
-&amp;= \vnabla\cdot\vv(\vZero)
+</mrow><mrow>
+&amp;\hskip1in= \vnabla\cdot\vv(\vZero)
    +\lim_{\veps\rightarrow 0}
      \frac{3}{4\pi\veps^4}
            \dblInt_{S_\veps}\vR(x,y,z)\cdot (x,y,z)\,\dee{S}
@@ -1682,8 +1681,8 @@ Here is a sketch of the vector field <m>\vv(x,y,z) = x\,\hi+y\,\hj+z\,\hk</m>
 and a sphere centered on the origin, like <m>S_\veps</m>.
 </p>
 
-<sidebyside>
-<image source="figs/sourceDiv.pdf"/>
+<sidebyside width="28%">
+<image source="figs/sourceDiv"/>
 </sidebyside>
 
 <p>
@@ -1703,8 +1702,8 @@ Here is a sketch of the vector field <m>\vv(x,y,z) = -y\,\hi+x\,\hj</m>
 and a sphere centered on the origin, like <m>S_\veps</m>.
 </p>
 
-<sidebyside>
-<image source="figs/vortexDiv.pdf"/>
+<sidebyside width="28%">
+<image source="figs/vortexDiv"/>
 </sidebyside>
 
 <p>
@@ -1725,8 +1724,8 @@ Here is a sketch of the vector field <m>\vv(x,y,z) = \hi</m>
 and a sphere centered on the origin, like <m>S_\veps</m>.
 </p>
 
-<sidebyside>
-<image source="figs/transDiv.pdf"/>
+<sidebyside width="33%">
+<image source="figs/transDiv"/>
 </sidebyside>
 
 <p>
@@ -1775,8 +1774,8 @@ To specify the integrals involved, let <m>C_\veps</m> be the circle which
 </ul>
 </p>
 
-<sidebyside>
-<image source="figs/prepaddle.pdf"/>
+<sidebyside width="20%">
+<image source="figs/prepaddle"/>
 </sidebyside>
 
 <p>
@@ -1793,14 +1792,13 @@ Place a tiny paddlewheel in the fluid with its axle running along <m>\hn</m>
 and its paddles along <m>C_\veps</m>, as in the figure below, except that
 </p>
 
-<sidebyside>
-<image source="figs/paddle.pdf"/>
+<sidebyside width="40%">
+<image source="figs/paddle"/>
 </sidebyside>
 
 <p>
 the paddlewheel is really expensive and has a lot more than just four
-paddles. Pretend
-<fn>Method acting might help you here.</fn>
+paddles. Pretend<fn>Method acting might help you here.</fn>
  that you are one of the paddles. If the paddlewheel
 is rotating at <m>\Om</m> radians per unit time, then you are moving
 at speed <m>\Om \veps</m>. If you are at <m>\vr</m>, the component of the fluid velocity in your direction of motion, i.e. tangential to <m>C_\veps</m>, is <m>\vv(\vr)\cdot\diff{\vr}{s}</m>,
@@ -1858,8 +1856,9 @@ First, we show
 </lemma>
 
 <proof><title>Proof. (Optional)</title>
-<p>
-<fn>There is another, easier to understand, proof of this result given in §<xref ref="sec_interpBis"/>. We cannot give that proof here because it uses Stokes' theorem, which we will get to later in the chapter.</fn>
+
+<p>Here is one proof<fn>There is another, easier to understand, proof of this result given in §<xref ref="sec_interpBis"/>. We cannot give that proof here because it uses Stokes' theorem, which we will get to later in the chapter.</fn> of Lemma
+<xref ref="lem_curlInterp"/>.
 </p>
 
 <p>Just as we did in the proof of Lemma <xref ref="lem_divInterp"/>, we can always
@@ -1895,8 +1894,9 @@ and the error term <m>\vR(x,y,z)</m> is bounded by a constant times
 So
 <md>
 <mrow>
-\oint_{C_\veps} \vv(\vr)\cdot \dee{\vr}
-&amp;=\int_0^{2\pi} \big(\vA + \vB\,\veps\,\cos t +\vC\,\veps\,\sin t
+&amp;\oint_{C_\veps} \vv(\vr)\cdot \dee{\vr}
+</mrow><mrow>
+&amp;\hskip0.25in=\int_0^{2\pi} \big(\vA + \vB\,\veps\,\cos t +\vC\,\veps\,\sin t
        +\vR(\vr(t))\big)
         \cdot \big(-\veps\sin t\,\hi +\veps\cos t\,\hj\big)\ \dee{t}
 </mrow>
@@ -1950,13 +1950,16 @@ which implies that
          \oint_{C_\veps} \vv(\vr)\cdot \dee{\vr}
 &amp;= \frac{\partial \vv_2}{\partial x}(0,0,0)
   - \frac{\partial \vv_1}{\partial y}(0,0,0)
+</mrow><mrow>
+&amp;\hskip0.5in
    +\lim_{\veps\rightarrow 0}\!
      \frac{1}{\pi\veps^2}
            \int_0^{2\pi}\!\!\!\! \vR(\vr(t))
         \cdot \big(-\veps\sin t\,\hi +\veps\cos t\,\hj\big)\,\dee{t}
 </mrow><mrow>
 &amp;= \big(\vnabla\times\vv(0,0,0)\big)\cdot\hk
-   +\lim_{\veps\rightarrow 0}
+</mrow><mrow>
+&amp;\hskip0.5in   +\lim_{\veps\rightarrow 0}
      \frac{1}{\pi\veps^2}
            \int_0^{2\pi} \vR(\vr(t))
         \cdot \big(-\veps\sin t\,\hi +\veps\cos t\,\hj\big)\ \dee{t}
@@ -1974,165 +1977,14 @@ Finally, it suffices to recall that
 </mrow><mrow>
 &amp;\le \frac{1}{\pi\veps}
            \int_0^{2\pi}K\veps^2\,\dee{t}
-= \frac{1}{\pi\veps} \ K\veps^2\,(2\pi)
+</mrow><mrow>
+&amp;= \frac{1}{\pi\veps} \ K\veps^2\,(2\pi)
 </mrow><mrow>
 &amp;= 2K\veps
 </mrow>
 </md>
 converges to zero as <m>\veps\rightarrow 0</m>.
 </p>
-
-<!-- <p> \intremark{
-To handle general <m>\hn</m>,
-pick any three vectors <m>\hi',\ \hj',\ \hk'</m> unit vectors such that
-<ul>
-<li>   <m>\hk'=\hn</m>
-</li>
-<li>  <m>\hi'\perp\hn</m>, <m>\hj'\perp\hn</m>
-</li>
-<li>  <m>\hi'\times\hj'=\hk'</m>
-</li>
-</ul>
-and repeat the above argument with <m>\hi</m>, <m>\hj</m>, <m>\hk</m> replaced by
-<m>\hi'</m>, <m>\hj'</m>, <m>\hk'</m>.
-</p>
-
-<p>Even if <m>\vr_0</m> is not the origin we may parametrize <m>C_\veps</m> by
-<me>
-\vr(t)=\vr_0+\veps\cos t\ \hi'+\veps\sin t\ \hj'
-</me>
-So
-<md>
-<mrow>
-&amp;\oint_{C_\veps} \vv(\vr)\cdot \dee{\vr}
-=\int_0^{2\pi} \vv\big(\vr_0+\veps\cos t\ \hi'+\veps\sin t\ \hj'\big)
-\cdot\big(-\veps\sin t\ \hi'+\veps\cos t\ \hj'\big) \dee{t}\cr
-&amp;=\veps\int_0^{2\pi} \!\!\Big[
--\sin t\ \hi'\cdot\vv\big(\vr_0+\veps\cos t\ \hi'+\veps\sin t\ \hj'\big)
-+\cos t\ \hj'\cdot\vv\big(\vr_0+\veps\cos t\ \hi'+\veps\sin t\ \hj'\big)\Big]\
-\dee{t}
-</mrow>
-</md>
-Denote <m>f(\vr)=\hi'\cdot\vv(\vr)</m>.
-Now Taylor expand
-<m>F(\veps)=f\big(\vr_0+\veps\cos t\ \hi'+\veps\sin t\ \hj'\big)</m>
-about <m>\veps=0</m>.
-<md>
-<mrow>
-F(\veps)&amp;=F(0)+F'(0)\veps +O(\veps^2)
-</mrow><mrow>
-&amp;=f\big(\vr_0\big)
-+\veps\cos t\ \hi'\cdot\vnabla f\big(\vr_0\big)
-+\veps\sin t\ \hj'\cdot\vnabla f\big(\vr_0\big) +O(\veps^2)
-</mrow><mrow>
-&amp;=\hi'\cdot\vv\big(\vr_0\big)
-+\veps\cos t\ \hi'\cdot\vnabla(\hi'\cdot\vv)\big(\vr_0\big)
-+\veps\sin t\ \hj'\cdot\vnabla(\hi'\cdot\vv)\big(\vr_0\big) +O(\veps^2)
-</mrow>
-</md>
-Similarly, if <m>G(\veps)=\hj'\cdot\vv\big(\vr_0+\veps\cos t\ \hi'+\veps\sin t\ \hj'\big)</m>,
-<md>
-<mrow>
-G(\veps)
-&amp;=\hj'\cdot\vv\big(\vr_0\big)
-+\veps\cos t\ \hi'\cdot\vnabla(\hj'\cdot\vv)\big(\vr_0\big)
-+\veps\sin t\ \hj'\cdot\vnabla(\hj'\cdot\vv)\big(\vr_0\big) +O(\veps^2)\cr
-</mrow>
-</md>
-Hence, the integrand
-<md>
-<mrow>
-&amp;-\sin t\ \hi'\cdot\vv\big(\vr_0+\veps\cos t\ \hi'+\veps\sin t\ \hj'\big)
-</p>
-
-<p></mrow><mrow>&amp;\hskip1in
-+\cos t\ \hj'\cdot\vv\big(\vr_0+\veps\cos t\ \hi'+\veps\sin t\ \hj'\big)
-</p>
-
-<p></mrow><mrow>
-&amp;\hskip0.5in= -\sin t\ \hi'\cdot\vv\big(\vr_0\big)
--\veps\sin t\cos t\ \hi'\cdot\vnabla(\hi'\cdot\vv)\big(\vr_0\big)
- -\veps\sin^2 t\ \hj'\cdot\vnabla(\hi'\cdot\vv)\big(\vr_0\big)
-</p>
-
-<p></mrow><mrow>&amp;\hskip0.5in\phantom{=\ }
-+\cos t\ \hj'\cdot\vv\big(\vr_0\big)
-+\ \ \ \veps\cos^2 t\ \hi'\cdot\vnabla(\hj'\cdot\vv)\big(\vr_0\big)\ \ \
-+\veps\sin t\cos t\ \hj'\cdot\vnabla(\hj'\cdot\vv)\big(\vr_0\big)+O(\veps^2)
-</mrow>
-</md>
-Since
-<me>
-\int_0^{2\pi}\sin t\ \dee{t}=\int_0^{2\pi}\cos t\ \dee{t}
-=\int_0^{2\pi}\sin t\cos t\ \dee{t}=0\qquad
-\int_0^{2\pi}\sin^2 t\ \dee{t}=\int_0^{2\pi}\cos^2 t\ \dee{t}=\pi
-</me>
-we have
-<me>
-\oint_{C_\veps} \vv(\vr)\cdot \dee{\vr}
-=\pi\veps^2\Big[-\hj'\cdot\vnabla(\hi'\cdot\vv)\big(\vr_0\big)
-    +\hi'\cdot\vnabla(\hj'\cdot\vv)\big(\vr_0\big)\Big]+O(\veps^3)
-</me>
-Substitute in
-<me>
-\hi'=-\hk'\times \hj'\qquad
-\hj'=\hk'\times \hi'\qquad
-\vnabla=\sum_{n=1}^3\hi_n\frac{\partial }{\partial x_n}
-</me>
-where we have renamed the standard basis for <m>\bbbr^3</m> from <m>\hi,\hj,\hk</m>
-to <m>\hi_1,\hi_2,\hi_3</m> and the standard coordinates on <m>\bbbr^3</m> from <m>x,y,z</m>
-to <m>x_1,x_2,x_3</m>. Then
-<md>
-<mrow>
--\hj'\cdot\vnabla(\hi'\cdot\vv)\big(\vr_0\big)+\hi'\cdot\vnabla(\hj'\cdot\vv)\big(\vr_0\big)
-&amp;=\sum_{n=1}^3 -\hj'\cdot\hi_n\frac{\partial \hi'\cdot\vv}
-{\partial x_n}\big(\vr_0\big)
-+\sum_{n=1}^3\hi'\cdot\hi_n\frac{\partial \hj'\cdot\vv}{\partial x_n}\big(\vr_0\big)\cr
-&amp;\hskip-.5in=\sum_{n=1}^3 -(\hk'\times \hi')\cdot\hi_n\frac{\partial \hi'\cdot\vv}
-{\partial x_n}\big(\vr_0\big)
-+\sum_{n=1}^3-(\hk'\times \hj')\cdot\hi_n\frac{\partial \hj'\cdot\vv}{\partial x_n}\big(\vr_0\big)\cr
-&amp;\hskip-.5in=\sum_{n=1}^3 -\hk'\cdot( \hi'\times\hi_n)\frac{\partial \hi'\cdot\vv}
-{\partial x_n}\big(\vr_0\big)
-+\sum_{n=1}^3-\hk'\cdot( \hj'\times\hi_n)\frac{\partial \hj'\cdot\vv}{\partial x_n}\big(\vr_0\big)\cr
-&amp;\hskip-.5in=\sum_{n=1}^3 \hk'\cdot( \hi_n\times\hi')\frac{\partial \hi'\cdot\vv}
-{\partial x_n}\big(\vr_0\big)
-+\sum_{n=1}^3\hk'\cdot( \hi_n\times\hj')\frac{\partial \hj'\cdot\vv}{\partial x_n}\big(\vr_0\big)\cr
-</mrow>
-</md>
-Since <m>\hk'\perp \hi_n\times\hk'</m>,  <m>\hk'\cdot( \hi_n\times\hk')=0</m>
-and
-<md>
-<mrow>
--\hj'\cdot\vnabla(\hi'\cdot\vv)\big(\vr_0\big)+\hi'\cdot\vnabla(\hj'\cdot\vv)
-         \big(\vr_0\big)
-&amp;=\!\sum_{n=1}^3 \hk'\cdot \hi_n\!\times\!
-\frac{\partial  }{\partial x_n}
-\big[\hi'(\hi'\cdot\vv)
-+\hj'(\hj'\cdot\vv)
-+\hk'(\hk'\cdot\vv)\big]\big(\vr_0\big)
-</mrow>
-</md>
-For any orthonormal basis, <m>\hi',\ \hj',\ \hk'</m> and any vector <m>\vv</m>,
-<me>
-\hi'(\hi'\cdot\vv)
-+\hj'(\hj'\cdot\vv)
-+\hk'(\hk'\cdot\vv)=\vv
-</me>
-so
-<me>
--\hj'\cdot\vnabla(\hi'\cdot\vv)\big(\vr_0\big)+\hi'\cdot\vnabla(\hj'\cdot\vv)\big(\vr_0\big)
-=\sum_{n=1}^3 \hk'\cdot \hi_n\times
-\frac{\partial \vv}{\partial x_n}(\vr_0)
-=\hk'\cdot\vnabla\times \vv(\vr_0)
-</me>
-and
-<me>
-\oint_{C_\veps} \vv(\vr)\cdot \dee{\vr} =\pi\veps^2\vnabla\times v(\vr_0)\cdot \hn
-+O(\veps^3)
-</me>
-}
-</p> -->
-
 </proof>
 
 
@@ -2142,8 +1994,8 @@ In all examples, we shall orient the paddlewheel so that <m>\hn=\hk</m>
 and sketch the top view, so that the paddlewheel looks like
 </p>
 
-<sidebyside>
-<image source="figs/paddlewheelTop.pdf"/>
+<sidebyside width="20%">
+<image source="figs/paddlewheelTop"/>
 </sidebyside>
 
 
@@ -2153,8 +2005,8 @@ Here is a sketch of the vector field <m>\vv(x,y,z) = x\,\hi+y\,\hj+z\,\hk</m>
 and a circle centered on the origin, like <m>C_\veps</m>.
 </p>
 
-<sidebyside>
-<image source="figs/sourceCurl.pdf"/>
+<sidebyside width="26%">
+<image source="figs/sourceCurl"/>
 </sidebyside>
 
 <p>
@@ -2184,8 +2036,8 @@ Here is a sketch of the vector field <m>\vv(x,y,z) = -y\,\hi+x\,\hj</m>
 and a circle centered on the origin, like <m>C_\veps</m>.
 </p>
 
-<sidebyside>
-<image source="figs/vortexCurl.pdf"/>
+<sidebyside width="21%">
+<image source="figs/vortexCurl"/>
 </sidebyside>
 
 <p>
@@ -2208,8 +2060,7 @@ Our interpretation <xref ref="eq_curlInterp"/> predicts an angular velocity of h
 =2
 </mrow>
 </md>
-which is indeed positive
-<fn>Even for small values of <m>2</m>.</fn>.
+which is indeed positive<fn>Even for small values of <m>2</m>.</fn>.
 </p></example>
 
 
@@ -2219,8 +2070,8 @@ Here is a sketch of the vector field <m>\vv(x,y,z) = \hi</m>
 and a circle centered on the origin, like <m>C_\veps</m>.
 </p>
 
-<sidebyside>
-<image source="figs/transCurl.pdf"/>
+<sidebyside width="32%">
+<image source="figs/transCurl"/>
 </sidebyside>
 
 <p>

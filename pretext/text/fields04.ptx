@@ -16,8 +16,7 @@ connections to conservative vector fields. It arose from the concept of
 </p>
 
 <p>Suppose that we wish to find the work done by a force <m>\vF(\vr)</m> moving a particle
-along a path <m>\vr(t)</m>. During the <q>infinitesimal time interval</q>
-<fn>Yes, yes. We should first consider short time intervals <m>\De t \gt 0</m> and then take the limit <m>\De t\rightarrow 0</m> at the end. But you have undoubtedly used this
+along a path <m>\vr(t)</m>. During the <q>infinitesimal time interval</q><fn>Yes, yes. We should first consider short time intervals <m>\De t \gt 0</m> and then take the limit <m>\De t\rightarrow 0</m> at the end. But you have undoubtedly used this
 type of argument so many times before that you would be thoroughly
 bored by it.</fn>
 from <m>t</m> to <m>t+\dee{t}</m>  the particle moves from <m>\vr(t)</m> to <m>\vr(t)+\dee{\vr}</m> with <m>\dee{\vr}=\diff{\vr}{t}(t)\,\dee{t}</m>. By definition, the work done
@@ -56,8 +55,7 @@ of calculus, and indeed some people call it the fundamental theorem of line inte
 <theorem xml:id="thm_workIntegral">
 <statement><p>
 Let <m>\vF=\nabla\varphi</m> be a conservative vector field. Then if <m>\cC</m> is
-any curve that starts at <m>P_0</m> and ends at <m>P_1</m>, we have
-<fn>So <m>\varphi</m> acts a bit like the antiderivative of first year calculus.</fn>
+any curve that starts at <m>P_0</m> and ends at <m>P_1</m>, we have<fn>So <m>\varphi</m> acts a bit like the antiderivative of first year calculus.</fn>
 <me>
 \int_\cC\vF\cdot\dee{\vr} =\varphi(P_1)-\varphi(P_0)
 </me>
@@ -80,7 +78,7 @@ Then, by definition,
                         \diff{x}{t}(t)
 +\frac{\partial\varphi}{\partial y}\big(x(t),y(t),z(t)\big)
                         \diff{y}{t}(t)
-</mrow><mrow>&amp;\hskip3in
+</mrow><mrow>&amp;\hskip2.7in
 +\frac{\partial\varphi}{\partial z}\big(x(t),y(t),z(t)\big)
                         \diff{z}{t}(t)
 \Big]\dee{t}
@@ -107,10 +105,9 @@ Here are several examples of line integrals of vector fields that are not
 conservative.
 </p>
 
-<example xml:id="eg_workIntegalA">
+<example xml:id="eg_workIntegralA">
 <p>
-Set <m>P_0=(0,0)</m>, <m>P_1=(1,1)</m> and
-<fn>The reader should check that this vector field is not conservative.</fn>
+Set <m>P_0=(0,0)</m>, <m>P_1=(1,1)</m> and<fn>The reader should check that this vector field is not conservative.</fn>
 <me>
 \vF(x,y) = xy\,\hi + (y^2+1)\,\hj
 </me>
@@ -130,7 +127,7 @@ Let <m>\cC_3</m> be the part of the parabola <m>x=y^2</m> from <m>P_0</m> to <m>
 </ol>
 </p>
 
-<sidebyside>
+<sidebyside width="35%">
 <image source="figs/workIntegralA"/>
 </sidebyside>
 
@@ -164,8 +161,7 @@ along the <m>x</m>-axis and then <m>\cC_{2,y}</m> running from <m>(1,0)</m> to <
 along the line <m>x=1</m>.
 We parametrize <m>\cC_{2,x}</m> by <m>\vr(x) = x\,\hi</m> with <m>x</m> running from <m>0</m> to <m>1</m>
 and <m>\cC_{2,y}</m> by <m>\vr(y) = \hi+y\,\hj</m> with <m>y</m> running from <m>0</m> to <m>1</m>.
-Then
-<fn>You might like to think about why we can split up the integral like this.</fn>
+Then<fn>You might like to think about why we can split up the integral like this.</fn>
 <md>
 <mrow>
 &amp;\int_{\cC_2}\vF\cdot\dee{\vr}
@@ -173,6 +169,7 @@ Then
 </mrow><mrow>
 &amp;\hskip0.25in=\int_{0}^{1}\big[(x) (0)\,\hi + (0^2+1)\,\hj\big]\cdot
      \overbrace{\diff{\ }{x}\big(x\,\hi\big)}^{\hi}\,\dee{x}
+</mrow><mrow>&amp;\hskip1.25in
  + \int_{0}^{1}\big[(1) (y)\,\hi + (y^2+1)\,\hj\big]\cdot
            \overbrace{\diff{\ }{y}\big(\hi+y\,\hj\big)}^{\hj}\,\dee{y}
 </mrow><mrow>
@@ -196,7 +193,8 @@ so that
 \int_{\cC_3}\vF\cdot\dee{\vr}
 &amp;
 =\int_{0}^{1}\big[t^3\,\hi + (t^2+1)\,\hj\big]\cdot[2t\,\hi + \hj]\,\dee{t}
-=\int_{0}^{1}\big[2t^4+t^2+1\big]\,\dee{t}
+</mrow><mrow>
+&amp;=\int_{0}^{1}\big[2t^4+t^2+1\big]\,\dee{t}
 </mrow><mrow>
 &amp;=\frac{2}{5}+\frac{1}{3}+1 = \frac{26}{15}
 </mrow>
@@ -213,8 +211,7 @@ and all end at <m>P_1</m>, the three integrals <m>\int_{\cC_1}\vF\cdot\dee{\vr}<
 
 <example xml:id="eg_workIntegralB">
 <p>
-Set
-<fn>Again, the reader should verify that this vector field is not conservative.</fn>
+Set<fn>Again, the reader should verify that this vector field is not conservative.</fn>
 <me>
 \vF(x,y) = 2y\,\hi + 3x\,\hj
 </me>
@@ -240,7 +237,8 @@ Then
 \oint_{\cC_1}\vF\cdot\dee{\vr}
 &amp;=\int_{0}^{2\pi}\big[2\sin t\,\hi + 3\cos t\,\hj\big]
            \cdot[-\sin t\,\hi + \cos t\,\hj]\,\dee{t}
-=\int_{0}^{2\pi}\big[-2\sin^2 t+3\cos^2 t\big]\,\dee{t}
+</mrow><mrow>
+&amp;=\int_{0}^{2\pi}\big[-2\sin^2 t+3\cos^2 t\big]\,\dee{t}
 </mrow>
 </md>
 You could evaluate these integrals using double angle trig identities
@@ -251,7 +249,7 @@ periodic of period <m>\pi</m>, the two integrals
 represent the same area and so are equal. See the figure below.
 </p>
 
-<sidebyside width="45%">
+<sidebyside width="48%">
   <image source="figs/sin2Graph"/>
   <image source="figs/cos2Graph"/>
 </sidebyside>
@@ -261,9 +259,10 @@ Thus
 <md>
 <mrow>
 \int_{0}^{2\pi} \sin^2 t\,\dee{t}
-=\int_{0}^{2\pi} \cos^2 t\,\dee{t}
+&amp;=\int_{0}^{2\pi} \cos^2 t\,\dee{t}
 =\int_{0}^{2\pi} \frac{1}{2}\big[\sin^2 t+\cos^2t\big]\,\dee{t}
-=\frac{1}{2}\int_{0}^{2\pi} \dee{t}
+</mrow><mrow>
+&amp;=\frac{1}{2}\int_{0}^{2\pi} \dee{t}
 =\pi
 </mrow>
 </md>
@@ -289,14 +288,16 @@ and end at <m>(1,0)</m>, the two integrals <m>\int_{\cC_1}\vF\cdot\dee{\vr}</m> 
 
 </example>
 
-<example xml:id="eg_workIntegalC">
-<title>Example <xref ref="eg_screeningCounterexample"/>, again.</title>
+<example xml:id="eg_workIntegralC">
+<title>Example <xref ref="eg_screeningCounterexample"/>, again</title>
 <p>
 In Example <xref ref="eg_screeningCounterexample"/>, we saw that the vector field
-<me>
-\vF(x,y) = -\frac{y}{x^2+y^2}\hi + \frac{x}{x^2+y^2}\hj
-\qquad \text{defined for all $(x,y)$ in $\bbbr^2$ except $(x,y)=(0,0)$}
-</me>
+<md>
+<mrow>
+&amp;\vF(x,y) = -\frac{y}{x^2+y^2}\hi + \frac{x}{x^2+y^2}\hj
+</mrow><mrow>&amp;\qquad \text{defined for all $(x,y)$ in $\bbbr^2$ except $(x,y)=(0,0)$}
+</mrow>
+</md>
 passed the screening test of Theorem <xref ref="thm_screen"/>.a, and yet was not
 conservative. In this example, we will see that this <m>\vF</m> violates the
 conclusion of Theorem <xref ref="thm_workIntegral"/>, thereby providing a second proof
@@ -308,9 +309,11 @@ parametrized by <m>x=a\cos\theta,\ y=a\sin\theta</m>, <m>0\le\theta\le 2\pi</m>.
 <md>
 <mrow>
 \frac{1}{2\pi}\int_\cC \frac{x\,\dee{y}-y\,\dee{x}}{x^2+y^2}
-=\frac{1}{2\pi}\int_0^{2\pi} \frac{a^2\cos^2\theta\,\dee{\theta}+a^2\sin^2\theta\,\dee{\theta}}
+&amp;=\frac{1}{2\pi}\int_0^{2\pi} \frac{a^2\cos^2\theta\,\dee{\theta}+a^2\sin^2\theta\,\dee{\theta}}
              {a^2\cos^2\theta+a^2\sin^2\theta}
-=\frac{1}{2\pi}\int_0^{2\pi}\dee{\theta}=1
+=\frac{1}{2\pi}\int_0^{2\pi}\dee{\theta}
+</mrow><mrow>
+&amp;=1
 </mrow>
 </md>
 The curve <m>\cC</m> has initial point
@@ -408,7 +411,7 @@ Let <m>\cC'_1</m> and <m>\cC'_2</m> be any two curves that start at <m>P'_0</m> 
 end at <m>P'_1</m>.
 </p>
 
-<sidebyside>
+<sidebyside width="45%">
 <image source="figs/pathIndep"/>
 </sidebyside>
 
@@ -486,8 +489,7 @@ That is, if any one of the three statements are true, then all three are true.
 
 <proof>
 <p>
-It suffices for us to prove
-<fn>This is a pretty efficient, and standard, way to structure the proof of the equivalence of three
+It suffices for us to prove<fn>This is a pretty efficient, and standard, way to structure the proof of the equivalence of three
 statements.</fn>
  that
 <ul>
@@ -662,8 +664,7 @@ So we have to find a <m>\psi(y)</m> that obeys
 This looks bad <mdash/> no matter what <m>\psi(y)</m> is, the left hand side is
 independent of <m>x</m>, while it looks like the right hand side depends on <m>x</m>.
 Fortunately our screening test hypothesis now rides in to the
-rescue
-<fn>or bails us out, or saves our bacon, or <m>\ldots</m></fn>.
+rescue<fn>or bails us out, or saves our bacon, or <m>\ldots</m></fn>.
 (We haven't used it yet, and it has to come in somewhere.)
 <md>
 <mrow>

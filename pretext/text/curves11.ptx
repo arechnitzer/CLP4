@@ -11,14 +11,13 @@
 Imagine a ball of radius <m>a/4</m> rolling around the inside of a circle of
 radius <m>a</m>. The curve traced by a point <m>P</m> painted on the inner circle
 (that's the blue curve in the figures below)
-is called an astroid
-<fn>The name <q>astroid</q> comes from the Greek word <q>aster</q>,
+is called an astroid<fn>The name <q>astroid</q> comes from the Greek word <q>aster</q>,
 meaning star, with the suffix <q>oid</q> meaning <q>having the shape of</q>. The curve was
 first discussed by Johann  Bernoulli in 1691<ndash/>92.</fn>.
 We shall find its equation.
 </p>
 
-<sbsgroup width="33%">
+<sbsgroup width="30%">
 <sidebyside>
 <image source="figs/astroid1AA"/>
 <image source="figs/astroid1BB"/>
@@ -36,7 +35,7 @@ Define the angles <m>\theta</m> and <m>\phi</m> as
 in the figure in the left below.
 </p>
 
-<sidebyside>
+<sidebyside width="45%">
 <image source="figs/astroid"/>
 <image source="figs/astroid3"/>
 </sidebyside>
@@ -96,12 +95,14 @@ we have
 <mrow>
 3\cos\theta+\cos 3\theta
    &amp;=\cos\theta[3+\cos^2\theta-3\sin^2\theta] &amp;
-   &amp;=\cos\theta[3+\cos^2\theta-3(1-\cos^2\theta)] &amp;
+   &amp;=\cos\theta[3+\cos^2\theta-3(1-\cos^2\theta)] 
+</mrow><mrow>
    &amp;=4\cos^3\theta
  </mrow><mrow>
 3\sin\theta-\sin 3\theta
    &amp;=\sin\theta[3-3\cos^2\theta+\sin^2\theta] &amp;
-   &amp;=\sin\theta[3-3(1-\sin^2\theta)+\sin^2\theta] &amp;
+   &amp;=\sin\theta[3-3(1-\sin^2\theta)+\sin^2\theta] 
+</mrow><mrow>
    &amp;=4\sin^3\theta
  </mrow>
 </md>

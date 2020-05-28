@@ -37,10 +37,11 @@ We saw in Lemma <xref ref="lem_polar"/>.c, that if we write <m>\vr(t) = r(t)\,\h
 then
 <md>
 <mrow>
-\difftwo{\vr}{t} =
+\difftwo{\vr}{t} &amp;=
   \Big(\difftwo{r}{t}-r\ \Big(\diff{\theta}{t}\Big)^2\Big) \hat\vr
    +\Big(r\ \difftwo{\theta}{t} + 2 \diff{r}{t}\ \diff{\theta}{t}\Big)\hat\vth
-= -\frac{GM}{r^3}\vr
+</mrow><mrow>
+&amp;= -\frac{GM}{r^3}\vr
 = -\frac{GM}{r^2}\hat\vr
 </mrow>
 </md>
@@ -119,7 +120,7 @@ more convenient to write the solution in a different, standard but less
 commonly used, form. Namely, we can use the triangle
 </p>
 
-<sidebyside>
+<sidebyside width="20%">
 <image source="figs/trianglePl"/>
 </sidebyside>
 
@@ -166,11 +167,9 @@ b=\frac{\ell}{\sqrt{1-\veps^2}}
 </mrow>
 </md>
 The period <m>T</m> of our orbit is just the length of time it takes
-the radius vector <m>\vr(t)</m> to sweep out the area of the ellipse
-<fn>You
+the radius vector <m>\vr(t)</m> to sweep out the area of the ellipse<fn>You
 probably computed the area of an ellipse in first year calculus. If not,
-you should be able to do it now in a few lines.</fn>
-,
+you should be able to do it now in a few lines.</fn>,
 which is <m>\pi ab</m>.  As the rate at which the radius vector is sweeping out
 area is <m>\frac{1}{2} r^2\diff{\theta}{t} = \frac{h}{2}</m>, we have
 <md>

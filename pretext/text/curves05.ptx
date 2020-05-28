@@ -48,8 +48,8 @@ Some formulae use an arc length parametrization, which is denoted
 </li>
 <li><title>the arc length</title>
 <p><m>
-s(T) = \int_0^T \diff{s}{t}(t)\ \dee{t}
-     = \int_0^T \sqrt{x'(t)^2+y'(t)^2+z'(t)^2}\ \dee{t}
+s(T) = \int_0^T\! \diff{s}{t}(t)\,\dee{t}
+     = \int_0^T\! \sqrt{x'(t)^2\!+\!y'(t)^2\!+\!z'(t)^2}\,\dee{t}
 </m></p>
 </li>
 <li><title>the curvature</title>

@@ -19,7 +19,7 @@ the notation. When one is at the point with polar coordinates
 
 <fact xml:id="eqn_polarBasis">
 <statement>
-<sidebyside width="45%">
+<sidebyside widths="45% 30%" valign="middle">
 <p>
 <md>
 <mrow>
@@ -68,21 +68,37 @@ that <m>|\hat\vth(\theta)| = 1</m>.
 
 <lemma xml:id="lem_polar">
 <statement><p>
-If we parametrize a curve by giving its polar coordinates
-<fn>As usual <m>r</m> is the distance from the origin to the point and <m>\theta</m> is angle between the <m>x</m>-axis and the vector from the origin to the point.</fn>
+If we parametrize a curve by giving its polar coordinates<fn>As usual <m>r</m> is the distance from the origin to the point and <m>\theta</m> is angle between the <m>x</m>-axis and the vector from the origin to the point.</fn>
  <m>\big(r(t)\,,\,\theta(t)\big)</m>, then
 <ol label="a">
-<li> <m>\vr(t) = r(t)\ \hat\vr\big(\theta(t)\big)</m>
+<li> the position vector of the point at time <m>t</m> is
+<md>
+<mrow>
+\vr(t) = r(t)\ \hat\vr\big(\theta(t)\big)
+</mrow>
+</md>
 </li>
-<li> <m>\vv(t) = \diff{r}{t}(t)\ \hat\vr\big(\theta(t)\big)
-             + r(t)\ \diff{\theta}{t}(t)\ \hat\vth\big(\theta(t)\big)</m>
+<li> and the velocity vector of the point at time <m>t</m> is
+<md>
+<mrow>
+\vv(t) = \diff{r}{t}(t)\ \hat\vr\big(\theta(t)\big)
+             + r(t)\ \diff{\theta}{t}(t)\ \hat\vth\big(\theta(t)\big)
+</mrow>
+</md>
 </li>
-<li> <m>\va(t) =
-\Big(\difftwo{r}{t}(t)-r(t)\big(\diff{\theta}{t}(t)\big)^2\Big)
+<li> and the acceleration vector of the point at time <m>t</m> is
+<md>
+<mrow>
+\va(t) &amp;=
+\left[\difftwo{r}{t}(t)\!-\!r(t)\Big(\diff{\theta}{t}(t)\Big)^2\right]
              \hat\vr\big(\theta(t)\big)
-   +\Big(r(t)\ \difftwo{\theta}{t}(t)
-          + 2 \diff{r}{t}(t)\diff{\theta}{t}(t)\Big)
-                  \hat\vth\big(\theta(t)\big)</m>
+</mrow><mrow>
+&amp;\hskip1in
+   +\left[r(t)\ \difftwo{\theta}{t}(t)
+          \!+\! 2 \diff{r}{t}(t)\diff{\theta}{t}(t)\right]
+                  \hat\vth\big(\theta(t)\big)
+</mrow>
+</md>
 </li>
 </ol>
 </p></statement>
@@ -122,8 +138,8 @@ giving the polar coordinates at time <m>t</m>,
              + r\ \Big(\diff{\theta}{t}\Big)^2\ \diff{\hat\vth}{\theta}
 
 </mrow><mrow>
-       &amp;=\Big(\difftwo{r}{t}-r\ \Big(\diff{\theta}{t}\Big)^2\Big) \hat\vr
-   +\Big(r\ \difftwo{\theta}{t} + 2 \diff{r}{t}\ \diff{\theta}{t}\Big)\hat\vth
+       &amp;=\Big[\difftwo{r}{t}-r\ \Big(\diff{\theta}{t}\Big)^2\Big] \hat\vr
+   +\Big[r\ \difftwo{\theta}{t} + 2 \diff{r}{t}\ \diff{\theta}{t}\Big]\hat\vth
 </mrow>
 </md>
 </p></proof>
@@ -135,15 +151,14 @@ that has one end fixed at the origin and that is rotating about the
 origin at a constant <m>\Omega\,</m>rad/sec.
 </p>
 
-<sidebyside>
+<sidebyside width="35%">
 <image source="figs/beadRod"/>
 </sidebyside>
 
 <p>
 Because the rod is frictionless,
 it is incapable of applying to the bead any force parallel to the rod. So
-under Newton's law, <m>m\va=\vF</m>, the radial
-<fn>The <m>\hat\vth</m> component
+under Newton's law, <m>m\va=\vF</m>, the radial<fn>The <m>\hat\vth</m> component
 of the acceleration just tells us how much normal force the rod is applying
 to the bead to keep it on the rod.</fn>
  component of the acceleration
@@ -178,7 +193,7 @@ r(\theta) = \frac{1}{2}\big(e^{\theta}+e^{-\theta}\big)
 which is a spiral.
 </p>
 
-<sidebyside>
+<sidebyside width="40%">
 <image source="figs/beadCurve"/>
 </sidebyside>
 </example>
@@ -190,7 +205,7 @@ polar coordinates. A conic section is the intersection of a plane with a cone.
 This is illustrated in the figures below.
 </p>
 
-<sidebyside>
+<sidebyside widths="20% 20% 20% 20%" valign="middle">
 <image source="figs/conePlaneCircle"/>
 <image source="figs/conePlaneEllipse"/>
 <image source="figs/conePlaneParabola"/>
@@ -198,8 +213,7 @@ This is illustrated in the figures below.
 </sidebyside>
 
 <p>
-For our current purposes, it is convenient to use the equivalent
-<fn>It is outside our scope to prove this equivalence.</fn> (and often used) definition that a conic section is the set of points <m>P</m>
+For our current purposes, it is convenient to use the equivalent<fn>It is outside our scope to prove this equivalence.</fn> (and often used) definition that a conic section is the set of points <m>P</m>
 in the <m>xy</m>-plane
 <ul>
 <li>
@@ -218,7 +232,7 @@ Choose a coordinate system with the focus <m>F</m> of the conic being the origin
 and with the directrix <m>L</m> being <m>x=p</m> for some <m>p \gt 0</m>.
 </p>
 
-<sidebyside>
+<sidebyside width="33%">
 <image source="figs/conic"/>
 </sidebyside>
 
@@ -265,7 +279,7 @@ Now consider separately four different cases, depending on the value of
 If <m>\veps=0</m>, (C) reduces to
 </p>
 
-<sidebyside width="45%">
+<sidebyside widths="45% 30%" valign="middle">
 <p><me>
 x^2+y^2 = \ell^2
 </me></p>
@@ -287,7 +301,7 @@ gives
 which is equivalent to
 </p>
 
-<sidebyside width="45%">
+<sidebyside  widths="45% 40%" valign="middle">
 <p>
   <me>
   \frac{\big(x+\frac{\veps\ell}{1-\veps^2}\big)^2}
@@ -306,7 +320,7 @@ and semi-minor axis <m>r_m=\frac{\ell}{\sqrt{1-\veps^2}}</m>.
 <li><p>
 If <m>\veps=1</m>, (C) reduces to
 </p>
-<sidebyside width="45%">
+<sidebyside widths="45% 33%" valign="middle">
 <p><me>
 y^2 = \ell^2-2\ell x
 </me></p>
@@ -320,7 +334,7 @@ which is of course a parabola.
 If <m>\veps \gt 1</m>, the same computation as in the <m>0 \lt \veps \lt 1</m> case
 gives
 </p>
-<sidebyside width="45%">
+<sidebyside widths="45% 33%" valign="middle">
   <p><me>
   \frac{\big(x-\frac{\veps\ell}{\veps^2-1}\big)^2}
                 { \frac{\ell^2}{{(\veps^2-1)}^2}}

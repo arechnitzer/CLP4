@@ -72,11 +72,10 @@ A curve <m>\vR=\va(t)</m> is reparametrized in terms of arclength as <m>\vR=\vb(
 A
 </p></answer>
 <solution><p>
-We consider the situation geometrically. If we plot <m>\vR</m> in space (of the relevant dimension), regardless of its parametrization, the derivative at a point will give a vector tangent to <m>\vR</m>, in the direction the curve moves when the parameter is increasing. Since <m>\va(t_0)</m> and <m>\vb(s_0)</m> describe the same spot on the curve, <m>\va'(t_0)</m> and <m>\vb'(s_0)</m> will be parallel
-<fn>Since we specified the derivatives are nonzero, there's no messiness about vectors being parallel to a zero vector.</fn>
+We consider the situation geometrically. If we plot <m>\vR</m> in space (of the relevant dimension), regardless of its parametrization, the derivative at a point will give a vector tangent to <m>\vR</m>, in the direction the curve moves when the parameter is increasing. Since <m>\va(t_0)</m> and <m>\vb(s_0)</m> describe the same spot on the curve, <m>\va'(t_0)</m> and <m>\vb'(s_0)</m> will be parallel<fn>Since we specified the derivatives are nonzero, there's no messiness about vectors being parallel to a zero vector.</fn>
  <mdash/> they're both tangent to the same piece of curve. Furthermore, as <m>t</m> increases, so does <m>s</m>, so the direction of increasing <m>t</m> is the same as the direction of increasing <m>s</m>. Therefore, A. holds.
 </p>
-<sidebyside>
+<sidebyside width="60%">
 <image><latex-image>\begin{tikzpicture}
 \draw[thick] plot[domain=-1:1.75]({\x*\x*\x-\x*\x},\x);
 \draw (-2,-1) node[below]{$\vR$};
@@ -259,10 +258,11 @@ as <m>t\rightarrow+\infty</m>, the arc length <m>s\rightarrow +\infty</m>.)
 So the reparametrization is
 <md>
 <mrow>
-\vR(s) = e^t (\cos t, \sin t)\Big|_{t=\ln\left(\frac{s}{\sqrt{2}}\right)}
+&amp;\vR(s) = e^t (\cos t, \sin t)\Big|_{t=\ln\left(\frac{s}{\sqrt{2}}\right)}
 =\frac{s}{\sqrt{2}}\left(\cos\Big(\ln\Big(\frac{s}{\sqrt{2}}\Big)\Big)\,,\,
                  \sin\Big(\ln\Big(\frac{s}{\sqrt{2}}\Big)\Big)\right)
-\quad\text{with } s \gt 0
+</mrow><mrow>
+&amp;\quad\text{with } s \gt 0
 </mrow>
 </md>
 </p>
@@ -306,7 +306,7 @@ Using <m>\arctan t = z</m>, and so <m>t=\tan z</m>:
 </mrow>
 </md>
 If we didn't have the restricted domain, this would make a spiral going up: <m>z</m> is both the height of the spiral and a radian measure. The <m>\hi</m>-component of the spiral stays between <m>-1</m> and <m>1</m>, while the <m>\hj</m>-component increases. So, our spiral gets increasingly <q>wide,</q> while staying the same <q>thickness.</q>
-</p><sidebyside>
+</p><sidebyside width="50%">
 <image><latex-image>\begin{tikzpicture}
 \draw[thick] plot[domain=0:23, smooth, samples=100]({sin( \x r)*\x/3},{cos(\x r)+\x/4});
 \draw[very thick, red] plot[domain=0:1.57, smooth, samples=100]({sin( \x r)*\x/3},{cos(\x r)+\x/4});
@@ -327,11 +327,20 @@ Reparametrize the function <m>\vr(t)=(\tfrac12 t^2 , \tfrac13 t^3)</m> in terms 
 Remember <m>\sqrt{x^2}=|x|</m>. You will need to consider cases for this one.
 </p></hint>
 <answer><p>
-<m>\vR(s)=\begin{cases}
-\Big(\frac12\left[ (2\sqrt2-3s)^{2/3}-1)\right],-\frac13\left[(2\sqrt2-3s)^{2/3}-1\right]^{3/2}\Big)&amp;\text{ when }s\le \frac13(2\sqrt2-1)\\
-\Big(\frac12\left[(3s+2-2\sqrt2)^{2/3}-1 \right],\frac13\left[(3s+2-2\sqrt2)^{2/3}-1\right]^{3/2}\Big)&amp;\text{ when }s \gt \frac13(2\sqrt2-1)
-\end{cases}
-</m>
+When <m>s\le \frac13(2\sqrt2-1)</m>,
+<me>
+\vR(s)=
+\Big(\frac12\left[ (2\sqrt2-3s)^{2/3}-1)\right],
+             -\frac13\left[(2\sqrt2-3s)^{2/3}-1\right]^{3/2}\Big)
+</me>
+and when <m>s\gt \frac13(2\sqrt2-1)</m>,
+<me>
+\vR(s)=
+\Big(\frac12\left[(3s+2-2\sqrt2)^{2/3}-1 \right],
+                  \frac13\left[(3s+2-2\sqrt2)^{2/3}-1\right]^{3/2}\Big)
+</me>
+
+
 </p></answer>
 <solution><p>
 <md>
@@ -342,7 +351,9 @@ Remember <m>\sqrt{x^2}=|x|</m>. You will need to consider cases for this one.
 </mrow><mrow>
 |\vr'(t)|&amp;=\sqrt{t^2+t^4}=|t|\sqrt{1+t^2}
 </mrow><mrow>
-s(t)&amp;=\int_{-1}^t|x|\sqrt{1+x^2}\dee{x}=\begin{cases}
+s(t)&amp;=\int_{-1}^t|x|\sqrt{1+x^2}\dee{x}
+</mrow><mrow>
+&amp;=\begin{cases}
 \int_{-1}^t -x\sqrt{1+x^2}\dee{x} &amp; \text{when } t \le 0
 \\
 \int_{-1}^0 -x\sqrt{1+x^2}\dee{x} +\int_{0}^t x\sqrt{1+x^2}\dee{x} &amp; \text{when } t  \gt  0
@@ -382,14 +393,20 @@ t&amp;=\begin{cases}-\sqrt{(2\sqrt2-3s)^{2/3}-1} &amp;\text{when } t \le 0
 \sqrt{(3s+2-2\sqrt{2})^{2/3}-1} &amp;\text{when }t \gt 0
 \end{cases}
 </mrow>
-<intertext>Noting that <m>t=0</m> when <m>s=\tfrac{1}{3}(2\sqrt2-1)</m>, we find our reparametrization of <m>(\tfrac12t^2,\tfrac13t^3)</m>.</intertext><mrow>
-\vR(s)&amp;=\begin{cases}
-\Big(\frac12\left[ (2\sqrt2-3s)^{2/3}-1)\right],-\frac13\left[(2\sqrt2-3s)^{2/3}-1\right]^{3/2}\Big)&amp;\text{ when }s\le \frac13(2\sqrt2-1)
-\\
-\Big(\frac12\left[(3s+2-2\sqrt2)^{2/3}-1 \right],\frac13\left[(3s+2-2\sqrt2)^{2/3}-1\right]^{3/2}\Big)&amp;\text{ when }s \gt \frac13(2\sqrt2-1)
-\end{cases}
-</mrow>
 </md>
+Noting that <m>t=0</m> when <m>s=\tfrac{1}{3}(2\sqrt2-1)</m>, we find our reparametrization of <m>(\tfrac12t^2,\tfrac13t^3)</m>.
+When <m>s\le \frac13(2\sqrt2-1)</m>,
+<me>
+\vR(s)=
+\Big(\frac12\left[ (2\sqrt2-3s)^{2/3}-1)\right],
+             -\frac13\left[(2\sqrt2-3s)^{2/3}-1\right]^{3/2}\Big)
+</me>
+and when <m>s\gt \frac13(2\sqrt2-1)</m>,
+<me>
+\vR(s)=
+\Big(\frac12\left[(3s+2-2\sqrt2)^{2/3}-1 \right],
+                  \frac13\left[(3s+2-2\sqrt2)^{2/3}-1\right]^{3/2}\Big)
+</me>
 Remark: after a computation with this much detail, it's nice to find a few points to check, to verify that our answer is reasonable. For instance, when <m>s=0</m>, <m>t</m> should be <m>-1</m>, and vice-versa. Also, we found that <m>t=0</m> corresponds to <m>s=\frac13(2\sqrt2-1)</m>. So, we should be able to verify that <m>\vr(0)=\vR\left(\frac13(2\sqrt2-1)\right)</m> and <m>\vr(-1)=\vR(0)</m>.
 </p></solution>
 </exercise></exercisegroup>

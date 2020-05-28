@@ -25,12 +25,15 @@ The first uses the polar angle <m>\theta</m> as the parameter. We have already
 seen, in Example <xref ref="eg_paramCircle"/>, the parametrization
 </p>
 
-<sidebyside width="45%">
+<sidebyside widths="60% 40%" valign="middle">
 <image source="figs/reparCircleA"/>
-<p><me>
-\vr_1(\theta) = \big(r\cos\theta\,,\,r\sin\theta\big)
-\qquad 0\le \theta\le \pi
-</me></p>
+<p><md>
+<mrow>
+&amp;\vr_1(\theta) = \big(r\cos\theta\,,\,r\sin\theta\big)
+</mrow><mrow>
+&amp;0\le \theta\le \pi
+</mrow>
+</md></p>
 </sidebyside>
 
 </li>
@@ -40,12 +43,16 @@ for <m>y</m> as a function of <m>x</m>, gives <m>y(x) = \sqrt{r^2-x^2}</m> and
 so gives the parametrization
 </p>
 
-<sidebyside width="45%">
+<sidebyside widths="60% 40%" valign="middle">
   <image source="figs/reparCircleB"/>
   <p>
-  <me>
-  \vr_2(x) = \big(x\,,\,\sqrt{r^2-x^2}\,\big)\qquad -r\le x\le r
-  </me>
+  <md>
+  <mrow>
+  &amp;\vr_2(x) = \big(x\,,\,\sqrt{r^2-x^2}\,\big)
+  </mrow><mrow>
+  &amp;-r\le x\le r
+  </mrow>
+  </md>
   </p>
 </sidebyside>
 </li>
@@ -56,18 +63,20 @@ to <m>\vr_2(\theta)</m> is just <m>s=r\theta</m>. So the point on the semicircle
 that is arc length <m>s</m> away from <m>(r,0)</m> is
 </p>
 
-<sidebyside width="45%">
+<sidebyside widths="60% 40%" valign="middle">
   <image source="figs/reparCircleC"/>
   <p>
-  <me>
-  \vr_3(s) = \vr_2\Big(\frac{s}{r}\Big)
-  = \Big(r\cos\frac{s}{r}\,,\,r\sin\frac{s}{r}\Big)
-  </me>
+  <md>
+  <mrow>
+  &amp;\vr_3(s) = \vr_2\Big(\frac{s}{r}\Big)
+  </mrow><mrow>
+  &amp;= \Big(r\cos\frac{s}{r}\,,\,r\sin\frac{s}{r}\Big)
+  </mrow><mrow>
+  &amp;0\le s\le \pi r
+   </mrow>
+  </md>
   </p>
 </sidebyside>
-<p>
-with <m>0\le s\le \pi r</m>.
-</p>
 </li>
 </ul>
 </p>
@@ -90,7 +99,7 @@ as <m>s</m> runs from <m>0</m> to some appropriate value, <m>\vR(s)</m> runs fro
 the arc length from <m>(a,0)</m> to <m>\vR(s)</m> along <m>x^{2/3}+y^{2/3}=a^{2/3}</m>.
 </p>
 
-<sidebyside>
+<sidebyside width="40%">
 <image source="figs/astroidS"/>
 </sidebyside>
 
@@ -122,11 +131,13 @@ into <m>\cos\big(T(s)\big)</m>'s and <m>\sin\big(T(s)\big)</m>'s.
 <md>
 <mrow>
 s=\frac{3a}{4}\big[1-\cos\big(2T(s)\big)\big]
-=\frac{3a}{4}\big[1-\big(2\cos^2\big(T(s)-1\big)\big]
+&amp;=\frac{3a}{4}\big[1-\big(2\cos^2\big(T(s)-1\big)\big]
+</mrow><mrow>
 &amp;\iff \cos^2\big(T(s)\big)=1-\frac{2s}{3a}
 </mrow><mrow>
 s=\frac{3a}{4}\big[1-\cos\big(2T(s)\big)\big]
-=\frac{3a}{4}\big[1-\big(1-2\sin^2\big(T(s)\big)\big]
+&amp;=\frac{3a}{4}\big[1-\big(1-2\sin^2\big(T(s)\big)\big]
+</mrow><mrow>
 &amp;\iff \sin^2\big(T(s)\big)=\frac{2s}{3a}
 </mrow>
 </md>

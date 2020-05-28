@@ -10,8 +10,7 @@
 
 
 <p>One of the great triumphs of Newtonian mechanics was the explanation
-of Kepler's laws
-<fn>The German astronomer Johannes Kepler (1571<ndash/>1630)
+of Kepler's laws<fn>The German astronomer Johannes Kepler (1571<ndash/>1630)
 developed these laws during the course of an attempt to relate the five extraterrestrial planets then known to the five Platonic solids. He based
 the laws on a great number of careful measurements
 made by the Danish Astronomer Tycho Brahe (1546<ndash/>1601). Then
@@ -38,8 +37,7 @@ motion <m>m\va =\vF</m> where <m>m</m> is the mass of the planet and
 \vF = -\frac{GMm}{r^3}\vr
 </me>
 is the <q>gravitational force</q> applied on the planet by the sun. Here
-<m>G</m> is a constant
-<fn>Its value is about <m>6.67408\times10^{-11} \text{m}^3\,\text{kg}^{-1}\,\text{sec}^{-2}</m>.</fn>,
+<m>G</m> is a constant<fn>Its value is about <m>6.67408\times10^{-11} \text{m}^3\,\text{kg}^{-1}\,\text{sec}^{-2}</m>.</fn>,
 called the <q>gravitational constant</q> or the
 <q>universal gravitational constant</q>, <m>M</m> is the mass of the
 sun, <m>\vr</m> is the vector from the sun to the planet and <m>r=|\vr|</m>.
@@ -77,16 +75,19 @@ always be parallel to the normal vector to the plane. So let's define
 \vOm(t) = \vr(t)\times\vv(t)
 </me>
 and check how it depends on time. By the product rule,
-<me>
-\diff{\vOm}{t}(t) =\diff{\ }{t}\big(\vr(t)\times\vv(t)\big)
+<md>
+<mrow>
+\diff{\vOm}{t}(t) &amp;=\diff{\ }{t}\big(\vr(t)\times\vv(t)\big)
 =\vv(t)\times\vv(t) + \vr(t)\times\va(t)
-=\frac{1}{m}\vr(t)\times\vF\big(\vr(t))\big)
-=\vZero
+</mrow><mrow>
+&amp;=\frac{1}{m}\vr(t)\times\vF\big(\vr(t))\big)
+</mrow><mrow>
+&amp;=\vZero
 \tag{A}
-</me>
+</mrow>
+</md>
 because <m>\vr(t)</m> and <m>\vF\big(\vr(t))\big)</m> are parallel.
-So <m>\vOm(t)</m> is
-<fn>Physicists call <m>m\,\vOm(t)</m> the angular momentum at time <m>t</m> and refer to (A) as (an example of) conservation of angular momentum. Conservation of angular momentum is exploited in gyro-compasses and by ice skaters (to spin faster/slower).</fn>
+So <m>\vOm(t)</m> is<fn>Physicists call <m>m\,\vOm(t)</m> the angular momentum at time <m>t</m> and refer to (A) as (an example of) conservation of angular momentum. Conservation of angular momentum is exploited in gyro-compasses and by ice skaters (to spin faster/slower).</fn>
 in fact independent of <m>t</m>. It is a constant vector that we'll just denote <m>\vOm</m>.
 </p>
 
@@ -141,10 +142,11 @@ Lemma <xref ref="lem_polar"/>.b gives that
 <md>
 <mrow>
 \text{constant} = \big|\vr\times\vv\big|
-   = \Big|r\hat\vr\times\Big(\diff{r}{t}\ \hat\vr
+   &amp;= \Big|r\hat\vr\times\Big(\diff{r}{t}\ \hat\vr
              + r\ \diff{\theta}{t}\ \hat\vth\Big)\Big|
    =r^2\diff{\theta}{t}
-\qquad\text{since}\quad |\hat\vr\times\hat\vr|=0,\
+</mrow><mrow>
+&amp;\text{since}\quad |\hat\vr\times\hat\vr|=0,\
                         |\hat\vr\times\hat\vth|=1
 </mrow>
 </md>
@@ -155,7 +157,7 @@ a circular disk of radius <m>r</m>. (If <m>r(t)</m> were independent of <m>t</m>
 fraction <m>\frac{\dee{\theta}}{2\pi}</m> of the area of the full disk, which is
 </p>
 
-<sidebyside width="45%">
+<sidebyside widths="40% 30%" valign="middle">
 <p>
 <me>
 \frac{\dee{\theta}}{2\pi}\ \pi r^2 = \frac{1}{2}r^2\,\dee{\theta}

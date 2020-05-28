@@ -28,9 +28,9 @@ and let <m>f(x,y,z)</m> have continuous first partial derivatives.
 Use the fundamental theorem of calculus to show that
 <md>
 <mrow>
-\tripInt_V\frac{\partial f}{\partial z}(x,y,z)\ \dee{x}\,\dee{y}\,\dee{z}
-=\dblInt_R f(x,y,1)\ \dee{x}\,\dee{y}
-  - \dblInt_R f(x,y,0)\ \dee{x}\,\dee{y}
+\tripInt_V\frac{\partial f}{\partial z}(x,y,z)\,\dee{x}\,\dee{y}\,\dee{z}
+=\dblInt_R\! f(x,y,1)\,\dee{x}\,\dee{y}
+  -\! \dblInt_R\! f(x,y,0)\,\dee{x}\,\dee{y}
 </mrow>
 </md>
 </li>
@@ -38,9 +38,9 @@ Use the fundamental theorem of calculus to show that
 Use the divergence theorem to show that
 <md>
 <mrow>
-\tripInt_V\frac{\partial f}{\partial z}(x,y,z)\ \dee{x}\,\dee{y}\,\dee{z}
-=\dblInt_R f(x,y,1)\ \dee{x}\,\dee{y}
-  - \dblInt_R f(x,y,0)\ \dee{x}\,\dee{y}
+\tripInt_V\frac{\partial f}{\partial z}(x,y,z)\,\dee{x}\,\dee{y}\,\dee{z}
+=\dblInt_R\! f(x,y,1)\,\dee{x}\,\dee{y}
+  -\! \dblInt_R\! f(x,y,0)\,\dee{x}\,\dee{y}
 </mrow>
 </md>
 </li>
@@ -76,28 +76,28 @@ of <m>\vF</m> is <m>\vnabla\cdot\vF(x,y,z) = \frac{\partial f}{\partial z}(x,y,z
 The boundary of the cube <m>V</m> is the union of six faces
 <md>
 <mrow>
-S_1&amp;=\Set{(x,y,z)}{0\le x\le 1,\ 0\le y\le 1,\ z=1}\quad
+S_1&amp;=\Set{(x,y,z)}{0\le x\le 1,\ 0\le y\le 1,\ z=1}\ 
    \text{with outward normal } \hn=\hk
 </mrow><mrow>
-S_2&amp;=\Set{(x,y,z)}{0\le x\le 1,\ 0\le y\le 1,\ z=0}\quad
+S_2&amp;=\Set{(x,y,z)}{0\le x\le 1,\ 0\le y\le 1,\ z=0}\ 
    \text{with outward normal } \hn=-\hk
 </mrow><mrow>
-S_3&amp;=\Set{(x,y,z)}{0\le x\le 1,\ 0\le z\le 1,\ y=1}\quad
+S_3&amp;=\Set{(x,y,z)}{0\le x\le 1,\ 0\le z\le 1,\ y=1}\ 
    \text{with outward normal } \hn=\hj
 </mrow><mrow>
-S_4&amp;=\Set{(x,y,z)}{0\le x\le 1,\ 0\le z\le 1,\ y=0}\quad
+S_4&amp;=\Set{(x,y,z)}{0\le x\le 1,\ 0\le z\le 1,\ y=0}\ 
    \text{with outward normal } \hn=-\hj
 </mrow><mrow>
-S_5&amp;=\Set{(x,y,z)}{0\le y\le 1,\ 0\le z\le 1,\ x=1}\quad
+S_5&amp;=\Set{(x,y,z)}{0\le y\le 1,\ 0\le z\le 1,\ x=1}\ 
    \text{with outward normal } \hn=\hi
 </mrow><mrow>
-S_6&amp;=\Set{(x,y,z)}{0\le y\le 1,\ 0\le z\le 1,\ x=0}\quad
+S_6&amp;=\Set{(x,y,z)}{0\le y\le 1,\ 0\le z\le 1,\ x=0}\ 
    \text{with outward normal } \hn=-\hi
 </mrow>
 </md>
 </p>
 
-<sidebyside width="75%">
+<sidebyside width="55%">
 <image source="pfigs/cubeDT"/>
 </sidebyside>
 
@@ -162,13 +162,16 @@ See the solution.
 =\vnabla\phi\cdot\va+\phi\vnabla\cdot\va=\vnabla\phi\cdot\va</m>, since <m>\va</m> is
 constant. So, by
 the divergence theorem,
-<me>
+<md>
+<mrow>
 \dblInt_{\partial V}\phi\,\va\cdot\hn\,\dee{S}
-=\tripInt_V\vnabla\cdot(\phi\,\va)\ \dee{V}
+&amp;=\tripInt_V\vnabla\cdot(\phi\,\va)\ \dee{V}
 =\tripInt_V \vnabla\phi\cdot\va\ \dee{V}
-\implies \left[\dblInt_{\partial V}\phi\hn\,\dee{S}
+</mrow><mrow>
+&amp;\implies \left[\dblInt_{\partial V}\phi\hn\,\dee{S}
          -\tripInt_V \vnabla\phi\,\dee{V}\right]\cdot\va=0
-</me>
+</mrow>
+</md>
 This is true for all vectors <m>\va</m>. In particular, applying this with
 <m>\va=\hi,\hj,\hk</m>, we have that all three components of
 <m>\left[\dblInt_{\partial V}\phi\hn\,\dee{S}
@@ -181,11 +184,14 @@ So
 
 <p>(b) By part (a), with <m>\phi=x^2+y^2+z^2</m> and
 <m>\vnabla\phi = 2x\,\hi+2y\,\hj+2x\,\hk</m>,
-<me>
+<md>
+<mrow>
 \frac{1}{2|V|}\dblInt_{\partial V} (x^2+y^2+z^2)\,\hn\,\dee{S}
-=\frac{1}{2|V|} \tripInt_V (2x\,\hi+2y\,\hj+2z\,\hk)\,\dee{V}
-=(\bar x,\bar y,\bar z)
-</me>
+&amp;=\frac{1}{2|V|} \tripInt_V (2x\,\hi+2y\,\hj+2z\,\hk)\,\dee{V}
+</mrow><mrow>
+&amp;=(\bar x,\bar y,\bar z)
+</mrow>
+</md>
 </p></solution>
 </exercise>
 </exercisegroup>
@@ -249,8 +255,8 @@ Since
 (<xref ref="eq_SUdSparam"/>) yields
 <md>
 <mrow>
-\hn\,\dee{S}
-&amp;=\pm\Big(\frac{\partial x}{\partial\theta}\,,\,
+&amp;\hn\,\dee{S}
+=\pm\Big(\frac{\partial x}{\partial\theta}\,,\,
           \frac{\partial y}{\partial\theta}\,,\,
           \frac{\partial z}{\partial\theta}\Big)
 \times
@@ -260,7 +266,7 @@ Since
 </mrow><mrow>
 &amp;=\pm \big(-\sin\varphi\sin\theta\,,\,
        \sin\varphi\cos\theta\,,\,0\big)
-\times
+\!\times\!
 (\cos\varphi\cos\theta\,,\,\cos\varphi\sin\theta\,,\,-\sin\varphi)
 \ \dee{\theta}\dee{\varphi}
 </mrow><mrow>
@@ -285,7 +291,8 @@ times <m>\vr(\theta,\varphi)</m>. So, on <m>S</m>,
 \vF\cdot\hn\,\dee{S}
   &amp;= \sin\varphi \overbrace{\big(\sin\varphi\cos\theta\,,\,
           \sin\varphi\sin\theta\,,\,
-          \cos^2\varphi\big)}^{\vF}\cdot
+          \cos^2\varphi\big)}^{\vF}
+</mrow><mrow>&amp;\hskip1.5in\cdot
       \big(\sin\varphi\cos\theta\,,\,
           \sin\varphi\sin\theta\,,\,
           \cos\varphi\big)\ \dee{\theta}\dee{\varphi}
@@ -306,7 +313,8 @@ and
          \ +\ \left[-\frac{1}{4}\cos^4\varphi\right]^\pi_0 \right\}\cr
 &amp;=2\pi\int_0^\pi \dee{\varphi}\ \sin\varphi(1-\cos^2\varphi)
 =2\pi\left[-\cos\varphi+\frac{1}{3}\cos^3\varphi\right]_0^\pi
-=2\pi\left[\frac{4}{3}\right]
+</mrow><mrow>
+&amp;=2\pi\left[\frac{4}{3}\right]
 </mrow><mrow>
 &amp;=\frac{8\pi}{3}
 </mrow>
@@ -467,7 +475,7 @@ Let <m>S</m> be the curved portion of the boundary of <m>V</m>.
 It is <m>z={9-x^2-y^2\over 9+x^2+y^2}</m>, <m>x^2+y^2\le 9</m>.
 Here is a sketch of the first octant part of <m>S</m> and <m>D</m>.
 </p>
-<sidebyside width="75%">
+<sidebyside width="35%">
   <image source="pfigs/divThmA"/>
 </sidebyside>
 
@@ -522,16 +530,19 @@ Switching to polar coordinates
 <mrow>
 \dblInt_{D}\vF\cdot \hn\,\dee{S}
 &amp;=-\int_0^3 dr\,r\int_0^{2\pi}\dee{\theta}\ \big(r\sin\theta\big)^2
-=-\bigg[\int_0^3 dr\,r^3\bigg]\ \bigg[\int_0^{2\pi}\dee{\theta}\ \sin^2\theta\bigg]
+</mrow><mrow>
+&amp;=-\bigg[\int_0^3 dr\,r^3\bigg]\ \bigg[\int_0^{2\pi}\dee{\theta}\ \sin^2\theta\bigg]
 </mrow><mrow>
 &amp;=-\frac{3^4}{4}\ \bigg[\int_0^{2\pi}\dee{\theta}\ \frac{1-\cos(2\theta)}{2}\bigg]
-=-\frac{81}{4}\bigg[\frac{\theta}{2}-\frac{\sin(2\theta)}{4}\bigg]_0^{2\pi}
-=-\frac{81}{4}\pi
+</mrow><mrow>
+&amp;=-\frac{81}{4}\bigg[\frac{\theta}{2}-\frac{\sin(2\theta)}{4}\bigg]_0^{2\pi}
+</mrow><mrow>
+&amp;=-\frac{81}{4}\pi
 </mrow>
 </md>
 For an efficient, sneaky, way to evaluate
 <m>\int_0^{2\pi} \sin^2 \theta\ \dee{\theta}</m>, see Example
-<xref ref="eg_workIntegalB"/>.
+<xref ref="eg_workIntegralB"/>.
 </p>
 
 <p>(b)
@@ -627,8 +638,7 @@ Second, by using the divergence theorem.
 </p>
 
 <p>(b) The volume of the solid can be easily computed by decomposing the solid
-into thin horizontal pancakes. See Section \eref{CLP101}{sec int volumes}
-in the CLP-2 text.
+into thin horizontal pancakes. See Section 1.6 in the CLP-2 text.
 </p>
 
 </hint>
@@ -645,12 +655,14 @@ by (<xref ref="eq_SUdSimplicit"/>),
 <mrow>
 \hn\,\dee{S}&amp;=\frac{\vnabla G}{\vnabla G\cdot\hk}\ \dee{x}\,\dee{y}
 =\frac{2x\,\hi+2y\,\hj+\hk}{1}\,\dee{x}\,\dee{y}
-=(2x\,\hi+2y\,\hj+\hk)\,\dee{x}\,\dee{y}
+</mrow><mrow>
+&amp;=(2x\,\hi+2y\,\hj+\hk)\,\dee{x}\,\dee{y}
 </mrow><mrow>
 \vF\cdot\hn\,\dee{S}
 &amp;=\big[x\,\hi+y\,\hj+\hk\big]\cdot
           \big[2x\,\hi+2y\,\hj+\hk\big]\,\dee{x}\,\dee{y}
-=\big[2x^2+2y^2+1\big]\,\dee{x}\,\dee{y}
+</mrow><mrow>
+&amp;=\big[2x^2+2y^2+1\big]\,\dee{x}\,\dee{y}
 </mrow>
 </md>
 Switching to polar coordinates
@@ -665,7 +677,7 @@ Switching to polar coordinates
 <p>(b) Call the solid <m>0\le z\le 1-x^2-y^2</m>, <m>V</m>.
 </p>
 
-<sidebyside width="75%">
+<sidebyside width="40%">
 <image source="pfigs/divThmB"/>
 </sidebyside>
 <p>
@@ -692,8 +704,10 @@ the divergence theorem gives
 \dblInt_{\cS}\vF\cdot\hn\,\dee{S}
 &amp;=\tripInt_V\vnabla\cdot\vF\ \dee{V}
 -\dblInt_{D}\vF\cdot\hn\,\dee{S}
-=\tripInt_V 2\ \dee{V} -(-\pi)
-=\pi + 2\tripInt_V \dee{V}
+</mrow><mrow>
+&amp;=\tripInt_V 2\ \dee{V} -(-\pi)
+</mrow><mrow>
+&amp;=\pi + 2\tripInt_V \dee{V}
 </mrow>
 </md>
 To evaluate the volume <m>\tripInt_V \dee{V}</m>, we slice the <m>V</m> into
@@ -701,7 +715,7 @@ thin horizontal pancakes. Here is a sketch of the pancake at height
 <m>z</m>.
 </p>
 
-<sidebyside width="75%">
+<sidebyside width="45%">
 <image source="pfigs/divThmC"/>
 </sidebyside>
 
@@ -825,8 +839,7 @@ By oddness under <m>Y\rightarrow -y</m>,
 </mrow>
 </md>
 We can evaluate the volume integral by decomposing <m>V</m>
-into thin horizontal pancakes. See Section \eref{CLP101}{sec int volumes}
-in the CLP-2 text.
+into thin horizontal pancakes. See Section 1.6 in the CLP-2 text.
 For <m>0\le z\le 1</m>, the horizontal cross-section of the silo at height
 <m>z</m> is a circle of radius <m>1</m> and hence of area <m>\pi</m>. For <m>z\ge1</m>,
 the horizontal cross-section of the silo at height <m>z</m> is again a
@@ -841,7 +854,8 @@ has area <m>\pi(2-z^2)</m>. The biggest that <m>z</m> can get is <m>\sqrt{2}</m>
 </mrow><mrow>
 &amp;=\left[\int_0^1 \dee{r}\ r^3\right]
    \left[\int_0^{2\pi}\dee{\theta} \ \frac{\cos(2\theta)+1}{2}\right]+\int_0^1 dz\ \pi z
-+\int_1^{\sqrt{2}}dz\ \pi(2-z^2) z
+</mrow><mrow>
+&amp;\hskip1in+\int_1^{\sqrt{2}}dz\ \pi(2-z^2) z
 </mrow><mrow>
 &amp;=\left[\frac{r^4}{4}\right]_0^1\pi
  +\left[\pi\frac{z^2}{2}\right]_0^1
@@ -854,7 +868,7 @@ has area <m>\pi(2-z^2)</m>. The biggest that <m>z</m> can get is <m>\sqrt{2}</m>
 </md>
 For an efficient, sneaky, way to evaluate
 <m>\int_0^{2\pi} \cos^2 \theta\ \dee{\theta}</m>, see Example
-<xref ref="eg_workIntegalB"/>.
+<xref ref="eg_workIntegralB"/>.
 </p></solution>
 </exercise>
 
@@ -872,7 +886,12 @@ The integral can be easily evaluated by using that,
 for any solid <m>\cV</m> in <m>\bbbr^3</m>,
 <md>
 <mrow>
-\tripInt_\cV\dee{V}=\text{Volume}(\cV)\qquad
+\tripInt_\cV\dee{V}=\text{Volume}(\cV)
+</mrow>
+</md>
+and
+<md>
+<mrow>
 \bar x =\frac{\tripInt_\cV x\,\dee{V}}{\text{Volume}(\cV)}\qquad
 \bar y =\frac{\tripInt_\cV y\,\dee{V}}{\text{Volume}(\cV)}\qquad
 \bar z =\frac{\tripInt_\cV z\,\dee{V}}{\text{Volume}(\cV)}
@@ -906,6 +925,11 @@ in <m>\bbbr^3</m>,
 <md>
 <mrow>
 \tripInt_\cV\dee{V}=\text{Volume}(\cV)\qquad
+</mrow>
+</md>
+and
+<md>
+<mrow>
 \bar x =\frac{\tripInt_\cV x\,\dee{V}}{\text{Volume}(\cV)}\qquad
 \bar y =\frac{\tripInt_\cV y\,\dee{V}}{\text{Volume}(\cV)}\qquad
 \bar z =\frac{\tripInt_\cV z\,\dee{V}}{\text{Volume}(\cV)}
@@ -1098,18 +1122,21 @@ If <m>(x,y,z)\ne\vZero</m>,
 &amp;\vnabla\cdot\vF(x,y,z)
 =\pdiff{}{x}\frac{x}{{\big[x^2+y^2+z^2\big]}^{3/2}}
 +\pdiff{}{y}\frac{y}{{\big[x^2+y^2+z^2\big]}^{3/2}}
+</mrow><mrow>
+&amp;\hskip1.25in
 +\pdiff{}{z}\frac{z}{{\big[x^2+y^2+z^2\big]}^{3/2}}
-
 </mrow><mrow>
 &amp;\hskip0.25in
 =\frac{\big[x^2+y^2+z^2\big]-x\frac{3}{2}(2x)}{{\big[x^2+y^2+z^2\big]}^{5/2}}
 +\frac{\big[x^2+y^2+z^2\big]-y\frac{3}{2}(2y)}{{\big[x^2+y^2+z^2\big]}^{5/2}}
+</mrow><mrow>
+&amp;\hskip1.25in
 +\frac{\big[x^2+y^2+z^2\big]-z\frac{3}{2}(2z)}{{\big[x^2+y^2+z^2\big]}^{5/2}}
-
 </mrow><mrow>
 &amp;\hskip0.25in
 =\frac{3\big[x^2+y^2+z^2\big]-3x^2-3y^2-3z^2}{{\big[x^2+y^2+z^2\big]}^{5/2}}
-=0
+</mrow><mrow>
+&amp;\hskip0.25in=0
 </mrow>
 </md>
 If <m>(x,y,z)=\vZero</m>, <m>\vF(x,y,z)</m> is not defined
@@ -1126,9 +1153,9 @@ to <m>\sigma_a</m> is <m>\hn = \frac{\vr}{|\vr|}</m> so that
 &amp;=\int_{|\vr|=a}  \frac{\vr}{|\vr|^3}\cdot \frac{\vr}{|\vr|}\ \dee{S}
 =\int_{|\vr|=a}  \frac{1}{|\vr|^2}\ \dee{S}
 =\frac{1}{a^2}\int_{|\vr|=a}\dee{S}
-=\frac{1}{a^2}\big(4\pi a^2\big)
 </mrow><mrow>
-&amp;=4\pi\ne 0
+&amp;=\frac{1}{a^2}\big(4\pi a^2\big)
+=4\pi\ne 0
 </mrow>
 </md>
 </p>
@@ -1150,7 +1177,7 @@ increases. So the solid region <m>E</m> looks like an hourglass drum, as sketche
 in the figure on the left below.
 </p>
 
-<sidebyside width="45%">
+<sidebyside widths="20% 27%" valign="middle">
   <image source="pfigs/hyperboloid1"/>
   <image source="pfigs/hyperboloidHole"/>
 </sidebyside>
@@ -1251,11 +1278,17 @@ Do not forget to specify the range of the parameters.
 </p></hint>
 
 <answer><p>
-(a) <m>\vr(\theta,\varphi)
+(a) 
+<md>
+<mrow>
+&amp;\vr(\theta,\varphi)
 =\sin\varphi\cos\theta\,\hi
   +2\sin\varphi\sin\theta\,\hj
-  +2\cos\varphi\,\hk\qquad
-0\le\theta \lt 2\pi,\ 0\le \varphi \le \pi</m>
+  +2\cos\varphi\,\hk
+</mrow><mrow>
+&amp;0\le\theta \lt 2\pi,\ 0\le \varphi \le \pi
+</mrow>
+</md>
 </p>
 
 <p>(b) <m>16\pi</m> </p><p>
@@ -1312,11 +1345,12 @@ z&amp;=2\tilde z=2\cos\varphi
 or
 <md>
 <mrow>
-\vr(\theta,\varphi)
+&amp;\vr(\theta,\varphi)
 =\sin\varphi\cos\theta\,\hi
   +2\sin\varphi\sin\theta\,\hj
-  +2\cos\varphi\,\hk\qquad
-0\le\theta \lt 2\pi,\ 0\le \varphi \le \pi
+  +2\cos\varphi\,\hk
+</mrow><mrow>
+&amp;0\le\theta \lt 2\pi,\ 0\le \varphi \le \pi
 </mrow>
 </md>
 </p>
@@ -1351,7 +1385,8 @@ Since
 </mrow><mrow>
 &amp;=\pm \big(-\sin\varphi\sin\theta\,,\,
        2\sin\varphi\cos\theta\,,\,0\big)
-\times
+</mrow><mrow>
+&amp;\hskip1.5in\times
 (\cos\varphi\cos\theta\,,\,2\cos\varphi\sin\theta\,,\,-2\sin\varphi)
 \ \dee{\theta}\dee{\varphi}
 </mrow><mrow>
@@ -1376,7 +1411,7 @@ in the southern hemisphere. So
 &amp;=\big\{
      (\sin\varphi\cos\theta)(4\sin^2\varphi\cos\theta)
      + (2\sin\varphi\sin\theta)(2\sin^2\varphi\sin\theta)
-</mrow><mrow>&amp;\hskip3in
+</mrow><mrow>&amp;\hskip2.6in
      + (2\cos\varphi)(2\sin\varphi\cos\varphi)
   \big\}\dee{\theta}\dee{\varphi}
 </mrow><mrow>
@@ -1497,7 +1532,7 @@ Let's try the divergence theorem. Since
    &amp;=3x^2+3y^2+2z
 </mrow>
 </md>
-the divergence theorem (Theorem <xref ref="thm_divThm"/> of the CLP-4 text)
+the divergence theorem (Theorem <xref ref="thm_divThm"/>)
 gives
 <md>
 <mrow>
@@ -1522,7 +1557,7 @@ To evaluate the final remaining integral, let's switch to polar coordinates.
 <md>
 <mrow>
 \dblInt_{x^2+y^2\le 2} \big\{13x^2+9y^2\big\}\,\dee{x}\dee{y}
-&amp;=\int_0^{\sqrt{2}}\dee{r}\ r\int_0^{2\pi}\dee{\theta}\
+&amp;=\int_0^{\sqrt{2}}\dee{r}\ r\int_0^{2\pi}\hskip-5pt\dee{\theta}\
 \big\{13\big(r\cos\theta)^2+9\big(r\sin\theta)^2\big\}
 </mrow><mrow>
 &amp;=\int_0^{\sqrt{2}} \dee{r}\ r^3\int_0^{2\pi}\dee{\theta}\
@@ -1554,7 +1589,7 @@ For an efficient, sneaky, way to evaluate
 <m>\int_0^{2\pi} \cos^2\theta\,\dee{\theta}</m>
 and <m>\int_0^{2\pi} \sin^2\theta\,\dee{\theta}</m>,
 see Example
-<xref ref="eg_workIntegalB"/>.
+<xref ref="eg_workIntegralB"/>.
 </p>
 
 </solution>
@@ -1597,7 +1632,7 @@ Set <m>S=\Set{(x,y,z)}{x^2+z^2=4,\ 0\le y\le 3}</m>. We are to compute
 The figure on the left below shows the part of <m>S</m> that is in the first octant.
 </p>
 
-<sidebyside width="45%">
+<sidebyside widths="50% 49%" valign="middle">
 <image source="pfigs/cylinder"/>
 <image source="pfigs/cylinder2"/>
 </sidebyside>
@@ -1610,10 +1645,13 @@ V = \Set{(x,y,z)}{x^2+z^2\le 4,\ 0\le y\le 3}
 </me>
 The boundary, <m>\partial V</m> of <m>V</m> consists of three pieces <mdash/> <m>S</m> and the
 two disks
-<me>
-D_l = \Set{(x,y,z)}{x^2+z^2\le 4,\ y=0}\qquad
-D_r = \Set{(x,y,z)}{x^2+z^2\le 4,\ y=3}
-</me>
+<md>
+<mrow>
+D_l &amp;= \Set{(x,y,z)}{x^2+z^2\le 4,\ y=0}
+</mrow><mrow>
+D_r &amp;= \Set{(x,y,z)}{x^2+z^2\le 4,\ y=3}
+</mrow>
+</md>
 The figure on the right above shows the parts of <m>S</m>, <m>V</m>, <m>D_l</m>
 and <m>D_r</m> that are  in the first octant.
 
@@ -1636,8 +1674,8 @@ Since <m>\vnabla\cdot\vF = 2</m> and <m>\vF\cdot\hj = x+z</m>,
 <mrow>
 \dblInt_{S}\vF\cdot\hn\,\dee{S}
 &amp;= \tripInt_V 2\,\dee{V}
-  -\dblInt_{x^2+z^2\le 4}(x+z)\,\dee{x}\dee{z}
-  - \dblInt_{x^2+z^2\le 4}(-x-z)\,\dee{x}\dee{z}
+  -\dblInt_{x^2+z^2\le 4}\hskip-5pt(x+z)\,\dee{x}\dee{z}
+  - \dblInt_{x^2+z^2\le 4}\hskip-5pt(-x-z)\,\dee{x}\dee{z}
 </mrow><mrow>
 &amp;= \tripInt_V 2\,\dee{V}
 </mrow><mrow>
@@ -1695,8 +1733,9 @@ the specified flux is
 <mrow>
 \dblInt_{S}\vF\cdot\hn\,\dee{S}
 &amp;= \int_0^{2\pi}\dee{\theta}\int_0^3\dee{y} \
-\big(2\cos\theta + y\,,\,2\cos\theta+2\sin\theta\,,\,y+2\sin\theta\big)\cdot
-  \big(2\cos\theta\,,\,0\,,\, 2\sin\theta\big)
+\big(2\cos\theta + y\,,\,2\cos\theta+2\sin\theta\,,\,y+2\sin\theta\big)
+</mrow><mrow>&amp;\hskip2in
+\cdot  \big(2\cos\theta\,,\,0\,,\, 2\sin\theta\big)
 </mrow><mrow>
 &amp;= \int_0^{2\pi}\dee{\theta}\int_0^3\dee{y} \
 \big(4\cos^2\theta + 2y\cos\theta
@@ -1747,7 +1786,7 @@ That strongly suggests that we use the divergence theorem.
 Set
 </p>
 
-<sidebyside width="45%">
+<sidebyside widths="50% 30%" valign="middle">
 <p><m>V=\Set{(x,y,z)}{0\le z\le 1-\big(x^2+y^2\big)^2}</m></p>
 <image source="pfigs/OE08D_10"/>
 </sidebyside>
@@ -1758,7 +1797,7 @@ Then the boundary, <m>\partial V</m>, of <m>V</m> consists of two parts, namely 
 <me>
 D=\Set{(x,y,0)}{x^2+y^2\le 1}
 </me>
-(with normal pointing downwards).  The divergence theorem (Theorem <xref ref="thm_divThm"/> of the CLP-4 text)
+(with normal pointing downwards).  The divergence theorem (Theorem <xref ref="thm_divThm"/>)
 gives
 <md>
 <mrow>
@@ -1822,7 +1861,7 @@ not the boundary of a solid region <m>V</m>. To help us choose a solid
 top of the <q>ice cream cone</q>
 </p>
 
-<sidebyside width="75%">
+<sidebyside width="42%">
   <image source="pfigs/iceCream"/>
 </sidebyside>
 
@@ -1910,7 +1949,7 @@ to see if it looks wise to use the divergence theorem instead.
 Looks promising. Furthermore <m>S</m> is the boundary of the solid region
 </p>
 
-<sidebyside width="45%">
+<sidebyside widths="50% 40%" valign="middle">
   <p><m>V=\Set{(x,y,z)}{x^2+y^2\le z\le 4}</m></p>
   <image source="pfigs/OE07A_4"/>
 </sidebyside>
@@ -1929,7 +1968,7 @@ The <m>z</m>-coordinate runs from <m>0</m> to <m>4</m>. For each fixed <m>0\le z
 (see the blue disk in the figure below <mdash/> which shows the part of <m>V</m> in the first octant),
 </p>
 
-<sidebyside width="75%">
+<sidebyside width="50%">
   <image source="pfigs/OE07A_4b"/>
 </sidebyside>
 
@@ -2005,7 +2044,7 @@ The part of <m>S</m> in the first octant is outlined in red in the figure
 on the left below.
 </p>
 
-<sidebyside width="45%">
+<sidebyside widths="43% 43%" valign="middle">
 <image source="pfigs/OE06D_4"/>
 <image source="pfigs/OE06D_4b"/>
 </sidebyside>
@@ -2031,8 +2070,9 @@ So the divergence theorem gives
 <md>
 <mrow>
 \tripInt_V\vnabla\cdot\vF\,\dee{V}
-=\dblInt_{\partial V} \vF\cdot\hn\,\dee{S}
-=\dblInt_S \vF\cdot\hn\,\dee{S}
+&amp;=\dblInt_{\partial V} \vF\cdot\hn\,\dee{S}
+</mrow><mrow>
+&amp;=\dblInt_S \vF\cdot\hn\,\dee{S}
   +\dblInt_{D_t} \vF\cdot\hk\,\dee{S}
   +\dblInt_{D_b} \vF\cdot(-\hk)\,\dee{S}
 </mrow>
@@ -2096,7 +2136,7 @@ The divergence of <m>\vF</m>, namely,
 </mrow>
 </md>
 is a lot simpler than <m>\vF</m> itself. So let's use the divergence theorem
-(Theorem <xref ref="thm_divThm"/> of the CLP-4 text).
+(Theorem <xref ref="thm_divThm"/>).
 <md>
 <mrow>
 \dblInt_S \vF \cdot \hn\,\dee{S}
@@ -2180,10 +2220,14 @@ That's really simple, which suggest that we use the divergence theorem.
 But the surface <m>S</m> is not closed, and so is not the boundary of a solid.
 So we cannot apply the divergence theorem directly. But we can easily
 come up with a solid whose boundary contains <m>S</m>. Let
+<md>
+<mrow>
+V&amp;=\Set{(x,y,z)}{0\le z\le \sqrt{1-x^2-y^2},\ x^2+y^2\le 1}
+</mrow>
+</md>
 </p>
 
-<sidebyside width="45%">
-  <p><m>V=\Set{(x,y,z)}{0\le z\le \sqrt{1-x^2-y^2},\ x^2+y^2\le 1}</m></p>
+<sidebyside widths="30%">
   <image source="pfigs/OE05D_9"/>
 </sidebyside>
 
@@ -2194,7 +2238,7 @@ Then the boundary, <m>\partial V</m>, of <m>V</m> consists of two parts, namely 
 D=\Set{(x,y,0)}{x^2+y^2\le 1}
 </me>
 (with normal <m>-\hk</m>).  The divergence theorem
-(Theorem <xref ref="thm_divThm"/> of the CLP-4 text) gives
+(Theorem <xref ref="thm_divThm"/>) gives
 <md>
 <mrow>
 \dblInt_S \vF \cdot \hn\,\dee{S}
@@ -2203,6 +2247,7 @@ D=\Set{(x,y,0)}{x^2+y^2\le 1}
 </mrow><mrow>
 &amp;=\tripInt_V 2\,\dee{V}
   +\dblInt_D \sqrt{x^2+y^2}\,\dee{x}\dee{y}
+</mrow><mrow>
 &amp;=2\ \frac{1}{2}\ \frac{4}{3}\pi 1^3
   +\dblInt_D \sqrt{x^2+y^2}\,\dee{x}\dee{y}
 </mrow>
@@ -2211,9 +2256,10 @@ Switching to polar coordinates, the flux is
 <md>
 <mrow>
 \dblInt_S \vF\cdot\hn\,\dee{S}
-=\frac{4}{3}\pi+\int_0^1\dee{r}\,r\int_0^{2\pi}\dee{\theta}\ r
+&amp;=\frac{4}{3}\pi+\int_0^1\dee{r}\,r\int_0^{2\pi}\dee{\theta}\ r
 =\frac{4}{3}\pi + 2\pi \int_0^1 \dee{r}\, r^2
-=\frac{4}{3}\pi + 2\pi \frac{1}{3}
+</mrow><mrow>
+&amp;=\frac{4}{3}\pi + 2\pi \frac{1}{3}
 =2\pi
 </mrow>
 </md>
@@ -2254,8 +2300,7 @@ The divergence of <m>\vF</m> is a lot simpler than <m>\vF</m> itself.
 </p></answer>
 
 <solution><p> (a)
-By the divergence theorem (Theorem <xref ref="thm_divThm"/> of the
-CLP-4 text), the outward flux of <m>\vF</m> through the boundary of <m>E</m> is
+By the divergence theorem (Theorem <xref ref="thm_divThm"/>), the outward flux of <m>\vF</m> through the boundary of <m>E</m> is
 <md>
 <mrow>
 \dblInt_{\partial E}\vF\cdot\hn\,\dee{S}
@@ -2295,7 +2340,7 @@ D =\Set{(x,y,z)}{z=4,\ x^2+y^2\le 4}
 with normal <m>\hk</m>, on top.
 </p>
 
-<sidebyside width="75%">
+<sidebyside width="41%">
 <image source="pfigs/OE15A_6"/>
 </sidebyside>
 
@@ -2304,9 +2349,10 @@ So, by part (a),
 <md>
 <mrow>
 \frac{64}{3}\pi =\dblInt_{\partial E}\vF\cdot\hn\,\dee{S}
-=-\dblInt_S \vF\cdot\hn\,\dee{S}
+&amp;=-\dblInt_S \vF\cdot\hn\,\dee{S}
   +\dblInt_D \vF\cdot\hk\,\dee{S}
-=-\dblInt_S \vF\cdot\hn\,\dee{S}
+</mrow><mrow>
+&amp;=-\dblInt_S \vF\cdot\hn\,\dee{S}
   +\dblInt_D \overbrace{4z}^{\vF\cdot\hk}\,\dee{S}
 </mrow>
 </md>
@@ -2377,24 +2423,25 @@ is contained inside <m>S_1</m> but is not contained inside <m>S_2</m>.
 </p></answer>
 
 <solution><p> (a) Since
-<md alignment="alignat">
+<md>
 <mrow>
 \pdiff{}{x}\frac{x}{{[x^2+y^2+z^2]}^{3/2}}
 &amp;=\frac{1}{{[x^2+y^2+z^2]}^{3/2}}
             -\frac{3}{2}\frac{x(2x)}{{[x^2+y^2+z^2]}^{5/2}}
-&amp;\,=\,\frac{-2x^2+y^2+z^2}{{[x^2+y^2+z^2]}^{5/2}}
-
+</mrow><mrow>
+&amp;=\frac{-2x^2+y^2+z^2}{{[x^2+y^2+z^2]}^{5/2}}
 </mrow><mrow>
 \pdiff{}{y}\frac{y}{{[x^2+y^2+z^2]}^{3/2}}
 &amp;=\frac{1}{{[x^2+y^2+z^2]}^{3/2}}
             -\frac{3}{2}\frac{y(2y)}{{[x^2+y^2+z^2]}^{5/2}}
-&amp;\,=\,\frac{x^2-2y^2+z^2}{{[x^2+y^2+z^2]}^{5/2}}
-
+</mrow><mrow>
+&amp;=\frac{x^2-2y^2+z^2}{{[x^2+y^2+z^2]}^{5/2}}
 </mrow><mrow>
 \pdiff{}{z}\frac{z}{{[x^2+y^2+z^2]}^{3/2}}
 &amp;=\frac{1}{{[x^2+y^2+z^2]}^{3/2}}
             -\frac{3}{2}\frac{z(2z)}{{[x^2+y^2+z^2]}^{5/2}}
-&amp;\,=\,\frac{x^2+y^2-2z^2}{{[x^2+y^2+z^2]}^{5/2}}
+</mrow><mrow>
+&amp;=\frac{x^2+y^2-2z^2}{{[x^2+y^2+z^2]}^{5/2}}
 </mrow>
 </md>
 the specified divergence is
@@ -2420,7 +2467,7 @@ V_2 &amp;= \Set{(x,y,z)}{x^2 + (y - 2)^2 + z^2 \le 1}
 Here are side views of both <m>V_1</m> and <m>V_2</m>.
 </p>
 
-<sidebyside width="45%">
+<sidebyside widths="43% 43%" valign="middle">
 <image source="pfigs/OE12J_8a"/>
 <image source="pfigs/OE12J_8b"/>
 </sidebyside>
@@ -2430,7 +2477,7 @@ Both <m>V_1</m> and <m>V_2</m> are spherical balls centred on <m>(0,2,0)</m>.
 The difference between them is that <m>V_1</m> has radius <m>3</m> while <m>V_2</m>
 has radius <m>1</m>. In particular <m>(0,0,0)</m> is not in <m>V_2</m>. So <m>\vnabla\cdot\vF</m> is
 well-defined and zero throughout <m>V_2</m> and, by the divergence theorem
-(Theorem <xref ref="thm_divThm"/> of the CLP-4 text),
+(Theorem <xref ref="thm_divThm"/>),
 <md>
 <mrow>
 \dblInt_{S_2} \vF\cdot\hn\,\dee{S}
@@ -2461,7 +2508,7 @@ V_3 = \Set{(x,y)}{x^2 + (y - 2)^2 + z^2 \le 9,\ x^2+y^2+z^2\ge\rho^2}
 whose side view is sketched below.
 </p>
 
-<sidebyside width="75%">
+<sidebyside width="43%">
 <image source="pfigs/OE12J_8c"/>
 </sidebyside>
 
@@ -2490,7 +2537,8 @@ So
 \dblInt_{S_1} \vF\cdot\hn\,\dee{S}
 &amp;=\dblInt_{S_\rho} \vF\cdot\Big(\frac{\vr}{|\vr|}\Big)\,\dee{S}
 =\dblInt_{S_\rho} \Big(\frac{\vr}{|\vr|^3}\Big)\cdot\Big(\frac{\vr}{|\vr|}\Big)\,\dee{S}
-=\dblInt_{S_\rho} \frac{1}{|\vr|^2}\,\dee{S}
+</mrow><mrow>
+&amp;=\dblInt_{S_\rho} \frac{1}{|\vr|^2}\,\dee{S}
 =\dblInt_{S_\rho} \frac{1}{\rho^2}\,\dee{S}
 </mrow><mrow>
 &amp;=\frac{1}{\rho^2}\ 4\pi\rho^2=4\pi
@@ -2534,7 +2582,7 @@ The vector field <m>\vF</m> looks pretty complicated. But its divergence
 \vnabla\cdot\vF = 2 + 3 + 1 = 6
 </me>
 is very simple. So let's use the divergence theorem
-(Theorem <xref ref="thm_divVrn"/> of the CLP-4 text). It says
+(Theorem <xref ref="thm_divVrn"/>). It says
 <md>
 <mrow>
 \dblInt_S \vF\cdot\hn\,\dee{S}
@@ -2546,7 +2594,7 @@ is very simple. So let's use the divergence theorem
 For any fixed <m>0\le X\le 2</m>, the cross-section of <m>E</m> with <m>x=X</m> has side view
 </p>
 
-<sidebyside width="75%">
+<sidebyside width="33%">
 <image source="pfigs/OE16D_8"/>
 </sidebyside>
 
@@ -2607,7 +2655,7 @@ surface and is <em>not</em> the boundary of a solid. The figure on the left belo
 is a sketch of the part of <m>S</m> in the first octant.
 </p>
 
-<sidebyside width="45%">
+<sidebyside widths="36% 36%" valign="middle">
 <image source="pfigs/OE17A_7a"/>
 <image source="pfigs/OE17A_7b"/>
 </sidebyside>
@@ -2626,8 +2674,7 @@ the original surface <m>S</m>, but with upward, rather than downward, normal and
 the disk <m>D=\Set{(x,y,z)}{ x^2+y^2\le 3,\ z=1}</m> with normal <m>-\hk</m>.
 </li>
 </ul>
-So the divergence theorem (Theorem <xref ref="thm_divVrn"/> in the
-CLP-4 text) gives
+So the divergence theorem (Theorem <xref ref="thm_divVrn"/>) gives
 <md>
 <mrow>
    \dblInt_{\partial V}\vF\cdot\hn\,\dee{S}
@@ -2696,15 +2743,18 @@ V = \Set{(x,y,z)}{x^2+y^2+z^2\le 3}
 </me>
 Then the boundary of <m>V</m> is <m>S</m>, but with outward pointing normal.
 Since
-<me>
-\vnabla\cdot\vF =
+<md>
+<mrow>
+\vnabla\cdot\vF &amp;=
    \pdiff{}{x} \big(xy^2 + y^4z^6\big)
  + \pdiff{}{y} \big(yz^2+x^4z\big)
  + \pdiff{}{z} \big(zx^2+xy^4\big)
-=y^2+z^2+x^2
-</me>
+</mrow><mrow>
+&amp;=y^2+z^2+x^2
+</mrow>
+</md>
 and because <m>S</m> is oriented <em>inward</em>, the divergence theorem
-(Theorem <xref ref="thm_divThm"/> of the CLP-4 text)
+(Theorem <xref ref="thm_divThm"/>)
 gives
 <md>
 <mrow>
@@ -2713,8 +2763,7 @@ gives
           = -\tripInt_V (x^2+y^2+z^2)\,\dee{V}
 </mrow>
 </md>
-Switching to spherical coordinates (see Appendix <xref ref="ap_spherCoord"/>
-in the CLP-4 text)
+Switching to spherical coordinates (see Appendix <xref ref="ap_spherCoord"/>)
 <md>
 <mrow>
 \dblInt_S\vF\cdot\hn\,\dee{S}
@@ -2758,13 +2807,16 @@ using the outward normal to <m>S</m>.
 
 <solution><p>
 (a) The divergence of <m>\vF</m> is
-<me>
+<md>
+<mrow>
 \nabla\cdot \vF
-=\pdiff{}{x}\big(-2xy\big)
+&amp;=\pdiff{}{x}\big(-2xy\big)
 +\pdiff{}{y}\big(y^2+\sin(xz)\big)
 +\pdiff{}{z}\big(x^2+y^2\big)
-=-2y+2y+0=0
-</me>
+</mrow><mrow>
+&amp;=-2y+2y+0=0
+</mrow>
+</md>
 </p>
 
 <p>(b)
@@ -2836,14 +2888,15 @@ so that
 <me>
 \dblInt_{S_2} \vF \cdot \hn\, \dee{S} = \dblInt_D (- xy)\,  \dee{x}\dee{y} = 0
 </me>
-By the divergence theorem (Theorem <xref ref="thm_divThm"/> in
-the CLP-4 text),
+By the divergence theorem (Theorem <xref ref="thm_divThm"/>),
 <md>
 <mrow>
 \dblInt_S \vF \cdot \hn \dee{S}
-= \dblInt_V \vnabla\cdot\vF\, \dee{V} -
+&amp;= \dblInt_V \vnabla\cdot\vF\, \dee{V} -
  \dblInt_{S_1} \vF \cdot \hn\, \dee{S}
-- \dblInt_{S_2} \vF \cdot \hn\, \dee{S} = 0 -(- 4 \pi) - 0
+- \dblInt_{S_2} \vF \cdot \hn\, \dee{S} 
+</mrow><mrow>
+&amp;= 0 -(- 4 \pi) - 0
 = 4\pi
 </mrow>
 </md>
@@ -2911,8 +2964,9 @@ x^2-y-1 &amp; e^{\cos y}+z^3 &amp; 2xz+z^5
 we have
 <md>
 <mrow>
-\dblInt_S\vnabla\times \vF\cdot\hn\,\dee{S}
-&amp;=\dblInt_{x^2+y^2\le 1}\big(-3z(x,y)^2\,\hi-2z(x,y)\,\hj+\hk\big)
+&amp;\dblInt_S\vnabla\times \vF\cdot\hn\,\dee{S}
+</mrow><mrow>
+&amp;=\dblInt_{x^2+y^2\le 1}\hskip-10pt\big(-3z(x,y)^2\,\hi-2z(x,y)\,\hj+\hk\big)
    \cdot\frac{2x\,\hi+2y\,\hj+4z(x,y)\,\hk}{4z(x,y)}\ \dee{x}\dee{y}
 
 </mrow><mrow>
@@ -2932,14 +2986,16 @@ is an odd function of <m>x</m>, they both integrate to zero. Hence
  Let <m>V</m> be the solid <m>x^2+y^2+2z^2\le 1</m>,
 <m>z\ge 0</m>. The surface of <m>V</m> consists of <m>S</m> with upward pointing normal
 and the disk <m>D=\Set{(x,y,z)}{z=0,\ x^2+y^2\le 1}</m> with normal <m>-\hk</m>.
-By the divergence theorem, Theorem <xref ref="thm_divThm"/> in the CLP-4
-text,
-<me>
+By the divergence theorem, Theorem <xref ref="thm_divThm"/>,
+<md>
+<mrow>
 \dblInt_S\vnabla\times \vF\cdot\hn\,\dee{S}
 +\dblInt_D\vnabla\times \vF\cdot(-\hk)\,\dee{S}
-=\tripInt_V\vnabla\cdot\vnabla\times\vF\ \dee{V}
-=\tripInt_V 0\ \dee{V}=0
-</me>
+&amp;=\tripInt_V\vnabla\cdot\vnabla\times\vF\ \dee{V}
+</mrow><mrow>
+&amp;=\tripInt_V 0\ \dee{V}=0
+</mrow>
+</md>
 Hence
 <me>
 \dblInt_S\vnabla\times \vF\cdot\hn\,\dee{S}
@@ -3033,14 +3089,15 @@ As
 +\pdiff{}{z}(1)
 =x^2+y^2
 </me>
-the divergence theorem (Theorem <xref ref="thm_divThm"/> of the CLP-4 text)
+the divergence theorem (Theorem <xref ref="thm_divThm"/>)
 gives
 <md>
 <mrow>
 \dblInt_{\cS}\vF\cdot\hn\,\dee{S}
 &amp;=\tripInt_H\vnabla\cdot\vF\ \dee{V}
 -\dblInt_D\vF\cdot\hn\,\dee{S}
-=\tripInt_R(x^2+y^2)\ \dee{V}
+</mrow><mrow>
+&amp;=\tripInt_R(x^2+y^2)\ \dee{V}
 -(-4\pi)
 </mrow>
 </md>
@@ -3051,10 +3108,12 @@ the equation <m>x^2+y^2+z^2=4</m> becomes <m>r^2+z^2=4</m>. So
 <mrow>
 \dblInt_{\cS}\vF\cdot\hn\,\dee{S}
 &amp;=4\pi+\int_0^2 \dee{z}\int_0^{\sqrt{4-z^2}}dr\ r\int_0^{2\pi}\dee{\theta}\ r^2
-=4\pi+2\pi\int_0^2 \dee{z}\ \frac{1}{4}\big(\sqrt{4-z^2}\big)^4
+</mrow><mrow>
+&amp;=4\pi+2\pi\int_0^2 \dee{z}\ \frac{1}{4}\big(\sqrt{4-z^2}\big)^4
 </mrow><mrow>
 &amp;=4\pi+\frac{\pi}{2}\int_0^2 \dee{z}\ (16-8z^2+z^4\big)
-=4\pi+\frac{\pi}{2}\Big[16z-\frac{8}{3}z^3+\frac{1}{5}z^5\Big]_0^2
+</mrow><mrow>
+&amp;=4\pi+\frac{\pi}{2}\Big[16z-\frac{8}{3}z^3+\frac{1}{5}z^5\Big]_0^2
 </mrow><mrow>
 &amp;=\frac{188}{15}\pi\approx39.37
 </mrow>
@@ -3100,14 +3159,17 @@ the outward normal to <m>D</m> is <m>-\hk</m>, so that
 </me>
 Again, the integral over <m>y</m> was zero because <m>y</m> is odd under
 <m>y\rightarrow -y</m>. As
-<me>
+<md>
+<mrow>
 \vnabla\cdot\vF
-=\pdiff{}{x}(x+xye^z)
+&amp;=\pdiff{}{x}(x+xye^z)
 +\half\pdiff{}{y}\big( y^2ze^z\big)
 +\pdiff{}{z}(3z-yze^z)
-=(1+ye^z)+yze^z+(3-yze^z-ye^z)
+</mrow><mrow>
+&amp;=(1+ye^z)+yze^z+(3-yze^z-ye^z)
 =4
-</me>
+</mrow>
+</md>
 the divergence theorem gives
 <md>
 <mrow>
@@ -3118,7 +3180,8 @@ the divergence theorem gives
 </mrow><mrow>
 &amp;=\tripInt_D4\ \dee{V}
 -15\pi-0
-=4\times\pi 1^2\times 5-15\pi
+</mrow><mrow>
+&amp;=4\times\pi 1^2\times 5-15\pi
 =5\pi
 </mrow>
 </md>
@@ -3139,7 +3202,7 @@ through the first octant part of the sphere <m>x^2+y^2+z^2=a^2</m>.
 Let <m>V=\Set{(x,y,z)}{x^2+y^2+z^2\le a^2, x\ge 0, y\ge 0,\ z\ge 0}</m>.
 </p>
 
-<sidebyside width="75%">
+<sidebyside width="44%">
 <image source="pfigs/quartSph"/>
 </sidebyside>
 
@@ -3165,26 +3228,28 @@ Then <m>\partial V</m> consists of
 Then
 <md>
 <mrow>
-&amp;\tripInt_V \vnabla\cdot\vF\,\dee{V}=\tripInt_V\big[z+1+z-2z\big]\,\dee{V}
-=\tripInt_V \,\dee{V}=\frac{1}{8}\ \frac{4}{3}\pi a^3=\frac{1}{6}\pi a^3
+\tripInt_V \vnabla\cdot\vF\,\dee{V}
+&amp;=\tripInt_V\big[z+1+z-2z\big]\,\dee{V}
+=\tripInt_V \,\dee{V}=\frac{1}{8}\ \frac{4}{3}\pi a^3
 </mrow><mrow>
-
-&amp;\dblInt_{\Atop{z=0}{\rm face}}\vF\cdot(-\hk)\,\dee{x}\,\dee{y}
-=\dblInt_{\Atop{z=0}{\rm face}}(2x+0^2)\,\dee{x}\,\dee{y}
+&amp;=\frac{1}{6}\pi a^3
+</mrow><mrow>
+\dblInt_{\Atop{z=0}{\rm face}}\vF\cdot(-\hk)\,\dee{x}\,\dee{y}
+&amp;=\dblInt_{\Atop{z=0}{\rm face}}(2x+0^2)\,\dee{x}\,\dee{y}
 =2\int_0^a dr\,r\int_0^{\pi/2}\dee{\theta}\ r\cos\theta
-=2\int _0^a r^2\,dr
+</mrow><mrow>
+&amp;=2\int _0^a r^2\,dr
 =\frac{2a^3}{3}
 </mrow><mrow>
-
-&amp;\dblInt_{\Atop{y=0}{\rm face}}\vF\cdot(-\hj)\,\dee{x}\,\dee{z}
-=-\dblInt_{\Atop{y=0}{\rm face}}(0+0z)\,\dee{x}\,\dee{z}
+\dblInt_{\Atop{y=0}{\rm face}}\vF\cdot(-\hj)\,\dee{x}\,\dee{z}
+&amp;=-\dblInt_{\Atop{y=0}{\rm face}}(0+0z)\,\dee{x}\,\dee{z}
 =0
 </mrow><mrow>
-
-&amp;\dblInt_{\Atop{x=0}{\rm face}}\vF\cdot(-\hi)\,\dee{y}\,\dee{z}
-=\dblInt_{\Atop{x=0}{\rm face}}-(y+0z)\,\dee{y}\,\dee{z}
+\dblInt_{\Atop{x=0}{\rm face}}\vF\cdot(-\hi)\,\dee{y}\,\dee{z}
+&amp;=\dblInt_{\Atop{x=0}{\rm face}}-(y+0z)\,\dee{y}\,\dee{z}
 =-\int_0^a dr\,r\int_0^{\pi/2}\dee{\theta}\ r\sin\theta
-=-\int _0^a r^2\,dr=-\frac{a^3}{3}
+</mrow><mrow>
+&amp;=-\int _0^a r^2\,dr=-\frac{a^3}{3}
 </mrow>
 </md>
 By the divergence theorem
@@ -3193,6 +3258,7 @@ By the divergence theorem
 \dblInt_{S}\vF\cdot\hn\,\dee{x}\,\dee{y}
 &amp;=\tripInt_V \vnabla\cdot\vF\,\dee{V}
 -\dblInt_{\Atop{x=0}{\rm face}}\hskip-3pt\vF\cdot(-\hi)\,\dee{y}\,\dee{z}
+</mrow><mrow>&amp;\hskip1in
 -\dblInt_{\Atop{y=0}{\rm face}}\hskip-3pt\vF\cdot(-\hj)\,\dee{x}\,\dee{z}
 -\dblInt_{\Atop{z=0}{\rm face}}\hskip-3pt\vF\cdot(-\hk)\,\dee{x}\,\dee{y}
 
@@ -3239,8 +3305,7 @@ Use the divergence theorem to answer at least one of parts (a), (b) and (c).
 </p>
 
 <p>(b) The volume of the <m>V</m> can be easily computed by decomposing <m>V</m>
-into thin horizontal washers. See Section \eref{CLP101}{sec int volumes}
-in the CLP-2 text.
+into thin horizontal washers. See Section 1.6 in the CLP-2 text.
 </p>
 
 </hint>
@@ -3284,7 +3349,10 @@ To get the inward pointing normal, choose the minus sign. So
 &amp;=
 \big[\sqrt{2}\big(\cos\theta-z\sin\theta\big)\hi
       + \sqrt{2}\big(\sin\theta+z\cos\theta\big)\hj
-      + (\cdots)\hk\big]\cdot
+      + (\cdots)\hk\big]
+</mrow><mrow>
+&amp;
+\hskip2in\cdot
 \big[-\sqrt{2}\cos\theta\,\hi-\sqrt{2}\sin\theta\,\hj\big]\ \dee{\theta}\, \dee{z}
 </mrow><mrow>
 &amp;=-2\big[\big(\cos\theta-z\sin\theta\big)\cos\theta
@@ -3320,7 +3388,7 @@ radius <m>\sqrt{4-z^2}</m> (determined by the equation of the sphere) and inner
 radius <m>\sqrt{2}</m> (determined by the equation of the cylinder).
 </p>
 
-<sidebyside width="75%">
+<sidebyside width="61%">
 <image source="pfigs/cylSph"/>
 </sidebyside>
 
@@ -3333,7 +3401,8 @@ and
 \tripInt_V\vnabla\cdot F\,\dee{V}
 &amp;=3\tripInt_V \,\dee{V}
 =3\int_{-\sqrt{2}}^{\sqrt{2}} \pi\big(2-z^2\big)\,\dee{z}
-=6\pi \int_{0}^{\sqrt{2}} \big(2-z^2\big)\,\dee{z}
+</mrow><mrow>
+&amp;=6\pi \int_{0}^{\sqrt{2}} \big(2-z^2\big)\,\dee{z}
 =6\pi\big(2\sqrt{2}-\frac{2^{3/2}}{3}\big)
 </mrow><mrow>
 &amp;=8\sqrt{2}\pi
@@ -3376,8 +3445,7 @@ everywhere.
 </p></statement>
 
 <hint><p>
-Review the derivation of the heat equation in Section <xref ref="sec_heatEqn"/>
-of the CLP-4 text.
+Review the derivation of the heat equation in Section <xref ref="sec_heatEqn"/>.
 </p></hint>
 
 <answer><p>
@@ -3393,7 +3461,7 @@ By the divergence theorem
 So by Gauss' law
 <me>
 \tripInt_V\vnabla\cdot\vE\,\dee{V}=4\pi\tripInt_V\rho\ \dee{V}
-\qquad\Rightarrow\qquad
+\quad\implies\quad
 \tripInt_V\big[\vnabla\cdot\vE-4\pi\rho\big]\,\dee{V}=0
 </me>
 This is true for all solids <m>V</m> for which the divergence theorem applies.
@@ -3424,21 +3492,24 @@ See the solution.
 
 <solution><p>
  By the divergence theorem
-<me>
+<md>
+<mrow>
 \dblInt_{\partial V}\vr\cdot\hn\, \dee{S}
-=\tripInt_V\vnabla\cdot\vr\,\dee{V}
+&amp;=\tripInt_V\vnabla\cdot\vr\,\dee{V}
 =\tripInt_V\vnabla\cdot(x\,\hi+y\,\hj+z\,\hk)\,\dee{V}
-=\tripInt_V 3\,\dee{V}
+</mrow><mrow>
+&amp;=\tripInt_V 3\,\dee{V}
 =3\,\text{Volume}(V)
-</me>
-Our gemetric explanation starts with the observation that
+</mrow>
+</md>
+Our geometric explanation starts with the observation that
 the volume of the cone with vertex <m>(0,0,0)</m> and base a tiny piece of
 surface <m>\dee{S}</m> is <m>\frac{1}{3}</m> times the area of the base times
 the height of the cone. The height of the cone is <m>|\hn\cdot\vr|</m>,
 where <m>\vr</m> is a point in <m>\dee{S}</m>. So the volume of the cone is <m>\frac{1}{3}|\hn\cdot\vr|\,\dee{S}</m>.
 </p>
 
-<sidebyside width="75%">
+<sidebyside width="42%">
 <image source="pfigs/cone"/>
 </sidebyside>
 
@@ -3529,14 +3600,15 @@ Since
 &amp;=\pm\Big(\frac{\partial x}{\partial\theta}\,,\,
           \frac{\partial y}{\partial\theta}\,,\,
           \frac{\partial z}{\partial\theta}\Big)
-\times
+        \times
 \Big(\frac{\partial x}{\partial\varphi}\,,\,\frac{\partial y}{\partial\varphi}
    \,,\, \frac{\partial z}{\partial\varphi}\Big)
 \ \dee{\theta}\dee{\varphi}
 </mrow><mrow>
 &amp;=\pm \big(-3\sin\varphi\sin\theta\,,\,
        3\sin\varphi\cos\theta\,,\,0\big)
-\times
+</mrow><mrow>
+&amp;\hskip1.5in\times
 (3\cos\varphi\cos\theta\,,\,3\cos\varphi\sin\theta\,,\,-3\sin\varphi)
 \ \dee{\theta}\dee{\varphi}
 </mrow><mrow>
@@ -3561,7 +3633,8 @@ in the southern hemisphere. (As a further consistency check, note that
 \dblInt_S \vF \cdot \hn\,\dee{S}
 &amp;= 9\!\int_{0}^{2\pi}\hskip-10pt\dee{\theta}\!
 \int_0^\pi\hskip-5pt\dee{\varphi}\,\sin\varphi\,
-(0,0,3\sin\varphi\cos\theta+3\cos\varphi)\!\cdot\!
+(0,0,3\sin\varphi\cos\theta+3\cos\varphi)
+</mrow><mrow>&amp;\hskip2in\cdot
 \big(\sin\varphi\cos\theta\,,\,
           \sin\varphi\sin\theta\,,\,
           \cos\varphi\Big)
@@ -3589,7 +3662,7 @@ Since
 <me>
 \vnabla\cdot\vF = \pdiff{}{z}\big(x+z\big)=1
 </me>
-the divergence theorem (Theorem <xref ref="thm_divThm"/> of the CLP-4 text)
+the divergence theorem (Theorem <xref ref="thm_divThm"/>)
 gives
 <me>
 \dblInt_S \vF \cdot \hn\,\dee{S}
@@ -3639,7 +3712,7 @@ consists of <m>S</m> together with the face <m>F</m> in the plane <m>z=0</m>, or
 with the normal being <m>-\hk</m>.
 </p>
 
-<sidebyside width="75%">
+<sidebyside width="37%">
   <image source="pfigs/cubeP"/>
 </sidebyside>
 
@@ -3656,7 +3729,7 @@ As
 
 </mrow>
 </md>
-the divergence theorem (Theorem <xref ref="thm_divThm"/> of the CLP-4 text)
+the divergence theorem (Theorem <xref ref="thm_divThm"/>)
 gives
 <md>
 <mrow>
@@ -3721,8 +3794,7 @@ surface at <m>(1,1,1)</m> is <m>(\vnabla G)(1,1,1)=(-y,-x,1)\big|_{(x,y,z)=(1,1,
 </p>
 
 <p>  (b)
-For the surface <m>G(x,y,z)=z-xy</m>, so that, by (<xref ref="eq_SUdSimplicit"/>)
-in the CLP-4 text,
+For the surface <m>G(x,y,z)=z-xy</m>, so that, by (<xref ref="eq_SUdSimplicit"/>),
 <md>
 <mrow>
 \hn\,\dee{S} =\pm\frac{\vnabla G(x,y,z)}{\vnabla G(x,y,z)\cdot\hk}\dee{x}\dee{y}
@@ -3733,17 +3805,19 @@ The <q><m>+</m></q> sign gives the upward normal, so the specified upward flux i
 <md>
 <mrow>
 \dblInt_S \vF\cdot\hn\,\dee{S}
-=\dblInt_{x^2+y^2\le 9} (y,x,3)\cdot (-y-x,1)\,\dee{x}\dee{y}
-=\dblInt_{x^2+y^2\le 9} (3-x^2-y^2)\,\dee{x}\dee{y}
+&amp;=\dblInt_{x^2+y^2\le 9} (y,x,3)\cdot (-y-x,1)\,\dee{x}\dee{y}
+</mrow><mrow>
+&amp;=\dblInt_{x^2+y^2\le 9} (3-x^2-y^2)\,\dee{x}\dee{y}
 </mrow>
 </md>
 Switching to polar coordinates, the flux is
 <md>
 <mrow>
 \dblInt_S \vF\cdot\hn\,\dee{S}
-=\int_0^3\dee{r}\,r\int_0^{2\pi}\dee{\theta}\ (3-r^2)
+&amp;=\int_0^3\dee{r}\,r\int_0^{2\pi}\dee{\theta}\ (3-r^2)
 =2\pi \int_0^3 \dee{r}\, (3r-r^3)
-=2\pi \big(\tfrac{3}{2}3^2-\tfrac{1}{4}3^4\big)
+</mrow><mrow>
+&amp;=2\pi \big(\tfrac{3}{2}3^2-\tfrac{1}{4}3^4\big)
 =-\tfrac{27\pi}{2}
 </mrow>
 </md>
@@ -3818,7 +3892,7 @@ So the specified flux is
 </md>
 For an efficient, sneaky, way to evaluate
 <m>\int_0^{2\pi}\dee{\theta}\ \sin^2(2\theta)</m> see Example
-<xref ref="eg_workIntegalB"/>.
+<xref ref="eg_workIntegralB"/>.
 </p>
 
 <p>  (c) <em> using the divergence theorem:</em>
@@ -3849,7 +3923,7 @@ with normal <m>\hn=\hk</m>.
 Here is a sketch of the part of <m>\partial V</m> that is in the first octant.
 </p>
 
-<sidebyside width="75%">
+<sidebyside width="35%">
   <image source="pfigs/OE13D_6"/>
 </sidebyside>
 
@@ -3963,21 +4037,27 @@ So
 <md>
 <mrow>
 \dblInt_{S_T} \vF\cdot\hn\,\dee{S}
-&amp;= \int_0^5\dee{z}\hskip-10pt \dblInt_{x^2+y^2\le 25-z^2}\hskip-15pt
+&amp;= \int_0^5\dee{z} \dblInt_{x^2+y^2\le 25-z^2}
             \dee{x}\,\dee{y}\  (2+2z)
-= \int_0^5\dee{z}\ (2+2z)\hskip-10pt\dblInt_{x^2+y^2\le 25-z^2}\hskip-15pt
+</mrow><mrow>
+&amp;= \int_0^5\dee{z}\ (2+2z)\dblInt_{x^2+y^2\le 25-z^2}
 \dee{x}\,\dee{y}
 </mrow><mrow>
 &amp;= \int_0^5\dee{z}\ \pi(25-z^2) (2+2z)
 </mrow>
-<intertext>since <m>\dblInt_{x^2+y^2\le 25-z^2} \dee{x}\,\dee{y}</m>
-is the area of a disk of radius <m>\sqrt{25-z^2}</m></intertext>
+</md>
+since <m>\dblInt_{x^2+y^2\le 25-z^2} \dee{x}\,\dee{y}</m>
+is the area of a disk of radius <m>\sqrt{25-z^2}</m>. Continuing,
+<md>
 <mrow>
+\dblInt_{S_T} \vF\cdot\hn\,\dee{S}
 &amp;= \pi\int_0^5\dee{z}\ (50 -2z^2 +50z -2z^3)
 </mrow><mrow>
 &amp;=\pi\Big(50\times 5-2\frac{5^3}{3} +50\frac{5^2}{2}-2\frac{5^4}{4}\Big)
-=\pi 5^3 \Big(2-\frac{2}{3} +5-\frac{5}{2}\Big)
-= \pi\,5^3 \Big(\frac{4}{3}+\frac{5}{2}\Big)
+</mrow><mrow>
+&amp;=\pi 5^3 \Big(2-\frac{2}{3} +5-\frac{5}{2}\Big)
+</mrow><mrow>
+&amp;= \pi\,5^3 \Big(\frac{4}{3}+\frac{5}{2}\Big)
 </mrow><mrow>
 &amp;=\pi\frac{23}{6} 5^3
 =479\frac{1}{6}\pi
@@ -4006,7 +4086,8 @@ Then, by the divergence theorem
 \dblInt_{S} \vF\cdot\hn\,\dee{S}
 &amp;=\tripInt_V \vnabla\cdot\vF\,\dee{V}
 =\tripInt_V (2+2z)\,\dee{V}
-=2\tripInt_V \,\dee{V} +2\tripInt_V z\,\dee{V}
+</mrow><mrow>
+&amp;=2\tripInt_V \,\dee{V} +2\tripInt_V z\,\dee{V}
 </mrow><mrow>
 &amp;=2|V| +2|V|\bar z
 </mrow>
@@ -4140,7 +4221,7 @@ To do so, we have to determine <m>\hn\,\dee{S}</m> for the specified rectangle.
 Look at the sketch of <m>S</m> below. It is part of a plane,
 </p>
 
-<sidebyside width="75%">
+<sidebyside width="45%">
 <image source="pfigs/OE11D_7"/>
 </sidebyside>
 
@@ -4272,17 +4353,18 @@ So the specified upward flux is
 <mrow>
 &amp;\dblInt_{\sigma_1} \vF\cdot\hn\,\dee{S}
 </mrow><mrow>
-&amp;\hskip0.5in=\dblInt_{x^2+y^2\le 1}\hskip-5pt
+&amp;=\dblInt_{x^2+y^2\le 1}\hskip-5pt
          \big\{[ a ( y^2 + z^2 ) + bxz ]\,\hi
           + [ c ( x^2 + z^2 ) + dyz ]\,\hj + x^2\,\hk\big\}
 </mrow><mrow>
-&amp;\hskip3.8in\cdot
+&amp;\hskip3in\cdot
             \big\{2x\,\hi + 2y\,\hj +\hk\big\}_{z=1 - x^2 - y^2}
          \,\dee{x}\dee{y}
 </mrow><mrow>
-&amp;\hskip0.5in=\!\dblInt_{x^2+y^2\le 1}\hskip-5pt
-         \big\{[2a x( y^2 \!+\! z^2 ) + 2bx^2z ]
-          + [2cy ( x^2 \!+\! z^2 ) +2 dy^2z ] + x^2\big\}_{z=1 - x^2 - y^2}
+&amp;=\!\dblInt_{x^2+y^2\le 1}
+         \Big\{[2a x( y^2 \!+\! z^2 ) + 2bx^2z ]
+</mrow><mrow>&amp;\hskip2in
+          + [2cy ( x^2 \!+\! z^2 ) +2 dy^2z ] + x^2\Big\}_{z=1 - x^2 - y^2}
          \,\dee{x}\dee{y}
 </mrow>
 </md>
@@ -4309,7 +4391,7 @@ We'll switch to polar coordinates to evaluate the remaining integral.
 <md>
 <mrow>
 \dblInt_{\sigma_1} \vF\cdot\hn\,\dee{S}
-&amp;=\int_0^1\dee{r}\, r\int_0^{2\pi}\dee{\theta}\
+&amp;=\int_0^1\hskip-5pt\dee{r}\, r\int_0^{2\pi}\hskip-5pt\dee{\theta}\
          \big\{ 2br^2z\cos^2\theta  +2 dr^2z\sin^2\theta
                      + r^2\cos^2\theta\big\}_{z=1 - r^2}
 </mrow>
@@ -4333,7 +4415,7 @@ For an efficient, sneaky, way to evaluate
 <m>\int_0^{2\pi} \cos^2\theta\,\dee{\theta}</m>
 and <m>\int_0^{2\pi} \sin^2\theta\,\dee{\theta}</m>,
 see Example
-<xref ref="eg_workIntegalB"/>.
+<xref ref="eg_workIntegralB"/>.
 So, we finally have
 <md>
 <mrow>
@@ -4353,7 +4435,7 @@ So, we finally have
 <p>(b), (c) Here is a side view of <m>\sigma_1</m>, <m>\sigma_2</m> and <m>\sigma_3</m>.
 </p>
 
-<sidebyside width="75%">
+<sidebyside width="53%">
 <image source="pfigs/OE10A_5"/>
 </sidebyside>
 
@@ -4371,8 +4453,8 @@ Then <m>\partial V_b = \sigma_1\cup\sigma_3</m> and
 all with outward pointing normals. Since the divergence of <m>\vF</m> is
 <me>
 \vnabla\cdot\vF =
-  \pdiff{}{x}[ a ( y^2 + z^2 ) + bxz ]
-  +\pdiff{}{y}[ c ( x^2 + z^2 ) + dyz ]
+  \pdiff{}{x}[ a ( y^2 \!+\! z^2 ) + bxz ]
+  +\pdiff{}{y}[ c ( x^2 \!+\! z^2 ) + dyz ]
   +\pdiff{}{z}[ x^2]
 = (b+d) z
 </me>
@@ -4441,9 +4523,10 @@ for any <m>(a,b,c)</m>. If <m>(x,y,z)\ne(a,b,c)</m>,
 &amp;\hskip0.25in
 =\pdiff{}{x}\frac{x-a}
                {{[(x-a)^2+(y-b)^2+(z-c)^2]}^{3/2}}
+</mrow><mrow>&amp;\hskip1.5in
 +\pdiff{}{y}\frac{y-b}
                {{[(x-a)^2+(y-b)^2+(z-c)^2]}^{3/2}}
-</mrow><mrow>&amp;\hskip2in
+</mrow><mrow>&amp;\hskip1.5in
 +\pdiff{}{z}\frac{z-c}
                 {{[(x-a)^2+(y-b)^2+(z-c)^2]}^{3/2}}
 
@@ -4452,17 +4535,18 @@ for any <m>(a,b,c)</m>. If <m>(x,y,z)\ne(a,b,c)</m>,
 =\frac{\big[(x-a)^2+(y-b)^2+(z-c)^2\big]\ -\ (x-a)\ \frac{3}{2}(2(x-a))}
                        {{\big[(x-a)^2+(y-b)^2+(z-c)^2\big]}^{5/2}}
 
-</mrow><mrow>&amp;\hskip2in
+</mrow><mrow>&amp;\hskip1.5in
 +\frac{\big[(x-a)^2+(y-b)^2+(z-c)^2\big]\ -\ (y-b)\ \frac{3}{2}(2y)}
                         {{\big[(x-a)^2+(y-b)^2+(z-c)^2\big]}^{5/2}}
 
-</mrow><mrow>&amp;\hskip2in
+</mrow><mrow>&amp;\hskip1.5in
 +\frac{\big[(x-a)^2+(y-b)^2+z^2\big]\ -\ (z-c)\ \frac{3}{2}(2(z-c))}
                        {{\big[(x-a)^2+(y-b)^2+(z-c)^2\big]}^{5/2}}
 
 </mrow><mrow>
 &amp;\hskip0.25in
-=\frac{3\big[(x-a)^2+(y-b)^2+(z-c)^2\big]\ -\ 3(x-a)^2-3(y-b)^2-3(z-c)^2}
+=\frac{3\big[(x\!-\!a)^2+(y\!-\!b)^2+(z\!-\!c)^2\big]\ 
+               -\ 3(x\!-\!a)^2-3(y\!-\!b)^2-3(z\!-\!c)^2}
                        {{\big[(x-a)^2+(y-b)^2+(z-c)^2\big]}^{5/2}}
 </mrow><mrow>
 &amp;\hskip0.25in=0
@@ -4497,7 +4581,7 @@ S_\veps = \Set{(x,y,z)}{(x-2)^2 + (y-1)^2 +(z-1)^2=\veps^2}
 is completely contained inside <m>V</m>, as in the sketch below.
 </p>
 
-<sidebyside width="75%">
+<sidebyside width="35%">
   <image source="pfigs/OE05A_3"/>
 </sidebyside>
 
@@ -4533,6 +4617,7 @@ So, on <m>S_\veps</m>,
 \vF\cdot\hn
 &amp;= -\frac{1}{\veps}
   \left(\frac{(x,y,z)-(2,1,1)}{{\big[(x-2)^2+(y-1)^2+(z-1)^2\big]}^{3/2}}\right)
+</mrow><mrow>&amp;\hskip2in
   \cdot\big[(x-2)\,\hi + (y-1)\,\hj +(z-1)\,\hk\big]
 </mrow><mrow>
 &amp;=-\frac{1}{\veps} \left(\frac{(x-2)^2+(y-1)^2+(z-1)^2}{{\big[(x-2)^2+(y-1)^2+(z-1)^2\big]
@@ -4801,7 +4886,7 @@ the boundary of <m>\cR</m> equals
 
 <hint><p>
 Both the divergence theorem and a vector identity in
-Theorem <xref ref="thm_divIdentities"/> of the CLP-4 text
+Theorem <xref ref="thm_divIdentities"/>
 are useful.
 </p></hint>
 
@@ -4819,15 +4904,18 @@ is given by the integral
 I = \dblInt_\cS \vF\cdot \hn\,\dee{S}
 </me>
 Thanks to the divergence theorem,
-<me>
+<md>
+<mrow>
 I
-= \tripInt_\cR \nabla\cdot\vF\,\dee{V}
+&amp;= \tripInt_\cR \nabla\cdot\vF\,\dee{V}
 = \tripInt_\cR \nabla\cdot\nabla u\,\dee{V}
 = \tripInt_\cR \Big(\frac{\partial^2 u}{\partial x^2}
      +\frac{\partial^2 u}{\partial y^2}
      +\frac{\partial^2 u}{\partial z^2}\Big)\,\dee{V}
-= 0
-</me>
+</mrow><mrow>
+&amp;= 0
+</mrow>
+</md>
 </p>
 
 <p>(b)
@@ -4926,8 +5014,8 @@ I=2\bar x{\rm Vol}(\cR)=0
 the circular disk of radius <m>1</m> centred on <m>(0,1)</m>. In polar coordinates
 it is
 <me>
-r^2\cos^2\theta +(r\sin\theta-1)^2\le 1\qquad\text{or}\qquad
-r^2-2r\sin\theta +1 \le 1 \qquad\text{or}\qquad
+r^2\cos^2\theta +(r\sin\theta-1)^2\le 1\quad\text{or}\quad
+r^2-2r\sin\theta +1 \le 1 \quad\text{or}\quad
 r\le 2\sin\theta
 </me>
 Because the disk is contained in the upper half plane, the polar angle
@@ -4952,8 +5040,10 @@ r^4\sin^2\theta\cos\theta\,\dee{r}\,\dee{\theta}
 </mrow><mrow>
 &amp;= 2 \int_{\theta=0}^\pi\sin^2\theta\cos\theta
            \Big[\frac{2^5\sin^5\theta}{ 5}\Big]\,\dee{\theta}
-= \frac{64}{5} \int_{\theta=0}^\pi \sin^7\theta\cos\theta\,\dee{\theta}
-= \frac{64}{5} \Big[\frac{\sin^8\theta}{8}\Big]_{\theta=0}^\pi
+</mrow><mrow>
+&amp;= \frac{64}{5} \int_{\theta=0}^\pi \sin^7\theta\cos\theta\,\dee{\theta}
+</mrow><mrow>
+&amp;= \frac{64}{5} \Big[\frac{\sin^8\theta}{8}\Big]_{\theta=0}^\pi
 </mrow><mrow>
 &amp;= 0
 </mrow>
@@ -4977,7 +5067,7 @@ On <m>{\cal S_{\rm bottom}}</m>, <m>z=0</m> and the outward unit normal is
 </me>
 On <m>{\cal S_{\rm top}}</m>, <m>z=y^2</m>,
 so <m>\vF = (2x,2y,-2y^2)</m> and,
-by (<xref ref="eq_SUdSgraph"/>) of the CLP-4 text,
+by (<xref ref="eq_SUdSgraph"/>),
 <me>
 \hn\dee{S}
 = {(0,-2y,1)}\,\dee{x}\dee{y}
@@ -4987,19 +5077,22 @@ Hence (by the Hint)
 <mrow>
 \dblInt_{\cal S_{\rm bot}}\vF\cdot \hn\,\dee{S}
 &amp;= \dblInt_\cD[-4y^2 - 2y^2]\,\dee{x}\dee{y}
-
 </mrow><mrow>
 &amp;= -6\int_{\theta=0}^{\pi} \int_{r=0}^{2\sin\theta}
 \big(r^2\sin^2\theta\big)\,r\,\dee{r}\,\dee{\theta}
 
 </mrow><mrow>
 &amp;= -6\frac{2^4}{4}\int_{\theta=0}^{\pi} \sin^6\theta\,\dee{\theta}
-=-24\frac{5}{6}\int_{\theta=0}^{\pi} \sin^4\theta\,\dee{\theta}
-=-24\frac{5}{6}\frac{3}{4}\int_{\theta=0}^{\pi} \sin^2\theta\,\dee{\theta}
+</mrow><mrow>
+&amp;=-24\frac{5}{6}\int_{\theta=0}^{\pi} \sin^4\theta\,\dee{\theta}
+</mrow><mrow>
+&amp;=-24\frac{5}{6}\frac{3}{4}\int_{\theta=0}^{\pi} \sin^2\theta\,\dee{\theta}
 </mrow><mrow>
 &amp;=-24\frac{5}{6}\frac{3}{4}\frac{1}{2}\int_{\theta=0}^{\pi}\dee{\theta}
-= -24\Big[\frac{5}{6}\frac{3}{4}\frac{1}{2}\pi\Big]
-= -\frac{15}{2}\pi
+</mrow><mrow>
+&amp;= -24\Big[\frac{5}{6}\frac{3}{4}\frac{1}{2}\pi\Big]
+</mrow><mrow>
+&amp;= -\frac{15}{2}\pi
 </mrow>
 </md>
 The conclusion is
@@ -5014,21 +5107,24 @@ The conclusion is
 
 <p>(b) <em>by direct evaluation:</em>
 Use the polar equation <m>r=2\sin\theta</m> to parametrize <m>\cS_{\rm side}</m>:
-<me>
-\vr(\theta,t)
+<md>
+<mrow>
+&amp;\vr(\theta,t)
 = (r\cos\theta,r\sin\theta,t)
 = (2\sin\theta\cos\theta, 2\sin^2\theta, t),
-\qquad
-0\le\theta\le\pi,\
+</mrow><mrow>
+&amp;0\le\theta\le\pi,\
 0\le t\le y^2 = 4\sin^4\theta
-</me>
+</mrow>
+</md>
 Then using (<xref ref="eq_SUdSparam"/>),
 <md>
 <mrow>
 \vF\cdot \hn\,\dee{S}
 &amp;= \vF\cdot\Big(\frac{\partial\vr}{\partial \theta}
          \times\frac{\partial\vr}{\partial t}\Big)\,\dee{\theta}\,\dee{t}
-= \det\left[\begin{matrix}
+</mrow><mrow>
+&amp;= \det\left[\begin{matrix}
 4\sin^2\theta\cos^2\theta    &amp; 4\sin^2\theta         &amp; -2t \\
 2(\cos^2\theta-\sin^2\theta) &amp; 4\sin\theta\cos\theta &amp; 0 \\
 0                            &amp; 0                     &amp; 1 \end{matrix}\right]
@@ -5042,11 +5138,9 @@ Then using (<xref ref="eq_SUdSparam"/>),
 </mrow><mrow>
 &amp;= \big[16\sin^3\theta\cos^3\theta - 8\sin^2\theta\big(\cos^2\theta-\sin^2\theta\big)\big]
 \,\dee{\theta}\,\dee{t}
-
 </mrow><mrow>
 &amp;= \big[16\sin^3\theta\big(1-\sin^2\theta\big)\cos\theta - 8\sin^2\theta\big(1 - 2\sin^2\theta\big)\big]
 \,\dee{\theta}\,\dee{t}
-
 </mrow><mrow>
 &amp;= 8\big[2\sin^3\theta\cos\theta - 2\sin^5\theta\cos\theta - \sin^2\theta + 2\sin^4\theta\big]
 \,\dee{\theta}\,\dee{t}
@@ -5055,16 +5149,15 @@ Then using (<xref ref="eq_SUdSparam"/>),
 so
 <md>
 <mrow>
-\dblInt_{\cal S_{\rm side}}\vF\cdot \hn\dee{S}
+&amp;\dblInt_{\cal S_{\rm side}}\vF\cdot \hn\dee{S}
+</mrow><mrow>
 &amp;= 8\int_{\theta=0}^\pi \int_{t=0}^{4\sin^4\theta}
 \big[2\sin^3\theta\cos\theta - 2\sin^5\theta\cos\theta - \sin^2\theta + 2\sin^4\theta\big]
 \,\dee{t}\,\dee{\theta}
-
 </mrow><mrow>
 &amp;= 32\int_{\theta=0}^\pi
 \big[2\sin^7\theta\cos\theta - 2\sin^9\theta\cos\theta - \sin^6\theta + 2\sin^8\theta\big]
 \,\dee{\theta}
-
 </mrow><mrow>
 &amp;=32{\Big[2\frac{\sin^8\theta}{8}-2\frac{\sin^{10}\theta}{10}\Big]}_0^\pi
 -32\int_{\theta=0}^\pi \sin^6\theta \,\dee{\theta}
@@ -5073,7 +5166,6 @@ so
 &amp;= -32 \frac{5}{6}\frac{3}{4}\frac{1}{2}\pi
    + 64\frac{7}{8}\frac{5}{6}\frac{3}{4}\frac{1}{2}\pi
 \quad\text{(by the Hint as above)}
-
 </mrow><mrow>
 &amp;= \frac{15}{2}\pi.
 </mrow>
@@ -5085,7 +5177,7 @@ We can also parametrize <m>\cS</m> using cylindrical coordinates translated so t
 the origin. Then, looking at the figure
 </p>
 
-<sidebyside width="75%">
+<sidebyside width="41%">
   <image source="pfigs/cylOffset"/>
 </sidebyside>
 
@@ -5213,7 +5305,8 @@ As
 &amp;=\pdiff{}{x}(x+x^2y)
 +\pdiff{}{y}(y-xy^2)
 +\pdiff{}{z}(z+2x+3y)
-=(1+2xy)+(1-2xy)+(1)
+</mrow><mrow>
+&amp;=(1+2xy)+(1-2xy)+(1)
 </mrow><mrow>
 &amp;=3
 </mrow>
