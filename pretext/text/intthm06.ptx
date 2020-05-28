@@ -20,9 +20,9 @@ flow of that vector field.
 <m>\vv(\vx,t)</m>. Pick any time <m>t_0</m> and a really tiny piece of the fluid;
 assume that, at time <m>t_0</m>, it is a cube with corners
 at
-<p><me>
+<me>
 \Set{\vx_0+n_1\veps\ha{1}+n_2\veps\ha{2}+n_3\veps\ha{3}}{n_1,n_2,n_3\in\{0,1\}}
-</me></p>
+</me>
 </p>
 
 <sidebyside width="22%">
