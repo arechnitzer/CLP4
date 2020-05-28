@@ -54,7 +54,7 @@ So
 <mrow>
 \int_\cC x^2y^2\,\dee{x}+x^3y\,\dee{y}
 &amp;=\int_0^1 x^2\times 0^2\,\dee{x} +\int_0^1 1^3\times y\,\dee{y}
-+\int_1^0 x^2\times 1^2\,\dee{x} 
++\int_1^0 x^2\times 1^2\,\dee{x}
 </mrow><mrow>&amp;\hskip2in+\int_1^0 0^3\times y\,\dee{y}
 </mrow><mrow>
 &amp;=\frac{1}{2}-\frac{1}{3}
@@ -1637,13 +1637,13 @@ Alternatively, <m>\varphi</m> can be found
 by antidifferentiating its partial derivatives.
 <md>
 <mrow>
-\frac{\partial \varphi}{\partial x}(x,y,z) &amp;= z + e^y 
+\frac{\partial \varphi}{\partial x}(x,y,z) &amp;= z + e^y
 </mrow><mrow>&amp;\hskip1in \implies \varphi(x,y,z)=zx+xe^y+\psi_1(y,z)
 </mrow><mrow>
 \frac{\partial \varphi}{\partial y}(x,y,z) &amp;= xe^y - e^z \sin y
 </mrow><mrow>&amp;\hskip1in \implies \varphi(x,y,z)=xe^y+e^z\cos y+\psi_2(x,z)
 </mrow><mrow>
-\frac{\partial \varphi}{\partial z}(x,y,z) &amp;= 1 + x + e^z \cos y 
+\frac{\partial \varphi}{\partial z}(x,y,z) &amp;= 1 + x + e^z \cos y
 </mrow><mrow>&amp;\hskip1in \implies \varphi(x,y,z)=z+zx+e^z\cos y+\psi_3(x,y)
 </mrow>
 </md>
@@ -1826,6 +1826,9 @@ I &amp;= \int_C\vF\cdot\dee{\vr} + \int_C yz^2\dee{z}
 </p></solution>
 </exercise>
 
+</exercisegroup>
+
+<exercisegroup>
 <introduction>
   <p>Questions <nbsp/><xref ref="nonconserv1"/> and <xref ref="nonconserv2"/> ask you to evaluate line integrals of vector fields that are not conservative, but that can be expressed as a sum of a conservative vector field and another vector field that can be written concisely.</p>
 </introduction>
@@ -1899,10 +1902,10 @@ So <m>\vF</m> is conservative if and only if <m>A=2</m> and <m>B=3</m>.
 <md>
 <mrow>
 \frac{\partial \varphi}{\partial x}(x,y,z)
-            &amp;= y^2 e^{3z} +2xy^3 
+            &amp;= y^2 e^{3z} +2xy^3
 </mrow><mrow>&amp;\hskip1in \implies \varphi(x,y,z)=xy^2e^{3z}+x^2y^3+\psi_1(y,z)
 </mrow><mrow>
-\frac{\partial \varphi}{\partial y}(x,y,z) &amp;= 2xye^{3z}+3x^2y^2 
+\frac{\partial \varphi}{\partial y}(x,y,z) &amp;= 2xye^{3z}+3x^2y^2
 </mrow><mrow>&amp;\hskip1in \implies \varphi(x,y,z)=xy^2e^{3z}+x^2y^3+\psi_2(x,z)
 </mrow><mrow>
 \frac{\partial \varphi}{\partial z}(x,y,z) &amp;= 3xy^2e^{3z}
@@ -2011,18 +2014,18 @@ That is,
 <md>
 <mrow>
 \frac{\partial }{\partial y}\left(2x\sin(\pi y)-e^z\right)
-&amp;=\frac{\partial }{\partial x}\left(ax^2\cos(\pi y)-3e^z\right) 
+&amp;=\frac{\partial }{\partial x}\left(ax^2\cos(\pi y)-3e^z\right)
 </mrow><mrow>&amp;\hskip1in
 \iff \quad
 2\pi x\cos(\pi y)  =2a x\cos(\pi y)
 </mrow><mrow>
 \frac{\partial }{\partial z}\left(2x\sin(\pi y)-e^z\right)
-&amp;=-\frac{\partial }{\partial x}\left(x+by\right)e^z 
+&amp;=-\frac{\partial }{\partial x}\left(x+by\right)e^z
 </mrow><mrow>&amp;\hskip1in
 \iff \quad-e^z =-e^z
 </mrow><mrow>
 \frac{\partial }{\partial z}\left(ax^2\cos(\pi y)-3e^z\right)
-&amp;=-\frac{\partial }{\partial y}\left(x+by\right)e^z 
+&amp;=-\frac{\partial }{\partial y}\left(x+by\right)e^z
 </mrow><mrow>&amp;\hskip1in
 \iff \quad
 -3e^z =-be^z
@@ -2046,10 +2049,10 @@ Here <m>\varphi</m> was guessed. Alternatively, it can be found
 by antidifferentiating the partial derivatives of <m>\vF</m>.
 <md>
 <mrow>
-\frac{\partial \varphi}{\partial x}(x,y,z) &amp;= 2x\sin(\pi y)-e^z 
+\frac{\partial \varphi}{\partial x}(x,y,z) &amp;= 2x\sin(\pi y)-e^z
 </mrow><mrow>&amp;\implies \varphi(x,y,z)=x^2\sin(\pi y)-xe^z+\psi_1(y,z)
 </mrow><mrow>
-\frac{\partial \varphi}{\partial y}(x,y,z) &amp;= \pi x^2\cos(\pi y)-3e^z 
+\frac{\partial \varphi}{\partial y}(x,y,z) &amp;= \pi x^2\cos(\pi y)-3e^z
 </mrow><mrow>&amp;\implies \varphi(x,y,z)=x^2\sin(\pi y)-3ye^z+\psi_2(x,z)
 </mrow><mrow>
 \frac{\partial \varphi}{\partial z}(x,y,z) &amp;= -(x+3y)e^z </mrow><mrow>
@@ -2479,13 +2482,13 @@ The choices from<nbsp/>(a) give
 We find a potential <m>\varphi</m> for <m>\vF</m> by antidifferentiating its partial derivatives.
 <md>
 <mrow>
-\frac{\partial \varphi}{\partial x}(x,y,z) &amp;= 2xyz + z^2 - 2y^2 
+\frac{\partial \varphi}{\partial x}(x,y,z) &amp;= 2xyz + z^2 - 2y^2
 </mrow><mrow>&amp;\implies \varphi(x,y,z)=x^2yz+xz^2-2xy^2+\psi_1(y,z)
 </mrow><mrow>
-\frac{\partial \varphi}{\partial y}(x,y,z) &amp;= x^2 z - 4xy  
+\frac{\partial \varphi}{\partial y}(x,y,z) &amp;= x^2 z - 4xy
 </mrow><mrow>&amp;\implies \varphi(x,y,z)=x^2yz-2xy^2+\psi_2(x,z)
 </mrow><mrow>
-\frac{\partial \varphi}{\partial z}(x,y,z) \varphi(x,y,z)&amp;= x^2y + 2xz + qz^3 
+\frac{\partial \varphi}{\partial z}(x,y,z) \varphi(x,y,z)&amp;= x^2y + 2xz + qz^3
 </mrow><mrow>&amp;\implies \varphi(x,y,z)=x^2yz+xz^2+\frac{q}{4}z^4+\psi_3(x,y)
 </mrow>
 </md>
@@ -2913,6 +2916,9 @@ The work done between time <m>t=0</m> and time <m>t=\pi/2</m> is
 </solution>
 </exercise>
 
+</exercisegroup>
+
+<exercisegroup>
 <introduction><p>Questions<nbsp/><xref ref="path1"/> and <xref ref="path2"/> ask you to find a path that leads to a particular value of a line integral. Many such paths are possible <mdash/> you only need to find one.</p></introduction>
 
 <exercise xml:id="path1"><title><fromexam>M317 2012D</fromexam></title>
@@ -3861,10 +3867,10 @@ By Newton's law of motion, <m>m\vr''(t)=\vF(t)</m>.
 <solution><p>
 (a) By Newton's law of motion
 <me>
-m\va =\vF\ 
-\implies\ 
-2\vv'(t) = \big(4t\,,\,6t^2\,,\,-4t\big) \ 
-\implies\ 
+m\va =\vF\
+\implies\
+2\vv'(t) = \big(4t\,,\,6t^2\,,\,-4t\big) \
+\implies\
 \vv'(t) = \big(2t\,,\,3t^2\,,\,-2t\big)
 </me>
 So

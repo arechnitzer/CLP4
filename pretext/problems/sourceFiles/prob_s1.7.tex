@@ -1,0 +1,580 @@
+%\documentclass[12pt]{article}
+
+\questionheader{ex:s1.7}
+\Instructions{You may assume the acceleration due to gravity is $g=9.8$ m/s$^2$. You may also assume that the systems described function as they do in the book: so tracks are frictionless, etc., unless otherwise mentioned.}
+%%%%%%%%%%%%%%%%%%
+\subsection*{\Conceptual}
+%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%
+
+%%%%%%%%%%%%%%%%%%%
+\begin{question}
+	The figure below represents a bead sliding down a wire. Sketch  vectors representing the normal force the wire exerts on the bead, and the force of gravity.
+\begin{center}
+	\begin{tikzpicture}
+	\draw[thick, red] plot[domain=2:6]({\x},{-\x+2*cos(\x r)});
+	\draw (3.14,-5.14) node[vertex]{};
+	\end{tikzpicture}
+	\end{center}
+	Assume the top of the page is ``straight up."
+\end{question}
+\begin{hint}
+Gravity pulls straight down, while the direction of the normal force depends on the curve of the wire. There is not enough information to know the magnitude of the forces, but you can approximate their directions.
+\end{hint}
+\begin{answer}
+	\begin{center}
+		\begin{tikzpicture}
+		\draw[thick, red] plot[domain=2:6]({\x},{-\x+2*cos(\x r)});
+		\draw (3.14,-5.14) node[vertex](b){};
+		\draw[blue, thick, ->] (b)--(3.14,-6.14) node[below]{$-mg\hj$};
+		\draw[blue, thick, ->] (b)--(4.14,-4.14) node[above]{$W\hN$};
+		\end{tikzpicture}
+	\end{center}
+
+\end{answer}
+\begin{solution}
+	We don't have enough information to gauge the size of the vectors, but we can figure out their direction. Gravity pulls straight down, so the vector $-mg\hj$ points straight down. The normal force will be normal to the curve.
+	\begin{center}
+		\begin{tikzpicture}
+		\draw[thick, red] plot[domain=2:6]({\x},{-\x+2*cos(\x r)});
+		\draw (3.14,-5.14) node[vertex](b){};
+		\draw[blue, thick, ->] (b)--(3.14,-6.14) node[below]{$-mg\hj$};
+		\draw[blue, thick, ->] (b)--(4.14,-4.14) node[above]{$W\hN$};
+		\end{tikzpicture}
+	\end{center}
+	
+\end{solution}
+%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%
+\begin{question}
+In the definition $E=\frac12m|\vv|^2+mgy$,  $\vv$ is the derivative of position with respect to what quantity?
+\end{question}
+\begin{hint}
+	This equation stems from $\vF=m\va$. In that equation, $\va$ is what kind of derivative?
+\end{hint}
+\begin{answer}
+	time
+\end{answer}
+\begin{solution}
+	This equation stems from $\vF=m\va$. In that equation, $\va$ is acceleration --- the second derivative of position with respect to \emph{time}. So, $\vv$ is the derivative of position with respect to time. 
+	
+	We previously used $\vv$ as the derivative of position with respect to the parameter we use to define our position --- which was often called $t$, but was not the necessarily time. So this is a good point to keep straight.
+\end{solution}
+%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%
+\begin{question}
+A bead slides down a wire with the shape shown below, $x<0$.
+\begin{center}
+	\begin{tikzpicture}
+\YEaaxis{4}{.5}{.5}{4}
+\draw[thick, red] plot[domain=-4:0](\x,{\x*\x/4});	
+\draw (-3,2.25) node[vertex](b){};
+\draw[blue, thick, ->] (b)--(-2.45,1.42) node[below]{$\hT$};
+\draw[blue, thick, ->] (b)--(-2.17,2.8) node[above]{$\hN$};
+\draw[blue, thick, ->] (b)--(-3,1.25) node[below left]{$-\hj$};
+	\end{tikzpicture}
+	\end{center}
+Let $W\hN$ be the normal force exerted by the wire when the bead is at position $x$. Note $W>0$. Is $\diff{W}{x}$ positive or negative?
+\end{question}
+\begin{hint}
+A thought experiment might help you avoid any calculations.	If the wire were perfectly vertical or perfectly horizontal, what would $W\hN$ be?
+\end{hint}
+\begin{answer}
+	positive
+\end{answer}
+\begin{solution}
+\textbf{Solution 1:}\\
+For large, negative values of $x$, the wire is closer and closer to a vertical line. If the bead were sliding down a vertical wire, it could do so without even touching the wire, so the force exerted on the bead would be zero. As  $x$ approaches 0 from the left, the wire approximates a horizontal line. If the bead were sitting on a horizontal line, the wire would be pushing up to counter gravity. So, we imagine the magnitude of the force exerted by the wire might increase as $x$ increases. That is, $\diff{W}{x}>0$.
+
+\textbf{Solution 2:}\\
+The net force exerted on the bead is
+\begin{align*}
+F=m\va&=  W\hN -mg\hj
+\intertext{We dot both sides with $\hN$.}
+W\hN \cdot \hN - mg\hj\cdot\hN&=m\va\cdot\hN 
+\intertext{Using the equation $\va(t) = \ddiff{2}{s}{t}\hT + \ka\left(\diff{s}{t}\right)^2\hN$,}
+W-mg\hj\cdot\hN&=m\ka\left(\diff{s}{t}\right)^2\\
+W&=mg\hn\cdot\hN+m\ka\left(\diff{s}{t}\right)^2\\
+&=mg\cos\theta+m\ka\left(\diff{s}{t}\right)^2
+\end{align*}
+where $\theta$ is the angle between $\hj$ and $\hN$.
+
+ As $x$ moves from a highly negative number to zero, $\theta$ moves from nearly $\pi/2$ to nearly $0$. Therefore $\cos \theta$ increases from nearly zero to nearly one. Then $mg\cos\theta$ is increasing.
+ 
+Furthermore, as $x$ increases, we see from the picture that the curvature $\ka$ increases, and speed $\diff{s}{t}$ increases as well (kinetic energy is increasing as potential energy decreases).
+
+So, $\diff{W}{x}>0$.  
+\end{solution}
+%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%
+\begin{question}
+	A skateboarder is rolling on a frictionless, very tall parabolic ramp with cross-section described by $y=x^2$. Given a boarder of mass $m$ with system energy $E$, what is the highest elevation the skater reaches? How does this compare to a circular culvert?
+\end{question}
+\begin{hint}
+	The skater reaches their highest point when $|\vv|=0$.
+\end{hint}
+\begin{answer}
+	$y=\frac{E}{mg}$ --- just like a circular culvert (if the culvert is high enough).
+\end{answer}
+\begin{solution}
+	Equation~\eref{CLP317}{eqn:consEnergy} defines $E=\frac{1}{2}m|\vv|^2+mgy$. The skater reaches their highest point when $|\vv|=0$, so when $y=\frac{E}{mg}$. This is the same equation as a sufficiently large circular culvert: it's the height where all the kinetic energy has been converted into potential energy.
+	That's why we never even used the equation $y=x^2$!
+\end{solution}
+%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%
+
+%%%%%%%%%%%%%%%%%%
+\subsection*{\Procedural}
+%%%%%%%%%%%%%%%%%%%%%%%%%
+
+%%%%%%%%%%%%%%%%%%%
+\begin{question}
+A skateboarder of mass 100 kg is freely rolling in a frictionless circular  culvert of radius 5 m. If the skateboarder oscillates between vertical heights of 0 and 3 m, what is the
+ energy $E$ of the system?
+\end{question}
+\begin{hint}
+The highest vertical height occurs just as the skateboarder's speed reduces to 0, at	$y_S=\frac{E}{mg}$.
+\end{hint}
+\begin{answer}
+	2940 J
+\end{answer}
+\begin{solution}
+	The skateboarder starts going back down at $y_S=\frac{E}{mg}$, so we solve $3\textrm{ m}=\frac{E}{100 \mathrm{ kg} \cdot 9.8~\frac{\mathrm{m}}{\mathrm{s}^2}}$ to find $E=2940 ~\frac{\mathrm{kg}\cdot\mathrm{m}^2}{\mathrm{s}^2}=2940 J$
+	
+	Remark: we needed the diameter to be greater than 3m for the skateboarder to not be going all the way around the culvert, but choosing $r=5$ leads to an answer no different from, say, $r=50$.
+\end{solution}
+%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%
+
+%%%%%%%%%%%%%%%%%%%
+\begin{question}
+	A skateboarder is rolling on a frictionless circular culvert of radius 5 m. What should their speed be when they're at the bottom of the culvert ($y=0$) for them to make it all the way around?
+	
+\end{question}
+\begin{hint}
+	At the bottom of the culvert, all the skater's energy is kinetic, not potential. That is, in the equation $E=\frac12m|\vv|^2+mgy$, we have $y=0$.
+\end{hint}
+\begin{answer}
+	at least $5\sqrt{9.8}$ m/s
+\end{answer}
+\begin{solution}
+	From the text, the skateboarder will make it all the way around when $\frac{5}{2}(5)
+	\le\frac{E}{mg}$. Energy $E$ is given by $E=\frac12m|\vv|^2+mgy$, the sum of the kinetic and potential energy of the system. At $y=0$, all the energy is kinetic, so $E=\frac12m|\vv|^2$, where $|\vv|$ is the skater's velocity at the bottom of the culvert.
+	
+	So, we solve:
+	\begin{align*}
+		\frac{25}{2}&\le\frac{E}{mg}=\frac{\frac12m|\vv|^2}{m\cdot9.8}\\
+		|\vv|&\ge5\sqrt{9.8}
+	\end{align*}
+	So, a speed of $5\sqrt{9.8}$ m/s or higher is needed. (That's about 56 kph.)
+\end{solution}
+%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%
+\begin{question}
+A ball of mass 1 kg rolls down a  track with the shape $\vr(\theta)=(3 \cos \theta, 5\sin\theta, 4+4\cos\theta)$ for $0 \le \theta \le \frac{\pi}{2}$.  Coordinates are measured in metres, and the $z$ axis is vertical (so the force due to gravity is $-mg\hk$.)
+
+ When $\theta=\pi/4$, the particle has instantaneous velocity $|\vv(t)|=5$ m/s. What is the normal force exerted by the track at that time? Give your answer as a vector.
+\end{question}
+\begin{hint}
+Equation~\eref{CLP317}{eqn:normalForce} tells us the normal force exerted by the track is $W\hN$, where
+$W=m\ka|\vv|^2+mg\hk\cdot \hat\vN
+$. Equation~\eref{CLP317}{thm:curvatureFormulae} part (c) says $\va(\theta)=\ddiff{2}{s}{\theta}\hT+\kappa\left(\diff{s}{\theta}\right)^2\hN$.
+\end{hint}
+\begin{answer}
+$\left( -\frac{3}{\sqrt2}+2.352~,~-\frac{5}{\sqrt 2}+{3.92}~,~-{2\sqrt 2}+3.136\right)
+$
+\end{answer}
+\begin{solution}
+Equation~\eref{CLP317}{eqn:normalForce} tells us the normal force exerted by the track is $W\hN$, where
+$W=m\ka|\vv|^2+mg\hk\cdot \hat\vN$. (Note in our problem, the vertical direction is $\hk$, not $\hj$ as in the text.) So, we ought to find $\ka$ and $\vN$.
+\begin{align*}
+\vr(\theta)&=(3 \cos \theta, 5\sin\theta, 4+4\cos\theta)\\
+\vv(\theta)&=(-3\sin\theta,5\cos\theta,-4\sin\theta)\\
+|\vv(\theta)|=\diff{s}{\theta}&=\sqrt{9\sin^2\theta+25\cos^2\theta+16\sin^2\theta}=5\\
+\va(\theta)&=(-3\cos\theta,-5\sin\theta,-4\cos\theta)\\
+\vv \times \va &=5(-4,0,3)\\
+\ka(\theta)&=\frac{|\vv \times \va|}{\left(\diff{s}{\theta}\right)^3}=\frac{25}{5^3}=\frac15
+\intertext{Since $\ddiff{2}{s}{\theta}=0$, we use the following theorem to find $\hN$:}
+\va(\theta)&=\ddiff{2}{s}{\theta}\hT+\kappa\left(\diff{s}{\theta}\right)^2\hN\\
+(-3\cos\theta,-5\sin\theta,-4\cos\theta)&=0+\frac{25}{5}\hN\\
+\hN(\theta)&=\left(-\frac35\cos\theta,-\sin\theta,-\frac45\cos\theta\right)
+\intertext{Using the given quantity $|\vv(t)|=5$ at the specified point,}
+W\Big|_{\theta=\pi/4}&=m\ka|\vv|^2+mg\hk\cdot \hat\vN\\
+&=(1)\frac15 5^2+1(9.8)\left(- \frac45 \cos (\pi/4)\right)=5-\frac{39.2}{5\sqrt 2}\\
+W\hN\Big|_{\theta=\pi/4}&=\left(5-\frac{39.2}{5\sqrt 2}\right)\left(-\frac35\cos(\pi/4),-\sin(\pi/4),-\frac45\cos(\pi/4)\right)\\
+&=\left(5-\frac{39.2}{5\sqrt 2}\right)\left(-\frac3{5\sqrt 2},-\frac{1}{\sqrt 2},-\frac{4}{5\sqrt2}\right)\\
+&=\left( -\frac{3}{\sqrt2}+2.352~,~-\frac{5}{\sqrt 2}+{3.92}~,~-{2\sqrt 2}+3.136\right)
+\end{align*}
+\end{solution}
+%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%
+\begin{question}
+A bead of mass $\frac{1}{9.8}$ kg slides down a  wire in the shape of the curve $\vr(\theta)=(\sin \theta , \sin \theta - \theta)$, $\theta \ge 0$, with coordinates measured in metres. The bead will break off the wire when the wire exerts a force of  100 N on the bead. %should be E about 7 or 8
+\begin{center}
+\begin{tikzpicture}
+\YEaaxis{.5}{1}{5}{.5}
+\draw[thick, red] plot[domain=0:20, smooth, scale=0.25, samples=20]({sin(\x r)},{sin(\x r)-\x});
+\draw[red] (1,-2) node[right]{$\vr(\theta)=(\sin \theta , \sin \theta - \theta)$};
+\end{tikzpicture}
+\end{center}
+If the bead breaks off the wire at $\theta=\frac{13\pi}{3}$, how fast is the bead moving at that point?
+\end{question}
+\begin{hint}
+When $\theta=13\pi/3$, $\ddiff{2}{s}{\theta}=0$, which is handy for a quicker calculation.
+
+
+Important equations: the normal force exerted by the track is $W\hN$, where\\
+$W=m\kappa|\vv|^2+mg\hj\cdot\hN$ (Equation~\eref{CLP317}{eqn:normalForce});\quad
+$\va(\theta)=\ddiff{2}{s}{\theta}\hT+\kappa\left(\diff{s}{\theta}\right)^2\hN$ (Equation~\eref{CLP317}{thm:curvatureFormulae}, part (c) ). 
+\end{hint}
+\begin{answer}
+%$E=\frac{100+1/\sqrt2}{2\sqrt{6}}+\frac{\sqrt3}{2}-\frac{1\pi}{3}\approx 7.81 ~\mathrm{ J}$; 
+$\sqrt{\frac{9.8}{\sqrt 6}\left(100+\frac1{\sqrt2} \right)}\approx 20 $ m/s
+\end{answer}
+\begin{solution}
+Equation~\eref{CLP317}{eqn:normalForce} tells us the normal force exerted by the track is $W\hN$, where
+$W=m\kappa|\vv|^2+mg\hj\cdot\hN$. So, we need to find $\kappa$ and $\hj \cdot \hN$ at the point $\theta=\frac{13\pi}{3}$.
+
+Note that $\theta$ is the parameter used to describe the track, but it is \emph{not} time. So $|\vv(\theta)|=\left|\diff{\vr}{\theta} \right|$ is not the same as $|\vv|$, the \emph{speed} of the bead.
+\begin{align*}
+\vr(\theta)&=(\sin \theta , \sin \theta - \theta)&
+\vv(\theta)&=(\cos \theta, \cos \theta -1) \\ |\vv(\theta)|=\diff{s}{\theta}&=\sqrt{2\cos^2\theta-2\cos \theta+1}&
+\va(\theta)&=(-\sin \theta, -\sin \theta) \\ |\vv \times \va|&=|\sin \theta|&
+\ka(\theta)&=\frac{|\vv\times\va|}{\left(\diff{s}{\theta}\right)^3}=\frac{|\sin \theta|}{(2\cos^2\theta-2\cos \theta+1)^{3/2}}\\
+\ddiff{2}{s}{\theta}&=\frac{\sin \theta (1-2\cos \theta)}{\sqrt{2\cos^2\theta-2\cos \theta+1}}
+\end{align*}
+Equation~\eref{CLP317}{thm:curvatureFormulae} part (c) gives us the relation $\va(\theta)=\ddiff{2}{s}{\theta}\hT+\kappa\left(\diff{s}{\theta}\right)^2\hN$. We use this to find $\hj\cdot\hN$ at $\theta=13\pi/3$ without differentiating (actually, without even finding) $\hT$.
+\begin{align*}
+\va(13\pi/3)&=\left(-\sqrt{3}/2,-\sqrt{3}/2\right)\\
+\ddiff{2}{s}{\theta}(13\pi/3)&=0\\
+\ka(13\pi/3)&=\sqrt{6}\\
+\diff{s}{\theta}(13\pi/3)&=1/\sqrt{2}\\
+\va(\theta)\cdot\hj&=\left(\ddiff{2}{s}{\theta}\hT+\kappa\left(\diff{s}{\theta}\right)^2\hN\right)\cdot\hj\\
+-\frac{\sqrt 3}{2}&=0+\sqrt{6}(1/2)\hN\cdot\hj\\
+\hN\cdot\hj&=-\frac{1}{\sqrt2}
+\end{align*}
+
+Now we can find the speed $|\vv|$ of the bead when $|W|=100$ and it breaks off the track.
+
+\begin{align*}
+	W&=m\ka|\vv|^2+mg\hj\cdot\hN\\
+	\pm 100 &=\left(\frac{1}{9.8} \right)\sqrt{6}|\vv|^2+\frac{9.8}{9.8}\left(-\frac{1}{\sqrt 2} \right)\\
+	|\vv|&=\sqrt{\frac{9.8}{\sqrt6}\left(100+\frac{1}{\sqrt 2} \right)} \approx20~ \mathrm{m}/\mathrm{s}~\approx 72 ~\mathrm{kph}
+	\end{align*}
+(Because $|\vv|>0$, the equation above has no solution for $W=-100$.)
+
+Quite fast! 100 N is a lot of force for such a light object.
+\end{solution}
+%%%%%%%%%%%%%%%%%%%
+
+
+%%%%%%%%%%%%%%%%%%%
+\begin{question}
+A skier is gliding down a hill. The hill can be described as $\vr(t)=(\ln t, 1-t)$, $1/e \le t \le e$, with coordinates  measured in kilometres. How fast would the skier have to be moving in order to catch air?
+
+%You may take the acceleration due to gravity to be $g=9.8$ m/s$^2$.
+\end{question}
+\begin{hint}
+According to the equation in the text, the skiier will become airborne when:
+\[|\vv|>\sqrt{\frac{g}{\kappa}|\hj\cdot\hN|}\]
+So, we need $|\vv|$ to be greater than $\sqrt{\frac{g}{\kappa}|\hj\cdot\hN|}$ for \emph{some} point on the curve inside the range $1/e \le t \le e$.
+
+Note that $g$ is given in metres per second, while the other quantities are in kilometres and hours. 
+\end{hint}
+\begin{answer}
+$|\vv| > 504$ kph
+\end{answer}
+\begin{solution}
+According to the equation in the text, the skier will become airborne when:
+\[|\vv|>\sqrt{\frac{g}{\kappa}|\hj\cdot\hN|}\]
+We'll use the equation of the curve to find $\ka$ and $\hN$. 
+
+Note that $g$ is given in metres per second, while the other quantities are in kilometres and hours. Converting, 
+$9.8$ m/s$^2$ is the same as $\left(\frac{9.8\text{ m}}{1 \text{ s}^2}\right)\left( \frac{1 \text{ km}}{1000 \text{ m}}\right)\left(\frac{3600 \text{ s}}{1 \text{ hr}} \right)^2=98\cdot 6^4~ \frac{\text{km}}{\text{h}^2}=2^5\cdot 3^4\cdot 7^2~ \frac{\text{km}}{\text{h}^2}$.
+
+
+\begin{align*}
+\vr(t)&=(\ln t,1-t)\\
+\vr'(t)&=\vv(t)=(t^{-1}, -1)\qquad\qquad \diff{s}{t}=|\vv(t)|=\sqrt{1+t^{-2}}\\
+\vr''(t)&=\va(t)=(-t^{-2},0)\\
+\ka(t)&=\frac{|\vv \times \va|}{\left(\diff{s}{t}\right)^{3}}=\frac{t^{-2}}{\sqrt{1+t^{-2}}^3}=\frac{|t|}{(1+t^{2})^{3/2}}=\frac{t}{(1+t^{2})^{3/2}}
+\intertext{Note $t$ is positive in the interval in question.}
+\hT(t)&=\frac{\vv(t)}{|\vv(t)|}=\frac{1}{\sqrt{1+t^{-2}}}(t^{-1},-1)=\left( \frac{1}{\sqrt{1+t^{2}}},\frac{-t}{\sqrt{1+t^{2}}}\right)\\
+\hT'(t)&= \left( \frac{-t}{({1+t^2})^{3/2}},\frac{-1}{({1+t^2})^{3/2}}\right)\qquad\qquad
+|\hT'(t)|=\frac{1}{t^2+1}\\
+\hN(t)&=\frac{\hT'(t)}{|\hT'(t)|}=\left( \frac{-t}{\sqrt{1+t^2}},\frac{-1}{\sqrt{1+t^2}}\right)\\
+|\hN \cdot \hj|&=\frac{1}{\sqrt{1+t^2}}
+\end{align*}
+Now, we have all the pieces we need to find the ``escape velocity" of the ground.
+\begin{align*}
+|\vv|&=\sqrt{\frac{g}{\kappa}|\hN \cdot \hj|}=\sqrt{\frac{g\cdot (1+t^{2})^{3/2}}{t(1+t^2)^{1/2}}}=\sqrt{\frac{g(1+t^2)}{t}}
+\end{align*}
+Since the skier can take off anywhere on the hill, we just need their velocity to be larger than the \emph{smallest} value of $\sqrt{\frac{g(1+t^2)}{t}}$ when $1/e \le t \le e$. To find that minimum, we find the location of the minimum of the simpler function $g(t)=\frac{1+t^2}{t}$. Using first-semester calculus, we find it to occur when $t=1$. So, the minimum value of $\sqrt{\frac{g(1+t^2)}{t}}$ (that is, smallest speed to achieve lift-off) occurs at $t=1$. We therefore need a minimum speed greater than:
+\begin{align*}
+\sqrt{\frac{g(1+t^2)}{|t|}}\Bigg|_{t=1}&=\sqrt{2g}=\sqrt{2^6\cdot3^4\cdot7^2}=2^3\cdot 3^2\cdot 7 = 504\text{ kph}
+\end{align*}
+(It seems unlikely that one could reach this speed on skis. The skier is probably earth-bound until they find a curvier hill.)
+\end{solution}
+%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%
+\subsection*{\Application}
+%%%%%%%%%%%%%%%%%%
+
+%%%%%%%%%%%%%%%%%%%
+\begin{question}\label{s1.7:friction}
+A wire follows the arclength-parametrized path $\vr(s)=(x(s),y(s))$.
+A bead, equipped with a jet pack, slides down the wire. The jet pack can exert a variable force in a direction tangent to the wire, $U\hT$. Assuming the bead slides with constant speed $\left|\diff{\vr}{t}\right|=c\left| \diff{\vr}{s}\right|=c$, find a simplified equation for $U$, the signed magnitude of the force exerted by the jet pack.
+
+%Alt: $\vr$ is parametrized with respect to arclength; we really do have constant speed.
+
+Let the acceleration due to gravity be $g$, and let the mass of the bead with its jet pack be $m$. Give $U$ as a function of $s$.
+
+Remark: most beads this author has seen did not have jet packs. However, in modelling a frictionful\footnote{Frictionated? Frictiony? Befrictioned?} system, friction acts as a force that is directly opposing the direction of motion --- much like our jet pack.
+\end{question}
+\begin{hint}
+There are now three forces acting on the bead: one parallel to $\hj$ (exerted by gravity), one parallel to $\hN$ (exerted by the wire), and one parallel to $\hT$  (exerted by the jet pack).
+
+Follow the reasoning in the sliding bead section of the text, focusing on the \emph{tangential} forces.
+\end{hint}
+\begin{answer}
+$U={mg\diff{y}{s}}$
+\end{answer}
+\begin{solution}
+We now have three forces acting on the bead, rather than the two in the text. The wire still exerts a normal force $W\hN$ on the bead to keep it on the wire; gravity still exerts a force $-mg\hj$ straight down. Now our jet-pack force also exerts a force parallel to the direction of the bead's motion, i.e. parallel to $\hT$. This force is $U\hT$.
+\begin{center}
+\begin{tikzpicture}
+\begin{scope}[rotate=-30]
+\draw[thick, red] plot[domain=-1.5:1.5](\x,{cos (\x r)});
+\draw (0,1) node[vertex](V){};
+\draw[thick, ->] (V)--(0,2) node[ above]{$W\hN$};
+\draw[thick, ->] (V)--(-1,1) node[left]{$U\hT$};
+\end{scope}
+\draw (V)+(0,-1.5) node(J){};
+\draw[thick, ->] (V)--(J) node[below]{$-mg\hj$};
+\end{tikzpicture}
+\end{center}
+The net force acting on the bead is the sum of these three forces:
+\begin{align*}
+F=m\va&=U\hT + W\hN - mg\hj
+\intertext{To focus on the force in the direction of $\hT$, we dot both sides of the equation with $\hT(s)=\left(\diff{x}{s},\diff{y}{s} \right)$. (Recall $\vr(s)$ was parametrized with respect to arclength, so $\hT(s)=\diff{\vr}{s}$ everywhere.) Since the speed of the bead is constant, the tangential component of its acceleration, $\va \cdot \hT$, is 0 (see Theorem~\eref{CLP317}{thm:curvatureFormulae}.c). }
+0&=(U\hT + W\hN - mg\hj)\cdot \hT\\
+&=(U\hT\cdot \hT) +( W\hN\cdot \hT)-mg\hj\cdot\hT\\
+&=U+0-mg\diff{y}{s}\\
+U&=mg\diff{y}{s}
+\end{align*}
+\end{solution}
+
+%%%%%%%%%%%%%%%%%%%
+\begin{question}
+A snowmachine is cautiously descending a hill in low gear. Its engine provides a force $M\hT$ parallel to the direction of motion. The engine provides whatever force is necessary to keep the snowmachine moving at a constant speed, $|\vv|$. Its treads do not slip.
+
+\begin{enumerate}[(a)]
+\item Give a formula for $M$ in terms of the mass $m$ of the snowmachine, the acceleration due to gravity $g$, and the tangent vector $\hT$ to the hill.
+\item Let $\hT$ point in the downhill direction. Do you expect $M$ to be positive or negative as the snowmachine moves downhill?
+\item Find $M$ for the hill of shape $y=1+\cos x$ (measured in metres) at the point $x=\frac{3\pi}{4}$ for a snowmachine of mass 200 kg.
+\end{enumerate}
+
+\end{question}
+\begin{hint}
+If the snowmachine is moving at a constant speed, the tangential component of its acceleration is zero. Part (a) is similar to Question~\ref{s1.7:friction}.
+\end{hint}
+\begin{answer}
+(a) $M=mg \hj \cdot \hT$\qquad (b) negative \qquad (c) $-\frac{1960}{\sqrt 3} \approx - 1131.6$ N
+\end{answer}
+\begin{solution}
+(a)
+There are three forces acting on the snowmachine. If it's not accelerating, then $F=m\va=0$: that is, the forces all cancel out.
+\begin{center}
+\begin{tikzpicture}
+\draw[thick, red] plot[domain=0:3](\x,{cos( \x r});
+\draw (1.57,0) node[vertex](s){};
+\draw[blue, thick, ->] (s)--(1.57,-2) node[below]{$-mg\hj$};
+\draw[blue, thick, ->] (s)--(2.57,1) node[right]{$W\hN$};
+\draw[blue, thick, ->] (s)--(2.57,-1) node[below]{$M\hT$};
+\end{tikzpicture}
+\end{center}
+So, we have the equation
+\begin{align*}
+m\va&=W\hN+M\hT-mg\hj
+\intertext{To isolate $M$, we dot both sides of the equation with $\hT$. Remember $\hT$ is a unit vector, and it is perpendicular to $\hN$.}
+m\va \cdot \hT&=W\hN\cdot\hT+M\hT\cdot\hT-mg\hj\cdot\hT\\
+&=0+M-mg\hj\cdot\hT\\
+\intertext{Since the speed of the snowmachine is constant, the tangential component of its acceleration, $\va \cdot \hT$, is 0 (see Theorem~\eref{CLP317}{thm:curvatureFormulae}.c).}
+0&=M-mg\hj\cdot\hT\\
+M&=mg\hj\cdot\hT
+\end{align*}
+
+(b)
+We would expect, from looking at the situation, that the engine would have to provide a ``backwards" force to slow the acceleration due to gravity. So, we would expect $M<0$. Indeed, if $\hT$ points downhill, then the $y$-component of $\hT$ is negative, so $M=mg\hj\cdot\hT$ is negative.
+
+(This is the purpose of driving downhill in a low gear: the friction inside the motor provides a force \emph{opposing} the direction of motion, slowing the vehicle.)
+
+(c)
+To use the equation $M=mg\hj\cdot\hT$, we'll need to find $\hj \cdot \hT$.
+\begin{align*}
+\vr(x)&=(x,1+\cos x) & \vr'(x)&=(1,-\sin x)\\
+|\vr'(x)|&=\sqrt{1+\sin^2 x} &\hT(x)&=\frac{1}{\sqrt{1+\sin^2 x}}(1,-\sin x)\\
+\hT(3\pi/4)&=\left( \sqrt{\frac{2}{3}},-\frac{1}{\sqrt{3}}\right)
+\end{align*}
+So, 
+\[
+M=(200 ~\mathrm{ kg})( 9.8~\mathrm{m}/\mathrm{s}^2) \left(-\frac1{\sqrt3}~\mathrm{m}\right)=-\frac{1960}{\sqrt 3}~\mathrm{N} \approx - 1131.6~\mathrm{N}\]
+
+\end{solution}
+
+
+%%%%%%%%%%%%%%%%%%%
+\begin{question}
+A skateboarder rolls along a culvert with elliptical cross-section described by\\ $\vr(\theta)=(4\cos\theta,3(1+\sin\theta))$, $0 \le \theta \le 2\pi$, with coordinates measured in metres.
+
+\begin{enumerate}[(a)]
+	\item Give the height $y_S$ (in terms of $m$, $g$, and $E$) where the skater's speed is zero.
+	\item Write an equation relating $E$, $m$, $g$, and $y_A$, where $y_A$ is the $y$-value where the skater would become airborne, i.e. where $W=0$. (You do not have to solve for $y_A$ explicitly.)
+	\item Suppose the skater has speed 11 m/s at the bottom of the culvert.
+	Which of the following describes their journey: they make it all the way around; they roll back and forth in the bottom half; or they make it onto the ceiling, then fall off?
+	%	 Describe their journey around the culvert: do they make it all the way around? If not, how high do they get? Do they slide back and forth, or fall from the ceiling? You may use a computer to answer this question; round your answer to the nearest tenth.
+	\end{enumerate}
+\end{question}
+\begin{hint}
+	Follow the discussion in the text.
+	
+	It's fine to leave part (b) pretty messy. Your answer for part (c) involves the root of a cubic function, but you don't need a high degree of accuracy to decide between the three options give.
+	%In (c), %you can use a computer to solve the messy equation for the quantity you want.
+\end{hint}
+\begin{answer}
+(a) $y_S=\frac{E}{mg}$\qquad (b) $\frac{24\left(E-mgy_A\right)}{\left(9+7\left( \frac{y_A-3}{3}\right)^2 \right)^{3/2}} =4mg\left(\frac{ \frac{y_A-3}{3}}{\sqrt{9+7\left( \frac{y_A-3}{3}\right)^2}} \right) $ (or equivalent)\\
+(c) The skateboarder makes it up to the ceiling, but falls off rather than making it all the way around. Ouch.
+\end{answer}
+\begin{solution}
+	We begin with the usual computations. 
+	\begin{align*}
+		\vr(\theta)&=(4\cos\theta,3(1+\sin\theta))\\
+		\vv(\theta)=\vr'(\theta)&=(-4\sin\theta,3\cos\theta) & |\vv(\theta)|=\diff{s}{\theta}&=\sqrt{16\sin^2\theta+9\cos^2\theta}=\sqrt{9+7\sin^2\theta}\\
+		\va(\theta)&=(-4\cos\theta,-3\sin\theta) & \\
+		 |\vv(\theta) \times \va(\theta)|&=12&
+		\ka(\theta)&=\frac{|\vv(\theta)\times\va(\theta)|}{\left(\diff{s}{\theta} \right)^3}=\frac{12}{(9+7\sin^2\theta)^{3/2}}\\
+		\hT(\theta)&=\frac{(-4\sin\theta,3\cos\theta)}{\sqrt{9+7\sin^2\theta}}
+		&
+		\hT'(\theta)&=\frac{(36\cos\theta,48\sin\theta)}{-(9\cos^2\theta+16\sin^2\theta)^{3/2}}\\
+		|\hT'(\theta)|&=\frac{12}{9\cos^2\theta+16\sin^2\theta} &
+		\hN(\theta)&= \frac{(3\cos\theta,4\sin\theta)}{-\sqrt{9\cos^2\theta+16\sin^2\theta}}
+		\end{align*}
+	We want to find the height $y_S$ where $|\vv|=0$, and the height $y_A$ where $W=0$. Remember that $\vv$ in these equations is the derivative of position with respect to \emph{time}, and is not the same as $\vv(\theta)$. %As in the text, we find these quantities in terms of $\frac{E}{mg}$.
+	\begin{align*}
+\mbox{Equation~\eref{CLP317}{eqn:consEnergy}:\quad}		E&=\frac12m|\vv|^2+mgy\\
+\mbox{If $|\vv|=0$:\qquad}
+		E&=mgy_S \implies y_S=\frac{E}{mg}	
+		\intertext{This answers part a.}	
+\mbox{Equation~\eref{CLP317}{eqn:normalForce}:\quad}		W%=m\ka|\vv|^2+mg\hj\cdot \hat\vN
+&=2\ka(E-mgy)+mg\hj\cdot \hat\vN\\
+\mbox{If $W=0$:\qquad} 0&=2\ka(E-mgy_A)+mg\hj\cdot \hat\vN \\
+&=\frac{24\left(E-mgy_A\right)}{(9+7\sin^2\theta)^{3/2}} -mg\left(4\frac{\sin\theta}{\sqrt{9+7\sin^2\theta}} \right)
+\intertext{Using $y=3+3\sin\theta$:}
+&=\frac{24\left(E-mgy_A\right)}{\left(9+7\left( \frac{y_A-3}{3}\right)^2 \right)^{3/2}} -4mg\left(\frac{ \frac{y_A-3}{3}}{\sqrt{9+7\left( \frac{y_A-3}{3}\right)^2}} \right)\\
+		\end{align*}
+	So, for part b., we can write (say)
+	\[\frac{24\left(E-mgy_A\right)}{\left(9+7\left( \frac{y_A-3}{3}\right)^2 \right)^{3/2}} =4mg\left(\frac{ \frac{y_A-3}{3}}{\sqrt{9+7\left( \frac{y_A-3}{3}\right)^2}} \right) \]
+	
+	Now, suppose the skater's speed at the bottom of the culvert ($y=0$) is 11 m/s. Then their energy is $E=\frac{1}{2}m(11^2)+0$, or $\frac{121m}{2}$  joules, where $m$ is their mass. Then $y_S=\frac{E}{mg}=\frac{121}{2\cdot9.8}\approx 6.2$. Since the half-way height of the culvert is at height $y=3$, the skater makes it onto the ceiling of the culvert. Now the question is: did they make it all around, or fall off the ceiling?
+	
+	For this, we need to find $y_A$. If they go airborne on the ceiling, they fall; but if $y_A>6$, then they never lose contact with the culvert, and they go all the way around.
+	
+	\begin{align*}
+		\frac{24\left(E-mgy_A\right)}{\left(9+7\left( \frac{y_A-3}{3}\right)^2 \right)^{3/2}} &=4mg\left(\frac{ \frac{y_A-3}{3}}{\sqrt{9+7\left( \frac{y_A-3}{3}\right)^2}} \right)\\
+		\Leftrightarrow \qquad
+				\frac{6\left(\frac{E}{mg}-y_A\right)}{\left(9+7\left( \frac{y_A-3}{3}\right)^2 \right)^{3/2}} &=\frac{ \frac{y_A-3}{3}}{\sqrt{9+7\left( \frac{y_A-3}{3}\right)^2}} \\
+				\Leftrightarrow \qquad
+				\frac{6\left(\frac{11^2}{2\cdot9.8}-y_A\right)}{\left(9+7\left( \frac{y_A-3}{3}\right)^2 \right)^{3/2}} &=\frac{ \frac{y_A-3}{3}}{\sqrt{9+7\left( \frac{y_A-3}{3}\right)^2}} 
+	\intertext{To simplify to a more standard form, we multiply both sides by $\left(9+7\left(\frac{y_A-3}{3}\right)^2\right)^{3/2}$:}
+				6\left(\frac{11^2}{2\cdot9.8}-y_A\right) &=\left( \frac{y_A-3}{3}\right)\left(9+7\left( \frac{y_A-3}{3}\right)^2 \right)
+				\intertext{Now, we simplify to}
+				0&=\frac{7}{9}y_A^3 -7 y_A^2 +48 y_A- \frac{7797}{49} 
+						\end{align*}
+			
+	Now, solving for $y_A$ involves solving a cubic function, which is no small task. We could ask a computer, but we can also get an idea of its root(s) by plugging in numbers and using the intermediate value theorem. In particular, we need to know whether $y_A$ is greater than 6 (the skater makes it!) or between 3 and 6 (they fall off the ceiling).
+	
+Let $f(y)=\frac{7}{9}y^3 -7 y^2 +48 y- \frac{7797}{49}$. Note $f(4) = -\frac{12941}{441}$, which is negative, and $f(5)=\frac{1367}{441}$, which is positive. So, by the intermediate value theorem, there is a root of $f(y)$ between $y=4$ and $y=5$. That is, $y_A$ is between 4 and 5, so the skater falls off the ceiling somewhere between these heights, rather than making it all the way around.
+
+%Testing more points, we find $f(4.9)=-\frac{215.063}{441}$, so our root is between $y=4.9$ and $y=5$. Since we want one decimal point of accuracy, we test $4.95$. We find $f(4.95)\approx \frac{12800}{441}$, which is positive. So the root exists between $4.9$ and $4.95$. So, we approximate $y_A \approx 4.9$.
+
+% Since the height of the culvert is 6, our skateboarder makes it up to the ceiling, but falls off around height 4.9 m, rather than making it all the way around.
+
+	
+\end{solution}
+
+
+%%%%%%%%%%%%%%%%%%%
+\begin{question}
+A frictionless roller-coaster track has the form of one turn of the circular
+helix with parametrization $\ (a\cos\theta,a\sin\theta,b\theta).$ A car 
+leaves the point where $\ \theta=2\pi\ $ with zero velocity and moves 
+under gravity to the point where $\ \theta=0$. By Newton's law of motion, 
+the position $\vr(t)$ of the car at time $t$ obeys
+\begin{equation*}
+m \vr''(t) = \vN\big(\vr(t)\big) - mg\hk
+\end{equation*}
+Here $m$ is the mass of the car, $g$ is a constant, $-mg\hk$ is the force
+due to gravity and $\vN\big(\vr(t)\big)$ is the force that the roller-coaster
+track applies to the car to keep the car on the track. Since the track
+is frictionless, $\vN\big(\vr(t)\big)$ is always perpendicular 
+to $\vv(t)=\diff{\vr}{t}(t)$. 
+\begin{enumerate}[(a)]
+\item
+Prove that $E(t)=\half m |\vv(t)|^2 +mg \vr(t)\cdot\hk$ is a
+constant, independent of $t$. (This is called ``conservation of energy''.)
+\item
+Prove that the speed $|\vv|$ at the point $\theta$ obeys 
+$\ |\vv|^2=2gb(2\pi-\theta).$ 
+\item Find the time it takes to reach $\theta=0$.
+\end{enumerate}
+\end{question}
+
+%\begin{hint}
+%\end{hint}
+
+\begin{answer}
+(a), (b) See the solution.\qquad
+(c) $2\left[\frac{a^2+b^2}{gb}\pi\right]^{1/2}$
+\end{answer}
+
+\begin{solution}
+(a) By Newton's law of motion
+\begin{align*}
+E'(t)&=\diff{}{t}\left[\frac{1}{2} m |\vv(t)|^2 +mg \vr(t)\cdot\hk\right]
+=m\vv(t)\cdot\vv'(t)+mg\vv(t)\cdot\hk\\
+&=\vv(t)\cdot\big[\vN\big(\vr(t)\big) - mg\hk\big]+mg\vv(t)\cdot\hk\\
+&=0
+\end{align*}
+since $\vv(t)\cdot\vN\big(\vr(t)\big)=0$. So $E(t)$ is a constant, 
+independent of $t$.
+
+(b) By part (a),
+\begin{align*}
+E(t)=E(0) 
+\implies  \half m |\vv(t)|^2 +mg b\theta(t) = mg(2\pi b)
+\implies|\vv(t)|^2=2gb\big(2\pi-\theta(t)\big)
+\end{align*}
+
+(c) We wish to determine the time it takes to go from
+$\theta=2\pi$ to $\theta=0$. We'll first determine $\diff{\theta}{t}$.
+\begin{align*}
+&\vv=\diff{\vr}{t}=\diff{\vr}{\theta}\diff{\theta}{t}
+=\big(-a\sin\theta,a\cos\theta,b\big)\diff{\theta}{t} \\
+&\implies
+|\vv|^2=\big[a^2+b^2]\left(\diff{\theta}{t}\right)^2\\
+&\implies \diff{\theta}{t}=-\left[\frac{|\vv|^2}{a^2+b^2}\right]^{1/2}
+=-\left[\frac{2gb(2\pi-\theta)}{a^2+b^2}\right]^{1/2}
+\end{align*}
+We have chosen the negative sign because $\theta$ must decrease from $2\pi$
+to 0. The time required to do so is
+\begin{align*}
+\int dt&=\int_{2\pi}^0 \frac{dt}{d\theta}d\theta
+=-\left[\frac{a^2+b^2}{2gb}\right]^{1/2}\int_{2\pi}^0 \frac{1}{(2\pi-\theta)^{1/2}}d\theta \\
+&=\left[\frac{a^2+b^2}{2gb}\right]^{1/2}\int^{2\pi}_0 \frac{1}{(2\pi-\theta)^{1/2}}d\theta\\
+&=\left[\frac{a^2+b^2}{2gb}\right]^{1/2}
+\left[-2(2\pi-\theta)^{1/2}\right]_0^{2\pi}
+=2\left[\frac{a^2+b^2}{gb}\pi\right]^{1/2}
+\end{align*}
+\end{solution}
+%%%%%%%%%%%%%%%%%%%

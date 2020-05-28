@@ -189,7 +189,9 @@ for all <m>s</m>, then the curve is a circle.
 </hint>
 
 <answer>
-
+<p>
+  See solution.
+</p>
 </answer>
 
 <solution><p>
@@ -319,12 +321,12 @@ Both parts of this question make use of the quantity <m>\diff{s}{t}</m>.
 As
 <md>
 <mrow>
-\vr'(t)&amp;=\big(e^t + e^{-t}\big)\,\hi + \big(e^t - e^{-t}\big)\,\hj +2\,\hk 
+\vr'(t)&amp;=\big(e^t + e^{-t}\big)\,\hi + \big(e^t - e^{-t}\big)\,\hj +2\,\hk
 </mrow><mrow>
 \diff{s}{t}(t) &amp;=|\vr'(t)|= \sqrt{4+2e^{2t}+2e^{-2t}}
                 =\sqrt{2}\big(e^t+e^{-t}\big)
 </mrow><mrow>
-\vr''(t)&amp;=\big(e^t - e^{-t}\big)\,\hi + \big(e^t + e^{-t}\big)\,\hj  
+\vr''(t)&amp;=\big(e^t - e^{-t}\big)\,\hi + \big(e^t + e^{-t}\big)\,\hj
 </mrow><mrow>
 \vr'(t)\times\vr''(t)&amp;=-2\big(e^t + e^{-t}\big)\,\hi
           + 2\big(e^t - e^{-t}\big)\,\hj +4\,\hk
@@ -1595,7 +1597,7 @@ First some preliminary computations.
 <mrow>
 \vr(t) &amp;=\frac{t^3}{3}\,\hi + \frac{t^2}{\sqrt{2}}\,\hj + t\,\hk
 </mrow><mrow>
-\vr'(t) &amp;=t^2\,\hi + \sqrt{2} t\,\hj + \hk 
+\vr'(t) &amp;=t^2\,\hi + \sqrt{2} t\,\hj + \hk
 </mrow><mrow>
 |\vr'(t)|&amp;= \sqrt{t^4+2t^2+1} =t^2+1
 </mrow><mrow>
@@ -2147,6 +2149,7 @@ So the osculating circle has radius <m>1/\ka(\pi/4)=5</m> and centre
 </p></solution>
 </exercise>
 </exercisegroup>
+
 
 <exercisegroup><introduction><application/></introduction>
 

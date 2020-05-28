@@ -12,7 +12,7 @@ import lxml.etree as ET
 
 # Hopefully only these paths need setting
 pretextPath = "/home/andrew/Projects/mathbook"
-#pretextPath = "/home/feldman/pretext/mathbook"
+# pretextPath = "/home/feldman/pretext/mathbook"
 # source file
 sourceFile = "./clp_4_vc.ptx"
 # output file
@@ -46,9 +46,9 @@ myTags = [
 myRep = [
     # I had these set so that I could see all parts of exercises on page.
     # breaks validation, but really helps debugging.
-    ["hint", "statement",],
-    ["answer", "statement"],
-    ["solution", "statement"],
+    # ["hint", "statement",],
+    # ["answer", "statement"],
+    # ["solution", "statement"],
 ]
 
 # ["foo", pretextStuff] replaces <foo/> with pretextStuff
@@ -160,7 +160,9 @@ try:
         print("\tSource is valid")
     else:
         print("\tValidation problems:")
-        print(xs.error_log)
+        for er in xs.error_log:
+            print(er.path, er)
+        # print(xs.error_log)
 except Exception as err:
     print(">>> ERROR <<< ")
     print(err)
