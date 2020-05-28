@@ -1,0 +1,70 @@
+% To create a .eps file, use the command
+%      dvips -E -o file.eps figure
+% Use gv file.eps to check the bounding box.
+% Then to convert the .eps file to a .pdf file while
+% preserving the bounding box, use
+%         epstopdf  file.eps
+% or 
+%         ps2pdf -dEPSCrop file.eps
+
+\documentclass[12pt]{article}
+
+
+\usepackage{amsmath,amsthm,amsfonts, amssymb, mathtools, mathabx}
+\usepackage{../clp_macros}
+\usepackage{../clp_multi_macrosS}
+\usepackage{nicefrac}
+\usepackage{xcolor}
+
+
+\thispagestyle{empty}
+\input figMac
+\def\figdir{}
+
+
+\begin{document}
+
+
+
+\null\vskip1in
+
+
+%\centerline{\figput{spherical}} 
+
+%\centerline{\figput{sphericalSide}}
+%\centerline{\figput{sphericalTop}}
+%\centerline{\figput{sphericalLong}}
+%\centerline{\figput{localGraphB}}
+%\centerline{\figput{sphericalPhi}} 
+%\centerline{\figput{sphericalTh}} 
+%\centerline{\figput{sphericalLat}} 
+%\centerline{\figput{sphericalRngB}} 
+\centerline{\figput{cylinder1}}
+%\centerline{\figput{torusSection}}
+%\centerline{\figput{torusRotB}}
+%\centerline{\figput{torusTop}}
+%\centerline{\figput{plane}}
+%\centerline{\figput{saddleA}}
+%\centerline{\figput{coneB}}
+%\centerline{\figput{hyperboloid1}}
+%\centerline{\figput{cylindrical}}
+%\centerline{\figput{dS2}}
+%\centerline{\figput{surfaceSlice}}
+%\centerline{\figput{surfaceProj}}
+%\centerline{\figput{slicing}}
+%\centerline{\figput{sphericalSide}}
+%\centerline{\figput{sphericaldSA}}
+%\centerline{\figput{fluxIntDeriv}}
+%\centerline{\figput{sourceFlux}}
+%\centerline{\figput{vortexFlux}}
+%\centerline{\figput{cylinder1}}
+%\centerline{\figput{mobiusC}}
+%\centerline{\figput{shellB}}
+%\centerline{\figput{canTopView}}
+%\centerline{\figput{ellipsoid}}
+%\centerline{\figput{gravityTrainC}}
+%\centerline{\figput{revB}}
+%\centerline{\figput{revTop}}
+
+
+\end{document}

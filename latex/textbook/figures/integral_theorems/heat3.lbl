@@ -1,0 +1,41 @@
+lbl file prepared by figPac Sun Jun 04 20:31:37 PDT 2017
+201.55
+104.39
+0
+0
+0
+2
+ 
+201.55
+104.39
+2
+0
+ 
+35.27
+65.56
+0
+1
+$z$
+176.36
+20.17
+2
+0
+air
+176.36
+30.26
+2
+2
+earth
+186.44
+25.21
+0
+1
+$z=0$, $T(0,t)=T_0+T_A\cos(\alpha t)+T_D\cos(\delta t)$
+100.78
+50.43
+1
+1
+$T_t=\kappa T_{zz}$
+-1000
+0/1/2 left/center/right
+0/1/2 bottom/center/top

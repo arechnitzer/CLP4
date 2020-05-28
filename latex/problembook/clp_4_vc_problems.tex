@@ -1,0 +1,189 @@
+\documentclass[12pt,letterpaper, openany]{book}
+
+\usepackage{clp_problems_header}
+\usepackage{clp_multi_macros}
+\graphicspath{{./figures/}}
+
+
+\usepackage{qhas} %question-hint-answer-solution - Andrew's hacking was here.
+%\usepackage{qhas_hack} %question-hint-answer-solution - use for editing
+
+%\makeatletter
+%\let\Ref\@refstar
+%\makeatother
+
+\usepackage{xr}
+   \externaldocument[CLP317-]{clp_4_vc_text} 
+   \externaldocument[CLP101-]{clp_2_ic_text} 
+   \newcommand{\eref}[2]{\ref*{#1-#2}}
+%   \newcommand{\eref}[2]{\Ref{#1-#2}}
+
+\newcommand{\dee}[1]{\mathrm{d}#1}
+\newcommand{\cR}{\mathcal{R}}
+\newcommand{\cL}{\mathcal{L}}
+\newcommand{\cV}{\mathcal{V}}
+\newcommand{\Si}{\Sigma}
+\newcommand{\vom}{\pmb{\omega}}
+\newcommand{\dst}{\displaystyle}
+\newcommand{\Ha}{\hat{\mathbf{a}}}
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%
+
+\begin{document}
+%% Cover image, not numbered
+\setcounter{page}{0}\includepdf[noautoscale=false]{figures/clp4-exercises.pdf}
+
+
+\begin{titlepage} 
+\begin{center} 
+\textsc{\LARGE
+CLP-4 Vector Calculus \\[2ex]
+Exercises
+}\\[2ex]
+
+\vspace{5ex}
+\hrule
+\vspace{5ex}
+
+\begin{tabular}{ccc}
+\large  Joel \textsc{Feldman}  
+& \large \qquad Andrew \textsc{Rechnitzer} 
+&\large  \qquad Elyse \textsc{Yeager}
+\end{tabular}
+
+\end{center}
+\vspace{2ex}
+\hrule
+
+\vfill
+\textsc{This document was typeset on \today.}
+\end{titlepage}
+
+\section*{Legal stuff}
+\begin{itemize}
+ \item Copyright \copyright\ 2016--20 Joel Feldman, Andrew Rechnitzer and Elyse Yeager.
+
+\item In the near future this will be licensed under the 
+Creative Commons Attribution-NonCommercial-ShareAlike 4.0 International 
+License. You can view a copy of the license at \\
+\url{http://creativecommons.org/licenses/by-nc-sa/4.0/}.
+\begin{center}
+ \includegraphics{figures/by-nc-sa.pdf}
+\end{center}
+\end{itemize}
+
+\newpage
+% \section*{Issues to be sorted}
+% \begin{itemize}
+%  \item 
+% \end{itemize}
+
+\frontmatter
+
+\chapter{How to use this book}
+\input{howtouse}
+
+\addtocontents{toc}{\protect\hypertarget{toc}{}}
+\tableofcontents
+
+\mainmatter
+
+\part{The questions}
+
+
+%%%%%%%%%%%%%%%%%%%%%
+\chapter{Curves}
+\section{Derivatives, Velocity, Etc.}
+\input{problems/prob_s1.1}
+\section{Reparametrization}
+\input{problems/prob_s1.2}
+\section{Curvature}
+\input{problems/prob_s1.3}
+\section{Curves in Three Dimensions}
+\input{problems/prob_s1.4}
+\setcounter{section}{5}
+%\section{A Compendium of Curve Formula}
+%\input{problems/prob_s1.5}
+\section{Integrating Along a Curve}
+\input{problems/prob_s1.6}
+\section{Sliding on a Curve}
+\input{problems/prob_s1.7}
+\section{Polar Coordinates}
+\input{problems/prob_s1.8}
+%\section{Central Forces}
+%\input{problems/prob_s1.9}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\chapter{Vector Fields}
+\section{Definitions and First Examples}
+\input{problems/prob_s2.1}
+\section{Field Lines}
+\input{problems/prob_s2.2}
+\section{Conservative Vector Fields}
+\input{problems/prob_s2.3}
+\section{Line Integals}
+\input{problems/prob_s2.4}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\chapter{Surface Integrals}
+\section{Parametrized Surfaces}
+\input{problems/prob_s3.1}
+\section{Tangent Planes}
+\input{problems/prob_s3.2}
+\section{Surface Integrals}
+\input{problems/prob_s3.3}
+%\setcounter{section}{4}
+%\section{Interpretation of Flux Integrals}
+%\input{problems/prob_s3.4}
+%\section{Orientation of Surfaces}
+%\input{problems/prob_s3.5}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\chapter{Integral Theorems}
+\section{Gradient, Divergence and Curl}
+\input{problems/prob_s4.1}
+\section{The Divergence Theorem}
+\input{problems/prob_s4.2}
+\section{Green's Theorem}
+\input{problems/prob_s4.3}
+\section{Stokes' Theorem}
+\input{problems/prob_s4.4}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\newpage
+\chapter{True/False and Other Short Questions}
+\input{problems/prob_sTF}
+
+
+
+
+
+
+
+%%%%%%%%%%%%%%%%%%%%~/courses/m317/clp/for_317/problems
+%%%%%%%%%%%%%%%%%%%%
+\closeoutputstream{thehints}
+\closeoutputstream{theanswers}
+\closeoutputstream{thesolutions}
+
+\newpage
+\part{Hints to problems}
+\input{hints.foo}
+
+\newpage
+\part{Answers to problems}
+\input{answers.foo}
+
+\newpage
+\part{Solutions to problems}
+\input{solutions.foo}
+
+\end{document}
+
+
+

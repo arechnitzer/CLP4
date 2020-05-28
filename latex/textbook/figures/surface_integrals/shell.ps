@@ -1,0 +1,88 @@
+%!PS-Adobe-3.0
+%%BoundingBox:       0.0 0.0     180.0 180.0
+%%Title:              
+%%Created by:        Figure.java
+%%Date:              Sun Jul 30 10:37:38 PDT 2017
+%%EndComments
+
+gsave
+
+%% ellipse library
+
+/ellipsedict 10 dict def        %% arguments: xcentre ycentre xradius yradius
+ellipsedict /emtrx matrix put  %%            startangle endangle closetype
+
+/ellipse                       %% closetype: 0 for open, 1 for chord, 2 for wedge
+    {ellipsedict begin
+       /closetype exch def
+       /endangle exch def      /startangle exch def
+       /yrad exch def          /xrad exch def
+       /y exch def             /x exch def
+       /savematrix emtrx currentmatrix def
+    x y translate
+    xrad  yrad  scale
+    newpath
+    closetype 2 eq  {0 0 moveto} if
+    0 0 1 startangle endangle arc
+    closetype 1 eq  {closepath} if
+    closetype 2 eq  {closepath} if
+    savematrix setmatrix
+    end
+    } def
+
+%%  Figure2ps dictionary
+
+/Figure2psDict 30 dict def
+Figure2psDict begin
+  /iscp false def
+  {pop pop /iscp true def} {pop pop} {pop pop pop pop pop pop} {} pathforall
+  iscp {currentpoint translate} if
+  /setpsfont {exch findfont exch scalefont setfont} bind def
+  /stringsize {/temp exch def gsave newpath 0 0 moveto
+               temp true charpath flattenpath pathbbox
+               /strh exch def /strw exch def pop  pop grestore} bind def
+
+newpath -1.0 -1.0 moveto 181.0 -1.0 lineto 181.0 181.0 lineto -1.0 181.0 lineto closepath clip
+/Helvetica 10 setpsfont
+0.5 setlinewidth
+0.5 setlinewidth
+0.6 setgray
+  90.0 90.0   51.42857142857139 51.42857142857139  0 360 0 ellipse stroke
+1 1 0 0 setcmykcolor  
+3.0 setlinewidth
+  90.0 90.0   51.42857142857139 51.42857142857139   40.0 50.0   0  ellipse stroke
+gsave
+  0 1 1 0 setcmykcolor   
+  90.0 90.0   3.085714285714283 3.085714285714283  0 360 0 ellipse fill
+grestore
+gsave
+  0 1 1 0 setcmykcolor   
+  90.0 167.14285714285717   3.085714285714283 3.085714285714283  0 360 0 ellipse fill
+grestore
+0 0 0 1 setcmykcolor  
+0.5 setlinewidth
+newpath
+90.0  90.0  moveto
+126.36549160387959  126.36549160387958  lineto stroke
+gsave
+  0 0 0 1 setcmykcolor   
+newpath 126.36549160387959  126.36549160387958 moveto 119.57726650448873   122.97137905418414  lineto  122.54711498547223   122.54711498547222  lineto  122.97137905418415   119.5772665044887 lineto closepath fill grestore
+
+newpath
+90.0  90.0  moveto
+90.0  167.14285714285717  lineto stroke
+gsave
+  0 0 0 1 setcmykcolor   
+newpath 90.0  167.14285714285717 moveto 87.6   159.94285714285718  lineto  90.0   161.74285714285716  lineto  92.39999999999999   159.94285714285718 lineto closepath fill grestore
+
+newpath
+90.0  167.14285714285717  moveto
+126.36549160387959  126.36549160387958  lineto stroke
+gsave
+  0 0 0 1 setcmykcolor   
+newpath 126.36549160387959  126.36549160387958 moveto 123.36450796422979   133.33643825369364  lineto  122.7713646509078   130.39565927358288  lineto  119.7821367022713   130.14165873994094 lineto closepath fill grestore
+
+
+%%Trailer
+end
+grestore
