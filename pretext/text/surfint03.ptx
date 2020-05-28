@@ -1381,6 +1381,6 @@ the Riemann sums, this error converges to exactly <m>0</m>.
 
 </subsection>
 
-<!-- <xi:include href="../problems/prob_s3.3.ptx" /> -->
+<xi:include href="../problems/prob_s3.3.ptx" />
 
 </section>

@@ -7,7 +7,7 @@
   <package>palatino</package>
 	<package>mathrsfs</package>
 	<package>cancel</package>
-	<package>nicefrac</package>
+	<!-- <package>nicefrac</package> -->
 </latex-preamble>
 
 <macros>
@@ -25,6 +25,8 @@
 
   \newcommand{\bdiff}[2]{ \frac{\mathrm{d}}{\mathrm{d}#2} \left( #1 \right)}
   \newcommand{\ddiff}[3]{ \frac{\mathrm{d}^#1#2}{\mathrm{d}{#3}^#1}}
+
+  \newcommand{\pdiff}[2]{ \frac{\partial #1}{\partial #2}}
 
   \newcommand{\bbbn}{\mathbb{N}}
   \newcommand{\bbbr}{\mathbb{R}}
@@ -53,12 +55,16 @@
   \newcommand{\va}{\mathbf{a}}
   \newcommand{\vb}{\mathbf{b}}
   \newcommand{\vc}{\mathbf{c}}
+  \newcommand{\vd}{\mathbf{d}}
   \newcommand{\ve}{\mathbf{e}}
+  \newcommand{\vf}{\mathbf{f}}
   \newcommand{\vC}{\mathbf{C}}
   \newcommand{\vp}{\mathbf{p}}
   \newcommand{\vn}{\mathbf{n}}
+  \newcommand{\vt}{\mathbf{t}}
   \newcommand{\vu}{\mathbf{u}}
   %\newcommand{\vv}{\mathbf{v}}
+  \newcommand{\vw}{\mathbf{w}}
   \newcommand{\vV}{\mathbf{V}}
   \newcommand{\vx}{\mathbf{x}}
   \newcommand{\vF}{\mathbf{F}}
@@ -75,13 +81,18 @@
   \newcommand{\vZero}{\mathbf{0}}
   \newcommand{\vPhi}{\mathbf{\Phi}}
   \newcommand{\cB}{\mathcal{B}}
+  \newcommand{\cL}{\mathcal{L}}
   \newcommand{\cM}{\mathcal{M}}
   \newcommand{\cO}{\mathcal{O}}
+  \newcommand{\cR}{\mathcal{R}}
   \newcommand{\cS}{\mathcal{S}}
   \newcommand{\cT}{\mathcal{T}}
   \newcommand{\cV}{\mathcal{V}}
   \newcommand{\cX}{\mathcal{X}}
 
+  \newcommand{\Ha}{\hat{\mathbf{a}}}
+  %
+  \newcommand{\he}{\hat{\mathbf{e}}}
   %\newcommand{\hi}{\hat{\mathbf{i}}}
   %\newcommand{\hj}{\hat{\mathbf{j}}}
   \newcommand{\hi}{\hat{\pmb{\imath}}}
@@ -103,6 +114,7 @@
   \newcommand{\Om}{\Omega}
   \newcommand{\om}{\omega}
   \newcommand{\vOm}{\pmb{\Omega}}
+  \newcommand{\vom}{\pmb{\omega}}
   \newcommand{\svOm}{\pmb{\scriptsize\Omega}}
   \newcommand{\al}{\alpha}
   \newcommand{\be}{\beta}
@@ -125,6 +137,45 @@
   \newcommand{\rhob}{{\rho_{{\scriptscriptstyle b}}}}
 
 
+
+  \newcommand{\hT}{\hat{\mathbf{T}}}
+  \newcommand{\hB}{\hat{\mathbf{B}}}
+
+
+  \newcommand{\YEaxis}[2]{\draw[help lines, &lt;-&gt;] (-#1,0)--(#1,0) node[right]{$x$};
+  \draw[help lines, &lt;-&gt;] (0,-#2)--(0,#2) node[above]{$y$};}
+  \newcommand{\YEaaxis}[4]{\draw[help lines, &lt;-&gt;] (-#1,0)--(#2,0)
+  node[right]{$x$};
+  \draw[help lines, &lt;-&gt;] (0,-#3)--(0,#4) node[above]{$y$};}
+  \newcommand{\YEtaaxis}[4]{\draw[help lines, &lt;-&gt;] (-#1,0)--(#2,0)
+  node[right]{$t$};
+  \draw[help lines, &lt;-&gt;] (0,-#3)--(0,#4) node[above]{$y$};}
+  \newcommand{\YEtaxis}[4]{\draw[help lines, &lt;-&gt;] (-#1,0)--(#2,0)
+  node[right]{$t$};
+  \draw[help lines, &lt;-&gt;] (0,-#3)--(0,#4) node[above]{$y$};}
+  \newcommand{\YExcoord}[2]{
+  	\draw (#1,.2)--(#1,-.2) node[below]{$#2$};}
+  \newcommand{\YEycoord}[2]{
+  	\draw (.2,#1)--(-.2,#1) node[left]{$#2$};}
+  \newcommand{\YEnxcoord}[2]{
+  	\draw (#1,-.2)--(#1,.2) node[above]{$#2$};}
+  \newcommand{\YEnycoord}[2]{
+  	\draw (-.2,#1)--(.2,#1) node[right]{$#2$};}
+  \newcommand{\YEstickfig}[3]{
+  	\draw (#1,#2) arc(-90:270:2mm);
+  	\draw (#1,#2)--(#1,#2-.5) (#1-.25,#2-.75)--(#1,#2-.5)--(#1+.25,#2-.75) (#1-.2,#2-.2)--(#1+.2,#2-.2);}
+
+  \newcommand{\trigtri}[4]{
+  \begin{tikzpicture}
+  \draw (-.5,0)--(2,0)--(2,1.5)--cycle;
+  \draw (1.8,0) |- (2,.2);
+  \draw[double] (0,0) arc(0:30:.5cm);
+  \draw (0,.2) node[right]{$#1$};
+  \draw (1,-.5) node{$#2$};
+  \draw (2,.75) node[right]{$#3$};
+  \draw (.6,1.1) node[rotate=30]{$#4$};
+  \end{tikzpicture}}
+
 </macros>
 
 <latex-image-preamble>
@@ -136,6 +187,74 @@
 
 \usepackage{pgfplots}
 \pgfplotsset{width=65mm,compat=1.9, tick label style={font=\scriptsize}}
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%% tikz pattern hatch distance control (Joel) %%%%%%%%
+
+% variant of https://tex.stackexchange.com/a/29367/121799
+\tikzset{
+    hatch distance/.store in=\hatchdistance,
+    hatch distance=10pt,
+    hatch thickness/.store in=\hatchthickness,
+    hatch thickness=2pt
+}
+
+\makeatletter
+\pgfdeclarepatternformonly[\hatchdistance,\hatchthickness]{NE lines}
+{\pgfqpoint{0pt}{0pt}}
+{\pgfpoint{1.5*\hatchdistance}{1.5*\hatchdistance}}
+{\pgfpoint{1.4142*\hatchdistance}{1.4142*\hatchdistance}}%
+{
+    \pgfsetcolor{\tikz@pattern@color}
+    \pgfsetlinewidth{\hatchthickness}
+    \pgfpathmoveto{\pgfqpoint{0pt}{0pt}}
+    \pgfpathlineto{\pgfpoint{1.4142*\hatchdistance}{1.4142*\hatchdistance}}
+    \pgfusepath{stroke}
+}
+\makeatother
+
+\makeatletter
+\pgfdeclarepatternformonly[\hatchdistance,\hatchthickness]{EW lines}
+{\pgfqpoint{0pt}{0pt}}
+{\pgfqpoint{\hatchdistance}{\hatchdistance}}
+{\pgfpoint{\hatchdistance}{\hatchdistance}}%
+{
+    \pgfsetcolor{\tikz@pattern@color}
+    \pgfsetlinewidth{\hatchthickness}
+    \pgfpathmoveto{\pgfqpoint{0pt}{0pt}}
+    \pgfpathlineto{\pgfqpoint{\hatchdistance}{0pt}}
+    \pgfusepath{stroke}
+}
+\makeatother
+
+\makeatletter
+\pgfdeclarepatternformonly[\hatchdistance,\hatchthickness]{NS lines}
+{\pgfqpoint{0pt}{0pt}}
+{\pgfqpoint{\hatchdistance}{\hatchdistance}}
+{\pgfpoint{\hatchdistance}{\hatchdistance}}%
+{
+    \pgfsetcolor{\tikz@pattern@color}
+    \pgfsetlinewidth{\hatchthickness}
+    \pgfpathmoveto{\pgfqpoint{0pt}{0pt}}
+    \pgfpathlineto{\pgfqpoint{0pt}{\hatchdistance}}
+    \pgfusepath{stroke}
+}
+\makeatother
+
+\makeatletter
+\pgfdeclarepatternformonly[\hatchdistance,\hatchthickness]{NW lines}
+{\pgfqpoint{0pt}{0pt}}
+{\pgfpoint{1.5*\hatchdistance}{1.5*\hatchdistance}}
+{\pgfpoint{1.4142*\hatchdistance}{1.4142*\hatchdistance}}%
+{
+    \pgfsetcolor{\tikz@pattern@color}
+    \pgfsetlinewidth{\hatchthickness}
+    \pgfpathmoveto{\pgfpoint{1.4142*\hatchdistance}{0pt}}
+    \pgfpathlineto{\pgfpoint{0pt}{1.4142*\hatchdistance}}
+    \pgfusepath{stroke}
+}
+\makeatother
 
 </latex-image-preamble>
 

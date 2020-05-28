@@ -105,7 +105,7 @@ Here are several examples of line integrals of vector fields that are not
 conservative.
 </p>
 
-<example xml:id="eg_workIntegalA">
+<example xml:id="eg_workIntegralA">
 <p>
 Set <m>P_0=(0,0)</m>, <m>P_1=(1,1)</m> and<fn>The reader should check that this vector field is not conservative.</fn>
 <me>
@@ -209,7 +209,7 @@ and all end at <m>P_1</m>, the three integrals <m>\int_{\cC_1}\vF\cdot\dee{\vr}<
 </example>
 
 
-<example xml:id="eg_workIntegalB">
+<example xml:id="eg_workIntegralB">
 <p>
 Set<fn>Again, the reader should verify that this vector field is not conservative.</fn>
 <me>
@@ -288,7 +288,7 @@ and end at <m>(1,0)</m>, the two integrals <m>\int_{\cC_1}\vF\cdot\dee{\vr}</m> 
 
 </example>
 
-<example xml:id="eg_workIntegalC">
+<example xml:id="eg_workIntegralC">
 <title>Example <xref ref="eg_screeningCounterexample"/>, again</title>
 <p>
 In Example <xref ref="eg_screeningCounterexample"/>, we saw that the vector field
@@ -686,6 +686,6 @@ for any constant <m>C</m>, does the trick.
 
 </subsection>
 
-<!-- <xi:include href="../problems/prob_s2.4.ptx" /> -->
+<xi:include href="../problems/prob_s2.4.ptx" />
 
 </section>

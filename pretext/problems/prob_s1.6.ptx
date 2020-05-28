@@ -1,0 +1,638 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+
+<!-- Copyright 2018 Joel Feldman, Andrew Rechnitzer and Elyse Yeager -->
+<!-- This work is licensed under the Creative Commons Attribution-NonCommercial-ShareAlike 4.0 International License-->
+<!-- https://creativecommons.org/licenses/by-nc-sa/4.0 -->
+
+<exercises>
+<exercisegroup>
+<introduction><conceptual/></introduction>
+
+<exercise>
+<statement><p>
+Give an equation for arclength of a curve <m>C</m> as a line integral.
+</p></statement>
+<hint><p>
+Your differential is <m>\dee{s}</m>, where <m>s</m> is arclength.
+</p></hint>
+<answer><p>
+<m>\int_C \dee{s}</m>
+</p></answer>
+<solution><p>
+We want to add up all the tiny pieces of arclength <m>\dee{s}</m> along a curve <m>C</m>. So, the integral would simply be <m>\int_C \dee{s}</m>.
+</p>
+
+<p>To see this another way, if we define <m>\vr=(x(t),y(t),z(t))</m> for <m>a \le t \le b</m> to be the equation of <m>C</m>, we could calculate the arclength as:
+<md>
+<mrow>
+\int_a^b |\vr'(t)|\dee{t}&amp;=\int_a^b \sqrt{x'(t)^2+y'(t)^2+z'(t)^2}\dee{t}
+</mrow>
+</md>
+This fits the form of Definition<nbsp/><xref ref="def_lineIntegral"/> with <m>f(x,y,z)=1</m>, so we write it as a line integral as <m>\int_C 1 \dee{s}</m>, which is equivalent to <m>\int_C \dee{s}</m>.
+</p></solution>
+</exercise>
+
+<exercise>
+<statement><p>
+<ol label="a">
+<li>
+Show that the integral <m>\int_\cC f(x,y)\,ds</m>
+along the curve <m>\cC</m> given in polar coordinates by
+<m>r=r(\theta)</m>, <m>\theta_1\le \theta\le\theta_2</m>, is
+<me>
+\int_{\theta_1}^{\theta_2}f\big(r(\theta)\cos\theta, r(\theta)\sin\theta\big) \sqrt{r(\theta)^2+\left(\diff{r}{\theta}(\theta)\right)^2}\,
+\dee{\theta}
+</me>
+</li>
+<li>
+Compute the arc length of <m>r=1+\cos\theta,\ 0\le \theta\le 2\pi</m>.
+You may use the formula
+<me>
+1+\cos\theta=2\cos^2\frac{\theta}{2}
+</me>
+to simplify the computation.
+</li>
+</ol>
+</p></statement>
+
+<hint><p>
+(a) You can parametrize the curve by
+   <m>\vr(\theta) = r(\theta)\,\cos\theta\,\hi +
+                  r(\theta)\,\sin\theta\,\hj</m>, <m>\theta_1\le \theta\le\theta_2</m>.
+</p></hint>
+
+<answer><p>
+(a) See the solution.</p><p>
+(b) <m>8</m>
+</p></answer>
+
+<solution><p>
+(a) The curve is
+<m>\vr(\theta) = x(\theta)\,\hi+ y(\theta)\,\hj</m>
+with <m>x(\theta)=r(\theta)\cos\theta</m>, <m>y(\theta)=r(\theta)\sin\theta</m>
+and <m>\theta_1\le \theta\le \theta_2</m>.
+On this curve
+<md>
+<mrow>
+\vv(\theta) =\diff{\vr}{\theta}(\theta)&amp;= x'(\theta)\hi+ y'(\theta)\hj
+</mrow><mrow>
+&amp;=\big[r'(\theta)\cos\theta-r(\theta)\sin\theta\big]\hi+
+\big[r'(\theta)\sin\theta+r(\theta)\cos\theta\big]\hj
+</mrow><mrow>
+\implies  \diff{s}{\theta}(\theta)
+&amp;=\sqrt{\big[r'(\theta)\cos\theta-r(\theta)\sin\theta\big]^2
++ \big[r'(\theta)\sin\theta+r(\theta)\cos\theta\big]^2}\cr
+&amp;=\sqrt{r'(\theta)^2+r(\theta)^2}
+</mrow>
+</md>
+Hence
+<md>
+<mrow>
+\int_\cC f(x,y)\,ds
+&amp;= \int_{\theta_1}^{\theta_2}\!\!\!f\big(x(\theta), y(\theta)\big) \diff{s}{\theta}\,\dee{\theta}
+\cr
+&amp;=\int_{\theta_1}^{\theta_2}\!\!\!f\big(r(\theta)\cos\theta, r(\theta)\sin\theta\big) \sqrt{r(\theta)^2
+     +\left(\diff{r}{\theta}(\theta)\right)^2}\,
+\dee{\theta}
+</mrow>
+</md>
+</p>
+
+<p>(b)
+In this case <m>f(x,y)=1</m>, <m>r(\theta)=1+\cos\theta</m>, <m>\theta_1=0</m> and <m>\theta_2=2\pi</m>,
+<md>
+<mrow>
+\int_C \,ds
+&amp;=\int_0^{2\pi} \sqrt{[1+\cos\theta]^2+[-\sin\theta]^2}\,\dee{\theta}
+=\int_0^{2\pi} \sqrt{2(1+\cos\theta)}\,\dee{\theta}\cr
+&amp;=\int_0^{2\pi} \sqrt{4\cos^2\frac{\theta}{2}}\,\dee{\theta}
+=2\int_0^{2\pi} \left|\cos\frac{\theta}{2}\right|\,\dee{\theta}
+=4\int_0^{\pi} \cos\frac{\theta}{2}\ \dee{\theta}
+</mrow><mrow>
+&amp;=8 \sin\frac{\theta}{2}\bigg|_0^{\pi}
+=8
+</mrow>
+</md>
+</p></solution>
+</exercise>
+</exercisegroup>
+
+<exercisegroup><introduction><procedural/></introduction>
+
+<exercise>
+<statement><p>
+Calculate <m>\int_C \left(\frac{xy}{z}\right)\dee{s}</m>, where <m>C</m> is the curve <m>\left( \frac23t^3 , \sqrt{3}t^2 , 3t \right)</m> from <m>t=1</m> to <m>t=2</m>.
+</p></statement>
+<hint><p>
+Following Definition<nbsp/><xref ref="def_lineIntegral"/>, set <m>f(x,y,z)=\frac{xy}{z}</m>, <m>x(t)=\frac23 t^3</m>, <m>y(t)=\sqrt3t^2</m>, and <m>z(t)=3t</m>.
+</p></hint>
+<answer><p>
+<m> \frac{4}{21\sqrt 3}(2^7-1) + \frac{2}{5\sqrt 3}(2^5-1)</m>
+</p></answer>
+<solution><p>
+Following Definition<nbsp/><xref ref="def_lineIntegral"/>:
+<md>
+<mrow>
+\int_C \left(\frac{xy}{z}\right)\dee{s}&amp;=\int_1^2 \left(\frac{\frac23t^3 \cdot \sqrt{3}t^2}{ 3t} \right)\sqrt{(2t^2)^2+(2\sqrt3 t)^2+(3)^2}\,\dee{t}
+</mrow><mrow>
+&amp;=\int_1^2 \left(\frac{2}{ 3\sqrt 3} \,t^4\right)(2t^2+3)\,\dee{t} 
+</mrow><mrow>
+&amp;= \frac{4}{21\sqrt 3}(2^7-1) + \frac{2}{5\sqrt 3}(2^5-1)
+</mrow>
+</md>
+</p></solution>
+</exercise>
+
+<exercise>
+<statement><p>
+	A hoop of radius <m>r</m> traces out the curve <m>x^2+y^2=1</m>, where <m>x</m> and <m>y</m> are measured in metres. At a point <m>(x,y)</m>, its density is <m>x^2</m> kg per metre. What is the mass of the hoop?
+</p></statement>
+<hint><p>
+	Parametrize the circle in the usual way.
+</p></hint>
+<answer><p>
+	<m>\pi</m> kg
+</p></answer>
+<solution><p>
+	We parametrize the unit circle as <m>(\cos t, \sin t)</m>, <m>0 \le t \le 2\pi</m>.
+</p>
+
+<p>		A tiny slice of the hoop with length <m>\dee{s}</m> has mass <m>(x^2  \mathrm{kg}/\mathrm{m})(\dee{s}  \mathrm{m})=x^2\dee{s}  \mathrm{kg}</m>. So, the entire hoop has mass:
+		<md>
+<mrow>
+			\int_C x^2\,\dee{s}&amp;=\int_0^{2\pi} \cos^2 t \sqrt{(-\sin t)^2+(\cos t)^2}\,\dee{t}=\int_0^{2\pi} \cos^2 t \,\dee{t}
+</mrow><mrow>
+&amp;=\int_0^{2\pi} \frac{1+\cos(2t)}{2}\ \dee{t}
+                 =\left[\frac{t}{2} +\frac{\sin(2t)}{4} \right]_0^{2\pi}=\pi  \mathrm{kg}
+			</mrow>
+</md>
+			 For an efficient, sneaky, way to evaluate
+                 <m>\int_0^{2\pi} \cos^2 t\ \dee{t}</m>, see Example
+                 <xref ref="eg_workIntegralB"/>.
+</p></solution>
+</exercise>
+
+<exercise>
+<statement><p>
+	Compute <m>\int_C (xy+z) \dee{s}</m> where <m>C</m> is the straight line from <m>(1,2,3)</m> to <m>(2,4,5)</m>.
+</p></statement>
+<hint><p>
+	<m>C</m> can be parametrized as <m>(1+t,2+2t,3+2t)</m> for <m>0 \le t \le 1</m>.
+</p></hint>
+<answer><p>
+	<m>26</m>
+</p></answer>
+<solution><p>
+	To parametrize <m>C</m>, we note the vector between the two points is <m>(2-1,4-2,5-3)=(1,2,2)</m>. So, the line is <m>(1,2,3)+t(1,2,2)</m> for <m>0 \le t \le 1</m>. That is, <m>x(t)=1+t</m>, <m>y(t)=2+2t</m>, and <m>z(t)=3+2t</m>.
+	<md>
+<mrow>
+		\int_C(xy+z)\dee{s}&amp;=\int_0^1 \left((1+t)(2+2t)+(3+2t)\right)\sqrt{1^1+2^2+2^2}\dee{t}
+</mrow><mrow>
+		&amp;=              \int_0^1 3\big(5 + 6t + 2t^2\big)\ \dee{t}=26
+		</mrow>
+</md>
+</p></solution>
+</exercise>
+
+<exercise>
+<statement><p>
+Evaluate the path integral <m>\int_\cC f(x,y,z)\,\dee{s}</m> for
+<ol label="a">
+<li>
+<m>f(x,y,z)=x\cos z</m>,  <m>\cC:\vr(t)=t\hi+t^2\hj</m>,
+<m>0\le t\le 1</m>.
+</li>
+<li> <m>f(x,y,z)=\frac{x+y}{y+z}</m>,
+<m>\cC:\vr(t)= \big(t,\frac{2}{3}t^{3/2},t\big)</m>,
+<m>1\le t\le 2</m>.
+</li>
+</ol>
+</p></statement>
+
+<answer><p>
+(a) <m>\frac{5^{3/2}-1}{12}</m></p><p>
+(b) <m>\frac{8-3^{3/2}}{3/2}</m>
+</p></answer>
+
+<solution><p>
+(a)
+In this case <m>\vr(t)=t\hi+t^2\hj</m>, so that
+<m>\vv(t)=\diff{\vr}{t}(t)=\hi+2t\hj</m> and <m>\diff{s}{t}=\sqrt{1+4t^2} </m>. Hence
+<md>
+<mrow>
+\int_\cC f(x,y,z)\,\dee{s}
+&amp;=\int_0^1 x(t)\cos z(t) \diff{s}{t}\,\dee{t}
+=\int_0^1 t(\cos 0) \sqrt{1+4t^2}\,\dee{t}
+</mrow><mrow>
+&amp;=\frac{1}{8}\frac{ {(1+4t^2)}^{3/2}}{3/2}\bigg|_0^1
+=\frac{5^{3/2}-1}{12}
+</mrow>
+</md>
+</p>
+
+<p>(b) In this case <m>\vr(t)=\big(t,\frac{2}{3}t^{3/2},t\big)</m>, so
+that
+<m>\vv(t)=\diff{\vr}{t}(t)=\big(1,t^{1/2},1\big)</m> and
+<m>\diff{s}{t}=\sqrt{2+t} </m>. Hence
+<md>
+<mrow>
+\int_\cC f(x,y,z)\,\dee{s}
+&amp;=\int_1^2 \frac{x(t)+y(t)}{y(t)+z(t)} \, \diff{s}{t}\,\dee{t}
+=\int_1^2 \frac{t+{2\over 3}t^{3/2}}{{2\over3}t^{3/2}+t} \sqrt{2+t}\,\dee{t}
+</mrow><mrow>
+&amp;=\frac{(2+t)^{3/2}}{3/2}\bigg|_1^2
+=\frac{8-3^{3/2}}{3/2}
+</mrow>
+</md>
+</p>
+
+</solution>
+</exercise>
+
+<exercise>
+<statement><p>
+	Evaluate <m>\int_C \sin x\,\dee{s}</m>, where <m>C</m> is the curve <m>(\arcsec(t), \ln t)</m>, <m>1 \le t \le \sqrt{2}</m>.
+</p></statement>
+<hint><p>
+	Simplify! Also: <m>\diff{}{t}\{\arcsec t\} = \frac{1}{|t|\sqrt{t^2-1}}</m>.
+</p></hint>
+<answer><p>
+	<m>\frac12 \ln 2</m>
+</p></answer>
+<solution><p>
+  In the figure below, we construct a triangle with <m>\theta=\arcsec t</m>; the hypotenuse has length <m>t</m>, while the side adjacent to <m>\theta</m> has length 1. By the Pythagorean Theorem, the remaining side has length <m>\sqrt{t^2-1}</m>, so <m>\sin\theta=\sin(\arcsec t)=\frac{\sqrt{t^2-1}}{t}</m>.
+</p>
+
+<sidebyside width="33%">
+  <image><latex-image>
+    \trigtri{\theta}{1}{\sqrt{t^2-1}}{t}
+</latex-image>
+</image>
+</sidebyside>
+
+<p>
+ Remember <m>\diff{}{t}\{\ln t\} = \frac{1}{t}</m> and <m>\diff{}{t}\{\arcsec t\} = \frac{1}{|t|\sqrt{t^2-1}}</m>. In our range, <m>1 \le t \le \sqrt 2</m>, we have <m>|t|=t</m>.
+	<md>
+<mrow>
+		\int_C \sin x \,\dee{s}&amp;=\int_{1}^{\sqrt 2}\sin\left(\arcsec t \right)\sqrt{\left(\frac{1}{t\sqrt{t^2-1}} \right)^2+\left(\frac1t \right)^2}\,\dee{t}
+</mrow><mrow>
+		&amp;=\int_1^{\sqrt{2}} \frac{\sqrt{t^2-1}}{t}\sqrt{\frac{1}{t^2(t^2-1)}+\frac{1}{t^2}} \,\dee{t}
+</mrow><mrow>
+		&amp;=\int_1^{\sqrt 2}\frac1t\,\dee{t}=\frac{1}{2}\ln 2
+	</mrow>
+</md>
+</p></solution>
+</exercise>
+
+<exercise><title><fromexam>M317 2012J</fromexam></title>
+<statement><p>
+A particle of mass <m>m = 1</m> has position <m>\vr(0) = \hj</m> and
+velocity <m>\vv_0 = \hi + \hk</m> at time <m>t = 0</m>. The particle moves
+under a force
+<me>
+\vF(t) = \hj - \sin t\,\hk
+</me>
+where <m>t</m> denotes time.
+<ol label="a">
+<li>
+Find the position <m>\vr(t)</m> of the particle as a function of <m>t</m>.
+</li>
+<li>
+Find the position <m>\vr(t_1)</m> of the particle when it crosses the
+plane <m>x = \pi/2</m> for the first time at <m>t_1</m>.
+</li>
+<li>
+Determine the work done by <m>\vF</m> in moving the particle from <m>\vr(0)</m> to
+<m>\vr(t_1)</m>.
+</li>
+</ol>
+</p></statement>
+
+<hint><p>
+Newton's law of motion is <m>\vF=m\va</m>. The work done over a displacement <m>\dee{\vr}</m> is <m>W=\vF \cdot \dee{\vr}</m>.
+</p></hint>
+
+<answer><p>
+(a) <m>\vr(t) = t\,\hi +\Big(1+\frac{t^2}{2}\Big)\,\hj + \sin t\,\hk</m></p><p>
+(b) <m>\vr(\pi/2) = \frac{\pi}{2}\,\hi  +\Big(1+\frac{\pi^2}{8}\Big)\,\hj + \hk</m>
+   </p><p>
+(c) <m>\frac{\pi^2}{8}-\frac{1}{2}</m>
+</p></answer>
+
+<solution><p>
+(a) Since the particle has mass <m>m=1</m>, Newton's law of motion
+<m>m\va=\vF</m> simplifies to
+<me>
+\vr''(t) = \hj - \sin t\,\hk
+</me>
+Integrating once gives
+<me>
+\vr'(t) = t\,\hj + \cos t\,\hk + \mathbf{C}
+</me>
+for some constant vector <m>\mathbf{C}</m>.
+To satisfy the initial condition that <m>\vr'(0) = \vv_0=\hi+\hk</m>,
+we need
+<md>
+<mrow>
+\hi+\hk = \vr'(0) = \hk + \mathbf{C}
+\implies \mathbf{C} = \hi
+</mrow>
+</md>
+So
+<me>
+\vr'(t)
+        = \hi + t\,\hj + \cos t\,\hk
+</me>
+Integrating a second time, and imposing the initial condition that <m>\vr(0)
+=\hj</m>, gives
+<me>
+\vr(t)  = t\,\hi + \frac{t^2}{2}\,\hj + \sin t\,\hk +\hj
+        = t\,\hi +\Big(1+\frac{t^2}{2}\Big)\,\hj + \sin t\,\hk
+</me>
+</p>
+
+<p>(b) The particle has <m>x(t) =\pi/2</m> when <m>t=\pi/2</m>. So
+<me>
+\vr(\pi/2) = \frac{\pi}{2}\,\hi  +\Big(1+\frac{\pi^2}{8}\Big)\,\hj + \hk
+</me>
+</p>
+
+<p>(c) The work done is
+<md>
+<mrow>
+\text{Work} &amp;= \int_0^{\pi/2} \vF(t)\cdot\vr'(t)\ \dee{t}
+</mrow><mrow>
+  &amp;= \int_0^{\pi/2} \big(\hj - \sin t\,\hk\big)\cdot
+         \big(\hi + t\,\hj + \cos t\,\hk\big)\ \dee{t}
+</mrow><mrow>
+  &amp;= \int_0^{\pi/2} \big(t-\sin t\cos t\big)\,\dee{t}
+</mrow><mrow>
+  &amp;= \Big[\frac{t^2}{2} +\frac{1}{2}\cos^2 t\Big]_0^{\pi/2}
+</mrow><mrow>
+  &amp; = \frac{\pi^2}{8}-\frac{1}{2}
+</mrow>
+</md>
+</p></solution>
+</exercise>
+</exercisegroup>
+
+<exercisegroup><introduction><application/></introduction>
+
+<exercise><title><fromexam>M317 2016D</fromexam></title>
+<statement><p>
+Evaluate the line integral <m>\int_C \vF\cdot\hn\,\dee{s}</m> where
+<m>\vF(x,y) = xy^2 \,\hi + ye^x \,\hj</m> , <m>C</m> is the boundary of the
+rectangle <m>R</m>: <m>0 \le x \le 3</m>, <m>-1 \le y \le 1</m>, and  <m>\hn</m> is the unit vector, normal to <m>C</m>, pointing to the outside of the rectangle.
+</p></statement>
+
+<hint><p>
+Sketch <m>C</m> and determine the normal vectors from the sketch. You can use <m>x</m> or <m>y</m> as the integration variable in your
+           integrals.
+</p></hint>
+
+<answer><p>
+<m>2e^3</m>
+</p></answer>
+
+<solution><p>
+Here is a sketch of the rectangle <m>R</m>.
+</p>
+
+<sidebyside width="58%">
+  <image source="pfigs/OE16D_5"/>
+</sidebyside>
+
+<p>
+Its boundary consists of four line segments.
+<ul>
+<li>
+<m>L_1</m> from <m>(0,-1)</m> to <m>(3,-1)</m>, with <m>\hn = -\hj</m>
+</li>
+<li>
+<m>L_2</m> from <m>(3,-1)</m> to <m>(3,1)</m>, with <m>\hn = \hi</m>
+</li>
+<li>
+<m>L_3</m> from <m>(3,1)</m> to <m>(0,1)</m>, with <m>\hn = \hj</m>
+</li>
+<li>
+<m>L_4</m> from <m>(0,1)</m> to <m>(0,-1)</m>, with <m>\hn = -\hi</m>
+</li>
+</ul>
+So
+<md>
+<mrow>
+\int_C \vF\cdot\hn\,\dee{s}
+&amp;= \int_{L_1} \vF\cdot(-\hj)\,\dee{s}
+   \!+\!\int_{L_2} \vF\cdot \hi\,\dee{s}
+   \!+\!\int_{L_3} \vF\cdot(\hj)\,\dee{s}
+   \!+\!\int_{L_4} \vF\cdot(-\hi)\,\dee{s}
+</mrow><mrow>
+&amp;= \int_0^3  -\overbrace{(-1)}^{y}e^x\,\dee{x}
+   +\int_{-1}^1  \overbrace{(3)}^{x}y^2\,\dee{y}
+   +\int^0_3  \overbrace{(1)}^{y}e^x\,\overbrace{(-\dee{x})}^{\dee{s}}
+</mrow><mrow>
+&amp;\hskip1in   +\int^{-1}_1  \overbrace{(0)}^{x}y^2\,\overbrace{(-\dee{y})}^{\dee{s}}
+</mrow><mrow>
+&amp;=\big[e^3-1\big]+\big[1^3-(-1)^3\big] + \big[e^3-1\big]+0
+</mrow><mrow>
+&amp;=2e^3
+</mrow>
+</md>
+The trickiest part of this computation is getting <m>\dee{s}</m> correct on
+<m>L_3</m> and <m>L_4</m> (remembering that <m>\dee{s}</m> is the arc length traveled
+and so is positive, while <m>\dee{x} \lt 0</m> on <m>L_3</m> and <m>\dee{y} \lt 0</m> on <m>L_4</m>).
+To make a more detailed computation of <m>\int_{L_3} \vF\cdot(\hj)\,\dee{s}</m>,
+parametrize <m>L_3</m> by
+<me>
+\vr(t) = (3,1) + t\big\{(0,1)-(3,1)\big\}
+       = \big(3-3t,1\big)\qquad
+0\le t\le 1
+</me>
+so that <m>\vr(0) = (3,1)</m> is the initial point of <m>L_3</m> and
+<m>\vr(1) = (0,1)</m> is the final point of <m>L_3</m>. Then
+<me>
+\vr'(t) = (-3,0)\qquad
+\diff{s}{t}(t) = |\vr'(t)| = 3
+</me>
+and
+<md>
+<mrow>
+\int_{L_3} \vF\cdot \hj\,\dee{s}
+&amp;=\int_0^1 \vF\big(\vr(t)\big)\cdot \hj\,\diff{s}{t}(t)\,\dee{t}
+=\int_0^1\overbrace{e^{3-3t}}^{y(t)e^{x(t)}}\,
+\overbrace{3}^{\diff{s}{t}(t)}\,\dee{t}
+</mrow><mrow>
+&amp;=-e^{3-3t}\Big|_0^1
+=e^3-1
+</mrow>
+</md>
+</p></solution>
+</exercise>
+
+<exercise><title><fromexam>M317 1998D</fromexam></title>
+<statement><p>
+	Let <m>\cC</m> be the curve given by
+	<me>
+	\vr(t)=t\cos t\,\hi+t\sin t\,\hj+t^2\,\hk,\qquad 0\le t\le \pi
+	</me>
+	<ol label="a">
+<li>
+		Find the unit tangent <m>\hT</m> to <m>\cC</m> at the point <m>(-\pi,0,\pi^2)</m>.
+</li>
+<li>
+		Calculate the line integral
+		<me>
+		\int_\cC \sqrt{x^2+y^2}\ \dee{s}
+		</me>
+</li>
+<li>
+		Find the equation of a smooth surface in <m>3</m>-space containing
+		the curve <m>\cC</m>.
+</li>
+<li>
+		Sketch the curve <m>\cC</m>.
+</li>
+</ol>
+</p></statement>
+
+<hint><p>
+	(c) How is <m>x(t)^2+y(t)^2</m> related to <m>z(t)</m>?
+</p>
+
+<p>	(d) First, sketch <m>\big(x(t)\,,\,y(t)\big)</m>.
+</p>
+
+</hint>
+
+<answer><p>
+	(a) <m>\frac{1}{\sqrt{1+5\pi^2}}\big(-\hi-\pi\,\hj+2\pi\,\hk\big)</m></p><p>
+	(b) <m>\frac{1}{15}\big[(1+5\pi^2)^{3/2}-1\big]</m></p><p>
+	(c) <m>z=x^2+y^2</m>
+</p>
+<p>	(d)</p>
+<sidebyside width="25%">
+	<image source="pfigs/OE98D_1"/>
+</sidebyside>
+</answer>
+
+<solution><p>
+	(a) Since <m>\vr(t)=t\cos t\,\hi+t\sin t\,\hj+t^2\,\hk</m>
+	<md>
+<mrow>
+		\vr'(t)&amp;=\big(\cos t-t\sin t\big)\hi+\big(\sin t+t\cos t\big)\,\hj+2t\,\hk
+</mrow><mrow>
+		\diff{s}{t}
+		&amp;=|\vr'(t)|
+		=\sqrt{\big(\cos t-t\sin t\big)^2+\big(\sin t+t\cos t\big)^2+(2t)^2}
+</mrow><mrow>
+		&amp;=\sqrt{1+5t^2}
+</mrow><mrow>
+		\vr'(\pi)&amp;=-\hi-\pi\,\hj+2\pi\,\hk
+</mrow><mrow>
+		\hat\vT(\pi)&amp;=\frac{\vr'(t)}{|\vr'(t)|}
+		=\frac{1}{\sqrt{1+5\pi^2}}\big(-\hi-\pi\,\hj+2\pi\,\hk\big)
+	</mrow>
+</md>
+</p>
+
+<p>	(b)
+	<md>
+<mrow>
+		\int_\cC \sqrt{x^2+y^2}\ \dee{s}
+		&amp;=\int_0^\pi \sqrt{x^2(t)+y^2(t)}\ \diff{s}{t}\ \dee{t}
+		=\int_0^\pi t\ \sqrt{1+5t^2}\ \dee{t}
+                </mrow><mrow>
+		&amp;=\left[\frac{1}{15}(1+5t^2)^{3/2}\right]_0^\pi
+                =\frac{1}{15}\big[(1+5\pi^2)^{3/2}-1\big]
+	</mrow>
+</md>
+</p>
+
+<p>	(c) For every <m>t</m>, the coordinates <m>x(t)=t\cos t</m>, <m>y(t)=t\sin t</m>,
+	<m>z(t)=t^2</m> obey <m>x(t)^2+y(t)^2= t^2 = z(t)</m> and so the curve lies on
+	<m>z=x^2+y^2</m>.
+</p>
+
+<p>	(d) First concentrate on <m>\big(x(t)\,,\,y(t)\big)</m>. As <m>t</m> runs from <m>0</m>
+	to <m>\pi</m>, the curve <m>\big(r\cos t\,,\,r\sin t\big)</m> sweeps out
+	half of a circle of radius <m>r</m>. Our  <m>\big(x(t)\,,\,y(t)\big)</m>
+	does something similar, but the radius <m>r=t</m> increases from <m>0</m>
+	to <m>\pi</m>. Thus our <m>\big(x(t)\,,\,y(t)\big)</m>
+	sweeps out the beginning of a spiral. At the same time <m>z(t)</m>
+	increases from <m>0</m> to <m>\pi^2</m>. So the curve <m>\cC</m> looks like
+</p>
+
+<sidebyside width="25%">
+  <image source="pfigs/OE98D_1"/>
+</sidebyside>
+
+</solution>
+</exercise>
+
+<exercise>
+<statement><p>
+A wire traces out a path <m>C</m>  described by the curve <m>(t+\frac12t^2 , t-\frac12t^2 , \frac{4}{3}\,t^{3/2})</m>, <m>0 \leq t \leq 4</m>. Its density at the point <m>(x,y,z)</m> is <m>\rho(x,y,z)={\left( \frac{x+y}{2}\right)}</m>. Find its centre of mass.
+</p></statement>
+<hint><p>
+	Remember <m>\bar x = \dfrac{\int_C x\rho\,\dee{s}}{\int_C \rho\,\dee{s}}</m>, etc. The integrals you evaluate should all be straightforward applications of the power rule.
+</p></hint>
+<answer><p>
+	<m>\left( \frac{412}{55},-\frac{92}{55},\frac{4736}{693}\right)</m>
+</p></answer>
+<solution><p>
+We use the centre of mass formulae <m>\bar x = \dfrac{\int_C x\rho\,\dee{s}}{\int_C \rho\,\dee{s}}</m>, etc. To make the working clearer, we'll break these calculations into several steps.
+<md>
+<mrow>
+x(t)&amp;= t+ \frac12 t^2 &amp; x'(t)&amp;=1+t
+</mrow><mrow>
+y(t)&amp;= t- \frac12 t^2 &amp; y'(t)&amp;=1-t
+</mrow><mrow>
+z(t)&amp;=\frac43 t^{3/2} &amp; z'(t)&amp;=2\sqrt{t}
+</mrow>
+</md>
+<md>
+<mrow>
+\color{blue}{\sqrt{x'(t)^2+y'(t)^2+z'(t)^2}} &amp;=\sqrt{1+2t+t^2+1-2t+t^2+4t}
+</mrow><mrow>
+&amp;=\sqrt{2(t^2+2t+1)}=\color{blue}{\sqrt{2}(t+1)}
+</mrow><mrow>
+\color{red}{\rho(x(t),y(t),z(t))}&amp;= \frac{x(t)+y(t)}{2}={\frac{(t+t^2/2 )+( t -  t^2/2)}{2}}=\color{red}{t}
+</mrow>
+</md>
+<md>
+<mrow>
+\int_C \color{red}\rho \,\dee{s}&amp;=\int_0^4 \color{red}{t}\,\color{blue}{\sqrt{2}(t+1)}\,\dee{t}
+=\frac{2^3\cdot 11\sqrt{2}}{3}
+</mrow><mrow>
+\int_C x \color{red}\rho \,\dee{s}&amp;=\int_0^4 \left(t+\frac12t^2\right) \color{red}{t}\,\color{blue}{\sqrt{2}(t+1)}\,\dee{t}
+=\sqrt{2}\int_0^{2^2} \left(\frac{t^4}{2}+\frac{3}{2}t^3
+                                 +t^2\right)\ \dee{t}
+</mrow><mrow>
+            &amp;=\sqrt{2}\left(\frac{2^9}{5} +3(2^5)+\frac{2^6}{3}\right)
+=\frac{2^5\cdot103\sqrt 2}{15}
+</mrow><mrow>
+\int_C y \color{red}\rho \,\dee{s}&amp;=\int_0^4 \left(t-\frac12t^2\right)\color{red}{t}\, \color{blue}{\sqrt{2}(t+1)}\,\dee{t}=\sqrt2\int_0^{2^2}\left(-\frac{t^4}{2}+\frac{t^3}{2}+t^2 \right)\dee{t}
+</mrow><mrow>
+&amp;=\sqrt{2}\left(-\frac{2^9}{5}+{2^5}+\frac{2^6}{3} \right)
+=-\frac{2^5\cdot 23\sqrt 2}{15}
+</mrow><mrow>
+\int_C z \color{red} \rho\, \dee{s}&amp;=\int_0^4 \left(\frac{4}{3}t^{3/2}\right) \color{red}{t}\, \color{blue}{\sqrt{2}(t+1)}\,\dee{t}=\frac{4\sqrt2}{3}\int_0^{2^2}
+\left( t^{7/2}+t^{5/2}\right)\dee{t}
+</mrow><mrow>
+&amp;=\frac{4\sqrt2}{3}\left( \frac{2^{10}}{9}+\frac{2^8}{7}\right)=\frac{2^{10}\cdot37\sqrt{2}}{7\cdot 3^3}
+
+</mrow><mrow>
+\overline{x}&amp;=\frac{\int x \rho\,\dee{s}}{\int \rho\,\dee{s}}=\frac{\frac{2^5\cdot103\sqrt 2}{15}}{\frac{2^3\cdot 11\sqrt{2}}{3}}=\frac{412}{55}\approx 7.5
+</mrow><mrow>
+\overline{y}&amp;=\frac{\int y \rho\,\dee{s}}{\int \rho\,\dee{s}}=\frac{-\frac{2^5\cdot 23\sqrt 2}{15}}{\frac{2^3\cdot 11\sqrt{2}}{3}}=-\frac{92}{55}\approx-1.7
+</mrow><mrow>
+\overline{z}&amp;=\frac{\int z \rho\,\dee{s}}{\int \rho\,\dee{s}}=\frac{\frac{2^{10}\cdot37\sqrt{2}}{7\cdot 3^3}}{\frac{2^3\cdot 11\sqrt{2}}{3}}=\frac{4736}{693}\approx 6.8
+</mrow>
+</md>
+</p>
+
+<p>After these long calculations, it's nice to do a sanity check. Using <m>0 \le t \le 4</m>, we see our wire takes up space in the following intervals: <m>0 \le x \le 12</m>, <m>-4 \le y \le 1/2</m>, and <m>0 \le z \le 32/3</m>. The coordinates of our centre of mass all fall in these intervals, which doesn't guarantee our answer is correct, but it is a nice sign. If, say <m>\overline x</m> had been negative, or <m>\overline z</m> were greater than 11, we would have known there was something wrong.
+</p></solution>
+</exercise></exercisegroup>
+
+</exercises>

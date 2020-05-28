@@ -440,6 +440,6 @@ The direction field of a vector field <m>\vv(x,y,z)</m> is the vector field
 </definition>
 
 
-<!-- <xi:include href="../problems/prob_s2.1.ptx" /> -->
+<xi:include href="../problems/prob_s2.1.ptx" />
 
 </section>

@@ -28,7 +28,7 @@ culvert (a large pipe) and ask <q>When is it safe?</q>.
 
 </introduction>
 
-<subsection><title>The Sliding Bead</title>
+<subsection xml:id="sec_bead"><title>The Sliding Bead</title>
 <p>
 First, consider a bead of mass <m>m</m> that is sliding, without friction,
 on a stiff wire. According to Newton's law of motion
@@ -136,7 +136,7 @@ W=m\ka|\vv|^2+mg\hj\cdot \hat\vN
 
 </subsection>
 
-<subsection><title>The Skier</title>
+<subsection xml:id="sec_skier"><title>The Skier</title>
 
 <p>
 The difference between the bead on the wire and the skier on
@@ -182,7 +182,7 @@ You never become airborne. On the other hand your knees may complain.
 
 </subsection>
 
-<subsection><title>The Skate Boarder</title>
+<subsection  xml:id="sec_skateBoarder"><title>The Skate Boarder</title>
 
 <p>
 So far, Equations <xref ref="eqn_consEnergy"/> and <xref ref="eqn_normalForce"/>
@@ -288,6 +288,6 @@ more energy than that required to reach the top, i.e. to reach height <m>2a</m>.
 
 </subsection>
 
-<!-- <xi:include href="../problems/prob_s1.7.ptx" /> -->
+<xi:include href="../problems/prob_s1.7.ptx" />
 
 </section>

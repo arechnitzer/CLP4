@@ -1,0 +1,3097 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+
+<chapter><title>True/False and Other Short Questions</title>
+
+<introduction>
+  <p>
+    Here is a collection of True/False and other short answer questions that involve the
+    material in the main body of this text.
+  </p>
+</introduction>
+
+<exercises>
+
+<exercise><title><fromexam>M317 2013D</fromexam></title>
+<statement><p>
+True or false?
+<ol label="a">
+<li>
+<m>\vnabla\cdot(\va \times\vr) = 0</m>, where <m>\va</m> is a constant vector in
+<m>\bbbr^3</m> , and <m>\vr</m> is the vector field <m>\vr= (x, y, z)</m>.
+</li>
+<li>
+<m>\vnabla\times(\vnabla f) = 0</m> for all scalar fields <m>f</m> on <m>\bbbr^3</m>
+with continuous second partial derivatives.
+</li>
+<li>
+<m>\vnabla\cdot(f \vF) = \vnabla(f)\cdot \vF + f \vnabla\cdot\vF</m>,
+for every vector field <m>\vF</m> in <m>\bbbr^3</m> with continuous partial derivatives,
+and every scalar function <m>f</m> in <m>\bbbr^3</m> with continuous partial
+derivatives.
+</li>
+<li>
+Suppose <m>\vF</m> is a vector field with continuous partial derivatives
+in the region <m>D</m>, where <m>D</m> is <m>\bbbr^3</m> without the origin.
+If <m>\vnabla\cdot\vF   \gt  0</m> throughout <m>D</m>, then the flux of <m>F</m>
+through the sphere of radius <m>5</m> with center at the origin is positive.
+</li>
+<li>
+If a vector field <m>\vF</m> is defined and has continuous partial
+derivatives everywhere in <m>\bbbr^3</m>, and it satisfies <m>\vnabla\cdot\vF = 0</m>, everywhere, then, for every sphere, the flux out of one hemisphere is equal
+to the flux into the opposite hemisphere.
+</li>
+<li>
+If <m>\vr(t)</m> is a twice continuously differentiable path in <m>\bbbr^2</m>
+with constant curvature <m>\kappa</m>, then <m>\vr(t)</m> parametrizes part of a
+circle of radius <m>1/\kappa</m>.
+</li>
+<li>
+The vector field <m>\vF = \left( -\frac{y}{x^2+y^2}\,,\,\frac{x}{x^2+y^2}\right)</m>
+is conservative in its domain, which is <m>\bbbr^2</m>, without the origin.
+</li>
+<li>
+If a vector field <m>\vF = (P, Q)</m> in <m>\bbbr^2</m> has <m>Q = 0</m> everywhere in
+<m>\bbbr^2</m>, then the line integral <m>\oint\vF\cdot\dee{\vr}</m> is zero, for every simple closed curve in <m>\bbbr^2</m>.
+</li>
+<li>
+If the acceleration and the speed of a moving particle in <m>\bbbr^3</m>
+are constant, then the motion is taking place along a spiral.
+</li>
+</ol>
+</p></statement>
+
+<answer><p>
+(a) True</p><p>
+(b) True</p><p>
+(c) True</p><p>
+(d) False
+</p>
+
+<p>(e) True
+</p>
+
+<p>(f) That depends. If <m>\ka=0</m>, the curve is part of a straight
+line. If <m>\ka \gt 0</m> it is part of a circle of radius <m>\frac{1}{\ka}</m>.
+</p>
+
+<p>(g) False.</p><p>
+(h) False.</p><p>
+(i) False.
+</p></answer>
+
+<solution><p> (a) True.
+For any constant vector <m>\va=(a_1,a_2,a_3)</m>,
+<md>
+<mrow>
+\va\times\vr
+&amp;=\det\left[\begin{matrix}
+\hi &amp;\hj &amp;\hk
+</mrow><mrow>
+a_1 &amp; a_2 &amp; a_3
+</mrow><mrow>
+x   &amp;  y  &amp; z
+\end{matrix}
+\right]
+= (a_2 z - a_3 y)\hi
+ -(a_1 z - a_3 x)\hj
+ +(a_1 y - a_2 x)\hj
+</mrow>
+</md>
+This vector field does indeed have divergence <m>0</m>.
+</p>
+
+<p>  (b) True. This is our conservative field screening condition
+Theorem <xref ref="thm_degTwoIdentities"/>.b.
+</p>
+
+<p>  (c) True. This is one of our vector identities, namely
+Theorem <xref ref="thm_divIdentities"/>.c.
+</p>
+
+<p>  (d) False. The trap here is that <m>\vF</m> need not be defined
+at the origin. We saw, in Example <xref ref="eg_fluxIntegralA"/>, that the point source <m>\vF_S=\frac{m\vr}{|\vr|^3}</m> had flux
+<m>4\pi m</m> through every sphere centred on the  origin. We also saw,
+in Example <xref ref="eg_divThmD"/>, that the divergence
+<m>\vnabla\cdot\vF_S=0</m> everywhere except at the origin (where it is not defined).
+So if we choose <m>m</m> to be a very big negative number (say <m>-10^{100}</m>)
+and add in a very small vector field with positive divergence
+(say <m> 10^{-100}(x\hi+y\hj +z\hk)</m>), we will get the vector field
+<m>\vF = -10^{100}\frac{\vr}{|\vr|^3} + 10^{-100}(x\hi+y\hj +z\hk)</m>
+which has divergence <m>\vnabla\cdot\vF=3\times 10^{-100} \gt 0</m> everywhere
+except at the origin. The flux of this field through the specified sphere will
+be <m>-4\pi\times 10^{100}</m> plus a very small positive number.
+</p>
+
+<p>  (e) True. The statement that
+ <q>the flux out of one hemisphere is equal
+   to the flux into the opposite hemisphere</q>
+is equivalent to the statement that
+  <q>the flux out of the sphere is equal to zero</q>.
+Since <m>\vnabla\cdot\vF=0</m> everywhere, that is true by the divergence
+theorem.
+</p>
+
+<p>  (f) That depends.
+</p>
+
+<p>If <m>\ka=0</m>, then <m>\diff{\hat\vT}{s}=0</m>, so that <m>\diff{\vr}{s}=\hat\vT</m>
+is a constant. So <m>\vr(s) = s\hat\vT +\vr(0)</m> is part of a straight line.
+</p>
+
+<p>If <m>\ka \gt 0</m>, then, because the curve is in a plane, the torsion <m>\tau</m> is
+zero and the Frenet-Serret formulae reduce to
+<me>
+\diff{\hat\vT}{s} = \ka\hat\vN\qquad
+\diff{\hat\vN}{s} = -\ka\hat\vT
+</me>
+Now consider the centre of curvature <m>\vc(s) = \vr(s) +\frac{1}{\ka}\hat\vN(s)</m>.
+Since
+<me>
+\diff{\vc}{s} = \diff{\vr}{s} +\frac{1}{\ka}\diff{\hat\vN}{s}
+              =\hat\vT(s) +\frac{1}{\ka}\big(-\ka\hat\vT(s)\big)
+              =\vZero
+</me>
+<m>\vc(s)</m> is a constant and
+<me>
+|\vr(s) -\vc| =\frac{1}{\ka}
+</me>
+which says that the curve is part of the circle of radius <m>\frac{1}{\ka}</m>
+centred on <m>\vc</m>.
+</p>
+
+<p>  (g) False. We saw in Examples
+<xref ref="eg_screeningCounterexample"/> and
+<xref ref="eg_greenCC"/> that the given vector
+field is not conservative.
+</p>
+
+<p>  (h) False. For example, if <m>P=-y</m>, then
+<m>\oint_C\vF\cdot\dee{\vr}=-\oint_C y\,\dee{x}</m>
+is the area inside <m>C</m>. See Corollary <xref ref="cor_greens"/>.
+</p>
+
+<p>  (i) False.
+</p>
+
+<p>If <m>\diff{\vv}{t}=\va</m> is a constant, then
+<m>\vv(t) =\va\, t+\vv_0</m>. Integrating a second time,
+<m>\vr(t) = \frac{1}{2}\va\,t^2 +\vv_0\, t+\vr_0</m>. This is not a spiral,
+whether or not the speed is constant. (In fact, for the speed <m>|\vv(t)|
+=|\va\, t+\vv_0|</m> to be constant, <m>\va</m> has to be <m>\vZero</m>,
+so that <m>\vr(t) = \vv_0\, t+\vr_0</m> is a straight line.)
+</p>
+
+<p>Another way to come to the same conclusion uses
+<me>
+\va(t)=\difftwo{s}{t}(t)\,\hat\vT(t)
+                             +\ka(t)\Big(\diff{s}{t}(t)\Big)^2\hat\vN(t)
+</me>
+As the speed <m>\diff{s}{t}</m> is a constant, it reduces to
+<me>
+\va(t)=\ka(t)\Big(\diff{s}{t}(t)\Big)^2\hat\vN(t)
+</me>
+As <m>\va(t)</m> is a constant, its direction, <m>\hat\vN(t)</m>, is also
+a constant. The normal vector to a spiral is not constant.
+</p></solution>
+</exercise>
+
+<exercise><title><fromexam>M317 2012D</fromexam></title>
+<statement><p>
+True or false?
+<ol label="a">
+<li>
+<m>\vnabla\times(\va \times\vr) = 0</m>, where <m>\va</m> is a constant vector in
+<m>\bbbr^3</m> , and <m>\vr</m> is the vector field <m>\vr= (x, y, z)</m>.
+</li>
+<li>
+<m>\vnabla\cdot(\vnabla f) = 0</m> for all scalar fields <m>f</m> on <m>\bbbr^3</m>
+with continuous second partial derivatives.
+</li>
+<li>
+<m>\vnabla(\vnabla\cdot \vF) = 0</m> for every vector field <m>\vF</m> on <m>\bbbr^3</m>
+with continuous second partial derivatives.
+</li>
+<li>
+Suppose <m>\vF</m> is a vector field with continuous partial derivatives
+in the region <m>D</m>, where <m>D</m> is <m>\bbbr^3</m> without the origin.  If <m>\vnabla\cdot\vF = 0</m>,  then the flux of <m>\vF</m> through
+the sphere of radius <m>5</m> with center at the origin is <m>0</m>.
+</li>
+<li>
+Suppose <m>\vF</m> is a vector field with continuous partial derivatives
+in the region <m>D</m>, where <m>D</m> is <m>\bbbr^3</m> without the origin. If
+<m>\vnabla\times\vF=\vZero</m> then  <m>\oint_C\vF\cdot\dee{\vr}</m> is zero, for
+every simple and smooth closed curve <m>C</m> in <m>\bbbr^3</m> which avoids the origin.
+</li>
+<li>
+If a vector field <m>\vF</m> is defined and has continuous partial
+derivatives everywhere in <m>\bbbr^3</m>, and it satisfies <m>\vnabla\cdot\vF  \gt  0</m>, everywhere, then, for every sphere, the flux <em>out</em> of one hemisphere
+is larger than  the flux <em>into</em> the opposite hemisphere.
+</li>
+<li>
+If <m>\vr(t)</m> is a path in <m>\bbbr^3</m>
+with constant curvature <m>\kappa</m>, then <m>\vr(t)</m> parametrizes part of a
+circle of radius <m>1/\kappa</m>.
+</li>
+<li>
+The vector field <m>\vF = \left( -\frac{y}{x^2+y^2}\,,\,\frac{x}{x^2+y^2}
+\,,\,z\right)</m>
+is conservative in its domain, which is <m>\bbbr^3</m>, without the <m>z</m>-axis.
+</li>
+<li>
+If all flow lines of a vector field in <m>\bbbr^3</m> are parallel to the
+<m>z</m>-axis, then the circulation of the vector field around every closed
+curve is <m>0</m>.
+</li>
+<li>
+If the speed of a moving particle is constant, then its acceleration
+is orthogonal to its velocity.
+</li>
+</ol>
+</p></statement>
+
+<hint><p>
+Read (d), (e), (f), (g), (h) very carefully.
+</p></hint>
+
+<answer><p>
+(a) False</p><p>
+(b) False</p><p>
+(c) False</p><p>
+(d) False</p><p>
+(e) True</p><p>
+(f) True
+</p>
+
+<p>(g) False</p><p>
+(h) False</p><p>
+(i) False</p><p>
+(j) True
+</p></answer>
+
+<solution><p> (a)
+False.
+For any constant vector <m>\va=(a_1,a_2,a_3)</m>,
+<md>
+<mrow>
+\va\times\vr
+&amp;=\det\left[\begin{matrix}
+\hi &amp;\hj &amp;\hk
+</mrow><mrow>
+a_1 &amp; a_2 &amp; a_3
+</mrow><mrow>
+x   &amp;  y  &amp; z
+\end{matrix}
+\right]
+= (a_2 z - a_3 y)\hi
+ -(a_1 z - a_3 x)\hj
+ +(a_1 y - a_2 x)\hj
+</mrow>
+</md>
+So
+<md>
+<mrow>
+\vnabla\times(\va\times\vr)
+&amp;=\det\left[\begin{matrix}
+\hi &amp;\hj &amp;\hk
+</mrow><mrow>
+\tfrac{\partial }{\partial x} &amp; \tfrac{\partial }{\partial y} &amp;
+                \tfrac{\partial }{\partial z}
+</mrow><mrow>
+a_2 z - a_3 y &amp; -a_1 z + a_3 x &amp; a_1 y - a_2 x
+\end{matrix}
+\right]
+</mrow><mrow>
+&amp;=2 a_1\hi + 2 a_2\hj + 2 a_3\hk
+</mrow>
+</md>
+is nonzero, unless the constant vector <m>\va=\vZero</m>.
+</p>
+
+<p>  (b)
+False. For example, if <m>f(x) = x^2</m>, then
+<md>
+<mrow>
+\vnabla\cdot(\vnabla f)
+=\vnabla\cdot(\vnabla x^2)
+=\vnabla\cdot(2x\hi)
+=2
+</mrow>
+</md>
+</p>
+
+<p>  (c)
+False. For example, if <m>\vF = x^2\hi</m>, then
+<md>
+<mrow>
+\vnabla(\vnabla\cdot\vF)
+=\vnabla\big(\vnabla\cdot(x^2\hi)\big)
+=\vnabla(2x)
+=2\hi
+</mrow>
+</md>
+</p>
+
+<p>  (d)
+False. The trap here is that <m>\vF</m> need not be defined
+at the origin. We saw, in Example <xref ref="eg_fluxIntegralA"/>, that the point source <m>\vF=\frac{m\vr}{|\vr|^3}</m> had flux
+<m>4\pi m</m> through every sphere centred on the  origin. We also saw,
+in Example <xref ref="eg_divThmD"/>, that the divergence
+<m>\vnabla\cdot\vF=0</m> everywhere except at the origin (where it is not defined).
+</p>
+
+<p>  (e)
+True. Any simple, smooth, closed curve in <m>\bbbr^3</m> that avoids the origin
+is the boundary of a surface <m>S</m> that also avoids the origin. Then,
+by Stokes' theorem,
+<me>
+\oint_C\vF\cdot\dee{\vr}
+=\dblInt_S \vnabla\times\vF\cdot\hn\,\dee{S}
+=0
+</me>
+</p>
+
+<p>  (f)
+True. Let <m>S=\Set{\vr}{|\vr-\vc|=R}</m> be a sphere.
+Denote by <m>V=\Set{\vr}{|\vr-\vc|\le R}</m> the ball whose boundary is <m>S</m>.
+Let <m>H</m> be one hemisphere of <m>S</m> with outward pointing normal and let
+<m>H'</m> be the other hemisphere of <m>S</m> with inward
+point normal. Then the boundary of <m>V</m>, with outward pointing normal,
+can be viewed as consisting of two parts, namely <m>H</m> and <m>-H'</m>,
+where by <m>-H'</m> we mean <m>H'</m> but with outward pointing normal.
+Then, by the divergence theorem
+<md>
+<mrow>
+\dblInt_H \vF\cdot\hn\,\dee{S} -
+\dblInt_{H'} \vF\cdot\hn\,\dee{S}
+&amp;=\dblInt_{\partial V} \vF\cdot\hn\,\dee{S}
+</mrow><mrow>
+&amp;=\tripInt_V \vnabla\cdot\vF\,\dee{V} \gt 0
+</mrow>
+</md>
+which implies that <m>\dblInt_H \vF\cdot\hn\,\dee{S}  \gt
+\dblInt_{H'} \vF\cdot\hn\,\dee{S}</m>.
+</p>
+
+<p>  (g)
+False. The trap here is that the curve is in <m>\bbbr^3</m>, not <m>\bbbr^2</m>.
+As we saw in Example <xref ref="eg_helixTwist"/>,
+a helix has constant curvature, but does not lie in a plane and so
+is not part of a circle.
+</p>
+
+<p>  (h)
+False. Even if we restrict <m>\vF</m> to the <m>xy</m>-plane (i.e. to <m>z=0</m>),
+this vector field is not conservative. We saw that in Examples
+<xref ref="eg_screeningCounterexample"/> and
+<xref ref="eg_greenCC"/>.
+</p>
+
+<p>  (i)
+False. For example, the vector field <m>\vF = x\,\hk</m> is always parallel to the
+<m>z</m>-axis. So its flow lines are also all parallel to the <m>z</m>-axis.
+But if the closed curve <m>C</m> consists of the line segments
+<ul>
+<li>
+<m>L_1</m> from <m>(0,0,0)</m> to <m>(1,0,0)</m>, followed by
+</li>
+<li>
+<m>L_2</m> from <m>(1,0,0)</m> to <m>(1,0,1)</m>, followed by
+</li>
+<li>
+<m>L_3</m> from <m>(1,0,1)</m> to <m>(0,0,1)</m>, followed by
+</li>
+<li>
+<p><m>L_4</m> from <m>(0,0,1)</m> back to <m>(0,0,0)</m>.</p>
+<sidebyside width="25%">
+<image source="pfigs/OE12D_8h"/>
+</sidebyside>
+</li>
+</ul>
+then
+<ul>
+<li>
+<m>\int_{L_1} \vF\cdot\dee{\vr} = \int_0^1 (x\hk)\cdot\hi\,\dee{x} = 0</m>
+since <m>\hk\perp\hi</m>, <m>\dee{\vr}=\hi\,\dee{x}</m> on <m>L_1</m> and
+</li>
+<li>
+<m>\int_{L_2} \vF\cdot\dee{\vr} = \int_0^1 (1\hk)\cdot\hk\,\dee{z} = 1</m>
+since <m>x=1</m> and <m>\dee{\vr}=\hk\,\dee{z}</m> on <m>L_2</m> and
+</li>
+<li>
+<m>\int_{L_3} \vF\cdot\dee{\vr} = -\int_0^1 (x\hk)\cdot\hi\,\dee{x} = 0</m>
+since <m>\hk\perp\hi</m> and
+</li>
+<li>
+<m>\int_{L_4} \vF\cdot\dee{\vr} = -\int_0^1 (0\hk)\cdot\hk\,\dee{z} = 0</m>
+since <m>x=0</m> on <m>L_4</m>.
+</li>
+</ul>
+All together
+<me>
+\int_{C} \vF\cdot\dee{\vr}
+=\int_{L_1} \vF\cdot\dee{\vr}
++\int_{L_2} \vF\cdot\dee{\vr}
++\int_{L_3} \vF\cdot\dee{\vr}
++\int_{L_4} \vF\cdot\dee{\vr}
+=1
+</me>
+</p>
+
+<p>  (j)
+True. If the speed <m>|\vv|</m> is constant then
+<md>
+<mrow>
+0= \diff{ }{t} |\vv|^2
+= \diff{ }{t} (\vv\cdot\vv)
+= 2\vv\cdot\va
+</mrow>
+</md>
+</p>
+
+</solution>
+</exercise>
+
+<exercise><title><fromexam>M317 2011D</fromexam></title>
+<statement><p><ol label="a">
+<li>
+True or false? If <m>\vr(t)</m> is the position at time <m>t</m> of an object moving
+in <m>\bbbr^3</m>, and <m>\vr(t)</m> is twice differentiable, then <m>|\vr''(t)|</m> is
+the tangential component of its acceleration.
+</li>
+<li>
+Let <m>\vr(t)</m> is a smooth curve in <m>\bbbr^3</m> with unit tangent, normal
+and binormal vectors <m>\hat\vT(t)</m>, <m>\hat\vN(t)</m>, <m>\hat\vB(t)</m>. Which two of these
+vectors span the plane normal to the curve at <m>\vr(t)</m>?
+</li>
+<li>
+True or false? If <m>\vF = P\hi + Q\hj + R\hk</m> is a vector field on
+<m>\bbbr^3</m> such that <m>P</m>, <m>Q</m>, <m>R</m> have continuous first order derivatives,
+and if <m>\vnabla\times\vF = \vZero</m> everywhere on <m>\bbbr^3</m> , then <m>\vF</m>
+is conservative.
+</li>
+<li>
+True or false? If <m>\vF = P\hi + Q\hj + R\hk</m>  is a vector field on
+<m>\bbbr^3</m> such that <m>P</m>, <m>Q</m>, <m>R</m> have continuous second order derivatives,
+then <m>\vnabla\times(\vnabla\cdot F) = 0</m>.
+</li>
+<li>
+True or false? If <m>\vF</m> is a vector field on <m>\bbbr^3</m> such that
+<m>|\vF(x, y, z)| = 1</m> for all <m>x</m>, <m>y</m>, <m>z</m>, and
+if <m>S</m> is the sphere <m>x^2 + y^2 + z^2 = 1</m>, then
+<m>\dblInt_S \vF \cdot\hn\,\dee{S} = 4\pi</m>.
+</li>
+<li>
+True or false? Every closed surface <m>S</m> in <m>\bbbr^3</m> is orientable.
+(Recall that <m>S</m> is closed if it is the boundary of a solid region <m>E</m>.)
+</li>
+</ol>
+</p></statement>
+
+<hint><p>
+Beware that in part (f) a surface is defined to be closed if and only if it is
+the boundary of a solid region <m>E</m>. Even though that is not the usual
+definition, it is be used in this question.
+</p></hint>
+
+<answer><p>
+(a) False.</p><p>
+(b) <m>\hat\vN(t)</m>, <m>\hat\vB(t)</m></p><p>
+(c) True.</p><p>
+(d) False.</p><p>
+(e) False.</p><p>
+(f) True.
+</p>
+
+</answer>
+
+<solution><p> (a)
+False. <m>\vr''(t)</m> is the full acceleration. So <m>|\vr''(t)|</m>
+is the magnitude of the full acceleration, not just the tangential
+component of acceleration. For example, if <m>\vr(t) =\cos t\,\hi+\sin t\,\hj</m>
+(i.e. the particle is just going around in circles), the
+acceleration <m>\vr''(t) = -\cos t\,\hi-\sin t\,\hj</m> is perpendicular
+to the direction of motion. So the tangential component of acceleration
+is zero, while <m>|\vr''(t)|=1</m>.
+</p>
+
+<p>  (b) <m>\hat\vT(t)</m> is the tangent vector to the curve at <m>\vr(t)</m>.
+<m>\hat\vN(t)</m> and <m>\hat\vB(t)</m> are both perpendicular to <m>\hat\vT(t)</m>
+(and to each other) and so span the plane normal to the curve at <m>\vr(t)</m>.
+</p>
+
+<p>  (c) True.
+This is (half of) Theorem  <xref ref="thm_screenConserv"/>.
+</p>
+
+<p>  (d) False. The statement <m>\vnabla\times(\vnabla\cdot F) = 0</m>
+is just plain gibberish, because <m>\vnabla\cdot F</m> is a scalar valued function
+and there is no such thing as the curl of a scalar valued function.
+</p>
+
+<p>  (e) False. For example if <m>\vF=\hi</m>, then, by the divergence theorem,
+<me>
+\dblInt_S \vF \cdot\hn\,\dee{S}
+ =\tripInt_V\vnabla\cdot\vF\,\dee{V}=0
+</me>
+Here <m>V=\Set{x,y,z}{x^2+y^2+z^2\le 1}</m> is the inside of the sphere.
+</p>
+
+<p>  (f) True. If <m>S</m> is the boundary of the solid region <m>E</m>, then
+we can orient <m>S</m> by always choosing the normal vector that points into <m>E</m>.
+</p>
+
+</solution>
+</exercise>
+
+<exercise><title><fromexam>M317 2010D</fromexam></title>
+<statement>
+<p><ol label="a">
+<li><p>
+In the curve shown below (a helix lying in the surface of a cone), is the
+curvature increasing, decreasing, or constant as z increases?
+</p>
+
+<sidebyside width="35%">
+  <image source="pfigs/helixCone"/>
+</sidebyside>
+</li>
+<li><p>
+Of the two functions shown below, one is a function <m>f(x)</m> and one is its
+curvature <m>\kappa(x)</m>. Which is which?
+</p>
+
+<sidebyside width="41%">
+  <image source="pfigs/OE10D_10b"/>
+</sidebyside>
+</li>
+<li>
+Let <m>C</m> be the curve of intersection of the cylinder <m>x^2 + z^2 = 1</m>
+and the saddle <m>xz = y</m>. Parametrise <m>C</m>. (Be sure to specify the domain of
+your parametrisation.)
+</li>
+<li>
+<p>
+Let <m>H</m> be the helical ramp (also known as a helicoid) which revolves around
+the <m>z</m>-axis in a clockwise direction viewed from above, beginning
+at the y-axis when <m>z = 0</m>, and rising <m>2\pi</m> units each time it makes
+a full revolution. Let <m>S</m> be the the portion
+of <m>H</m> which lies outside the cylinder <m>x^2 + y^2 = 4</m>, above the
+<m>z = 0</m> plane and below the <m>z = 5</m> plane.
+Choose one of the following functions and give the domain on which the
+function you have chosen parametrizes S. (Hint: Only one of the following functions is possible.)
+<ol label="a">
+<li>
+<m>\vr(u, v) = \big(u \cos v, u \sin v, u\big)</m>
+</li>
+<li>
+<m>\vr(u, v) = \big(u \cos v, u \sin v, v\big)</m>
+</li>
+<li>
+<m>\vr(u, v) = \big(u \sin v, u \cos v, u\big)</m>
+</li>
+<li>
+<m>\vr(u, v) = \big(u \sin v, u \cos v, v\big)</m>
+</li>
+</ol>
+</p>
+</li>
+<li>
+Write down a parametrized curve of zero curvature and arclength <m>1</m>.
+(Be sure to specify the domain of your parametrisation.)
+</li>
+<li>
+If <m>\vnabla\cdot\vF</m> is a constant <m>C</m> on all of <m>\bbbr^3</m>, and
+<m>S</m> is a cube of unit volume such that the flux outward through each
+side of <m>S</m> is <m>1</m>, what is <m>C</m>?
+</li>
+<li>
+Let
+<me>
+\vF(x, y) = \big(ax + by\,,\, cx + dy\big)
+</me>
+Give the full set of <m>a</m>, <m>b</m>, <m>c</m> and <m>d</m> such that <m>\vF</m> is conservative.
+</li>
+<li>
+If <m>\vr(s)</m> has been parametrized by arclength (i.e. <m>s</m> is arclength),
+what is the arclength of <m>\vr(s)</m> between <m>s = 3</m> and <m>s = 5</m>?
+</li>
+<li><p>
+Let <m>\vF</m> be a 2D vector field which is defined everywhere except at
+the points marked <m>P</m> and <m>Q</m>. Suppose that <m>\vnabla\times\vF = 0</m>
+everywhere on the domain of <m>\vF</m>. Consider
+the five curves <m>R</m>, <m>S</m>, <m>T</m>, <m>U</m>, and <m>V</m> shown in the picture.
+</p>
+
+<sidebyside width="52%">
+  <image source="pfigs/OE10D_10i"/>
+</sidebyside>
+<p>
+  Which of the following is necessarily true?
+<ol label="(1)">
+<li> <m>\int_S \vF\cdot\dee{\vr} = \int_T \vF\cdot\dee{\vr}</m>
+</li>
+<li> <m>\int_R \vF\cdot\dee{\vr} = \int_S \vF\cdot\dee{\vr}
+ = \int_T \vF\cdot\dee{\vr} = \int_U \vF\cdot\dee{\vr} = 0</m>
+</li>
+<li> <m>\int_R \vF\cdot\dee{\vr} + \int_S \vF\cdot\dee{\vr}
+       + \int_T \vF\cdot\dee{\vr} = \int_U \vF\cdot\dee{\vr}</m>
+</li>
+<li> <m>\int_U \vF\cdot\dee{\vr} = \int_R \vF\cdot\dee{\vr}
+   + \int_S \vF\cdot\dee{\vr}</m>
+</li>
+<li> <m>\int_V \vF\cdot\dee{\vr} = 0</m>
+</li>
+</ol></p>
+</li>
+<li>
+Write down a 3D vector field <m>\vF</m> such that for all closed surfaces <m>S</m>,
+the volume enclosed by <m>S</m> is equal to
+<me>
+\dblInt_S \vF \cdot \hn\,\dee{S}
+</me>
+</li>
+<li><p>
+Consider the vector field <m>\vF</m> in the <m>xy</m>-plane shown below.
+Is the <m>\hk^{\rm th}</m> component of <m>\vnabla\times\vF</m> at <m>P</m>
+positive, negative or zero?
+</p>
+
+<sidebyside width="54%">
+  <image source="pfigs/shearField"/>
+</sidebyside>
+</li>
+</ol>
+</p></statement>
+
+<hint><p>
+(b) In general, for which values of <m>x</m> is the curvature of <m>y=f(x)</m> zero?
+</p>
+
+<p>(c) First parametrize <m>x^2+z^2=1</m>.
+</p>
+
+<p>(d) First determine when <m>\vr(u,v)</m> has <m>z=0</m>.
+</p>
+
+<p>(e) What type of curve has curvature zero?
+</p>
+
+<p>(f) What theorem relates the divergence of a vector field with flux
+integrals of the vector field?
+</p>
+
+<p>(g) What is the screening test for conservativeness in two dimensions?
+</p>
+
+<p>(h) What is the definition of <q>parametrized by arclength</q>?
+</p>
+
+<p>(i) What theorem relates line integrals to curls?
+</p>
+
+<p>(j) What theorem relates flux integrals to divergences?
+</p>
+
+<p>(k) Use Stokes' theorem.
+</p>
+
+</hint>
+
+<answer><p>
+(a) decreasing</p><p>
+(b) <m>f(x)</m> is <m>D</m>
+</p>
+
+<p>(c) <m>\vr(\theta) = \cos\theta\,\hi +\sin\theta\,\hk
+         + \sin\theta\,\cos\theta\,\hj</m>,  <m>0\le\theta \lt 2\pi</m>
+</p>
+
+<p>(d) We want parametrisation (d) with domain <m>|u|\ge 2</m>, <m>0\le v\le 5</m>.
+</p>
+
+<p>(e) One possible answer is <m>\vr(t) = t\,\hi</m>, <m>0\le t\le 1</m>.
+</p>
+
+<p>(f) <m>C=6</m></p><p>
+(g) <m>\Set{(a,b,c,d)}{a,b,c,d\text{ all real and }b=c}</m></p><p>
+(h) 2
+</p>
+
+<p>(i) (1) True </p><p>
+(2) False </p><p>
+(3) False </p><p>
+(4) False </p><p>
+(5) False
+</p>
+
+<p>(j) Any vector field whose divergence is <m>1</m> everywhere will work.
+One such vector field is <m>\vF=x\,\hi</m>.
+</p>
+
+<p>(k) negative
+</p>
+
+</answer>
+
+<solution><p>  (a) The helix is approximately a bunch of circles
+stacked one on top of each other. The radius of the circles increase
+as <m>z</m> increases. So the curvature <em>decreases</em> as <m>z</m> increases.
+</p>
+
+<p>  (b) Here are two arguments both of which conclude that <m>f(x)</m>
+is <m>D</m>.
+</p>
+
+<p><ul>
+<li> If <m>C</m> were the graph <m>y=f(x)</m>, then <m>f'(x)</m> would
+have two points of discontinuity. The curvature <m>\ka(x)</m> would not the
+defined at those two points. The function whose graph is <m>D</m> is defined
+everywhere and so cannot be the curvature of the function whose graph is <m>C</m>.
+</li>
+<li> The function whose graph is <m>D</m> has two inflection points.
+So its curvature is zero at two points. The function whose graph is <m>C</m>
+is indeed zero at two points (that in fact correspond to the inflection points
+of <m>D</m>). So <m>D</m> is the graph of <m>f(x)</m> and <m>C</m> is the graph of <m>\kappa(x)</m>.
+</li>
+</ul>
+</p>
+
+<p>  (c) For any fixed <m>y</m>, <m>x^2+z^2=1</m> is a circle of radius <m>1</m>.
+So we can parametrize it by <m>x(\theta)=\cos\theta</m>,
+<m>z(\theta)=\sin\theta</m>, <m>0\le\theta \lt 2\pi</m>. The <m>y</m>-coordinate of any point on
+the intersection is determined by <m>y=xz</m>. So we can use
+<me>
+\vr(\theta) = \cos\theta\,\hi +\sin\theta\,\hk + \sin\theta\,\cos\theta\,\hj
+\qquad 0\le\theta \lt 2\pi
+</me>
+</p>
+
+<p>  (d)
+We are told that the helical ramp starts starts with the <m>y</m>-axis when
+<m>z=0</m>.
+<ul>
+<li>
+In the cases of parametrisations (a) and (c),
+<m>z=0</m> forces <m>u=0</m> and <m>u=0</m> forces <m>x=y=0</m>. That is only the
+origin, not the <m>y</m>-axis. So we can rule out (a) and(c).
+</li>
+<li>
+In the case of parametrisation (b),
+<m>z=0</m> forces <m>v=0</m> and <m>v=0</m> forces <m>y=0</m> and <m>x=u</m>. As <m>u</m> varies
+that sweeps out the <m>x</m>-axis, not the <m>y</m>-axis.
+So we can rule out (b).
+</li>
+<li>
+In the case of parametrisation (d),
+<m>z=0</m> forces <m>v=0</m> and <m>v=0</m> forces <m>x=0</m> and <m>y=u</m>. As <m>u</m> varies
+that sweeps out the <m>y</m>-axis, which is what we want.
+</li>
+</ul>
+Furthermore
+<ul>
+<li>
+we are told that <m>z=v</m> runs from <m>0</m> to <m>5</m> and that
+</li>
+<li>
+<m>x^2+y^2=u^2\ge 4</m>
+</li>
+</ul>
+So we want parametrisation (d) with domain <m>|u|\ge 2</m>, <m>0\le v\le 5</m>.
+</p>
+
+<p>  (e)
+Straight lines have curvature <m>0</m>. So one acceptable
+parametrized curve is <m>\vr(t) = t\,\hi</m>, <m>0\le t\le 1</m>.
+</p>
+
+<p>  (f)
+The cube <m>S</m> has six sides. So the outward flux through
+<m>\partial S</m> is <m>6</m> and, by the divergence theorem,
+<md>
+<mrow>
+6 &amp;= \dblInt_{\partial S}\vF\cdot\hn\,\dee{S}
+   =\tripInt_S \vnabla\cdot\vF\,\dee{V}
+   = \tripInt_S C\,\dee{V}
+   = C
+</mrow>
+</md>
+since <m>S</m> has volume one. So <m>C=6</m>.
+</p>
+
+<p>  (g)
+For the vector field <m>\vF</m> to be conservative, we need
+<md alignment="alignat">
+<mrow>
+&amp; &amp;
+\frac{\partial\vF_1}{\partial y}  &amp;= \frac{\partial \vF_2}{\partial x}
+</mrow><mrow>
+&amp;\iff\qquad &amp; \frac{\partial }{\partial y}(ax+by)
+     &amp;= \frac{\partial }{\partial x}(cx+dy)
+</mrow><mrow>
+&amp;\iff\qquad &amp; b&amp;=c
+</mrow>
+</md>
+When <m>b=c</m>, an allowed potential is <m>\frac{a}{2}x^2 +bxy + \frac{d}{2}y^2</m>.
+The specified set is
+<md>
+<mrow>
+\Set{(a,b,c,d)}{a,b,c,d\text{ all real and }b=c}
+</mrow>
+</md>
+</p>
+
+<p>  (h)
+By the definition of arclength parametrisation, the arclength along the
+curve between <m>\vr(0)</m> and <m>\vr(s)</m> is <m>s</m>. In particular, the
+arclength between <m>\vr(0)</m> and <m>\vr(3)</m> is <m>3</m> and the
+arclength between <m>\vr(0)</m> and <m>\vr(5)</m>, which is the same as the
+arclength between <m>\vr(0)</m> and <m>\vr(3)</m> plus the
+arclength between <m>\vr(3)</m> and <m>\vr(5)</m>,
+is <m>5</m>. So the arclength between <m>\vr(3)</m> and <m>\vr(5)</m> is <m>5-3=2</m>.
+</p>
+
+<p>  (i)
+In this solution, we'll use, for example <m>-T</m> to refer to the curve
+<m>T</m>, but with the arrow pointing in the opposite direction to that of
+the arrow on <m>T</m>.
+</p>
+
+<p>In parts (2), (3) and (4) we will choose <m>\vF</m> to be the vector field
+<me>
+\vG(x,y) = -\frac{y}{x^2+y^2}\hi + \frac{x}{x^2+y^2}\hj
+</me>
+We saw, in Example <xref ref="eg_screeningCounterexample"/>, that <m>\vnabla\times\vG=\vZero</m>
+except at the origin where it is not defined.
+We also saw, in Example <xref ref="eg_greenCC"/>,
+that <m>\oint_{C}\vG\cdot\dee{\vr}=2\pi</m> for any counterclockwise oriented
+circle centred on the origin.
+</p>
+
+<p>
+<ul>
+<li><p>(1):
+Let <m>\cR_1</m> be the region between <m>S</m> and <m>T</m>. It is the shaded region
+in the figure on the left below. Note that <m>\cR_1</m> is contained in the
+domain of <m>\vF</m>, so that <m>\vnabla\times\vF=\vZero</m> on all of <m>\cR_1</m>.
+The boundary of <m>\cR_1</m> is <m>S-T</m>, meaning that the boundary consists
+of two parts, with one part being <m>S</m> and the other part being <m>-T</m>.
+So, by Stokes' theorem
+<me>
+\int_S \vF\cdot\dee{\vr} - \int_T \vF\cdot\dee{\vr}
+=\int_{\partial \cR_1} \vF\cdot\dee{\vr}
+=\dblInt_{\cR_1} \vnabla\times\vF\cdot\hk\, \dee{S}
+=0
+</me>
+and (1) is true.
+</p>
+
+<sidebyside width="48%">
+  <image source="pfigs/OE10D_10i1"/>
+ <image source="pfigs/OE10D_10i3"/>
+</sidebyside>
+</li>
+<li> (2): False. Choose a coordinate system so that <m>Q</m> is at the origin
+and choose <m>\vF=\vG</m>.
+We saw, in Examples <xref ref="eg_screeningCounterexample"/> and
+<xref ref="eg_greenCC"/>, that the curl of
+<m>\vG</m> vanished everywhere except at the origin, where it was not defined,
+but that <m>\int_R \vG\cdot\dee{\vr} \ne 0</m>.
+</li>
+<li><p>
+(3),(4): False. Here is a counterxample that shows that both
+(3) and (4) are false. Choose a coordinate system so that <m>Q</m> is
+at the origin and choose <m>\vF=\vG</m>. By Stokes' theorem
+<me>
+\int_S \vG\cdot\dee{\vr}
+= \int_T \vG\cdot\dee{\vr} = 0
+</me>
+because <m>\vnabla\times\vG=\vZero</m> everywhere inside <m>S</m>, including at <m>P</m>.
+So now both parts (3) and (4) reduce to the claim that
+<m>\int_U \vG\cdot\dee{\vr}
+= \int_R \vG\cdot\dee{\vr}</m>.
+</p>
+
+<p>We saw, in Example <xref ref="eg_greenCC"/>, that  <m>\int_R \vG\cdot\dee{\vr} = 2\pi</m>.
+</p>
+
+<p>To finish off the counterexample,
+we'll now show that <m>\int_U \vG\cdot\dee{\vr} = -2\pi</m>.
+Let <m>\cR_2</m> be the region between <m>U</m> and <m>R</m>. It is the shaded region
+in the figure on the right above. Note that <m>\vnabla\times\vG=\vZero</m>
+on all of <m>\cR_2</m>. including at <m>P</m>.
+The boundary of <m>\cR_2</m> is <m>-U-R</m>, meaning that the boundary consists
+of two parts, with one part being <m>-U</m> and the other part being <m>-R</m>.
+So, by Stokes' theorem
+<me>
+-\int_U \vG\cdot\dee{\vr} - \int_R \vG\cdot\dee{\vr}
+=\int_{\partial \cR_2} \vG\cdot\dee{\vr}
+=\dblInt_{\cR_2} \vnabla\times\vG\cdot\hk\, \dee{S}
+=0
+</me>
+and
+<m>\int_U \vG\cdot\dee{\vr} =-\int_R \vG\cdot\dee{\vr} = -2\pi</m>
+</p>
+</li>
+<li> (5): False. For any conservative vector field <m>\vF</m>, with potential <m>f</m>,
+<m>\int_V \vF\cdot\dee{\vr}</m> is just the difference of the values of <m>f</m> at
+the two end points of <m>V</m>. It is easy to choose an <m>f</m> for which those
+two values are different. For example <m>f(x,y)=x</m> does the job.
+</li>
+</ul>
+</p>
+
+<p> (j)
+Let <m>S</m> be any closed surface and denote by <m>V</m> the
+volume that it encloses. Presumably  the question assumes that
+<m>S</m> is oriented so that <m>S=\partial V</m>. Then by the divergence
+theorem
+<me>
+\dblInt_S \vF \cdot \hn\,\dee{S}
+=\dblInt_{\partial V} \vF \cdot \hn\,\dee{S}
+=\tripInt_V \vnabla\cdot\vF\ \dee{V}
+</me>
+This is exactly the volume of <m>V</m> if <m>\vnabla\cdot\vF=1</m>
+everywhere. One vector field <m>\vF</m> with <m>\vnabla\cdot\vF=1</m>
+everywhere is <m>\vF=x\,\hi</m>.
+</p>
+
+<p>  (k)
+Let <m>\cC</m> be the counterclockwise boundary of a small square centred
+on <m>P</m>, like the blue curve in the figure below, but much smaller.
+Call the square (the inside of <m>\cC</m>) <m>S</m>.
+</p>
+
+<sidebyside width="54%">
+  <image source="pfigs/shearFieldb"/>
+</sidebyside>
+
+<p>
+  By Stokes' theorem
+<me>
+\dblInt_S \vnabla\times\vF\cdot\hk\ \dee{S}
+=\oint_\cC \vF\cdot\dee{\vr}
+</me>
+<ul>
+<li>
+The contribution to <m>\oint_\cC \vF\cdot\dee{\vr}</m> coming from the left and
+right sides of <m>\cC</m> will be zero, because <m>\vF</m> is perpendicular
+to <m>\dee{\vr}</m> there.
+</li>
+<li>
+The contribution to <m>\oint_\cC \vF\cdot\dee{\vr}</m> coming from the
+top of <m>\cC</m> will be negative, because there <m>\vF</m> is a positive number times
+<m>\hi</m> and <m>\dee{\vr}</m> is a negative number times <m>\hi</m>.
+</li>
+<li>
+The contribution to <m>\oint_\cC \vF\cdot\dee{\vr}</m> coming from the
+bottom of <m>\cC</m> will be positive, because there <m>\vF</m> is a positive
+number times <m>\hi</m> and <m>\dee{\vr}</m> is a positive number times <m>\hi</m>.
+</li>
+<li>
+The magnitude of the contribution from the top of <m>\cC</m> will be
+larger than the magnitude of the contribution from the bottom of <m>\cC</m>,
+because <m>|\vF|</m> is larger on the top than on the bottom.
+</li>
+</ul>
+So, all together, <m>\oint_\cC \vF\cdot\dee{\vr} \lt 0</m>, and consequently
+(taking a limit as the square size tends to zero)
+<m>\vnabla\times\vF\cdot\hk</m> is negative at <m>P</m>.
+</p>
+
+</solution>
+</exercise>
+
+<exercise><title><fromexam>M317 2010D</fromexam></title>
+<statement><p>
+Say whether the following statements are true or false.
+<ol label="a">
+<li>
+If <m>\vF</m> is a 3D vector field defined on all of <m>\bbbr^3</m> ,
+and <m>S_1</m> and <m>S_2</m> are two surfaces with the same boundary, but
+<m>\dblInt_{S_1} \vF\cdot\hn\,\dee{S} \ne  \dblInt_{S_2}  \vF\cdot\hn\,\dee{S}</m>, then <m>\vnabla\cdot\vF</m> is not zero anywhere.
+</li>
+<li>
+If <m>\vF</m> is a vector field satisfying <m>\vnabla\times\vF</m> = 0
+whose domain is not simply-connected, then <m>\vF</m> is not
+conservative.
+</li>
+<li>
+The osculating circle of a curve <m>C</m> at a point has the same
+unit tangent vector, unit normal vector, and curvature as <m>C</m>
+at that point.
+</li>
+<li>
+A planet orbiting a sun has period proportional to the cube of the
+major axis of the orbit.
+</li>
+<li>
+For any 3D vector field <m>\vF</m>, <m>\vnabla\cdot(\vnabla\times\vF)</m> = 0.
+</li>
+<li>
+A field whose divergence is zero everywhere in its domain has
+closed surfaces <m>S</m> in its domain.
+</li>
+<li>
+The gravitational force field is conservative.
+</li>
+<li>
+If <m>\vF</m> is a field defined on all of <m>\bbbr^3</m> such that
+<m>\int_C \vF \cdot \dee{\vr} = 3</m> for some curve <m>C</m>, then <m>\vnabla\times\vF</m>
+is non-zero at some point.
+</li>
+<li>
+The normal component of acceleration for a curve of constant curvature
+is constant.
+</li>
+<li>
+The curve defined by
+<me>
+\vr_1(t) = \cos(t^4)\,\hi + 3t^4\hj,\qquad
+-\infty  \lt  t  \lt  \infty,
+</me>
+is the same as the curve defined by
+<me>
+\vr_2(t) = \cos t\,\hi + 3t\,\hk,\qquad
+-\infty  \lt  t  \lt  \infty
+</me>
+</li>
+</ol>
+</p></statement>
+
+<hint><p>
+Read all of the statements very carefully. The details are critical.
+</p>
+
+<p>(a) Note the word <em>anywhere</em>.
+</p>
+
+<p>(b) If you have not learned about simply connected domains,
+skip this part. If you have, read the statement very carefully.
+</p>
+
+<p>(d) If you have not learned about Kepler's three laws, skip this part.
+</p>
+
+<p>(h) Read the statement very carefully. It does not specify that <m>C</m> is closed.
+</p>
+
+<p>(i) Review §<xref ref="sec_CurveCompendium"/>.
+</p>
+
+</hint>
+
+<answer><p>
+(a) false </p><p>
+(b) false </p><p>
+(c) true </p><p>
+(d) false
+</p>
+
+<p>(e) true, assuming that the second derivatives of the vector field exist
+and are continuous.
+</p>
+
+<p>(f) silly, but true</p><p>
+(g) true</p><p>
+(h) false</p><p>
+(i) false</p><p>
+(j) false
+</p></answer>
+
+<solution><p> (a) False. We could have, for example,
+<m>\vnabla\cdot\vF</m> zero at one point and strictly positive elsewhere.
+One example would be <m>\vF = x^3\,\hi+y^3\,\hj +z^3\,\hk</m>, with <m>S_1</m> and
+<m>S_2</m> being the upward oriented top and bottom hemispheres, respectively,
+of the unit sphere <m>x^2+y^2+z^2=1</m>.
+</p>
+
+<p>(b) False. The conditions that (1) <m>\vnabla\times\vF</m> = 0 and (2) the domain of
+<m>\vF</m> is simply-connected, are sufficient, but not necessary,
+to imply that <m>\vF</m> is conservative. For example the vector field
+<m>\vF=\vZero</m>, with any domain at all, is conservative with potential <m>0</m>.
+Another example (which does not depend on choosing a domain that is smaller
+than the largest possible domain) is <m>\vF=\vnabla\frac{1}{x^2+y^2}</m>
+with domain <m>\Set{(x,y,z)}{ (x,y)\ne  (0,0)}</m>. That is, the domain is
+<m>\bbbr^3</m> with the <m>z</m>-axis removed.
+</p>
+
+<p>(c) That's true. Consider any point <m>\vr(t_0)</m> on a parametrized curve
+<m>\vr(t)</m>. That's the blue point in the figure below.
+</p>
+
+<sidebyside width="42%">
+  <image source="pfigs/circleCentreC"/>
+</sidebyside>
+
+<p>
+The centre of curvature for the curve at <m>\vr(t_0)</m> is
+<m>\vc = \vr(t_0)+\rho(t_0)\hat\vN(t_0)</m>. It is the red dot in the figure.
+<ul>
+<li>
+The radius of the osculating circle is the distance from its centre,
+<m>\vc</m>, to any point of the circle,
+like <m>\vr(t_0)</m>. That's <m>|\vr(t_0) -\vc| = |\rho(t_0)\hat\vN(t_0)|
+= \rho(t_0)</m>.
+The curvature of the osculating circle is one over its radius.
+So its curvature is <m>\frac{1}{\rho(t_0)}=\ka(t_0)</m>.
+</li>
+<li>
+The unit normal to the osculating circle at <m>\vr(t_0)</m> is a unit
+vector in the opposite direction to the radius vector from the centre
+<m>\vc</m> to <m>\vr(t_0)</m>. The radius vector is
+<m>\vr(t_0)-\vc_0=-\rho(t_0)\hat\vN(t_0)</m>, so the unit normal is <m>\hat\vN(t_0)</m>.
+</li>
+<li>
+The osculating circle lies in the plane that best fits the curve
+near <m>\vr(t_0)</m>. (See the beginning of §<xref ref="sec_Curve3d"/>.) So the unit tangents to the osculating circle
+at <m>\vr(t_0)</m> are perpendicular to both <m>\hat\vN(t_0)</m> and
+<m>\hat\vB(t_0)</m> and so are either <m>\hat\vT(t_0)</m> or <m>-\hat\vT(t_0)</m>,
+depending on how we orient the osculating circle.
+</li>
+</ul>
+</p>
+
+<p>(d) False. Kepler's third law is that a planet orbiting a sun has
+the <em>square</em> of the period proportional to the cube of the
+major axis of the orbit.
+</p>
+
+<p>(e) True. That's part (a) of Theorem <xref ref="thm_degTwoIdentities"/>.
+</p>
+
+<p>(f) True. Every domain contains closed surfaces. This has nothing to do
+with vector fields.
+</p>
+
+<p>(g) True. We saw this in Example <xref ref="eg_gravity"/>.
+</p>
+
+<p>(h) False. Let <m>\vF</m> be an everywhere defined conservative vector field
+with potential <m>\varphi</m>. Then <m>\vnabla\times\vF=\vZero</m> everywhere.
+If <m>P</m> and <m>Q</m> are two points and if <m>\varphi(P)-\varphi(Q)=3</m> and
+if <m>C</m> is a curve from <m>Q</m> to <m>P</m>, then <m>\int_C \vF \cdot \dee{\vr} = 3</m>.
+One example would be <m>\varphi(x,y,z) = x</m>, <m>\vF=\hi</m>, <m>P=(3,0,0)</m>, <m>Q=(0,0,0)</m>.
+</p>
+
+<p>(i) False. The normal component of acceleration  depends on speed,
+as well as curvature.
+</p>
+
+<p>(j) False. The curve <m>\vr_1</m> contains only points in the <m>xy</m>-plane.
+Every <m>\vr_2(t)</m> with <m>t\ne 0</m>  has a nonzero <m>z</m>-coordinate.
+</p>
+
+</solution>
+</exercise>
+
+<exercise><title><fromexam>M317 2009A</fromexam></title>
+<statement><p>
+Which of the following statements are true (T) and which are false (F)?
+</p>
+
+<p>All real valued functions <m>f(x,y,z)</m>
+and all vector fields <m>\vF(x, y, z)</m> have domain <m>\bbbr^3</m> unless
+specified otherwise.
+</p>
+
+<p><ol label="a">
+<li>
+If <m>f</m> is a continuous real valued function and <m>S</m> a smooth oriented
+surface, then
+<me>
+\dblInt_S f\, \dee{S} = -\dblInt_{-S} f\,\dee{S}
+</me>
+where `<m>-S</m>' denotes the surface <m>S</m> but with the opposite orientation.
+</li>
+<li>
+Suppose the components of the vector field <m>\vF</m> have continuous
+partial derivatives. If <m>\dblInt_S\vnabla\times\vF\cdot\hn\,\dee{S}=0</m>
+for every closed smooth surface, then <m>\vF</m> is conservative.
+</li>
+<li>
+Suppose <m>S</m> is a smooth surface bounded by a smooth simple closed curve <m>C</m>.
+The orientation of <m>C</m> is determined by that of <m>S</m> as in Stokes' theorem.
+Suppose the real valued function <m>f</m> has continuous partial derivatives. Then
+<me>
+\int_C f\,\dee{x}
+=\dblInt_S \left(\frac{\partial f}{\partial z}\hj
+          - \frac{\partial f}{\partial y}\hk\right)\cdot\hn\,\dee{S}
+</me>
+</li>
+<li>
+Suppose the real valued function <m>f(x,y,z)</m> has continuous second order
+partial derivatives. Then
+<me>
+(\vnabla f ) \times (\vnabla f ) = \vnabla  \times (\vnabla f )
+</me>
+</li>
+<li>
+The curve parameterized by
+<me>
+\vr(t) = \big(2 + 4t^3 \,,\, -t^3 \,,\, 1 - 2t^3\big)\qquad
+-\infty  \lt  t  \lt  \infty
+</me>
+has curvature <m>\kappa(t) = 0</m> for all <m>t</m>.
+</li>
+<li>
+If a smooth curve is parameterized by <m>\vr(s)</m> where <m>s</m> is arc length,
+then its tangent vector satisfies
+<me>
+|\vr'(s)| = 1
+</me>
+</li>
+<li>
+If <m>S</m> is the sphere <m>x^2 + y^2 + z^2 = 1</m> and <m>\vF</m> is a constant
+vector field, then <m>\dblInt_S \vF \cdot\hn\, \dee{S} = 0</m>.
+</li>
+<li>
+There exists a vector field <m>\vF</m> whose components have continuous second
+order partial derivatives such that <m>\vnabla\times\vF = (x, y, z)</m>.
+</li>
+</ol>
+</p></statement>
+
+<answer><p>
+(a) False</p><p>
+(b) False</p><p>
+(c) True</p><p>
+(d) True</p><p>
+(e) True</p><p>
+(f) True</p><p>
+(g) True</p><p>
+(h) False
+</p></answer>
+
+<solution><p>
+(a) False. Changing the orientation of a surface does not change <m>\dee{S}</m>
+at all. (It changes <m>\hn\dee{S}</m> by a factor of <m>(-1)</m>.) So
+<me>
+\dblInt_S f\, \dee{S} = +\dblInt_{-S} f\,\dee{S}
+</me>
+which is not <m>-\dblInt_{-S} f\,\dee{S}</m>, unless the integral is zero.
+</p>
+
+<p>  (b) False. For every vector field with two continuous
+partial derivatives, <m>\vnabla\cdot(\vnabla\times\vF)=0</m>  (see Theorem
+<xref ref="thm_degTwoIdentities"/>.a), so
+the divergence theorem gives
+<md>
+<mrow>
+\dblInt_S (\vnabla\times\vF) \cdot \hn\,\dee{S}
+&amp;=\tripInt_V \vnabla\cdot(\vnabla\times\vF)\,\dee{V}
+=0
+</mrow>
+</md>
+whether or not <m>\vF</m> is conservative.
+</p>
+
+<p>  (c) True. Define the vector field <m>\vF=f\,\hi</m>.
+Then, by Stokes' theorem,
+<md>
+<mrow>
+\int_C f\,\dee{x}
+=\int_C \vF\cdot\dee{\vr}
+=\dblInt_S\vnabla\times\vF\cdot\hn\,\dee{S}
+=\dblInt_S \left(\frac{\partial f}{\partial z}\hj
+          - \frac{\partial f}{\partial y}\hk\right)\cdot\hn\,\dee{S}
+</mrow>
+</md>
+</p>
+
+<p>  (d) True.
+The left hand side, <m>(\vnabla f ) \times (\vnabla f )</m>, is zero
+because <m>(\vnabla f )</m> is parallel to itself and the right hand side
+<m>\vnabla  \times (\vnabla f )</m> is zero by
+Theorem <xref ref="thm_degTwoIdentities"/>.b (the screening test for
+conservative fields).
+</p>
+
+<p>  (e) True. The curve
+<m>\vr(t) = \big(2 \,,\, 0\,,\, 1\big) +t^3\big(4 \,,\, -1 \,,\, -2\big)</m>
+is a straight line. Straight lines have curvature <m>0</m>.
+</p>
+
+<p>  (f) True. In general <m>|\vr'(t)|=\diff{s}{t}</m>. Under arc
+length parametrization <m>t=s</m> so that <m>\diff{s}{t}=1</m>.
+</p>
+
+<p>  (g) True. If <m>\vF</m> is a constant vector fleld, then, by the
+divergence thoerem,
+<me>
+\dblInt_S \vF \cdot \hn\,\dee{S}
+=\tripInt_V \vnabla\cdot\vF\,\dee{V}
+=\tripInt_V 0\,\dee{V}
+=0
+</me>
+</p>
+
+<p>  (h) False. The statement <m>\vnabla\times\vF=(x,y,z)</m> means
+that <m>\vF</m> is a vector potential for the vector field <m>\vG=(x,y,z)</m>.
+But <m>\vG</m> fails the screening test <m>\vnabla\cdot\vG=0</m> for vector potentials.
+</p>
+
+</solution>
+</exercise>
+
+<exercise><title><fromexam>M317 2008A</fromexam></title>
+<statement><p>
+The vector field
+<m>\vF = P (x, y)\,\hi + Q(x, y)\,\hj</m>
+is plotted below.
+</p>
+
+<sidebyside width="95%">
+  <image source="pfigs/OE08A_3"/>
+</sidebyside>
+
+<p>
+In the following questions, give the answer that
+is best supported by the plot.
+<ol label="a">
+<li>
+The derivative <m>P_y</m> at the point labelled <m>A</m> is
+   (a) positive, (b) negative, (c) zero,
+   (d) there is not enough information to tell.
+</li>
+<li>
+The derivative <m>Q_x</m> at the point labelled <m>A</m> is
+    (a) positive, (b) negative, (c) zero,
+    (d) there is not enough information to tell.
+</li>
+<li>
+The curl of <m>\vF</m> at the point labelled <m>A</m> is
+     (a) in the direction of <m>+\hk</m>
+     (b) in the direction of <m>-\hk</m>
+     (c) zero (d) there is not enough information to tell.
+</li>
+<li>
+The work done by the vector field on a particle travelling from point
+<m>B</m> to point <m>C</m> along the curve <m>\cC_1</m> is
+    (a) positive (b) negative (c) zero
+    (d) there is not enough information to tell.
+</li>
+<li>
+The work done by the vector field on a particle travelling from point
+<m>B</m> to point <m>C</m> along the curve <m>\cC_2</m> is
+    (a) positive (b) negative (c) zero
+    (d) there is not enough information to tell.
+</li>
+<li>
+The vector field <m>\vF</m> is
+    (a) the gradient of some function <m>f</m>
+    (b) the curl of some vector field <m>\vG</m>
+    (c) not conservative
+    (d) divergence free.
+</li>
+</ol>
+</p></statement>
+
+<answer><p>
+(a) <m>P_y \lt 0</m> </p><p>
+(b) <m>Q_x \gt 0</m> </p><p>
+(c) <m>\vnabla\times\vF</m> is in the direction of <m>+\hk</m> at <m>A</m>
+</p>
+
+<p>(d) <m>\int_{\cC_1}\vF\cdot\dee{\vr} \gt 0</m></p><p>
+(e) <m>\int_{\cC_2}\vF\cdot\dee{\vr} \lt 0</m></p><p>
+(f) <m>\vF</m> is not conservative
+</p></answer>
+
+<solution><p>
+(a) <m>P</m> is the <m>x</m>-component of <m>\vF</m>. As we travel vertically upward
+through <m>A</m>, that <m>x</m>-component decreases. Hence <m>P_y \lt 0</m> at <m>A</m>.
+</p>
+
+<p>(b) <m>Q</m> is the <m>y</m>-component of <m>\vF</m>. As we travel horizontally to the
+right through <m>A</m>, that <m>y</m>-component increases. Hence <m>Q_x \gt 0</m> at <m>A</m>.
+</p>
+
+<p>(c) <m>\vnabla\times\vF = (Q_x-P_y)\hk</m> and <m>Q_x-P_y \gt 0</m> at <m>A</m>, so that
+the curl of <m>\vF</m> at <m>A</m> is in the direction of <m>+\hk</m>.
+</p>
+
+<p>(d) Along the curve <m>\cC_1</m> the magnitude of the angle between <m>\vF</m>
+and <m>\dee{\vr}</m> is less than <m>90^\circ</m>, so that <m>\vF\cdot\dee{\vr} \gt 0</m>
+and <m>\int_{\cC_1}\vF\cdot\dee{\vr} \gt 0</m>.
+</p>
+
+<p>(e) Along the curve <m>\cC_2</m> the magnitude of the angle between <m>\vF</m>
+and <m>\dee{\vr}</m> is greater than <m>90^\circ</m>, so that <m>\vF\cdot\dee{\vr} \lt 0</m>
+and <m>\int_{\cC_2}\vF\cdot\dee{\vr} \lt 0</m>.
+</p>
+
+<p>(f) If <m>\vF</m> were conservative, we would have <m>\int_{\cC_1}\vF\cdot\dee{\vr}
+=\int_{\cC_2}\vF\cdot\dee{\vr}</m>. As these two integrals have opposite signs
+<m>\vF</m> is not conservative. (Since <m>\vF</m> is not conservative, it is not the gradient of some function. At <m>A</m>, <m>P_x \gt 0</m> and <m>Q_y \gt 0</m>. So <m>\vF</m> is not divergence free and is not the curl of a vector potential.)
+</p>
+
+</solution>
+</exercise>
+
+<exercise><title><fromexam>M317 2008A</fromexam></title>
+<statement><p>
+Which of the following statements are true (T) and which are false (F)?
+</p>
+
+<p><ol label="a">
+<li>
+The curve defined by
+<me>
+\vr_1(t) = \cos(t^2 )\,\hi + \sin(t^2 )\,\hj + 2t^2\,\hk,\qquad
+-\infty  \lt  t  \lt  \infty
+</me>
+is the same as the curve defined by
+<me>
+\vr_2 (t) = \cos t\,\hi + \sin t\,\hj + 2t\,\hk,\qquad
+-\infty  \lt  t  \lt  \infty
+</me>
+</li>
+<li>
+The curve defined by
+<me>
+\vr_1(t) = \cos(t^2)\,\hi + \sin(t^2 )\,\hj + 2t^2\,\hk,\qquad
+0 \le t \le 1
+</me>
+is the same as the curve defined by
+<me>
+\vr_2(t) = \cos t\,\hi + \sin t\,\hj + 2t\,\hk,\qquad
+0 \le t \le 1
+</me>
+</li>
+<li>
+If a smooth curve is parameterized by <m>\vr(s)</m> where <m>s</m> is arc length,
+then its tangent vector satisfies
+<me>
+|\vr'(s)| = 1
+</me>
+</li>
+<li>
+If <m>\vr(t)</m> defines a smooth curve <m>C</m> in space that has constant
+curvature <m>\kappa  \gt  0</m>, then <m>C</m> is part of a circle with radius <m>1/\kappa</m>.
+</li>
+<li>
+If the speed of a moving object is constant, then its acceleration
+is orthogonal to its velocity.
+</li>
+<li>
+The vector field
+<me>
+\vF(x, y, z) = \frac{-y}{x^2+y^2} \hi
+               + \frac{x}{x^2+y^2} \hj
+               + z\hk
+</me>
+is conservative.
+</li>
+<li>
+Suppose the vector field <m>\vF(x, y, z)</m> is defined on an open domain
+and its components have continuous partial derivatives. If
+<m>\vnabla\times\vF = 0</m>, then <m>\vF</m> is conservative.
+</li>
+<li>
+The region <m>D = \Set{ (x, y) }{ x^2 + y^2  \gt  1 }</m> is simply connected.
+</li>
+<li>
+The region <m>D = \Set{ (x, y) }{ y - x^2  \gt  0 }</m> is simply connected.
+</li>
+<li>
+If <m>\vF</m> is a vector field whose components have two continuous
+partial derivatives, then
+<me>
+\dblInt_S \vnabla\times \vF \cdot\hn\, \dee{S} = 0
+</me>
+when <m>S</m> is the boundary of a solid region <m>E</m> in <m>\bbbr^3</m>.
+</li>
+</ol>
+</p></statement>
+
+<hint><p>
+Read all of the statements very carefully. The details are critical.
+</p>
+
+<p>For part (d), note that the curve need not lie in a plane.
+</p>
+
+<p>For part (g), note that the domain can have holes in it.
+</p>
+
+<p>For parts (h) and (i), by definition, <m>D</m> is simply connected if
+any simply closed curve in <m>D</m> can be shrunk to a
+point continuously in <m>D</m>.
+</p>
+
+</hint>
+
+<answer><p>
+(a) False</p><p>
+(b) True</p><p>
+(c) True</p><p>
+(d) False</p><p>
+(e) True</p><p>
+(f) False</p><p>
+(g) False</p><p>
+(h) False</p><p>
+(i) True</p><p>
+(j) True
+</p></answer>
+
+<solution><p>
+(a)
+False. The curve <m>\vr_1</m> contains only points with <m>z\ge0</m>.
+Every <m>\vr_2(t)</m> with <m>t \lt  0</m>  has <m>z \lt 0</m>.
+</p>
+
+<p>(b) True. <m>\vr_2(t^2)=\vr_1(t)</m> and <m>t^2</m> runs from <m>0</m> to <m>1</m> as
+<m>t</m> runs from <m>0</m> to <m>1</m>.
+</p>
+
+<p>(c) True. In general <m>|\vr'(t)| = \diff{s}{t}</m>. When <m>t=s</m>, <m>\diff{s}{t}=1</m>.
+</p>
+
+<p>(d) False. The curve need not even lie in a plane. For example, as we
+saw in Example <xref ref="eg_helixTwist"/>, the helix
+<m>\vr(t) = a\cos t\,\hi +b\sin t\,\hj + bt\,\hk</m> has constant curvature
+<m>\ka=\frac{a}{a^2+b^2}</m> but is not a circle.
+</p>
+
+<p>(e) True. If the speed <m>|\vv|=\sqrt{\vv\cdot\vv}</m> of a moving object is constant, then
+<me>
+0=\diff{ }{t}\big(\vv\cdot\vv\big)=2\vv\cdot\va
+</me>
+</p>
+
+<p>(f) False. If the vector field
+<m>
+\vF(x, y, z) = \frac{-y}{x^2+y^2} \hi
+               + \frac{x}{x^2+y^2} \hj
+               + z\hk
+</m>
+were conservative, its restriction, <m>\frac{-y}{x^2+y^2} \hi+ \frac{x}{x^2+y^2} \hj</m>,
+to the <m>xy</m>-plane would also be conservative. But we saw in
+Examples  <xref ref="eg_screeningCounterexample"/> and
+<xref ref="eg_greenCC"/> that the vector
+field <m>\frac{-y}{x^2+y^2} \hi+ \frac{x}{x^2+y^2} \hj</m> is not conservative.
+</p>
+
+<p>(g) False. The vector field of part (f), with domain
+<m>\Set{(x,y,z)}{ x^2+y^2 \gt 1}</m>, provides a counterexample.
+</p>
+
+<p>(h) False. The curve <m>x^2+y^2 = 2</m> can not be shrunk to a
+point continuously in <m>\Set{ (x, y) }{ x^2 + y^2  \gt  1 }</m>.
+</p>
+
+<p>(i) True. Any curve in <m>\Set{ (x, y) }{ y  \gt  x^2  }</m> can be shrunk to a
+point continuously in <m>\Set{ (x, y) }{ y  \gt  x^2  }</m>.
+</p>
+
+<p>(j) True. By the divergence theorem,
+<md>
+<mrow>
+\dblInt_S \vnabla\times \vF \cdot\hn\, \dee{S}
+=\tripInt_E \vnabla\cdot(\vnabla\times \vF)\, \dee{V}
+=0
+</mrow>
+</md>
+since <m>\vnabla\cdot(\vnabla\times \vF)=0</m> by the vector identity
+of Theorem <xref ref="thm_degTwoIdentities"/>.a.
+</p>
+
+</solution>
+</exercise>
+
+<exercise><title><fromexam>M317 2007A</fromexam></title>
+<statement><p>
+Which of the following statements are true (T) and which are false (F)?
+<ol label="a">
+<li>
+If a smooth curve <m>C</m> is parameterized by <m>\vr(s)</m> where <m>s</m>
+is arc length, then the tangent vector <m>\vr'(s)</m> satisfies
+<m>|\vr'(s)| = 1</m>.
+</li>
+<li>
+If <m>\vr(t)</m> defines a smooth curve <m>C</m> in space that has constant
+curvature <m>\kappa  \gt  0</m>, then <m>C</m> is part of a circle with radius <m>1/\kappa</m>.
+</li>
+<li>
+Suppose <m>\vF</m> is a continuous vector field with open domain <m>D</m>. If
+<me>
+\int_C \vF \cdot \dee{\vr} = 0
+</me>
+for every piecewise smooth closed curve <m>C</m> in <m>D</m>, then <m>\vF</m> is conservative.
+</li>
+<li>
+Suppose <m>\vF</m> is a vector field with open domain <m>D</m>, and the components
+of <m>\vF</m> have continuous partial derivatives. If <m>\vnabla\times \vF= 0</m> everywhere on <m>D</m>, then <m>\vF</m> is conservative.
+</li>
+<li>
+The curve defined by
+<me>
+\vr_1(t) = \cos(t^2)\,\hi + \sin(t^2)\,\hj + 2t^2\,\hk,\qquad
+-\infty  \lt  t  \lt  \infty
+</me>
+is the same as the curve defined by
+<me>
+\vr_2 (t) = \cos t\,\hi + \sin t\,\hj + 2t\,\hk,\qquad
+-\infty  \lt  t  \lt  \infty
+</me>
+</li>
+<li>
+The curve defined by
+<me>
+\vr_1(t) = \cos(t^2)\,\hi + \sin(t^2)\,\hj + 2t^2\,\hk,\qquad
+0\le t \le 1
+</me>
+is the same as the curve defined by
+<me>
+\vr_2 (t) = \cos t\,\hi + \sin t\,\hj + 2t\,\hk,\qquad
+0\le t\le 1
+</me>
+</li>
+<li>
+Suppose <m>\vF(x, y, z)</m> is a vector field whose components have
+continuous second order partial derivatives. Then
+<m>\vnabla \cdot (\vnabla  \times F) = 0</m>.
+</li>
+<li>
+Suppose the real valued function <m>f(x, y, z)</m> has continuous second
+order partial derivatives. Then <m>\vnabla\cdot(\vnabla f) = 0</m>.
+</li>
+<li>
+The region <m>D = \Set{ (x, y) }{ x^2 + y^2  \gt  1 }</m> is simply connected.
+</li>
+<li>
+The region <m>D = \Set{ (x, y) }{ y - x^2  \gt  0 }</m> is simply connected.
+</li>
+</ol>
+</p></statement>
+
+<hint><p>
+Read all of the statements very carefully. The details are critical.
+</p>
+
+<p>For part (b), note that the curve need not lie in a plane.
+</p>
+
+<p>For part (d), note that the domain can have holes in it.
+</p>
+
+<p>For parts (i) and (j), by definition, <m>D</m> is simply connected if
+any simply closed curve in <m>D</m> can be shrunk to a
+point continuously in <m>D</m>.
+</p>
+
+</hint>
+
+<answer><p>
+(a) True</p><p>
+(b) False</p><p>
+(c) True</p><p>
+(d) False</p><p>
+(e) False</p><p>
+(f) True</p><p>
+(g) True</p><p>
+(h) False</p><p>
+(i) False</p><p>
+(j) True
+</p></answer>
+
+<solution>
+
+<p>(a) True. In general <m>|\vr'(t)| = \diff{s}{t}</m>. When <m>t=s</m>, <m>\diff{s}{t}=1</m>.
+</p>
+
+<p>(b) False. The curve need not even lie in a plane. For example, as we
+saw in Example <xref ref="eg_helixTwist"/>,
+the helix <m>\vr(t) = a\cos t\,\hi +b\sin t\,\hj + bt\,\hk</m> has constant
+curvature <m>\ka=\frac{a}{a^2+b^2}</m> but is not a circle.
+</p>
+
+<p>(c) True. See Theorem <xref ref="thm_pathIndepConserv"/>.
+</p>
+
+<p>(d) False. The vector field
+<m>
+\vF(x, y, z) = \frac{-y}{x^2+y^2} \hi
+               + \frac{x}{x^2+y^2} \hj
+</m>,
+with domain
+<me>
+\Set{(x,y,z)}{ x^2+y^2 \gt 1}
+</me>
+provides a counterexample.
+</p>
+
+<p>(e)  False. The curve <m>\vr_1</m> contains only points with <m>z\ge0</m>.
+Every <m>\vr_2(t)</m> with <m>t \lt  0</m>  has <m>z \lt 0</m>.
+</p>
+
+<p>(f) True. <m>\vr_2(t^2)=\vr_1(t)</m> and <m>t^2</m> runs from <m>0</m> to <m>1</m> as
+<m>t</m> runs from <m>0</m> to <m>1</m>.
+</p>
+
+<p>(g) True. <m>\vnabla\cdot(\vnabla\times \vF)=0</m> by the vector identity
+of Theorem <xref ref="thm_degTwoIdentities"/>.a.
+</p>
+
+<p>(h) False. A counterexample is <m>f(x,y,z) = x^2</m>. It has
+     <m>\vnabla f = 2 x\,\hi</m> and hence <m>\vnabla\cdot(\vnabla f) = 2</m>.
+</p>
+
+<p>(i) False. The curve <m>x^2+y^2 = 2</m> can not be shrunk to a
+point continuously in <m>\Set{ (x, y) }{ x^2 + y^2  \gt  1 }</m>.
+</p>
+
+<p>(j) True. Any curve in <m>\Set{ (x, y) }{ y  \gt  x^2  }</m> can be shrunk to a
+point continuously in <m>\Set{ (x, y) }{ y  \gt  x^2  }</m>.
+</p>
+
+</solution>
+</exercise>
+
+<exercise><title><fromexam>M317 2006A</fromexam></title>
+<statement><p>
+Let <m>\vF</m>, <m>\vG</m> be vector fields, and <m>f</m>, <m>g</m> be scalar fields.
+Assume <m>\vF</m>, <m>\vG</m>, <m>f</m>, <m>g</m> are defined on all of <m>\bbbr^3</m> and
+have continuous partial derivatives of all orders everywhere.
+Mark each of the following as True (T) or False (F).
+</p>
+
+<p><ol label="a">
+<li>
+If <m>C</m> is a closed curve and <m>\vnabla f=\vZero</m>, then <m>\int_C f\,\dee{s}=0</m>.
+</li>
+<li>
+If <m>\vr(t)</m> is a parametrization of a smooth curve <m>C</m> and the binormal
+<m>\vB(t)</m>  is constant then <m>C</m> is a straight line.
+</li>
+<li>
+If <m>\vr(t)</m> is the position of a particle which travels with constant speed,
+then <m>\vr'(t)\cdot\vr''(t)=0</m>.
+</li>
+<li>
+If <m>C</m> is a path from points <m>A</m> to <m>B</m>, then the line integral <m>\int_C\big(\vF\times\vG\big)\cdot\dee{\vr}</m> is independent of
+the path <m>C</m>.
+</li>
+<li>
+The line integral <m>\int_C f\,\dee{s}</m> does not depend of the orientation of
+the curve <m>C</m>.
+</li>
+<li>
+If <m>S</m> is a parametric surface <m>\vr(u,v)</m> then a normal to <m>S</m> is given
+by
+<md>
+<mrow>
+\frac{\partial\vr}{\partial u}\times \frac{\partial\vr}{\partial u}
+</mrow>
+</md>
+</li>
+<li>
+The surface area of the parametric surface <m>S</m> given by
+<m>\vr(u,v) = x(u,v)\,\hi + y(u,v)\,\hj + z(u,v)\,\hk</m>, <m>(u,v)\in D</m>, is
+given by
+<md>
+<mrow>
+\dblInt_D \left(1+\big(\tfrac{\partial z}{\partial u}\big)^2
+             +\big(\tfrac{\partial z}{\partial v}\big)^2\right)^{1/2}                  \dee{u}\dee{v}
+</mrow>
+</md>
+</li>
+<li>
+If <m>\vF</m> is the velocity field of an incompressible fluid then
+<m>\vnabla\cdot\vF=0</m>.
+</li>
+<li>
+<m>\vnabla\cdot\big(\vF\times\vG\big)
+= (\vnabla\cdot\vF)\vG + (\vnabla\cdot\vG)\vF</m>
+</li>
+</ol>
+</p></statement>
+
+<hint><p>
+Read all of the statements very carefully. The details are critical.
+</p>
+
+<p>(a) The integral <m>\int_C f\,\dee{s}=0</m> is not of the form
+     <m>\int_C \vF \cdot \dee{\vr}</m>.
+</p>
+
+<p>(d) <m>\vF</m> and <m>\vG</m> can be any vector fields.
+</p>
+
+<p>(e) Think about how <m>\int_C f\,\dee{s}</m> is defined.
+</p>
+
+<p>(f) Look at <m>\frac{\partial\vr}{\partial u}\times
+          \frac{\partial\vr}{\partial u}</m> <em>very</em> closely.
+</p>
+
+<p>(g) The integral is completely independent of <m>x(u,v)</m> and <m>y(u,v)</m>.
+</p>
+
+</hint>
+
+<answer><p>
+(a) False.</p><p>
+(b) False.</p><p>
+(c) True.</p><p>
+(d) False.</p><p>
+(e) True.</p><p>
+(f) False.
+</p>
+
+<p>(g) False.</p><p>
+(h) True.</p><p>
+(i) False.
+</p>
+
+</answer>
+
+<solution><p>
+(a) False. <m>\vnabla f=\vZero</m> if and only if <m>f</m> is constant. But
+if <m>f</m> is the constant <m>K</m>, then <m>\int_C f\,\dee{s}</m> is <m>K</m> times the
+length of <m>C</m>, which need not be zero.
+</p>
+
+<p>(b) False. Any curve which lies in a plane has constant binormal.
+For example, the circle <m>\vr(t) =\cos t\,\hi +\sin t\,\hj +0\,\hk</m>
+has constant binormal <m>\hat\vB=\hk</m>, but is not a straight line.
+</p>
+
+<p>(c) True. If <m>\vr(t)</m> has constant speed, the <m>\big(\diff{s}{t}(t)\big)^2
+=\vr'(t)\cdot\vr'(t)</m> is constant and
+<md>
+<mrow>
+0= \diff{ }{t} \big(\vr'(t)\cdot\vr'(t)\big)
+= 2\vr'(t)\cdot\vr''(t)
+</mrow>
+</md>
+</p>
+
+<p>(d) False. For the line integral <m>\int_C\big(\vF\times\vG\big)\cdot\dee{\vr}</m>
+to be independent of the path <m>C</m>, the vector field <m>\vF\times\vG</m>
+has to be conservative and so has to obey <m>\vnabla\times(\vF\times\vG)=\vZero</m>.
+But
+<ul>
+<li>
+Not all vector fields are conservative. For example, the vector field
+<m>\vH = x\,\hj</m> obeys <m>\vnabla\times\vH = \hk</m> and so is not conservative.
+</li>
+<li>
+We can make <m>\vF\times\vG</m> be <em>any</em> vector field through judicious
+choices of <m>\vF</m> and <m>\vG</m>. For example, if <m>\vF= x\,\hk</m> and <m>\vG = \hi</m>,
+then <m>\vF\times\vG=x\,\hk\times\hi=x\,\hj=\vH</m>.
+</li>
+</ul>
+</p>
+
+<p>(e) True. The contribution to <m>\int_C f\,\dee{s}</m> from an
+<q>infinitesmal piece of <m>C</m></q> is the value of <m>f</m> on the piece
+times the <em>length</em> of the piece. That does not depend on the
+orientation of the piece.
+</p>
+
+<p>(f) False. The two vectors in the cross product
+<m>\frac{\partial\vr}{\partial u}\times \frac{\partial\vr}{\partial u}</m>
+are identical. So the cross product is <m>\vZero</m>.
+</p>
+
+<p>(g) False. The integral is completely independent of <m>x(u,v)</m> and <m>y(u,v)</m>.
+In particular if, for example, <m>x(u,v)= 157u</m>, <m>y(u,v)=157v</m>, <m>z(u,v)=0</m> then
+<m>\dblInt_D \left(1+\big(\tfrac{\partial z}{\partial u}\big)^2
+             +\big(\tfrac{\partial z}{\partial v}\big)^2\right)^{1/2}                  \dee{u}\dee{v}</m>
+is always exactly the area of <m>D</m>, while the area of <m>S</m> is <m>157^2</m> times the
+area of <m>D</m>.
+</p>
+
+<p>(h) True. If the fluid is incompressible then its flow preserves volumes
+and consequently <m>\vnabla\cdot\vF=0</m>.
+</p>
+
+<p>(i) Not only False, but Ridiculous. The left had side is  scalar valued
+while the right hand side is vector valued.
+</p>
+
+</solution>
+</exercise>
+
+<exercise><title><fromexam>M317 2005D</fromexam></title>
+<statement><p>
+Say whether the following statements are true (T) or false
+(F). You may assume that all functions and vector fields are defined
+everywhere and have derivatives of all orders everywhere.
+</p>
+
+<p><ol label="a">
+<li>
+The divergence of <m>\vnabla\times\vF</m> is zero, for every <m>\vF</m>.
+</li>
+<li>
+In a simply connected region, <m>\int_C \vF\cdot\dee{\vr}</m>
+depends only on the endpoints of <m>C</m>.
+</li>
+<li>
+If <m>\vnabla f = 0</m>, then <m>f</m> is a constant function.
+</li>
+<li>
+If <m>\vnabla\times\vF = \vZero</m>, then <m>\vF</m> is a constant vector field.
+</li>
+<li>
+If <m>\vnabla\cdot\vF = 0</m>, then <m>\dblInt_S\vF\cdot\hn\, \dee{S} = 0</m>
+for every closed surface <m>S</m>.
+</li>
+<li>
+If <m>\int_C \vF\cdot \dee{\vr} = 0</m> for every closed curve <m>C</m>, then
+<m>\vnabla \times\vF = 0</m>.
+</li>
+<li>
+If <m>\vr(t)</m> is a path in three space with constant speed <m>|\vv(t)|</m>,
+then the acceleration is perpendicular to the tangent vector, i.e.
+<m>\va\cdot\hat\vT = 0</m>.
+</li>
+<li>
+If <m>\vr(t)</m> is a path in three space with constant curvature <m>\kappa</m>,
+then <m>\vr(t)</m> parameterizes part of a circle of radius <m>1/\kappa</m>.
+</li>
+<li>
+Let <m>\vF</m> be a vector field and suppose that <m>S_1</m> and <m>S_2</m>
+are oriented surfaces with the same boundary curve <m>C</m>, and <m>C</m>
+is given the direction that is compatible with the orientations
+of <m>S_1</m> and <m>S_2</m> . Then <m>\dblInt_{S 1} \vF\cdot\hn\, \dee{S}
+= \dblInt_{S 2} \vF\cdot\hn\, \dee{S}</m>.
+</li>
+<li>
+Let <m>A(t)</m> be the area swept out by the trajectory of a planet from time
+<m>t=0</m> to time <m>t</m>. The <m>\diff{A}{t}</m> is constant.
+</li>
+</ol>
+</p>
+
+</statement>
+
+<hint><p>
+Read all of the statements very carefully. The details are critical.
+</p>
+
+<p>(b) Read the statement very carefully.
+  <q>simply connected</q> plays no role here.
+    The vector field <m>\vF</m> is not required to be conservative.
+</p>
+
+<p>(e) Recall that <m>S</m> is closed when it is the boundary of a solid region <m>V</m>.
+</p>
+
+<p>(g) Assume that the constant <m>|\vv|</m> is not zero.
+</p>
+
+<p>(j) If you have not learned about Kepler's three laws, skip this part.
+</p>
+
+</hint>
+
+<answer><p>
+(a) True</p><p>
+(b) False</p><p>
+(c) True</p><p>
+(d) False</p><p>
+(e) True</p><p>
+(f) True</p><p>
+(g) True</p><p>
+(h) False</p><p>
+(i) False</p><p>
+(j) True
+</p>
+
+</answer>
+
+<solution><p>
+(a) True. That <m>\vnabla\cdot(\vnabla\times\vF)=0</m> is the vector identity of
+    Theorem <xref ref="thm_degTwoIdentities"/>.a. That
+    identity is the basis of the vector potential screening test.
+</p>
+
+<p>(b) False. If <m>\vF</m> is not conservative, then <m>\int_C \vF\cdot\dee{\vr}</m>
+    will depend on the endpoints of <m>C</m>.
+</p>
+
+<p>(c) True. If <m>\vnabla f = 0</m>, then
+<md alignment="alignat">
+<mrow>
+\frac{\partial f}{\partial x}(x,y,z)&amp;=0 &amp;&amp;\quad\implies\quad &amp;
+         f(x,y,z)&amp;=g(y,z)
+</mrow><mrow>
+\frac{\partial f}{\partial y}(x,y,z)&amp;=0 &amp;&amp;\quad\implies\quad &amp;
+                 \frac{\partial g}{\partial y}(y,z)&amp;=0 &amp;&amp;\quad\implies\quad &amp;
+         g(y,z)&amp;=h(z)
+</mrow><mrow>
+\frac{\partial f}{\partial z}(x,y,z)&amp;=0 &amp;&amp;\quad\implies\quad &amp;
+                 h'(z)&amp;=0 &amp;&amp;\quad\implies\quad &amp;
+         h(z)&amp;=C
+</mrow>
+</md>
+for some functions <m>g(y,z)</m>, <m>h(z)</m> and constant <m>C</m>.
+</p>
+
+<p>(d) False. The curl <m>\vnabla\times\vF</m> is zero for every conservative
+vector fields <m>\vF</m>. There are many nonconstant conservative vector fields,
+like <m>\vF(x,y,z) = x\,\hi</m>.
+</p>
+
+<p>(e) True. As <m>S</m> is closed, it is the boundary of a solid region <m>V</m>.
+Then, by the divergence theorem,
+<me>
+\dblInt_S\vF\cdot\hn\, \dee{S}
+=\tripInt_V\vnabla\cdot\vF\,\dee{V}
+=0
+</me>
+</p>
+
+<p>(f) True. If <m>\int_C \vF\cdot \dee{\vr} = 0</m> for every closed curve <m>C</m>,
+then <m>\vF</m> is conservative by Theorem  <xref ref="thm_pathIndepConserv"/>.
+Consequently, <m>\vnabla \times\vF = 0</m> by Theorem <xref ref="thm_screen"/>.
+</p>
+
+<p>(g) True. If the speed <m>|\vv|</m> is constant then
+<md>
+<mrow>
+0= \diff{ }{t} |\vv|^2
+= \diff{ }{t} (\vv\cdot\vv)
+= 2\vv\cdot\va
+</mrow>
+</md>
+Since <m>\hat\vT=\frac{\vv}{|\vv|}</m>, <m>\hat\vT\cdot\va=0</m> too.
+Here, we have assumed that the constant <m>|\vv|</m> is not zero.
+If the constant <m>|\vv|</m> is zero, then <m>\hat\vT</m> is not defined at all
+(and <m>\va=0</m>).
+</p>
+
+<p>(h) False. The trap here is that the curve is in <m>\bbbr^3</m>, not <m>\bbbr^2</m>.
+As we saw in Example <xref ref="eg_helixTwist"/>,
+a helix has constant curvature, but does not lie in a plane and so
+is not part of a circle.
+</p>
+
+<p>(i) False. The trap here is that we are told nothing about <m>\vnabla\cdot\vF</m>.
+As an example, let <m>S_1</m> be the hemisphere
+<me>
+S_1=\Set{(x,y,z)}{x^2+y^2+z^2=1,\ z\ge 0}
+</me>
+with upward pointing normal and <m>S_2</m> be the disk
+<me>
+S_2=\Set{(x,y,0)}{x^2+y^2\le 1}
+</me>
+also with upward pointing normal.
+</p>
+
+<sidebyside width="30%">
+  <image source="pfigs/OE05D_2i"/>
+</sidebyside>
+
+<p>
+Set
+<me>
+V=\Set{(x,y,z)}{0\le z\le \sqrt{x^2+y^2},\ x^2+y^2\le 1}
+</me>
+Then the boundary, <m>\partial V</m>, of <m>V</m> consists of two parts, namely <m>S_1</m>
+(with normal pointing upwards) and <m>S_2</m> (but with normal pointing downwards).  The divergence theorem (Theorem <xref ref="thm_divThm"/>)
+gives
+<md>
+<mrow>
+\dblInt_{S_1} \vF \cdot \hn\,\dee{S}
+-\dblInt_{S_2} \vF \cdot \hn\,\dee{S}
+&amp;=\tripInt_V \vnabla\cdot\vF\,\dee{V}
+</mrow>
+</md>
+If <m>\vnabla\cdot\vF \gt 0</m> (as is the case, for example, if <m>\vF=x\,\hi</m>)
+then <m>\dblInt_{S_1} \vF \cdot \hn\,\dee{S}
+-\dblInt_{S_2} \vF \cdot \hn\,\dee{S}</m> is definitely nonzero.
+</p>
+
+<p>(j) True. This is one of Kepler's laws. See §<xref ref="sec_central_forces"/>.
+</p>
+
+</solution>
+</exercise>
+
+<exercise><title><fromexam>M317 2005D</fromexam></title>
+<statement><p>
+Find the correct identity, if <m>f</m> is a function and <m>\vG</m> and <m>\vF</m>
+are vector fields. Select the true statement.
+<ol label="a">
+<li>
+<m>\vnabla\cdot(f \vF) = f \vnabla\times(\vF) + (\vnabla f ) \times\vF</m>
+</li>
+<li>
+<m>\vnabla\cdot(f \vF) = f \vnabla\cdot(\vF) + \vF\cdot \vnabla f</m>
+</li>
+<li>
+<m>\vnabla\times(f \vF) = f \vnabla\cdot(\vF) + \vF\cdot \vnabla f</m>
+</li>
+<li>
+None of the above are true.
+</li>
+</ol>
+</p></statement>
+
+<answer><p>
+(b)
+</p></answer>
+
+<solution><p>
+It's (b).
+(a) is gibberish <mdash/> the left hand side is a scalar while the right
+                      hand side is a vector.
+(c) is also gibberish <mdash/> the left hand side is a vector while the right
+                      hand side is a scalar.
+(b) is the vector identity of Theorem <xref ref="thm_divIdentities"/>.c.
+</p></solution>
+</exercise>
+
+<exercise><title><fromexam>M317 2005A</fromexam></title>
+<statement><p>
+True or False. Consider vector fields <m>\vF</m> and scalar functions
+<m>f</m> and <m>g</m> which are defined and smooth in all of three-dimensional space.
+Let <m>\vr=(x,y,z)</m> represent a variable point in space, and let
+<m>\vom = (\om_1,\om_2,\om_3)</m> be a constant vector. Let <m>\Om</m> be a smoothly
+bounded domain with outer normal <m>\hn</m>. Which of the following are identites, always valid under these assumptions?
+<ol label="a">
+<li>
+<m>\vnabla\cdot\vnabla f = 0</m>
+</li>
+<li>
+<m>\vF\times\vnabla f = f\,\vnabla\cdot\vF</m>
+</li>
+<li>
+<m>\vnabla^2 f = \vnabla(\vnabla\cdot f)</m>
+</li>
+<li>
+<m>\vnabla\times\vnabla f = \vZero</m>
+</li>
+<li>
+<m>(\vnabla\times f)+(\vnabla\times g)  = \vnabla f\times\vnabla g</m>
+</li>
+<li>
+<m>\vnabla\cdot\vnabla\times\vF = 0</m>
+</li>
+<li>
+<m>\vnabla\cdot\frac{\vr}{|\vr|^2} = 0</m> for <m>\vr\ne\vZero</m>
+</li>
+<li>
+<m>\vnabla\times(\vom\times\vr) = \vZero</m>
+</li>
+<li>
+<m>\displaystyle\tripInt_\Om f\vnabla\cdot\vF\,\dee{V}
+ =-\tripInt_\Om \vnabla f\cdot\vF\,\dee{V}
+ +\dblInt_{\partial\Om} f\vF\cdot\hn\,\dee{S}</m>
+</li>
+<li>
+<m>\displaystyle\dblInt_{\partial\Om} f\hn\,\dee{S}
+  =- \tripInt_\Om \vnabla f\,\dee{V}</m>
+</li>
+</ol>
+</p>
+
+</statement>
+
+<hint><p>
+(g) Be careful. The power in the denominator is important.
+</p>
+
+<p>(j) Beware the sign.
+</p></hint>
+
+<answer><p>
+(a) False.</p><p>
+(b) False.</p><p>
+(c) False.</p><p>
+(d) True.</p><p>
+(e) False.</p><p>
+(f) True.</p><p>
+(g) False.</p><p>
+(h) False.</p><p>
+(i) True.</p><p>
+(j) False.
+</p></answer>
+
+<solution><p>
+(a) False. For example, if <m>f(x,y,z)=x^2</m>, then <m>\vnabla f = 2x\,\hi</m>
+and <m>\vnabla\cdot\vnabla f = 2</m>.
+</p>
+
+<p>(b) Not only false, but ridiculous. The left hand side is a vector while
+the right hand side is a scalar.
+</p>
+
+<p>(c) Not only false, but ridiculous. The right hand side is a vector while
+the left hand side is a scalar.
+</p>
+
+<p>(d) True. That's the screening test for conservative fields,
+Theorem <xref ref="thm_degTwoIdentities"/>.b.
+</p>
+
+<p>(e) Not only false, but ridiculous. The curl of a scalar function
+is not defined.
+</p>
+
+<p>(f) True. That's the screening test for vector potentials,
+Theorem <xref ref="thm_degTwoIdentities"/>.a.
+</p>
+
+<p>(g) False.
+<md>
+<mrow>
+&amp;\vnabla\cdot\frac{\vr}{|\vr|^2}
+=\frac{\partial }{\partial x}\frac{x}{x^2+y^2+z^2}
++\frac{\partial }{\partial y}\frac{y}{x^2+y^2+z^2}
++\frac{\partial }{\partial z}\frac{z}{x^2+y^2+z^2}
+
+</mrow><mrow>
+&amp;\hskip0.25in
+=\frac{1}{x^2+y^2+z^2} - \frac{2x^2}{{[x^2+y^2+z^2]}^2}
++\frac{1}{x^2+y^2+z^2} - \frac{2y^2}{{[x^2+y^2+z^2]}^2}
+
+</mrow><mrow>&amp;\hskip2in
++\frac{1}{x^2+y^2+z^2} - \frac{2z^2}{{[x^2+y^2+z^2]}^2}
+
+</mrow><mrow>
+&amp;\hskip0.25in
+=\frac{3[x^2+y^2+z^2] - 2x^2-2y^2-2z^2}{{[x^2+y^2+z^2]}^2}
+
+</mrow><mrow>
+&amp;\hskip0.25in
+=\frac{1}{x^2+y^2+z^2}
+</mrow>
+</md>
+</p>
+
+<p>(h) False.
+For any constant vector <m>\vom=(\omega_1,\omega_2,\omega_3)</m>,
+<md>
+<mrow>
+\vom\times\vr
+&amp;=\det\left[\begin{matrix}
+\hi &amp;\hj &amp;\hk
+</mrow><mrow>
+\omega_1 &amp; \omega_2 &amp; \omega_3
+</mrow><mrow>
+x   &amp;  y  &amp; z
+\end{matrix}
+\right]
+</mrow><mrow>
+&amp;= (\omega_2 z - \omega_3 y)\hi
+ -(\omega_1 z - \omega_3 x)\hj
+ +(\omega_1 y - \omega_2 x)\hj
+</mrow>
+</md>
+So
+<md>
+<mrow>
+\vnabla\times(\vom\times\vr)
+&amp;=\det\left[\begin{matrix}
+\hi &amp;\hj &amp;\hk
+</mrow><mrow>
+\tfrac{\partial }{\partial x} &amp; \tfrac{\partial }{\partial y} &amp;
+                \tfrac{\partial }{\partial z}
+</mrow><mrow>
+\omega_2 z - \omega_3 y &amp; -\omega_1 z + \omega_3 x &amp; \omega_1 y - \omega_2 x
+\end{matrix}
+\right]
+</mrow><mrow>
+&amp;=2 \omega_1\hi + 2 \omega_2\hj + 2 \omega_3\hk
+</mrow>
+</md>
+is nonzero, unless the constant vector <m>\vom=\vZero</m>.
+</p>
+
+<p>(i) True. The given equation is equivalent (by the vector identity Theorem <xref ref="thm_divIdentities"/>.c) to
+<me>
+\tripInt_\Om \vnabla\cdot\big(f\vF\big)\,\dee{V}
+ =\dblInt_{\partial\Om} f\vF\cdot\hn\,\dee{S}
+</me>
+which is true by the divergence theorem.
+</p>
+
+<p>(j) False. One of the variants of the divergence theorem given
+in Theorem <xref ref="thm_divVrn"/> is
+<me>
+\dblInt_{\partial\Om} f\hn\,\dee{S}
+  = \tripInt_\Om \vnabla f\,\dee{V}
+</me>
+Note that the sign on the right hand side is <q><m>+</m></q>, not <q><m>-</m></q>.
+In order for the equation given in part (j) to be true, it would
+be necessary that <m>\tripInt_\Om \vnabla f\,\dee{V}=0</m> for all smooth
+scalar functions <m>f</m>. That's silly. One counterexample is
+<me>
+f(x) = x\qquad
+\Omega = \Set{(x,y,z)}{x^2+y^2+z^2\le 1}
+</me>
+Then
+<md>
+<mrow>
+\dblInt_{\partial\Om} f\hn\,\dee{S}
+&amp;=\dblInt_{\partial\Om}x(\overbrace{x\,\hi+y\,\hj+z\,\hk}^{\hn})\,\dee{S}
+=\hi \dblInt_{\partial\Om}x^2\,\dee{S}
+
+</mrow><mrow>
+- \tripInt_\Om \vnabla f\,\dee{V}
+&amp;=- \tripInt_\Om \hi\,\dee{V}
+=- \hi\tripInt_\Om \dee{V}
+</mrow>
+</md>
+The coefficient of <m>\hi</m> is obviously strictly positive in the upper
+integral and  strictly negative in the lower integral.
+</p>
+
+</solution>
+</exercise>
+
+<exercise><title><fromexam>M317 2011A</fromexam></title>
+<statement><p>
+Determine if the given statements are True or False. Provide a reason or a counterexample.
+<ol label="a">
+<li>
+A constant vector field is conservative on <m>\bbbr^3</m>.
+</li>
+<li>
+If <m>\vnabla\cdot\vF= 0</m> for all points in the domain of <m>\vF</m>
+then <m>\vF</m> is a constant vector field.
+</li>
+<li>
+Let <m>\vr(t)</m>  be a parametrization of a curve <m>C</m> in <m>\bbbr^3</m>.
+If <m>\vr(t)</m> and <m>\diff{\vr}{t}</m> are orthogonal at all
+points of the curve <m>C</m>, then <m>C</m> lies on the surface of a sphere
+<m>x^2 + y^2 + z^2 = a^2</m> for some <m>a \gt 0</m>.
+</li>
+<li>
+The curvature <m>\kappa</m> at a point on a curve depends on the orientation
+of the curve.
+</li>
+<li>
+The domain of a conservative vector field must be simply connected.
+</li>
+</ol>
+</p></statement>
+
+<answer><p>
+(a) True</p><p>
+(b) False</p><p>
+(c) True, assuming that <m>\vr(t)</m> is not indentically <m>\vZero</m>.
+</p>
+
+<p>(d) False</p><p>
+(e) False
+</p></answer>
+
+<solution><p>
+(a) True. If the vector field is <m>\vF = a\,\hi +b\,\hj + c\,\hk</m>,
+then <m>f(x,y,z) = ax + by + cz</m> obeys <m>\vF=\vnabla f</m> and so
+is a potential for <m>\vF</m>.
+</p>
+
+<p>(b) False. For example the vector field <m>\vF= x\,\hi-y\,\hj</m>
+obeys <m>\vnabla\cdot\vF= 0</m> but is not a constant vector field.
+</p>
+
+<p>(c) True, assuming that <m>\vr(t)</m> is not indentically <m>\vZero</m>.
+If <m>\vr(t)</m> and <m>\diff{\vr}{t}</m> are orthogonal at all
+points of the curve <m>C</m>, then
+<me>
+\diff{ }{t} \big(\vr(t)\cdot\vr(t)\big)
+  = 2\vr(t)\cdot\diff{\vr}{t}(t)
+  =0
+</me>
+So <m>x(t)^2 + y(t)^2 + z(t)^2 = \vr(t)\cdot\vr(t)</m> is a constant.
+If <m>\vr(t)</m> is not indentically <m>\vZero</m>, that constant must
+be strictly positive. That is <m>x(t)^2 + y(t)^2 + z(t)^2 = a^2</m>
+for some constant <m>a \gt 0</m>.
+</p>
+
+<p>(d) False. The curvature (see §<xref ref="sec_CurveCompendium"/>) is
+<me>
+\ka(t)= \frac{\Big|\diff{\hat\vT}{t}(t)\Big|}{|\vr'(t)|}
+</me>
+Changing the orientation of the curve amounts to replacing <m>t</m> by <m>-t</m>.
+This changes the signs of <m>\hat\vT</m> and <m>\vr'</m>,
+but does not change <m>\ka</m>, because the absolute values eliminate the signs.
+</p>
+
+<p>(e) False. For example, the vector field <m>\vF=\vZero</m>, with domain
+<m>\Set{(x,y,z)}{x^2+y^2 \gt 0}</m> is a conservative vector field
+(with potential <m>0</m>) whose domain is not simply connected. As a less
+nitpicky example, let <m>\vF=\vnabla f</m> with <m>f=\frac{1}{x^2+y^2}</m>. The biggest
+possible domain for this vector field is also <m>\Set{(x,y,z)}{x^2+y^2 \gt 0}</m>.
+</p></solution>
+</exercise>
+
+<exercise><title><fromexam>M317 2012J</fromexam></title>
+<statement><p>
+Provide a short answer to each question.
+<ol label="a">
+<li>
+Compute <m>\vnabla\cdot\big(x^2 y\,\hi + e^y \sin x\,\hj + e^{zx}\,\hk\big)</m>
+</li>
+<li>
+Compute <m>\vnabla\times(\cos x^2\,\hi - y^3 z\,\hj + xz\,\hk\big)</m>
+</li>
+<li>
+<p>
+Let
+<me>
+\vF = \frac{x}{x^2+y^2}\hi +\frac{y}{x^2+y^2}\hj +z^2\,\hk
+</me>
+and let <m>D</m> be the domain of <m>\vF</m>. Consider the following four
+statments.
+<ol label="(I)">
+<li>  <m>D</m> is connected
+</li>
+<li>  <m>D</m> is disconnected
+</li>
+<li>  <m>D</m> is simply connected
+</li>
+<li>  <m>D</m> is not simply connected
+</li>
+</ol>
+Choose one of the following:
+<ol label="(i)">
+<li> (II) and (III) are true
+</li>
+<li> (I) and (III) are true
+</li>
+<li> (I) and (IV) are true
+</li>
+<li> (II) and (IV) are true
+</li>
+<li> Not enough information to determine
+</li>
+</ol>
+</p>
+</li>
+<li>
+True or False? If the speed of a particle is constant then the
+acceleration of the particle is zero. If your answer is <alert>True</alert>,
+provide a reason. If your answer is <alert>False</alert>, provide a counter example.
+</li>
+</ol>
+</p></statement>
+
+<answer>
+<p>
+(a) <m>2xy + e^y\sin x + xe^{xz}</m></p><p>
+(b) <m>y^3\,\hi-z\,\hj</m></p><p>
+(c) (iii)</p><p>
+(d) False.
+</p>
+</answer>
+
+<solution><p>
+(a) We are to compute the divergence of
+<m>x^2 y\,\hi + e^y \sin x\,\hj + e^{zx}\,\hk</m>. Since
+<md alignment="alignat">
+<mrow>
+\frac{\partial }{\partial x}\big(x^2 y\big)
+&amp;=2xy
+
+</mrow><mrow>
+\frac{\partial }{\partial y}\big(e^y \sin x\big)
+&amp;= e^y\sin x
+
+</mrow><mrow>
+\frac{\partial }{\partial z}\big(e^{zx}\big)
+&amp;=xe^{xz}
+</mrow>
+</md>
+the specified divergence is
+<md>
+<mrow>
+\vnabla\cdot\big(x^2 y\,\hi + e^y \sin x\,\hj + e^{zx}\,\hk\big)
+        &amp;= 2xy + e^y\sin x + xe^{xz}
+</mrow>
+</md>
+</p>
+
+<p>(b) The specified curl is
+<md>
+<mrow>
+\vnabla\times\big(\cos x^2\,\hi - y^3 z\,\hj + xz\,\hk\big)
+&amp;=\det\left[\begin{matrix}\hi&amp;\hj&amp;\hk \\
+     \frac{\partial }{\partial x}&amp;
+        \frac{\partial }{\partial y}&amp;
+        \frac{\partial }{\partial z} \\
+\cos x^2 &amp; - y^3 z &amp; xz\end{matrix}\right]
+= y^3\,\hi-z\,\hj
+</mrow>
+</md>
+</p>
+
+<p>(c) In principle, the domain could be any subset of <m>\Set{(x,y,z)}{x^2+y^2 \gt 0}</m>.
+We are not told which subset to use, so, by default, <m>D</m> is the maximal
+domain
+<me>
+D=\Set{(x,y,z)}{x^2+y^2 \gt 0} = \Set{(x,y,z)}{(x,y)\ne (0,0)}
+</me>
+This <m>D</m> is connected (any two points in <m>D</m>
+can be joined by a curve that lies completely in <m>D</m>) but is not
+simply connected (the simple closed curve <m>\vr(\theta)=\cos\theta\,\hi
++\sin\theta\,\hj</m>, <m>0\le\theta\le 2\pi</m> lies in <m>D</m> but cannot be shrunk
+to a point continuously in <m>D</m>). So (I) and (IV) are true. That's (iii).
+</p>
+
+<p>(d) False. If the position of the particle at time <m>t</m> is
+<m>\vr(t) = \cos t\,\hi +\sin t\,\hj</m>, then its speed is the constant <m>1</m>
+but its acceleration is <m>-\cos t\,\hi -\sin t\,\hj</m>, which is nonzero.
+</p></solution>
+</exercise>
+
+<exercise><title><fromexam>M317 2016D</fromexam></title>
+<statement><p>
+Are each of the following statements True or False?
+Recall that <m>f \in C^k</m> means that all derivatives of <m>f</m> up to order
+<m>k</m> exist and are continuous.
+</p>
+
+<p><ol label="a">
+<li>
+<m>\vnabla\times(f \vnabla f ) = \vZero</m> for all <m>C^2</m> scalar functions <m>f</m>
+in <m>\bbbr^3</m>.
+</li>
+<li>
+<m>\vnabla\cdot(f\vF) = \vnabla f \cdot\vF + f\vnabla\cdot \vF </m>
+for all <m>C^1</m> scalar functions <m>f</m> and <m>C^1</m> vector fields <m>\vF</m> in <m>\bbbr^3</m>.
+</li>
+<li>
+A smooth space curve <m>C</m> with constant curvature <m>\kappa = 0</m> must be a
+part of a straight line.
+</li>
+<li>
+A smooth space curve <m>C</m> with constant curvature <m>\kappa \ne 0</m> must be
+part of a circle of radius <m>1/\kappa</m>.
+</li>
+<li>
+If <m>f</m> is any smooth function defined in <m>\bbbr^3</m> and if <m>C</m> is any
+circle, then <m>\int_C\vnabla f\cdot\dee{\vr}=0</m>.
+</li>
+<li>
+Suppose <m>\vF</m> is a smooth vector field in <m>\bbbr^3</m> and <m>\vnabla\cdot\vF=0</m>
+everywhere. Then, for every sphere, the flux <em>out</em> of one hemisphere
+is equal to the flux <em>into</em> the opposite hemisphere.
+</li>
+<li>
+Let <m>\vF(x, y,z)</m> be a continuously differentiable vector field which is
+defined for every <m>(x, y, z)</m>. Then,
+<m>\dblInt_S\vnabla\times\vF\cdot\hn\,\dee{S}=0</m> for any closed surface <m>S</m>.
+(A closed surface is a surface that is the boundary of a solid region.)
+</li>
+</ol>
+</p></statement>
+
+<answer><p>
+(a) True</p><p>
+(b) True</p><p>
+(c) True</p><p>
+(d) False</p><p>
+(e) True</p><p>
+(f) True</p><p>
+(g) True
+</p></answer>
+
+<solution><p>
+(a) True. By the vector identity of Theorem <xref ref="thm_curlIdentities"/>.c,
+<md>
+<mrow>
+\vnabla\times(f \vnabla f )
+=(\vnabla f) \times (\vnabla f)
+  +f\,\vnabla\times (\vnabla f)
+=\vZero
+</mrow>
+</md>
+The second term vanished because of the screening test vector identity
+of Theorem <xref ref="thm_degTwoIdentities"/>.b.
+</p>
+
+<p>(b) True. That's the vector identity of Theorem <xref ref="thm_divIdentities"/>.c.
+</p>
+
+<p>(c) True. To have constant curvature <m>0</m> the curve must have
+unit tangent vector <m>\hat\vT(s)</m> obeying
+<me>
+\diff{\hat\vT}{s}(s)=\vZero
+</me>
+(See §<xref ref="sec_CurveCompendium"/>.)
+So <m>\vr'(s) = \hat\vT(s)</m> must be a constant vector. Call it <m>\hat\vT_0</m>. Integrating gives
+<me>
+\vr(s) = s\hat\vT_0 +\vr_0
+</me>
+for some constant vector <m>\vr_0</m>. So <m>\vr(s)</m> lies
+on the same straight line for all <m>s</m>.
+</p>
+
+<p>(d) False. The trap here is that the curve is in <m>\bbbr^3</m>, not <m>\bbbr^2</m>.
+As we saw in Example <xref ref="eg_helixTwist"/>,
+a helix has constant curvature, but does not lie in a plane and so
+is not part of a circle.
+</p>
+
+<p>(e) True. The vector field <m>\vF=\vnabla f</m> is conservative. So, by
+Theorem <xref ref="thm_pathIndepConserv"/>.b, the
+work integral
+<me>
+\int_C\vnabla f\cdot\dee{\vr}
+=\int_C\vF\cdot\dee{\vr}
+=0
+</me>
+for any closed curve <m>C</m>, and, in particular, for any circle <m>C</m>.
+</p>
+
+<p>(f) True. The statement that
+ <q>the flux out of one hemisphere is equal
+   to the flux into the opposite hemisphere</q>
+is equivalent to the statement that
+  <q>the flux out of the sphere is equal to zero</q>.
+Since <m>\vnabla\cdot\vF=0</m> everywhere, that is true by the divergence
+theorem.
+</p>
+
+<p>(g) True. Let <m>S</m> be the boundary of the solid region <m>V</m>.
+Then, by the divergence theorem (Theorem <xref ref="thm_divVrn"/>),
+<md>
+<mrow>
+\dblInt_S\vnabla\times\vF\cdot\hn\,\dee{S}
+=\tripInt_V \vnabla\cdot\big(\vnabla\times\vF\big)\,\dee{V}
+</mrow>
+</md>
+But <m>\vnabla\cdot\big(\vnabla\times\vF\big)</m> is identically zero,
+by the screening test vector identity of Theorem <xref ref="thm_degTwoIdentities"/>.a. So the integral
+is zero.
+</p>
+
+</solution>
+</exercise>
+
+<exercise><title><fromexam>M317 2004A</fromexam></title>
+<statement><p>
+  True or false (reasons must be given):
+<ol label="a">
+<li>
+If a smooth vector field on <m>\bbbr^3</m> is curl free and divergence
+free, then its potential is harmonic. By definition, <m>\phi(x,y,z)</m>
+is harmonic if <m>\big(\frac{\partial^2 }{\partial x^2}
+                           +\frac{\partial^2 }{\partial y^2}
+                           +\frac{\partial^2 }{\partial z^2}\big)
+                           \phi(x,y,z)=0</m>.
+</li>
+<li>
+If <m>\vF</m> is a smooth conservative vector field on <m>\bbbr^3</m>,
+then its flux through any smooth closed surface is zero.
+</li>
+</ol>
+</p></statement>
+
+<answer><p>
+(a) True</p><p>
+(b) False
+</p></answer>
+
+<solution><p>
+(a) True.
+Let <m>\vF</m> be the vector field. We are assuming
+that <m>\nabla\times\vF=0</m> on all of <m>\bbbr^3</m>. As a result, <m>\vF=\nabla\phi</m>
+for some potential function <m>\phi</m>. We are also assuming that <m>0=\nabla\cdot\vF
+=\nabla\cdot\nabla\phi =\big(\frac{\partial^2 }{\partial x^2}
++\frac{\partial^2 }{\partial y^2}
++\frac{\partial^2 }{\partial z^2}\big)\phi</m>. This is the definition
+of <q><m>\phi</m> is harmonic</q>.
+</p>
+
+<p>(b) False.
+Let <m>\vF</m> be the vector field. We are assuming
+that  <m>\vF=\nabla\phi</m> for some potential function <m>\phi</m>. If <m>S</m> is any
+smooth closed surface, with <m>S</m> being the boundary of the solid <m>V</m>, then,
+by the divergence theorem, the outward flux of <m>\vF</m> through <m>S</m> is
+<md>
+<mrow>
+\dblInt_S \vF\cdot\hn\ \dee{S}
+&amp;=\tripInt_V \nabla\cdot\vF\ \dee{V}
+=\tripInt_V \nabla\cdot\nabla \phi\ \dee{V}
+</mrow><mrow>
+&amp;=\tripInt_V \big(\tfrac{\partial^2 }{\partial x^2}
++\tfrac{\partial^2 }{\partial y^2}
++\tfrac{\partial^2 }{\partial z^2}\big)\phi\ \dee{V}
+</mrow>
+</md>
+If, for example, <m>\phi=x^2</m>, then
+<m>\big(\frac{\partial^2 }{\partial x^2}
++\frac{\partial^2 }{\partial y^2}
++\frac{\partial^2 }{\partial z^2}\big)\phi=2</m> and the flux of <m>\vF</m>
+through <m>S</m> is twice the volume of <m>V</m>, which is not zero.
+</p></solution>
+</exercise>
+
+<exercise><title><fromexam>M317 2004A</fromexam></title>
+<statement><p>
+The following statements may be true or false. Decide which.
+If true, give a proof. If false, provide a counter-example.
+</p>
+
+<p><ol label="a">
+<li>
+If <m>f</m> is any smooth function defined in
+<m>\bbbr^3</m> and if <m>C</m> is any circle, then
+<m>\int_{C}\vnabla f \cdot \dee{\vr}=0</m>.
+</li>
+<li>
+There is a vector field <m>\vF</m> that
+obeys <m>\vnabla\times\vF=x\,\hi+y\,\hj+z\,\hk</m>.
+</li>
+</ol>
+</p></statement>
+
+<answer><p>
+(a) True</p><p>
+(b) False
+</p></answer>
+
+<solution><p>
+(a) True. The vector field <m>\vnabla f</m> is conservative
+and the work done by a conservative field around any closed curve
+is zero.
+</p>
+
+<p>(b) False. By the vector identity Theorem <xref ref="thm_degTwoIdentities"/>.a, we have
+<me>
+  \vnabla\cdot(\vnabla\times\vF)=0
+</me>
+for all vector fields <m>\vF</m>.
+But <m>\vnabla\cdot(x\,\hi+y\,\hj+z\,\hk)=3</m>.
+</p></solution>
+</exercise>
+
+<exercise><title><fromexam>M317 2002A</fromexam></title>
+<statement><p>
+Short answers:
+<ol label="a">
+<li>
+ Let <m>S</m> be the level surface <m>f(x,y,z)=0</m>. Why is
+<m>\int_C \vnabla f\cdot \dee{\vr}=0</m> for any curve <m>C</m> on <m>S</m>?
+</li>
+<li>
+A point moving in space with position <m>\vr(t)</m> at time <m>t</m>
+satisfies the condition <m>\va(t)=f(t)\vr(t)</m> for all <m>t</m> for some real valued
+function <m>f</m>. Why is <m>\vv\times\vr</m> a constant vector?
+</li>
+<li>
+Why is the trajectory of the point in (b) contained in a plane?
+</li>
+<li>
+Is the binormal vector, <m>\hat\vB</m>, of a particle moving in space, always
+orthogonal to the unit tangent vector <m>\hat\vT</m> and unit normal
+<m>\hat\vN</m>?
+</li>
+<li>
+If the curvature of the path of a particle moving in space
+is constant, is the acceleration zero when maximum speed occurs?
+</li>
+</ol>
+</p></statement>
+
+<answer><p>
+(a), (b), (c)  See the solution. </p><p>
+(d) Yes</p><p>
+(d) No
+</p></answer>
+
+<solution><p>
+(a) <m>\int_C \vnabla f\cdot \dee{\vr}=0</m> is the work done along the
+curve using the conservative force <m>\vnabla f</m>. That work is difference
+between the potential <m>f</m> at the final point minus the potential <m>f</m>
+at the initial point. If the final and initial points are both on the
+level surface <m>f(x,y,z)=0</m>, that difference is zero.
+</p>
+
+<p>(b) The rate of change of the specified vector is
+<me>
+\diff{ }{t} \vv(t)\times\vr(t)
+=\vv'(t)\times\vr(t)+\vv(t)\times\vv(t)
+</me>
+The first term vanishes because <m>\vv'(t)=\va(t)=f(t)\vr(t)</m> is parallel to <m>\vr(t)</m>.
+The second term vanishes because <m>\vv(t)=\vv(t)</m>.
+</p>
+
+<p>(c) Call the constant vector <m>\vv\times\vr</m> of part (b) <m>\vN</m>.
+This vector is a constant
+and is perpendicular to both <m>\vv(t)</m> and <m>\vr(t)</m>. In particular
+<me>
+\vN\cdot\vr(t)=0
+</me>
+Assuming that <m>\vN</m> is nonzero, this is the equation of the plane
+through the origin with normal vector <m>\vN</m>.
+</p>
+
+<p>(d) Yes, as long as <m>\hat\vT</m>, <m>\hat\vN</m>, and <m>\hat\vB</m> are well-defined,
+since <m>\hat\vB = \hat\vT\times\hat\vN</m>.
+</p>
+
+<p>(e) No. When the maximum speed occurs <m>\difftwo{s}{t}=0</m> so that
+     <m>\va = \ka(t)\,\big(\diff{s}{t}(t)\big)^2\,\hat\vN(t)</m>. If the speed
+     and (constant) curvature are nonzero, the acceleration is nonzero.
+</p></solution>
+</exercise>
+
+<exercise><title><fromexam>M317 2018A</fromexam></title>
+<statement><p>
+A region <m>R</m> is bounded by a simple closed curve <m>\cC</m>. The curve <m>\cC</m> is oriented such that <m>R</m> lies to the left of <m>\cC</m> when walking along <m>\cC</m>
+in the direction of <m>\cC</m>. Determine  whether or not
+each of the following expressions is equal to the area of <m>R</m>.
+You must justify your conclusions.
+<ol label="a">
+<li>
+<m>\ds\frac{1}{2} \int_\cC -y \,d x +x \,d y</m>
+</li>
+<li>
+<m>\ds\frac{1}{2} \int_\cC -x \,d x + y \,d y</m>
+</li>
+<li>
+<m>\ds\int_\cC y \,d x</m>
+</li>
+<li>
+<m>\ds\int_\cC 3y\,d x + 4x \,d y</m>
+</li>
+</ol>
+</p></statement>
+
+<hint><p>
+Review Corollary <xref ref="cor_greens"/>.
+</p></hint>
+
+<answer><p>
+(a) yes</p><p>
+(b) no</p><p>
+(c) no</p><p>
+(d) yes
+</p></answer>
+
+<solution><p>
+We apply Green's Theorem:
+<me>
+\int_\cC F_1 \,d x + F_2 \,d y
+ =\dblInt_R \left(
+     \frac{\partial F_2}{\partial x} - \frac{\partial F_1}{\partial y}\right)
+    \,d x d y
+</me>
+</p>
+
+<p>(a)
+<m>\ds\frac{1}{2} \int_\cC -y \,d x +x \,d y
+   =\frac{1}{2}\dblInt_R \big\{1 -(-1)\big\} \,d x \,d y = \text{Area}(R) </m>
+</p>
+
+<p>(b)
+<m>\ds\frac{1}{2} \int_\cC -x \,d x + y \,d y
+       = \frac{1}{2}\dblInt_R  0 \,d x \,d y
+       =0 \neq \text{Area}(R)</m>
+</p>
+
+<p>(c)
+<m>\ds\int_\cC y \,d x =\dblInt_R \big\{-1\big\}  \,d x \,d y
+         = -\text{Area}(R)\neq \text{Area}(R)</m>
+</p>
+
+<p>(d)
+<m>\ds\int_\cC 3y\,d x + 4x \,d y
+           = \dblInt_R \big\{4-3\big\} \,d x \,d y = \text{Area}(R)</m>
+</p></solution>
+</exercise>
+
+<exercise><title><fromexam>M317 2018A</fromexam></title>
+<statement><p>
+Say whether each of the following statements is true or false
+and <em>explain why</em>.
+<ol label="a">
+<li>
+A moving particle has velocity and acceleration
+vectors that satisfy <m>|\vv| = 1</m> and <m>|\va|=1</m>
+at all times.  Then the curvature of this particle's
+path is a constant.
+</li>
+<li>
+If <m>\vF</m> is any smooth vector field defined in
+<m>\bbbr^3</m> and if <m>S</m> is any sphere, then
+<me>
+\dblInt_{S}\vnabla\times\vF\cdot\hn\,\dee{S}=0
+</me>
+Here  <m>\hn</m> is the outward normal to <m>S</m>.
+</li>
+<li>
+If <m>\vF</m> and <m>\vG</m> are smooth vector fields in <m>\bbbr^3</m>
+and if <m>\ds\oint_C \vF\cdot \dee{\vr}=\oint_C \vG\cdot \dee{\vr}</m>
+for every circle <m>C</m>, then <m>\vF=\vG</m>.
+</li>
+</ol>
+</p></statement>
+
+<hint>
+
+<p>(b) <m>\dblInt_{S}\vnabla\times\vF\cdot\hn\,\dee{S}</m> is a flux integral
+     over the closed surface <m>S</m>.
+</p>
+
+<p>(c) Consider <m>\oint_C \vF\cdot \dee{\vr}-\oint_C \vG\cdot \dee{\vr}
+        =\oint_C (\vF - \vG)\cdot \dee{\vr}</m>.
+</p></hint>
+
+<answer><p>
+(a) True</p><p>
+(b) True</p><p>
+(c) False
+</p></answer>
+
+<solution><p>
+(a)  <em>True</em><m>\,</m>.
+Since <m>v=|\vv|=1</m> is constant, we have
+<me>
+\va
+= \diff{v}{t}\hat\vT + v^2\kappa\hat\vN
+= 0\hat\vT + \kappa\hat\vN.
+</me>
+Thus <m>1 = |\va| = \kappa|\hat\vN|</m>, i.e., <m>\kappa=1</m>.
+</p>
+
+<p>(a) (Again.)
+Since <m>\vv\cdot\vv=|\vv|^2=1</m> for all <m>t</m>, differentiation
+gives <m>\vv\cdot\va=0</m>, i.e., <m>\vv\perp\va</m> always.  It follows
+that <m>|\vv\times\va| = |\vv|\,|\va|\sin\theta = 1</m>
+always, because the angle <m>\theta</m> here is always <m>\pi/2</m>.  Thus, for all
+<m>t</m>,
+<me>
+\kappa = { |\vv\times\va|\over |\vv|^3} = {1\over 1} = 1.
+</me>
+</p>
+
+<p>(b) <em>True</em><m>\,</m>.
+By the divergence theorem, if <m>V</m> is the
+solid bounded by <m>S</m>,
+<me>
+\dblInt_{S}\vnabla\times\vF\cdot\hn\,\dee{S}
+=\tripInt_V\vnabla\cdot\big(\vnabla\times\vF\big)\ \dee{V}
+=0
+</me>
+since <m>\vnabla\cdot\big(\vnabla\times\vF\big)=0</m>.
+</p>
+
+<p>(c) <em>False</em><m>\,</m>.
+If <m>\vF=0</m> and <m>\vG</m> is any nonzero,
+conservative field, like <m>\vG=2x\hi=\vnabla(x^2)</m>, then
+<me>
+ \oint_C \vF\cdot \dee{\vr}=\oint_C \vG\cdot \dee{\vr}=0
+</me>
+for every closed curve <m>C</m>.
+</p></solution>
+</exercise>
+
+<exercise><title><fromexam>M317 2000D, 2001A</fromexam></title>
+<statement><p>
+Three quickies:
+<ol label="a">
+<li>
+A moving particle with position <m>\vr(t) = (x(t),y(t),z(t))</m>
+satisfies
+<me>
+\va = f(\vr,\vv)\vr
+</me> for some scalar-valued function <m>f</m>.
+Prove that <m>\vr\times\vv</m> is constant.
+</li>
+<li>
+Calculate <m>\dblInt_\cS(x\,\hi - y\,\hj + z^2\,\hk)\cdot \hn\dee{S}</m>,
+where <m>\cS</m> is the boundary of any solid right circular cylinder
+of radius <m>b</m> with one base in the plane <m>z=1</m> and the other base in the
+plane <m>z=3</m>.
+</li>
+<li>
+Let <m>\vF</m> and <m>\vG</m> be smooth vector fields defined in <m>\bbbr^3</m>.
+Suppose that, for every circle <m>C</m>, we have
+<m>\oint_{C} \vF\cdot \dee{\vr}=\dblInt_S \vG\cdot \hn\,\dee{S}</m>, where <m>S</m> is the
+oriented disk with boundary <m>C</m>.
+Prove that <m>\vG=\vnabla\times\vF</m>.
+</li>
+</ol>
+</p>
+
+</statement>
+
+<answer><p>
+(a), (c) See the solution.</p><p>
+(b) <m>8\pi b^2</m>
+</p></answer>
+
+<solution><p>
+(a)
+Define <m>\vOm(t) = \vr(t)\times\vv(t)</m>.  Then by the product rule,
+<md>
+<mrow>
+\diff{\vOm}{t}
+&amp;= \diff{\vr}{t}\times\vv + \vr\times\diff{\vv}{t}
+\cr
+&amp;= \vv\times\vv + \vr\times\big(f(\vr,\vv)\vr\big).
+\cr
+&amp;= {\bf0} + f(\vr,\vv) \big(\vr\times\vr\big) = {\bf0}.
+</mrow>
+</md>
+It follows that <m>\vOm</m> is constant.
+</p>
+
+<p>(b)
+By the divergence theorem, where <m>\cR</m> is the solid cylinder as
+described,
+<me>
+\dblInt_\cS(x\,\hi - y\,\hj + z^2\,\hk)\cdot \hn\dee{S}
+= \tripInt_\cR\big(1 - 1 + 2z\big)\,\dee{V}
+= 2\tripInt_\cR z\,\dee{V}
+</me>
+The solid <m>\cR</m> clearly has reflection symmetry across the plane <m>z=2</m>.
+So the <m>z</m>-coordinate of the centre of mass of <m>\cR</m>,
+i.e. the average value of <m>z</m> over <m>\cR</m>,
+i.e.
+<me>
+\bar z =\frac{\tripInt_\cR z\,\dee{V}}{\tripInt_\cR\dee{V}}
+=\frac{\tripInt_\cR z\,\dee{V}}{{\rm Vol}(\cR)}
+</me>
+is <m>2</m>. Hence
+<me>
+\dblInt_\cS(x\,\hi - y\,\hj + z^2\,\hk)\cdot \hn\dee{S}
+= 2\bar z\,{\rm Vol}(\cR)
+= 4\,{\rm Vol}(\cR)
+</me>
+By basic geometry, <m>{\rm Vol}(\cR) = \pi r^2 h = \pi b^2 2</m>.
+Hence
+<me>
+\dblInt_\cS(x\,\hi - y\,\hj + z^2\,\hk)\cdot \hn\dee{S}
+= 8\pi b^2
+</me>
+</p>
+
+<p>(c)
+By Stokes' theorem (Theorem <xref ref="thm_Stokes"/>),
+<md>
+<mrow>
+\oint_{\partial D} \vF\cdot \dee{\vr}=\dblInt_D \vG\cdot \hn\,\dee{S}
+&amp;\implies \dblInt_D \vnabla\times\vF\cdot \hn\,\dee{S}=\dblInt_D \vG\cdot \hn\,\dee{S}
+</mrow><mrow>
+&amp;\implies \dblInt_D \big(\vnabla\times\vF-\vG\big)\cdot \hn\,\dee{S}=0
+</mrow>
+</md>
+for all disks <m>D</m>.
+Because this is true for all disks <m>D</m>, the integrand  must be zero. To see
+this, let <m>\vH=\vnabla\times\vF-\vG</m>. Suppose that <m>\vH(\vx_0)\ne 0</m>.
+Pick a unit vector <m>\hn</m> in the direction of <m>\vH(\vx_0)</m>. Let <m>D</m> be a very
+small flat disk centered on <m>\vx_0</m> with normal <m>\hn</m> (the vector we picked).
+Then <m>\vH(\vx_0)\cdot\hn \gt 0</m> and, by continuity, <m>\vH(\vx)\cdot\hn \gt 0</m> for all
+<m>\vx</m> on <m>D</m>, if we have picked <m>D</m> small enough.
+ Then <m>\dblInt_D\big(\vnabla\times\vF-\vG\big)\cdot \hn\,\dee{S} \gt 0</m>, which is a
+contradiction. So we conclude that
+<m>\vnabla\times\vF-\vG=\vZero</m> and hence <m>\vG=\vnabla\times\vF</m>.
+</p>
+</solution>
+</exercise>
+
+</exercises>
+
+</chapter>

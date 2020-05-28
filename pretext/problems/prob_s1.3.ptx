@@ -1,0 +1,733 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+
+<!-- Copyright 2018 Joel Feldman, Andrew Rechnitzer and Elyse Yeager -->
+<!-- This work is licensed under the Creative Commons Attribution-NonCommercial-ShareAlike 4.0 International License-->
+<!-- https://creativecommons.org/licenses/by-nc-sa/4.0 -->
+
+<exercises>
+<exercisegroup>
+<introduction><conceptual/>
+<p>There are a lot of constants in this chapter that might be new to you. They can take a little getting used to. Questions <xref ref="prob_s1_3_constantsa"/>-<xref ref="prob_s1_3_constantsb"/> provide practice working with and interpreting these constants and their relations to each other.</p></introduction>
+<exercise xml:id="prob_s1_3_constantsa">
+<statement><p>
+Sketch the curve <m>\vr(t)=(3\sin t,3\cos t)</m>. At the point <m>(0,3)</m>, label <m>\hT</m> and <m>\hN</m>. Give the values of <m>\kappa</m> and <m>\rho</m> at this point as well.
+</p></statement>
+<hint><p>
+The curve is a circle, so you don't need to do any calculus.
+</p></hint>
+<answer>
+<sidebyside width="40%">
+<image><latex-image>\begin{tikzpicture}
+\YEaxis{2}{2}
+\YExcoord{.5}{1}
+\draw node[shape=circle, minimum size=3cm, draw]{};
+\draw (0,1.5) node[vertex]{};
+\draw[ultra thick, red, - \gt ] (0,1.5)--(.5,1.5) node[right]{$\hT$};
+\draw[ultra thick, blue, - \gt ] (0,1.5)--(0,1) node[below left]{$\hN$};
+\end{tikzpicture}</latex-image></image>
+</sidebyside>
+<p>
+<m>\rho=3</m>, <m>\ka=\frac13</m>
+</p>
+</answer>
+<solution><p>
+The curve is a circle of radius 3, centred at the origin. So, the <q>circle of best fit</q> is just the curve itself. <m>\hT</m> is the unit vector tangent to the circle in direction of increasing <m>t</m>, and <m>\hN</m> is the unit vector pointing towards the origin.
+</p><sidebyside width="40%">
+<image><latex-image>\begin{tikzpicture}
+\YEaxis{2}{2}
+\YExcoord{.5}{1}
+\draw node[shape=circle, minimum size=3cm, draw]{};
+\draw (0,1.5) node[vertex]{};
+\draw[ultra thick, red, - \gt ] (0,1.5)--(.5,1.5) node[right]{$\hT$};
+\draw[ultra thick, blue, - \gt ] (0,1.5)--(0,1) node[below left]{$\hN$};
+\end{tikzpicture}</latex-image></image>
+</sidebyside><p>
+The radius of the (osculating) circle is 3, so <m>\rho=3</m> and <m>\ka=\frac1\rho=\frac13</m>.
+</p></solution>
+</exercise>
+
+<exercise>
+<statement><p>
+Consider the circle <m>\vr(t)=(3\sin t,3\cos t)</m>. Find <m>\hT(t)</m> and <m>\hT(s)</m>. Then, use parts (<xref ref="thm_curvatureFormulae_part_b"/>) and (<xref ref="thm_curvatureFormulae_part_c"/>) of Theorem<nbsp/><xref ref="thm_curvatureFormulae"/> to find <m>\hN(t)</m> and <m>\hN(s)</m>.
+</p></statement>
+<hint><p>
+Because <m>\vr</m> is a circle, you can parametrize it with respect to arclength without using an integral. You found <m>\ka</m> in  Question<nbsp/><xref ref="prob_s1_3_constantsa"/>.
+</p></hint>
+<answer><p>
+<m>\hT(t)=(\cos t, -\sin t) </m>, <m>\hT(s)=(\cos(s/3),-\sin(s/3))</m>,</p><p>
+<m>\hN(t)=(-\sin t ,-\cos t)</m>, <m>\hN(s)=\left(-\sin(s/3),-\cos(s/3) \right)</m>
+</p></answer>
+<solution><p>
+The arclength of <m>\vr(t)</m> traced out by an interval of <m>t</m> of length <m>\theta</m> is <m>3\theta</m>. That is, <m>s=3t</m>. Our reparametrization of the circle in terms of arclength is <m>\vR(s)=(3\sin(s/3),3\cos(s/3))</m>.
+</p>
+
+<p>We can calculate the vectors tangent to the circle, then normalize them (i.e. make them length one) to find <m>\hT</m>.
+<md>
+<mrow>
+\vv(t)&amp;=\vr'(t)=(3\cos t, -3\sin t) 
+</mrow><mrow>
+\hT(t)&amp;=\frac{\vr'(t)}{|\vr'(t)|}=\frac{(3\cos t, -3\sin t)}{3}=(\cos t, -\sin t)
+</mrow><mrow>
+\hT(s)&amp;=\vR'(s)=(\cos(s/3),-\sin(s/3))
+</mrow>
+</md>
+Note <m>\vR'(s)</m>, because it's parametrized in terms of arclength, has derivative vectors of length one. So, we don't need to normalize them (although if we did, it wouldn't change anything).
+</p>
+
+<p>Note also that we can check out answers using Question<nbsp/><xref ref="prob_s1_3_constantsa"/>. In that question, we found <m>\hT</m> was <m>\hi</m> when <m>t=s=0</m>; this fits with the vectors we just found.
+</p>
+
+<p>As in Question<nbsp/><xref ref="prob_s1_3_constantsa"/>, <m>\ka=\frac13</m>. So, using Theorem<nbsp/><xref ref="thm_curvatureFormulae"/> Part (<xref ref="thm_curvatureFormulae_part_b"/>):
+<md>
+<mrow>
+\diff{\hT}{s}(s) &amp;= \ka(s)\,\hN(s)
+</mrow><mrow>
+\left(-\frac13\sin(s/3) , -\frac13\cos(s/3) \right)&amp;=\frac13\hN(s)
+</mrow><mrow>
+\left(-\sin(s/3) , -\cos(s/3) \right)&amp;=\hN(s)
+</mrow>
+</md>
+</p>
+
+<p>Remember <m>s=3t</m>. Using Theorem<nbsp/><xref ref="thm_curvatureFormulae"/> Part (<xref ref="thm_curvatureFormulae_part_c"/>):
+<md>
+<mrow>
+\diff{\hT}{t} &amp;= \ka \diff{s}{t} \hN(t)
+</mrow><mrow>
+(-\sin t ,-\cos t) &amp;= \frac13 (3) \hN(t)
+</mrow><mrow>
+(-\sin t ,-\cos t) &amp;= \hN(t)
+</mrow>
+</md>
+</p></solution>
+</exercise>
+
+<exercise>
+<statement><p>
+The functon <m>\vr(t)=(t\cos t, t\sin t)</m>, <m>t \ge 0</m>, defines a spiral centred at the origin.
+Using only geometric intuition (no calculation), predict <m>\displaystyle\lim_{t \to \infty}\kappa(t)</m>.
+</p></statement>
+<hint><p>
+When <m>t</m> is large, does the spiral locally look like a circle of large radius, or small?
+</p></hint>
+<answer><p>
+<m>\lim\limits_{t \to \infty}\ka(t)=0</m>
+</p></answer>
+<solution><p>
+As <m>t</m> increases, the arms of the spiral <q>flatten out,</q> looking like a circle of bigger and bigger radius. So, we would expect the curvature to decrease: <m>\lim\limits_{t \to \infty}\ka(t)=0</m>.
+</p>
+<sidebyside width="40%">
+<image source="pfigs/spiral2d"/>
+</sidebyside>
+
+</solution>
+</exercise>
+
+<exercise>
+<statement><p>
+Let <m>\vr(t)=(e^t,3t,\sin t)</m>. What is <m>\diff{s}{t}</m>?
+</p></statement>
+<hint><p>
+<m>\diff{s}{t}=\left| \vv(t)\right|=\left| \vr'(t)\right|</m>
+</p></hint>
+<answer><p>
+<m>\diff{s}{t}=\sqrt{e^{2t}+9+\cos^2 t}</m>
+</p></answer>
+<solution><p>
+<m>\diff{s}{t}=\left| \vv(t)\right|=\left| \vr'(t)\right|=\left| (e^t,3,\cos t)\right|=\sqrt{e^{2t}+9+\cos^2 t}</m>
+</p></solution>
+</exercise>
+
+<exercise xml:id="prob_s1_3_constantsb">
+<statement><p>
+In Question<nbsp/><xref ref="prob_s1_2_spiral"/> of Section<nbsp/><xref ref="sec_reparam"/>,
+we found that the spiral <me>
+\vr(t) = e^t (\cos t, \sin t)</me>
+ parametrized in terms of arclength is
+<me>
+\vR(s)=\frac{s}{\sqrt{2}}\left(\cos\Big(\ln\Big(\frac{s}{\sqrt{2}}\Big)\Big)\,,\,
+                 \sin\Big(\ln\Big(\frac{s}{\sqrt{2}}\Big)\Big)\right).</me>
+</p>
+
+<p>Find <m>\diff{\hT}{s}</m> and <m>\diff{\hT}{t}</m> for this curve.
+</p></statement>
+<hint><p>
+<m>\hT=\frac{\vv(t)}{|\vv(t)|}=\frac{\vr'(t)}{|\vr'(t)|}</m>
+</p></hint>
+<answer><p>
+<md> 
+<mrow>
+\diff{\hT}{t}&amp;=\frac1{\sqrt2}\big(-\sin t - \cos t , -\sin t + \cos t\big)
+</mrow><mrow>
+\diff{\hT}{s}&amp;
+=\frac{1}{\sqrt{2}\,s}\Big( -\sin \left(\ln\left( s/\sqrt{2}\right)\right)
+          -\cos\left(\ln\left( s/\sqrt{2}\right)\right)) , 
+</mrow><mrow>&amp;\hskip1in -\sin \left(\ln\left( s/\sqrt{2}\right)\right)+\cos \left(\ln\left( s/\sqrt{2}\right)\right)\Big)
+</mrow>
+</md>
+</p></answer>
+<solution><p>
+<md>
+<mrow>
+\hT(t)&amp;=\frac{\vv(t)}{|\vv(t)|}=\frac{\vr'(t)}{|\vr'(t)|}
+</mrow><mrow>
+&amp;=\frac{\big(e^t(\cos t - \sin t) , e^t(\cos t + \sin t)\big)}{\sqrt{e^{2t}(\cos t - \sin t)^2+e^{2t}(\cos t + \sin t)^2}}
+</mrow><mrow>
+&amp;=\frac1{\sqrt2}\big(\cos t - \sin t , \cos t + \sin t\big)
+</mrow><mrow>
+\diff{\hT}{t}&amp;=\frac1{\sqrt2}\big(-\sin t - \cos t , -\sin t + \cos t\big)
+</mrow>
+<intertext>Since <m>\vR(s)</m> is parametrized with respect to arclength, <m>|\vR'(s)|=1</m>.</intertext><mrow>
+\hT(s)&amp;=\vR'(s)
+</mrow>
+<intertext>Making ample use of the chain rule, and setting <m>U(s)=\left(\ln\left( s/\sqrt{2}\right)\right)</m>, we have <m>U'(s)=\frac{1}{s}</m>:
+</intertext><mrow>
+\hT(s)&amp;=\frac{1}{\sqrt2}\left( \cos U(s)-\sin U(s) ,  \cos U(s) + \sin U(s)\right)
+</mrow><mrow>
+\diff{\hT}{s}&amp;=\frac{1}{\sqrt{2}\,s}\left( -\sin U(s)-\cos U(s) , -\sin U(s)+\cos U(s)\right)
+</mrow>
+</md>
+</p></solution>
+</exercise>
+
+<exercise>
+<statement><p>
+In this exercise, we make more precise the sense in which the osculating
+circle is the circle which best approximates a plane curve at a point.
+<ul>
+<li>
+By translating and rotating our coordinate system, we
+can always arrange that the point is <m>(0,0)</m> and that the curve is
+<m>y=f(x)</m> with <m>f'(0)=0</m> and <m>f''(0) \gt 0</m>. (We are assuming that
+the curvature at the point is nonzero.)
+</li>
+<li>
+Let <m>y=g(x)</m> be the bottom half of the circle of radius <m>r</m> which
+is centred at <m>(0,r)</m>.
+</li>
+</ul>
+Show that if <m>f(x)</m> and <m>g(x)</m> have the
+same second order Taylor approximation at <m>x=0</m>, then <m>r</m> is the
+radius of curvature of <m>y=f(x)</m> at <m>x=0</m>.
+</p></statement>
+
+<answer><p>
+See the solution.
+</p></answer>
+
+<solution><p>
+The circle  of radius <m>r</m> centred at <m>(0,r)</m> is <m>x^2+(y-r)^2 = r^2</m>.
+The bottom half of this circle is
+<me>
+y = g(x) = r - \sqrt{r^2-x^2}
+</me>
+So
+<md alignment="alignat">
+<mrow>
+g'(x) &amp;=\frac{x}{\sqrt{r^2-x^2}} &amp;
+g'(0) &amp;=0
+</mrow><mrow>
+g''(x)&amp;=\frac{1}{\sqrt{r^2-x^2}} +\frac{x^2}{[{r^2-x^2]}^{3/2}}\qquad &amp;
+g''(0)&amp;=\frac{1}{r}
+</mrow>
+</md>
+As <m>f(x)</m> and <m>g(x)</m> have the same second order Taylor approximation at <m>x=0</m>,
+<m>f''(0) = g''(0) = \frac{1}{r}</m>.
+</p>
+
+<p>We may parametrize the curve by <m>\vr(x) = x\,\hi + f(x)\,\hj</m>.
+So
+<md alignment="alignat">
+<mrow>
+\vr'(x)&amp; = \hi +f'(x)\,\hj\qquad &amp;
+\vr'(0)&amp; = \hi +f'(0)\,\hj = \hi
+</mrow><mrow>
+\vr''(x)&amp; = f''(x)\,\hj &amp;
+\vr''(0)&amp; = f''(0)\,\hj
+</mrow>
+</md>
+and
+<md>
+<mrow>
+\ka(0)&amp; = \frac{|\vr'(0)\times\vr''(0)|}{|\vr'(0)|^3}
+ = \frac{|f''(0)\,\hi\times\hj|}{|\hi|^3}
+=f''(0)
+</mrow>
+</md>
+So <m>\ka(0)=f''(0)=\frac{1}{r}</m> and <m>r</m> is indeed the radius of curvature
+of <m>y=f(x)</m> at <m>x=0</m>.
+</p></solution>
+</exercise>
+</exercisegroup>
+
+<exercisegroup><introduction><procedural/></introduction>
+
+<exercise>
+<statement><p>
+Given a curve <m>\vr(t)=(e^t,t^2+t)</m>, compute the following quantities:
+<ol label="A">
+<li> <m>\vv(t)</m>
+</li>
+<li> <m>\va(t)</m>
+</li>
+<li> <m>\diff{s}{t}</m>
+</li>
+<li> <m>\hT(t)</m>
+</li>
+<li> <m>\ka(t)</m>
+</li>
+</ol>
+</p></statement>
+<hint><p>
+You can find the last two quantities by making use of the first three. Looking ahead, the formula list in Section<nbsp/><xref ref="sec_CurveCompendium"/> might come in handy.
+</p></hint>
+<answer><p>
+<ol label="A">
+<li> <m>\vv(t)=(e^t,2t+1)</m>
+</li>
+<li> <m>\va(t)=(e^t,2)</m>
+</li>
+<li> <m>\diff{s}{t}=\sqrt{e^{2t}+(2t+1)^2}</m>
+</li>
+<li> <m>\displaystyle\hT(t)=\left(
+ \frac{e^t}{\sqrt{e^{2t}+(2t+1)^2}},
+ \frac{2t+1}{\sqrt{e^{2t}+(2t+1)^2}}
+ \right)
+</m>
+</li>
+<li> <m>\displaystyle\ka(t)=\dfrac{e^t|1-2t|}{(e^{2t}+(2t+1)^2)^{3/2}}</m>
+</li>
+</ol>
+</p>
+
+</answer>
+<solution><p>
+<ol label="A">
+<li> <m>\vv(t)=\vr'(t)=(e^t,2t+1)</m>
+</li>
+<li> <m>\va(t)=\vr''(t)=(e^t,2)</m>
+</li>
+<li> <m>\diff{s}{t}=|\vv(t)|=\sqrt{e^{2t}+(2t+1)^2}</m>
+</li>
+<li> 
+<md>
+<mrow>
+\hT(t)&amp;=\frac{\vv(t)}{|\vv(t)|}=\frac{(e^t,2t+1)}{\sqrt{e^{2t}+(2t+1)^2}}
+</mrow><mrow>
+&amp;=\left(
+ \frac{e^t}{\sqrt{e^{2t}+(2t+1)^2}},
+ \frac{2t+1}{\sqrt{e^{2t}+(2t+1)^2}}
+ \right)
+</mrow>
+</md>
+</li>
+<li> <m>\displaystyle\ka(t)=\frac{|\vv(t) \times \va(t)|}{\left(\diff{s}{t}\right)^3}=\frac{\left| (e^t,2t+1)\times(e^t,2)\right|}{\sqrt{e^{2t}+(2t+1)^2}^3}=\dfrac{e^t|1-2t|}{(e^{2t}+(2t+1)^2)^{3/2}}</m>
+</li>
+</ol>
+</p>
+
+</solution>
+</exercise>
+
+<exercise>
+<statement><p>
+Find the curvature <m>\ka(t)</m> of <m>\vr(t)=(\cos t+\sin t , \sin t - \cos t)</m>.
+</p></statement>
+<hint><p>
+We can calculate <m>\ka = \dfrac{|\vv(t) \times \va(t)|}{\left| \left(\diff{s}{t}\right)^3\right|}</m>. We can also figure out what kind of a shape our curve is.
+</p></hint>
+<answer><p>
+<m>\ka(t)=\frac{1}{\sqrt{2}}</m>
+</p></answer>
+<solution><p>
+Note that <m>(\cos t+\sin t )^2+(\sin t - \cos t)^2=2</m> for all <m>t</m>. So, the points <m>(x,y)</m> of our curve lie on <m>x^2+y^2=2</m>, which is a circle of radius <m>\sqrt{2}</m>. Indeed
+<md>
+<mrow>
+x(t)&amp;= \cos t+\sin t
+=\sqrt{2}\big[\cos t \cos\tfrac{\pi}{4} +\sin t \sin\tfrac{\pi}{4}\big]
+
+</mrow><mrow>
+&amp;=\sqrt{2}\cos\big(t-\tfrac{\pi}{4}\big)
+
+</mrow><mrow>
+y(t)&amp;= \sin t-\cos t
+=\sqrt{2}\big[\sin t \cos\tfrac{\pi}{4}-\cos t\sin \tfrac{\pi}{4}\big]
+
+</mrow><mrow>
+&amp;=\sqrt{2}\sin\big(t-\tfrac{\pi}{4}\big)
+</mrow>
+</md>
+So, <m>\vr(t)</m> circumnavigates a circle of radius <m>\sqrt{2}</m> and consequently has curvature <m>\ka=\frac{1}{\sqrt{2}}</m>.
+</p>
+</solution>
+<solution>
+<p>
+We use the formula <m>\ka = \dfrac{|\vv(t) \times \va(t)|}{\left| \left(\diff{s}{t}\right)^3\right|}</m>, remembering that <m>\vv(t)=\vr'(t)</m>, <m>\va(t)=\vr''(t)</m>, and <m>\diff{s}{t}=\left| \vr'(t)\right|</m>.
+<md>
+<mrow>
+\vv(t)&amp;=\vr'(t)=(-\sin t +\cos t, \cos t + \sin t)
+</mrow><mrow>
+\va(t)&amp;=\vr''(t)=(-\cos t  -\sin t, -\sin t + \cos t)
+</mrow><mrow>
+\vv(t) \times \va(t)&amp;=\big[(-\sin t + \cos t)^2+(\cos t + \sin t)^2\big]\hk=2\hk
+</mrow><mrow>
+\diff{s}{t}&amp;=\left|\diff{\vv}{t} \right|=\sqrt{(-\sin t + \cos t)^2+(\cos t + \sin t )^2}=\sqrt2
+</mrow><mrow>
+\ka&amp;=\left|\frac{\vv(t) \times \va(t)}{\left(\diff{s}{t}\right)^3}\right|=\left|\frac{2\hk}{\sqrt{2}^3}\right|=\frac{1}{\sqrt 2}
+</mrow>
+</md>
+</p></solution>
+</exercise>
+
+<exercise>
+<statement><p>
+ Find the minimum and maximum values for the curvature of
+the ellipse <m>x(t)= a \cos t</m>, <m>y(t)=b\sin t</m>. Here <m>a \gt b \gt 0</m>.
+</p></statement>
+
+<hint><p>
+The maximum and minimum values of <m>\ka(t)</m> should be
+obvious from your formula for <m>\ka(t)</m>.
+</p></hint>
+
+<answer><p>
+<m>\ka_{\rm max}=\frac{a}{b^2}</m>, <m>\ka_{\rm min}=\frac{b}{a^2}</m>.
+</p></answer>
+
+<solution><p>
+ For the given ellipse
+<md>
+<mrow>
+\vr(t)&amp;= a\cos t\ \hi +b\sin t\ \hj
+</mrow><mrow>
+\vv(t)&amp;= -a\sin t\ \hi +b\cos t\ \hj
+</mrow><mrow>
+|\vv(t)|&amp; = \sqrt{a^2\sin^2t+b^2\cos^2 t}
+</mrow><mrow>
+\va(t)&amp;= -a\cos t\ \hi -b\sin t\ \hj
+</mrow><mrow>
+\vv(t)\times\va(t) &amp;=\det\left[\begin{matrix} \hi &amp; \hj &amp; \hk
+</mrow><mrow>
+                                        -a\sin t &amp; b\cos t &amp; 0
+</mrow><mrow>
+                                        -a\cos t &amp; -b\sin t &amp; 0
+                                    \end{matrix}\right]
+= ab\,\hk
+</mrow><mrow>
+\ka(t)&amp;=\frac{|\vv(t)\times\va(t)|}{|\vv(t)|^3}
+=\frac{ab}{{[a^2\sin^2t+b^2\cos^2 t]}^{3/2}}
+</mrow>
+</md>
+So the maximum (minimum) curvature is achieved when the denominator
+is a minimum (maximum) which is the case when <m>\sin t =0</m> (<m>\cos t=0</m>).
+So <m>\ka_{\rm max}=\frac{a}{b^2}</m> and <m>\ka_{\rm min}=\frac{b}{a^2}</m>.
+</p></solution>
+</exercise>
+
+<exercise><title><fromexam>M317 2018A</fromexam></title>
+<statement><p>
+<ol label="a">
+<li>
+Find the curvature of <m>y=e^x</m> at <m>(0,1)</m>.
+</li>
+<li>
+Find the equation of the circle best fitting <m>y=e^x</m>
+at <m>(0,1)</m>.
+</li>
+</ol>
+</p></statement>
+
+<answer><p>
+(a) <m>\ka(0)=2^{-3/2}</m> </p><p>
+(b) <m>(x+2)^2+(y-3)^2=8</m>
+</p></answer>
+
+<solution><p>
+Parametrize the curve by <m>\vr(t) = t\,\hi +e^t\,\hj</m>. Then
+<md>
+<mrow>
+\vv(t) &amp; = \hi + e^t\,\hj  &amp;
+\vv(0) &amp; = \hi +\hj 
+</mrow><mrow>
+\frac{ds}{dt} &amp;=|\vv(t)|=\sqrt{1+e^{2t}} &amp;
+\frac{ds}{dt}(0) &amp;=\sqrt{2} 
+</mrow><mrow>
+\hT(t) &amp; = \frac{\vv(t)}{|\vv(t)|} = \frac{\hi+e^t\hj}{\sqrt{1+e^{2t}}}
+&amp;
+\hT(0) &amp; = \frac{\vv(0)}{|\vv(0)|} = \frac{\hi+\hj}{\sqrt{2}}
+</mrow><mrow>
+\va(t) &amp; =  e^t\,\hj  &amp;
+\va(0) &amp; = \hj 
+</mrow>
+</md>
+</p>
+
+<p>(a) We're given <m>y</m> in terms of <m>x</m>, so let's use
+ Part (<xref ref="thm_curvatureFormulae_part_e"/>) of Theorem<nbsp/><xref ref="thm_curvatureFormulae"/>:
+ <md>
+<mrow>
+ \ka
+&amp;=\frac{\big|\difftwo{y}{x}\big|}
+{ {\big[1+\big(\diff{y}{x}\big)^2\big]}^{3/2} } =
+\frac{e^x}
+{ {\big[1+\big(e^x\big)^2\big]}^{3/2} }
+</mrow><mrow>
+\ka(0)&amp;=\frac{1}{[1+1]^{3/2}}=2^{-3/2}
+ </mrow>
+</md>
+</p>
+
+<p>(b)
+<ul>
+<li>  The radius of the circle we want is <m>\rho=\frac{1}{\ka}=2^{3/2}</m>. If its centre is at <m>(a,b)</m>, then the circle will have equation <m>(x-a)^2+(y-b)^2=2^3</m>. So, we will find its centre.
+</li>
+<li> The unit vector <m>\hN</m> points from our point <m>(0,1)</m> towards the centre of the circle. Since the radius of the circle is <m>2^{3/2}</m>, the centre of the circle will be at <m>(0,1)+2^{3/2}\hN</m>. So, we'll find <m>\hN</m>.
+</li>
+<li> Since <m>\hN</m> is a unit vector perpendicular to <m>\hT=\dfrac{\hi+\hj}{\sqrt 2}</m>, we know <m>\hN</m> will be either <m>\dfrac{\hi-\hj}{\sqrt 2}</m> or <m>\dfrac{-\hi+\hj}{\sqrt 2}</m>.
+</li>
+<li> Using <xref text="custom" ref="clpcurvesthm_curvatureFormulae_partd"> Part<nbsp/>(d)</xref> of the proof of Theorem<nbsp/><xref ref="thm_curvatureFormulae"/>:
+<md>
+<mrow>
+\vv(t) \times \va(t) &amp;= \ka\left(\diff{s}{t}\right)^3\hT \times \hN
+</mrow><mrow>
+(\hi+\hj)\times(\hj)&amp;=2^{-3/2}\left(\sqrt2 \right)^3\frac{\hi+\hj}{\sqrt 2}\times\hN
+</mrow><mrow>
+\hk &amp;=\frac{1}{\sqrt2}(\hi + \hj)\times\hN
+</mrow><mrow>
+\hN&amp;=\frac{-\hi+\hj}{\sqrt2}
+ </mrow>
+</md>
+So, the centre of our circle is at point <m>(0,1)+\rho\hN=(0,1)+2^{3/2}\frac{-\hi+\hj}{2^{1/2}}=(-2,3)</m>. Then the equation of the circle is <m>(x+2)^2+(y-3)^2=8</m>.
+</li>
+</ul>
+</p>
+
+</solution>
+</exercise>
+
+<exercise><title><fromexam>M317 2011A</fromexam></title>
+<statement><p>
+Consider the motion of a thumbtack stuck in the tread of a tire which
+is on a bicycle moving at constant speed. This motion is given by
+the parametrized curve
+<me>
+\vr(t) = \big(t - \sin t\,,\, 1 - \cos t\big)
+</me>
+with <m>t  \gt  0</m>.
+<ol label="a">
+<li>
+Sketch the curve in the <m>xy</m>-plane for <m>0  \lt  t  \lt  4\pi</m>.
+</li>
+<li>
+Find and simplify the formula for the curvature <m>\kappa(t)</m>.
+</li>
+<li>
+Find the radius of curvature of the osculating circle to
+<m>\vr(t)</m> at <m>t = \pi</m>.
+</li>
+<li>
+Find the equation of the osculating circle to <m>\vr(t)</m> at <m>t = \pi</m>.
+</li>
+</ol>
+</p></statement>
+
+<hint><p>
+For part (a), determine <m>\vr(0)</m>, <m>\vr(\pi)</m>, <m>\vr(2\pi)</m>, <m>\vr(3\pi)</m>, and <m>\vr(4\pi)</m>, to help you map out the motion. Also visualize the thumbtack as the wheel moves.
+</p>
+
+<p>For part (d), use the fact that you only care about <m>t=\pi</m>: where is this on your sketch? What does that mean about the direction of <m>\hN</m>?
+</p></hint>
+
+<answer>
+<p>(a)</p>
+  <sidebyside width="90%">
+    <image source="pfigs/tack"/>
+    </sidebyside>
+<p>
+(b) <m>\ka(t) = \frac{1}{2^{3/2}\sqrt{1-\cos t}}</m></p><p>
+(c) <m>4</m></p><p>
+(d) <m>(x-\pi)^2 +(y+2)^2 = 16</m>
+</p></answer>
+
+<solution><p> (a)
+Think of
+<me>
+\vr(t) = (t,1) - (\sin t,\cos t)
+</me>
+The <m>(t,1)</m> part gives the position of the centre of the wheel at time
+<m>t</m>. The other part gives the position of the thumbtack with respect to
+the centre of the wheel. In particular,
+<ul>
+<li>
+at time <m>t=0</m>, <m>\vr(0) = (0,0)</m>. The thumbtack is on the ground (i.e. at <m>y=0</m>).
+</li>
+<li>
+At time <m>t=\pi</m>, <m>\vr(\pi) = (\pi,2)</m>. The thumbtack is at its highest point (i.e. at <m>y=2</m>) and is above the centre of the wheel at <m>x=\pi</m>.
+</li>
+<li>
+At time <m>t=2\pi</m>, <m>\vr(2\pi) = (2\pi,0)</m>. The thumbtack is back on the ground (i.e. at <m>y=0</m>) and is below the centre of the wheel at <m>x=2\pi</m>.
+</li>
+<li>
+At time <m>t=3\pi</m>, <m>\vr(3\pi) = (3\pi,2)</m>. The thumbtack is again at its highest point (i.e. at <m>y=2</m>) and is above the centre of the wheel at <m>x=3\pi</m>.
+</li>
+<li>
+At time <m>t=4\pi</m>, <m>\vr(4\pi) = (4\pi,0)</m>. The thumbtack is back on the ground (i.e. at <m>y=0</m>) and is below the centre of the wheel at <m>x=4\pi</m>.
+</li>
+</ul>
+Here is a sketch of the curve.
+</p>
+<sidebyside width="90%">
+  <image source="pfigs/tack"/>
+</sidebyside>
+
+<p>
+(b) Since
+<md>
+<mrow>
+\vr(t) &amp;= \big(t - \sin t\,,\, 1 - \cos t\big)
+</mrow><mrow>
+\vv(t) =\vr'(t)&amp;= \big(1-\cos t\,,\, \sin t\big)
+</mrow><mrow>
+\diff{s}{t}(t)=|\vv(t)|&amp;=\sqrt{2-2\cos t}
+</mrow><mrow>
+\va(t) = \vv'(t)&amp;=\big(\sin t\,,\, \cos t\big)
+</mrow><mrow>
+\vv(t)\times \va(t)&amp;=\det\left[\begin{matrix}\hi&amp;\hj&amp;\hk \\
+     1-\cos t &amp; \sin t &amp; 0 \\
+     \sin t  &amp; \cos t &amp; 0\end{matrix}\right]
+=\big(\cos t-1\big)\,\hk
+</mrow>
+</md>
+the curvature
+<md>
+<mrow>
+\ka(t) =\frac{|\vv(t)\times\va(t)|}{|\vv(t)|^3}
+       =\frac{|\cos t-1|}{(2-2\cos t)^{3/2}}
+       =\frac{1}{2^{3/2}\sqrt{1-\cos t}}
+</mrow>
+</md>
+</p>
+
+<p>(c) The radius of curvature at time <m>t=\pi</m> is
+<me>
+\rho(\pi) = \frac{1}{\ka(\pi)}
+          = \frac{1}{1/2^{3/2}\sqrt{2}}
+          =4
+</me>
+</p>
+
+<p>(d) At time <m>\pi</m>, the tack is at <m>\vr(\pi)=(\pi,2)</m>, which is at the top
+of its trajectory. Looking at the sketch in part (a), we see that,
+at that time <m>\hN(\pi) = -\hj</m>.
+So the osculating circle at time <m>t=\pi</m> has center
+<me>
+\vr(\pi) + \rho(\pi) \hN(\pi)
+=(\pi,2) + 4(0,-1)
+=(\pi,-2)
+</me>
+and radius <m>\rho(\pi)=4</m>. So the equation  of the osculating circle
+at time <m>\pi</m> is
+<me>
+(x-\pi)^2 +(y+2)^2 = 16
+</me>
+</p></solution>
+</exercise>
+</exercisegroup>
+
+<exercisegroup><introduction><application/></introduction>
+
+<exercise>
+<statement><p>
+ Find the curvature <m>\ka</m> as a function of arclength <m>s</m>
+(measured from <m>(0,0)</m>) for the curve
+<me>
+x(\theta)=\int_0^\theta \cos\big(\half\pi t^2\big)dt\quad \quad
+y(\theta)=\int_0^\theta \sin\big(\half\pi t^2\big)dt
+</me>
+</p></statement>
+
+<hint><p>
+You should find that <m>s=\theta</m>!
+</p></hint>
+
+<answer><p>
+<m>\ka(s)=\pi s</m>
+</p></answer>
+
+<solution><p>
+The velocity vector is
+<me>
+\vv(\theta)=x'(\theta)\,\hi+y'(\theta)\,\hj
+= \cos\big(\half\pi\theta^2\big)\,\hi + \sin\big(\half\pi\theta^2\big)\,\hj
+</me>
+Consequently the speed
+<me>
+\diff{s}{\theta}(\theta)= |\vv(\theta)|=1
+\implies s(\theta)=\theta+s(0)
+</me>
+Since <m>s(\theta)</m> is zero when <m>\theta=0</m>, we have <m>s(\theta)=\theta</m> and hence
+<me>
+\hT(s)=\vv(s)
+= \cos\big(\half\pi s^2\big)\,\hi + \sin\big(\half\pi s^2\big)\,\hj
+</me>
+so that
+<me>
+\ka(s)=\left|\diff{\hT}{s}(s)\right|
+=\big|-\pi s\sin\big(\half\pi s^2\big)\,\hi
++\pi s \cos\big(\half\pi s^2\big)\,\hj\big|
+=\pi s
+</me>
+</p></solution>
+</exercise>
+
+<exercise><title><fromexam>M317 2011D</fromexam></title>
+<statement><p>
+Let <m>C</m> be the curve in <m>\bbbr^2</m> given by the graph of the function
+<m>y=\frac{x^3}{3}</m>. Let <m>\kappa(x)</m> be the curvature of <m>C</m> at the point
+<m>(x, x^3/3)</m>. Find all points where <m>\ka(x)</m> attains its maximal values,
+or else explain why such points do not exist. What are the limits of
+<m>\kappa(x)</m> as <m>x \rightarrow \infty</m> and
+<m>x \rightarrow -\infty</m>?
+</p></statement>
+
+<hint><p>
+Since <m>\ka(x)</m> is never negative, <m>\ka(x)</m> is maximum when <m>\ka^2(x)</m> is maximum. The latter is easier to compute.
+</p></hint>
+
+<answer><p>
+The maximum values occur at <m>(x,y)=\pm \big(1/\root{4}\of{5}\,,\,
+                 \frac{1}{3}5^{-3/4}\big)</m>.
+</p>
+
+<p>The limits <m>\lim_{x\rightarrow\pm\infty}\ka(x) = 0</m>.
+</p></answer>
+
+<solution><p>
+The curve is <m>y=y(x)=\frac{x^3}{3}</m>. Since <m>y'(x) = x^2</m> and
+<m>y''(x) = 2x</m>, the curvature is
+<md>
+<mrow>
+\ka(x)
+&amp;=\frac{\big|\difftwo{y}{x}(x)\big|}
+  {\Big[1+\big(\diff{y}{x}(x)\big)^2\Big]^{3/2}}
+=\frac{\big|2x\big|}
+  {\big[1+x^4\big]^{3/2}}
+</mrow>
+</md>
+ We'd like to find the critical points of <m>\ka(x)</m>, but differentiating it looks messy. Since <m>\ka(x)</m> has only nonnegative values, its maxima correspond the the maxima of the function <m>\ka^2(x)</m>. So, we find the critical points of <m>\ka^2(x)</m> instead, to save ourselves some computational toil.
+<md>
+<mrow>
+0&amp;=\diff{ }{x}\ka(x)^2
+=\diff{ }{x}\frac{4x^2}{{(1+x^4)}^3}
+=\frac{8x}{{(1+x^4)}^3} - 3\frac{16x^5}{{(1+x^4)}^4}
+</mrow><mrow>
+&amp;=\frac{8x(1+x^4)-3\times 16x^5}{{(1+x^4)}^4}
+=\frac{8x(1-5x^4)}{{(1+x^4)}^4}
+</mrow>
+</md>
+Note that <m>\ka(0)=0</m> and <m>\ka(x)\rightarrow 0</m> as <m>x\rightarrow\pm \infty</m>.
+So the maximum occurs when <m>x=\pm 1/\root{4}\of{5}</m>.
+</p></solution>
+</exercise></exercisegroup>
+
+</exercises>

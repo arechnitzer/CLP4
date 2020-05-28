@@ -1,0 +1,309 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+
+<!-- Copyright 2018 Joel Feldman, Andrew Rechnitzer and Elyse Yeager -->
+<!-- This work is licensed under the Creative Commons Attribution-NonCommercial-ShareAlike 4.0 International License-->
+<!-- https://creativecommons.org/licenses/by-nc-sa/4.0 -->
+
+<exercises>
+<exercisegroup> <introduction><application/></introduction>
+
+<exercise><title><fromexam>M317 2010A</fromexam></title>
+<statement><p>
+Let <m>\vr(t) = x(t)\,\hi + y (t)\,\hj + z(t)\,\hk</m> be the position
+of a particle at time <m>t</m> . Suppose the motion of the particle satisfies
+the differential equation
+<m>\difftwo{\vr}{t} = f (r) \vr</m>
+where <m>r = |\vr|</m> .
+<ol label="a">
+<li><p>
+Suppose <m>f(r)</m> is an arbitrary function of <m>r</m> . Prove or disprove each
+of the following statements.
+<ol label="(i)">
+<li>
+The motion of the particle is planar.
+</li>
+<li>
+The path of the particle sweeps out equal areas in equal times.
+</li>
+</ol></p>
+</li>
+<li>
+Find all forms of <m>f(r)</m> for which the motion of the particle always lies
+on a straight line.
+</li>
+<li>
+Give a specific form of <m>f(r)</m> for which the motion of the particle could
+lie on an ellipse.
+</li>
+</ol>
+</p></statement>
+
+<hint><p>
+(a) Review §<xref ref="sec_central_forces"/>.
+</p>
+
+<p>(b) Any straight line can be parametrized as <m>\vr(s) = \vr_0+\hat\vT\, s</m>.
+</p>
+
+<p>(c) Review §<xref ref="sec_planet"/>.
+</p></hint>
+
+<answer><p>
+(a) See the solutions.
+</p>
+
+<p>(b) <m>f(r)=0</m> for all <m>r\ge 0</m>.
+</p>
+
+<p>(c) Any <m>f(r)</m> which is a positive constant times <m>-\frac{1}{r^3}</m> works.
+</p></answer>
+
+<solution><p> (a)
+Both (i) and (ii) were proven in §<xref ref="sec_central_forces"/>. Here are those arguments.
+</p>
+
+<p>Define
+<me>
+\vOm(t) = \vr(t)\times\vv(t)
+</me>
+By the product rule,
+<md>
+<mrow>
+\diff{\vOm}{t}(t) &amp;=\diff{\ }{t}\big(\vr(t)\times\vv(t)\big)
+=\vv(t)\times\vv(t) + \vr(t)\times\va(t)
+</mrow><mrow>
+&amp;=m\vr(t)\times f\big(r(t))\vr(t)\big)
+=\vZero
+</mrow>
+</md>
+So <m>\vOm(t)</m> is in fact independent of <m>t</m>. It is a constant vector that
+we'll just denote <m>\vOm</m>.
+</p>
+
+<p>As <m>\vr(t)\times\vv(t)=\vOm</m>, we have that
+<m>\vr(t)</m> is always perpendicular to <m>\vOm</m> and
+<me>
+\vr(t)\cdot\vOm =0
+</me>
+<ul>
+<li>
+If <m>\vOm\ne \vZero</m>, this is exactly the statement that <m>\vr(t)</m> always
+lies in the plane through the origin with normal vector <m>\vOm</m>.
+</li>
+<li>
+If <m>\vOm=\vZero</m>, then <m>\vr(t)</m> is always parallel to <m>\vv(t)</m> and there
+is some function <m>\alpha(t)</m> such that
+<me>
+\diff{\vr}{t}(t) = \vv(t) = \alpha(t)\,\vr(t)
+</me>
+This is a first order, linear, ordinary differential equation that we can solve
+by using an integrating factor. Set
+<me>
+\beta(t) = \int_0^t\alpha(t)\ \dee{t}
+</me>
+Then
+<md>
+<mrow>
+\diff{\vr}{t}(t) = \alpha(t)\,\vr(t)
+&amp;\iff e^{-\beta(t)} \diff{\vr}{t}(t) -\alpha(t)e^{-\beta(t)}\,\vr(t)=0
+</mrow><mrow>
+&amp;\iff \diff{\ }{t}\big[e^{-\beta(t)}\vr(t)\big] = 0
+</mrow><mrow>
+&amp;\iff e^{-\beta(t)}\vr(t) = \vr(0)
+</mrow><mrow>
+&amp;\iff \vr(t) =  e^{\beta(t)}\vr(0)
+</mrow>
+</md>
+so that <m>\vr(t)</m> lies on a line through the origin. This makes sense <mdash/>
+the particle is always moving parallel to its radius vector.
+</li>
+</ul>
+This completes the verification that <m>\vr(t)</m> lies in a plane.
+</p>
+
+<p>Now we show that the radius vector <m>\vr(t)</m> sweeps out equal areas in
+equal times. In other words, we now verify that the rate at which
+<m>\vr(t)</m> sweeps out area is independent of time. To do so we rewrite the
+statement that <m>|\vr(t)\times\vv(t)\big|</m> is constant in polar coordinates.
+Writing <m>\vr(t) = r(t)\hat\vr\big(\theta(t)\big)</m> and then applying
+Lemma <xref ref="lem_polar"/>.b gives that
+<md>
+<mrow>
+&amp;\text{constant} = \big|\vr\times\vv\big|
+   = \Big|r\hat\vr\times\Big(\diff{r}{t}\ \hat\vr
+             + r\ \diff{\theta}{t}\ \hat\vth\Big)\Big|
+   =r^2\diff{\theta}{t}
+</mrow><mrow>
+&amp;\text{since}\quad |\hat\vr\times\hat\vr|=0,\
+                        |\hat\vr\times\hat\vth|=1
+</mrow>
+</md>
+is constant. It now suffices to observe that <m>r(t)^2\diff{\theta}{t}(t)</m>
+is exactly twice the rate at which <m>\vr(t)</m> sweeps out area. To see this,
+just look at the figure below. The shaded area is essentially a wedge of
+a circular disk of radius <m>r</m>. (If <m>r(t)</m> were independent of <m>t</m>, it would be exactly a wedge of a circular disk.) Its area is the
+fraction <m>\frac{\dee{\theta}}{2\pi}</m> of the area of the full disk, which is
+</p>
+
+<sidebyside widths="30% 30%" valign="middle">
+  <p>
+  <me>
+  \frac{\dee{\theta}}{2\pi}\ \pi r^2 = \frac{1}{2}r^2\,\dee{\theta}
+  </me>
+  </p>
+  <image source="pfigs/equalArea"/>
+</sidebyside>
+
+<p> (b) If <m>f(r)</m> is identically zero, then <m>\vr''(t)=0</m>,
+so that <m>\vr'(t)</m> is a constant, say <m>\vv_0</m>, and <m>\vr(t) = \vr_0 + \vv_0 t</m>,
+for some constant <m>\vr_0</m>. That's a straight line.
+</p>
+
+<p>We'll now show that if the motion of the particle always lies
+on a straight line, then <m>f(r)</m> must be identically zero.
+Suppose that <m>\vr(t)</m> is a straight line. Then there are
+constant vectors <m>\vr_0</m> and <m>\hat\vT</m> such that <m>\vr(t) =\vr_0+ g(t)\hat\vT</m>
+for some scalar valued function <m>g(t)</m>. Then
+<md>
+<mrow>
+\vr''(t) &amp;= f\big(r(t)\big)\vr(t)
+</mrow>
+</md>
+becomes
+<md>
+<mrow>
+g''(t)\hat\vT &amp; = f\big(r(t)\big)\,\big[\vr_0+ g(t)\hat\vT\big]
+              = f\big(r(t)\big)\,\vr_0
+               + f\big(r(t)\big) g(t)\hat\vT
+</mrow>
+</md>
+We may always choose the initial conditions so that, for example,
+<m>\vr_0=\hi</m> and <m>\hat\vT=\hj</m>.  So
+<md>
+<mrow>
+g''(t)\hj &amp;   = f\big(r(t)\big)\,\hi
+               + f\big(r(t)\big) g(t)\hj
+</mrow>
+</md>
+Taking the dot product of both sides with <m>\hi</m> gives
+<m>f\big(r(t)\big)=0</m>, as desired.
+</p>
+
+<p> (c) We saw in §<xref ref="sec_planet"/>
+that the gravitational force <m>-\frac{GMm}{r^3}\vr</m> can produce
+elliptical orbits.
+So any <m>f(r)</m> which is a positive constant times <m>-\frac{1}{r^3}</m> does
+the job.
+</p>
+
+</solution>
+</exercise>
+
+<exercise><title><fromexam>M317 2000A</fromexam></title>
+<statement><p>
+An object moves along a curve in the <m>xy</m>-plane having polar
+equation <m>r=\frac{1}{\theta+\al}</m> (where <m>\al</m> is a constant) under the influence
+of a central force so that the object has no transverse acceleration.
+<ol label="a">
+<li>
+Verify that <m>r^2\dot\theta=h</m> remains constant as the object
+moves.
+</li>
+<li>
+Express the magnitude of the acceleration of the object as
+a function of <m>r</m> and <m>h</m>.
+</li>
+</ol>
+</p>
+
+</statement>
+
+<hint><p>
+(a) For any central force <m>\big|\vr(t)\times\vv(t)\big|</m> is independent of <m>t</m>.
+</p>
+
+<p>(b) Review Lemma <xref ref="lem_polar"/>.
+</p></hint>
+
+<answer><p>
+(a) See the solution.
+</p>
+
+<p>(b) <m>|\va(t)| =\frac{h^2}{r(t)^3}</m>
+</p></answer>
+
+<solution><p>
+(a)
+Our object is subject to a central force. So the acceleration <m>\va(t)</m>
+is parallel to <m>\vr(t)</m> and
+<me>
+\diff{\ }{t}\big(\vr(t)\times\vv(t)\big)
+=\vv(t)\times\vv(t) + \vr(t)\times\va(t)
+=\vZero +\vZero
+=\vZero
+</me>
+By Lemma <xref ref="lem_polar"/>,
+<m>\vv(t) = \diff{r}{t}(t)\ \hat\vr\big(\theta(t)\big)
+             + r(t)\ \diff{\theta}{t}(t)\ \hat\vth\big(\theta(t)\big)</m>.
+Because <m>\vr(t)=r(t)\hat\vr\big(\theta(t)\big)</m> is parallel to
+<m>\hat\vr\big(\theta(t)\big)</m> and is perpendicular to
+<m>\hat\vth\big(\theta(t)\big)</m>,
+<me>
+\vr(t)\times\vv(t)
+=r(t)^2\dot\theta(t)\,\hat\vr\big(\theta(t)\big)\times
+                       \hat\vth\big(\theta(t)\big)
+</me>
+and, in particular,
+<me>
+|\vr(t)\times\vv(t)| = r(t)^2|\dot\theta(t)|
+</me>
+is a constant. As <m>\dot\theta(t)</m> is continuous, <m>r(t)^2\dot\theta(t)</m>
+is also constant.
+</p>
+
+<p>(b)
+By Lemma <xref ref="lem_polar"/>,
+the acceleration
+<md>
+<mrow>
+\va(t) &amp;= \Big(\difftwo{r}{t}(t)-r(t)\Big(\diff{\theta}{t}(t)\Big)^2\Big)
+             \hat\vr\big(\theta(t)\big)
+</mrow><mrow>
+&amp;\hskip1in   +\Big(r(t)\ \difftwo{\theta}{t}(t)
+          + 2 \diff{r}{t}(t)\diff{\theta}{t}(t)\Big)
+                  \hat\vth\big(\theta(t)\big)
+</mrow>
+</md>
+Because our object is subject to a central force, the acceleration
+<m>\va(t)</m> is parallel to <m>\hat\vr\big(\theta(t)\big)</m>. So the
+<m>\hat\vth\big(\theta(t)\big)</m> component of the acceleration is zero
+and
+<me>
+\va(t) = \Big(\difftwo{r}{t}(t)-r(t)\Big(\diff{\theta}{t}(t)\Big)^2\Big)
+             \hat\vr\big(\theta(t)\big)
+</me>
+so that
+<me>
+|\va(t)| = \Big|\difftwo{r}{t}(t)-r(t)\Big(\diff{\theta}{t}(t)\Big)^2\Big|
+</me>
+Since <m>r(t)=\frac{1}{\theta(t)+\al}</m>
+<md>
+<mrow>
+\dot r(t) = - \frac{1}{[\theta(t)+\al]^2}\dot\theta(t)
+          =- r(t)^2 \dot\theta(t) =-h
+</mrow>
+</md>
+So <m>\difftwo{r}{t}(t)=0</m> and
+<md>
+<mrow>
+|\va(t)| = r(t)\dot\theta(t)^2
+=\frac{r(t)^4\dot\theta(t)^2}{r(t)^3}
+=\frac{h^2}{r(t)^3}
+</mrow>
+</md>
+</p>
+
+</solution>
+</exercise></exercisegroup>
+
+</exercises>

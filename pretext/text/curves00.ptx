@@ -167,7 +167,6 @@
   </example>
 
 </introduction>
-
 <xi:include href="./curves01.ptx" />
 <xi:include href="./curves02.ptx" />
 <xi:include href="./curves03.ptx" />

@@ -1,0 +1,3863 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+
+<!-- Copyright 2018 Joel Feldman, Andrew Rechnitzer and Elyse Yeager -->
+<!-- This work is licensed under the Creative Commons Attribution-NonCommercial-ShareAlike 4.0 International License-->
+<!-- https://creativecommons.org/licenses/by-nc-sa/4.0 -->
+
+<exercises>
+
+<exercisegroup><introduction><conceptual/></introduction>
+
+<exercise>
+<statement><p>
+Each of the figures below contains a sketch of a surface <m>S</m> and
+its boundary <m>\partial S</m>. Stokes' theorem says that
+<m>\oint_{\partial S}\vF\cdot \dee{\vr}
+=\dblInt_S\vnabla\times\vF\cdot\hn\,\dee{S}</m>
+if <m>\hn</m> is a correctly oriented unit normal vector to <m>S</m>.
+Add to each sketch a typical such normal vector.
+</p>
+
+<sidebyside widths="5% 27% 5% 27% 5% 22%">
+<p>(a)</p> <image source="pfigs/stokesOrientA"/>
+<p>(b)</p> <image source="pfigs/stokesOrientB"/>
+<p>(c)</p> <image source="pfigs/stokesOrientC"/>
+</sidebyside>
+
+</statement>
+
+<hint><p>
+One approach is to first do
+</p>
+
+<sidebyside width="26%">
+<image source="pfigs/stokesOrientAh"/>
+</sidebyside>
+
+<p>
+Then imagine slowly deforming the sketch to the get specified <m>S</m>'s
+</p></hint>
+
+<answer>
+  <sidebyside widths="5% 27% 5% 27% 5% 22%">
+  <p>(a)</p> <image source="pfigs/stokesOrientAs"/>
+  <p>(b)</p> <image source="pfigs/stokesOrientBs"/>
+  <p>(c)</p> <image source="pfigs/stokesOrientCs"/>
+  </sidebyside>
+</answer>
+
+<solution><p>
+One approach is to first consider
+</p>
+<sidebyside width="26%">
+<image source="pfigs/stokesOrientAh"/>
+</sidebyside>
+<p>
+The correct normal to this surface is sketched in
+</p>
+<sidebyside width="26%">
+<image source="pfigs/stokesOrientAhs"/>
+</sidebyside>
+<p>
+It is correct because
+<ul>
+<li>
+    if you walk along <m>\partial S</m> in the direction of the arrow
+    on <m>\partial S</m>,
+</li>
+<li>
+     with the vector from your feet to your head  having direction <m>\hn</m>
+</li>
+<li>
+    then <m>S</m> is on your left hand side.
+</li>
+</ul>
+Now pretend that the surface <m>S</m> is made of rubber and that <m>\hn</m> is glued to <m>S</m>. We can push on this <m>S</m> to deform it to the <m>S</m> of part (a) or to the <m>S</m>
+of part (b). This gives the solutions to parts (a) and (b).
+</p>
+
+<sidebyside widths="5% 27% 5% 27%">
+  <p>(a)</p> <image source="pfigs/stokesOrientAs"/>
+  <p>(b)</p> <image source="pfigs/stokesOrientBs"/>
+</sidebyside>
+
+<p>
+To deal with part (c), we can first rotate the flat disk that we considered above to get
+</p>
+
+<sidebyside width="18%">
+<image source="pfigs/stokesOrientCh"/>
+</sidebyside>
+
+<p>
+We can push on this <m>S</m> to deform it to the <m>S</m> of part (c). This gives
+the solution to part (c).
+</p>
+
+<p>(c)</p>
+
+<sidebyside width="22%">
+  <image source="pfigs/stokesOrientCs"/>
+</sidebyside>
+
+</solution>
+</exercise>
+
+<exercise>
+<statement><p>
+Let
+<ul>
+<li>
+<m>R</m> be a finite region in the <m>xy</m>-plane,
+</li>
+<li><p>
+the boundary, <m>C</m>, of <m>R</m> consist of a single piecewise smooth, simple closed curve
+    <ul>
+<li>
+     that is oriented (i.e. an arrow is put on <m>C</m>) consistently
+     with <m>R</m> in the sense that if you walk along
+     <m>C</m> in the direction of the arrow, then <m>R</m> is on your left
+</li>
+</ul></p>
+
+<sidebyside width="27%">
+  <image source="pfigs/greens1"/>
+</sidebyside>
+</li>
+<li>
+<m>F_1(x,y)</m> and <m>F_2(x,y)</m> have continuous first partial derivatives
+at every point of <m>R</m>.
+</li>
+</ul>
+Use Stokes' theorem to show that
+<me>
+\oint_{C} \big[F_1(x,y)\,\dee{x} +F_2(x,y)\,\dee{y}\big]
+ =\dblInt_{R}\Big(\frac{\partial F_2}{\partial x}
+                - \frac{\partial F_1}{\partial y}\Big)\ \dee{x}\dee{y}
+</me>
+i.e. to show Green's theorem.
+</p>
+
+</statement>
+
+<hint><p>
+Define the vector field <m>\vF(x,y,z) = F_1(x,y)\,\hi +F_2(x,y)\,\hj</m>.
+</p></hint>
+
+<answer><p>
+See the solution.
+</p></answer>
+
+<solution><p> Think of the <m>xy</m>-plane as being the plane <m>z=0</m> in <m>\bbbr^3</m>.
+</p>
+
+<sidebyside width="37%">
+  <image source="pfigs/stokesGreen"/>
+</sidebyside>
+
+<p>
+    We are going to apply Stokes' theorem (Theorem <xref ref="thm_Stokes"/>) with <m>S</m> being the given region <m>R</m> in the <m>xy</m>-plane
+and with <m>\vF(x,y,z) = F_1(x,y)\,\hi +F_2(x,y)\,\hj</m>.
+Then
+<ul>
+<li>
+the unit normal vector to <m>S</m> specified in Stokes theorem is <m>\hk</m>
+(if you walk along <m>\partial S = C</m> in the direction of the arrow
+    on <m>C</m> with the vector from your feet to your head  having direction <m>\hk</m>
+    then <m>S=R</m> is on your left hand side) and
+</li>
+<li>
+<m>\dee{S}=\dee{x}\,\dee{y}</m> and
+</li>
+<li> the curl of <m>\vF</m> is
+<me>
+\vnabla\times\vF=\det\left[\begin{matrix}\hi &amp; \hj &amp; \hk \\
+                  \pdiff{}{x} &amp;
+                  \pdiff{}{y} &amp;
+                  \pdiff{}{z} \\
+                  F_1(x,y) &amp; F_2(x,y) &amp; 0 \end{matrix}\right]
+=\Big(\frac{\partial F_2}{\partial x}
+                - \frac{\partial F_1}{\partial y}\Big)\,\hk
+</me>
+</li>
+</ul>
+So Stokes' theorem gives
+<md>
+<mrow>
+\oint_{C} \big[F_1(x,y)\,\dee{x} +F_2(x,y)\,\dee{y}\big]
+&amp;=\oint_{\partial S}\vF\cdot \dee{\vr}
+  =\dblInt_{S}\vnabla\times\vF\cdot\hn\ \dee{S}
+</mrow><mrow>
+&amp;=\dblInt_{R}\Big(\frac{\partial F_2}{\partial x}
+                - \frac{\partial F_1}{\partial y}\Big)\ \dee{x}\dee{y}
+</mrow>
+</md>
+</p>
+
+</solution>
+</exercise>
+
+<exercise>
+<statement><p>
+Verify the identity
+<m>\ \oint_C\phi\vnabla\psi\cdot \dee{\vr}=-\oint_C\psi\vnabla\phi\cdot
+                       \dee{\vr}\ </m>
+for any continuously differentiable scalar fields <m>\phi</m> and <m>\psi</m> and
+curve <m>C</m> that is the boundary of a piecewise smooth surface.
+</p></statement>
+
+<hint><p>
+First verify the vector identity
+<m>\vnabla\times[\phi\vnabla\psi+\psi\vnabla\phi]=\vZero</m>
+</p></hint>
+
+<answer><p>
+See the solution.
+</p></answer>
+
+<solution><p>
+We are to show that <m>\oint_C[\phi\vnabla\psi+\psi\vnabla\phi]\cdot \dee{\vr}=0</m>.
+ Suppose that <m>C=\partial S</m>. Then, by Stokes' theorem
+<me>
+\oint_C[\phi\vnabla\psi+\psi\vnabla\phi]\cdot \dee{\vr}
+=\dblInt_S\vnabla\times[\phi\vnabla\psi+\psi\vnabla\phi]\cdot\hn\, \dee{S}
+</me>
+We will show below
+that <m>\vnabla\times[\phi\vnabla\psi+\psi\vnabla\phi]=\vZero</m>.
+This will imply that <m>\oint_C[\phi\vnabla\psi+\psi\vnabla\phi]\cdot \dee{\vr}=\vZero</m>.
+One way to see that <m>\vnabla\times[\phi\vnabla\psi+\psi\vnabla\phi]=\vZero</m>
+is
+<md>
+<mrow>
+\vnabla\times[\phi\vnabla\psi+\psi\vnabla\phi]
+&amp;=\vnabla\times[\vnabla(\phi\psi)] &amp;
+&amp; (\text{by part (c) of Theorem }<xref ref="thm_gradIdentities"/>)
+</mrow><mrow>
+&amp;=\vZero&amp;
+&amp; (\text{(by part (b) of Theorem }<xref ref="thm_degTwoIdentities"/>)
+</mrow>
+</md>
+Another way to see that <m>\vnabla\times[\phi\vnabla\psi+\psi\vnabla\phi]=\vZero</m>
+is
+<md>
+<mrow>
+\vnabla\!\times\![\phi\vnabla\psi+\psi\vnabla\phi]
+&amp;=\vnabla\phi\!\times\1\vnabla\psi+\phi\vnabla\!\times\!(\vnabla\psi)
++\vnabla\psi\!\times\!\vnabla\phi+\psi\vnabla\!\times\!(\vnabla\phi)
+</mrow><mrow>
+&amp;=\vnabla\phi\times\vnabla\psi
++\vnabla\psi\times\vnabla\phi
+</mrow><mrow>
+&amp;\hskip1in\text{since } \phi\vnabla\times(\vnabla\psi)=\psi\vnabla\times(\vnabla\phi)=\vZero
+</mrow><mrow>
+&amp;=\vZero
+</mrow>
+</md>
+</p></solution>
+</exercise>
+</exercisegroup>
+
+<exercisegroup><introduction><procedural/></introduction>
+
+<exercise>
+<statement><p>
+ Let <m>C</m> be the curve of intersection of the cylinder <m>x^2+y^2=1</m>
+and the surface <m>z=y^2</m> oriented in the counterclockwise direction as seen
+from <m>(0,0,100)</m>. Let <m>\vF=(x^2-y\,,\,y^2+x\,,\,1)</m>. Calculate
+<m>\oint_C\vF\cdot \dee{\vr}</m>
+<ol label="a">
+<li> by direct evaluation
+</li>
+<li> by using Stokes' Theorem.
+</li>
+</ol>
+</p></statement>
+
+<hint><p>
+To parametrize the curve <m>x^2+y^2=1</m>, <m>z=y^2</m>, first parametrize the
+circle <m>x^2+y^2=1</m>. That is, find <m>x(t)</m> and
+<m>y(t)</m> obeying <m>x(t^2)+y(t)^2=1</m>. Then set <m>z(t) =y(t)^2</m>.
+</p></hint>
+
+<answer><p>
+(a) <m>2\pi</m> </p><p>
+(b) <m>2\pi</m>
+</p></answer>
+
+<solution><p>
+(a) Observe that <m>x(t)=\cos t</m> and <m>y(t)=\sin t</m> obey <m>x(t)^2+y(t)^2=1</m>.
+Then <m>z(t)=y(t)^2=\sin ^2 t</m>.  So we may parametrize the curve by
+<m>\vr(t)=(\cos t, \sin t, \sin^2 t)</m> with <m>0\le t\le 2\pi</m>.
+Then
+<md>
+<mrow>
+\vr'(t)&amp;=(-\sin t\,,\, \cos t \,,\, 2\sin t\cos t)
+</mrow><mrow>
+\vF\big(\vr(t)\big)&amp;=\big(\cos^2t-\sin t\,,\,\sin^2t+\cos t\,,\,1\big)
+</mrow><mrow>
+\vF\big(\vr(t)\big)\cdot\vr'(t)&amp;=-\sin t\cos^2 t+\sin^2 t+\sin^2t\cos t
++\cos^2t+2\sin t\cos t
+</mrow><mrow>
+&amp;=1+\frac{1}{3}\diff{}{t}[\cos^3t+\sin^3 t]+\sin(2t)
+</mrow><mrow>
+\oint_C\vF\cdot \dee{\vr}
+&amp;=\int_0^{2\pi}
+\left\{1+\frac{1}{3}\diff{}{t}[\cos^3t+\sin^3 t]+\sin(2t)\right\}\,\dee{t}
+</mrow><mrow>
+&amp;=\left[t+\frac{1}{3}[\cos^3t+\sin^3 t] -\frac{1}{2}\cos(2t) \right]_0^{2\pi}
+</mrow><mrow>
+&amp;=2\pi
+</mrow>
+</md>
+</p>
+
+<p>(b) Let <m>S</m> be the surface <m>z=f(x,y)</m> with <m>f(x,y)=y^2</m>
+and <m>x^2+y^2\le 1</m>. Since <m>C</m> is oriented counter clockwise when
+viewed from high on the <m>z</m>-axis, Stokes' theorem requires that we use
+the normal <m>\hn</m> to <m>S</m> with positive <m>z</m> component. Hence
+<md>
+<mrow>
+\hn\,dS&amp;=\Big[-\pdiff{f}{x}\,\hi
+-\pdiff{f}{y}\,\hj+\hk\Big]\,\dee{x}\,\dee{y}
+=\Big[-2y\,\hj+\hk\Big]\,\dee{x}\,\dee{y}
+</mrow><mrow>
+\vnabla\times\vF&amp;=\det\left[\begin{matrix}\hi &amp; \hj &amp; \hk \\
+                  \pdiff{}{x} &amp;
+                  \pdiff{}{y} &amp;
+                  \pdiff{}{z} \\
+                  x^2-y &amp; y^2+x &amp; 1 \end{matrix}\right]
+=2\hk
+</mrow><mrow>
+\vnabla\times\vF\cdot\hn\,dS&amp;=2\,\dee{x}\,\dee{y}
+</mrow><mrow>
+\oint_C\vF\cdot \dee{\vr}
+&amp;=\dblInt_S\vnabla\times\vF\cdot\hn\,\dee{S}
+=2\dblInt_{x^2+y^2\le 1}\,\dee{x}\,\dee{y}
+</mrow><mrow>
+&amp;=2\pi
+</mrow>
+</md>
+</p>
+
+</solution>
+</exercise>
+
+<exercise>
+<statement><p>
+Evaluate
+ <m>\oint_C \vF\cdot \dee{\vr}</m> where <m>\vF=ye^x\,\hi+(x+e^x)\,\hj+z^2\,\hk</m> and
+<m>C</m> is the curve
+<me>
+\vr(t)=(1+\cos t)\,\hi+(1+\sin t)\,\hj+(1-\sin t-\cos t)\,\hk\qquad
+0\le t\le 2\pi
+</me>
+</p></statement>
+
+<hint><p>
+Apply Stokes' theorem.
+Note that <m>\vr(t) = x(t)\,\hi+y(t)\,\hj +z(t)\,\hk</m>
+obeys <m>x(t)+y(t)+z(t)=3</m>, for every <m>t</m>, and that <m>x(t)\,\hi+y(t)\,\hj
+=(1+\cos t)\,\hi+(1+\sin t)\,\hj</m> runs counterclockwise around
+the circle of radius 1 centered on <m>(1,1)</m>.
+</p></hint>
+
+<answer><p>
+<m>\pi</m>
+</p></answer>
+
+<solution><p>
+We apply Stokes' theorem. First,
+<me>
+\vnabla\times\vF=\det\left[\begin{matrix}\hi &amp; \hj &amp; \hk \\
+                  \pdiff{}{x} &amp;  \pdiff{}{y} &amp; \pdiff{}{z} \\
+                  ye^x &amp; x+e^x &amp; z^2
+                 \end{matrix}\right]
+=\big(1+e^x-e^x\big)\,\hk
+=\hk
+</me>
+Note that <m>\vr(t) = x(t)\,\hi+y(t)\,\hj +z(t)\,\hk</m>
+obeys <m>x(t)+y(t)+z(t)=3</m>, for every <m>t</m>, and that <m>x(t)\,\hi+y(t)\,\hj
+=(1+\cos t)\,\hi+(1+\sin t)\,\hj</m> runs counterclockwise around
+the circle of radius 1 centered on <m>(1,1)</m>. So we choose <m>S</m>
+to be the part of the plane <m>G(x,y,z)=x+y+z=3</m> with <m>(x-1)^2+(y-1)^2\le 1</m>.
+Then, by Stokes' Theorem,
+<me>
+\oint_C \vF\cdot \dee{\vr}
+=\dblInt_S \vnabla\times\vF\cdot \hn\,\dee{S}
+=\dblInt_S \hk\cdot \hn\,\dee{S}
+</me>
+with
+<me>
+\hn\,\dee{S} = \pm \frac{\vnabla G}{\vnabla G\cdot\hk}\,\dee{x} \dee{y}
+= \pm\big(\hi+\hj+\hk\big)\,\dee{x} \dee{y}
+</me>
+As <m>(1+\cos t)\,\hi+(1+\sin t)\,\hj</m> runs counterclockwise around
+the circle <m>(x-1)^2+(y-1)^2\le 1</m>, Stokes' theorem
+specifies the plus sign and
+<me>
+\oint_C \vF\cdot \dee{\vr}
+=\dblInt_{(x-1)^2+(y-1)^2\le 1} \dee{x}\,\dee{y}
+=\pi
+</me>
+</p>
+
+</solution>
+</exercise>
+
+<exercise><title><fromexam>M317 2011A</fromexam></title>
+<statement><p>
+Find the value of
+<m>\dblInt_S\vnabla\times\vF\cdot\hn\,\dee{S}</m> where
+<m>\vF = \big(z - y\,,\, x\,,\, -x\big)</m> and <m>S</m> is the hemisphere
+<me>
+\Set{(x, y, z) \in\bbbr^3 }{ x^2 + y^2 + z^2 = 4,\ z \ge 0}
+</me>
+oriented so the surface normals point away from the centre of the
+hemisphere.
+</p></statement>
+
+<hint><p>
+The form of the integral should be quite suggestive.
+</p></hint>
+
+<answer><p>
+<m>8\pi</m>
+</p></answer>
+
+<solution><p>
+The boundary of <m>S</m> is
+<me>
+\partial S = \Set{(x,y,z)}{z=0,\ x^2+y^2=4}
+</me>
+and can be parametrized
+<me>
+\vr(\theta) = 2\cos\theta\,\hi +2\sin\theta\,\hj\qquad
+0\le\theta\le 2\pi
+</me>
+</p>
+
+<sidebyside width="28%">
+<image source="pfigs/OE11A_4"/>
+</sidebyside>
+
+<p>
+So, by Stokes' theorem (Theorem <xref ref="thm_Stokes"/>)
+<md>
+<mrow>
+&amp;\dblInt_S\vnabla\times\vF\cdot\hn\,\dee{S}
+=\oint_{\partial S}\vF\cdot\dee{\vr}
+</mrow><mrow>
+&amp;\hskip0.5in=\int_0^{2\pi} (\overbrace{-2\sin\theta\,\hi+2\cos\theta\,\hj-2\cos\theta\,\hk}^
+               {\vF(\vr(\theta))})\cdot
+     (\overbrace{-2\sin\theta\,\hi+2\cos\theta\,\hj}^
+                {\vr'(\theta)})\ \dee{\theta}
+</mrow><mrow>
+&amp;\hskip0.5in=4\int_0^{2\pi}\dee{\theta}
+</mrow><mrow>
+&amp;\hskip0.5in=8\pi
+</mrow>
+</md>
+</p></solution>
+</exercise>
+
+<exercise><title><fromexam>M317 1998D</fromexam></title>
+<statement><p>
+ Let <m>\cS</m> be the part of the surface <m>z=16-{(x^2+y^2)}^2</m>
+which lies above the <m>xy</m>-plane. Let <m>\vF</m> be the vector field
+<me>
+\vF=x\ln(1+z)\,\hi+x(3+y)\,\hj+y\cos z\,\hk
+</me>
+Calculate
+<me>
+\dblInt_{\cS}\vnabla\times\vF\cdot\hn\,\dee{S}
+</me>
+where <m>\hn</m> is the upward normal on <m>\cS</m>.
+</p></statement>
+
+<hint><p>
+The form of the integral should be quite suggestive.
+</p></hint>
+
+<answer><p>
+<m>12\pi</m>
+</p></answer>
+
+<solution><p>
+The boundary of <m>\cS</m> is the circle <m>x^2+y^2=4</m>, <m>z=0</m>.
+Let <m>\cC</m> be this circle, oriented by the parametrization <m>x(t)=2\cos t</m>,
+<m>y(t)=2\sin t</m>, <m>z(t)=0</m>. By Stokes' theorem
+<md>
+<mrow>
+&amp;\dblInt_{\cS}\vnabla\times\vF\cdot\hn\,\dee{S}
+=\int_{\cC}\vF\cdot \dee{\vr}
+=\int_0^{2\pi}\vF(2\cos t,2\sin t,0)\cdot \diff{\vr}{t}(t)\ \dee{t}
+</mrow><mrow>
+&amp;\hskip0.25in=\int_0^{2\pi}\big[0\,\hi+2\cos t(3+2\sin t)\,\hj+2\sin t\,\hk\big]\cdot
+\big[-2\sin t\,\hi+2\cos t\hj\big]\ \dee{t}
+</mrow><mrow>
+&amp;\hskip0.25in=\int_0^{2\pi}\big[12\cos^2 t+8\cos^2t\sin t\big]\ \dee{t}
+</mrow><mrow>
+&amp;\hskip0.25in=\int_0^{2\pi}\big[6+6\cos(2t)+8\cos^2t\sin t\big]\ \dee{t}
+</mrow><mrow>
+&amp;\hskip0.25in=\Big[6t+3\sin(2t) -\frac{8}{3}\cos^3 t\Big]_0^{2\pi}
+=12\pi
+</mrow>
+</md>
+For an efficient, sneaky, way to evaluate
+<m>\int_0^{2\pi} \cos^2 t\,\dee{t}</m>, see Example
+<xref ref="eg_workIntegralB"/>.
+</p>
+</solution>
+
+<solution>
+<p>
+<ul>
+<li>
+<m>\cS</m> be the surface specified in the question, with upward pointing normal, and
+</li>
+<li>
+<m>\cD</m> be the disk <m>\Set{(x,y,z)}{x^2+y^2\le 4,\ z=0}</m>, with normal <m>\hn=\hk</m>, and
+</li>
+<li>
+<m>\cC</m> be the circle <m>\Set{(x,y,z)}{x^2+y^2=4,\ z=0}</m>, oriented as in the figure below.
+</li>
+</ul>
+</p>
+
+<sidebyside width="27%">
+<image source="pfigs/OE98D_6"/>
+</sidebyside>
+
+<p>
+Note that <m>\cC</m> is the boundary curve for both <m>\cS</m> and <m>\cD</m>. So, by
+Stokes' theorem, twice
+<md>
+<mrow>
+\dblInt_{\cS}\vnabla\times\vF\cdot\hn\,\dee{S}
+&amp;=\int_{\cC}\vF\cdot \dee{\vr}
+=\dblInt_{\cD}\vnabla\times\vF\cdot\hn\,\dee{S}
+</mrow><mrow>
+&amp;=\dblInt_{\cD}\vnabla\times\vF\cdot\hk\,\dee{S}
+</mrow>
+</md>
+Now the <m>\hk</m> component of <m>\vnabla\times\vF</m> is
+<md>
+<mrow>
+\vnabla\times\vF\cdot\hk
+&amp;=\pdiff{}{x}\big[x(3+y)\big]
+ - \pdiff{}{y}\big[x\ln(1+z)\big]
+=3+y
+</mrow>
+</md>
+</p>
+
+<p>As <m>y</m> is odd under <m>y\rightarrow-y</m> and <m>\cD</m> is invariant under <m>y\rightarrow-y</m>, we have <m>\dblInt_{\cD}y\,\dee{S}=0</m>
+and
+<md>
+<mrow>
+\dblInt_{\cS}\vnabla\times\vF\cdot\hn\,\dee{S}
+= \dblInt_{\cD}(3+y)\,\dee{S}
+=3\dblInt_{\cD}\dee{S}
+=3\,\text{Area}(\cS) =3\,\pi 2^2=12\pi
+</mrow>
+</md>
+</p>
+
+</solution>
+</exercise>
+
+<exercise><title><fromexam>M317 2001A</fromexam></title>
+<statement><p>
+Let <m>\cC</m> be the intersection of the paraboloid <m>z=4-x^2-y^2</m>
+with the cylinder <m>x^2+(y-1)^2=1</m>, oriented counterclockwise when viewed
+from high on the <m>z</m>-axis. Let <m>\vF=xz\,\hi+x\,\hj+yz\,\hk</m>. Find
+<m>\oint_{\cC}\vF\cdot \dee{\vr}</m>.
+</p></statement>
+
+<hint><p>
+What's the title of this section?
+</p></hint>
+
+<answer><p>
+<m>\pi</m>
+</p></answer>
+
+<solution><p>
+Let <m>S</m> be the portion of the paraboloid <m>z=f(x,y)=4-x^2-y^2</m>
+with <m>x^2+(y-1)^2\le 1</m> and let <m>\hn</m> be the upward normal to <m>S</m>.
+For this surface
+<me>
+\hn\,\dee{S}=\big(-f_x(x,y)\,\hi -f_y(x,y)\,\hj +\hk\big)\dee{x}\dee{y}
+   = \big(2x\,\hi+2y\,\hj+\hk\big)\,\dee{x}\dee{y}
+</me>
+by (<xref ref="eq_SUdSgraph"/>). As <m>(x,y,z)</m> runs over
+<m>S</m>, <m>(x,y)</m> runs over the circular disk
+<me>
+D = \Set{(x,y)}{x^2+(y-1)^2\le 1}
+</me>
+For the given vector field
+<md>
+<mrow>
+\vnabla\times\vF
+&amp;=\det\left[\begin{matrix}
+\hi &amp;\hj &amp;\hk
+</mrow><mrow>
+\tfrac{\partial }{\partial x} &amp; \tfrac{\partial }{\partial y} &amp;
+                \tfrac{\partial }{\partial z}
+</mrow><mrow>
+xz &amp; x &amp; yz
+\end{matrix}
+\right]
+</mrow><mrow>
+&amp;=z\,\hi+x\,\hj+\hk
+</mrow>
+</md>
+so that, by Stokes' theorem  (Theorem <xref ref="thm_Stokes"/>),
+<md>
+<mrow>
+\oint_{\cC}\vF\cdot \dee{\vr}
+&amp;=\dblInt_S \vnabla\times\vF\cdot \hn\,\dee{S}
+</mrow><mrow>
+&amp;=\dblInt_D
+   \big[2x\overbrace{(4-x^2-y^2)}^{z=f(x,y)}+2xy+1\big]\,\dee{x}\dee{y}
+</mrow>
+</md>
+By oddness under <m>x\rightarrow -x</m>, all terms integrate to zero except
+for the last. So
+<me>
+\oint_{\cC}\vF\cdot \dee{\vr}
+=\dblInt_D\,\dee{x}\dee{y}
+=\text{Area}(D)
+=\pi
+</me>
+</p></solution>
+</exercise>
+
+<exercise>
+<statement><p>
+Let <m>\vF = - ye^z\,\hi + x^3\cos z\,\hj + z\sin(xy)\,\hk</m>, and let
+<m>S</m> be the part of the surface <m> z = (1-x^2)(1-y^2)</m> that lies above the
+square <m>-1\le x\le 1</m>, <m>-1\le y\le 1</m> in the <m>xy</m>-plane.  Find
+the flux of <m>\vnabla\times \vF</m> upward through <m>S</m>.
+</p></statement>
+
+<hint><p>
+We are to evaluate a flux integral of the form <m>\dblInt_S\vnabla\times\vF\cdot\hn\,\dee{S}</m>. Sure looks like
+one side of Stokes' theorem.
+</p></hint>
+
+<answer><p>
+<m>8</m>
+</p></answer>
+
+<solution><p>
+The surface
+<md>
+<mrow>
+S&amp;=\Set{(x,y,z)}{-1\le x\le 1,\ -1\le y\le 1,\ z\ge 0,\ z = (1-x^2)(1-y^2)}
+</mrow><mrow>
+ &amp;=\Set{(x,y,z)}{-1\le x\le 1,\ -1\le y\le 1,\ \ z = (1-x^2)(1-y^2)}
+</mrow>
+</md>
+Note that when <m>x=1</m> or <m>x=-1</m> or <m>y=1</m> or <m>y=-1</m>,
+we have <m>z= (1-x^2)(1-y^2)=0</m>.  So the boundary of <m>S</m>,  call it <m>C</m>,
+is the boundary of the square <m>-1\le x,y\le 1</m>, <m>z=0</m>, oriented
+counterclockwise. Here is a sketch of <m>C</m>.
+</p>
+
+<sidebyside width="36%">
+<image source="pfigs/singGnA"/>
+</sidebyside>
+
+<p>
+Apply Stokes' theorem. Observing that <m>z=0</m> on <m>C</m>
+so that <m>\vF = -y\,\hi +x^3\,\hj</m>,
+<md>
+<mrow>
+&amp;\dblInt_S\vnabla\times\vF\cdot\hn\,\dee{S}
+=\oint_C\vF\cdot \dee{\vr}
+=\oint_C[-y\,\hi+x^3\hj]\cdot \dee{\vr}
+</mrow><mrow>
+&amp;\hskip0.5in=\underbrace{\int_{-1}^1 -(-1)\,\dee{x}}_{y=-1{\rm\ side}}
+   +\underbrace{\int_{-1}^1 (1)^3\,\dee{y}}_{x=1{\rm\ side}}
+   + \underbrace{\int^{-1}_1 -(1)\,\dee{x}}_{y=1{\rm\ side}}
+   + \underbrace{\int^{-1}_1 (-1)^3\,\dee{y}}_{x=-1{\rm\ side}}
+</mrow><mrow>
+&amp;\hskip0.5in=8
+</mrow>
+</md>
+</p></solution>
+</exercise>
+
+<exercise>
+<statement><p>
+Evaluate the integral   <m>\oint_C \vF\cdot \dee{\vr}</m>, in which
+<m>\vF = (e^{x^2} - yz\,,\,\sin y - yz \,,\,xz + 2y)</m> and <m>C</m>
+is the triangular path from <m>(1, 0, 0)</m> to <m>(0, 1, 0)</m> to <m>(0, 0, 1)</m> to
+<m>(1, 0, 0)</m>.
+</p></statement>
+
+<hint><p>
+The vector field <m>\vF</m> looks too complicated for a direct evaluation
+of the line integral. So, try Stokes' theorem.
+</p></hint>
+
+<answer><p>
+<m>1</m>
+</p></answer>
+
+<solution><p>
+We shall apply Stokes' Theorem. The curl of <m>\vF</m> is
+<md>
+<mrow>
+\vnabla\times\vF&amp;=\det\left[\begin{matrix}\hi &amp; \hj &amp; \hk \\
+                  \pdiff{}{x} &amp;
+                  \pdiff{}{y} &amp;
+                  \pdiff{}{z} \\
+                  e^{x^2} - yz &amp; \sin y - yz &amp; xz + 2y\end{matrix}\right|
+</mrow><mrow>&amp;=(2+y)\,\hi-(z+y)\,\hj+(0+z)\,\hk
+</mrow>
+</md>
+The curve <m>C</m> is a triangle. All three vertices of the triangle obey
+<m>x+y+z=1</m>. So the triangle is the boundary
+of the surface <m>S=\Set{(x,y,z)}{x\ge 0,\ y\ge 0,\ z=1-x-y\ge 0}</m>.
+</p>
+
+<sidebyside width="23%">
+<image source="pfigs/domainTriangleA"/>
+</sidebyside>
+
+<p>
+The equation of the surface is <m>z=f(x,y)=1-x-y</m>.
+So, by (<xref ref="eq_SUdSgraph"/>),
+<md>
+<mrow>
+\hn\ \dee{S}
+&amp;=\big(-f_x\,\hi-f_y\,\hj+\hk\big)\,\dee{x}\,\dee{y}
+</mrow><mrow>
+&amp;=(\hi+\hj+\hk)\,\dee{x}\,\dee{y}
+</mrow>
+</md>
+Here <m>\hn</m> is the upward pointing unit normal.
+The set of points <m>(x,y)</m> for which there is a corresponding <m>(x,y,z)</m>
+in <m>S</m> is  <m>T=\Set{(x,y)}{x\ge 0,\ y\ge 0,\ x+y\le 1}</m>, which is a triangle
+of area <m>\frac{1}{2}</m>.
+Since 
+<md>
+<mrow>
+\vnabla\times\vF\cdot\hn\,\dee{S}
+&amp;=[(2+y)\hi-(z+y)\hj+(0+z)\hk]\cdot(\hi+\hj+\hk)\,\dee{x}\,\dee{y}
+</mrow><mrow>
+&amp;= 2\,\dee{x}\,\dee{y}
+</mrow>
+</md>
+we have
+<md>
+<mrow>
+\oint_C\vF\cdot \dee{\vr}&amp;=\dblInt_S\vnabla\times\vF\cdot\hn\,\dee{S}
+</mrow><mrow>
+&amp;=\dblInt_T 2\ \dee{x}\,\dee{y}
+= 2\,\text{Area}(T)
+=1
+</mrow>
+</md>
+</p></solution>
+</exercise>
+
+<exercise><title><fromexam>M317 2001D</fromexam></title>
+<statement><p>
+Let <m>\vF(x,y,z)=-z\,\hi+x\,\hj+y\,\hk</m> be a vector field. Use
+Stokes' theorem to evaluate the line integral
+<m>
+\oint_C\vF\cdot \dee{\vr}
+</m>
+where <m>C</m> is the intersection of the plane <m>z=y</m> and the ellipsoid
+<m>\frac{x^2}{4}+\frac{y^2}{2}+\frac{z^2}{2}=1</m>, oriented
+counter-clockwise when viewed from high on the  <m>z</m>-axis.
+</p>
+
+</statement>
+
+<answer><p>
+<m>4\pi</m>
+</p></answer>
+
+<solution><p>
+Stokes' theorem, which is Theorem <xref ref="thm_Stokes"/>, says that <m>\oint_C\vF\cdot \dee{\vr}
+=\dblInt_S\nabla\times\vF\cdot\hn\,\dee{S}</m> for any surface <m>S</m> whose boundary is
+<m>C</m>. For the given vector field
+<md>
+<mrow>
+\nabla\times\vF(x,y,z)
+&amp;=\det\left[\begin{matrix}
+\hi &amp;\hj &amp;\hk
+</mrow><mrow>
+\tfrac{\partial }{\partial x} &amp; \tfrac{\partial }{\partial y} &amp;
+                \tfrac{\partial }{\partial z}
+</mrow><mrow>
+-z &amp; x &amp; y
+\end{matrix}
+\right]
+</mrow><mrow>
+&amp;=\hi-\hj+\hk
+</mrow>
+</md>
+Choose
+<md>
+<mrow>
+S &amp;= \Set{(x,y,z)}{z=y,\ \tfrac{x^2}{4}+\tfrac{y^2}{2}+\tfrac{z^2}{2}\le 1}
+</mrow><mrow>
+  &amp;= \Set{(x,y,z)}{z=y,\ \tfrac{x^2}{4}+y^2\le 1}
+</mrow>
+</md>
+to be the part of the plane <m>z=y</m> bounded by the ellipsoid.
+</p>
+
+<sidebyside width="71%">
+  <image source="pfigs/OE01DQ4"/>
+</sidebyside>
+
+<p>
+As <m>S</m> is part of the plane <m>z=f(x,y)=y</m>, (<xref ref="eq_SUdSgraph"/>), gives that
+<md>
+<mrow>
+\hn\,\dee{S} &amp;=\pm \big(-f_x\,,\,-f_y\,,\, 1\big)\dee{x}\dee{y}
+</mrow><mrow>
+&amp;=\pm (0\,,\,-1\,,\, 1)\dee{x}\dee{y}
+</mrow>
+</md>
+As <m>C</m> has the standard orientation (counter-clockwise when viewed
+from high on the <m>z</m>-axis), we want <m>\hn</m> to have a positive <m>z</m>-component.
+So
+<m>\hn\,\dee{S}= (0\,,\,-1\,,\, 1)\dee{x}\dee{y} </m>.
+From the second form of <m>S</m> given above, we see that as <m>(x,y,z)</m>
+runs over <m>S</m>, <m>(x,y)</m> runs over
+<me>
+D=\Set{(x,y)}{\tfrac{x^2}{4}+y^2\le 1}
+</me>
+Consequently, Stokes' theorem gives that
+<md>
+<mrow>
+\oint_C\vF\cdot \dee{\vr}
+
+&amp;=\dblInt_D\overbrace{(1,-1,1)}^{\nabla\times\vF}\cdot
+            \overbrace{(0\,,\,-1\,,\, 1)\dee{x}\dee{y} }^{\hn\,\dee{S}}
+</mrow><mrow>
+&amp;=2\dblInt_D \dee{x}\dee{y}
+=2\,\text{Area}(D)
+</mrow>
+</md>
+The ellipse <m>D</m>, that is <m>\tfrac{x^2}{4}+y^2\le 1</m>, has semi-axes
+<m>a=2</m> and <m>b=1</m> and hence area <m>\pi ab=2\pi</m>. Finally
+<me>
+\oint_C\vF\cdot \dee{\vr}
+=2\,\text{Area}(D)
+=4\pi
+</me>
+</p></solution>
+</exercise>
+
+<exercise><title><fromexam>M317 2016D</fromexam></title>
+<statement><p>
+Consider the vector field <m>\vF(x,y, z) = z^2 \,\hi + x^2 \,\hj + y^2\,\hk</m>
+in <m>\bbbr^3</m>.
+<ol label="a">
+<li>
+Compute the line integral <m>I_1 = \int_{C_1}\vF\cdot\dee{\vr}</m>
+where <m>C_1</m> is the curve consisting of three line segments,
+<m>L_1</m> from <m>(2, 0, 0)</m> to <m>(0, 2, 0)</m>, then
+<m>L_2</m> from <m>(0, 2, 0)</m> to <m>(0, 0, 2)</m>, finally
+<m>L_3</m> from <m>(0, 0, 2)</m> to <m>(2, 0, 0)</m>.
+</li>
+<li>
+A simple closed curve <m>C_2</m> lies on the plane <m>E\,:\, x + y + z = 2</m>,
+enclosing a region <m>R</m> on the plane of area <m>3</m>, and oriented in a
+counterclockwise direction as observed from the positive <m>x</m>-axis.
+Compute the line integral <m>I_2 = \int_{C_2}\vF\cdot\dee{\vr}</m>.
+</li>
+</ol>
+</p></statement>
+
+<answer><p>
+(a) <m>8</m></p><p>
+(b) <m>4\sqrt{3}</m>
+</p></answer>
+
+<solution><p>
+Note that the curve of part (a) is a simple closed curve
+that lies in the plane <m>x+y+z=2</m> and is oriented in a
+counterclockwise direction as observed from the positive <m>x</m>-axis.
+The curve of part (a) encloses a triangle.
+</p>
+
+<sidebyside width="40%">
+<image source="pfigs/OE16D_9"/>
+</sidebyside>
+
+<p>
+Two of the sides of the triangle
+are <m>(0,2,0)-(2,0,0)=(-2,2,0)</m> and  <m>(0,0,2)-(0,2,0)=(0,-2,2)</m> so the
+area of the triangle is
+<me>
+\frac{1}{2}\big|(-2,2,0)\times (0,-2,2)\big|
+=\frac{1}{2} \det\left[\begin{matrix}\hi&amp;\hj&amp;\hk\\
+     -2&amp; 2&amp; 0 \\  0 &amp; -2 &amp; 2 \end{matrix}\right]
+=\frac{1}{2}\big|(4,4,4)\big|
+=2\sqrt{3}
+</me>
+So let's do part (b) first.
+</p>
+
+<p>(b) We are not told explicitly what <m>C_2</m> is, so we certainly can't
+do a direct evaluation. Instead, let's use Stokes' theorem
+(Theorem <xref ref="thm_Stokes"/>). The curl of <m>\vF</m> is
+<md>
+<mrow>
+\vnabla\times\vF
+&amp;=\det\left[\begin{matrix}
+\hi &amp;\hj &amp;\hk
+</mrow><mrow>
+\tfrac{\partial }{\partial x} &amp; \tfrac{\partial }{\partial y} &amp;
+                \tfrac{\partial }{\partial z}
+</mrow><mrow>
+z^2 &amp; x^2 &amp; y^2
+\end{matrix}
+\right]
+</mrow><mrow>
+&amp;= 2y\,\hi
+    +2z\,\hj
+    +2x\,\hk
+</mrow>
+</md>
+The upward pointing unit normal to <m>E</m> is <m>\hn=\frac{\hi+\hj+\hk}{\sqrt{3}}</m>.
+So, by Stokes' theorem,
+<md>
+<mrow>
+I_2 &amp;= \int_{C_2}\vF\cdot\dee{\vr}
+    =\dblInt_R \vnabla\times\vF\cdot\hn\,\dee{S}
+</mrow><mrow>
+&amp;    =\dblInt_R \big(2y\,\hi +2z\,\hj +2x\,\hk\big)\cdot
+               \frac{\hi+\hj+\hk}{\sqrt{3}}\,\dee{S}
+</mrow><mrow>
+&amp;=\frac{2}{\sqrt{3}}\dblInt_R \big(\overbrace{y + z + x}^
+                             {=2\ {\rm on}\ R}\big)\,\dee{S}
+
+=\frac{4}{\sqrt{3}}\text{Area}(R)
+=4\sqrt{3}
+</mrow>
+</md>
+</p>
+
+<p>(a) Denote by <m>T</m> the triangle enclosed by <m>C_1</m>. By the
+computation that we have just done in part (b)
+<md>
+<mrow>
+I_1 &amp;= \int_{C_1}\vF\cdot\dee{\vr}
+     =\frac{4}{\sqrt{3}}\text{Area}(T)
+     =8
+</mrow>
+</md>
+</p></solution>
+</exercise>
+
+<exercise><title><fromexam>M317 2017A</fromexam></title>
+<statement><p>
+Let <m>C = C_1 + C_2 + C_3</m> be the curve given by the union of the
+three parameterized curves
+<md alignment="alignat">
+<mrow>
+\vr_1(t) &amp;= \big(2\cos t, 2\sin t, 0\big), &amp;\qquad
+&amp;0 \le t \le \pi/2
+</mrow><mrow>
+\vr_2(t) &amp;= \big(0, 2\cos t, 2\sin t\big), &amp;
+&amp;0 \le t \le \pi/2
+</mrow><mrow>
+\vr_3(t) &amp;= \big(2\sin t, 0, 2\cos t\big), &amp;
+&amp;0 \le t \le \pi/2
+</mrow>
+</md>
+<ol label="a">
+<li>
+Draw a picture of <m>C</m>. Clearly mark each of the curves <m>C_1</m>, <m>C_2</m>, and <m>C_3</m>
+and indicate the orientations given by the parameterizations.
+</li>
+<li>
+Find and parameterize an oriented surface <m>S</m> whose boundary is <m>C</m>
+(with the given orientations).
+</li>
+<li>
+Compute the line integral <m>\int_C \vF\cdot\dee{\vr}</m> where
+<me>
+\vF = \Big(y + \sin(x^2)\,,\, z - 3x + \ln(1 + y^2)\,,\, y + e^{z^2}\Big)
+</me>
+</li>
+</ol>
+</p></statement>
+
+<answer>
+<p>(a)</p>
+<sidebyside width="40%">
+  <image source="pfigs/OE17A_5"/>
+</sidebyside>
+
+<p>
+(b) <m>S=\Set{(x,y,z)}{x^2+y^2+z^2=4,\ x\ge 0,\ y\ge 0,\ z\ge 0}</m>
+with
+<md>
+<mrow>
+&amp;\vr(\theta,\varphi)
+= 2\cos\theta\sin\varphi\ \hi
++ 2\sin\theta\sin\varphi\ \hj
++ 2\cos\varphi\ \hk
+</mrow><mrow>
+&amp;0\le\theta\le\frac{\pi}{2},\
+0\le\varphi\le\frac{\pi}{2}
+</mrow>
+</md>
+and
+<me>
+\hn = \cos\theta\sin\varphi\ \hi
+            +\sin\theta\sin\varphi\ \hj
+            +\cos\varphi\ \hk
+=\frac{1}{2}\,\vr(\theta,\varphi)
+</me>
+</p>
+
+<p>(c) <m>-4\pi</m>
+</p></answer>
+
+<solution><p>
+(a) Observe that
+<ul>
+<li>
+the curve <m>C_1</m> is one quarter of a circle in the <m>xy</m>-plane,
+centred on the origin, of radius <m>2</m>, starting at <m>(2,0,0)</m> and
+ending at <m>(0,2,0)</m> and
+</li>
+<li>
+the curve <m>C_2</m> is one quarter of a circle in the <m>yz</m>-plane,
+centred on the origin, of radius <m>2</m>, starting at <m>(0,2,0)</m> and
+ending at <m>(0,0,2)</m> and
+</li>
+<li>
+the curve <m>C_3</m> is one quarter of a circle in the <m>xz</m>-plane,
+centred on the origin, of radius <m>2</m>, starting at <m>(0,0,2)</m> and
+ending at <m>(2,0,0)</m>.
+</li>
+</ul>
+Here is a sketch.
+</p>
+<sidebyside width="40%">
+  <image source="pfigs/OE17A_5"/>
+</sidebyside>
+
+<p>
+(b) <m>C</m> lies completely on the sphere <m>x^2+y^2+z^2=4</m>. So it is natural
+to choose
+<me>
+S=\Set{(x,y,z)}{x^2+y^2+z^2=4,\ x\ge 0,\ y\ge 0,\ z\ge 0}
+</me>
+and to parametrize <m>S</m> using spherical coordinates
+<md>
+<mrow>
+&amp;\vr(\theta,\varphi)
+= 2\cos\theta\sin\varphi\ \hi
++ 2\sin\theta\sin\varphi\ \hj
++ 2\cos\varphi\ \hk
+</mrow><mrow>
+&amp;0\le\theta\le\frac{\pi}{2},\
+0\le\varphi\le\frac{\pi}{2}
+</mrow>
+</md>
+Since
+<md>
+<mrow>
+\frac{\partial\vr}{\partial\theta}
+&amp;= -2\sin\theta\sin\varphi\,\hi +2\cos\theta\sin\varphi\,\hj
+</mrow><mrow>
+\frac{\partial\vr}{\partial\varphi}
+&amp;= 2\cos\theta\cos\varphi\,\hi +2\sin\theta\cos\varphi\,\hj
+  - 2\sin\varphi\,\hk
+</mrow>
+</md>
+so that
+<md>
+<mrow>
+\frac{\partial\vr}{\partial\theta}\times\frac{\partial\vr}{\partial\varphi}
+&amp;= \det\left[\begin{matrix} \hi &amp; \hj &amp; \hk \\
+-2\sin\theta\sin\varphi &amp; 2\cos\theta\sin\varphi &amp; 0 \\
+2\cos\theta\cos\varphi &amp; 2\sin\theta\cos\varphi &amp; - 2\sin\varphi
+         \end{matrix}\right]
+</mrow><mrow>
+&amp;= -4\cos\theta\sin^2\varphi\ \hi
+   -4\sin\theta\sin^2\varphi\ \hj
+   -4\sin\varphi\cos\varphi\ \hk
+</mrow>
+</md>
+(<xref ref="eq_SUdSparam"/>) gives
+<md>
+<mrow>
+\hn\,\dee{S} &amp;= \pm \frac{\partial\vr}{\partial\theta}\times
+            \frac{\partial\vr}{\partial\varphi}\,\dee{\theta}\dee{\varphi}
+</mrow><mrow>
+&amp;= \mp 4\big(\cos\theta\sin\varphi\ \hi
+            +\sin\theta\sin\varphi\ \hj
+            +\cos\varphi\ \hk\big)
+          \sin\varphi\ \dee{\theta}\dee{\varphi}
+</mrow>
+</md>
+We want <m>\hn</m> to point outward, for compatibility with the orientation
+of <m>C</m>. So we choose the <m>+</m> sign.
+<md>
+<mrow>
+\hn\,\dee{S}
+&amp;= 4\big(\cos\theta\sin\varphi\ \hi
+            +\sin\theta\sin\varphi\ \hj
+            +\cos\varphi\ \hk\big)
+          \sin\varphi\ \dee{\theta}\dee{\varphi}
+</mrow><mrow>
+&amp;=2\,\vr(\theta,\varphi)\sin\varphi\ \dee{\theta}\dee{\varphi}
+</mrow>
+</md>
+</p>
+
+<p>(c) The vector field <m>\vF</m> looks too complicated for a direct evaluation
+of the line integral. So, in preparation for an application of Stokes'
+theorem, we compute
+<md>
+<mrow>
+\vnabla\times\vF&amp;=\det\left[\begin{matrix}\hi&amp;\hj&amp;\hk\\
+     \frac{\partial }{\partial x}&amp;
+        \frac{\partial }{\partial y}&amp;
+        \frac{\partial }{\partial z}\\
+ y + \sin(x^2) &amp; z - 3x + \ln(1 + y^2) &amp; y + e^{z^2}\end{matrix}\right]
+</mrow><mrow>
+&amp;= -4\,\hk
+</mrow>
+</md>
+So, by Stokes' theorem (Theorem <xref ref="thm_Stokes"/>),
+<md>
+<mrow>
+&amp;\int_C\vF\cdot\dee{\vr}
+=\dblInt_S\vnabla\times\vF\cdot\hn\,\dee{S}
+</mrow><mrow>
+&amp;\hskip0.1in= \int_0^{\pi/2}\hskip-5pt\dee{\varphi}
+                         \int_0^{\pi/2}\hskip-5pt\dee{\theta}\
+\big(-4\hk\big)\cdot
+\big(\cos\theta\sin\varphi\ \hi
+            +\sin\theta\sin\varphi\ \hj
+            +\cos\varphi\ \hk\big)\
+          4\sin\varphi
+</mrow><mrow>
+&amp;\hskip0.1in=-16 \int_0^{\pi/2}\dee{\varphi}\int_0^{\pi/2}\dee{\theta}\
+              \cos\varphi\sin\varphi
+=16\ \frac{\pi}{2}\ \frac{\cos^2\varphi}{2}\bigg|_0^{\pi/2}
+</mrow><mrow>
+&amp;\hskip0.1in=-4\pi
+</mrow>
+</md>
+</p></solution>
+</exercise>
+
+<exercise><title><fromexam>M317 2016A</fromexam></title>
+<statement><p>
+We consider the cone with equation <m>z = \sqrt{x^2 + y^2}</m>. Note that its tip,
+or vertex, is located at the origin <m>(0, 0, 0)</m>. The cone is oriented
+in such a way that the normal vectors point downwards (and away from
+the <m>z</m> axis). In the parts below, both <m>S_1</m> and <m>S_2</m> are
+oriented this way.
+</p>
+
+<p>Let <m>\vF = \big(-zy, zx, xy \cos(yz)\big)</m>.
+</p>
+
+<p><ol label="a">
+<li>
+Let <m>S_1</m> be the part of the cone that lies between the planes
+<m>z = 0</m> and <m>z = 4</m>. Note that <m>S_1</m> does not include any part of
+the plane <m>z = 4</m>. Use Stokes' theorem to determine the value of
+<me>
+\dblInt_{S_1} \vnabla\times\vF \cdot \hn\,\dee{S}
+</me>
+Make a sketch indicating the orientations of <m>S_1</m> and of the
+contour(s) of integration.
+</li>
+<li>
+Let <m>S_2</m> be the part of the cone that lies below the plane
+<m>z = 4</m> and above <m>z = 1</m>. Note that <m>S_2</m> does not include any part
+of the planes <m>z = 1</m> and <m>z = 4</m>. Determine the flux of <m>\vnabla\times\vF</m> across <m>S_2</m>. Justify your answer, including a sketch indicating the
+orientations of <m>S_2</m> and of the contour(s) of integration.
+</li>
+</ol>
+</p></statement>
+
+<answer><p>
+(a) <m>-128\pi</m>,</p><p>
+(b) <m>-126\pi</m>
+</p></answer>
+
+<solution><p>
+ (a)
+The boundary, <m>\partial S_1</m>, of <m>S_1</m> as specified in Stokes' theorem (Theorem
+<xref ref="thm_Stokes"/>) is the circle
+<m>\sqrt{x^2+y^2}=4</m>, <m>z=4</m> oriented <em>clockwise</em> when viewed from high on
+the <m>z</m>-axis. That is, we can parametrize <m>\partial S_1</m> by
+<md>
+<mrow>
+\vr(t) = 4\cos t\,\hi -4\sin t\,\hj +4\,\hk,\qquad 0\le t\le 2\pi
+</mrow>
+</md>
+So
+<md>
+<mrow>
+\vF\big(\vr(t)\big)\cdot\dee{\vr}
+&amp;= \big(16\sin t \,,\, 16\cos t \,,\, -16\sin t\cos t \cos(-16\sin t)  \big)
+</mrow><mrow>&amp;\hskip2in
+      \cdot
+   \big(-4\sin t \,,\, -4\cos t \,,\, 0\big)\,\dee{t}
+</mrow><mrow>
+&amp;= -64\,\dee{t}
+</mrow>
+</md>
+and, by Stokes' theorem,
+<md>
+<mrow>
+\dblInt_{S_1} \vnabla\times\vF \cdot \hn\,\dee{S}
+&amp;= \oint_{\partial S_1} \vF\big(\vr(t)\big)\cdot\dee{\vr}
+= -64 \int_0^{2\pi} \dee{t}
+=-128\pi
+</mrow>
+</md>
+</p>
+
+<sidebyside widths="26% 29%" valign="middle">
+  <image source="pfigs/conePa"/>
+ <image source="pfigs/conePb"/>
+</sidebyside>
+
+<p>
+ (b)
+The boundary, <m>\partial S_2</m>, of <m>S_2</m> consists of two parts,
+a circle in the plane <m>z=4</m> and a circle in the plane <m>z=1</m>.
+We'll call the first part <m>\partial S_{2a}</m>. It is the same as
+<m>\partial S_1</m>. We'll call the second part <m>\partial S_{2b}</m>.
+It is the circle <m>\sqrt{x^2+y^2}=1</m>, <m>z=1</m> oriented <em>counterclockwise</em>
+when viewed from high on the <m>z</m>-axis.
+We can parametrize it
+<md>
+<mrow>
+\vr(t) = \cos t\,\hi +\sin t\,\hj + \hk,\qquad 0\le t\le 2\pi
+</mrow>
+</md>
+So, on <m>\partial S_{2b}</m>,
+<md>
+<mrow>
+\vF\big(\vr(t)\big)\cdot\dee{\vr}
+&amp;= \big(-\sin t \,,\, \cos t \,,\, \sin t\cos t \cos(\sin t)  \big)
+      \cdot
+   \big(-\sin t \,,\, \cos t \,,\, 0\big)\,\dee{t}
+</mrow><mrow>
+&amp;= \dee{t}
+</mrow>
+</md>
+and, by Stokes' theorem,
+<md>
+<mrow>
+\dblInt_{S_2} \vnabla\times\vF \cdot \hn\,\dee{S}
+&amp;= \oint_{\partial S_{2a}} \vF\big(\vr(t)\big)\cdot\dee{\vr}
+   +\oint_{\partial S_{2b}} \vF\big(\vr(t)\big)\cdot\dee{\vr}
+</mrow><mrow>
+&amp;= -128\pi +  \int_0^{2\pi} \dee{t}
+</mrow><mrow>
+&amp;=-126\pi
+</mrow>
+</md>
+</p></solution>
+</exercise>
+
+<exercise><title><fromexam>M317 2015A</fromexam></title>
+<statement><p>
+Consider the curve <m>C</m> that is the intersection of the plane <m>z = x + 4</m>
+and the cylinder <m>x^2 + y^2 = 4</m>, and suppose <m>C</m> is oriented so that
+it is traversed <em>clockwise</em> as seen from above.
+</p>
+
+<p>Let <m>\vF(x, y, z) = \big(x^3 + 2y\,,\, \sin(y) + z\,,\, x + \sin(z^2)\big)</m>.
+</p>
+
+<p>Use Stokes' Theorem to evaluate the line integral
+<m>\oint_C\vF\cdot\dee{\vr}</m>.
+</p></statement>
+
+<answer><p>
+<m>4\pi</m>
+</p></answer>
+
+<solution><p>
+Denote by
+<me>
+S=\Set{(x,y,z)}{z=x+4,\ x^2+y^2\le 4}
+</me>
+the part of the plane <m>z=x+4</m> that is contained in the cylinder
+<m>x^2+y^2=4</m>. Orient <m>S</m> by the downward pointing normal
+<m>\hn =\frac{1}{\sqrt{2}}(1,0,-1)</m>. Then <m>C</m> is the boundary of <m>S</m>.
+The part of <m>C</m> and <m>S</m> that are in the first octant are sketched below.
+</p>
+
+<sidebyside width="45%">
+ <image source="pfigs/OE15A_5"/>
+</sidebyside>
+
+<p>
+We may parametrize <m>S</m> by
+<me>
+\vr(x,y) = (x,y, x+4)\qquad\text{with}\quad x^2+y^2\le 4
+</me>
+So,
+<me>
+\frac{\partial\vr}{\partial x}\times\frac{\partial\vr}{\partial y}
+= \det\left[\begin{matrix} \hi &amp; \hj &amp; \hk \\
+1 &amp; 0 &amp; 1 \\
+0 &amp; 1 &amp; 0 \end{matrix}\right]
+= \big(-1, 0, 1\big)
+</me>
+and, by (<xref ref="eq_SUdSparam"/>),
+<md>
+<mrow>
+\hn\,\dee{S} = -\frac{\partial\vr}{\partial x}\times
+            \frac{\partial\vr}{\partial y}\,\dee{x}\dee{y}
+= (1,0,-1)\,\dee{x}\dee{y}
+</mrow>
+</md>
+We have chosen to <q><m>-</m></q> sign in <m>\hn\,\dee{S} =
+       \pm\frac{\partial\vr}{\partial x}\times
+        \frac{\partial\vr}{\partial y}\,\dee{x}\dee{y}</m>
+to give the downward pointing normal. As the curl of <m>\vF</m> is
+<md>
+<mrow>
+\vnabla\times\vF
+&amp;=\det\left[\begin{matrix}
+\hi &amp;\hj &amp;\hk
+</mrow><mrow>
+\tfrac{\partial }{\partial x} &amp; \tfrac{\partial }{\partial y} &amp;
+                \tfrac{\partial }{\partial z}
+</mrow><mrow>
+x^3 + 2y &amp; \sin(y) + z &amp;  x + \sin(z^2)
+\end{matrix}
+\right]
+</mrow><mrow>
+&amp;= -\hi -\hj -2\hk
+</mrow>
+</md>
+Stokes' theorem (Theorem <xref ref="thm_Stokes"/>) gives
+<md>
+<mrow>
+\oint_C\vF\cdot\dee{\vr}
+&amp;=\dblInt_S\vnabla\times\vF\cdot\hn\,\dee{S}
+=\dblInt_S (-1,-1,-2)\cdot(1,0,-1)\,\dee{x}\dee{y}
+</mrow><mrow>
+&amp;=\dblInt_S \dee{x}\dee{y}
+=4\pi
+</mrow>
+</md>
+</p></solution>
+</exercise>
+
+<exercise><title><fromexam>M317 2013D</fromexam></title>
+<statement><p>
+<ol label="a">
+<li>
+Consider the vector field <m>\vF(x, y, z) = (z^2 , x^2 , y^2)</m> in
+<m>\bbbr^3</m>. Compute the line integral <m>\oint_C \vF\cdot\dee{\vr}</m>, where
+<m>C</m> is the curve consisting of the three line segments,
+<m>L_1</m> from <m>(2, 0, 0)</m> to <m>(0, 2, 0)</m>, then
+<m>L_2</m> from <m>(0, 2, 0)</m> to <m>(0, 0, 2)</m>, and finally
+<m>L_3</m> from <m>(0, 0, 2)</m> to <m>(2, 0, 0)</m>.
+</li>
+<li>
+A simple closed curve <m>C</m> lies in the plane <m>x + y + z = 2</m>.
+The surface this curve <m>C</m> surrounds inside the plane <m>x + y + z = 2</m>
+has area <m>3</m>. The curve <m>C</m> is oriented in a counterclockwise
+direction as observed from the positive x-axis.
+Compute the line integral <m>\oint_C\vF\cdot \dee{\vr}</m> , where <m>\vF</m>
+is as in (a).
+</li>
+</ol>
+</p></statement>
+
+<hint><p>
+All three vertices of part (a) lie in the plane of part (b).
+</p></hint>
+
+<answer><p>
+(a) 8</p><p>
+(b) <m>4\sqrt{3}</m>
+</p></answer>
+
+<solution><p>
+(a) Note that all three vertices, <m>(2,0,0)</m>, <m>(0,2,0)</m> and <m>0,0,2)</m>, lie in the
+plane <m>x+y+z=2</m>. So the entire path lies in that plane too.
+</p>
+
+<sidebyside width="38%">
+<image source="pfigs/OE13D_4"/>
+</sidebyside>
+
+<p>
+In part (b)
+we will need to evaluate a line integral that clearly cannot be computed
+directly <mdash/> we will need to use Stokes' theorem. So let's use
+Stokes's theorem in part (a) too. First, we find
+<md>
+<mrow>
+\vnabla\times\vF
+&amp;=\det\left[\begin{matrix}
+\hi &amp;\hj &amp;\hk
+</mrow><mrow>
+\tfrac{\partial }{\partial x} &amp; \tfrac{\partial }{\partial y} &amp;
+                \tfrac{\partial }{\partial z}
+</mrow><mrow>
+z^2 &amp; x^2 &amp; y^2
+\end{matrix}
+\right]
+=2y\,\hi + 2z\,\hj + 2x\,\hi
+</mrow>
+</md>
+Let <m>S</m> be the triangular surface that is contained in the plane
+<m>x+y+z=2</m> and is bounded by <m>L_1</m>, <m>L_2</m> and <m>L_3</m>. Orient <m>S</m> by the normal vector <m>\hn = \frac{1}{\sqrt{3}}(\hi+\hj+\hk)</m>. Then,
+<me>
+\vnabla\times\vF\cdot\hn
+=\frac{1}{\sqrt{3}}\big(2y\,\hi + 2z\,\hj + 2x\,\hi\big)\cdot(\hi+\hj+\hk)
+=\frac{2}{\sqrt{3}}(x+y+z)
+</me>
+and, by Stokes' theorem,
+<md>
+<mrow>
+\oint_C\vF\cdot \dee{\vr}
+&amp;=\dblInt_S\vnabla\times\vF\cdot\hn\,\dee{S}
+=\frac{2}{\sqrt{3}}\dblInt_S(x+y+z)\,\dee{S}
+=\frac{4}{\sqrt{3}}\dblInt_S\dee{S}
+</mrow><mrow>
+&amp;=\frac{4}{\sqrt{3}}\text{Area}(S)
+</mrow>
+</md>
+The triangle <m>S</m> is half of the prallelogram with sides <m>(0,2,0)-(2,0,0)
+=(-2,2,0)</m> and <m>(0,0,2)-(2,0,0)=(-2,0,2)</m>. The area of the parallelogram
+is
+<md>
+<mrow>
+\big|(-2,2,0)\times (-2,0,2)\big|
+=\big|(4,4,4)\big|
+=4\sqrt{3}
+</mrow>
+</md>
+So
+<md>
+<mrow>
+\oint_C\vF\cdot \dee{\vr} = \frac{4}{\sqrt{3}} 2\sqrt{3}
+=8
+</mrow>
+</md>
+</p>
+
+<p> (b)
+Let <m>\tilde S</m> be the specified surface. Then, as in part (a),
+<md>
+<mrow>
+\oint_C\vF\cdot \dee{\vr}
+&amp;=\dblInt_{\tilde S}\vnabla\times\vF\cdot\hn\,\dee{S}
+=\frac{2}{\sqrt{3}}\dblInt_{\tilde S}(x+y+z)\,\dee{S}
+=\frac{4}{\sqrt{3}}\dblInt_{\tilde S}\dee{S}
+</mrow><mrow>
+&amp;=\frac{4}{\sqrt{3}}\text{Area}(\tilde S)
+</mrow><mrow>
+&amp;=4\sqrt{3}
+</mrow>
+</md>
+</p></solution>
+</exercise>
+
+<exercise><title><fromexam>M317 2009A</fromexam></title>
+<statement><p>
+Evaluate the line integral
+<me>
+\int_C\left(z+\frac{1}{1+z}\right)\dee{x}
+         +xz\,\dee{y}
+         +\left(3xy-\frac{x}{(z+1)^2}\right)\dee{z}
+</me>
+where <m>C</m> is the curve parameterized by
+<me>
+\vr(t) = \big(\cos t\,,\, \sin t\,,\, 1 - \cos^2 t \sin t\big)\qquad
+0 \le t \le 2\pi
+</me>
+</p></statement>
+
+<hint><p>
+The curve <m>C</m> is the boundary of a surface. To guess the surface
+express the <m>z</m> component of <m>\vr(t)</m> in terms of the <m>x</m> and <m>y</m> components.
+</p></hint>
+
+<answer><p>
+<m>5\pi/4</m>
+</p></answer>
+
+<solution><p>
+ Let's try Stokes' theorem with
+<me>
+\vF = \left(z+\frac{1}{1+z}\right)\hi
+         +xz\,\hj
+         +\left(3xy-\frac{x}{(z+1)^2}\right)\hk
+</me>
+The curl of <m>\vF</m> is
+<md>
+<mrow>
+\vnabla\times\vF
+&amp;=\det\left[\begin{matrix}
+\hi &amp;\hj &amp;\hk
+</mrow><mrow>
+\tfrac{\partial }{\partial x} &amp; \tfrac{\partial }{\partial y} &amp;
+                \tfrac{\partial }{\partial z}
+</mrow><mrow>
+z+\frac{1}{1+z} &amp; xz &amp; 3xy-\frac{x}{(z+1)^2}
+\end{matrix}
+\right]
+</mrow><mrow>
+&amp;=(3x-x)\hi
+  -\left(3y-\frac{1}{(z+1)^2}-1+\frac{1}{(1+z)^2}\right)\hj +z\,\hk
+</mrow><mrow>
+&amp;=2x\,\hi +(1-3y)\,\hj+z\,\hk
+</mrow>
+</md>
+Write
+<me>
+S=\Set{(x,y,z)}{z=f(x,y)=1-x^2y,\ x^2+y^2\le 1}
+</me>
+For <m>S</m>, with the upward pointing normal, by (<xref ref="eq_SUdSgraph"/>),
+<md>
+<mrow>
+\hn\,\dee{S} &amp;=\big(-f_x\,,\,-f_y\,,\, 1\big)\dee{x}\dee{y}
+</mrow><mrow>
+&amp;=\big(2xy\,,\,x^2\,,\, 1\big)\dee{x}\dee{y}
+</mrow>
+</md>
+so that
+<md>
+<mrow>
+\vnabla\times\vF\cdot\hn\,\dee{S}
+&amp;=\big\{4x^2y + (x^2-3x^2y) +\overbrace{(1-x^2y)}^{z}\big\}\,\dee{x}\dee{y}
+</mrow>
+</md>
+and, by Stokes' theorem,
+<md>
+<mrow>
+\int_C \vF\cdot\dee{\vr}
+&amp;=\dblInt_S \vnabla\times\vF\cdot\hn\,\dee{S}
+</mrow><mrow>
+&amp;=\dblInt_{x^2+y^2\le 1}
+  \big\{4x^2y + x^2-3x^2y + 1-x^2y\big\}\,\dee{x}\dee{y}
+</mrow>
+</md>
+So
+<md>
+<mrow>
+\int_C \vF\cdot\dee{\vr}
+&amp;=\dblInt_{x^2+y^2\le 1}
+  \big\{x^2+ 1\big\}\,\dee{x}\dee{y}
+=\pi + \dblInt_{x^2+y^2\le 1} x^2\,\dee{x}\dee{y}
+</mrow>
+</md>
+To evaluate the final remaining integral, let's switch to polar coordinates.
+<md>
+<mrow>
+\dblInt_{x^2+y^2\le 1} x^2\,\dee{x}\dee{y}
+&amp;=\int_0^1\dee{r}\ r\int_0^{2\pi}\dee{\theta}\  \big(r\cos\theta)^2
+</mrow><mrow>
+&amp;=\int_0^1 \dee{r}\ r^3\int_0^{2\pi}\dee{\theta}\ \cos^2\theta
+</mrow>
+</md>
+Since <md>
+<mrow>
+\int_0^{2\pi}\cos^2\theta\ \dee{\theta}
+&amp;=\int_0^{2\pi}\frac{1+\cos(2\theta)}{2}\ \dee{\theta}
+=\left[\frac{\theta}{2}+\frac{\sin(2\theta)}{4}\right]_0^{2\pi}
+=\pi
+</mrow>
+</md>
+we finally have
+<m>\int_0^1 \dee{r}\ r^3\int_0^{2\pi}\dee{\theta}\ \cos^2\theta=\frac{\pi}{4}</m>
+and
+<me>
+\int_C \vF\cdot\dee{\vr}
+=\pi+\frac{\pi}{4}
+=\frac{5\pi}{4}
+</me>
+For an efficient, sneaky, way to evaluate
+<m>\int_0^{2\pi} \cos^2\theta\,\dee{\theta}</m>,
+see Example <xref ref="eg_workIntegralB"/>.
+</p></solution>
+</exercise>
+
+<exercise><title><fromexam>M317 2008D</fromexam></title>
+<statement><p>
+A simple closed curve <m>C</m> lies in the plane <m>x + y + z = 1</m>.
+The surface this curve <m>C</m> surrounds inside the plane <m>x + y + z = 1</m>
+has area <m>5</m>. The curve <m>C</m> is oriented in a clockwise direction as
+observed from the positive <m>z</m>-axis looking down at the plane
+<m>x + y + z = 1</m>.
+</p>
+
+<p>Compute the line integral of <m>\vF (x, y, z) = (z^2 , x^2 , y^2)</m> around <m>C</m>.
+</p></statement>
+
+<hint><p>
+The fact that the surface is not completely specified is a big hint.
+</p></hint>
+
+<answer><p>
+<m>-\frac{10}{\sqrt{3}}</m>
+</p></answer>
+
+<solution><p>
+We are to evaluate a line integral around a curve <m>C</m>. We are told that
+<m>C</m> is the boundary of a surface <m>S</m> that is contained in the plane
+<m>x+y+z=1</m>, but we are not told precisely what <m>C</m> is. So we are going to have to use Stokes' theorem. The curl of <m>\vF</m> is
+<md>
+<mrow>
+\vnabla\times\vF
+&amp;=\det\left[\begin{matrix}
+\hi &amp;\hj &amp;\hk
+</mrow><mrow>
+\tfrac{\partial }{\partial x} &amp; \tfrac{\partial }{\partial y} &amp;
+                \tfrac{\partial }{\partial z} \\
+z^2 &amp; x^2 &amp; y^2
+\end{matrix}
+\right]
+= 2y\,\hi + 2z\,\hj +2x\,\hk
+</mrow>
+</md>
+and, by (<xref ref="eq_SUdSimplicit"/>) with
+<m>G(x,y,z)=x+y+z</m>,
+<md>
+<mrow>
+\dee{S} &amp;= \left|\frac{\vnabla\vG}{\vnabla\vG\cdot\hk}\right|\dee{x}\dee{y}
+        =\sqrt{3}\,\dee{x}\dee{y}
+</mrow><mrow>
+\hn\,\dee{S} &amp;= \pm \frac{\vnabla\vG}{\vnabla\vG\cdot\hk}\dee{x}\dee{y}
+= \pm \big(\hi+\hj+\hk)\,\dee{x}\dee{y}
+= \pm \frac{1}{\sqrt{3}} \big(\hi+\hj+\hk)\,\dee{S}
+</mrow>
+</md>
+Because <m>C</m> is oriented in a clockwise direction as
+</p>
+
+<sidebyside width="43%">
+<image source="pfigs/stokes8"/>
+</sidebyside>
+
+<p>
+observed from the positive <m>z</m>-axis looking down at the plane,
+<m>\hn</m> is to point downwards, so that
+<me>
+\hn\,\dee{S} = -\frac{1}{\sqrt{3}} \big(\hi+\hj+\hk)\,\dee{S}
+</me>
+On <m>S</m> we have <m>x+y+z=1</m>, so that Stokes' theorem gives
+<md>
+<mrow>
+\oint_C\vF\cdot\dee{\vr}
+&amp;=\dblInt_S (\vnabla\times\vF)\cdot\hn\,\dee{S}
+</mrow><mrow>
+&amp;=\dblInt_S 2(y\,\hi+z\,\hj+x\,\hk)\cdot
+        \left(-\frac{1}{\sqrt{3}}\right) \big(\hi+\hj+\hk)\,\dee{S}
+</mrow><mrow>
+&amp;=-\frac{2}{\sqrt{3}}\dblInt_S (y+z+x)\,\dee{S}
+=-\frac{2}{\sqrt{3}}\dblInt_S \dee{S}
+</mrow><mrow>
+&amp;=-\frac{10}{\sqrt{3}}
+</mrow>
+</md>
+since <m>S</m> has area <m>5</m>.
+</p></solution>
+</exercise>
+
+<exercise><title><fromexam>M317 2008A</fromexam></title>
+<statement><p>
+Let <m>C</m> be the oriented curve consisting of the 5 line segments which
+form the paths from <m>(0, 0, 0)</m> to <m>(0, 1, 1)</m>,
+               from <m>(0, 1, 1)</m> to <m>(0, 1, 2)</m>,
+               from <m>(0, 1, 2)</m> to <m>(0, 2, 0)</m>,
+               from <m>(0, 2, 0)</m> to <m>(2, 2, 0)</m>,
+           and from <m>(2, 2, 0)</m> to <m>(0, 0, 0)</m>.
+Let
+<me>
+\vF = (-y+e^x\sin x)\,\hi
+         +y^4\,\hj
+         +\sqrt{z}\tan z\,\hk
+</me>
+Evaluate the integral <m>\int_C\vF\cdot\dee{\vr}</m>.
+</p></statement>
+
+<hint><p>
+We are to evaluate the line integral of a complicated vector field
+around a relatively complicated closed curve. (Sketch it!)
+That certainly suggests that
+we should not try to evaluate the integral directly.
+</p></hint>
+
+<answer><p>
+<m>-2</m>
+</p></answer>
+
+<solution><p>
+We are to evaluate the line integral of a complicated vector field
+around a relatively complicated closed curve.
+That certainly suggests that
+we should not try to evaluate the integral directly. To see if
+Stokes' theorem looks promising, let's compute the curl
+<md>
+<mrow>
+\vnabla\times\vF
+&amp;=\det\left[\begin{matrix}
+\hi &amp;\hj &amp;\hk
+</mrow><mrow>
+\tfrac{\partial }{\partial x} &amp; \tfrac{\partial }{\partial y} &amp;
+                \tfrac{\partial }{\partial z} \\
+-y+e^x\sin x &amp; y^4 &amp; \sqrt{z}\tan z
+\end{matrix}
+\right]
+=\hk
+</mrow>
+</md>
+That's suggestive. Next we need to find a surface whose boundary is <m>C</m>.
+First, here is a sketch of <m>C</m>.
+</p>
+
+<sidebyside width="51%">
+<image source="pfigs/OE08A_8"/>
+</sidebyside>
+
+<p>
+We can choose the surface <m>S</m> to be the union of two flat parts:
+<ul>
+<li>
+the quadralateral <m>Q</m> in the <m>yz</m>-plane with vertices <m>(0,0,0)</m>,
+<m>(0,1,1)</m>, <m>(0,1,2)</m> and <m>(0,2,0)</m> and
+</li>
+<li>
+the triangle <m>T</m> in the <m>xy</m>-plane with vertices <m>(0,0,0)</m>,
+<m>(0,2,0)</m> and <m>(2,2,0)</m>.
+</li>
+</ul>
+The normal to <m>Q</m> is <m>-\hi</m> and the normal to <m>T</m> is <m>-\hk</m>. Then Stokes'
+theorem gives
+<md>
+<mrow>
+\int_C\vF\cdot\dee{\vr}
+&amp;=\dblInt_S  \vnabla\times\vF\cdot\hn\,\dee{S}
+</mrow><mrow>
+&amp;=\dblInt_Q  \hk\cdot(-\hi)\,\dee{S} + \dblInt_T  \hk\cdot(-\hk)\,\dee{S}
+</mrow><mrow>
+&amp;= - \dblInt_T \dee{S}
+</mrow><mrow>
+&amp;=-\text{Area}(T)
+</mrow><mrow>
+&amp;= -\half\overbrace{2}^{\text{base}}\overbrace{2}^{\text{height}}
+</mrow><mrow>
+&amp;=-2
+</mrow>
+</md>
+</p></solution>
+</exercise>
+
+<exercise><title><fromexam>M317 2007A</fromexam></title>
+<statement><p>
+Suppose the curve <m>C</m> is the intersection of the cylinder
+<m>x^2 + y^2 = 1</m> with the surface <m>z = xy^2</m>, traversed clockwise if
+viewed from the positive z-axis, i.e. viewed <q>from above</q>.
+Evaluate the line integral
+<me>
+\int_C  (z + \sin z) \,\dee{x}
+      + (x^3 - x^2 y) \,\dee{y}
+      + (x \cos z - y) \,\dee{z}
+</me>
+</p></statement>
+
+<hint><p>
+The integral looks messy. Compute the curl of
+<m>\vF</m> to help gauge if Stokes' theorem would be easier.
+</p></hint>
+
+<answer><p>
+<m>-\pi</m>
+</p></answer>
+
+<solution><p>
+The integral looks messy. Let's compute the curl of
+<me>
+\vF = (z + \sin z) \,\hi
+      + (x^3 - x^2 y) \,\hj
+      + (x \cos z - y) \,\hk
+</me>
+to help gauge if Stokes' theorem would be easier.
+<md>
+<mrow>
+\vnabla\times\vF
+&amp;=\det\left[\begin{matrix}
+\hi &amp;\hj &amp;\hk
+</mrow><mrow>
+\tfrac{\partial }{\partial x} &amp; \tfrac{\partial }{\partial y} &amp;
+                \tfrac{\partial }{\partial z}
+</mrow><mrow>
+z + \sin z &amp; x^3 - x^2 y &amp; x \cos z - y
+\end{matrix}
+\right]
+</mrow><mrow>
+&amp;=-\hi +\hj +(3x^2-2xy)\,\hk
+</mrow>
+</md>
+That's a lot simpler than <m>\vF</m>.
+For the surface <m>z=f(x,y)=xy^2</m>, with downward pointing normal (since <m>C</m> is traversed clockwise)
+<me>
+\hn\,\dee{S} = -\big(-f_x,-f_y,1\big)\,\dee{x}\dee{y}
+=\big(y^2,2xy,-1\big)\,\dee{x}\dee{y}
+</me>
+by (<xref ref="eq_SUdSgraph"/>),
+So, writing
+<md>
+<mrow>
+   S&amp;=\Set{(x,y,z)}{z=xy^2,\ x^2+y^2\le 1}
+</mrow><mrow>
+   D&amp;=\Set{(x,y)}{x^2+y^2\le 1}
+</mrow>
+</md>
+Stoke's theorem gives
+<md>
+<mrow>
+\int_C\vF\cdot\dee{\vr}
+&amp;=\dblInt_S \vnabla\times\vF\cdot\hn\,\dee{S}
+=\dblInt_D\big\{-y^2+2xy -3x^2+2xy\big\}\,\dee{x}\dee{y}
+</mrow><mrow>
+&amp;=-\dblInt_{x^2+y^2\le 1}\big\{3x^2+y^2-4xy\big\}\,\dee{x}\dee{y}
+</mrow>
+</md>
+To evaluate this integral, switch to polar coordinates.
+<md>
+<mrow>
+\int_C\vF\cdot\dee{\vr}
+&amp;=-\int_0^1\dee{r}\ r\int_0^{2\pi}\dee{\theta}\
+           \big\{3r^2\cos^2\theta+r^2\sin^2\theta
+              -4r^2\sin\theta\cos\theta\big\}
+</mrow><mrow>
+&amp;=-4\pi \int_0^1\dee{r}\ r^3 =-\pi
+</mrow>
+</md>
+since
+<m>\int_0^{2\pi}\sin\theta\cos\theta\,\dee{\theta}
+ =\frac{1}{2}\int_0^{2\pi}\sin(2\theta)\,\dee{\theta}=0</m>
+and
+<m>\int_0^{2\pi}\sin^2\theta\,\dee{\theta}
+        =\int_0^{2\pi}\cos^2\theta\,\dee{\theta}
+        =\pi</m>.
+(See Example <xref ref="eg_workIntegralB"/>.)
+</p></solution>
+</exercise>
+
+<exercise><title><fromexam>M317 2006A</fromexam></title>
+<statement><p>
+Evaluate <m>\dblInt_S \vnabla\times\vF\cdot\hn\,\dee{S}</m> where <m>S</m> is that part
+of the sphere <m>x^2+y^2+z^2=2</m> above the plane <m>z=1</m>, <m>\hn</m> is the upward
+unit normal, and
+<md>
+<mrow>
+\vF(x,y,z) = -y^2\,\hi  +x^3\,\hj + \big(e^x + e^y +z\big)\,\hk
+</mrow>
+</md>
+</p>
+
+</statement>
+
+<hint><p>
+The form of the integrand is sugestive.
+</p></hint>
+
+<answer><p>
+<m>\frac{3\pi}{4}</m>
+</p></answer>
+
+<solution><p>
+Here is a sketch of the part of <m>S</m> in the first octant.
+</p>
+
+
+<sidebyside width="46%">
+  <image source="pfigs/OE06A_6"/>
+</sidebyside>
+
+<p>
+The boundary, <m>\partial S</m>, of <m>S</m> is the circle <m>x^2+y^2=1</m>, <m>z=1</m>, oriented counterclockwise when viewed from above.
+It is parametrized by
+<me>
+\vr(\theta) = \cos\theta\,\hi + \sin\theta\,\hj + \hk
+\qquad 0\le \theta\le 2\pi
+</me>
+So Stokes' theorem gives
+<md>
+<mrow>
+&amp;\dblInt_S \vnabla\times\vF\cdot\hn\,\dee{S}
+  = \oint_{\partial S}\vF\cdot\dee{\vr}
+</mrow><mrow>
+  &amp;\hskip0.5in = \int_0^{2\pi} \Big(\overbrace{
+        -\sin^2\theta\,\hi +\cos^3\theta\,\hj+(\text{mess})\hk
+               }^{\vF(\vr(t))}\Big)\cdot
+   \big(\overbrace{-\sin\theta\,\hi+\cos\theta\,\hj}^{\vr'(t)}\big)\
+     \dee{\theta}
+</mrow><mrow>
+  &amp;\hskip0.5in=\int_0^{2\pi}\big(\sin^3\theta +\cos^4\theta\big)\,\dee{\theta}
+</mrow>
+</md>
+The integral of any odd power of <m>\sin\theta</m> or <m>\cos\theta</m>
+over <m>0\le\theta\le 2\pi</m> is zero.
+(See Example <xref ref="eg_stokesD"/>.)
+In particular, <m>\int_0^{2\pi}\sin^3\theta\,\dee{\theta} =0</m>.
+To integrate <m>\cos^4\theta</m> we use the trig identity
+<md>
+<mrow>
+\cos^2\theta &amp;= \frac{\cos(2\theta)+1}{2}
+</mrow><mrow>
+\implies
+\cos^4\theta &amp;= \frac{\cos^2(2\theta)+2\cos(2\theta) + 1}{4}
+</mrow><mrow>
+             &amp;= \frac{1}{4}\ \frac{\cos(4\theta)+1}{2}
+                +\frac{\cos(2\theta)}{2} +\frac{1}{4}
+</mrow><mrow>
+             &amp;= \frac{3}{8} + \frac{\cos(4\theta)}{8} + \frac{\cos(2\theta)}{2}
+</mrow>
+</md>
+Finally
+<me>
+\dblInt_S \vnabla\times\vF\cdot\hn\,\dee{S}
+=\int_0^{2\pi}\Big( \frac{3}{8} + \frac{\cos(4\theta)}{8}
+             + \frac{\cos(2\theta)}{2}\Big)\,\dee{\theta}
+=\frac{3\pi}{4}
+</me>
+</p></solution>
+</exercise>
+
+<exercise><title><fromexam>M317 2005D</fromexam></title>
+<statement><p>
+Let
+<me>
+\vF = x \sin y\,\hi - y \sin x\,\hj + (x - y)z^2\,\hk
+</me>
+Use Stokes' theorem to evaluate
+<me>
+\int_C\vF\cdot \dee{\vr}
+</me>
+along the path consisting of the straight line segments successively
+joining the points <m>P_0 = (0, 0, 0)</m> to <m>P_1 = (\pi/2, 0, 0)</m> to
+<m>P_2 = (\pi/2, 0, 1)</m> to <m>P_3 = (0, 0, 1)</m> to <m>P_4 = (0, \pi/2, 1)</m>
+to <m>P_5 = (0, \pi/2, 0)</m>, and back to <m>(0, 0, 0)</m>.
+</p></statement>
+
+<answer><p>
+<m>\frac{\pi}{3}</m>
+</p></answer>
+
+<solution><p>
+We are to evaluate the line integral of a complicated vector field
+around a relatively complicated closed curve. That certainly suggests that
+we should not try to evaluate the integral directly. As we are to use
+Stokes' theorem, let's compute the curl
+<md>
+<mrow>
+\vnabla\times\vF
+&amp;=\det\left[\begin{matrix}
+\hi &amp;\hj &amp;\hk
+</mrow><mrow>
+\tfrac{\partial }{\partial x} &amp; \tfrac{\partial }{\partial y} &amp;
+                \tfrac{\partial }{\partial z}
+</mrow><mrow>
+x \sin y &amp; - y \sin x &amp; (x - y)z^2
+\end{matrix}
+\right]
+</mrow><mrow>
+&amp;=-z^2\,\hi-z^2\,\hj -(y\cos x +x\cos y)\hk
+</mrow>
+</md>
+Next we need to find a surface whose boundary is <m>C</m>.
+First, here is a sketch of <m>C</m>.
+</p>
+
+<sidebyside width="54%">
+<image source="pfigs/OE05D_8"/>
+</sidebyside>
+
+<p>
+We can choose the surface <m>S</m> to be the union of two flat parts:
+<ul>
+<li>
+the rectangle <m>S_x</m> in the <m>xz</m>-plane with vertices <m>(0,0,0)</m>,
+<m>(\frac{\pi}{2},0,0)</m>, <m>(\frac{\pi}{2},0,1)</m> and <m>(0,0,1)</m> and
+</li>
+<li>
+the rectangle <m>S_y</m> in the <m>yz</m>-plane with vertices <m>(0,0,0)</m>,
+<m>(0,0,1)</m>, <m>(0,\frac{\pi}{2},1)</m> and <m>(0,\frac{\pi}{2},0)</m>
+</li>
+</ul>
+The normal to <m>S_x</m> is <m>-\hj</m> and the normal to <m>S_y</m> is <m>-\hi</m>. Then Stokes'
+theorem gives
+<md>
+<mrow>
+\int_C\vF\cdot\dee{\vr}
+&amp;=\dblInt_S  \vnabla\times\vF\cdot\hn\,\dee{S}
+</mrow><mrow>
+&amp;=\dblInt_{S_x}  \vnabla\times\vF\cdot(-\hj)\,\dee{S}
+  + \dblInt_{S_y}  \vnabla\times\vF\cdot(-\hi)\,\dee{S}
+</mrow><mrow>
+&amp;=\int_0^{\frac{\pi}{2}} \dee{x}\int_0^1\dee{z}\ z^2
+  + \int_0^{\frac{\pi}{2}} \dee{y}\int_0^1\dee{z}\ z^2
+</mrow><mrow>
+&amp;=\int_0^{\frac{\pi}{2}} \dee{x}\ \frac{1}{3}
+  + \int_0^{\frac{\pi}{2}} \dee{y}\ \frac{1}{3}
+</mrow><mrow>
+&amp;=\frac{\pi}{3}
+</mrow>
+</md>
+</p>
+
+</solution>
+</exercise>
+
+<exercise><title><fromexam>M317 2017D</fromexam></title>
+<statement><p>
+Let
+<me>
+\vF=\left(\frac{2z}{1+y}+\sin(x^2)\,,\,
+           \frac{3z}{1+x}+\sin(y^2)\,,\,
+           5(x+1)(y+2)\right)
+</me>
+Let <m>C</m> be the oriented curve consisting of four line segments
+from <m>(0,0,0)</m> to <m>(2,0,0)</m>,
+from <m>(2,0,0)</m> to <m>(0,0,2)</m>,
+from <m>(0,0,2)</m> to <m>(0,3,0)</m>, and
+from <m>(0,3,0)</m> to <m>(0,0,0)</m>.
+</p>
+
+<p><ol label="a">
+<li>
+Draw a picture of <m>C</m>. Clearly indicate the orientation
+on each line segment.
+</li>
+<li>
+Compute the work integral <m>\int_C\vF\cdot\dee{\vr}</m>.
+</li>
+</ol>
+</p></statement>
+
+<answer>
+<p>(a)</p>
+<sidebyside width="58%">
+  <image source="pfigs/OE17D_4"/>
+</sidebyside>
+
+<p>
+  (b) <m>\int_C\vF\cdot\dee{\vr} = 10</m>
+</p></answer>
+
+<solution><p> (a) Here is a sketch.</p>
+
+<sidebyside width="58%">
+  <image source="pfigs/OE17D_4"/>
+</sidebyside>
+
+
+<p>
+(b) We are to evaluate the line integral of a complicated vector field
+around a relatively complicated closed curve. That certainly suggests that
+we should not try to evaluate the integral directly. Let's try
+Stokes' theorem. First, we compute the curl
+<md>
+<mrow>
+\vnabla\times\vF
+&amp;=\det\left[\begin{matrix}
+\hi &amp;\hj &amp;\hk
+</mrow><mrow>
+\tfrac{\partial }{\partial x} &amp; \tfrac{\partial }{\partial y} &amp;
+                \tfrac{\partial }{\partial z}
+</mrow><mrow>
+       \frac{2z}{1+y}+\sin(x^2) &amp; \frac{3z}{1+x}+\sin(y^2) &amp; 5(x+1)(y+2)
+       \end{matrix} \right]
+</mrow><mrow>
+&amp;= \Big(5(x+1)-\frac{3}{1+x}\Big)\,\hi
+  -\Big(5(y+2)-\frac{2}{1+y}\Big)\,\hj
+</mrow><mrow>
+&amp;\hskip1in  +\Big(-\frac{3z}{(1+x)^2}+\frac{2z}{(1+y)^2}\Big)\,\hk
+</mrow>
+</md>
+Next we need to find a surface <m>S</m> whose boundary is <m>C</m>.
+We can choose the surface <m>S</m> to be the union of two flat parts:
+<ul>
+<li>
+the triangle <m>S_x</m> in the <m>xz</m>-plane with vertices <m>(0,0,0)</m>,
+<m>(2,0,0)</m>, and <m>(0,0,2)</m> and
+</li>
+<li>
+the triangle <m>S_y</m> in the <m>yz</m>-plane with vertices <m>(0,0,0)</m>,
+<m>(0,0,2)</m>, and <m>(0,3,0)</m>
+</li>
+</ul>
+Note that
+<ul>
+<li>
+The normal to <m>S_x</m> specified by Stokes' theorem is <m>-\hj</m>. On <m>S_x</m>
+we have <m>y=0</m>, so that <m>\vnabla\times\vF\cdot\hj</m> simplifies to
+<m>-\big(5(0+2)-\frac{2}{1+0}\big)=-8</m>.
+</li>
+<li>
+The normal to <m>S_y</m> specified by Stokes' theorem is <m>-\hi</m>. On <m>S_y</m>
+we have <m>x=0</m>, so that <m>\vnabla\times\vF\cdot\hi</m> simplifies to
+<m>\big(5(0+1)-\frac{3}{1+0}\big)=2</m>.
+</li>
+</ul>
+So Stokes' theorem gives
+<md>
+<mrow>
+\int_C\vF\cdot\dee{\vr}
+&amp;=\dblInt_S  \vnabla\times\vF\cdot\hn\,\dee{S}
+</mrow><mrow>
+&amp;=\dblInt_{S_x}  \overbrace{\vnabla\times\vF\cdot(-\hj)}^{8}\,\dee{S}
+  + \dblInt_{S_y}  \overbrace{\vnabla\times\vF\cdot(-\hi)}^{-2}\,\dee{S}
+</mrow><mrow>
+&amp;=8\,\text{Area}(S_x)  -2\,\text{Area}(S_y)
+  =8\frac{1}{2}(2)(2) -2\frac{1}{2}(3)(2)
+</mrow><mrow>
+&amp;=10
+</mrow>
+</md>
+</p></solution>
+</exercise>
+
+<exercise><title><fromexam>M317 2004A</fromexam></title>
+<statement><p>
+Evaluate <m>\displaystyle\dblInt_S\vnabla\times\vF\cdot\hn\,\dee{S}</m> where
+<m>\vF=y\,\hi+2z\,\hj+3x\,\hk</m> and <m>S</m> is the surface <m>z=\sqrt{1-x^2-y^2}</m>,
+<m>z\ge 0</m> and <m>\hn</m> is a unit normal to <m>S</m> obeying <m>\hn\cdot\hk\ge 0</m>.
+</p></statement>
+
+<answer><p>
+<m>-\pi</m>
+</p></answer>
+
+<solution><p>
+ The boundary, <m>\partial S</m>, of <m>S</m> is the circle <m>x^2+y^2=1</m>
+oriented counter clockwise as usual. It may be parametrized by
+<m>\vr(\theta)=\cos\theta\,\hi+\sin\theta\hj</m>, <m>0\le\theta\le 2\pi</m>. By Stokes' theorem
+<md>
+<mrow>
+\dblInt_S\vnabla\times\vF\cdot\hn\,\dee{S}
+&amp;=\oint_{\partial S} \vF\cdot\dee{\vr}
+=\int_0^{2\pi}\vF\big(\vr(\theta)\big)\cdot\diff{\vr}{\theta}(\theta)
+       \,\dee{\theta}
+</mrow><mrow>
+&amp; =\int_0^{2\pi}(\sin\theta,0,3\cos\theta)\cdot(-\sin\theta,\cos\theta,0)
+        \,\dee{\theta}
+</mrow><mrow>
+&amp;=-\int_0^{2\pi}\sin^2\theta\,\dee{\theta}
+=-\int_0^{2\pi}\dee{\theta}\,\frac{1-\cos(2\theta)}{2}
+</mrow><mrow>
+&amp;=-\left[\frac{\theta}{2}-\frac{\sin(2\theta)}{4}\right]_0^{2\pi}
+</mrow><mrow>
+&amp;=-\pi
+</mrow>
+</md>
+For an efficient, sneaky, way to evaluate
+<m>\int_0^{2\pi}\dee{\theta}\ \sin^2\theta</m>, see Example
+<xref ref="eg_workIntegralB"/>.
+</p></solution>
+</exercise>
+
+<exercise><title><fromexam>M317 2000D</fromexam></title>
+<statement><p>
+Let <m>\cS</m> be the curved surface below, oriented by the outward normal:
+<me>
+x^2 + y^2 + 2(z-1)^2 = 6,\qquad z\ge 0.
+</me>
+(E.g., at the high point of the surface, the unit normal is <m>\hk</m>.)
+</p>
+
+<p>Define
+<me>
+\vG = \nabla\times\vF,
+\quad\text{where}\quad
+\vF = (xz - y^3\cos z)\,\hi + x^3 e^z\,\hj + xyze^{x^2+y^2+z^2}\,\hk.
+</me>
+Find <m>\dblInt_\cS \vG\cdot \hn\dee{S}</m>.
+</p>
+
+</statement>
+
+<answer><p>
+<m>24\pi</m>
+</p></answer>
+
+<solution><p>
+The given surface is an ellipsoid centred at <m>(x,y,z)=(0,0,1)</m>.
+It caps a curve <m>\cC</m> in the plane <m>z=0</m>, given by <m>x^2+y^2=4</m>.
+This is a circle of radius <m>2</m> centred at the origin, oriented
+counterclockwise when viewed from the positive <m>z</m>-axis.
+</p>
+
+<p><em>Method I <mdash/> double Stokes':</em>
+Let <m>\cD</m> denote the plane disk <m>x^2+y^2\le 4</m>, <m>z=0</m>.
+Using Stokes' theorem twice gives
+<md>
+<mrow>
+\dblInt_\cS \vG\cdot \hn\,\dee{S}
+&amp;= \dblInt_\cS \nabla\times\vF\cdot \hn\,\dee{S}
+= \oint_\cC \vF\cdot \dee{\vr}
+= \dblInt_\cD \nabla\times\vF\cdot \hn\,\dee{S}
+</mrow><mrow>
+&amp;= \dblInt_\cD \vG\cdot \hn\,\dee{S}
+</mrow>
+</md>
+Now in <m>\cD</m> we have <m>\hn=\hk</m> and <m>z=0</m>, so on this surface,
+<md>
+<mrow>
+\vG\cdot\hn
+= (\nabla\times\vF)\cdot\hk
+&amp;= \det\left[\begin{matrix} 0 &amp; 0 &amp; 1 \\
+\frac{\partial }{\partial x} &amp; \frac{\partial }{\partial y} &amp; \frac{\partial }{\partial z} \\
+(xz - y^3\cos z) &amp; x^3 e^z &amp; xyze^{x^2+y^2+z^2} \end{matrix}\right]_{z=0}
+</mrow><mrow>
+&amp;= \big[3x^2 e^z + 3y^2\cos z\big]_{z=0}
+= 3(x^2+y^2)
+</mrow>
+</md>
+Hence, using polar coordinates,
+<md>
+<mrow>
+\dblInt_\cS \vG\cdot \hn\,\dee{S}
+&amp;= \dblInt_\cD 3(x^2+y^2)\,\dee{x}\dee{y}
+= 3\int_{\theta=0}^{2\pi} \int_{r=0}^2 (r^2)\,r\,\dee{r}\,\dee{\theta}
+</mrow><mrow>
+&amp;= 3(2\pi)(4)= 24\pi
+</mrow>
+</md>
+</p>
+
+<p><em>Method II <mdash/> single Stokes':</em>
+By Stokes' theorem
+<me>
+\dblInt_\cS \vG\cdot \hn\,\dee{S}
+= \dblInt_\cS \nabla\times\vF\cdot \hn\,\dee{S}
+= \oint_\cC \vF\cdot \dee{\vr}
+</me>
+Parametrize the circle <m>\cC</m> using
+<me>
+\vr(\theta) = 2\cos\theta\,\hi + 2\sin\theta\,\hj,\qquad 0\le\theta\le 2\pi
+</me>
+to obtain
+<me>
+\dee{\vr} = \diff{\vr}{\theta}\,\dee{\theta}
+= (-2\sin\theta\,\hi + 2\cos\theta\,\hj)\,\dee{\theta}.
+</me>
+Then since <m>z=0</m> on <m>\cC</m>,
+<md>
+<mrow>
+\dblInt_\cS \vG\cdot \hn\,\dee{S}
+&amp;= \int_{0}^{2\pi}\!\!\big(
+\overbrace{-(2\sin\theta)^3\,\hi \!+\! (2\cos\theta)^3\,\hj}^
+                                          {\vF\big(\vr(\theta)\big)}\big)
+\cdot \big(\overbrace{-2\sin\theta\,\hi \!+\! 2\cos\theta\,\hj}^{\vr'(\theta)}\big)
+ \,\dee{\theta}
+
+</mrow><mrow>
+&amp;= 16 \int_{0}^{2\pi}\big(\sin^4\theta + \cos^4\theta\big)\,\dee{\theta}
+
+</mrow>
+</md>
+By the double angle trig identities
+<md>
+<mrow>
+\cos^2\theta=\frac{1+\cos(2\theta)}{2}\qquad
+\sin^2\theta=\frac{1-\cos(2\theta)}{2}\qquad
+</mrow>
+</md>
+we have
+<md>
+<mrow>
+\sin^4\theta + \cos^4\theta
+&amp;=\frac{\big[1-\cos(2\theta)\big]^2}{4}
+ + \frac{\big[1+\cos(2\theta)\big]^2}{4}
+</mrow><mrow>
+&amp;=\frac{1}{2} + \frac{\cos^2(2\theta)}{2}
+=\frac{1}{2} + \frac{1+\cos(4\theta)}{4}
+</mrow>
+</md>
+So
+<me>
+\dblInt_\cS \vG\cdot \hn\,\dee{S}
+=16\int_{0}^{2\pi} \left(\frac{3}{4}+\frac{1}{4}\cos(4\theta)\right)
+                   \,\dee{\theta}
+= 16\times\frac{3}{4}\times (2\pi) = 24\pi
+</me>
+</p>
+
+</solution>
+</exercise>
+
+<exercise><title><fromexam>M317 1999A</fromexam></title>
+<statement><p>
+ Let <m>C</m> be a circle of radius <m>R</m> lying in the plane <m>x+y+z=3</m>.
+Use Stokes' Theorem to calculate the value of
+<me>
+\oint_C \vF\cdot \dee{\vr}
+</me>
+where <m>\vF=z^2\hi+x^2\hj+y^2\hk</m>. (You may use either orientation of the
+circle.)
+</p>
+
+</statement>
+
+<hint><p>
+Let <m>D</m> be the disk in the plane <m>x+y+z=3</m> whose boundary is <m>C</m>.
+Suppose that, as <m>(x,y,z)</m> runs over <m>D</m>, <m>(x,y)</m> runs over the
+ellipse <m>D_{xy}</m>.
+We are told that the area of <m>D</m> is <m>\pi R^2</m>, but we are
+not told the area of <m>D'</m>. So it is easier to deal with the
+integral <m>\dblInt_D \dee{S}</m> than with the integral
+<m>\dblInt_{D'}\dee{x}\dee{y}</m>.
+</p></hint>
+
+<answer><p>
+<m>2\sqrt{3}\pi R^2</m>
+</p></answer>
+
+<solution><p>
+Note that
+<me>
+\vnabla\times\vF=\det\left|\begin{matrix}\hi&amp;\hj&amp;\hk\\
+  \frac{\partial }{\partial x}&amp;
+        \frac{\partial }{\partial y}&amp;
+        \frac{\partial }{\partial z}\\
+z^2&amp;x^2&amp;y^2\end{matrix}\right|
+=2y\,\hi+2z\,\hj+2x\,\hk
+</me>
+Let <m>D</m> be the disk in the plane <m>x+y+z=3</m> whose boundary is <m>C</m> and let
+<m>\hn=\frac{1}{\sqrt{3}}(\hi+\hj+\hk)</m> be the upward unit normal to <m>D</m>.
+If the circle is oriented counterclockwise, when viewed from above,
+then, by Stokes' theorem  (Theorem <xref ref="thm_Stokes"/>),
+<md>
+<mrow>
+\oint_C \vF\cdot \dee{\vr}
+&amp;=\dblInt_D \vnabla\times\vF\cdot\hn\ \dee{S}
+</mrow><mrow>
+&amp;=\frac{1}{\sqrt{3}}
+\dblInt_D \big(2y\,\hi+2z\,\hj+2x\,\hk\big)\cdot(\hi+\hj+\hk)\ \dee{S}
+</mrow><mrow>
+&amp;=\frac{1}{\sqrt{3}}\dblInt_D2\overbrace{\big(x+y+z\big)}^{=3\text{ on } D}\ \dee{S}
+</mrow><mrow>
+&amp;=2\sqrt{3}\dblInt_D \dee{S}
+=2\sqrt{3}\pi R^2
+</mrow>
+</md>
+</p></solution>
+</exercise>
+
+<exercise>
+<statement><p>
+Let <m>S</m> be the oriented surface consisting of the top and
+four sides of the cube whose vertices are <m>(\pm 1,\pm1,\pm1)</m>, oriented
+outward. If <m>\vF(x,y,z)=(xyz,xy^2,x^2yz)</m>, find the flux of
+<m>\vnabla\times\vF</m> through <m>S</m>.
+</p></statement>
+
+<answer><p>
+<m>\frac{4}{3}</m>
+</p></answer>
+
+<solution><p>
+Let <m>S'</m> be the bottom surface of the cube, oriented with
+normal <m>\hk</m>. Then, by Stokes' theorem, since <m>\partial S=\partial S'</m>,
+<me>
+\dblInt_S\vnabla\times\vF\cdot\hn\, \dee{S}
+=\oint_{\partial S}\vF\cdot \dee{\vr}
+=\oint_{\partial S'}\vF\cdot \dee{\vr}
+=\dblInt_{S'}\vnabla\times\vF\cdot\hn\, \dee{S}
+</me>
+Since
+<md>
+<mrow>
+\vnabla\times\vF=\det\left[\begin{matrix}\hi &amp; \hj &amp; \hk \\
+                  \pdiff{}{x} &amp;
+                  \pdiff{}{y} &amp;
+                  \pdiff{}{z} \\
+                  xyz &amp; xy^2 &amp; x^2yz \end{matrix}\right]
+=\big(\cdots\,,\,\cdots\,,\,y^2-xz\big)
+</mrow>
+</md>
+and <m>\hn=\hk</m> on <m>S'</m> and <m>z=-1</m> on <m>S'</m>
+<md>
+<mrow>
+\dblInt_{S'}\vnabla\times\vF\cdot\hn\, \dee{S}
+&amp;=\int_{-1}^1 \dee{x}\int_{-1}^1 \dee{y}\
+         \big(\cdots,\cdots,y^2-xz\big)\cdot\hk\Big|_{z=-1}
+</mrow><mrow>
+&amp;=\int_{-1}^1 \dee{x}\int_{-1}^1 \dee{y}\  (y^2+x)
+</mrow><mrow>
+&amp;=\int_{-1}^1 \dee{x}\int_{-1}^1 \dee{y}\  y^2
+=2\times 2\int_0^1\dee{y}\ y^2
+</mrow><mrow>
+&amp;=\frac{4}{3}
+</mrow>
+</md>
+</p>
+</solution>
+
+<solution>
+<p>
+The boundary of <m>S</m> is the square <m>C</m>, with sides <m>C_1</m>, <m>\cdots</m>, <m>C_4</m>,
+in the sketch
+</p>
+
+<sidebyside width="45%">
+<image source="pfigs/cubeS"/>
+</sidebyside>
+
+<p>
+By Stokes' theorem,
+<me>
+\dblInt_S\vnabla\times\vF\cdot\hn\, \dee{S}
+=\oint_{C}\vF\cdot \dee{\vr}
+</me>
+Parametrize <m>C_1</m> by <m>x</m>. That is, <m>\vr(x)= x\hi - \hj -\hk</m>, <m>-1\le x\le 1</m>.
+Since <m>\vr'(x) = \hi</m>, and <m>y=z=-1</m> on <m>C_1</m>,
+<md>
+<mrow>
+\int_{C_1}\vF\cdot \dee{\vr}
+&amp;=\int_{-1}^1 \vF\big(\vr(x)\big)\cdot\vr'(x)\ \dee{x}
+=\int_{-1}^1 \vF\big(\vr(x)\big)\cdot\hi\ \dee{x}
+</mrow><mrow>
+&amp;=\int_{-1}^1\overbrace{x(-1)(-1)}^{xyz}\ \dee{x}
+</mrow><mrow>
+&amp;=0\qquad\text{(since $x$ is odd)}
+</mrow>
+</md>
+Parametrize <m>C_2</m> by <m>y</m>. That is, <m>\vr(y)= \hi + y\,\hj -\hk</m>, <m>-1\le y\le 1</m>.
+Since <m>\vr'(y) = \hj</m>, and <m>x=1</m> on <m>C_2</m>,
+<md>
+<mrow>
+\int_{C_2}\vF\cdot \dee{\vr}
+=\int_{-1}^1 \vF\big(\vr(y)\big)\cdot\hj\ \dee{y}
+=\int_{-1}^1\overbrace{y^2}^{xy^2}\ \dee{y}
+=\left[\frac{y^3}{3}\right]_{-1}^1
+=\frac{2}{3}
+</mrow>
+</md>
+Parametrize <m>C_3</m> by <m>x</m>. That is, <m>\vr(x)= x\hi + \hj -\hk</m> with <m>x</m> running
+from <m>1</m> to <m>-1</m>. (If you're nervous about this, parametrize
+by <m>t=-x</m>. That is <m>\vr(t)= -t\,\hi + \hj -\hk</m>, <m>-1\le t\le 1</m>.)
+Since <m>\vr'(x) = \hi</m>, and <m>y=1</m>, <m>z=-1</m> on <m>C_3</m>,
+<md>
+<mrow>
+\int_{C_3}\vF\cdot \dee{\vr}
+=\int^{-1}_1\!\! \vF\big(\vr(x)\big)\cdot\hi\ \dee{x}
+=\int^{-1}_1\overbrace{x\ (1)(-1)}^{xyz}\ \dee{x}
+=0\quad\text{(since $x$ is odd)}
+</mrow>
+</md>
+Parametrize <m>C_4</m> by <m>y</m>. That is, <m>\vr(y)= -\hi + y\,\hj -\hk</m>, with
+<m>y</m> running from <m>1</m> to <m>-1</m>. Since <m>\vr'(y) = \hj</m>, and <m>x=-1</m> on <m>C_4</m>,
+<md>
+<mrow>
+\int_{C_4}\vF\cdot \dee{\vr}
+=\int^{-1}_1 \vF\big(\vr(y)\big)\cdot\hj\ \dee{y}
+=\int^{-1}_1\overbrace{(-1)y^2}^{xy^2}\ \dee{y}
+=-\left[\frac{y^3}{3}\right]^{-1}_1
+=\frac{2}{3}
+</mrow>
+</md>
+All together
+<me>
+\dblInt_S\vnabla\times\vF\cdot\hn\, \dee{S}
+=\int_{C_1}\vF\cdot \dee{\vr} + \int_{C_2}\vF\cdot \dee{\vr}
+ +\int_{C_3}\vF\cdot \dee{\vr} + \int_{C_4}\vF\cdot \dee{\vr}
+=\frac{4}{3}
+</me>
+</p></solution>
+</exercise>
+
+<exercise>
+<statement><p>
+Let <m>S</m> denote the part of the spiral ramp (that is helicoidal
+surface) parametrized by
+<me>
+x=u\cos v,\ y=u\sin v,\ z=v\qquad
+0\le u\le 1,\ 0\le v\le 2\pi
+</me>
+Let <m>C</m> denote the boundary of <m>S</m>
+with orientation specified by the upward pointing normal on <m>S</m>. Find
+<me>
+\int_C y\,\dee{x}-x\,\dee{y}+ xy\,\dee{z}
+</me>
+</p></statement>
+
+<answer><p>
+<m>-2\pi</m>
+</p></answer>
+
+<solution><p>
+Let's try Stokes' Theorem. Call <m>\vF=y\,\hi-x\,\hj+xy\,\hk</m>. Then
+<md>
+<mrow>
+\vnabla\times\vF=\det\left[\begin{matrix}\hi &amp; \hj &amp; \hk \\
+                  \pdiff{}{x} &amp;
+                  \pdiff{}{y} &amp;
+                  \pdiff{}{z} \\
+                  y &amp; -x &amp; xy \end{matrix}\right]
+=x\,\hi-y\,\hj-2\,\hk
+</mrow>
+</md>
+Now compute <m>\hn\,\dee{S}</m> in the <m>(u,v)</m>-parametrization.
+<md>
+<mrow>
+\vr(u,v)&amp;=\big(u\cos v, u\sin v, v\big)
+</mrow><mrow>
+\pdiff{\vr}{u}(u,v)&amp;=\big(\cos v, \sin v, 0\big)
+</mrow><mrow>
+\pdiff{\vr}{v}(u,v)&amp;=\big(-u\sin v, u\cos v, 1\big)
+</mrow><mrow>
+\pdiff{\vr}{u}\times\pdiff{\vr}{v}
+&amp;=\det\left[\begin{matrix}\hi &amp; \hj &amp; \hk \\
+                  \cos v &amp; \sin v &amp; 0 \\
+                  -u\sin v&amp; u\cos v&amp; 1 \end{matrix}\right]
+=\big(\sin v, -\cos v, u\big)
+</mrow><mrow>
+\hn\,\dee{S}&amp;=\big(\sin v, -\cos v, u\big)\,\dee{u}\,\dee{v}
+</mrow>
+</md>
+Since <m>u\ge 0</m>, we do indeed have the upward pointing normal.
+So, Stokes' theorem tells us
+<md>
+<mrow>
+&amp;\int_C y\,\dee{x}-x\,\dee{y}+ xy\,\dee{z}
+=\int_C\vF\cdot \dee{\vr}
+=\dblInt_S \vnabla\times\vF\cdot\hn\,\dee{S}
+</mrow><mrow>
+&amp;\hskip0.5in=\int_0^1 \dee{u} \int_0^{2\pi} \dee{v}\  \big(u\cos v, -u\sin v, -2\big)
+\cdot\big(\sin v, -\cos v, u\big)
+</mrow><mrow>
+&amp;\hskip0.5in=\int_0^1 \dee{u} \int_0^{2\pi} \dee{v}\ \big(2u\sin v\cos v-2u\big)
+</mrow><mrow>
+&amp;\hskip0.5in=\left[\int_0^1 \dee{u} \ u\right]
+    \left[\int_0^{2\pi} \dee{v}\ \big(\sin 2v-2\big)\right]
+</mrow><mrow>
+&amp;\hskip0.5in=\half(-4\pi)=-2\pi
+</mrow>
+</md>
+</p></solution>
+</exercise>
+</exercisegroup>
+
+<exercisegroup><introduction><application/></introduction>
+
+<exercise>
+<statement><p>
+Let <m>C</m> be the intersection of <m>x+2y-z=7</m> and <m>x^2-2x+4y^2=15</m>.
+The curve <m>C</m> is oriented counterclockwise when viewed from high on the
+<m>z</m>-axis. Let
+<me>
+\vF=\big(e^{x^2}+yz\big)\,\hi
+   +\big(\cos(y^2)-x^2\big)\,\hj
+   +\big(\sin(z^2)+xy\big)\,\hk
+</me>
+Evaluate <m>\oint_C\vF\cdot \dee{\vr}</m>.
+</p></statement>
+
+<hint><p>
+Given the form of <m>\vF</m>, direct evaluation looks hard.
+</p>
+
+<p>The integral evaluations can be greatly simplified by using
+that the centroid <m>(\bar x,\bar y)</m> of any region <m>R</m> in the <m>xy</m>-plane
+is
+<me>
+\bar x =\frac{\dblInt_R x\,\dee{x}\,\dee{y}}{\text{Area}(R)}\qquad
+\bar y =\frac{\dblInt_R y\,\dee{x}\,\dee{y}}{\text{Area}(R)}
+</me>
+</p>
+
+</hint>
+
+<answer><p>
+<m>24\pi</m>
+</p></answer>
+
+<solution><p>
+Given the form of <m>\vF</m>, direct evaluation looks hard. So let's try
+Stokes' theorem, using as <m>S</m> the part of the plane <m>G(x,y,z)=x+2y-z=7</m>
+that is inside <m>x^2-2x+4y^2=15</m>. Then
+<me>
+\hn\,\dee{S} = \pm \frac{\vnabla G}{\vnabla G\cdot\hk}\,\dee{x}\,\dee{y}
+= \pm\big(\hi+2\hj-\hk\big)\,\dee{x}\,\dee{y}
+</me>
+As <m>C</m> is oriented counterclockwise when viewed from high, Stokes'
+theorem specifies the upward pointing normal so that
+<m>\hn\,\dee{S} = -\big(\hi+2\hj-\hk\big)\,\dee{x}\,\dee{y}</m>.
+</p>
+
+<p>From the observations that
+<me>
+\vnabla\times\vF=\det\left[\begin{matrix}\hi &amp; \hj &amp; \hk \\
+                  \pdiff{}{x} &amp;
+                  \pdiff{}{y} &amp;
+                  \pdiff{}{z} \\
+                  e^{x^2}+yz &amp; \cos(y^2)-x^2 &amp; \sin(z^2)+xy
+                  \end{matrix} \right]
+=x\,\hi-(z+2x)\,\hk
+</me>
+and that we can rewrite <m>x^2-2x+4y^2=15</m> as <m>(x-1)^2+4y^2=16</m>,
+we have
+<md>
+<mrow>
+\oint_C\vF\cdot \dee{\vr}
+&amp;=\dblInt_S \vnabla\times\vF\cdot\hn\,\dee{S}
+</mrow><mrow>
+&amp;=\dblInt_{(x-1)^2+4y^2\le 16}\,
+     [x\hi-(z+2x)\hk]\Big|_{z=-7+x+2y}\cdot(-1,-2,1)\,\dee{x}\,\dee{y}
+</mrow><mrow>
+&amp;=\dblInt_{(x-1)^2+4y^2\le 16} [-x-(-7+x+2y+2x)]\,\dee{x}\,\dee{y}
+</mrow><mrow>
+&amp;=\dblInt_{(x-1)^2+4y^2\le 16} [7-4x-2y]\,\dee{x}\,\dee{y}
+</mrow>
+</md>
+To evaluate the integrals of <m>x</m> and <m>y</m> we use that, for any region <m>R</m>
+in the <m>xy</m>--plane,
+<me>
+\bar x =\frac{\dblInt_R x\,\dee{x}\,\dee{y}}{\text{Area}(R)}\qquad
+\bar y =\frac{\dblInt_R y\,\dee{x}\,\dee{y}}{\text{Area}(R)}
+</me>
+Our ellipse is <m>\frac{(x-1)^2}{4^2}+\frac{y^2}{2^2}=1</m>
+and so has area <m>\pi ab = \pi\times4\times 2=8\pi</m> and centroid
+<m>(\bar x,\bar y) = (1,0)</m>. So, using
+<m>R=\Set{(x,y)}{\frac{(x-1)^2}{4^2}+\frac{y^2}{2^2}\le 1}</m>,
+<md>
+<mrow>
+\oint_C\vF\cdot \dee{\vr}
+&amp;=\dblInt_R [7-4x-2y]\,\dee{x}\,\dee{y}
+</mrow><mrow>
+&amp;=\text{Area}(R) \big\{7-4\bar x-2\bar y\}
+</mrow><mrow>
+&amp;=8\pi[7-4\times 1-2\times 0]=24\pi
+</mrow>
+</md>
+</p></solution>
+</exercise>
+
+<exercise><title><fromexam>M317 2012D</fromexam></title>
+<statement><p>
+<ol label="a">
+<li>
+Find the curl of the vector field
+<m>\vF  = \big(2 + x^2 + z\,,\, 0\,,\, 3 + x^2 z\big)</m>.
+</li>
+<li>
+Let <m>C</m> be the curve in <m>\bbbr^3</m> from the point <m>(0, 0, 0)</m> to
+the point <m>(2, 0, 0)</m>, consisting of three consecutive line segments
+connecting the points <m>(0, 0, 0)</m> to <m>(0, 0, 3)</m>,
+<m>(0, 0, 3)</m> to <m>(0, 1, 0)</m>, and <m>(0, 1, 0)</m> to <m>(2, 0, 0)</m>.
+Evaluate the line integral
+<me>
+\int_C \vF\cdot\dee{\vr}
+</me>
+where <m>\vF</m> is the vector field from (a).
+</li>
+</ol>
+</p></statement>
+
+<hint><p>
+Part (a) is a hint for part (b). Sketch the curve in part (b).
+</p></hint>
+
+<answer><p>
+(a) <m>\vnabla\times\vF=(1-2xz)\,\hj</m></p><p>
+(b) <m>\frac{20}{3}</m>
+</p></answer>
+
+<solution><p>
+(a)
+The curl is
+<md>
+<mrow>
+\vnabla\times\vF
+&amp;=\det\left[\begin{matrix}
+\hi &amp;\hj &amp;\hk
+</mrow><mrow>
+\tfrac{\partial }{\partial x} &amp; \tfrac{\partial }{\partial y} &amp;
+                \tfrac{\partial }{\partial z}
+</mrow><mrow>
+2+x^2+z &amp;  0 &amp; 3+x^2z
+\end{matrix}
+\right]
+=(1-2xz)\,\hj
+</mrow>
+</md>
+</p>
+
+<p> (b) We are going to use Stokes' theorem. The specified curve <m>C</m>
+is not closed and so is not the boundary of a surface. So we extend
+<m>C</m> to a closed curve <m>\tilde C</m> by appending to <m>C</m> the line segment <m>L</m>
+from <m>(2,0,0)</m> to <m>(0,0,0)</m>. In the figure below, <m>C</m> is the red curve
+and <m>\tilde C</m> is <m>C</m> plus the blue line segment.
+</p>
+
+<sidebyside width="44%">
+<image source="pfigs/OE12D_4"/>
+</sidebyside>
+
+<p>
+The closed curve <m>\tilde C</m> is boundary of the surface <m>S</m> that is the
+union of
+<ul>
+<li> the triangle <m>T_1</m> in the <m>yz</m>-plane
+with vertices <m>(0,0,0)</m>, <m>(0,0,3)</m> and <m>(0,1,0)</m>
+and with normal vector <m>-\hi</m> and
+</li>
+<li> the triangle <m>T_2</m> in the <m>xy</m>-plane
+with vertices <m>(0,0,0)</m>, <m>(0,1,0)</m> and <m>(2,0,0)</m>
+and with normal vector <m>-\hk</m>.
+</li>
+</ul>
+So, by Stokes' theorem
+<md>
+<mrow>
+&amp;\int_C \vF\cdot\dee{\vr} + \int_L \vF\cdot\dee{\vr}
+=  \int_{\partial S} \vF\cdot\dee{\vr}
+= \dblInt_S \vnabla\times \vF\cdot\hn\,\dee{S}
+</mrow><mrow>
+&amp;\hskip0.5in= \dblInt_{T_1} \vnabla\times \vF\cdot(-\hi)\,\dee{S}
+  + \dblInt_{T_2} \vnabla\times \vF\cdot(-\hk)\,\dee{S}
+</mrow><mrow>
+&amp;\hskip0.5in= \dblInt_{T_1} (1-2xz)\,\hj\cdot(-\hi)\,\dee{S}
+  + \dblInt_{T_2} (1-2xz)\,\hj\cdot(-\hk)\,\dee{S}
+</mrow><mrow>
+&amp;\hskip0.5in=0
+</mrow>
+</md>
+Consequently the integral of interest
+<md>
+<mrow>
+\int_C \vF\cdot\dee{\vr}
+&amp;=- \int_L \vF\cdot\dee{\vr}
+=- \int_2^0 (2+x^2)\,\dee{x}
+\quad\text{since } \dee{y}=\dee{z}=z=0  \text{ on } L
+</mrow><mrow>
+&amp;=\int_0^2 (2+x^2)\,\dee{x}
+={\left[2x+\frac{x^3}{3}\right]}_0^2
+=\frac{20}{3}
+</mrow>
+</md>
+</p></solution>
+</exercise>
+
+<exercise><title><fromexam>M317 2012D</fromexam></title>
+<statement><p>
+<ol label="a">
+<li>
+Let <m>S</m> be the bucket shaped surface consisting of the cylindrical surface
+<m>y^2 + z^2 = 9</m> between <m>x = 0</m> and <m>x = 5</m>, and the disc inside the
+<m>yz</m>-plane of radius <m>3</m> centered at the origin. (The bucket <m>S</m>
+has a bottom, but no lid.) Orient <m>S</m> in such a way that the unit normal
+points outward. Compute the flux of the vector field <m>\vnabla\times\vG</m>
+through <m>S</m>, where <m>\vG = (x, -z, y)</m>.
+</li>
+<li>
+Compute the flux of the vector field <m>\vF = (2 + z, xz^2 , x \cos y)</m>
+through <m>S</m>, where <m>S</m> is as in (a).
+</li>
+</ol>
+</p></statement>
+
+<hint><p>
+For practice, evaluate the flux of part (a) twice <mdash/> once by direct
+evaluation and once using Stokes' theorem.
+</p></hint>
+
+<answer><p>
+(a) <m>-18\pi</m> </p><p>
+(b) <m>-18\pi</m>
+</p></answer>
+
+<solution><p>
+(a) <em>by direct evaluation:</em>
+The curl of <m>\vG</m> is
+<md>
+<mrow>
+\vnabla\times\vG
+&amp;=\det\left[\begin{matrix}
+\hi &amp;\hj &amp;\hk
+</mrow><mrow>
+\tfrac{\partial }{\partial x} &amp; \tfrac{\partial }{\partial y} &amp;
+                \tfrac{\partial }{\partial z}
+</mrow><mrow>
+x &amp; -z &amp; y
+\end{matrix}
+\right]
+=2\hi
+</mrow>
+</md>
+The part of <m>S</m> in the first octant is sketched in the figure on the left below.
+<m>S</m> consists of two parts <mdash/> the cylindrical surface
+<me>
+S_1 = \Set{(x,y,z)}{y^2+z^2=9,\ 0\le x\le 5}
+</me>
+and the disc
+<me>
+S_2 = \Set{(x,y,z)}{x=0,\ y^2+z^2\le 9}
+</me>
+The normal <m>\hn</m> to <m>S_1</m> always points radially outward from the cylinder
+and so always has <m>\hi</m> component zero. The normal of <m>S_2</m> is <m>-\hi</m>.
+So the flux is
+<md>
+<mrow>
+\dblInt_S \vnabla\times \vG \cdot \hn\,\dee{S}
+&amp;= \dblInt_{S_1} 2\hi \cdot \hn\,\dee{S}
+   + \dblInt_{S_2} 2\hi \cdot (-\hi)\,\dee{S}
+</mrow><mrow>
+&amp;= -2 \dblInt_{S_2} \dee{S}
+</mrow><mrow>
+&amp;= -2 \big(\pi 3^2\big) = -18\pi
+</mrow>
+</md>
+</p>
+
+<p>(a) <em>using Stokes' theorem:</em>
+Let's use Stokes' theorem. The boundary <m>\partial S</m> of <m>S</m> is the cirlce
+<m>y^2+z^2=9</m>, <m>x=5</m>, oriented clockwise when viewed from far down the <m>x</m>-axis.
+We'll parametrize it by <m>\vr(\theta)=\big(5, 3\cos\theta, -3\sin\theta\big)</m>.
+Then Stokes' theorem gives
+<md>
+<mrow>
+\dblInt_S \vnabla\times\vG\cdot\hn\,\dee{S}
+&amp;=\oint_{\partial S}\vG\cdot\dee{\vr}
+</mrow><mrow>
+&amp;=\int_0^{2\pi} \big(5\,,\,3\sin\theta,3\cos\theta\big)\cdot
+       \big(0\,,\,-3\sin\theta\,,\,-3\cos\theta\big)\,\dee{\theta}
+</mrow><mrow>
+&amp;=\int_0^{2\pi} \big(-9\sin^2\theta-9\cos^2\theta\big)\,\dee{\theta}
+</mrow><mrow>
+&amp;=-18\pi
+</mrow>
+</md>
+</p>
+
+<sidebyside width="33%">
+<image source="pfigs/OE12D_6a"/>
+<image source="pfigs/OE12D_6b"/>
+</sidebyside>
+
+<p>
+ (b)
+This time we'll use the divergence theorem. The surface <m>S</m> is not closed.
+So we'll use the auxilary surface formed by <q>topping <m>S</m> off</q>
+with the cap <m>T=\Set{(5,y,z)}{y^2+z^2\le 9}</m>. If we give <m>T</m> the normal vector <m>\hi</m>, this auxiliary surface, the union of <m>S</m> and <m>T</m>, is the boundary of
+<m>V=\Set{(x,y,z)}{y^2+z^2\le 9,\ 0\le x\le 5}</m>. So the divergence theorem gives
+<md>
+<mrow>
+\dblInt_S  \vF\cdot\hn\,\dee{S}
++\dblInt_T \vF\cdot\hn\,\dee{S}
+&amp;= \dblInt_{\partial V} \vF\cdot\hn\,\dee{S}
+</mrow><mrow>
+&amp;=\tripInt_V \vnabla\cdot \vF\ \dee{V}
+</mrow><mrow>
+&amp;=0
+</mrow>
+</md>
+since <m>\vnabla\cdot \vF = 0</m>. Thus the flux of interest is
+<md>
+<mrow>
+\dblInt_S  \vF\cdot\hn\,\dee{S}
+&amp;=-\dblInt_T \vF\cdot\hn\,\dee{S}
+=-\dblInt_T \vF\cdot\hi\,\dee{S}
+=-\dblInt_T (2+z)\,\dee{S}
+</mrow><mrow>
+&amp;=-2\dblInt_T \,\dee{S}
+   \qquad\text{since } \dblInt_T z\,\dee{S}=0, \text{ because $z$ is odd}
+</mrow><mrow>
+&amp;= -18\pi
+    \qquad\text{since $T$ has area $9\pi$}
+</mrow>
+</md>
+</p></solution>
+</exercise>
+
+<exercise><title><fromexam>M317 2010D</fromexam></title>
+<statement><p>
+Let
+<me>
+\vF(x, y, z) = \Big(\frac{y}{x} +x^{1+x^2}\,,\, x^2-y^{1+y^2}\,,\,
+                       \cos^5(\ln z)\Big)
+</me>
+<ol label="a">
+<li>
+Write down the domain <m>D</m> of <m>\vF</m>.
+</li>
+<li><p>
+Circle the correct statement(s):
+<ol label="a">
+<li> D is connected.
+</li>
+<li> D is simply connected.
+</li>
+<li> D is disconnected.
+</li>
+</ol></p>
+</li>
+<li>
+Compute <m>\vnabla\times\vF</m>.
+</li>
+<li>
+Let <m>C</m> be the square with corners <m>(3 \pm 1, 3 \pm 1)</m> in the plane
+<m>z = 2</m>, oriented clockwise (viewed from above, i.e. down <m>z</m>-axis).
+Compute
+<me>
+\int_C \vF \cdot \dee{\vr}
+</me>
+</li>
+<li>
+Is <m>\vF</m> conservative?
+</li>
+</ol>
+</p></statement>
+
+<hint><p>
+By definition, <m>D</m> is connected if any two points in <m>D</m>
+can be joined by a curve that lies completely in <m>D</m>.
+</p>
+
+<p>By definition, <m>D</m> is simply connected if any simple closed curve in
+<m>D</m> can be shrunk to a point continuously in <m>D</m>.
+</p></hint>
+
+<answer><p>
+(a) <m>D=\Set{(x,y,z)}{x \gt 0,\ y \gt 0,\ z \gt 0}</m>
+</p>
+
+<p>(b) The domain <m>D</m> is both connected and simply connected.
+</p>
+
+<p>(c) <m>\vnabla\times\vF=\big(2x-\frac{1}{x}\big)\hk</m>
+</p>
+
+<p>(d) <m>2\ln 2-24</m>
+</p>
+
+<p>(e) No. <m>\vF</m> is not conservative.
+</p></answer>
+
+<solution><p>
+(a)
+Since
+<ul>
+<li>
+<m>\frac{y}{x}</m> is defined when <m>x\ne 0</m> and
+</li>
+<li>
+<m>x^{1+x^2}=e^{(1+x^2)\ln x}</m> is defined when <m>\ln x</m> is defined,
+which is when <m>x \gt 0</m> (assuming that we are not allowed to use complex numbers)
+and
+</li>
+<li>
+<m>y^{1+y^2}=e^{(1+y^2)\ln y}</m> is defined when <m>\ln y</m> is defined,
+which is when <m>y \gt 0</m> and
+</li>
+<li>
+<m>\cos^5(\ln z)</m> is defined when <m>\ln z</m> is defined,
+which when <m>z \gt 0</m>
+</li>
+</ul>
+the domain of <m>\vF</m> is
+<me>
+D=\Set{(x,y,z)}{x \gt 0,\ y \gt 0,\ z \gt 0}
+</me>
+</p>
+
+<p> (b) The domain <m>D</m> is both connected (any two points in <m>D</m>
+can be joined by a curve that lies completely in <m>D</m>) and
+simply connected (any simple closed curve in <m>D</m> can be shrunk to a
+point continuously in <m>D</m>).
+</p>
+
+<p> (c) The curl of <m>\vF</m> is
+<md>
+<mrow>
+\vnabla\times\vF
+&amp;=\det\left[\begin{matrix}
+\hi &amp;\hj &amp;\hk
+</mrow><mrow>
+\tfrac{\partial }{\partial x} &amp; \tfrac{\partial }{\partial y} &amp;
+                \tfrac{\partial }{\partial z}
+</mrow><mrow>
+\frac{y}{x} +x^{1+x^2} &amp; x^2-y^{1+y^2} &amp; \cos^5(\ln z)
+\end{matrix}
+\right]
+=\big(2x-\frac{1}{x}\big)\hk
+</mrow>
+</md>
+</p>
+
+<p> (d)
+The integrand for direct evaluation looks very complicated.
+On the other hand <m>\vnabla\times\vF</m> is quite simple. So let's
+try Stokes' thoerem.
+Denote
+<me>
+S=\Set{(x,y,z)}{2\le x\le 4,\ 2\le y\le 4,\ z=2}
+</me>
+The boundary of <m>S</m> is <m>C</m>. Because of the clockwise orientation
+of <m>C</m>, we assign the normal vector <m>-\hk</m> to <m>S</m>. See the sketch below
+</p>
+
+<sidebyside width="37%">
+  <image source="pfigs/OE10D_5"/>
+</sidebyside>
+
+<p>
+Then, by Stokes'
+theorem,
+<md>
+<mrow>
+\oint_C\vF\cdot\dee{\vr}
+&amp;=\dblInt_S \vnabla\times\vF\cdot\hn\,\dee{S}
+= \dblInt_S \vnabla\times\vF\cdot(-\hk)\,\dee{S}
+</mrow><mrow>
+&amp;= -\dblInt_S \big(2x-\tfrac{1}{x}\big)\,\dee{S}
+</mrow><mrow>
+&amp;= -\int_2^4\dee{x}\int_2^4\dee{y}\ \big(2x-\tfrac{1}{x}\big)
+ =-\int_2^4\dee{x}\ 2\big(2x-\tfrac{1}{x}\big)
+</mrow><mrow>
+&amp; = - 2\Big[x^2-\ln x\Big]_2^4
+=-2\big[12-\ln 2\big] 
+</mrow><mrow>
+&amp;=2\ln 2-24
+</mrow>
+</md>
+</p>
+
+<p> (e) Since <m>\vnabla\times\vF</m> is not <m>\vZero</m>, <m>\vF</m> cannot
+be conservative.
+</p></solution>
+</exercise>
+
+<exercise><title><fromexam>M317 2007A</fromexam></title>
+<statement><p>
+A physicist studies a vector field <m>\vF(x, y, z)</m>. From experiments,
+it is known that <m>\vF</m> is of the form
+<me>
+\vF(x, y, z) = xz\,\hi + (axe^y z + byz)\,\hj + (y^2 - xe^y z^2 )\,\hk
+</me>
+for some real numbers <m>a</m> and <m>b</m>. It is further known that
+<m>\vF = \vnabla\times\vG</m> for some differentiable vector field <m>\vG</m>.
+<ol label="a">
+<li>
+Determine <m>a</m> and <m>b</m>.
+</li>
+<li>
+Evaluate the surface integral
+<me>
+\dblInt_S\vF\cdot\hn\,\dee{S}
+</me>
+where <m>S</m> is the part of the ellipsoid <m>x^2 + y^2 + \frac{1}{4} z^2 = 1</m>
+for which <m>z \ge 0</m>, oriented so that its normal vector has a positive <m>z</m>-component.
+</li>
+</ol>
+</p></statement>
+
+<hint><p>
+Review §<xref ref="sec_vectorPotential"/>.
+</p></hint>
+
+<answer><p>
+(a) <m>a=2</m>, <m>b=-1</m></p><p>
+(b) <m>\frac{\pi}{4}</m>
+</p></answer>
+
+<solution><p>
+(a)
+By the vector identity <m>\vnabla\cdot\big(\vnabla\times\vG\big)=0</m>
+(Theorem <xref ref="thm_degTwoIdentities"/>.a).
+So we must have
+<md>
+<mrow>
+0&amp;=\vnabla\cdot\vF
+  =\frac{\partial }{\partial x}\big(xz\big)
+   + \frac{\partial }{\partial y}\big(axe^y z + byz\big)
+   + \frac{\partial }{\partial z}\big(y^2 - xe^y z^2 \big)
+</mrow><mrow>
+ &amp;= z + \big(axe^y z+bz\big) + \big(-2xe^yz\big)
+</mrow><mrow>
+ &amp;= (1+b)z + (a-2)x e^y z
+</mrow>
+</md>
+So we need <m>a=2</m> and <m>b=-1</m>.
+</p>
+
+<p>(b)
+Note that the boundary, <m>\partial S</m>, is the circle <m>x^2+y^2=1</m>, <m>z=0</m>,
+oriented counter-clockwise. Also note that, if we knew what <m>\vG</m> was,
+we would be able to use Stokes' theorem to give
+<md>
+<mrow>
+\dblInt_S\vF\cdot\hn\,\dee{S}
+&amp;= \dblInt_S(\vnabla\times\vG)\cdot\hn\,\dee{S}
+=\oint_{\partial S} \vG\cdot\dee{\vr}
+</mrow>
+</md>
+So let's find a vector potential <m>\vG</m>.
+That is, let's try and find a vector field
+<m>\vG= G_1\,\hi + G_2\,\hj + G_3\,\hk</m> that obeys <m>\vnabla\times\vG = \vF</m>,
+or equivalently,
+<md>
+<mrow>
+\frac{\partial G_3}{\partial y} -\frac{\partial G_2}{\partial z} &amp;= F_1
+         =xz
+</mrow><mrow>
+-\frac{\partial G_3}{\partial x} +\frac{\partial G_1}{\partial z}&amp;=F_2
+         =2xe^y z - yz
+</mrow><mrow>
+\frac{\partial G_2}{\partial x} -\frac{\partial G_1}{\partial y}&amp;=F_3
+         =y^2 - xe^y z^2
+</mrow>
+</md>
+Let's also require that <m>G_3=0</m>. (If this is mysterious to you,
+review §<xref ref="sec_vectorPotential"/>.)
+Then the equations above simplify to
+ <md>
+<mrow>
+ -\frac{\partial G_2}{\partial z} &amp;=xz
+</mrow><mrow>
+  \frac{\partial G_1}{\partial z} &amp;=2xe^y z - yz
+</mrow><mrow>
+\frac{\partial G_2}{\partial x} -\frac{\partial G_1}{\partial y}&amp;=y^2 - xe^y z^2
+</mrow>
+</md>
+Now  the first equation contains only a single unknown, namely <m>G_2</m> and we
+can find all <m>G_2</m>'s that obey the first equation simply by integrating
+with respect to <m>z</m>:
+<me>
+G_2 = -\frac{xz^2}{2} + N(x,y)
+</me>
+Note that, because <m>\frac{\partial }{\partial z}</m> treats <m>x</m> and <m>y</m>
+as constants, the constant of integration <m>N</m> is allowed to depend on <m>x</m>
+and <m>y</m>.
+</p>
+
+<p>Similarly, the second equation contains only a single unknown,
+<m>G_1</m>, and is easily solved by integrating with respect to <m>z</m>.
+The second equation is satisfied if and only if
+<me>
+G_1 = xe^y z^2 - \frac{1}{2}yz^2 + M(x,y)
+</me>
+for some function <m>M</m>.
+</p>
+
+<p>Finally, the third equation is also satisfied
+if and only if <m>M(x,y)</m> and <m>N(x,y)</m> obey
+<me>
+\frac{\partial }{\partial x}\Big(-\frac{xz^2}{2} + N(x,y)\Big)
+-\frac{\partial }{\partial y}\Big(xe^yz^2-\frac{yz^2}{2} + M(x,y)\Big)
+     =y^2 - xe^y z^2
+</me>
+which simplifies to
+<me>
+\frac{\partial N}{\partial x}(x,y) -\frac{\partial M}{\partial y}(x,y) =y^2
+</me>
+This is one linear equation in two unknowns, <m>M</m> and <m>N</m>.
+Typically, we can easily solve one linear equation in one unknown.
+</p>
+
+<p>So we are free to eliminate one of the unknowns by setting, for example,
+<m>M=0</m>, and then choosing any <m>N</m> that obeys
+<me>
+\frac{\partial N}{\partial x}(x,y) = y^2
+</me>
+Integrating with respect to <m>x</m> gives, as one possible choice, <m>N(x,y) = xy^2</m>. So we have found a vector potential. Namely
+<me>
+\vG = \Big( xe^y z^2 - \frac{1}{2}yz^2\Big)\,\hi
+       +\Big(xy^2  -\frac{xz^2}{2}\Big)\,\hj
+</me>
+We can now evaluate the flux. Parametrize <m>\partial S</m>
+by
+<md>
+<mrow>
+\vr(\theta) &amp; = \cos\theta\,\hi +\sin\theta\,\hj
+</mrow><mrow>
+\vr'(\theta) &amp; = -\sin\theta\,\hi +\cos\theta\,\hj
+</mrow>
+</md>
+with <m>0\le\theta\le 2\pi</m>.
+So
+<md>
+<mrow>
+\dblInt_S\vF\cdot\hn\,\dee{S}
+   &amp;=\oint_{\partial S} \vG\cdot\dee{\vr}
+</mrow><mrow>
+&amp;=\int_0^{2\pi}
+   \Big(\overbrace{\cos\theta\sin^2\theta\,\hj}^{\vG(\vr(\theta))}\Big)
+    \cdot\overbrace{\big(-\sin\theta\,\hi +\cos\theta\,\hj\big)}^{\vr'(\theta)}
+      \  \dee{\theta}
+</mrow><mrow>
+&amp;=\int_0^{2\pi} \sin^2\theta\cos^2\theta\ \dee{\theta}
+</mrow><mrow>
+&amp;=\int_0^{2\pi} \frac{1-\cos(2\theta)}{2}\ \frac{1+\cos(2\theta)}{2}\
+                         \dee{\theta}
+</mrow><mrow>
+&amp;=\frac{1}{4}\int_0^{2\pi}  \big\{ 1-\cos^2(2\theta)\big\}\
+                         \dee{\theta}
+</mrow><mrow>
+&amp;=\frac{1}{4}\int_0^{2\pi}  \Big\{ 1-\frac{1+\cos(4\theta)}{2}\Big\}\
+                         \dee{\theta}
+</mrow><mrow>
+&amp; = \frac{1}{4}\ \frac{1}{2}\ 2\pi
+    \qquad\text{since } \int_0^{2\pi} \cos(4\theta)\ \dee{\theta}=0
+</mrow><mrow>
+&amp;=\frac{\pi}{4}
+</mrow>
+</md>
+</p></solution>
+</exercise>
+
+<exercise><title><fromexam>M317 2006D</fromexam></title>
+<statement><p>
+Let <m>C</m> be the curve in the <m>xy</m>-plane from the point <m>(0, 0)</m> to
+the point <m>(5, 5)</m> consisting of the ten line segments consecutively
+connecting the points <m>(0,0)</m>, <m>(0,1)</m>, <m>(1,1)</m>, <m>(1,2)</m>, <m>(2,2)</m>, <m>(2,3)</m>,
+<m>(3,3)</m>, <m>(3,4)</m>, <m>(4,4)</m>, <m>(4,5)</m>, <m>(5,5)</m>. Evaluate the line integral
+<md>
+<mrow>
+\int_C \vF \cdot\dee{\vr}
+</mrow>
+</md>
+where
+<md>
+<mrow>
+\vF = y\,\hi + (2x - 10)\,\hj
+</mrow>
+</md>
+</p></statement>
+
+<hint><p>
+Considering that there are ten line segments in <m>C</m>,
+it is probably not very efficient to use direct evaluation.
+</p></hint>
+
+<answer><p>
+<m>-15</m>
+</p></answer>
+
+<solution><p>
+Considering that there are ten line segments in <m>C</m>,
+it is probably not very efficient to use direct evaluation.
+Two other possible methods come to mind. If <m>\vF</m> is conservative,
+we can use <m>\vF</m>'s potential. Even if <m>\vF</m> is not conservative,
+it may be possible to efficiently use Stokes' (or Green's) theorem.
+So let's compute
+<md>
+<mrow>
+\vnabla\times\vF
+&amp;=\det\left[\begin{matrix}
+\hi &amp;\hj &amp;\hk
+</mrow><mrow>
+\tfrac{\partial }{\partial x} &amp; \tfrac{\partial }{\partial y} &amp;
+                \tfrac{\partial }{\partial z}
+</mrow><mrow>
+y &amp; 2x-10 &amp; 0
+\end{matrix}
+\right]
+=\hk
+</mrow>
+</md>
+As <m>\vnabla\times\vF\ne\vZero</m>, the vector field <m>\vF</m> is not conservative.
+As <m>\vnabla\times\vF\ne\vZero</m> is very simple, it looks like Stokes'
+theorem could provide an efficient way to compute the integral.
+The left figure below contains a sketch of <m>C</m>.
+</p>
+
+<sidebyside width="48%">
+  <image source="pfigs/OE06D_2"/>
+ <image source="pfigs/OE06D_2b"/>
+</sidebyside>
+
+<p>
+The curve <m>C</m> is not closed, and so is not the boundary of a surface,
+so we cannot apply Stokes' theorem directly. But we can easily
+come up with a surface whose boundary contains <m>C</m>. Let <m>R</m> be the shaded
+region in the figure on the right above. The boundary <m>\partial R</m>
+of <m>R</m> consists of two parts <mdash/> <m>C</m> and the line segment <m>L</m>.
+The normal of <m>R</m> for <m>-\hk</m> (since <m>\partial R</m> is oriented clockwise).
+So Stokes' theorem gives
+<md>
+<mrow>
+\int_C \vF \cdot\dee{\vr} + \int_L \vF \cdot\dee{\vr}
+&amp;= \dblInt_R  \vnabla\times\vF \cdot(-\hk)\ \dee{S}
+= \dblInt_R  (\hk) \cdot(-\hk)\ \dee{S}
+</mrow><mrow>
+&amp;= -\text{Area}(R)
+</mrow>
+</md>
+<m>R</m> is the union of <m>5</m> triangles, each of height <m>1</m> and base <m>1</m>.
+So
+<me>
+\text{Area}(R) = 5\times \frac{1}{2}\times 1\times 1
+=\frac{5}{2}
+</me>
+If we denote by <m>-L</m> the line segment from <m>(0,0)</m> to <m>(5,5)</m>,
+we can parametrize <m>-L</m> by <m>\vr(t) = t(5,5)</m>, <m>0\le t\le 1</m> and
+<md>
+<mrow>
+\int_{-L} \vF \cdot\dee{\vr}
+&amp;=\int_0^1 \overbrace{\big(5t\,\hi + (10t-10)\,\hj\big)}^{\vF(\vr(t))}
+              \cdot\overbrace{(5\,\hi+5\,\hj)}^{\vr'(t)}\ \dee{t}
+=\int_0^1 5\big(15t-10\big) \dee{t}
+</mrow><mrow>
+&amp;=25\left(\frac{3}{2}-2\right)
+=-\frac{25}{2}
+</mrow>
+</md>
+All together
+<md>
+<mrow>
+\int_C \vF \cdot\dee{\vr}
+&amp;= -\text{Area}(R) - \int_L \vF \cdot\dee{\vr}
+= -\text{Area}(R) + \int_{-L} \vF \cdot\dee{\vr}
+=-\frac{5}{2}-\frac{25}{2}
+</mrow><mrow>
+&amp;=-15
+</mrow>
+</md>
+</p></solution>
+</exercise>
+
+<exercise><title><fromexam>M317 2005A</fromexam></title>
+<statement><p>
+Let <m>\vF = \big(\sin x^2\,,\,xz\,,\,z^2\big)</m>.
+Evaluate <m>\oint_C\vF\cdot\dee{\vr}</m> around the curve <m>C</m> of
+intersection of the cylinder <m>x^2+y^2=4</m> with the surface <m>z=x^2</m>, traversed
+counter clockwise as viewed from high on the <m>z</m>-axis.
+</p></statement>
+
+<hint><p>
+Direct evaluation looks hard.
+</p></hint>
+
+<answer><p>
+<m>12\pi</m>
+</p></answer>
+
+<solution><p>
+If we parametrize the curve as
+<me>
+x = 2\cos\theta\qquad
+y = 2\sin\theta\qquad
+z= x^2 = 4\cos^2\theta\qquad
+0\le\theta\le 2\pi
+</me>
+then the term <m>\sin x(\theta)^2\ x'(\theta)</m> in the integral will be
+<m>\sin\big(4\cos^2\theta\big)\ (-2\sin\theta)</m>. That looks hard to integrate.
+So let's try Stokes' theorem.
+The curl of <m>\vF</m> is
+<md>
+<mrow>
+\vnabla\times\vF
+&amp;=\det\left[\begin{matrix}
+\hi &amp;\hj &amp;\hk
+</mrow><mrow>
+\tfrac{\partial }{\partial x} &amp; \tfrac{\partial }{\partial y} &amp;
+                \tfrac{\partial }{\partial z}
+</mrow><mrow>
+\sin x^2 &amp; xz &amp; z^2
+\end{matrix}
+\right]
+=-x\,\hi +z\,\hk
+</mrow>
+</md>
+The curve <m>C</m> is the boundary of the surface
+<me>
+S = \Set{(x,y,z)}{x^2+y^2\le 4,\ z=x^2}
+</me>
+with upward pointing normal.
+For the surface <m>z=f(x,y) = x^2</m>,
+(<xref ref="eq_SUdSgraph"/>) gives
+<md>
+<mrow>
+\hn\, \dee{S} &amp; = \pm\big[-f_x(x,y)\,\hi - f_y(x,y)\,\hj + \hk\big]\
+          \dee{x}\dee{y}
+</mrow><mrow>
+             &amp; = \pm \big[-2x\,\hi+\hk\big]\,\dee{x}\dee{y}
+</mrow>
+</md>
+Since we want the upward pointing normal
+<md>
+<mrow>
+\hn\, \dee{S} &amp; = \big[-2x\,\hi+\hk\big]\,\dee{x}\dee{y}
+</mrow>
+</md>
+So by Stokes' theorem (Theorem <xref ref="thm_Stokes"/>)
+<md>
+<mrow>
+\oint_C\vF\cdot\dee{\vr}
+&amp;=\dblInt_S \vnabla\times\vF \cdot \hn\,\dee{S}
+</mrow><mrow>
+&amp;=\dblInt_{x^2+y^2\le 4} \big(-x\,\hi + \overbrace{x^2}^{z}\hk\big)\cdot
+\big[-2x\,\hi+\hk\big]\,\dee{x}\dee{y}
+</mrow><mrow>
+&amp;=3\dblInt_{x^2+y^2\le 4} x^2\,\dee{x}\dee{y}
+</mrow>
+</md>
+Switching to polar coordinates
+<md>
+<mrow>
+\oint_C\vF\cdot\dee{\vr}
+&amp;=3\int_0^2\dee{r}\,r\int_0^{2\pi}\dee{\theta}\ r^2\cos^2\theta
+</mrow><mrow>
+&amp;=3\left[\int_0^2 r^3\,\dee{r}\right]
+           \left[\int_0^{2\pi}\cos^2\theta\ \dee{\theta}\right]
+</mrow><mrow>
+&amp;= 3\ \frac{2^4}{4}
+       \left[\int_0^{2\pi}\frac{\cos(2\theta)+1}{2}\ \dee{\theta}\right]
+</mrow><mrow>
+&amp;= 12\pi
+</mrow>
+</md>
+For an efficient, sneaky, way to evaluate
+<m>\int_0^{2\pi} \cos^2 t\ \dee{t}</m> see Example
+<xref ref="eg_workIntegralB"/>.
+</p>
+
+</solution>
+</exercise>
+
+<exercise><title><fromexam>M317 2005A</fromexam></title>
+<statement><p>
+Explain how one deduces the differential form
+<me>
+\vnabla\times\vE = -\frac{1}{c}\frac{\partial\vH}{\partial t}
+</me>
+of Faraday's law from its integral form
+<me>
+\oint_C\vE\cdot\dee{\vr} =
+  -\frac{1}{c}\ \diff{ }{t}\dblInt_S\vH\cdot\hn\,\dee{S}
+</me>
+</p></statement>
+
+<hint><p>
+Rewrite <m>\oint_C\vE\cdot\dee{\vr}</m> as a surface integral.
+</p></hint>
+
+<answer><p>
+Rewrite <m>\oint_C\vE\cdot\dee{\vr}</m> as a surface integral.  For the details,
+see the solution.
+</p></answer>
+
+<solution><p>
+By Stokes' Theorem,
+<me>
+\oint_C\vE\cdot \dee{\vr}=\dblInt_S(\vnabla\times\vE)\cdot \hn\,\dee{S}
+</me>
+so Faraday's law becomes
+<me>
+\dblInt_S\Big(\vnabla\times\vE
++\frac{1}{c}\frac{\partial\vH}{\partial t}\Big)\cdot\hn\,\dee{S}=0
+</me>
+This is true for all surfaces <m>S</m>. So the integrand, assuming that it is
+continuous,  must be zero.
+</p>
+
+<p>To see this, let
+<m>\vG=\Big(\vnabla\times\vE+\frac{1}{c}\frac{\partial\vH}{\partial t}\Big)</m>.
+Suppose that <m>\vG(\vx_0)\ne 0</m>. Pick a unit vector <m>\hn</m> in the direction
+of <m>\vG(\vx_0)</m>. Let <m>S</m> be a very small flat disk centered on <m>\vx_0</m>
+with normal <m>\hn</m> (the vector we picked). Then <m>\vG(\vx_0)\cdot\hn \gt 0</m>
+and, by continuity, <m>\vG(\vx)\cdot\hn \gt 0</m> for all <m>\vx</m> on <m>S</m>, if we have
+picked <m>S</m> small enough.
+ Then <m>\dblInt_S\Big(\vnabla\times\vE
+    +\frac{1}{c}\frac{\partial\vH}{\partial t}\Big)\cdot \hn\,\dee{S} \gt 0</m>, which is a contradiction.
+So <m>\vG=\vZero</m> everywhere and we conclude that
+<me>
+\vnabla\times\vE+\frac{1}{c}\frac{\partial\vH}{\partial t}=0
+</me>
+</p></solution>
+</exercise>
+
+<exercise><title><fromexam>M317 2004A</fromexam></title>
+<statement><p>
+Let <m>C</m> be the curve given by the parametric equations:
+<me>
+x=\cos t,\
+y=\sqrt{2}\sin t,\
+z=\cos t,\
+0\le t\le 2\pi
+</me>
+and let
+<me>
+\vF=z\,\hi+x\,\hj+y^3z^3\,\hk
+</me>
+Use Stokes' theorem to evaluate
+<me>
+\oint_C \vF\cdot \dee{\vr}
+</me>
+</p></statement>
+
+<hint><p>
+What is <m>x(t)^2+y(t)^2+z(t)^2=2</m>? How is <m>x(t)</m>
+relatex to <m>z(t)</m>?
+</p></hint>
+
+<answer><p>
+<m>\sqrt{2}\pi</m>
+</p></answer>
+
+<solution><p>
+The curl of the specified vector field is
+<md>
+<mrow>
+\nabla\times\vF
+&amp;=\nabla\times\big(z\,\hi+x\,\hj+y^3z^3\,\hk\big)
+</mrow><mrow>
+&amp;= \det\left[\begin{matrix}
+\hi &amp; \hj &amp; \hk
+</mrow><mrow>
+\tfrac{\partial }{\partial x} &amp; \tfrac{\partial }{\partial y} &amp;
+                \tfrac{\partial }{\partial z}
+</mrow><mrow>
+z &amp; x &amp; y^3z^3
+\end{matrix}\right]
+</mrow><mrow>
+&amp;=3y^2z^3\,\hi+\hj+\hk
+</mrow>
+</md>
+For every <m>t</m>, we have <m>x(t)=z(t)</m> and <m>x(t)^2+y(t)^2+z(t)^2=2</m>.
+So the specified curve is the intersection of the plane <m>x=z</m> and the sphere
+<m>x^2+y^2+z^2=2</m>. This curve is the boundary of the circular disk
+<me>
+D = \Set{(x,y,z)}{x=z,\ x^2+y^2+z^2\le 2}
+</me>
+The curve is oriented so that
+<m>\big(x(t),y(t)\big)=\big(\cos t,\sqrt{2}\sin t\big)</m>
+runs in the standard (counterclockwise) direction. So the unit normal
+to <m>D</m> used in Stokes' theorem has positive <m>\hk</m> component. Since the
+plane <m>x-z=0</m> has unit normal <m>\pm\frac{1}{\sqrt{2}}(1,0,-1)</m>, the unit
+normal used in Stokes' theorem is <m>\hn=\frac{1}{\sqrt{2}}(-1,0,1)</m>. By Stokes'
+theorem
+<md>
+<mrow>
+\oint_C \vF\cdot \dee{\vr}
+&amp;=\dblInt_D\nabla\times\vF\cdot\hn\ \dee{S}
+=\frac{1}{\sqrt{2}}\dblInt_D(3y^2z^3,1,1)\cdot(-1,0,1)\ \dee{S}
+</mrow><mrow>
+&amp;=\frac{1}{\sqrt{2}}\dblInt_D(1-3y^2z^3)\ \dee{S}
+</mrow>
+</md>
+The disk <m>D</m> is invariant under the reflection <m>(x,y,z)\rightarrow(-x,y,-z)</m>.
+Since <m>y^2z^3</m> is odd under this reflection, <m>\dblInt_D y^2z^3\ \dee{s}=0</m>
+and
+<me>
+\oint \vF\cdot \dee{\vr}
+=\frac{1}{\sqrt{2}}\dblInt_D \ \dee{S}
+=\frac{1}{\sqrt{2}}{\rm Area}(D)
+</me>
+Because the centre of the ball <m>x^2+y^2+z^2\le 2</m> (namely <m>(0,0,0)</m>)
+is contained in the plane <m>x=z</m>, the radius of the disk <m>D</m> is the same
+as the radius of the sphere <m>x^2+y^2+z^2=2</m>. So <m>D</m> has radius <m>\sqrt{2}</m> and
+<me>
+\oint \vF\cdot \dee{\vr}
+=\frac{1}{\sqrt{2}}{\rm Area}(D)
+=\frac{1}{\sqrt{2}}\pi{\big(\,\sqrt{2}\,\big)}^2
+=\sqrt{2}\pi
+</me>
+</p></solution>
+</exercise>
+
+<exercise><title><fromexam>M317 2002A</fromexam></title>
+<statement><p>
+Use Stokes' theorem to evaluate
+<me>
+\oint_C z\,\dee{x}+x\,\dee{y}-y\,\dee{z}
+</me>
+where <m>C</m> is the  closed curve which is the intersection of the plane <m>x+y+z=1</m>
+with the sphere <m>x^2+y^2+z^2=1</m>. Assume that <m>C</m> is oriented  clockwise
+as viewed from the origin.
+</p></statement>
+
+<hint><p>
+The intersection of the plane <m>x+y+z=1</m> with the sphere <m>x^2+y^2+z^2=1</m>
+is a circle. Use symmetry to guess the centre of the circle.
+</p></hint>
+
+<answer><p>
+<m>\frac{2\pi}{3\sqrt{3}}</m>
+</p></answer>
+
+<solution><p>
+The curl of the vector field <m>\vF=z\,\hi+x\,\hj-y\,\hk</m> is
+<me>
+\vnabla\times\vF=-\hi+\hj+\hk
+</me>
+The unit normal to the plane <m>x+y+z=1</m>, with positive <m>\hk</m> component as
+required by Stokes' theorem in this case, is <m>\hn=\frac{1}{\sqrt{3}}(1,1,1)</m>.
+If we denote by <m>D</m> the circular disk <m>x+y+z=1</m>, <m>x^2+y^2+z^2\le 1</m>, then
+Stokes' theorem (Theorem <xref ref="thm_Stokes"/>) says
+<md>
+<mrow>
+\oint_C z\,\dee{x}+x\,\dee{y}-y\,\dee{z}=\oint_C \vF\cdot \dee{\vr}
+&amp;=\dblInt_D\vnabla\times\vF\cdot\hn\,\dee{S}
+</mrow><mrow>
+&amp;=\dblInt_D(-1,1,1)\cdot\frac{1}{\sqrt{3}}(1,1,1)\,\dee{S}
+</mrow><mrow>
+&amp;=\frac{1}{\sqrt{3}}{\rm Area}(D)
+</mrow>
+</md>
+A reasonable guess for the centre of the disk is <m>\frac{1}{3}(1,1,1)</m>.
+(This guess is just based on symmetry.) To check
+this we just need to observe that it is indeed on the plane <m>x+y+z=1</m>
+and that the distance from  <m>\frac{1}{3}(1,1,1)</m> to any point <m>(x,y,z)</m>
+obeying <m>x+y+z=1</m> and <m>x^2+y^2+z^2=1</m>, namely
+<md>
+<mrow>
+&amp;\sqrt{{\Big(x-\frac{1}{3}\Big)}^2+{\Big(y-\frac{1}{3}\Big)}^2
++{\Big(z-\frac{1}{3}\Big)}^2}
+</mrow><mrow>
+&amp;\hskip1in=\sqrt{x^2+y^2+z^2-\frac{2}{3}(x+y+z)+\frac{3}{9}}
+=\sqrt{1-\frac{2}{3}+\frac{1}{3}}
+</mrow><mrow>
+&amp;\hskip1in=\sqrt{\frac{2}{3}}
+</mrow>
+</md>
+is the same. This also tells us that <m>D</m> has radius
+<m>\sqrt{\frac{2}{3}}</m> and hence area <m>\frac{2}{3}\pi</m>. So the specified
+line integral is <m>\frac{2\pi}{3\sqrt{3}}</m>.
+</p></solution>
+</exercise>
+
+<exercise><title><fromexam>M317 2018A</fromexam></title>
+<statement><p>
+Let <m>S</m> be the part of the half cone
+<me>
+z=\sqrt{x^2+y^2},\quad  y\ge 0,
+</me>
+that lies below the plane <m>z=1</m>.
+<ol label="a">
+<li>
+Find a parametrization for <m>S</m>.
+</li>
+<li>
+Calculate the flux of the velocity field
+<me>
+\vv=x\,\hi + y\, \hj -2 z\,\hk
+</me>
+downward through <m>S</m>.
+</li>
+<li>
+A vector field <m>\vF</m> has curl <m>\vnabla\times \vF= x\, \hi + y\, \hj -2 z\,\hk</m>.
+On the <m>xz</m>-plane, the vector field <m>\vF</m> is constant with <m>\vF(x,0,z)=\hj</m>. Given this information, calculate
+<me>
+\int_\cC \vF\cdot \dee{\vr},
+</me>
+where <m>\cC</m> is the half circle
+<me>
+x^2+y^2=1,\ z=1,\ y\ge 0
+</me>
+oriented from <m>(-1,0,1)</m> to <m>(1,0,1)</m>.
+</li>
+</ol>
+</p></statement>
+
+<hint><p>
+Sketch <m>S</m>.
+</p></hint>
+
+<answer><p>
+(a) One possible parametrization is
+<m>\vr(r, \theta) = r\cos \theta\, \hi +r\sin \theta\, \hj + r\,\hk</m>
+with <m>0\le r\le 1</m>, <m>0\le \theta \le \pi</m>.
+</p>
+
+<p>(b) <m>\pi</m>
+</p></answer>
+
+<solution><p>  (a)
+We parametrize <m>S</m> in cylindrical coordinates:
+<me>
+\vr(r, \theta) = r\cos \theta\, \hi +r\sin \theta\, \hj + r\,\hk
+             \qquad \text{with } 0\le r\le 1, 0\le \theta \le \pi
+</me>
+</p>
+
+<p>(b)
+We compute
+<md>
+<mrow>
+\frac{\partial \vr}{\partial r}
+    &amp;= \cos \theta \,\hi +\sin \theta \,\hj +\,\hk
+</mrow><mrow>
+\frac{\partial \vr}{\partial \theta}
+    &amp;= -r \sin \theta \,\hi + r\cos \theta \,\hj
+</mrow><mrow>
+\hn\, \dee{S} &amp;= \pm \frac{\partial \vr}{\partial r}\times
+                     \frac{\partial \vr}{\partial \theta}
+                   \ \dee{r}  \dee{\theta}
+         = \pm \big(-r\cos \theta \,\hi - r \sin \theta \,\hj + r \,\hk\big)\,
+                   \dee{r} \dee{\theta}
+</mrow>
+</md>
+To calculate the downward flux, we use the minus sign. We find
+<md>
+<mrow>
+\dblInt_S \vv \cdot \hn\, \dee{S}
+&amp; = \int_0^\pi \dee{\theta} \int_0^1 \dee{r}\  (r \cos \theta, r\sin \theta, -2r)\cdot
+                   (r\cos \theta, r\sin \theta, -r)
+</mrow><mrow>
+&amp;= \int_0^\pi \dee{\theta} \int_0^1 \dee{r}\  3 r^2
+  = \pi r^3\Big|_{r=0}^1 = \pi
+</mrow>
+</md>
+</p>
+
+<p>(c) <em>Solution 1</em>:
+Let <m>\cP</m> be the path along line segments from <m>(1,0,1)</m> to <m>(0,0,0)</m>
+and from <m>(0,0,0)</m> to <m>(-1,0,1)</m>. Here is a sketch. <m>\cP</m> is
+in blue.
+</p>
+
+<sidebyside width="43%">
+  <image source="pfigs/halfCone"/>
+</sidebyside>
+
+<p>
+Then
+<me>
+\int_\cC \vF \cdot \dee{\vr} + \int_\cP \vF \cdot \dee{\vr}
+= \dblInt_S \vnabla \times \vF \cdot \hn\, \dee{S}
+</me>
+by Stokes' Theorem. Along <m>\cP</m>, the vector field <m>\vF</m> is orthogonal
+to the curve so that <m>\int_\cP \vF\cdot \dee{\vr}=0</m>. Note that
+<m>\nabla\times \vF</m> is the vector field <m>\vv</m> from part (b).
+Thus
+<me>
+\int_\cC \vF\cdot \dee{\vr} = \dblInt_S \vv \cdot \hn\, \dee{S} = \pi
+</me>
+</p>
+
+<p>(c) <em>Solution 2:</em>
+Let <m>\cL</m> be the  line segment from <m>(1,0,1)</m> to <m>(-1,0,1)</m> and
+let
+<md>
+<mrow>
+\cR=\set{(x,y,z)}{x^2+y^2\le1, y\ge 0, z=1}
+</mrow>
+</md>
+Here is a sketch. <m>\cL</m> is in blue and <m>\cR</m> is shaded.
+</p>
+
+<sidebyside width="47%">
+  <image source="pfigs/halfConeB"/>
+</sidebyside>
+
+<p>
+Then
+<me>
+\int_\cC \vF \cdot \dee{\vr} + \int_\cL \vF \cdot \dee{\vr}
+= \dblInt_{\cR} \vnabla \times \vF \cdot (-\hk)\, \dee{S}
+</me>
+by Stokes' Theorem. Along <m>\cL</m>, the vector field <m>\vF=\hj</m> is orthogonal
+to the curve (which has direction <m>-\hi</m> so that <m>\int_\cL \vF\cdot \dee{\vr}=0</m>. Note that
+<m>\nabla\times \vF</m> is the vector field <m>\vv</m> from part (b).
+Thus
+<me>
+\int_\cC \vF\cdot \dee{\vr} = -\dblInt_\cR \vv \cdot \hk\, \dee{S}
+= \dblInt_\cR 2z \, \dee{S}
+= 2\dblInt_\cR \, \dee{S}
+=2\,\text{Area}(\cR)
+= \pi
+</me>
+</p>
+
+</solution>
+</exercise>
+
+<exercise>
+<statement><p>
+Consider <m>\dblInt_S(\vnabla\times\vF)\cdot\hn\,dS</m> where <m>S</m>
+is the portion of the sphere <m>x^2+y^2+z^2=1</m> that obeys <m>x+y+z\ge 1</m>, <m>\hn</m>
+is the upward pointing normal to the sphere and
+ <m>\vF=(y-z)\hi+(z-x)\hj+(x-y)\hk</m>. Find another
+surface <m>S'</m> with the property that <m>\dblInt_S(\vnabla\times\vF)\cdot\hn\,\dee{S}
+=\dblInt_{S'}(\vnabla\times\vF)\cdot\hn\,\dee{S}</m> and evaluate
+<m>\dblInt_{S'}(\vnabla\times\vF)\cdot\hn\,\dee{S}</m>.
+</p></statement>
+
+<hint><p>
+You can avoid evaluating any integral
+by identifying <m>S'</m> as a simple geometric figure.
+</p></hint>
+
+<answer><p>
+<m>-\frac{4}{\sqrt{3}}\pi</m>
+</p></answer>
+
+<solution><p>
+Let <m>S'</m> be the portion of <m>x+y+z=1</m> that is inside the sphere
+<m>x^2+y^2+z^2=1</m>. Then <m>\partial S=\partial S'</m>, so, by  Stokes' theorem,
+(with <m>\hn</m> always the upward pointing normal)
+<me>
+\dblInt_{S'}(\vnabla\times\vF)\cdot\hn\,\dee{S}
+=\oint_{\partial S'}\vF\cdot \dee{\vr}
+=\oint_{\partial S}\vF\cdot \dee{\vr}
+=\dblInt_{S}(\vnabla\times\vF)\cdot\hn\,\dee{S}
+</me>
+As
+<md>
+<mrow>
+\vnabla\times\vF=\det\left[\begin{matrix}\hi &amp; \hj &amp; \hk \\
+                  \pdiff{}{x} &amp;
+                  \pdiff{}{y} &amp;
+                  \pdiff{}{z} \\
+                  y-z &amp; z-x &amp; x-y \end{matrix}\right]
+=-2(\hi+\hj+\hk)
+</mrow>
+</md>
+and, on <m>S'</m>,
+<m>\hn=\frac{1}{\sqrt{3}}(\hi+\hj+\hk)</m>
+<me>
+\dblInt_{S'}(\vnabla\times\vF)\cdot\hn\,\dee{S}
+=\dblInt_{S'}\big(-2\sqrt{3}\big)\,\dee{S}
+=-2\sqrt{3}\times{\rm Area}(S')
+</me>
+<m>S'</m> is the intersection of a plane with a sphere and so is a circular disk. It's center <m>(x_c,y_c,z_c)</m> has to obey
+<m>x_c+y_c+z_c=1</m>. By symmetry, <m>x_c=y_c=z_c</m>, so <m>x_c=y_c=z_c=\frac{1}{3}</m>.
+Any point, <m>(x,y,z)</m>, which satisfies both <m>x+y+z=1</m> and <m>x^2+y^2+z^2=1</m>,
+obeys
+<md>
+<mrow>
+&amp;\left(x-\frac{1}{3}\right)^2+\left(y-\frac{1}{3}\right)^2
++\left(z-\frac{1}{3}\right)^2
+</mrow><mrow>
+&amp;\hskip1in=x^2+y^2+z^2-\frac{2}{3}(x+y+z)+3\frac{1}{9}
+</mrow><mrow>
+&amp;\hskip1in=1-\frac{2}{3} +\frac{1}{3}=\frac{2}{3}
+</mrow>
+</md>
+That is, any point on the boundary of <m>S'</m> is a distance <m>\sqrt{\frac{2}{3}}</m>
+from <m>\big(\frac{1}{3}\,,\,\frac{1}{3}\,,\,\frac{1}{3}\big)</m>.
+So the radius of <m>S'</m> is <m>\sqrt{\frac{2}{3}}</m>,
+the area of <m>S'</m> is <m>\frac{2}{3}\pi</m> and
+<me>
+\dblInt_{S'}(\vnabla\times\vF)\cdot\hn\,\dee{S}
+=-2\sqrt{3}\times{\rm Area}(S')
+=-\frac{4}{\sqrt{3}}\pi
+</me>
+</p>
+
+</solution>
+</exercise></exercisegroup>
+
+</exercises>

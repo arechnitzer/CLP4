@@ -1,0 +1,665 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+
+<!-- Copyright 2018 Joel Feldman, Andrew Rechnitzer and Elyse Yeager -->
+<!-- This work is licensed under the Creative Commons Attribution-NonCommercial-ShareAlike 4.0 International License-->
+<!-- https://creativecommons.org/licenses/by-nc-sa/4.0 -->
+
+<exercises>
+<exercisegroup>
+<introduction><conceptual/></introduction>
+
+<exercise>
+<statement><p>
+Consider the points
+<md>
+<mrow>
+(x_1,y_1) &amp;= (3,0) &amp;
+(x_2,y_2) &amp;= (1,1)  &amp;
+(x_3,y_3) &amp;= (0,1)
+</mrow><mrow>
+(x_4,y_4) &amp;= (-1,1) &amp;
+(x_5,y_5) &amp;= (-2,0)
+</mrow>
+</md>
+For each <m>1\le i\le 5</m>,
+<ul>
+<li>
+sketch, in the <m>xy</m>-plane, the point <m>(x_i,y_i)</m> and
+</li>
+<li>
+find the polar coordinates <m>r_i</m> and <m>\theta_i</m>,
+with <m>0\le\theta_i \lt 2\pi</m>, for the point <m>(x_i,y_i)</m>.
+</li>
+</ul>
+</p></statement>
+
+<answer><p>
+The upper sketch below contains the points, <m>(x_1,y_1)</m>, <m>(x_3,y_3)</m>,
+<m>(x_5,y_5)</m>, that are on the axes. The lower sketch below contains the
+points, <m>(x_2,y_2)</m>, <m>(x_4,y_4)</m>, that are not on the axes.
+</p>
+
+<sidebyside width="85%">
+<image source="pfigs/polar3A"/>
+</sidebyside>
+
+<sidebyside width="43%">
+<image source="pfigs/polar2A"/>
+</sidebyside>
+
+<p>
+<m>r_1 = 3</m>,        <m>\theta_1=0</m></p><p>
+    <m>r_2 = \sqrt{2}</m>, <m>\theta_2=\frac{\pi}{4}</m></p><p>
+    <m>r_3 = 1</m>,        <m>\theta_3=\frac{\pi}{2}</m></p><p>
+    <m>r_4 = \sqrt{2}</m>, <m>\theta_4=\frac{3\pi}{4}</m></p><p>
+    <m>r_5 = 2</m>,        <m>\theta_5=\pi</m>
+</p></answer>
+
+<solution><p>
+The upper sketch below contains the points, <m>(x_1,y_1)</m>, <m>(x_3,y_3)</m>,
+<m>(x_5,y_5)</m>, that are on the axes. The lower sketch below contains the
+points, <m>(x_2,y_2)</m>, <m>(x_4,y_4)</m>, that are not on the axes.
+</p>
+
+
+<sidebyside width="85%">
+<image source="pfigs/polar3A"/>
+</sidebyside>
+
+<sidebyside width="43%">
+<image source="pfigs/polar2A"/>
+</sidebyside>
+
+
+<p>
+Recall that the polar coordinates <m>r</m>, <m>\theta</m>
+are related to the cartesian coordinates <m>x</m>, <m>y</m>, by <m>x=r\cos\theta</m>,
+<m>y=r\sin\theta</m>. So <m>r=\sqrt{x^2+y^2}</m> and <m>\tan\theta=\frac{y}{x}</m>
+(assuming that <m>x\ne 0</m>) and
+<md alignment="alignat">
+<mrow>
+(x_1,y_1) &amp;= (3,0) &amp;&amp;\implies \quad r_1=3,\ \tan\theta_1=0
+</mrow><mrow>
+                   &amp;&amp;&amp;\implies \quad \theta_1=0
+                   \text{ as $(x_1,y_1)$ is on the positive $x$-axis}
+</mrow><mrow>
+(x_2,y_2) &amp;= (1,1) &amp;&amp;\implies \quad r_2=\sqrt{2},\ \tan\theta_2=1
+</mrow><mrow>
+                   &amp;&amp;&amp;\implies \quad  \theta_2=\frac{\pi}{4}
+                   \text{ as $(x_2,y_2)$ is in the first octant}
+</mrow><mrow>
+(x_3,y_3) &amp;= (0,1) &amp;&amp;\implies  \quad r_3=1,\ \cos\theta_3=0
+</mrow><mrow>
+                   &amp;&amp;&amp;\implies \quad  \theta_3=\frac{\pi}{2}
+                   \text{ as $(x_3,y_3)$ is on the positive $y$-axis}
+</mrow><mrow>
+(x_4,y_4) &amp;= (-1,1) &amp;&amp;\implies  \quad r_4=\sqrt{2},\ \tan\theta_4=-1
+</mrow><mrow>
+                   &amp;&amp;&amp;\implies \quad \theta_4=\frac{3\pi}{4}
+                   \text{ as $(x_4,y_4)$ is in the third octant}
+</mrow><mrow>
+(x_5,y_5) &amp;= (-2,0) &amp;&amp;\implies  \quad r_5=2,\ \tan\theta_5=0
+</mrow><mrow>
+                   &amp;&amp;&amp;\implies  \quad \theta_5=\pi
+                   \text{ as $(x_5,y_5)$ is on the negative $x$-axis}
+</mrow>
+</md>
+</p></solution>
+</exercise>
+
+<exercise>
+<statement><p>
+<ol label="a">
+<li>
+Find <em>all</em> pairs <m>(r,\theta)</m> such that
+<me>
+(-2,0) = \big(r\cos\theta\,,\,r\sin\theta\big)
+</me>
+</li>
+<li>
+Find <em>all</em> pairs <m>(r,\theta)</m> such that
+<me>
+(1,1) = \big(r\cos\theta\,,\,r\sin\theta\big)
+</me>
+</li>
+<li>
+Find <em>all</em> pairs <m>(r,\theta)</m> such that
+<me>
+(-1,-1) = \big(r\cos\theta\,,\,r\sin\theta\big)
+</me>
+</li>
+</ol>
+</p></statement>
+
+<hint><p>
+<m>r</m> is allowed to be negative.
+</p></hint>
+
+<answer><p>
+(a) <m>\big(r=2\,,\,\theta= n\pi,\ n\text{ odd integer }\big)</m> or
+    <m>\big(r=-2\,,\,\theta= n\pi,\ n\text{ even integer }\big)</m>
+</p>
+
+<p>(b) <m>\big(r=\sqrt{2}\,,\,\theta= \frac{\pi}{4} + 2n\pi\big)</m> or
+    <m>\big(r=-\sqrt{2}\,,\,\theta= \frac{5\pi}{4} + 2n\pi\big)</m>,
+    with <m>n</m> integer.
+</p>
+
+<p>(c) <m>\big(r=\sqrt{2}\,,\,\theta= \frac{5\pi}{4} + 2n\pi\big)</m> or
+    <m>\big(r=-\sqrt{2}\,,\,\theta= \frac{\pi}{4} + 2n\pi\big)</m>,
+    with <m>n</m> integer.
+</p></answer>
+
+<solution><p>
+Note that the distance from the point <m>\big(r\cos\theta\,,\,r\sin\theta\big)</m>
+to the origin is
+<me>
+\sqrt{r^2\cos^2\theta + r^2\sin^2\theta}
+=\sqrt{r^2}
+=|r|
+</me>
+Thus <m>r</m> can be either the distance to the origin or minus the distance to the
+origin.
+</p>
+
+<p>(a)
+The distance from <m>(-2,0)</m> to the origin is <m>2</m>. So either <m>r=2</m> or <m>r=-2</m>.
+<ul>
+<li> If <m>r=2</m>, then <m>\theta</m> must obey
+<md>
+<mrow>
+(-2,0) = \big(2\cos\theta\,,\,2\sin\theta\big)
+&amp;\iff \sin\theta=0,\ \cos\theta=-1
+</mrow><mrow>
+&amp;\iff \theta= n\pi,\ n\text{ integer },\ \cos\theta=-1
+</mrow><mrow>
+&amp;\iff \theta= n\pi,\ n\text{ odd integer }
+</mrow>
+</md>
+</li>
+<li> If <m>r=-2</m>, then <m>\theta</m> must obey
+<md>
+<mrow>
+(-2,0) = \big(-2\cos\theta\,,\,-2\sin\theta\big)
+&amp;\iff \sin\theta=0,\ \cos\theta=1
+</mrow><mrow>
+&amp;\iff \theta= n\pi,\ n\text{ integer },\ \cos\theta=1
+</mrow><mrow>
+&amp;\iff \theta= n\pi,\ n\text{ even integer }
+</mrow>
+</md>
+</li>
+</ul>
+In the figure on the left below, the blue half-line is the set of all points
+with polar coordinates <m>\theta=\pi</m>, <m>r \gt 0</m> and the pink half-line is the set
+of all points  with polar coordinates <m>\theta=\pi</m>, <m>r \lt 0</m>.
+In the figure on the right below, the blue half-line is the set of all points
+with polar coordinates <m>\theta=0</m>, <m>r \gt 0</m> and the pink half-line is the set
+of all points  with polar coordinates <m>\theta=0</m>, <m>r \lt 0</m>.
+</p>
+
+<sidebyside widths="43% 43%">
+<image source="pfigs/polar6B"/>
+<image source="pfigs/polar6A"/>
+</sidebyside>
+
+<p>
+(b)
+The distance from <m>(1,1)</m> to the origin is <m>\sqrt{2}</m>.
+So either <m>r=\sqrt{2}</m> or <m>r=-\sqrt{2}</m>.
+<ul>
+<li> If <m>r=\sqrt{2}</m>, then <m>\theta</m> must obey
+<md>
+<mrow>
+(1,1) = \big(\sqrt{2}\,\cos\theta\,,\,\sqrt{2}\,\sin\theta\big)
+&amp;\iff \sin\theta=\cos\theta=\frac{1}{\sqrt{2}}
+</mrow><mrow>
+&amp;\iff \theta= \frac{\pi}{4} + 2n\pi,\ n\text{ integer }
+</mrow>
+</md>
+</li>
+<li> If <m>r=-\sqrt{2}</m>, then <m>\theta</m> must obey
+<md>
+<mrow>
+(1,1) = \big(-\sqrt{2}\,\cos\theta\,,\,-\sqrt{2}\,\sin\theta\big)
+&amp;\iff \sin\theta=\cos\theta=-\frac{1}{\sqrt{2}}
+</mrow><mrow>
+&amp;\iff \theta= \frac{5\pi}{4} + 2n\pi,\ n\text{ integer }
+</mrow>
+</md>
+</li>
+</ul>
+In the figure on the left below, the blue half-line is the set of all points
+with polar coordinates <m>\theta=\frac{\pi}{4}</m>, <m>r \gt 0</m> and the pink half-line
+is the set of all points  with polar coordinates <m>\theta=\frac{\pi}{4}</m>, <m>r \lt 0</m>.
+In the figure on the right below, the blue half-line is the set of all points
+with polar coordinates <m>\theta=\frac{5\pi}{4}</m>, <m>r \gt 0</m> and the pink
+half-line is the set of all points  with polar coordinates
+<m>\theta=\frac{5\pi}{4}</m>, <m>r \lt 0</m>.
+</p>
+
+
+<sidebyside width="35%">
+  <image source="pfigs/polar4A"/>
+  <image source="pfigs/polar4B"/>
+</sidebyside>
+
+<p>
+(c)
+The distance from <m>(-1,-1)</m> to the origin is <m>\sqrt{2}</m>.
+So either <m>r=\sqrt{2}</m> or <m>r=-\sqrt{2}</m>.
+<ul>
+<li> If <m>r=\sqrt{2}</m>, then <m>\theta</m> must obey
+<md>
+<mrow>
+(-1,-1) = \big(\sqrt{2}\,\cos\theta\,,\,\sqrt{2}\,\sin\theta\big)
+&amp;\iff \sin\theta=\cos\theta=-\frac{1}{\sqrt{2}}
+</mrow><mrow>
+&amp;\iff \theta= \frac{5\pi}{4} + 2n\pi,\ n\text{ integer }
+</mrow>
+</md>
+</li>
+<li> If <m>r=-\sqrt{2}</m>, then <m>\theta</m> must obey
+<md>
+<mrow>
+(-1,-1) = \big(-\sqrt{2}\,\cos\theta\,,\,-\sqrt{2}\,\sin\theta\big)
+&amp;\iff \sin\theta=\cos\theta=\frac{1}{\sqrt{2}}
+</mrow><mrow>
+&amp;\iff \theta= \frac{\pi}{4} + 2n\pi,\ n\text{ integer }
+</mrow>
+</md>
+</li>
+</ul>
+In the figure on the left below, the blue half-line is the set of all points
+with polar coordinates <m>\theta=\frac{5\pi}{4}</m>, <m>r \gt 0</m> and the pink half-line
+is the set of all points  with polar coordinates
+<m>\theta=\frac{5\pi}{4}</m>, <m>r \lt 0</m>.
+In the figure on the right below, the blue half-line is the set of all points
+with polar coordinates <m>\theta=\frac{\pi}{4}</m>, <m>r \gt 0</m> and the pink
+half-line is the set of all points  with polar coordinates
+<m>\theta=\frac{\pi}{4}</m>, <m>r \lt 0</m>.
+</p>
+
+<sidebyside width="40%">
+<image source="pfigs/polar5A"/>
+<image source="pfigs/polar5B"/>
+</sidebyside>
+
+</solution>
+</exercise>
+
+<exercise xml:id="prb_polar_vectors">
+<statement><p>
+Consider the points
+<md>
+<mrow>
+(x_1,y_1) &amp;= (3,0) &amp;
+(x_2,y_2) &amp;= (1,1)  &amp;
+(x_3,y_3) &amp;= (0,1)
+</mrow><mrow>
+(x_4,y_4) &amp;= (-1,1) &amp;
+(x_5,y_5) &amp;= (-2,0)
+</mrow>
+</md>
+Also define, for each angle <m>\theta</m>, the vectors
+<md>
+<mrow>
+\he_r(\theta)=\cos\theta\ \hi + \sin\theta\ \hj\qquad
+\he_\theta(\theta) = -\sin\theta\ \hi + \cos\theta\ \hj
+</mrow>
+</md>
+<ol label="a">
+<li>
+Determine, for each angle <m>\theta</m>, the lengths of the vectors
+<m>\he_r(\theta)</m> and <m>\he_\theta(\theta)</m> and the angle between
+the vectors <m>\he_r(\theta)</m> and <m>\he_\theta(\theta)</m>. Compute
+<m>\he_r(\theta)\times\he_\theta(\theta)</m> (viewing <m>\he_r(\theta)</m> and <m>\he_\theta(\theta)</m> as vectors in three dimensions with zero <m>\hk</m>
+components).
+</li>
+<li>
+For each <m>1\le i\le 5</m>, sketch, in the <m>xy</m>-plane, the point <m>(x_i,y_i)</m>
+and the vectors <m>\he_r(\theta_i)</m> and <m>\he_\theta(\theta_i)</m>. In your
+sketch of the vectors, place the tails of the vectors
+<m>\he_r(\theta_i)</m> and <m>\he_\theta(\theta_i)</m> at <m>(x_i,y_i)</m>.
+</li>
+</ol>
+</p></statement>
+
+<hint><p>
+Compute, for each angle <m>\theta</m>, the dot product <m>\he_r(\theta)\cdot\he_\theta(\theta)</m>.
+</p></hint>
+
+<answer><p>
+(a) Both <m>\he_r(\theta)</m> and <m>\he_\theta(\theta)</m> have length 1.
+The angle between them is <m>\frac{\pi}{2}</m>. The cross product is
+<m>\he_r(\theta) \times \he_\theta(\theta)=\hk</m>.
+</p>
+
+<p>(b)
+Here is a sketch of <m>(x_i,y_i)</m>, <m>\he_r(\theta_i)</m>,
+<m>\he_\theta(\theta_i)</m> for <m>i =1,3,5</m> (the points on the axes)
+</p>
+
+<sidebyside width="91%">
+<image source="pfigs/polar3"/>
+</sidebyside>
+
+<p>
+and here is a sketch (to a different scale) of <m>(x_i,y_i)</m>, <m>\he_r(\theta_i)</m>,
+<m>\he_\theta(\theta_i)</m> for <m>i =2,4</m> (the points off the axes).
+</p>
+<sidebyside width="62%">
+<image source="pfigs/polar2"/>
+</sidebyside>
+
+</answer>
+
+<solution><p>
+(a) The lengths are
+<md>
+<mrow>
+|\he_r(\theta)| &amp;= \sqrt{\cos^2\theta+\sin^2\theta} = 1
+</mrow><mrow>
+|\he_\theta(\theta)| &amp;= \sqrt{(-\sin\theta)^2+\cos^2\theta} = 1
+</mrow>
+</md>
+As
+<me>
+\he_r(\theta) \cdot \he_\theta(\theta) = (\cos\theta)(-\sin\theta)
+                                        +(\sin\theta)(\cos\theta)=0
+</me>
+the two vectors are perpendicular and the angle between them is
+<m>\frac{\pi}{2}</m>. The cross product is
+<md>
+<mrow>
+\he_r(\theta) \times \he_\theta(\theta)
+&amp;=\det\left[\begin{matrix}
+                  \hi  &amp;  \hj        &amp; \hk \\
+           \cos\theta  &amp; \sin\theta  &amp;  0 \\
+          -\sin\theta  &amp; \cos\theta  &amp;  0
+            \end{matrix}\right] =\hk
+</mrow>
+</md>
+</p>
+
+<p>(b) Note that for <m>\theta</m> determined by <m>x=r\cos\theta</m>, <m>y=r\sin\theta</m>,
+<ul>
+<li>
+the vector <m>\he_r(\theta)</m> is a unit vector in the same direction as the
+vector from <m>(0,0)</m> to <m>(x,y)</m> and
+</li>
+<li>
+the vector <m>\he_\theta(\theta)</m> is a unit vector that is perpendicular
+to <m>\he_r(\theta)</m>.
+</li>
+<li>
+The <m>y</m>-component of <m>\he_\theta(\theta)</m> has the same sign
+as the <m>x</m>-component of <m>\he_r(\theta)</m>.
+The <m>x</m>-component of <m>\he_\theta(\theta)</m> has opposite sign to that of the <m>y</m>-component  of <m>\he_r(\theta)</m>.
+</li>
+</ul>
+Here is a sketch of <m>(x_i,y_i)</m>, <m>\he_r(\theta_i)</m>,
+<m>\he_\theta(\theta_i)</m> for <m>i =1,3,5</m> (the points on the axes)
+</p>
+
+<sidebyside width="91%">
+<image source="pfigs/polar3"/>
+</sidebyside>
+
+<p>
+and here is a sketch (to a different scale) of <m>(x_i,y_i)</m>, <m>\he_r(\theta_i)</m>,
+<m>\he_\theta(\theta_i)</m> for <m>i =2,4</m> (the points off the axes).
+</p>
+
+<sidebyside width="62%">
+<image source="pfigs/polar2"/>
+</sidebyside>
+
+</solution>
+</exercise>
+
+<exercise><title><fromexam>M200 2008A</fromexam></title>
+<statement><p>
+Match the following equations with the corresponding
+pictures. Cartesian coordinates are <m>(x, y)</m> and polar coordinates are
+<m>(r, \theta)</m>.
+</p>
+
+
+<sbsgroup widths="5% 40% 5% 40%">
+  <sidebyside>
+    <p>(A)</p> <image source="pfigs/polarCurveE"/>
+    <p>(B)</p> <image source="pfigs/polarCurveB"/>
+  </sidebyside>
+  <sidebyside>
+    <p>(C)</p> <image source="pfigs/polarCurveC"/>
+    <p>(D)</p> <image source="pfigs/polarCurveF"/>
+  </sidebyside>
+  <sidebyside>
+    <p>(E)</p> <image source="pfigs/polarCurveA"/>
+    <p>(F)</p> <image source="pfigs/polarCurveD"/>
+  </sidebyside>
+</sbsgroup>
+
+<p>
+<md alignment="alignat">
+<mrow>
+&amp;\text{(a)}\quad&amp; r&amp;=2+\sin(4\theta) \qquad\qquad &amp;
+&amp;\text{(b)}\quad&amp; r&amp;=1+2\sin(4\theta)
+</mrow><mrow>
+&amp;\text{(c)}\quad&amp; r&amp;=1\qquad\qquad &amp;
+&amp;\text{(d)}&amp; r&amp;=2\cos(\theta),\
+           -\tfrac{\pi}{2}\le\theta\le\tfrac{\pi}{2}
+</mrow><mrow>
+&amp;\text{(e)}&amp; r&amp;=e^{\theta/10}+e^{-\theta/10}\qquad\qquad &amp;
+&amp;\text{(f)}&amp; r&amp;=\theta &amp;
+</mrow>
+</md>
+</p></statement>
+
+<answer><p>
+(a) <m>\leftrightarrow</m> (E) </p><p>
+(b) <m>\leftrightarrow</m> (B) </p><p>
+(c) <m>\leftrightarrow</m> (F) </p><p>
+(d) <m>\leftrightarrow</m> (C) </p><p>
+(e) <m>\leftrightarrow</m> (A) </p><p>
+(f) <m>\leftrightarrow</m> (D)
+</p></answer>
+
+<solution><p>
+(a) Since <m>-1\le \sin(4\theta)\le 1</m>, the coordinate <m>r=2+\sin(4\theta)</m> oscillates between <m>r=1</m> and <m>r=3</m> as <m>\theta</m> runs from <m>0</m> to <m>2\pi</m>.
+The maximum value <m>r=3</m> is achieved when <m>\sin(4\theta)=1</m>, i.e when
+<m>4\theta=\frac{\pi}{2} +2n\pi</m>, i.e. when <m>\theta=\frac{\pi}{8}+\frac{n\pi}{2}</m>.
+That matches figure (E).
+</p>
+
+<p>(b) Since <m>-1\le \sin(4\theta)\le 1</m>, the coordinate <m>r=1+2\sin(4\theta)</m> takes its maximum value <m>r=3</m> when <m>\sin(4\theta)=1</m>, i.e. when <m>\theta=\frac{\pi}{8}+\frac{n\pi}{2}</m>, just as the case with <m>(a)</m>. But now
+<m>r</m> can also take the value <m>0</m>. That matches figure (B).
+</p>
+
+<p>(c) <m>r=1</m> is completely indepedent of <m>\theta</m>. All points on the curve <m>r=1</m>
+are a distance <m>1</m> from the origin. That is, <m>r=1</m> is the circle of radius <m>1</m>
+centred on the origin. That's figure (F).
+</p>
+
+<p>(d) In this case, <m>\theta</m> is subject to the restriction
+<m>-\frac{\pi}{2}\le\theta\le\frac{\pi}{2}</m>, like figure (C).
+Figure (C) looks like a circle. We can verify that <m>r=2\cos(\theta)</m> is
+indeed a circle by converting to Cartesian coordinates. We can convert the right hand side to exactly <m>2x=2r\cos(\theta)</m> by multiplying the
+whole equation by <m>r</m>.
+<md>
+<mrow>
+r=2\cos(\theta)
+&amp;\iff r^2 =2r\cos(\theta)
+\iff x^2+y^2=2x
+</mrow><mrow>
+&amp;\iff (x-1)^2+y^2=1
+</mrow>
+</md>
+So <m>r=2\cos(\theta)</m> is the circle of radius <m>1</m> centred on <m>x=1</m>, <m>y=0</m>,
+which indeed matches figure (C).
+</p>
+
+<p>(e) When <m>\theta=0</m>, <m>r=e^{\theta/10}+e^{-\theta/10}=2</m>.
+As
+<me>
+\diff{}{\theta}\big(e^{\theta/10}+e^{-\theta/10}\big)
+    =\frac{1}{10}\big(e^{\theta/10}-e^{-\theta/10}\big)
+     \gt 0\qquad\text{for all }\theta  \gt  0
+</me>
+<m>r=e^{\theta/10}+e^{-\theta/10}</m> increases as <m>\theta</m> increases for all
+<m>\theta\ge 0</m>. Furthermore the rate of increase gets bigger and bigger as
+<m>\theta</m> gets bigger and bigger. So <m>r</m> starts at <m>r=2</m> when <m>\theta=0</m>
+and increases faster and faster as <m>\theta</m> increases. That matches figure (A).
+</p>
+
+<p>(f) When <m>\theta=0</m>, <m>r=\theta=0</m>.
+As
+<me>
+\diff{}{\theta} \theta
+    =1 \qquad\text{for all }\theta
+</me>
+<m>r=\theta</m> increases as <m>\theta</m> increases for all
+<m>\theta\ge 0</m>. Furthermore the rate of increase is independent of <m>\theta</m>.
+So <m>r</m> starts at <m>r=0</m> when <m>\theta=0</m>
+and increases at a constant rate as <m>\theta</m> increases.
+That matches figure (D).
+</p>
+
+</solution>
+</exercise>
+</exercisegroup>
+
+<exercisegroup><introduction><procedural/></introduction>
+
+<exercise xml:id="prb_polar_curvature">
+<statement><p>
+Recall that a point with polar coordinates <m>r</m> and
+<m>\theta</m> has <m>x=r\cos\theta</m> and <m>y=r\sin\theta</m>. Let <m>r=f(\theta)</m> be
+the equation of a plane curve in polar coordinates. Find the
+curvature of this curve at a general point <m>\theta</m>.
+</p></statement>
+
+<hint><p>
+The curve can be parametrized by
+<m>\vr(\theta)= f(\theta)\big[\cos\theta\ \hi + \sin\theta\ \hj\big]</m>
+</p></hint>
+
+<answer><p>
+<m>\ka(\theta)=\frac{\big|f(\theta)^2+2f'(\theta)^2-f(\theta)f''(\theta)\big|}
+                     {{[f(\theta)^2+f'(\theta)^2]}^{3/2}}</m>
+</p></answer>
+
+<solution><p>
+Think of <m>\theta</m> as a time parameter and recall that
+<m>\ka(\theta)=\frac{|\vv(\theta)\times\va(\theta)|}{|\vv(\theta)|^3}</m>.
+The given curve has
+<md>
+<mrow>
+x(\theta)&amp;= f(\theta)\cos\theta
+</mrow><mrow>
+y(\theta)&amp;= f(\theta)\sin\theta
+</mrow><mrow>
+\vr(\theta)&amp;= f(\theta)\big[\cos\theta\ \hi + \sin\theta\ \hj\big]
+</mrow><mrow>
+\vv(\theta)=\vr'(\theta)&amp;= f'(\theta)\big[\cos\theta\ \hi + \sin\theta\ \hj\big]
+          +f(\theta)\big[-\sin\theta\ \hi + \cos\theta\ \hj\big]
+</mrow><mrow>
+\va(\theta)=\vr''(\theta)&amp;= \big\{f''(\theta)\!-\!f(\theta)\big\}\big[\cos\theta\,\hi 
+\!+\! \sin\theta\,\hj\big]
+             \!+\!2f'(\theta)\big[-\sin\theta\ \hi\!+\! \cos\theta\,\hj\big]
+</mrow>
+</md>
+The efficient way to compute <m>|\vv(\theta)|</m> and
+the cross product <m>\vv(\theta)\times\va(\theta)</m>
+is to observe that
+<md>
+<mrow>
+\vv(\theta)&amp;= f'(\theta)\,\he_r(\theta) +f(\theta)\,\he_\theta(\theta)
+</mrow><mrow>
+\va(\theta)&amp;= \big\{f''(\theta)-f(\theta)\big\}\,\he_r(\theta)
+             +2f'(\theta)\,\he_\theta(\theta)
+</mrow>
+</md>
+where <m>\he_r(\theta)</m> and <m>\he_\theta(\theta)</m> are the vectors of
+Q[<xref ref="prb_polar_vectors"/>].  As <m>\he_r(\theta)</m> and <m>\he_\theta(\theta)</m>
+are mutually perpendicular unit vectors
+obeying <m>\he_r(\theta)\times\he_\theta(\theta) =\hk</m> and
+<m>\he_r(\theta)\times\he_r(\theta) = \he_\theta(\theta)\times\he_\theta(\theta) =0</m>,
+<md>
+<mrow>
+|\vv(\theta)|^2&amp;=\vv(\theta)\!\cdot\!\vv(\theta)
+    \!=\!\big[f'(\theta)\,\he_r(\theta)\!+\!f(\theta)\,\he_\theta(\theta)\big]\!\cdot\!
+     \big[f'(\theta)\,\he_r(\theta) \!+\!f(\theta)\,\he_\theta(\theta)\big]
+</mrow><mrow>
+   &amp;=\!f'(\theta)^2\,\he_r(\theta)\cdot\he_r(\theta)
+     \!+\!f(\theta)^2\,\he_\theta(\theta)\cdot\he_\theta(\theta)
+     \!+\!2f'(\theta)\,f(\theta)\,\he_r(\theta)\cdot\he_\theta(\theta)
+</mrow><mrow>
+   &amp;=f'(\theta)^2+f(\theta)^2
+</mrow><mrow>
+|\vv(\theta)|&amp; = \sqrt{f'(\theta)^2+f(\theta)^2}
+</mrow><mrow>
+\vv(\theta)\!\times\!\va(\theta)
+ &amp;=\big[f'(\theta)\,\he_r(\theta)\!+\!f(\theta)\,\he_\theta(\theta)\big]\!\times\!
+   \big[\big\{f''(\theta)\!-\!f(\theta)\big\}\,\he_r(\theta)
+             \!+\!2f'(\theta)\,\he_\theta(\theta)\big]
+</mrow><mrow>
+ &amp;= 2f'(\theta)^2\,\he_r(\theta)\times\he_\theta(\theta)
+  +f(\theta)[f''(\theta)-f(\theta)]\,\he_\theta(\theta)\times\he_r(\theta)
+
+</mrow><mrow>
+ &amp;= \big\{2f'(\theta)^2-f(\theta)[f''(\theta)-f(\theta)]\big\}
+                                \,\hk
+</mrow>
+</md>
+So
+<md>
+<mrow>
+\ka(\theta)&amp;=\frac{|\vv(\theta)\times\va(\theta)|}{|\vv(\theta)|^3}
+=\frac{\big|f(\theta)^2+2f'(\theta)^2-f(\theta)f''(\theta)\big|}
+                     {{[f(\theta)^2+f'(\theta)^2]}^{3/2}}
+</mrow>
+</md>
+</p></solution>
+</exercise>
+
+<exercise>
+<statement><p>
+Find the curvature of the cardioid <m>r=a(1-\cos\theta)</m>.
+</p></statement>
+
+<answer><p>
+<m>\ka(\theta)=\frac{3}{2^{3/2}a\sqrt{1-\cos\theta}}
+   =\frac{3}{2\sqrt{2ar(\theta)}}</m>
+</p></answer>
+
+<solution><p>
+By the Q[<xref ref="prb_polar_curvature"/>] with
+<md>
+<mrow>
+f(\theta)  = a(1-\cos\theta)\qquad
+f'(\theta) = a\sin\theta\qquad
+f''(\theta) =a\cos\theta
+</mrow>
+</md>
+we have
+<md>
+<mrow>
+\ka(\theta)
+&amp;=\frac{\big|f(\theta)^2+2f'(\theta)^2-f(\theta)f''(\theta)\big|}
+                     {[f(\theta)^2+f'(\theta)^2]^{3/2}}
+</mrow><mrow>
+&amp;=\frac{\big|a^2-2a^2\cos\theta+a^2\cos^2\theta+2a^2\sin^2\theta-
+                a^2\cos\theta+a^2\cos^2\theta\big|}
+        {[a^2-2a^2\cos\theta+a^2\cos^2\theta+a^2\sin^2\theta]^{3/2}}
+</mrow><mrow>
+&amp;=\frac{3a^2-3a^2\cos\theta}{[2a^2-2a^2\cos\theta]^{3/2}}
+=\frac{3}{2^{3/2}a\sqrt{1-\cos\theta}}
+=\frac{3}{2\sqrt{2ar(\theta)}}
+</mrow>
+</md>
+</p></solution>
+</exercise></exercisegroup>
+
+</exercises>

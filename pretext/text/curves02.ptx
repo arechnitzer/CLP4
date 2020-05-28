@@ -151,6 +151,6 @@ Consequently the desired parametrization is
 which is remarkably simple.
 </p></example>
 
-<!-- <xi:include href="../problems/prob_s1.2.ptx" /> -->
+<xi:include href="../problems/prob_s1.2.ptx" />
 
 </section>

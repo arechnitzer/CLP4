@@ -1,0 +1,2990 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+
+<!-- Copyright 2018 Joel Feldman, Andrew Rechnitzer and Elyse Yeager -->
+<!-- This work is licensed under the Creative Commons Attribution-NonCommercial-ShareAlike 4.0 International License-->
+<!-- https://creativecommons.org/licenses/by-nc-sa/4.0 -->
+
+<exercises>
+<exercisegroup>
+<introduction><conceptual/></introduction>
+
+<exercise>
+<statement><p>
+In the sketch below of a three-dimensional curve and its osculating circle at a point, label <m>\hT</m> and <m>\hN</m>. Will <m>\hB</m> be pointing out of the paper towards the reader, or into the paper away from the reader?
+</p><sidebyside width="40%">
+<image><latex-image>\begin{tikzpicture}
+\draw[thick] plot[domain=0:5]({sin(\x r)},\x);
+\draw(.707,2.36) node[vertex]{};
+\draw[ultra thick, - \gt , red] (.71,2.36)--(.14,3.18);
+\draw[ultra thick, - \gt , red] (.71,2.36)--(-.11,1.78);
+\draw[dashed] (-1.414,.86) node[shape=circle, draw, minimum size=5.2cm]{};
+\end{tikzpicture}</latex-image></image>
+</sidebyside></statement>
+<hint><p>
+	Use the right-hand rule to figure out how <m>\hB</m> is oriented.
+</p></hint>
+<answer><sidebyside width="40%">
+<image><latex-image>\begin{tikzpicture}
+	\draw[thick] plot[domain=0:5]({sin(\x r)},\x);
+	\draw(.707,2.36) node[vertex]{};
+	\draw[ultra thick, - \gt , red] (.71,2.36)--(.14,3.18) node[above right]{$\hT$};
+	\draw[ultra thick, - \gt , red] (.71,2.36)--(-.11,1.78)node[below left]{$\hN$};
+	\draw[dashed] (-1.414,.86) node[shape=circle, draw, minimum size=5.2cm]{};
+	\end{tikzpicture}</latex-image></image>
+</sidebyside><p>
+<m>\hB</m> points out of the page (towards the reader).
+</p></answer>
+<solution><p>
+	<m>\hT</m> is tangent to the curve, while <m>\hN</m> is perpendicular to it.
+	</p><sidebyside width="40%">
+<image><latex-image>\begin{tikzpicture}
+		\draw[thick] plot[domain=0:5]({sin(\x r)},\x);
+		\draw(.707,2.36) node[vertex]{};
+		\draw[ultra thick, - \gt , red] (.71,2.36)--(.14,3.18) node[above right]{$\hT$};
+		\draw[ultra thick, - \gt , red] (.71,2.36)--(-.11,1.78)node[below left]{$\hN$};
+		\draw[dashed] (-1.414,.86) node[shape=circle, draw, minimum size=5.2cm]{};
+		\end{tikzpicture}</latex-image></image>
+</sidebyside><p>
+	Using the right-hand rule and <m>\hB=\hT \times \hN</m>, 	<m>\hB</m> points out of the page (towards the reader).
+</p>
+
+<p>To see this, point the fingers of your right hand in the direction of <m>\hT</m>, and curl them inwards until they are in the direction of <m>\hN</m>. To do this, your thumb must be pointing towards you, not away from you. Your thumb shows the direction of <m>\hT \times \hN</m>.
+</p></solution>
+</exercise>
+
+<exercise>
+<statement><p>
+	In the formula
+	<me>
+\diff{s}{t}(t)=|\vv(t)|=|\vr'(t)|</me>
+</p>
+
+<p>	does <m>s</m> stand for speed, or for arclength?
+</p></statement>
+<hint><p>
+	Speed is the norm of velocity. Does that fit this equation?
+</p></hint>
+<answer><p>
+	arclength
+</p></answer>
+<solution><p>
+	In this equation, <m>s</m> stands for arclength.
+</p>
+
+<p>	When we take a very small interval from <m>t</m> to <m>t+h</m>, the change in arclength <m>s(t+h)-s(t)</m> is approximately <m>|\vr(t+h)-\vr(t)|</m>, because our curve is approximated by a straight line. So, <m>\frac{s(t+h)-s(t)}{h} \approx \frac{|\vr(t+h)-\vr(t)|}{h}</m>, leading to <m>\diff{s}{t}=|\diff{\vr}{t}|=|\vv(t)|</m>.
+</p>
+
+<p>The magnitude of velocity is speed; in this text we generally call this <m>v</m>. That is, <m>v=|\vv(t)|</m>. This leads to the potentially confusing (but standard) convention that <m>s</m> stands for arclength, while <m>v</m> stands for speed.
+</p></solution>
+</exercise>
+
+<exercise>
+<statement><p>
+	Which curve (or curves) below have positive torsion, which have negative torsion, and which have zero torsion?
+	 The arrows indicate the direction of increasing <m>t</m>.
+</p><sidebyside width="40%">
+<image><latex-image>\begin{tikzpicture}
+\draw[thick, - \gt ] plot[domain=0:14, smooth, scale=0.5, samples=50]({-2*sin(\x r)-cos(\x r)},{\x/2-cos(\x r)});
+\draw (0,-2) node{$\va(t)=(\cos t, -2\sin t, t/2)$};
+\draw[help lines, - \gt ] (0,0)--(0,4) node[above]{$z$};
+\draw[help lines, - \gt ] (0,0)--(-1,-1) node[left]{$x$};
+\draw[help lines, - \gt ] (0,0)--(1,0) node[right]{$y$};
+	\end{tikzpicture}</latex-image></image>
+</sidebyside>
+
+<sidebyside width="40%">
+<image><latex-image>\begin{tikzpicture}
+\draw[thick, - \gt ] plot[domain=-14:0, smooth, scale=0.5, samples=50]({-2*sin(-\x r)-cos(\x r)},{-\x/2-cos(\x r)});
+\draw (0,-2) node{$\vb(t)=(\cos t, 2\sin t, -t/2)$};
+\draw[help lines, - \gt ] (0,0)--(0,4) node[above]{$z$};
+\draw[help lines, - \gt ] (0,0)--(-1,-1) node[left]{$x$};
+\draw[help lines, - \gt ] (0,0)--(1,0) node[right]{$y$};
+\end{tikzpicture}</latex-image></image>
+</sidebyside>
+
+<sidebyside width="40%">
+<image><latex-image>\begin{tikzpicture}
+\draw[thick, - \gt ] plot[domain=0:16, smooth, scale=0.5, samples=50]({\x*sin(\x r)/6},{\x/3*cos(\x r)});
+\draw (0,-3.5) node{$\vc(t)=(0, t/2\sin t, t\cos t)$};
+\draw[help lines, - \gt ] (0,0)--(0,2.5) node[above]{$z$};
+\draw[help lines, - \gt ] (0,0)--(-1,-1) node[left]{$x$};
+\draw[help lines, - \gt ] (0,0)--(1.5,0) node[right]{$y$};
+\end{tikzpicture}</latex-image></image>
+</sidebyside></statement>
+<hint><p>
+Review Example<nbsp/><xref ref="eg_helixTwist"/>
+ and remember that positive torsion indicates <q>right-handed twisting.</q> You shouldn't actually need to calculate anything.
+</p></hint>
+<answer><p>
+	<m>\va(t)</m> and <m>\vb(t)</m> have negative torsion,  <m>\vc(t)</m> has zero torsion.
+</p></answer>
+<solution><p>
+	Curves <m>\va</m> and <m>\vb</m> are the same curve, just parametrized differently (replace <m>t</m> with <m>-t</m> to convince yourself if the picture isn't enough). So, they ought to have the same torsion.
+</p>
+
+<p>	As in  Example<nbsp/><xref ref="eg_helixTwist"/>, we imagine that the curve is the thread on a bolt. Take a look at your right hand. If your thumb is pointing up (corresponding to the <m>+z</m> direction), and you're looking at the tip of your thumb, your fingers curl anticlockwise. Imagine a screw has threads matching the curves <m>\va</m> and <m>\vb</m>, and we turn it anticlockwise. The screw would move down <mdash/> <em>not</em> in the same direction as our thumb. So these curves are not right-handed helices, so they have negative torsion.
+</p>
+
+<p>	The curve <m>\vc</m> sits entirely in a plane (the plane <m>x=0</m>) so its torsion is zero everywhere.
+</p>
+</solution>
+<solution>
+<p>
+Here
+is the conventional computation for both <m>\va(t)</m> and <m>\vb(t)</m>.
+(The upper sign is for <m>\va</m> and the lower sign is for <m>\vb</m>.)
+<md>
+<mrow>
+\vr(t)&amp;=\big(\cos t\,,\,\mp 2\sin t \,,\,\pm t/2\big)
+</mrow><mrow>
+\vv(t)&amp;=\big(-\sin t\,,\,\mp 2\cos t \,,\,\pm 1/2\big)
+</mrow><mrow>
+\va(t)&amp;=\big(-\cos t\,,\,\pm 2\sin t \,,\,0\big)
+</mrow><mrow>
+\vv(t)\times\va(t)&amp;=\big(-\sin t\,,\,\mp\cos t/2\,,\,\mp 2\big)
+</mrow><mrow>
+\diff{\va}{t}(t)&amp;=\big(\sin t\,,\,\pm 2\cos t\,,\,0\big)
+</mrow><mrow>
+\vv(t)\times\va(t)\cdot \diff{\va}{t}(t) &amp;= -1
+</mrow><mrow>
+\tau(t)=\frac{\vv(t)\times\va(t)\cdot \diff{\va}{t}(t)}{|\vv(t)\times\va(t)|^2}
+  &amp;=-\frac{1}{\sin^2 t+\frac{1}{4}\cos^2 t+4}
+    \lt 0
+</mrow>
+</md>
+</p></solution>
+</exercise>
+
+<exercise>
+<statement><p>
+Consider a curve that is parametrized by arc length <m>s</m>.
+<ol label="a">
+<li>
+Show that if the curve has curvature <m>\ka(s)=0</m>
+for all <m>s</m>, then the curve is a straight line.
+</li>
+<li>
+Show that if the curve has curvature <m>\ka(s) \gt 0</m> and
+torsion <m>\tau(s)=0</m> for all <m>s</m>, then the curve lies in a plane.
+</li>
+<li>
+Show that if the curve has curvature <m>\ka(s)=\ka_0</m>,
+a strictly positive constant, and torsion <m>\tau(s)=0</m>
+for all <m>s</m>, then the curve is a circle.
+</li>
+</ol>
+</p></statement>
+
+<hint><p>
+(a) Show that the tangent vector <m>\hT(s)</m> is a constant.
+</p>
+
+<p>(b) Guess the plane. To do so, first show that the binormal <m>\hB(s)</m>
+    is a constant. Then show that <m>(\vr(s)-\vr(0))\cdot\hB </m> is a constant.
+</p>
+
+<p>(c) Guess the circle. To do so, first show that <m>\vr_c(s)=\vr(s)+\frac{1}{\ka(s)}\hN(s)</m> is a constant.
+</p>
+
+</hint>
+
+<answer>
+
+</answer>
+
+<solution><p>
+(a)
+If <m>\ka(s)\equiv 0</m>, then
+<m>\diff{\hT}{s}=\ka(s)\hN(s)\equiv 0</m> so that <m>\hT</m> is a constant.
+As a result <m>\diff{\vr}{s}(s)=\hT</m> and <m>\vr(s) =s\hT+\vr(0)</m> so that
+the curve is the straight line with direction vector <m>\hT</m> that passes
+through <m>\vr(0)</m>.
+</p>
+
+<p>(b) If <m>\tau(s)\equiv 0</m>, then
+<m>\diff{\hB}{s}=-\tau(s)\hN(s)\equiv 0</m> so that <m>\hB</m> is a constant.
+As <m>\hT(s)\perp\hB</m>,
+<me>
+\diff{}{s} (\vr(s)-\vr(0))\cdot\hB =\hT(s)\cdot\hB=0
+</me>
+and <m> (\vr(s)-\vr(0))\cdot\hB</m> must be a constant. The constant
+must be zero (set <m>s=0</m>), so <m> (\vr(s)-\vr(0))\cdot\hB=0</m> and <m>\vr(s)</m>
+always lies in the plane through <m>\vr(0)</m> with normal vector <m>\hB</m>.
+</p>
+
+<p>(c) Parametrize the curve by arc length. Define the <q>centre of
+curvature</q> at <m>s</m> by
+<me>
+\vr_c(s)=\vr(s)+\frac{1}{\ka(s)}\hN(s)
+</me>
+Since <m>\ka(s)=\ka_0</m> is a constant and <m>\tau(s)\equiv 0</m>,
+<me>
+\diff{}{s}\vr_c(s)
+   =\hT(s)+\frac{1}{\ka_0}\big[\tau(s)\hB-\ka(s)\hT\big]
+   =\hT(s)+\frac{1}{\ka_0}\big[0\hB-\ka_0\hT\big]
+   =0
+</me>
+Thus <m>\vr_c(s)=\vr_c</m> is a constant and
+<m>\big|\vr(s)-\vr_c\big|=\frac{1}{\ka_0}</m> lies on the sphere of radius
+<m>\frac{1}{\ka_0}</m> centred on <m>\vr_c</m>. Since <m>\tau(s)\equiv 0</m>,
+the curve also lies on a plane, so it is a circle.
+</p></solution>
+</exercise>
+
+<exercise><title><fromexam>M317 2018A</fromexam></title>
+<statement><p>
+The surface <m>z=x^2+y^2</m> is sliced by the plane <m>x=y</m>.
+The resulting curve is oriented from <m>(0,0,0)</m> to <m>(1,1,2)</m>.
+<ol label="a">
+<li>
+Sketch the curve from <m>(0,0,0)</m> to <m>(1,1,2)</m>.
+</li>
+<li>
+Sketch <m>\hat\vT</m>, <m>\hat\vN</m> and <m>\hat\vB</m> at <m>\big(\half,\half,\half\big)</m>.
+</li>
+<li>
+Find the torsion at <m>\big(\half,\half,\half\big)</m>.
+</li>
+</ol>
+</p></statement>
+
+<hint><p>
+It is not necessary to compute anything.
+</p></hint>
+
+<answer><p>
+(a), (b)
+</p>
+
+<sidebyside width="46%">
+<image source="pfigs/parabolicBowlB"/>
+</sidebyside>
+
+<p>
+(c)
+The torsion is zero.
+</p></answer>
+
+<solution><p>
+(a), (b): <m>\hT</m> points in the direction of the curve; <m>\hN</m> is perpendicular to it, in the same plane, pointing towards the centre of curvature. Using the right-hand rule in the picture, we see <m>\hB</m> is pointing to the left.
+</p>
+
+<sidebyside width="46%">
+<image source="pfigs/parabolicBowlB"/>
+</sidebyside>
+
+<p>
+(c)
+The torsion is zero, since the curve lies in a plane (the plane <m>x=y</m>).
+</p></solution>
+</exercise>
+</exercisegroup>
+
+<exercisegroup><introduction><procedural/></introduction>
+
+<exercise><title><fromexam>M317 2006A</fromexam></title>
+<statement><p>
+Let <m>C</m> be the space curve
+<md>
+<mrow>
+\vr(t) = \big(e^t - e^{-t}\big)\,\hi + \big(e^t + e^{-t}\big)\,\hj +2t\,\hk
+</mrow>
+</md>
+<ol label="a">
+<li>
+Find <m>\vr'</m>, <m>\vr''</m> and the curvature of <m>C</m>.
+</li>
+<li>
+Find the length of the curve between <m>\vr(0)</m> and <m>\vr(1)</m>.
+</li>
+</ol>
+</p></statement>
+
+<hint><p>
+Both parts of this question make use of the quantity <m>\diff{s}{t}</m>.
+</p></hint>
+
+<answer><p>
+(a) <m>\vr'(t)=\big(e^t + e^{-t}\big)\,\hi + \big(e^t - e^{-t}\big)\,\hj +2\,\hk</m>,
+    <m>\vr''(t)=\big(e^t - e^{-t}\big)\,\hi + \big(e^t + e^{-t}\big)\,\hj</m>,
+</p>
+
+<p><m>\ka(t) =\frac{1}{2+e^{2t}+e^{-2t}}</m>
+</p>
+
+<p>(b) <m>\sqrt{2}\Big[e-\frac{1}{e}\Big]</m>
+</p></answer>
+
+<solution><p> (a)
+As
+<md>
+<mrow>
+\vr'(t)&amp;=\big(e^t + e^{-t}\big)\,\hi + \big(e^t - e^{-t}\big)\,\hj +2\,\hk 
+</mrow><mrow>
+\diff{s}{t}(t) &amp;=|\vr'(t)|= \sqrt{4+2e^{2t}+2e^{-2t}}
+                =\sqrt{2}\big(e^t+e^{-t}\big)
+</mrow><mrow>
+\vr''(t)&amp;=\big(e^t - e^{-t}\big)\,\hi + \big(e^t + e^{-t}\big)\,\hj  
+</mrow><mrow>
+\vr'(t)\times\vr''(t)&amp;=-2\big(e^t + e^{-t}\big)\,\hi
+          + 2\big(e^t - e^{-t}\big)\,\hj +4\,\hk
+</mrow>
+</md>
+the curvature
+<md>
+<mrow>
+\ka(t) &amp;= \frac{|\vv(t)\times\va(t)|}{\big(\diff{s}{t}\big)^3}
+ =\frac{2\sqrt{4+2e^{2t}+2e^{-2t}}}{[4+2e^{2t}+2e^{-2t}]^{3/2}}
+ =\frac{1}{2+e^{2t}+e^{-2t}}
+</mrow>
+</md>
+</p>
+
+<p>(b) The length of <m>C</m> between <m>\vr(0)</m> and <m>\vr(1)</m> is
+<md>
+<mrow>
+\int_0^1 \diff{s}{t}(t) \ \dee{t}
+&amp;= \sqrt{2} \int_0^1 (e^t+e^{-t}) \ \dee{t}
+=\sqrt{2}\Big[e^t-e^{-t}\Big]_0^1
+=\sqrt{2}\Big[e-\frac{1}{e}\Big]
+</mrow>
+</md>
+</p>
+
+</solution>
+</exercise>
+
+<exercise>
+<statement><p>
+	Find the torsion of <m>\vr(t)=(t,t^2,t^3)</m> at the point <m>(2,4,8)</m>.
+</p></statement>
+<hint><p>
+	<m>\tau(t)=\dfrac{(\vv(t) \times \va(t))\cdot\diff{\va}{t}}{|\vv(t) \times \va(t)|^2}</m>
+</p></hint>
+<answer><p>
+<m>\frac{3}{{181}}</m>
+</p></answer>
+<solution><p>
+ The point <m>(2,4,8)</m> occurs when <m>t=2</m>.
+	<md>
+<mrow>
+		\vv(t)&amp;=(1,2t,3t^2) &amp; \vv(2)&amp;=(1,4,12)
+</mrow><mrow>
+		\va(t)&amp;=(0,2,6t) &amp; \va(2)&amp;=(0,2,12)
+</mrow><mrow>
+		\diff{\va}{t}(t)&amp;=(0,0,6) &amp; \diff{\va}{t}(2)&amp;=(0,0,6)
+</mrow><mrow>
+		&amp;&amp; \vv(2) \times \va(2)&amp;=(24,-12,2)
+</mrow><mrow>
+		&amp;&amp; |\vv(2) \times \va(2)|&amp;=2\sqrt{181}
+		</mrow>
+</md>
+Now, we use a formula for torsion:
+<md>
+<mrow>\tau(t)&amp;=\dfrac{(\vv(t) \times \va(t))\cdot\diff{\va}{t}(t)}{|\vv(t) \times \va(t)|^2}
+</mrow><mrow>
+\tau(2)&amp;=\frac{(24,-12,2)\cdot(0,0,6)}{(2\sqrt{181})^2}=\frac{3}{{181}}
+		</mrow>
+</md>
+</p>
+
+</solution>
+</exercise>
+
+<exercise>
+<statement><p>
+Find the unit tangent, unit normal and binormal vectors and
+the curvature and torsion of the curve
+<me>
+\vr(t)=t\,\hi + \frac{t^2}{2}\,\hj + \frac{t^3}{3}\,\hk
+</me>
+</p></statement>
+
+<hint><p>
+Review §<xref ref="sec_CurveCompendium"/>.
+</p></hint>
+
+<answer><p>
+<m>\hT(t)=\frac{\hi + t\,\hj + t^2\,\hk}{\sqrt{1+t^2+t^4}}</m></p><p>
+<m>\hB(t)=\frac{t^2\,\hi-2t\,\hj+\hk}{\sqrt{1+4t^2+t^4}}</m></p><p>
+<m>\hN(t)=\frac{-(t+2t^3)\,\hi+(1-t^4)\,\hj+(2t+t^3)\hk}
+            {\sqrt{1+t^2+t^4}\sqrt{1+4t^2+t^4}}</m>
+</p>
+
+<p><m>\ka(t)=\frac{\sqrt{1+4t^2+t^4}}{[1+t^2+t^4]^{3/2}}</m></p><p>
+<m>\tau(t)=\frac{2}{1+4t^2+t^4}</m>
+</p></answer>
+
+<solution><p>
+For the specified curve
+<md>
+<mrow>
+\vr(t)&amp;=t\,\hi + \frac{t^2}{2}\,\hj + \frac{t^3}{3}\,\hk
+</mrow><mrow>
+\vv(t)=\vr'(t)&amp;= \hi + t\,\hj + t^2\,\hk
+</mrow><mrow>
+\va(t)=\vr''(t)&amp;= \hj + 2t\,\hk
+</mrow><mrow>
+\vv(t)\times\va(t)
+&amp;=\det\left[\begin{matrix}
+                 \hi  &amp; \hj &amp;  \hk
+</mrow><mrow>
+                  1   &amp;  t  &amp;  t^2
+</mrow><mrow>
+                  0   &amp;  1  &amp;  2t
+       \end{matrix}\right]
+</mrow><mrow>
+&amp; = t^2\,\hi-2t\,\hj+\hk
+</mrow><mrow>
+\va'(t)&amp;=  2\,\hk
+</mrow>
+</md>
+From this, we read off
+<md>
+<mrow>
+\hT(t)&amp;=\frac{\vv(t)}{|\vv(t)|}
+        =\frac{\hi + t\,\hj + t^2\,\hk}{\sqrt{1+t^2+t^4}}
+</mrow><mrow>
+\ka(t)&amp;=\frac{|\vv(t)\times\va(t)|}{|\vv(t)|^3}
+       =\frac{\sqrt{1+4t^2+t^4}}{[1+t^2+t^4]^{3/2}}
+</mrow><mrow>
+\hB(t)&amp;=\frac{\vv(t)\times\va(t)}{|\vv(t)\times\va(t)|}
+       =\frac{t^2\,\hi-2t\,\hj+\hk}{\sqrt{1+4t^2+t^4}}
+</mrow><mrow>
+\hN(t)&amp;=\hB(t)\times\hT(t)
+</mrow><mrow>
+       &amp;= \frac{1}{\sqrt{1+t^2+t^4}\sqrt{1+4t^2+t^4}}\det\left[\begin{matrix}
+                 \hi  &amp; \hj &amp;  \hk
+</mrow><mrow>
+                  t^2 &amp; -2t &amp;  1
+</mrow><mrow>
+                  1   &amp;  t  &amp;  t^2
+       \end{matrix}\right]
+</mrow><mrow>
+       &amp;=\frac{-(t+2t^3)\,\hi+(1-t^4)\,\hj+(2t+t^3)\hk}
+            {\sqrt{1+t^2+t^4}\sqrt{1+4t^2+t^4}}
+</mrow><mrow>
+\tau(t)&amp;=\frac{\big(\vv(t)\times\va(t)\big)\cdot\va'(t)}{|\vv(t)\times\va(t)|^2}
+       =\frac{2}{1+4t^2+t^4}
+</mrow>
+</md>
+</p></solution>
+</exercise>
+
+<exercise>
+<statement><p>
+	For some constant <m>c</m>, define <m>\vr(t)=(t^3,t,e^{ct})</m>. For which value(s) of <m>c</m> is <m>\tau(5)=0</m>? For each of those values of <m>c</m>, find an equation for the plane containing the osculating circle to the curve at <m>t=5</m>.
+</p></statement>
+<hint><p>
+	The vector perpendicular to the plane containing the osculating circle is the binormal vector, <m>\hB</m>.
+</p></hint>
+<answer><p>
+	When <m>c=0</m>, the plane is <m>z=1</m>.
+	When <m>c=1/5</m>, the plane is <m>(1/25)x+3y-(30/e)z=-10</m>.
+</p></answer>
+<solution><p>
+	First, some preliminaries:
+	<md>
+<mrow>
+		\vr(t)&amp;=(t^3,t,e^{ct}) &amp; \vr(5)&amp;=(5^3,5,e^{5c})
+</mrow><mrow>
+		\vv(t)&amp;=(3t^2,1,ce^{ct}) &amp; \vv(5)&amp;=(3\cdot 5^2,1,ce^{5c})
+</mrow><mrow>
+		\va(t)&amp;=(6t,0,c^2e^{ct}) &amp; \va(5)&amp;=(6\cdot 5,0,c^2e^{5c})
+</mrow><mrow>
+		\diff{\va}{t}(t)&amp;=	(6,0,c^3e^{ct})&amp; 	\diff{\va}{t}(5)&amp;=	(6,0,c^3e^{5c})
+</mrow><mrow>
+	&amp;&amp;	\vv(5) \times \va(5)&amp;=(c^2e^{5c},15ce^{5c}(2-5c),-30)
+		</mrow>
+</md>
+	Second, we figure out what value of <m>c</m> makes <m>\tau(5)=0</m>.
+	<md>
+<mrow>
+		0&amp;=\tau(5)=\dfrac{(\vv(5) \times \va(5))\cdot\diff{\va}{t}(5)}{|\vv(5) \times \va(5)|^2}
+</mrow><mrow>
+		0&amp;=(\vv(5)\times\va(5))\cdot \diff{\va}{t}(5)
+</mrow><mrow>
+		&amp;=(c^2e^{5c},15ce^{5c}(2-5c),-30)\cdot (6,0,c^3e^{5c})
+</mrow><mrow>
+		&amp;=6c^2e^{5c}(1-5c)
+</mrow><mrow>
+		c&amp;=0 \text{ or } c=\frac15
+		</mrow>
+</md>
+	If <m>c=0</m>, then <m>\vr(t)=(t^3,t,1)</m>, and so the entire curve is contained inside the plane <m>z=1</m>. (Its torsion is zero everywhere <mdash/> not just at <m>t=5</m>.)
+</p>
+
+<p>	Consider the case <m>c=\frac15</m>. When <m>t=5</m>, our curve (and its osculating circle) passes through the point <m>\vr(5)=(5^3,5,e)</m>. The normal vector to the plane of the osculating curve is the binormal vector <m>\hB(5)=\frac{\vv(5)\times \va(5)}{|\vv(5)\times \va(5)|}</m>. Since we don't need the normal vector to the plane to be a unit vector, we can take as the normal vector to the plane simply <m>\vv(5) \times \va(5)</m>, or <m>(e/25,3e,-30)</m>. Then, an equation of the plane containing the osculating circle is <m>(e/25)x+(3e)y-30z=-10e</m>. An equivalent equation for this plane is <m>(1/25)x+3y-(30/e)z=-10</m>.
+</p></solution>
+</exercise>
+
+<exercise><title><fromexam>M317 2013D</fromexam></title>
+<statement><p><ol label="a">
+<li>
+Consider the parametrized space curve
+<me>
+\vr(t) = \big(t^2 , t, t^3\big)
+</me>
+Find an equation for the plane passing through <m>(1,1,1)</m> with normal vector tangent to <m>\vr</m> at that point.
+</li>
+<li>
+Find the curvature of the curve from (a) as a function of the parameter <m>t</m>.
+</li>
+</ol>
+</p></statement>
+
+<hint><p>
+(a) The tangent vector of the curve is also a normal vector for the
+specified plane.
+</p>
+
+<p>(b) Review §<xref ref="sec_CurveCompendium"/>.
+</p></hint>
+
+<answer><p>
+(a) <m>2x +y +3z= 6</m></p><p>
+(b) <m>\ka(t) =\frac{2\sqrt{1+9t^2+9t^4}}{[1+4t^2+9t^4]^{3/2}}</m>
+</p></answer>
+
+<solution><p> (a)
+Since <m>\vr'(t) = (2t,1,3t^2)</m>, we have <m>\vr'(1)=(2,1,3)</m>. So the
+normal plane must pass through <m>\vr(1)=(1,1,1)</m> and be perpendicular
+to <m>(2,1,3)</m>. The equation of the normal plane is then
+<me>
+2(x-1) +(y-1) +3(z-1)=0\qquad
+\text{or}\qquad
+2x +y +3z= 6
+</me>
+</p>
+
+<p> (b)
+As
+<md>
+<mrow>
+\vv(t)=\vr'(t)&amp;=\big(2t,1,3t^2\big) &amp;
+\diff{s}{t} &amp;= \sqrt{1+4t^2+9t^4}
+</mrow><mrow>
+\va(t)=\vv'(t)&amp;=\big(2,0,6t\big)  &amp;
+\vv(t)\times\va(t)&amp;=\big(6t,-6t^2,-2\big)
+</mrow>
+</md>
+the curvature
+<md>
+<mrow>
+\ka(t) &amp;= \frac{|\vv(t)\times\va(t)|}{\big(\diff{s}{t}\big)^3}
+ =\frac{2\sqrt{1+9t^2+9t^4}}{[1+4t^2+9t^4]^{3/2}}
+</mrow>
+</md>
+</p>
+
+</solution>
+</exercise>
+
+<exercise><title><fromexam>M317 2005A</fromexam></title>
+<statement><p>
+	Let <m>C</m> be the osculating circle to the helix
+	<m>\vr(t) =\big(\cos t\,,\,\sin t\,,\,t\big)</m>
+	at the point where <m>t=\pi/6</m>. Find:
+<ol label="a">
+<li>
+		the radius of curvature of <m>C</m>
+</li>
+<li>
+		the center of <m>C</m>
+</li>
+<li>
+		the unit normal to the plane of <m>C</m>
+</li>
+</ol>
+</p>
+
+</statement>
+
+<hint><p>
+	Remember <m>\va(t)=\difftwo{s}{t}(t)\,\hat\vT(t)
+	+\ka(t)\big(\diff{s}{t}(t)\big)^2\hat\vN(t)</m>. Remember also that <m>\hB</m> is orthogonal to <m>\hT</m> and <m>\hN</m>, which are in the plane of <m>C</m>.
+</p></hint>
+
+<answer><p>
+	(a) <m>2</m></p><p>
+	(b) <m>-\frac{\sqrt{3}}{2}\,\hi-\frac{1}{2}\,\hj+\frac{\pi}{6}\,\hk</m></p><p>
+	(c) <m>\hat\vB =\frac{1}{2\sqrt{2}}\,\hi
+	-\frac{\sqrt{3}}{2\sqrt{2}}\,\hj
+	+\frac{1}{\sqrt{2}}\,\hk</m>
+</p></answer>
+
+<solution><p>
+	First some preliminaries.
+	<md>
+<mrow>
+	\vv(t)&amp;=\vr'(t)=-\sin t\,\hi +\cos t\,\hj + \hk
+</mrow><mrow>
+	\va(t)&amp;=\vr''(t)= -\cos t\,\hi -\sin t\,\hj
+	</mrow>
+</md>
+</p>
+
+<p>	(a), (b)
+	From <m>\vv(t)</m> we read off
+	<md>
+<mrow>
+	\diff{s}{t}=|\vv(t)|=\sqrt{2}\qquad
+	</mrow>
+</md>
+	From <m>\va(t)=\difftwo{s}{t}(t)\,\hat\vT(t)
+	+\ka(t)\big(\diff{s}{t}(t)\big)^2\hat\vN(t)</m>,
+	and the fact that <m>\difftwo{s}{t}=0</m>, we read off that
+	<md>
+<mrow>
+	\ka(t)=\Big(\diff{s}{t}(t)\Big)^{-2}|\va|=\frac{1}{2}\qquad
+	\hat\vN(t) = \frac{\va}{|\va|}=-\cos t\,\hi-\sin t\,\hj
+	</mrow>
+</md>
+	So the radius of curvature is <m>\frac{1}{\ka}=2</m> and the centre of  curvature is
+	<md>
+<mrow>
+	\left[\vr(t)\!+\!\frac{1}{\ka(t)}\hat\vN(t)\right]_{t=\frac{\pi}{6}}
+	&amp;=\left[\big(\cos t\,\hi \!+\!\sin t\,\hj \!+\! t\hk \big)
+	+2 \big( -\cos t\,\hi\!-\!\sin t\,\hj\big)\right]_{t=\frac{\pi}{6}}
+</mrow><mrow>
+	&amp;=\left[-\cos t\,\hi
+	-\sin t\,\hj
+	+t\,\hk \right]_{t=\frac{\pi}{6}}
+</mrow><mrow>
+	&amp;=-\frac{\sqrt{3}}{2}\,\hi-\frac{1}{2}\,\hj+\frac{\pi}{6}\,\hk
+	</mrow>
+</md>
+</p>
+
+<p>	(c)
+	From
+	<md>
+<mrow>
+	\vv(t)\times\va(t)  &amp;= \det\left[
+	\begin{matrix}  \hi   &amp; \hj     &amp; \hk
+</mrow><mrow>
+	-\sin t &amp; \cos t &amp;  1
+</mrow><mrow>
+	-\cos t &amp;-\sin t &amp; 0\end{matrix} \right]
+	= \sin t\,\hi -\cos t\,\hj + \hk
+</mrow><mrow>
+	|\vv(t)\times\va(t)|^2 &amp;= 2
+	</mrow>
+</md>
+	we read off
+	<md>
+<mrow>
+	\hat\vB(t) &amp; = \frac{\vv(t)\times\va(t)}{|\vv(t)\times\va(t)|}
+	=\frac{1}{\sqrt{2}}\sin t\,\hi
+	-\frac{1}{\sqrt{2}} \cos t\,\hj
+	+\frac{1}{\sqrt{2}}\,\hk
+	</mrow>
+</md>
+	so that
+	<md>
+<mrow>
+	\hat\vB\big(\frac{\pi}{6}\big)
+	=\frac{1}{2\sqrt{2}}\,\hi
+	-\frac{\sqrt{3}}{2\sqrt{2}}\,\hj
+	+\frac{1}{\sqrt{2}}\,\hk
+	</mrow>
+</md>
+</p>
+
+</solution>
+</exercise>
+
+<exercise><title><fromexam>M317 2012D</fromexam></title>
+<statement><p><ol label="a">
+<li>
+Consider the parametrized space curve
+<me>
+\vr(t) = (\cos(t), \sin(t), t^2)
+</me>
+Find a parametric form for the tangent line at the point corresponding
+to <m>t = \pi</m>.
+</li>
+<li>
+Find the tangential component <m>a_T(t)</m> of acceleration, as a function of <m>t</m>,
+for the parametrized space curve <m>\vr(t)</m>.
+</li>
+</ol>
+</p></statement>
+
+<hint><p>
+By Theorem <xref ref="thm_curvatureFormulae"/>,
+the tangential component of acceleration is
+<m>
+a_T(t) = \difftwo{s}{t}
+</m>
+</p></hint>
+
+<answer><p>
+(a) <m>\vR(t) = (-1,0,\pi^2)+t(0,-1,2\pi)</m></p><p>
+(b) <m>a_T(t) =\frac{4t}{\sqrt{1+4t^2}}</m>
+</p></answer>
+
+<solution><p> (a)
+The velocity vector is
+<md>
+<mrow>
+\vr'(t) = (-\sin(t), \cos(t), 2t)
+</mrow>
+</md>
+So a tangent vector at <m>t=\pi</m> is <m>\vT= (0,-1,2\pi)</m> and a
+parametric form for the tangent line is
+<md>
+<mrow>
+\vR(t) =\vr(\pi) +t\vT = (-1,0,\pi^2)+t(0,-1,2\pi)
+</mrow>
+</md>
+</p>
+
+<p> (b)
+The speed is
+<md>
+<mrow>
+\diff{s}{t} = |\vr'(t)| = \sqrt{1+4t^2}
+</mrow>
+</md>
+By Theorem <xref ref="thm_curvatureFormulae"/>,
+the tangential component of acceleration is
+<md>
+<mrow>
+a_T(t) = \difftwo{s}{t}
+       =\diff{\ }{t}\sqrt{1+4t^2}
+       =\frac{4t}{\sqrt{1+4t^2}}
+</mrow>
+</md>
+</p></solution>
+</exercise>
+
+<exercise><title><fromexam>M317 2010A</fromexam></title>
+<statement><p>
+Suppose, in terms of the time parameter <m>t</m> , a particle moves along the path
+<m>\vr(t) = (\sin t - t \cos t )\,\hi + (\cos t + t \sin t )\,\hj + t^2\,\hk</m>,
+<m>1 \le t  \lt  \infty</m>.
+<ol label="a">
+<li>
+Find the speed of the particle at time <m>t</m>.
+</li>
+<li>
+Find the tangential component of acceleration at time <m>t</m>.
+</li>
+<li>
+Find the normal component of acceleration at time <m>t</m>.
+</li>
+<li>
+Find the curvature of the path at time <m>t</m>.
+</li>
+</ol>
+</p></statement>
+
+<hint><p>
+Use your answers to previous parts to calculate (d). Tangential and normal components of acceleration are defined just before Example<nbsp/><xref ref="eg_curveCircle"/>.
+</p></hint>
+
+<answer><p>
+(a) <m>\sqrt{5}\,t</m></p><p>
+(b) <m>\va_T(t) =  \sin t \,\hi   + \cos t \,\hj   + 2\,\hk</m></p><p>
+(c) <m>\va_N(t) =  t\cos t \,\hi   - t\sin t \,\hj</m> </p><p>
+</p>
+
+<p>(d) <m>\ka(t) = \frac{1}{5t}</m>
+</p>
+
+</answer>
+
+<solution><p> (a) The velocity vector of the particle at time <m>t</m>
+is
+<md>
+<mrow>
+\vr'(t) &amp;= (\cos t - \cos t + t \sin t )\,\hi
+         + (-\sin t + \sin t  +  t \cos t )\,\hj
+         + 2t\,\hk
+</mrow><mrow>
+        &amp;=  t \sin t \,\hi
+         +  t \cos t \,\hj
+         + 2t\,\hk
+</mrow>
+</md>
+so its speed at time <m>1\le t \lt \infty</m> is
+<md>
+<mrow>
+\diff{s}{t}=|\vr'(t)| &amp; = \sqrt{t^2\sin^2t + t^2\cos^2t +4t^2}
+           =\sqrt{5}\, t
+</mrow>
+</md>
+</p>
+
+<p> (b)
+The unit tangent at time <m>t</m> is
+<me>
+\hat\vT(T) = \frac{\vr'(t)}{|\vr'(t)|}
+           =\frac{1}{\sqrt{5}}\big(  \sin t \,\hi
+                                  + \cos t \,\hj
+                                  + 2\,\hk\big)
+</me>
+So the tangential component of acceleration at time <m>t</m> is
+<me>
+\va_T(t) = \difftwo{s}{t}(t)\ \hat\vT(t)
+          =  \sin t \,\hi   + \cos t \,\hj   + 2\,\hk
+</me>
+</p>
+
+<p> (c)
+The (full) acceleration is
+<me>
+\vr''(t) =\diff{\ }{t}\vr'(t)
+         = \big(\sin t + t\cos t\big) \,\hi
+         + \big(\cos t - t\sin t\big) \,\hj
+         + 2\,\hk
+</me>
+So the normal component of acceleration at time <m>t</m> is
+<me>
+\va_N(t) = \va(t) - \va_T(t)
+          =  t\cos t \,\hi   - t\sin t \,\hj
+</me>
+</p>
+
+<p> (d)
+Another formula for the normal component of acceleration
+is <m>\ka(t)\big(\diff{s}{t}(t)\big)^2\hat\vN(t)</m>. So the magnitude
+of the normal component of acceleration is <m>\ka(t)\big(\diff{s}{t}(t)\big)^2</m>
+and, by part (c),
+<md>
+<mrow>
+\ka(t)\left(\diff{s}{t}(t)\right)^2
+=\big|t\cos t \,\hi   - t\sin t \,\hj \big|
+=t
+</mrow>
+</md>
+Consequently, by part (a),
+<me>
+\ka(t) = \frac{t}{\left(\diff{s}{t}(t)\right)^2}
+       = \frac{1}{5t}
+</me>
+</p></solution>
+</exercise>
+
+<exercise><title><fromexam>M317 2009A</fromexam></title>
+<statement><p>
+Assume the paraboloid <m>z = x^2 + y^2</m> and the plane <m>2x + z = 8</m>
+intersect in a curve <m>C</m>. <m>C</m> is traversed counter-clockwise
+if viewed from the positive <m>z</m>-axis.
+<ol label="a">
+<li>
+Parametrize the curve <m>C</m>.
+</li>
+<li>
+Find the unit tangent vector <m>\hat\vT</m>, the principal normal vector
+<m>\hat\vN</m>, the binormal vector <m>\hat\vB</m> and the curvature <m>\kappa</m>
+all at the point <m>(2, 0, 4)</m>.
+</li>
+</ol>
+</p></statement>
+
+<hint><p>
+(a) All points on the curve obey an equation that contains <m>x</m>'s and <m>y</m>'s,
+but no <m>z</m>'s. There is a standard way to get a nice parametrization of this equation, that doesn't involve using square roots.
+</p>
+
+<p>(b) You don't need to compute the constants for all points: only the given point.
+</p></hint>
+
+<answer><p>
+(a) <m>\vr(\theta) = [-1 + 3\cos\theta]\,\hi
+                   +3\sin\theta\,\hj
+                   +[10-6\cos\theta]\,\hk</m>,
+<m>0\le\theta  \lt  2\pi</m>
+</p>
+
+<p>(b) At <m>(2,0,4)</m>, <m>\hat\vT = \hj</m>,
+                  <m>\hat\vN = \frac{-\hi+2\hk}{\sqrt{5}}</m>,
+                  <m>\hat\vB = \frac{2\hi+\hk}{\sqrt{5}}</m>,
+                  <m>\kappa(0) =\frac{\sqrt{5}}{3}</m>
+</p></answer>
+
+<solution><p> (a)
+If the point <m>(x,y,z)</m> is on the curve, it obeys both
+<m>z = x^2 + y^2</m> and <m>z = 8-2x</m> and hence is also obeys
+<me>
+x^2+y^2 = 8-2x\qquad\text{or}\qquad
+   (x+1)^2+y^2 =9
+</me>
+So the curve <m>C</m> is also the intersection of
+<me>
+(x+1)^2+y^2 =9\qquad\text{and}\qquad  z = 8-2x
+</me>
+<m>(x+1)^2+y^2 =9</m> is the circle of radius <m>3</m> centred on <m>(-1,0)</m> and can
+be parametrized by
+<m>x(\theta) = -1 + 3\cos\theta</m>, <m>y(\theta) = 3\sin\theta</m>, <m>0\le\theta\le 2\pi</m>.
+So <m>C</m> can be parametrized by
+<md>
+<mrow>
+x(\theta) &amp;= -1 + 3\cos\theta
+</mrow><mrow>
+y(\theta) &amp;= 3\sin\theta
+</mrow><mrow>
+z(\theta) &amp;= 8-2x(\theta) = 10-6\cos\theta
+</mrow><mrow>
+\text{ or }\vr(\theta) &amp;= [-1 + 3\cos\theta]\,\hi
+                   +3\sin\theta\,\hj
+                   +[10-6\cos\theta]\,\hk
+</mrow>
+</md>
+with <m>0\le\theta  \lt  2\pi</m>.
+</p>
+
+<p>Remark: if we tried to parametrize the equation as <m>(x,y,z)=(x,\sqrt{8-2x-x^2},8-2x)</m>, then we would miss the negative <m>y</m>-values.
+</p>
+
+<p> (b)
+Note that <m>\vr(\theta)</m> is <m>(2,0,4)</m> when <m>\theta=0</m>.
+As
+<md>
+<mrow>
+\vv(\theta)&amp;=\vr'(\theta) = -3\sin\theta\,\hi
+                   +3\cos\theta\,\hj
+                   +6\sin\theta\,\hk &amp;
+\vv(0)&amp;=3\hj
+</mrow><mrow>
+\va(\theta)&amp;=\vv'(\theta) = -3\cos\theta\,\hi
+                   -3\sin\theta\,\hj
+                   +6\cos\theta\,\hk &amp;
+\va(0)&amp;= -3\hi+6\hk
+</mrow>
+</md>
+the unit tangent vector at <m>(2,0,4)</m> is
+<md>
+<mrow>
+\hat\vT(0) &amp;= \frac{\vv(0)}{|\vv(0)|} =\hj
+</mrow>
+</md>
+and, since <m>\vv(0)\times\va(0) = 9\hk+18\hi</m>, the unit binormal vector and
+curvature at <m>(2,0,4)</m> are
+<md>
+<mrow>
+\hat\vB(0) &amp;= \frac{\vv(0)\times\va(0)}{|\vv(0)\times\va(0)|}
+=\frac{2\hi+\hk}{\sqrt{5}}\qquad
+\kappa(0) = \frac{|\vv(0)\times\va(0)|}{|\vv(0)|^3}
+=\frac{9\sqrt{5}}{3^3}=\frac{\sqrt{5}}{3}
+</mrow>
+</md>
+and the unit normal vector <m>\hN</m> at <m>(2,0,4)</m>
+<md>
+<mrow>
+\hat\vN(0) = \hat\vB(0) \times \hat\vT(0)
+           =\frac{1}{\sqrt{5}} (2\hi+\hk)\times\hj
+           =\frac{1}{\sqrt{5}} (2\hk-\hi)
+</mrow>
+</md>
+</p>
+
+</solution>
+</exercise>
+
+<exercise><title><fromexam>M317 2008A</fromexam></title>
+<statement><p>
+Consider the curve <m>C</m> given by
+<me>
+\vr(t) = \frac{1}{3} t^3\,\hi + \frac{1}{\sqrt{2}} t^2\,\hj + t\,\hk,\qquad
+-\infty  \lt  t  \lt  \infty.
+</me>
+<ol label="a">
+<li>
+Find the unit tangent <m>\hat\vT(t)</m> as a function of <m>t</m>.
+</li>
+<li>
+Find the curvature <m>\kappa(t)</m> as a function of <m>t</m>.
+</li>
+<li>
+Determine the principal normal vector <m>\hat\vN</m> at the point
+<m>\big(\frac{8}{3} , 2\sqrt{2}, 2\big)</m>.
+</li>
+</ol>
+</p></statement>
+
+<hint><p>
+For part (c), you only need to find <m>\hN</m> at a point, which is easier than finding it for all <m>t</m>.
+</p></hint>
+
+<answer><p>
+(a) <m>\hat\vT(t) = \frac{t^2\,\hi +\sqrt{2}\,t\,\hj +\hk}{t^2+1}</m></p><p>
+(b) <m>\frac{\sqrt{2}} {{(t^2+1)}^2}</m></p><p>
+(c) <m>\frac{4\,\hi -3\sqrt{2}\,\hj -4\hk}{\sqrt{50}}</m>
+</p></answer>
+
+<solution><p>
+We have
+<md>
+<mrow>
+\vv(t)&amp;=\vr'(t) = t^2\,\hi +\sqrt{2}\,t\,\hj +\hk &amp;
+|\vv(t)|&amp;=\sqrt{t^4+2t^2+1}=t^2+1
+
+</mrow><mrow>
+\va(t)&amp;=\vv'(t) = 2t\,\hi +\sqrt{2}\,\hj
+</mrow>
+</md>
+</p>
+
+<p>(a)
+The unit tangent vector  is
+<md>
+<mrow>
+\hat\vT(t) &amp;= \frac{\vv(t)}{|\vv(t)|}
+            = \frac{t^2\,\hi +\sqrt{2}\,t\,\hj +\hk}{t^2+1}
+</mrow>
+</md>
+</p>
+
+<p>(b)
+Since
+<md>
+<mrow>
+\vv(t)\times\va(t)&amp;= \det\left[\begin{matrix}
+           \hi &amp;  \hj &amp; \hk
+</mrow><mrow>
+           t^2   &amp;   \sqrt{2}\,t  &amp; 1
+</mrow><mrow>
+           2t    &amp;   \sqrt{2}     &amp; 0
+\end{matrix}\right]
+=-\sqrt{2}\,\hi +2t\,\hj-\sqrt{2}\,t^2\,\hk
+</mrow>
+</md>
+The curvature is
+<md>
+<mrow>
+\kappa(t) = \frac{|\vv(t)\times\va(t)|}{|\vv(t)|^3}
+=\frac{\sqrt{2+4t^2+2t^4}} {{(t^2+1)}^3}
+=\frac{\sqrt{2}} {{(t^2+1)}^2}
+</mrow>
+</md>
+</p>
+
+<p>(c)
+Note that <m>\vr(2)</m> is <m>\big(\frac{8}{3} , 2\sqrt{2}, 2\big)</m>.
+<ul>
+<li> <alert>Solution 1:</alert>
+Since
+<md>
+<mrow>
+\hat\vT'(t) &amp; = \frac{2t\,\hi +\sqrt{2}\,\hj}{t^2+1}
+               -2t\frac{t^2\,\hi +\sqrt{2}\,t\,\hj +\hk}{{(t^2+1)}^2}
+</mrow><mrow>
+\hat\vT'(2) &amp; = \frac{4\,\hi +\sqrt{2}\,\hj}{5}
+               -4\frac{4\,\hi +2\sqrt{2}\,\hj +\hk}{25}
+</mrow><mrow>
+            &amp;=\frac{4\,\hi -3\sqrt{2}\,\hj -4\hk}{25}
+</mrow><mrow>
+|\vT'(2)|&amp;=\frac{5\sqrt{2}}{25}
+</mrow>
+</md>
+the principal normal vector <m>\hN</m> at <m>\big(\frac{8}{3} , 2\sqrt{2}, 2\big)</m> is
+<md>
+<mrow>
+\hat\vN(2) &amp;=\frac{\hat\vT'(2)}{|\hat\vT'(2)|}
+           =\frac{4\,\hi -3\sqrt{2}\,\hj -4\hk}{5\sqrt{2}}
+</mrow>
+</md>
+</li>
+<li> <alert>Solution 2:</alert>
+Perhaps we'd rather not differentiate <m>\hT(t)</m>.
+<md>
+<mrow>
+\hB &amp;= \dfrac{\vv(t) \times \va(t)}{|\vv(t) \times \va(t)|} \quad\text{and}\quad \hN=\hB \times \hT
+</mrow>
+</md>
+Using our previous work:
+<md>
+<mrow>
+\hB(2)&amp;=\frac{\vv(2) \times \va(2)}{|\vv(2)\times\va(2)|} = \frac{-\sqrt2\hi+4\hj-4\sqrt2\hk}{\sqrt{2+16+32}}
+</mrow><mrow>
+&amp;=\frac{1}{5}\left(-\hi+{2\sqrt2}\hj-4\hk\right)
+</mrow><mrow>
+\hT(2)&amp;=\frac{1}{5}\left(4\hi+2\sqrt2\hj+\hk \right)
+</mrow><mrow>
+\hN(2)&amp;=\hB(2)\times\hT(2)=\frac{1}{5}\left(-\hi+{2\sqrt2}\hj-4\hk\right)\times\frac{1}{5}\left(4\hi+2\sqrt2\hj+\hk \right)
+</mrow><mrow>
+&amp;=\left(\frac{2\sqrt2}{5}\right)\hi+\left(-\frac35\right)\hj+\left(-\frac{2\sqrt2}{5}\right)\hk
+</mrow>
+</md>
+</li>
+</ul>
+</p>
+
+</solution>
+</exercise>
+
+<exercise><title><fromexam>M317 2007A</fromexam></title>
+<statement><p>
+Suppose the curve <m>C</m> is the intersection of the cylinder <m>x^2 +y^2 = 1</m>
+with the plane <m>x+y+z = 1</m>.
+<ol label="a">
+<li>
+Find a parameterization of <m>C</m>.
+</li>
+<li>
+Determine the curvature of <m>C</m>.
+</li>
+<li>
+Find the points at which the curvature is maximum and determine the value
+of the curvature at these points.
+</li>
+</ol>
+</p></statement>
+
+<hint><p>
+First parametrize <m>x^2+y^2=1</m> in the standard way. You don't need calculus for part (c).
+</p></hint>
+
+<answer><p>
+(a) One possible parametrization is
+<m>\vr(\theta) = \cos\theta\,\hi +\sin\theta\,\hj + (1-\cos\theta-\sin\theta)\,\hk</m> with <m>0\le\theta\le 2\pi</m>.
+</p>
+
+<p>(b) <m>\ka(\theta)=\frac{\sqrt{3}}{[2-\sin(2\theta)]^{3/2}}</m>
+</p>
+
+<p>(c) <m>\text{maximum curvature }=\sqrt{3}</m>
+    at <m>\frac{\hi}{\sqrt{2}}+\frac{\hj}{\sqrt{2}}+(1-\sqrt{2})\,\hk</m>
+    and <m>-\frac{\hi}{\sqrt{2}}-\frac{\hj}{\sqrt{2}}+(1 + \sqrt{2})\,\hk</m>
+ and <m>\text{minimum curvature }= \frac{1}{3}</m>
+
+         at <m>-\frac{\hi}{\sqrt{2}}+\frac{\hj}{\sqrt{2}}+\hk</m>
+         and <m>\frac{\hi}{\sqrt{2}}-\frac{\hj}{\sqrt{2}}+\hk</m>
+</p>
+
+</answer>
+
+<solution><p> (a)
+The curve <m>x^2+y^2=1</m> is a circle of radius <m>1</m>.
+So we can parametrize it by <m>x(\theta)=\cos\theta</m>,
+<m>y(\theta)=\sin\theta</m>, <m>0\le\theta \lt 2\pi</m>. The <m>z</m>-coordinate of any point on
+the intersection is determined by <m>z=1-x-y</m>. So we can use
+<me>
+\vr(\theta) = \cos\theta\,\hi +\sin\theta\,\hj + (1-\cos\theta-\sin\theta)\,\hk
+\qquad 0\le\theta \lt 2\pi
+</me>
+</p>
+
+<p>(b)
+As
+<md>
+<mrow>
+\vv(\theta)=\vr'(\theta)&amp;=\big(-\sin\theta,\cos\theta,\sin\theta-\cos\theta\big)
+</mrow><mrow>
+\va(\theta)=\vv'(\theta)&amp;=\big(-\cos\theta,-\sin\theta,\cos\theta+\sin\theta\big)
+</mrow>
+</md>
+we have
+<md>
+<mrow>
+\diff{s}{\theta} &amp;= |\vr'(\theta)|
+=\sqrt{\sin^2\theta+\cos^2\theta+(\sin\theta-\cos\theta)^2}
+</mrow><mrow>
+&amp;=\sqrt{2-2\sin\theta\cos\theta}
+</mrow><mrow>
+&amp;=\sqrt{2-\sin(2\theta)}
+</mrow><mrow>
+\vv(\theta)\times\va(\theta)&amp;=\big(1,1,1\big)
+</mrow>
+</md>
+and the curvature
+<md>
+<mrow>
+\ka(\theta) &amp;= \frac{|\vv(\theta)\times\va(\theta)|}{\big(\diff{s}{\theta}\big)^3}
+ =\frac{\sqrt{3}}{[2-\sin(2\theta)]^{3/2}}
+</mrow>
+</md>
+</p>
+
+<p>(c) The curvature is
+<ul>
+<li>
+a maximum (minimum) when <m>2-\sin(2\theta)</m>
+is a minimum (maximum),
+</li>
+<li>
+which is the case when <m>\sin(2\theta)=1</m>
+(<m>\sin(2\theta)=-1</m>),
+</li>
+<li>
+which in turn is the case when <m>\theta=\frac{\pi}{4},\frac{5\pi}{4}</m>
+(<m>\theta=\frac{3\pi}{4},\frac{7\pi}{4}</m>).
+</li>
+</ul>
+So
+<md alignment="alignat">
+<mrow>
+\text{maximum curvature }&amp;= \frac{\sqrt{3}}{[2-1]^{3/2}}=\sqrt{3} &amp;&amp;
+\text{at }\frac{\hi}{\sqrt{2}}+\frac{\hj}{\sqrt{2}}+(1-\sqrt{2})\,\hk
+</mrow><mrow>
+&amp; &amp;&amp;
+\text{and }-\frac{\hi}{\sqrt{2}}-\frac{\hj}{\sqrt{2}}+(1+\sqrt{2})\,\hk
+</mrow><mrow>
+\text{minimum curvature }&amp;= \frac{\sqrt{3}}{[2-(-1)]^{3/2}}=\frac{1}{3}\quad &amp;&amp;
+\text{at }-\frac{\hi}{\sqrt{2}}+\frac{\hj}{\sqrt{2}}+\hk
+</mrow><mrow>
+&amp; &amp;&amp;
+\text{and }\frac{\hi}{\sqrt{2}}-\frac{\hj}{\sqrt{2}}+\hk
+</mrow>
+</md>
+</p>
+
+</solution>
+</exercise>
+
+<exercise><title><fromexam>M317 2006D</fromexam></title>
+<statement><p>
+Let
+<md>
+<mrow>
+\vr(t) = t^2\,\hi + 2t\,\hj + \ln t\,\hk
+</mrow>
+</md>
+Compute the unit tangent and unit normal vectors <m>\hat\vT(t)</m> and <m>\hat\vN(t)</m>. Compute the curvature <m>\kappa(t)</m>. Simplify whenever possible!
+</p></statement>
+
+<hint><p>
+Review §<xref ref="sec_CurveCompendium"/>.
+</p></hint>
+
+<answer><p>
+<m>\hat\vT(t) =\frac{2t^2\,\hi + 2t\,\hj + \hk}{2t^2+1}</m></p><p>
+<m>\hat\vN(t) =\frac{2t\,\hi - (2t^2-1)\,\hj -2t\, \hk}{2t^2+1}</m></p><p>
+<m>\ka(t) = \frac{2t}{{(2t^2+1)}^2}</m>
+</p></answer>
+
+<solution><p>
+For <m>\vr(t)</m> to be well-defined, we need <m>t \gt 0</m> (because of the <m>\ln t</m>.)
+<md>
+<mrow>
+\vv(t)=\vr'(t)&amp;=2t\,\hi + 2\,\hj + \frac{1}{t}\,\hk &amp;
+\diff{s}{t} &amp;= \sqrt{4t^2+4+\frac{1}{t^2}}
+              =2t+\frac{1}{t}
+</mrow>
+</md>
+The unit tangent vector is
+<md>
+<mrow>
+\hat\vT(t) = \frac{\vr'(t)}{|\vr'(t)|}
+           =\frac{2t\,\hi + 2\,\hj + \frac{1}{t}\,\hk}{2t+\frac{1}{t}}
+           =\frac{2t^2\,\hi + 2t\,\hj + \hk}{2t^2+1}
+</mrow>
+</md>
+so, from  §<xref ref="sec_CurveCompendium"/>,
+<md>
+<mrow>
+\diff{s}{t}(t)\, \ka(t)\,\hat\vN(t) &amp;= \hat\vT'(t)
+                 =\frac{4t\,\hi + 2\,\hj }{2t^2+1}
+                  -4t\frac{2t^2\,\hi + 2t\,\hj + \hk}{{(2t^2+1)}^2}
+               </mrow><mrow>
+                 &amp;=\frac{4t\,\hi + (-4t^2+2)\,\hj -4t\, \hk}{{(2t^2+1)}^2}
+</mrow><mrow>
+&amp;=2\frac{2t\,\hi - (2t^2-1)\,\hj -2t\, \hk}{{(2t^2+1)}^2}
+</mrow>
+</md>
+Since the length of <m>2t\,\hi - (2t^2-1)\,\hj -2t\, \hk</m> is
+<md>
+<mrow>
+\sqrt{4t^2 + (2t^2-1)^2+4t^2}
+&amp;=\sqrt{8t^2 + 4t^4 -4 t^2 + 1}
+=\sqrt{ 4t^4 +4 t^2 + 1}
+</mrow><mrow>
+&amp;=\sqrt{(2t^2+1)^2}
+=2t^2+1
+</mrow>
+</md>
+we have
+<md>
+<mrow>
+\hat\vN(t) =\frac{2t\,\hi - (2t^2-1)\,\hj -2t\, \hk}{2t^2+1}
+</mrow>
+</md>
+and
+<md>
+<mrow>
+\ka(t) = \frac{|\hat\vT'(t)|}{\diff{s}{t}(t)}
+=\frac{\frac{2}{2t^2+1}}{2t+\frac{1}{t}}
+=\frac{2t}{{(2t^2+1)}^2}
+</mrow>
+</md>
+</p></solution>
+</exercise>
+
+<exercise><title><fromexam>M317 2015A</fromexam></title>
+<statement><p><ol label="a">
+<li>
+Find the length of the curve  <m>\vr(t)=\big(1,\frac{t^2}{2},\frac{t^3}{3}\big)</m>
+for <m>0\le t\le 1</m>.
+</li>
+<li>
+Find the principal unit normal vector <m>\hN</m> to <m>\vr(t) = \cos(t)\,\hi + \sin(t)\,\hj
++ t\,\hk</m> at <m>t =\pi/4</m>.
+</li>
+<li>
+Find the curvature of <m>\vr(t) = \cos(t)\,\hi + \sin(t)\,\hj + t\,\hk</m>
+at <m>t = \pi/4</m>.
+</li>
+</ol>
+</p></statement>
+
+<hint><p>
+	Since <m>0 \le t \le 1</m>, you can simplify <m>|t|=t</m>.
+</p></hint>
+
+<answer><p>
+(a) <m>\frac{1}{3}\big[2^{3/2}-1\big]</m></p><p>
+(b) <m>\frac{-\hi - \hj}{\sqrt{2}}</m></p><p>
+(c) <m>\frac{1}{2}</m>
+</p></answer>
+
+<solution><p> (a)
+Since
+<md>
+<mrow>
+\vr(t)&amp;= \hi +\frac{t^2}{2}\,\hj + \frac{t^3}{3}\,\hk
+</mrow><mrow>
+\vr'(t)&amp;= t\,\hj + t^2\,\hk
+</mrow><mrow>
+\diff{s}{t}(t)=|\vr'(t)|&amp;=\sqrt{t^2+t^4}=t\sqrt{1+t^2}
+</mrow>
+</md>
+the length of the curve is
+<md>
+<mrow>
+\int_0^1 \diff{s}{t}(t)\,\dee{t}
+=\int_0^1 t\sqrt{1+t^2}\,\dee{t}
+=\frac{1}{3}{\big[1+t^2\big]}^{3/2}\Big|_0^1
+=\frac{1}{3}\big[2^{3/2}-1\big]
+</mrow>
+</md>
+</p>
+
+<p>(b) For the specified curve
+<md>
+<mrow>
+\vr(t) &amp;= \cos(t)\,\hi + \sin(t)\,\hj  + t\,\hk
+</mrow><mrow>
+\vr'(t) &amp;= -\sin(t)\,\hi + \cos(t)\,\hj  + 1\,\hk
+</mrow><mrow>
+\hat\vT(t) &amp;=\frac{-\sin(t)\,\hi + \cos(t)\,\hj  + 1\,\hk}{\sqrt{2}}
+</mrow><mrow>
+\hat\vT'(t) &amp;=\frac{-\cos(t)\,\hi - \sin(t)\,\hj}{\sqrt{2}}
+</mrow><mrow>
+\hat\vT'\big(\frac{\pi}{4}\big) &amp;=\frac{-\hi - \hj}{2}
+</mrow><mrow>
+\hat\vN\big(\frac{\pi}{4}\big)
+&amp;=\frac{\hat\vT'\big(\frac{\pi}{4}\big)}
+       {|\hat\vT'\big(\frac{\pi}{4}\big)|}
+=\frac{-\hi - \hj}{\sqrt{2}}
+</mrow>
+</md>
+</p>
+
+<p>(c) Recalling, from §<xref ref="sec_CurveCompendium"/>,
+that
+<md>
+<mrow>
+\hat\vT'(t)
+=\ka(t) \,\diff{s}{t}(t)\,\hat\vN(t)
+</mrow>
+</md>
+we have, by part (d),
+<md>
+<mrow>
+\ka\big(\frac{\pi}{4}\big)
+&amp;=\frac{|\hat\vT'\big(\frac{\pi}{4}\big)|}
+       {|\vr'\big(\frac{\pi}{4}\big)|}
+=\frac{1/\sqrt{2}}{\sqrt{2}}
+=\frac{1}{2}
+</mrow>
+</md>
+</p></solution>
+</exercise>
+
+<exercise><title><fromexam>M317 2015A</fromexam></title>
+<statement><p>
+A particle moves along a curve with position vector given by
+<me>
+\vr(t) = \big(t + 2\,,\, 1 - t\,,\, t^2 /2\big)
+</me>
+for <m>-\infty  \lt  t  \lt  \infty</m>.
+</p>
+
+<p><ol label="a">
+<li>
+Find the velocity as a function of <m>t</m>.
+</li>
+<li>
+Find the speed as a function of <m>t</m>.
+</li>
+<li>
+Find the acceleration as a function of <m>t</m>.
+</li>
+<li>
+Find the curvature as a function of <m>t</m>.
+</li>
+<li>
+Recall that the decomposition of the acceleration into tangential and
+normal components is given by the formula
+<me>
+\vr''(t) = \difftwo{s}{t} \hat\vT(t)
+ + \kappa(t)\Big(\diff{s}{t}\Big)^2\hat\vN(t)
+</me>
+Use this formula and your answers to the previous parts of this
+question to find <m>\hat\vN(t)</m>, the principal unit normal vector,
+as a function of <m>t</m>.
+</li>
+<li>
+Find an equation for the osculating plane (the plane which best fits the curve) at the point corresponding to <m>t = 0</m>.
+</li>
+<li>
+Find the centre of the osculating circle at the point corresponding
+to <m>t = 0</m>.
+</li>
+</ol>
+</p></statement>
+
+<hint><p>
+For part (f), remember that you can write the equation of a plane easily once you know a point it passes through, and a vector normal to it. The plane should touch the curve when <m>t=0</m>, and the plane should contain <m>\hT</m> and <m>\hN</m>.
+</p></hint>
+
+<answer><p>
+(a) <m>\vv(t) = \big(1\,,\, -1\,,\, t\big)</m></p><p>
+(b) <m>\diff{s}{t}(t)=\sqrt{2+t^2}</m></p><p>
+(c) <m>\va(t) =\big(0\,,\, 0\,,\, 1\big)</m>
+</p>
+<p>(d) <m>\ka(t) = \frac{\sqrt{2}}{{[2+t^2]}^{3/2}}</m></p><p>
+(e) <m>\hat\vN(t) = \frac{(-t\,,\, t\,,\, 2)}{\sqrt{2(2+t^2)}}</m></p><p>
+(f) <m>x+y = 3</m></p><p>
+(g) <m>(2,1,2)</m>
+</p></answer>
+
+<solution><p>  (a), (b), (c)
+We have
+<md>
+<mrow>
+\vr(t) &amp;= \big(t + 2\,,\, 1 - t\,,\, t^2 /2\big)
+</mrow><mrow>
+\vv(t) =\vr'(t)&amp;= \big(1\,,\, -1\,,\, t\big)
+</mrow><mrow>
+\diff{s}{t}(t)=|\vv(t)|&amp;=\sqrt{2+t^2}
+</mrow><mrow>
+\va(t) = \vv'(t)&amp;=\big(0\,,\, 0\,,\, 1\big)
+</mrow>
+</md>
+</p>
+
+<p>(d) By §<xref ref="sec_CurveCompendium"/>,
+the curvature
+<md>
+<mrow>
+\ka(t) &amp; = \frac{|\vv(t)\times\va(t)|}{(\diff{s}{t}(t))^3}
+= \frac{|(-1,-1,0)|}{{[2+t^2]}^{3/2}}
+= \frac{\sqrt{2}}{{[2+t^2]}^{3/2}}
+</mrow>
+</md>
+</p>
+
+<p>(e) Since <m>\diff{s}{t}(t)=\sqrt{2+t^2}</m>, we have
+<m>\difftwo{s}{t}(t)=\frac{t}{\sqrt{2+t^2}}</m> and
+<md>
+<mrow>
+\big(0\,,\, 0\,,\, 1\big)
+=\va(t)
+&amp;= \difftwo{s}{t} \hat\vT(t)
+ + \kappa(t)\Big(\diff{s}{t}\Big)^2\hat\vN(t)
+</mrow><mrow>
+&amp;=\frac{t}{\sqrt{2+t^2}}\,\frac{(1\,,\, -1\,,\, t)}{\sqrt{2+t^2}}
+  + \frac{\sqrt{2}}{{[2+t^2]}^{3/2}}\big(\sqrt{2+t^2}\big)^2\hat\vN(t)
+</mrow>
+</md>
+or
+<md>
+<mrow>
+\frac{\sqrt{2}}{\sqrt{2+t^2}}\hat\vN(t)
+=\big(0\,,\, 0\,,\, 1\big)  - \frac{(t\,,\, -t\,,\, t^2)}{2+t^2}
+=\frac{(-t\,,\, t\,,\, 2)}{2+t^2}
+</mrow>
+</md>
+which implies
+<md>
+<mrow>
+\hat\vN(t) = \frac{(-t\,,\, t\,,\, 2)}{\sqrt{2(2+t^2)}}
+</mrow>
+</md>
+</p>
+
+<p>(f) At <m>t=0</m>
+<md>
+<mrow>
+\vr(0) &amp;= (2,1,0)
+</mrow><mrow>
+\hat\vT(0)&amp;= \frac{(1,-1,0)}{\sqrt{2}}
+</mrow><mrow>
+\hat\vN(0)&amp;= (0,0,1)
+</mrow><mrow>
+\hat\vB(0)&amp;= \hat\vT(0)\times\hat\vN(0)
+           = \frac{1}{\sqrt{2}}(1,-1,0)\times (0,0,1)
+           = \frac{1}{\sqrt{2}}(-1 ,-1, 0)
+</mrow>
+</md>
+The osculating plane is the plane through <m>\vr(0)</m> which is perpendicular
+to <m>\hat\vB(0)</m>, which is
+<me>
+\frac{1}{\sqrt{2}}(-1 ,-1, 0)\cdot\big\{(x,y,z) - (2,1,0)\big\}=0
+\qquad\text{or}\qquad
+x+y = 3
+</me>
+</p>
+
+<p>(g) The osculating circle has centre
+<me>
+\vr(0)+\frac{1}{\ka(0)}\hat\vN(0)
+=(2,1,0) +\frac{1}{1/2} (0,0,1)
+=(2,1,2)
+</me>
+</p></solution>
+</exercise>
+
+<exercise><title><fromexam>M317 2012J</fromexam></title>
+<statement><p>
+Consider the curve <m>C</m> given by
+<me>
+\vr(t) =\frac{t^3}{3}\,\hi + \frac{t^2}{\sqrt{2}}\,\hj + t\,\hk \qquad
+-\infty  \lt  t  \lt  \infty
+</me>
+<ol label="a">
+<li>
+Find the unit tangent <m>\hat\vT(t)</m> as a function of <m>t</m>.
+</li>
+<li>
+Find the curvature <m>\kappa(t)</m> as a function of <m>t</m>.
+</li>
+<li>
+Evaluate <m>\kappa(t)</m> at <m>t = 0</m>.
+</li>
+<li>
+Determine the principal normal vector <m>\hat\vN(t)</m> at <m>t = 0</m>.
+</li>
+<li>
+Compute the binormal vector <m>\hat\vB(t)</m> at <m>t = 0</m>.
+</li>
+</ol>
+</p></statement>
+
+<hint><p>
+It might be easier to find <m>\hB</m> before you find <m>\hN</m>, then use the formula <m>\hN(t)=\hB(t)\times\hT(t)</m>.
+</p></hint>
+
+<answer><p>
+(a) <m>\hat\vT(t)=\frac{t^2\,\hi + \sqrt{2} t\,\hj + \hk}{t^2+1}</m></p><p>
+(b) <m>\ka(t) =\frac{\sqrt{2}}{{(t^2+1)}^2}</m></p><p>
+(c) <m>\ka(0) = \sqrt{2}</m></p><p>
+(d) <m>\hat\vN(0) = \hj</m></p><p>
+</p>
+
+<p>(e) <m>\hat\vB(0) = -\hi</m>
+</p></answer>
+
+<solution><p>
+First some preliminary computations.
+<md>
+<mrow>
+\vr(t) &amp;=\frac{t^3}{3}\,\hi + \frac{t^2}{\sqrt{2}}\,\hj + t\,\hk
+</mrow><mrow>
+\vr'(t) &amp;=t^2\,\hi + \sqrt{2} t\,\hj + \hk 
+</mrow><mrow>
+|\vr'(t)|&amp;= \sqrt{t^4+2t^2+1} =t^2+1
+</mrow><mrow>
+\vr''(t) &amp;=2t\,\hi + \sqrt{2}\,\hj
+</mrow><mrow>
+\vr'(t)\times\vr''(t)&amp;= \det\left[\begin{matrix}\hi&amp;\hj&amp;\hk\\
+     t^2 &amp; \sqrt{2} t &amp; 1
+</mrow><mrow>
+     2t  &amp; \sqrt{2} &amp; 0\end{matrix}\right]
+=-\sqrt{2}\,\hi +2t\,\hj -\sqrt{2} t^2\,\hk
+</mrow>
+</md>
+</p>
+
+<p>(a) The unit tangent vector is
+<md>
+<mrow>
+\hat\vT(t) = \frac{\vr'(t)}{|\vr'(t)|}
+      =\frac{t^2\,\hi + \sqrt{2} t\,\hj + \hk}{t^2+1}
+</mrow>
+</md>
+</p>
+
+<p>(b) The curvature is (see §<xref ref="sec_CurveCompendium"/>)
+<md>
+<mrow>
+\ka(t)  &amp;= \frac{|\vr'(t)\times\vr''(t)|}{|\vr'(t)|^3}
+=\frac{|-\sqrt{2}\,\hi +2t\,\hj -\sqrt{2} t^2\,\hk|}{{(t^2+1)}^3}
+=\frac{\sqrt{2+4t^2+2t^4}}{{(t^2+1)}^3}
+</mrow><mrow>
+&amp;=\frac{\sqrt{2}}{{(t^2+1)}^2}
+</mrow>
+</md>
+</p>
+
+<p>(c) At <m>t=0</m>
+<me>
+\ka(0) = \sqrt{2}
+</me>
+</p>
+
+<p>For ease of computation, we'll find <m>\hB</m> first, then use it to find <m>\hN</m>.
+</p>
+
+<p>(e) At <m>t=0</m>, the binormal vector is (see §<xref ref="sec_CurveCompendium"/>)
+<md>
+<mrow>
+\hat\vB(0) = \frac{\vr'(0)\times\vr''(0)}{|\vr'(0)\times\vr''(0)|}
+          = \frac{-\sqrt{2}\,\hi}{\sqrt{2}}
+          =-\hi
+</mrow>
+</md>
+</p>
+
+<p>(d) At <m>t=0</m>, the principal normal vector is (see §<xref ref="sec_CurveCompendium"/>)
+<md>
+<mrow>
+\hat\vN(0) = \hat\vB(0)\times\hat\vT(0)
+           =-\hi \times\hk
+           =\hj
+</mrow>
+</md>
+</p></solution>
+</exercise>
+
+<exercise><title><fromexam>M317 2016D</fromexam></title>
+<statement><p>
+A curve in <m>\bbbr^3</m> is given by <m>\vr(t) = (t^2\,,\, t\,,\, t^3)</m>.
+<ol label="a">
+<li>
+Find the parametric equations of the tangent line to the curve at the point
+<m>(1, -1, -1)</m>.
+</li>
+<li>
+Find an equation for the osculating plane of the curve at the point
+<m>(1, 1, 1)</m>.
+</li>
+</ol>
+</p></statement>
+
+<hint><p>
+The osculating plane at <m>\vr(t_0)</m> is the plane through
+<m>\vr(t_0)</m> with normal <m>\hat\vB(t_0)</m>. Also, notice the points for parts (a) and (b) are not the same.
+</p></hint>
+
+<answer><p>
+(a) <m>x=1-2t</m>,
+<m>y=-1+t</m>,
+<m>z=-1+3t</m></p><p>
+(b) <m>3x-3y-z = -1</m>
+</p></answer>
+
+<solution><p>
+The curve has
+<md>
+<mrow>
+\vr(t) &amp;= (t^2\,,\, t\,,\, t^3)
+</mrow><mrow>
+\vv(t)= \vr'(t) &amp;= (2t\,,\, 1\,,\, 3t^2)
+</mrow><mrow>
+\va(t)= \vr''(t) &amp;= (2\,,\, 0\,,\, 6t)
+</mrow>
+</md>
+</p>
+
+<p>(a) In particular, a (non unit) tangent vector at <m>\vr(-1) = (1, -1, -1)</m>
+is <m>\vr'(-1) = (-2, 1,3)</m>. So the tangent line to the curve at
+<m>(1, -1, -1)</m> is
+<md>
+<mrow>
+(x,y,z) - (1, -1, -1) = t (-2, 1, 3)
+</mrow>
+</md>
+or
+<md>
+<mrow>
+x&amp;=1-2t
+</mrow><mrow>
+y&amp;=-1+t
+</mrow><mrow>
+z&amp;=-1+3t
+</mrow>
+</md>
+</p>
+
+<p>(b) At <m>\vr(1)= (1,1,1)</m>,
+<md>
+<mrow>
+\vv(1)= \vr'(1) &amp;= (2, 1, 3)
+</mrow><mrow>
+\va(1)= \vr''(1) &amp;= (2, 0, 6)
+</mrow><mrow>
+\vv(1)\times\va(1) &amp;= (6,-6,-2)
+</mrow>
+</md>
+So the unit binormal vector is
+<me>
+\hat\vB(1) = \frac{\vv(1)\times \va(1)}{|\vv(1)\times \va(1)|}
+           =\frac{(3,-3,-1)}{|(3,-3,-1)|}
+           =\frac{1}{\sqrt{19}} (3,-3,-1)
+</me>
+An equation for the osculating plane is
+<me>
+(3,-3,-1)\cdot(x-1\,,\,y-1\,,\,z-1) = 0\qquad\text{or}\qquad
+3x-3y-z = -1
+</me>
+</p></solution>
+</exercise>
+
+<exercise><title><fromexam>M317 2016D</fromexam></title>
+<statement><p>
+A curve in <m>\bbbr^3</m> is given by
+<me>
+\vr(t) = (\sin t - t \cos t)\,\hi + (\cos t + t \sin t)\,\hj + t^2\,\hk,
+\qquad
+0 \le t  \lt  \infty
+</me>
+<ol label="a">
+<li>
+Find the length of the curve <m>\vr(t)</m> from <m>\vr(0) = (0, 1, 0)</m> to
+<m>\vr(\pi) = (\pi, -1, \pi^2)</m>.
+</li>
+<li>
+Find the curvature of the curve at time <m>t  \gt  0</m>.
+</li>
+</ol>
+</p></statement>
+
+<hint><p>
+Since <m>t \gt 0</m>, we can simplify <m>\sqrt{t^2}=|t|=t</m>.
+</p></hint>
+
+<answer><p>
+(a) <m>\frac{\sqrt{5}\,\pi^2}{2}</m></p><p>
+(b) <m>\ka(t) = \frac{1}{5t}</m>
+</p></answer>
+
+<solution><p> (a) For this curve
+<md>
+<mrow>
+\vr'(t) &amp;= t\sin t\,\hi + t\cos t\,\hj +2t\,\hk
+</mrow><mrow>
+\diff{s}{t}(t)=|\vr'(t)| &amp;= \sqrt{5} \,t
+</mrow>
+</md>
+so the length of the curve from <m>t=0</m> to <m>t=\pi</m> is
+<md>
+<mrow>
+\int_0^\pi \diff{s}{t}(t)\, \dee{t}
+=\sqrt{5} \int_0^\pi t\, \dee{t}
+=\frac{\sqrt{5}\,\pi^2}{2}
+</mrow>
+</md>
+</p>
+
+<p>(b) The unit tangent vector is
+<me>
+\hat T(t) = \frac{\vr'(t)}{|\vr'(t)|}
+     = \frac{1}{\sqrt{5}}\big(\sin t\,\hi + \cos t\,\hj +2\,\hk\big)
+</me>
+so that
+<md>
+<mrow>
+\ka(t)\,\diff{s}{t}(t)\,\hat\vN(t) = \diff{\hat\vT}{t}(t)
+=\frac{1}{\sqrt{5}}\big(\cos t\,\hi - \sin t\,\hj \big)
+</mrow>
+</md>
+which implies that
+<md>
+<mrow>
+\ka(t)\overbrace{\sqrt{5}\, t}^{\diff{s}{t}(t)}
+=\frac{1}{\sqrt{5}}\big|\big(\cos t\,\hi - \sin t\,\hj \big)\big|
+=\frac{1}{\sqrt{5}}
+\implies  \ka(t) = \frac{1}{5t}
+</mrow>
+</md>
+</p></solution>
+</exercise>
+
+<exercise><title><fromexam>M317 2004A</fromexam></title>
+<statement><p>
+At time <m>t=0</m>, NASA launches a rocket which follows a
+trajectory so that its position at any time <m>t</m> is
+<me>
+x=\frac{4\sqrt{2}}{3}t^{3/2},\ y=\frac{4\sqrt{2}}{3}t^{3/2},\ z=t(2-t)
+</me>
+<ol label="a">
+<li>
+Assuming that the flight ends when <m>z=0</m>, find out how far
+the rocket travels.
+</li>
+<li>
+Find the unit tangent and unit normal to the trajectory
+at its highest point.
+</li>
+<li>
+Also, compute the curvature of the trajectory at its highest point.
+</li>
+</ol>
+</p>
+
+</statement>
+
+<hint><p>
+	In this context, <q>distance travelled</q> means <q>arclength.</q>
+</p></hint>
+
+<answer><p>
+(a) <m>8</m></p><p>
+(b) <m>\hat\vT(1)=\frac{1}{\sqrt{2}}(1,1,0)</m>,
+    <m>\hat\vN(1) = (0,0,-1)</m></p><p>
+(c) <m>\ka(1) =\frac{1}{8}</m>
+</p></answer>
+
+<solution><p>
+(a)
+For the specified curve
+<md>
+<mrow>
+\vr(t)&amp;=\left(\frac{4\sqrt{2}}{3}t^{3/2},\frac{4\sqrt{2}}{3}t^{3/2},
+            t(2-t)\right)
+</mrow><mrow>
+\vv(t)&amp;=\big(2\sqrt{2}t^{1/2},2\sqrt{2}t^{1/2},2-2t\big)
+</mrow><mrow>
+|\vv|&amp;=\sqrt{8t+8t+4-8t+4t^2}=\sqrt{4(1+2t+t^2)}= 2(1+t)
+</mrow>
+</md>
+The rocket is at <m>z=0</m> when <m>t=0</m> and when <m>t=2</m>.
+So the distance travelled is
+<md>
+<mrow>
+\int_0^2|\vv(t)|\,dt=\int_0^2 2(1+t)\,dt = 2\left[t+\frac{t^2}{2}\right]_0^2
+=8
+</mrow>
+</md>
+</p>
+
+<p>(b) The rocket is at its maximum height when <m>\diff{z}{t}=2-2t=0</m>.
+That is, when <m>t=1</m>. Its velocity then is <m>(2\sqrt{2},2\sqrt{2},0)</m>. A
+unit vector in this direction is <m>\hat\vT(1)=\frac{1}{\sqrt{2}}(1,1,0)</m>.
+That is the unit tangent vector.
+</p>
+
+<p>At general <m>t</m>, the unit tangent is
+<me>
+\hat\vT(t) = \frac{\vv(t)}{|\vv(t)|}
+           = \frac{\big(\sqrt{2}t^{1/2},\sqrt{2}t^{1/2},1-t\big)}{1+t}
+</me>
+So
+<md>
+<mrow>
+\hat\vT'(t)  &amp;= \frac{\big(\sqrt{2}t^{-1/2}/2,\sqrt{2}t^{-1/2}/2,-1\big)}{1+t}
+              -\frac{\big(\sqrt{2}t^{1/2},\sqrt{2}t^{1/2},1-t\big)}{(1+t)^2}
+</mrow><mrow>
+\hat\vT'(1)  &amp;= \frac{\big(\sqrt{2}/2,\sqrt{2}/2,-1\big)}{2}
+              -\frac{\big(\sqrt{2},\sqrt{2},0\big)}{4}
+</mrow><mrow>
+              &amp;= \big(0,0, -\frac{1}{2}\big)
+</mrow>
+</md>
+So the principal unit normal vector is
+<me>
+\hat\vN(1) = \frac{\hat\vT'(1)}{|\hat\vT'(1)|} = (0,0,-1)
+</me>
+</p>
+
+<p>(c) As
+<md>
+<mrow>
+\diff{\hat\vT}{t}(1)  = \big(0,0, -\frac{1}{2}\big)\qquad
+\diff{s}{t}(1) = |\vv(1)| = 4
+</mrow>
+</md>
+the curvature
+<md>
+<mrow>
+\ka(1) &amp;= \frac{|\hat\vT'(1)|}{|\vv(1)|}
+=\frac{1}{8}
+</mrow>
+</md>
+</p>
+
+</solution>
+</exercise>
+
+<exercise><title><fromexam>M317 2001A</fromexam></title>
+<statement><p>
+Consider a particle travelling in space along the
+path parametrized by
+<me>
+x=\cos^3t,\ y=\sin ^3t,\ z=2\sin^2 t
+</me>
+<ol label="a">
+<li>
+Calculate the arc length of this path for <m>0\le t\le \pi/2</m>.
+</li>
+<li>
+Find the vectors <m>\hat\vT</m>, <m>\hat\vN</m>, <m>\hat\vB</m> for
+the particle at <m>t=\pi/6</m>.
+</li>
+</ol>
+</p></statement>
+
+<hint><p>
+Use <m>\hT</m> and <m>\hN</m> to compute <m>\hB</m>.
+</p></hint>
+
+<answer><p>
+(a) <m>\frac{5}{2}</m>
+</p>
+
+<p>(b) <m>\hat\vT\big(\frac{\pi}{6}\big)
+           =\frac{1}{5}\Big(-\frac{3}{2},\frac{3\sqrt{3}}{2}, 4\Big)</m>,
+    <m>\hat\vN\big(\frac{\pi}{6}\big)
+               =\frac{1}{2}\big(\sqrt{3},1,0\big)</m>,
+    <m>\hat\vB(\frac{\pi}{6}\big)
+          =\frac{1}{5}\big(-2,2\sqrt{3},-3)</m>
+</p></answer>
+
+<solution><p>
+(a)  For the specified curve
+<md>
+<mrow>
+\vr(t)&amp;=\big(\cos^3t,\sin^3t,2\sin^2t\big)
+</mrow><mrow>
+\vv(t)&amp;=\big(-3\cos^2t\sin t,3\sin^2t\cos t,4\sin t\cos t\big)
+</mrow><mrow>
+&amp;=\sin t\cos t (-3\cos t,3\sin t, 4)
+</mrow><mrow>
+|\vv(t)|&amp;=\sin t\cos t\sqrt{9\cos^2t+9\sin^2t+16}=5\sin t\cos t
+</mrow>
+</md>
+So the distance travelled is
+<me>
+\int_0^{\pi/2}|\vv(t)|\,\dee{t}=\int_0^{\pi/2} 5\sin t\cos t\,\dee{t} = \frac{5}{2}\sin^2t\Big|_0^{\pi/2}
+=\frac{5}{2}
+</me>
+</p>
+
+<p>(b) Since
+<md>
+<mrow>
+\vv(t)&amp;=\sin t\cos t (-3\cos t,3\sin t, 4) &amp;
+|\vv(t)|&amp;=5\sin t\cos t
+</mrow>
+</md>
+we have
+<md>
+<mrow>
+\hat\vT(t) &amp;= \frac{\vv(t)}{|\vv(t)|}
+           =\frac{1}{5}(-3\cos t,3\sin t, 4) &amp;
+\hat\vT\Big(\frac{\pi}{6}\Big)
+           &amp;=\frac{1}{5}\Big(-\frac{3}{2},\frac{3\sqrt{3}}{2}, 4\Big)
+</mrow><mrow>
+\hat\vT'(t) &amp;=\frac{1}{5}(3\sin t,3\cos t, 0) &amp;
+\hat\vT'\Big(\frac{\pi}{6}\Big)
+           &amp;=\frac{1}{5}\Big(\frac{3\sqrt{3}}{2}, \frac{3}{2}, 0\Big)
+</mrow><mrow>
+&amp; &amp; &amp;= \frac{3}{10} \Big(\sqrt{3}, 1, 0\Big)
+</mrow><mrow>
+\hat\vN\Big(\frac{\pi}{6}\Big) &amp;= \frac{\hat\vT'\big(\frac{\pi}{6}\big)}
+                                     {|\hat\vT'\big(\frac{\pi}{6}\big)|}
+                  =\frac{1}{2}\big(\sqrt{3},1,0\big) &amp;
+\hat\vB(\frac{\pi}{6}\big)
+&amp;= \hat\vT\Big(\frac{\pi}{6}\Big)\times
+             \hat\vN\big(\frac{\pi}{6}\big)
+</mrow><mrow>
+&amp; &amp; &amp;=\frac{1}{10}\big(-4,4\sqrt{3},-6)
+</mrow><mrow>
+&amp; &amp; &amp;=\frac{1}{5}\big(-2,2\sqrt{3},-3)
+</mrow>
+</md>
+</p></solution>
+</exercise>
+
+<exercise>
+<statement><p>
+Suppose that  the curve <m>C</m> is the intersection of the cylinder <m>x^2 +y^2 = 1</m>
+with the surface  <m>z =x^2 - y^2</m>.
+<ol label="a">
+<li>
+Find a parameterization of <m>C</m>.
+</li>
+<li>
+Determine the curvature of <m>C</m> at the point
+            <m>\big(1/\sqrt{2}\,,1/\sqrt{2}\,,\,0\big)</m>.
+</li>
+<li>
+Find the osculating plane to <m>C</m> at the point <m>\big(1/\sqrt{2}\,,1/\sqrt{2}\,,\,0\big)</m>.
+In general, the osculating plane to a curve <m>\vr(t)</m> at the point
+<m>\vr(t_0)</m> is the plane which fits the curve best at <m>\vr(t_0)</m>.
+It passes through <m>\vr(t_0)</m> and has normal vector <m>\hat\vB(t_0)</m>.
+</li>
+<li>
+Find the radius and the centre of the osculating circle to <m>C</m> at the
+point <m>\big(1/\sqrt{2}\,,1/\sqrt{2}\,,\,0\big)</m>.
+</li>
+</ol>
+</p></statement>
+
+<hint><p>
+(a) First find a parametrization <m>\big(x(\theta),y(\theta)\big)</m>
+for  <m>x^2+y^2=1</m>.
+</p></hint>
+
+<answer><p>
+(a) <m>\vr(\theta) =\cos\theta\,\hi +\sin\theta\,\hj + \cos(2\theta)\,\hk</m>
+                        <m>0\le\theta \lt 2\pi</m></p><p>
+(b) <m>\frac{1}{5}</m>
+</p>
+
+<p>(c) <m>z =\sqrt{2}\,x-\sqrt{2}\,y</m>
+</p>
+
+<p>(d) radius <m>1/\ka(\pi/4)=5</m> and centre
+            <m>\big(-2\sqrt{2}\,,\,-2\sqrt{2}\,,\,0\big)</m>
+</p></answer>
+
+<solution><p>
+(a)
+The curve <m>x^2+y^2=1</m> is a circle of radius <m>1</m>.
+So we can parametrize it by <m>x(\theta)=\cos\theta</m>,
+<m>y(\theta)=\sin\theta</m>, <m>0\le\theta \lt 2\pi</m>. The <m>z</m>-coordinate of any point on
+the intersection is determined by <m>z=x^2-y^2</m>. So we can use the
+parametrization
+<md>
+<mrow>
+\vr(\theta) &amp;= \cos\theta\,\hi +\sin\theta\,\hj + [\cos^2\theta-\sin^2\theta]\,\hk
+</mrow><mrow>
+            &amp;=\cos\theta\,\hi +\sin\theta\,\hj + \cos(2\theta)\,\hk
+                        \qquad 0\le\theta \lt 2\pi
+</mrow>
+</md>
+</p>
+
+<p>(b)
+Note that <m>\vr(\theta) = \big(1/\sqrt{2}\,,1/\sqrt{2}\,,\,0\big)</m>
+when <m>\theta=\frac{\pi}{4}</m>.
+For general <m>\theta</m>, the velocity and acceleration are
+<md>
+<mrow>
+\vv(\theta)=\vr'(\theta)&amp;=-\sin\theta\,\hi + \cos\theta\,\hj  -2\sin(2\theta)\,\hk
+</mrow><mrow>
+\va(\theta)=\vv'(\theta)&amp;=-\cos\theta\,\hi -\sin\theta\,\hj  -4\cos(2\theta)\,\hk
+</mrow>
+</md>
+In particular,
+<md>
+<mrow>
+\vv(\pi/4)&amp;=-\frac{1}{\sqrt{2}}\,\hi + \frac{1}{\sqrt{2}}\,\hj  -2\,\hk
+</mrow><mrow>
+\va(\pi/4)&amp;=-\frac{1}{\sqrt{2}}\,\hi -\frac{1}{\sqrt{2}}\,\hj
+</mrow><mrow>
+\diff{s}{\theta}(\pi/4) &amp;= |\vv(\pi/4)|=\sqrt{5}
+</mrow><mrow>
+\vv(\pi/4)\times\va(\pi/4)&amp;=-\sqrt{2}\,\hi +\sqrt{2}\,\hj + \hk
+</mrow><mrow>
+|\vv(\pi/4)\times\va(\pi/4)|&amp;=\sqrt{5}
+</mrow>
+</md>
+So the curvature
+<me>
+\ka(\pi/4) = \frac{|\vv(\pi/4)\times\va(\pi/4)|}{|\vv(\pi/4)|^3}
+ =\frac{1}{5}
+</me>
+</p>
+
+<p>(c) The binormal to <m>C</m> at <m>\big(1/\sqrt{2}\,,1/\sqrt{2}\,,\,0\big)</m> is
+<md>
+<mrow>
+\hat\vB(\pi/4) =\frac{\vv(\pi/4)\times\va(\pi/4)}{|\vv(\pi/4)\times\va(\pi/4)|}
+                     =\frac{-\sqrt{2}\,\hi +\sqrt{2}\,\hj + \hk}{\sqrt{5}}
+</mrow>
+</md>
+So the osculating plane to <m>C</m> at <m>\big(1/\sqrt{2}\,,1/\sqrt{2}\,,\,0\big)</m> is
+<md>
+<mrow>
+&amp;\big(-\sqrt{2}\,,\,\sqrt{2}\,,\,1\big)\cdot\big(x-1/\sqrt{2}\,,\,y-1/\sqrt{2}\,,\,z-0\big) = 0
+\qquad{\rm or}
+</mrow><mrow>
+&amp; z =\sqrt{2}\,x-\sqrt{2}\,y
+</mrow>
+</md>
+</p>
+
+<p>(d) From the computations in parts (b) and (c), we have
+<md>
+<mrow>
+\hT(\pi/4)&amp;=\frac{\vv(\pi/4)}{|\vv(\pi/4)|}
+        =\frac{-1/\sqrt{2}\,\hi + 1/\sqrt{2}\,\hj -2\,\hk}{\sqrt{5}}
+</mrow><mrow>
+\hB(\pi/4)&amp;=\frac{\vv(\pi/4)\times\va(\pi/4)}{|\vv(\pi/4)\times\va(\pi/4)|}
+       =\frac{-\sqrt{2}\,\hi +\sqrt{2}\,\hj + \hk}{\sqrt{5}}
+</mrow><mrow>
+\hN(\pi/4)&amp;=\hB(\pi/4)\times\hT(\pi/4)
+       =\frac{-\hi-\hj}{\sqrt{2}}
+</mrow>
+</md>
+So the osculating circle has radius <m>1/\ka(\pi/4)=5</m> and centre
+<md>
+<mrow>
+\vr_c(\pi/4)&amp;=\vr(\pi/4)+\frac{\hN(\pi/4)}{\ka(\pi/4)}
+                 =\big(1/\sqrt{2}\,,1/\sqrt{2}\,,\,0\big)
+                   -5\big(1/\sqrt{2}\,,1/\sqrt{2}\,,\,0\big)
+</mrow><mrow>
+            &amp;=\big(-2\sqrt{2}\,,\,-2\sqrt{2}\,,\,0\big)
+</mrow>
+</md>
+</p></solution>
+</exercise>
+</exercisegroup>
+
+<exercisegroup><introduction><application/></introduction>
+
+<exercise><title><fromexam>M317 2008D</fromexam></title>
+<statement><p>
+Under the influence of a force field <m>\vF</m>, a particle of mass 2 kg is
+moving with constant speed 3 m/s along the path given as the
+intersection of the plane <m>z = x</m> and the parabolic cylinder <m>z = y^2</m>,
+in the direction of increasing <m>y</m>. Find <m>\vF</m>  at the point
+<m>(1, 1, 1)</m>. (Length is measured in m along the three coordinate axes.)
+</p></statement>
+
+<hint><p>
+You need to find the acceleration at <m>(1,1,1)</m>. Think about
+what strategies are available for computing the acceleration.
+</p></hint>
+
+<answer><p>
+<m>\frac{4}{9}(\hi-4\,\hj+\hk)</m>
+</p></answer>
+
+<solution><p> We'll solve this problem twice, using two different
+strategies. (The second strategy will be much more efficient than
+the first one.)
+Both strategies use that <m>\vF=m\va</m>. Since we are told that
+<m>m=2</m>, we just have to find the acceleration <m>\va</m> at <m>(1,1,1)</m>.
+</p>
+
+<p> <em>Strategy 1:</em> In the first strategy, we'll find
+the position <m>\vr(t)</m>, as a function of time <m>t</m> and then differentiate
+twice to get the acceleration <m>\va(t)</m>.
+</p>
+
+<p><ul>
+<li> First we'll find any old parametrization.
+We are told that, on the path, <m>z=x</m> and <m>z=y^2</m>. So let's use <m>y</m> as the
+parameter. Then <m>x=z=y^2</m>. So the parametrization is
+<m>\vR(y)=y^2\,\hi+ y\,\hj +y^2\,\hk</m>. (We'll save the notation <q><m>\vr(t)</m></q>
+for the parametrization with respect to time.)
+</li>
+<li> Next we'll reparametrize to get the time <m>t</m> as the parameter.
+Since
+<md>
+<mrow>
+\diff{\vR}{y} &amp;= 2y\,\hi+\hj + 2y\,\hk
+</mrow><mrow>
+\implies \diff{s}{y} &amp;=\big|2y\,\hi+\hj + 2y\,\hk\big|
+                      =\sqrt{1+8y^2}
+</mrow>
+</md>
+We are told that the speed <m>\diff{s}{t}=3</m> for all <m>t</m>.
+So, choosing our zero point for time to coincide with our zero point
+for <m>s</m>, we have <m>s=3t</m>, or <m>t=s/3</m> so that
+<me>
+\diff{t}{y} =\frac{1}{3}\sqrt{1+8y^2}
+</me>
+We could now integrate to get <m>t</m> as a function of <m>y</m>. But that
+looks quite messy. Fortunately we only need the acceleration at one point,
+namely <m>(1,1,1)</m>. We'll now see that that saves quite a bit of work.
+Pretend that we have integrated to get <m>t</m> as a function of <m>y</m> and call the
+answer <m>t(y)</m>. Call the inverse function, which gives <m>y</m> as a function of <m>t</m>, <m>y(t)</m>.
+</li>
+<li> We now have <m>\vr(t) = \vR\big(y(t)\big)</m>.
+So, by the chain rule,
+<md>
+<mrow>
+\vr'(t) &amp;= \vR'\big(y(t)\big)\ y'(t)
+</mrow><mrow>
+\vr''(t) &amp;= \vR'\big(y(t)\big)\ y''(t) + \vR''\big(y(t)\big)\ y'(t)^2
+</mrow>
+</md>
+We're only interest in the time, call it <m>t_0</m>, at which <m>y(t_0)=1</m>.
+The acceleration at time <m>t_0</m> is
+<md>
+<mrow>
+\vr''(t_0)
+&amp;= \vR'\big(y(t_0)\big)\ y''(t_0) + \vR''\big(y(t_0)\big)\ y'(t_0)^2
+</mrow><mrow>
+&amp; = \vR'(1)\ y''(t_0) + \vR''(1)\ y'(t_0)^2
+</mrow><mrow>
+&amp; = \big[2\,\hi+\hj + 2\,\hk\big]\ y''(t_0)
+         + \big[2\,\hi+ 2\,\hk\big]\ y'(t_0)^2
+</mrow>
+</md>
+so we just have to find <m>y'(t_0)</m> and <m>y''(t_0)</m>.
+</li>
+<li> We know that <m>\diff{t}{y} =\frac{1}{3}\sqrt{1+8y^2}</m>.
+So by the inverse function theorem
+<md>
+<mrow>
+\diff{y}{t}(t)
+   &amp;=\frac{3}{\sqrt{1+8y(t)^2}}
+</mrow><mrow>
+\difftwo{y}{t}(t)
+   &amp;=-\frac{1}{2}\,\frac{3\big(16y(t)y'(t)\big)}{{[1+8y(t)^2]}^{3/2}}
+</mrow>
+</md>
+In particular
+<md>
+<mrow>
+y'(t_0)
+   &amp;=\frac{3}{\sqrt{1+8y(t_0)^2}}
+    =\frac{3}{\sqrt{1+8}}
+    =1
+</mrow><mrow>
+y''(t_0)
+   &amp;=-\frac{24\,y(t_0)y'(t_0)}{{[1+8y(t_0)^2]}^{3/2}}
+    = - \frac{24\times 1\times 1}{{(1+8)}^{3/2}}
+    = - \frac{8}{9}
+</mrow>
+</md>
+</li>
+<li> <em>Finally</em>, the force is
+<md>
+<mrow>
+2\vr''(t_0) &amp;= 2\big[2\,\hi+\hj + 2\,\hk\big]\ y''(t_0)
+         + 2\big[2\,\hi+ 2\,\hk\big]\ y'(t_0)^2
+</mrow><mrow>
+&amp;= -\frac{16}{9}\big[2\,\hi+\hj + 2\,\hk\big] +2\big[2\,\hi+ 2\,\hk\big]
+</mrow><mrow>
+&amp;= \frac{4}{9}\,\hi -\frac{16}{9}\,\hj + \frac{4}{9}\,\hk
+</mrow>
+</md>
+</li>
+</ul>
+</p>
+
+<p> <em>Strategy 2:</em> The second strategy will be based on
+(see §<xref ref="sec_CurveCompendium"/>)
+<me>
+\va=\difftwo{s}{t}\,\hat\vT +\ka\Big(\diff{s}{t}\Big)^2\hat\vN
+</me>
+In this problem, we are told that <m>\diff{s}{t}=3</m> for all <m>t</m>,
+so that <m>\difftwo{s}{t}=0</m> and
+<me>
+\va=9\ka\hat\vN
+</me>
+So we just have to find the curvature, <m>\ka</m>, and unit normal, <m>\hat\vN</m>,
+at <m>(1,1,1)</m>. We have already found one parametrization of the path
+in strategy 1, namely
+<me>
+\vR(y)=y^2\,\hi+ y\,\hj +y^2\,\hk
+</me>
+Note that <m>\vR(1) = (1,1,1)</m>. Since
+<md>
+<mrow>
+\vR'(y)&amp;=2y\,\hi+ \hj +2y\,\hk
+</mrow><mrow>
+\hat\vT(y)&amp;=\frac{\vR'(y)}{|\vR'(y)|}
+           =\frac{2y\,\hi+ \hj +2y\,\hk}{\sqrt{1+8y^2}}
+</mrow><mrow>
+\hat\vT'(y)&amp;= \frac{2\,\hi +2\,\hk}{\sqrt{1+8y^2}}
+                 -\frac{16y}{2}\ \frac{2y\,\hi+ \hj +2y\,\hk}{[1+8y^2]^{3/2}}
+
+</mrow><mrow>
+\hat\vT'(1)&amp;= \frac{2\,\hi +2\,\hk}{3}
+                 -8\frac{2\,\hi+ \hj +2\,\hk}{27}
+            =\frac{2\,\hi-8\,\hj +2\,\hk}{27}
+</mrow>
+</md>
+we have (again see §<xref ref="sec_CurveCompendium"/>)
+<md>
+<mrow>
+\ka(1) &amp;=\frac{|\hat\vT'(1)|}{|\vR'(1)|}
+
+</mrow><mrow>
+\hat\vN(1) &amp;=\frac{\hat\vT'(1)}{|\hat\vT'(1)|}
+</mrow><mrow>
+\vF&amp;=m\va = 2\times 9\ka(1)\hat\vN(1)
+=18\frac{\hat\vT'(1)}{|\vR'(1)|}
+=18\frac{2\,\hi-8\,\hj +2\,\hk}{27\sqrt{1+8\times 1^2}}
+</mrow><mrow>
+&amp;=\frac{4}{9}(\hi-4\,\hj+\hk)
+</mrow>
+</md>
+</p>
+
+</solution>
+</exercise>
+
+<exercise><title><fromexam>M317 2016A</fromexam></title>
+<statement><p>
+Consider the curve <m>C</m> in 3 dimensions given by
+<me>
+\vr(t) = 2t\hi + t^2\hj + \sqrt{3} t^2\hk
+</me>
+for <m>t \in\bbbr</m>.
+</p>
+
+<p><ol label="a">
+<li>
+Compute the unit tangent vector <m>\vT(t)</m>.
+</li>
+<li>
+Compute the unit normal vector <m>\vN(t)</m>.
+</li>
+<li>
+Show that the binormal vector <m>\vB</m> to this curve does not depend on
+<m>t</m> and is one of the following vectors:
+<me>
+\text{(1)}\ \left[\begin{matrix}
+                  1/2 \\
+                  -\sqrt{3}/2 \\
+                 0
+                \end{matrix}\right]\qquad
+\text{(2)}\ \left[\begin{matrix}
+                  0  \\
+                  \sqrt{3}/2 \\
+                  1/2
+                \end{matrix}\right]\qquad
+\text{(3)}\ \left[\begin{matrix}
+                  0 \\
+                  -\sqrt{3}/2 \\
+                  1/2
+                \end{matrix}\right]\qquad
+\text{(4)}\ \left[\begin{matrix}
+                  0\\
+                  -1/2 \\
+                  \sqrt{3}/2
+                \end{matrix}\right]\qquad
+</me>
+This implies that <m>C</m> is a plane curve.
+</li>
+<li>
+According to your choice of vector (1), (2),
+(3) or (4), give the equation of the plane
+containing <m>C</m>.
+</li>
+<li>
+Compute the curvature <m>\kappa(t)</m> of the curve.
+</li>
+<li>
+Are there point(s) where the curvature is maximal? If yes, give the
+coordinates of the point(s). If no, justify your answer.
+</li>
+<li>
+Are there point(s) where the curvature is minimal? If yes, give
+the coordinates of the point(s). If no, justify your answer.
+</li>
+<li><p>
+Let
+<me>
+\vu := 2\,\hi,\quad
+\vv := \hj + \sqrt{3}\,\hk\quad
+\vw := -\sqrt{3}\,\hj + \hk
+</me>
+<ol label="(i)">
+<li>
+      Express <m>\hi</m>, <m>\hj</m>, <m>\hk</m> in terms of <m>\vu</m>, <m>\vv</m>, <m>\vw</m>.
+</li>
+<li>
+      Using (i), write <m>\vr(t)</m> in the form
+      <me>
+                a(t)\vu + b(t)\vv + c(t)\vw
+      </me>
+       where <m>a(t)</m>, <m>b(t)</m> and <m>c(t)</m> are functions you have to determine.
+       You should find that one of these functions is zero.
+</li>
+<li>
+      Draw the curve given by <m>\big(a(t), b(t)\big)</m> in the <m>xy</m>-plane.
+</li>
+<li>
+     Is the drawing consistent with parts (f) and (g)? Explain.
+</li>
+</ol></p>
+</li>
+</ol>
+</p></statement>
+
+<hint><p>
+For part (a), <m>\vT(t)</m> will be a vector of the form
+<m>\vT(t) = \frac{(1,at,bt)}{\sqrt{1+4t^2}}</m>
+where <m>a</m> and <m>b</m> are nonzero constant real numbers.
+</p>
+
+<p>For part (b), <m>\vN(t)</m> will be a vector of the form
+<m>\vN(t) = \frac{(-4t,\alpha, \beta)}{2\sqrt{1+4t^2}}</m>
+where <m>\alpha</m> and <m>\beta</m> are nonzero constant real numbers.
+</p>
+
+<p>For part (e),  <m>\kappa(t)</m> will be a function of the form
+ <m>\kappa(t) = \frac{\gamma}{{(1+4t^2)}^{3/2}}</m>, where <m>\gamma</m> is
+a positive constant real number.
+</p>
+
+</hint>
+
+<answer><p>
+(a) <m>\hat\vT(t)=\frac{\hi + t\hj + \sqrt{3} t\hk }{\sqrt{1+4t^2}}</m> </p><p>
+(b) <m>\hat\vN(t)=\frac{-4t\,\hi + \hj + \sqrt{3} \hk }{2\sqrt{1+4t^2}}</m> </p><p>
+(c) \textcircled{3}  </p><p>
+(d) <m>-\sqrt{3} y + z=0</m></p>
+
+<p>(e) <m>\ka(t)={(1+4t^2)}^{-3/2}</m>
+</p>
+
+<p>(f) The curvature <m>\ka(t)</m> achieves its maximum value at <m>\vr(0)=(0,0,0)</m>.
+</p>
+
+<p>(g) The curvature never achieves a minimum.
+</p>
+
+<p>(h) <m>\hi=\frac{\vu}{2}</m>,
+    <m>\hj=\frac{\vv-\sqrt{3}\,\vw}{4}</m>,
+    <m>\hk=\frac{\sqrt{3}\,\vv+\vw}{4}</m>,
+    <m>\vr(t) = t\,\vu + t^2 \,\vv</m>
+</p>
+
+<sidebyside width="53%">
+<image source="pfigs/OE16A_6h"/>
+</sidebyside>
+
+<p>
+The curve <m>\big(a(t),b(t)\big)=(t,t^2)</m> is the curve <m>y=x^2</m>.
+It is <q>curviest</q> at the origin, which is consistent with part (f).
+It becomes flatter and flatter as <m>|t|</m> increases, but never achieves
+<q>perfect flatness</q>, which is consistent with (g).
+</p>
+
+</answer>
+
+<solution><p> (a)
+As
+<md>
+<mrow>
+\vr(t) = 2t\hi + t^2\hj + \sqrt{3} t^2\hk
+</mrow><mrow>
+\vr'(t) = 2\hi + 2t\hj + 2\sqrt{3} t\hk
+</mrow>
+</md>
+the unit tangent vector is
+<md>
+<mrow>
+\hat\vT(t) &amp;=\frac{\hi + t\hj + \sqrt{3} t\hk }{|\hi + t\hj + \sqrt{3} t\hk |}
+=\frac{\hi + t\hj + \sqrt{3} t\hk }{\sqrt{1+4t^2}}
+</mrow>
+</md>
+</p>
+
+<p> (b)
+Since
+<md>
+<mrow>
+\diff{\hat\vT}{t}(t)
+&amp;=\frac{ \hj + \sqrt{3} \hk }{\sqrt{1+4t^2}}
+-4t\frac{\hi + t\hj + \sqrt{3} t\hk }{{(1+4t^2)}^{3/2}}
+=\frac{-4t\hi + \hj + \sqrt{3} \hk }{{(1+4t^2)}^{3/2}}
+</mrow>
+</md>
+the unit normal is
+<md>
+<mrow>
+\hat\vN(t) &amp;=\frac{-4t\hi + \hj + \sqrt{3} \hk }
+           {|-4t\hi + \hj + \sqrt{3} \hk|}
+=\frac{-4t\,\hi + \hj + \sqrt{3} \hk }{2\sqrt{1+4t^2}}
+</mrow>
+</md>
+</p>
+
+<p> (c)
+The unit binormal is
+<md>
+<mrow>
+\hat\vB(t) &amp;= \hat\vT(t)\times \hat\vN(t)
+</mrow><mrow>
+&amp;=\frac{1}{2(1+4t^2)}\det\left[\begin{matrix}
+           \hi &amp;  \hj &amp; \hk
+</mrow><mrow>
+           1   &amp;   t  &amp;\sqrt{3} t
+</mrow><mrow>
+           -4t &amp;   1  &amp;\sqrt{3}
+\end{matrix}\right]
+</mrow><mrow>
+&amp;=\frac{-\sqrt{3}(1+4t^2)\hj  + (1+4t^2)\hk}{2(1+4t^2)}
+</mrow><mrow>
+&amp;=-\frac{\sqrt{3}}{2}\hj +\frac{1}{2}\hk
+</mrow>
+</md>
+which is (3).
+</p>
+
+<p> (d)
+The plane contains the point <m>\vr(0)=\vZero</m> and is perpendicular to the
+vector <m>-\frac{\sqrt{3}}{2}\hj +\frac{1}{2}\hk</m> and so is
+<me>
+-\sqrt{3} y + z=0
+</me>
+</p>
+
+<p> (e)
+The curvature is
+<md>
+<mrow>
+\ka(t) &amp;= \Big|\diff{\hat\vT}{t}(t)\Big|/\Big|\diff{s}{t}\Big|
+=\frac{|-4t\hi + \hj + \sqrt{3} \hk| }{{(1+4t^2)}^{3/2}}
+  \frac{1}{|2\hi + 2t\hj + 2\sqrt{3} t\hk |}
+</mrow><mrow>
+&amp;=\frac{\sqrt{4+16t^2}}{{(1+4t^2)}^{3/2}}  \frac{1}{2\sqrt{1+4t^2}}
+=\frac{1}{{(1+4t^2)}^{3/2}}
+</mrow>
+</md>
+</p>
+
+<p> (f), (g)
+The denominator <m>{(1+4t^2)}^{3/2}</m> of <m>\ka(t)</m> is a minimum at <m>t=0</m> and grows
+without bound as <m>|t|</m> increases. So the denominator never achieves
+a maximum. Consquently, the curvature <m>\ka(t)</m> achieves its
+maximum value when <m>t=0</m> and so at <m>\vr(0)=(0,0,0)</m>. The curvature
+never achieves a minimum.
+</p>
+
+<p> (h)
+Since
+<m>\sqrt{3}\,\vv+\vw=4\,\hk</m> and <m>\vv-\sqrt{3}\,\vw=4\,\hj</m>,
+<me>
+\hi=\frac{\vu}{2}\qquad
+\hj=\frac{\vv-\sqrt{3}\,\vw}{4}\qquad
+\hk=\frac{\sqrt{3}\,\vv+\vw}{4}
+</me>
+Since <m>\vu=2\,\hi</m> and <m>\vv=\hj+\sqrt{3}\,\hk</m>,
+<md>
+<mrow>
+\vr(t) = t\,\vu + t^2 \,\vv
+= a(t)\vu + b(t)\vv + c(t)\vw
+</mrow><mrow>
+&amp;\qquad\text{ with }a(t)=t,\ b(t)=t^2,\ c(t)=0
+</mrow>
+</md>
+The curve <m>\big(a(t),b(t)\big)=(t,t^2)</m> is the curve <m>y=x^2</m>.
+It is <q>curviest</q> at the origin, which is consistent with part (f).
+It becomes flatter and flatter as <m>|t|</m> increases, but never achieves
+<q>perfect flatness</q>, which is consistent with (g).
+</p>
+<sidebyside width="53%">
+<image source="pfigs/OE16A_6h"/>
+</sidebyside>
+
+</solution>
+</exercise>
+
+<exercise><title><fromexam>M317 2017D</fromexam></title>
+<statement><p>
+Recall that if <m>\hat\vT</m> is the unit tangent vector to an oriented curve
+with arclength parameter <m>s</m>, then the curvature <m>\ka</m> and the principle
+normal vector <m>\hat\vN</m> are defined by the equation
+<me>
+\diff{\hat\vT}{s} = \ka\,\hat\vN
+</me>
+Moreover, the torsion <m>\tau</m> and the binormal vector <m>\hat\vB</m> are defined by
+the equations
+<me>
+\hat\vB = \hat\vT\times\hat\vN,\qquad
+\diff{\hat\vB}{s} = -\tau\,\hat\vN
+</me>
+Show that
+<me>
+\diff{\hat\vN}{s} = -\ka\,\hat\vT + \tau\,\hat\vB
+</me>
+</p></statement>
+
+<hint><p>
+Differentiate <m>\hat\vN =\hat\vB\times\hat\vT</m> with respect to <m>s</m>.
+</p>
+
+<p>The vectors <m>\hN, \hB,</m> and <m>\hT</m> form a right-handed triple. Sketch them (the same way you might sketch the <m>x</m>, <m>y</m>, and <m>z</m> axes) to figure out the signs of their cross products.
+</p></hint>
+
+<answer><p>
+See the solution.
+</p></answer>
+
+<solution><p>
+The three unit vectors <m>\hat\vT</m>, <m>\hat\vN</m> and <m>\hat\vB</m> are
+mutually perpendicular and form a right handed triple.
+</p>
+<sidebyside width="25%">
+<image source="pfigs/OE17D_5"/>
+</sidebyside>
+<p>
+So
+<me>
+\hat\vN = \hat\vB\times\hat\vT \qquad
+\hat\vN\times\hat\vT = -\hat\vB \qquad
+\hat\vB\times\hat\vN = -\hat\vT
+</me>
+and
+<md>
+<mrow>
+\diff{\hat\vN}{s} &amp; = \diff{\hat\vB}{s}\times\hat\vT
+                     +\hat\vB\times \diff{\hat\vT}{s}
+= -\tau\,\hat\vN\times\hat\vT
+                     +\hat\vB\times\big(\ka\hat\vN\big)
+= \tau\,\hat\vB - \ka\hat\vT
+</mrow>
+</md>
+</p></solution>
+</exercise>
+
+<exercise><title><fromexam>M317 2000D</fromexam></title>
+<statement><p>
+ A skier descends the hill <m>z =\sqrt{4-x^2-y^2}</m> along a trail with
+parameterization
+<me>
+x=\sin(2\theta),\qquad y=1-\cos(2\theta),\qquad z=2\cos\theta,\qquad
+ 0\le\theta\le\frac{\pi}{2}
+</me>
+   Let <m>P</m> denote the point on the trail where <m>x = 1</m>.
+<ol label="a">
+<li>
+   Find the vectors <m>\hat\vT, \hat\vN, \hat\vB</m> and
+   the curvature <m>\ka</m> of the ski trail at the point <m>P</m>.
+</li>
+<li><p>
+The skier's acceleration at <m>P</m> is <m>\va = (-2, 3, -2\sqrt{2})</m>.
+           Find, at <m>P</m>,
+<ol label="(i)">
+<li>
+the rate of change of the skier's speed and
+</li>
+<li>
+the skier's velocity (a vector).
+</li>
+</ol></p>
+</li>
+</ol>
+</p>
+
+</statement>
+
+<hint><p>
+In part (b), note that <m>\va</m> is the second derivative with respect
+       to time (not <m>\theta</m>). Exploit <m>\va = \diff{v}{t}\hat\vT + v^2\kappa\hat\vN</m> to  find what you're asked for.
+</p></hint>
+
+<answer><p>
+(a) <m>\hat\vT = \frac{1}{\sqrt6}\big(0,2,-\sqrt2\big)</m>,
+    <m>\hat\vN = -\frac{1}{\sqrt{39}}\big(6,1,\sqrt2\big)</m>,
+    <m>\hat\vB = \frac{1}{\sqrt{13}}\big(-1,2,2\sqrt2\big)</m>,
+    <m>\kappa = \frac{\sqrt{13}}{3\sqrt3} = \frac{\sqrt{39}}{9}</m>
+</p>
+
+<p>(b) (i) <m>\diff{v}{t}=\frac{5\sqrt2}{\sqrt3}</m></p>
+<p> (ii) <m>\vv = (0,\sqrt2,-1)</m>.
+</p></answer>
+
+<solution><p> (a)
+Parametrizing the curve by <m>\theta</m> gives
+<md>
+<mrow>
+\vr(\theta) &amp;= \big(\sin(2\theta),1-\cos(2\theta),2\cos\theta\big),
+
+</mrow><mrow>
+\vv =\vr'(\theta)&amp;= \big(2\cos(2\theta),2\sin(2\theta),-2\sin\theta\big),
+
+</mrow><mrow>
+\va = \vr''(\theta)&amp;=\big(-4\sin(2\theta),4\cos(2\theta),-2\cos\theta\big).
+</mrow>
+</md>
+At the point <m>P</m>, we have <m>\theta=\pi/4</m>, giving instantaneous
+values
+<me>
+\vr = (1,1,\sqrt2),
+\quad
+\vv = \big(0,2,-\sqrt2\big),
+\quad
+v = |\vv| = \sqrt6,
+\quad
+\va = \big(-4,0,-\sqrt2\big).
+</me>
+Hence <m>\hat\vT = \frac{\vv}{|\vv|}
+   = \frac{1}{\sqrt6}\big(0,2,-\sqrt2\big)</m>.
+</p>
+
+<p>Now <m>\hat\vB = \frac{\vv\times\va}{|\vv\times\va|}
+= \frac{1}{\sqrt{26}}\big(-\sqrt2,2\sqrt2,4\big)
+= \frac{1}{\sqrt{13}}\big(-1,2,2\sqrt2\big)</m>,
+since
+<me>
+\vv\times\va
+= \left|\begin{matrix}\hi &amp; \hj &amp; \hk \\
+0 &amp; 2 &amp; -\sqrt2 \\
+-4 &amp; 0 &amp; -\sqrt2 \end{matrix}\right|
+= \big(-2\sqrt2,4\sqrt2,8\big),
+\qquad
+|\vv\times\va| = \sqrt{104} = 2\sqrt{26}.
+</me>
+This leads to
+<md>
+<mrow>
+\hat\vN &amp;= \hat\vB\times\hat\vT
+=\frac{1}{\sqrt{78}} \left|\begin{matrix}\hi &amp; \hj &amp; \hk \\
+-1 &amp; 2 &amp; 2\sqrt2 \\
+0  &amp; 2 &amp; -\sqrt2 \end{matrix}\right|
+= -\frac{1}{\sqrt{78}}\big(6\sqrt2,\sqrt2,2\big)
+</mrow><mrow>
+&amp;= -\frac{1}{\sqrt{39}}\big(6,1,\sqrt2\big).
+</mrow>
+</md>
+Finally,
+<me>
+\kappa = \frac{|\vv\times\va|}{v^3}
+= \frac{2\sqrt{26}}{{(\sqrt{6})}^3}
+= \frac{2\sqrt2\,\sqrt{13}}{6\sqrt2\sqrt3}
+= \frac{\sqrt{13}}{3\sqrt3} = \frac{\sqrt{39}}{9}.
+</me>
+</p>
+
+<p>(b)
+Now parametrize the curve by time, <m>t</m>, and write <m>\vv=\vr'(t)</m>,
+<m>v=|\vr'(t)|</m> and <m>\va=\vr''(t)</m>. Note that in part (a) we used
+<m>\vv</m>, <m>v</m> and <m>\va</m> with different meanings.
+We use the dot product to extract
+the tangential and normal components of
+<m>\va = \diff{v}{t}\hat\vT + v^2\kappa\hat\vN</m>:
+<md>
+<mrow>
+	\va\cdot \hT &amp;= \left(\diff{v}{t}\hat\vT + v^2\kappa\hat\vN\right)\cdot \hT
+</mrow><mrow>
+	&amp;=\diff{v}{t}\hT\cdot\hT+(v^2\kappa)\hN\cdot\hT
+	</mrow>
+<intertext>Since <m>\hT</m> is a unit vector, <m>\hT \cdot \hT=\|\hT\|^2=1</m>; since <m>\hT</m> and <m>\hN</m> are perpendicular, <m>\hT \cdot \hN =0</m>.</intertext><mrow>
+	&amp;=\diff{v}{t}
+	</mrow>
+<intertext>This gives us a nice way to compute <m>\diff{v}{t}</m>, the rate of change of speed.</intertext>
+<mrow>
+\diff{v}{t} &amp;= \va\cdot\hat\vT
+= (-2,3,-2\sqrt2)\cdot\frac{1}{\sqrt6}\big(0,2,-\sqrt2\big)
+</mrow><mrow>
+&amp;= \frac{1}{\sqrt6}[0 + 6 + 4] = \frac{10}{\sqrt6} = \frac{5}{3}\sqrt6.
+	</mrow>
+</md>
+</p>
+
+<p>Similarly, <m>\va\cdot\hat\vN = v^2\kappa</m>, so
+<me>
+v^2
+= \frac{1}{\kappa}\va\cdot\hat\vN
+= \frac{9}{\sqrt{39}}\frac{-1}{\sqrt{39}}(-2,3,-2\sqrt2)
+               \cdot\big(6,1,\sqrt2\big)
+= \frac{9\times 13}{39}
+= 3.
+</me>
+Hence <m>|v|=\sqrt{3}</m>; since <m>v=|\vv|</m>, <m>v=\sqrt3</m>. Then
+<m>\vv = |\vv|\hT=v\hat\vT = \frac{\sqrt{3}}{\sqrt{6}}\big(0,2,-\sqrt2\big) = (0,\sqrt2,-1)</m>.
+</p></solution>
+</exercise>
+
+<exercise><title><fromexam>M317 2011A</fromexam></title>
+<statement><p>
+	A particle moves so that its position vector is given by
+	<m>\vr(t) = \big(\cos t\,,\, \sin t\,,\, c \sin t\big)</m>, where <m>t  \gt  0</m>
+	and <m>c</m> is a constant.
+	<ol label="a">
+<li>
+		Find the velocity <m>\vv(t)</m> and the acceleration <m>\va(t)</m> of the particle.
+</li>
+<li>
+		Find the speed <m>v(t)=|\vv(t)|</m> of the particle.
+</li>
+<li>
+		Find the tangential component of the acceleration of the particle.
+</li>
+<li>
+		Show that the trajectory of this particle lies in a plane.
+</li>
+</ol>
+</p></statement>
+
+<hint><p>
+	For part (d), what is the relationship between the <m>y</m>- and <m>z</m>-components of the particle's position? How can you use that to find a plane containing the particle at all times <m>t</m>?
+</p></hint>
+
+<answer><p>
+	(a) <m>\vv(t) = \big(-\sin t\,,\, \cos t\,,\, c \cos t\big)</m>,
+	<m>\va(t) = \big(-\cos t\,,\, -\sin t\,,\, -c \sin t\big)</m>
+</p>
+
+<p>	(b) <m>v(t) = \sqrt{1+c^2\cos^2 t}</m></p><p>
+	(c) <m>\frac{-c^2\sin t\cos t}{\sqrt{1+c^2\cos^2 t}}</m>
+</p>
+
+<p>	(d) The curve lies on the plane <m>z=cy</m>.
+</p></answer>
+
+<solution><p>
+	(a) The position, velocity and acceleration are
+	<md>
+<mrow>
+	\vr(t) &amp;= \big(\cos t\,,\, \sin t\,,\, c \sin t\big)
+</mrow><mrow>
+	\vv(t) =\vr'(t) &amp;= \big(-\sin t\,,\, \cos t\,,\, c \cos t\big)
+</mrow><mrow>
+	\va(t) =\vr''(t)&amp;= \big(-\cos t\,,\, -\sin t\,,\, -c \sin t\big)
+	</mrow>
+</md>
+</p>
+
+<p>	(b) The speed is
+	<md>
+<mrow>
+	v(t) = |\vv(t)| = \sqrt{1+c^2\cos^2 t}
+	</mrow>
+</md>
+</p>
+
+<p>	(c) By Theorem <xref ref="thm_curvatureFormulae"/>.c,
+	the tangential component of the acceleration is
+	<md>
+<mrow>
+	\difftwo{s}{t} = \diff{\ }{t} \sqrt{1+c^2\cos^2 t}
+	= \frac{-c^2\sin t\cos t}{\sqrt{1+c^2\cos^2 t}}
+	</mrow>
+</md>
+</p>
+
+<p>	(d) <m>y(t) =\sin t</m> and <m>z(t) = c\sin t</m> obey
+	<m>z(t) = cy(t)</m> for all <m>t</m>. So the curve lies on the  plane <m>z=cy</m>.
+</p></solution>
+</exercise>
+
+<exercise><title><fromexam>M317 2017A</fromexam></title>
+<statement><p>
+	A race track between two hills is described by the parametric curve
+	<me>
+	\vr(\theta) = \Big(4 \cos\theta\,,\, 2\sin\theta\,,\,
+	\frac{1}{4}\cos(2\theta)\Big),\qquad
+	0 \le \theta \le 2\pi
+	</me>
+	<ol label="a">
+<li>
+		Compute the curvature of the track at the point <m>\big(-4, 0, \frac{1}{4}\big)</m>.
+</li>
+<li>
+		Compute the radius of the circle that best approximates the bend at the
+		point\\ <m>\big(-4, 0, \frac{1}{4}\big)</m> (that is, the radius of the
+		osculating circle at that point).
+</li>
+<li><p>
+		A car drives down the track so that its position at time <m>t</m> is given by
+		<m>\vr(t^2)</m>. (Note the relationship between <m>t</m> and <m>\theta</m> is <m>\theta = t^2</m>).
+		Compute the following quantities.
+<ol label="(i)">
+<li>
+			The speed at the point <m>\big(-4, 0, \frac{1}{4}\big)</m>.
+</li>
+<li>
+			The acceleration at the point <m>\big(-4, 0, \frac{1}{4}\big)</m>.
+</li>
+<li>
+			The magnitude of the normal component of the acceleration at the point
+			<me>\big(-4, 0, \frac{1}{4}\big)</me>.
+</li>
+</ol></p>
+</li>
+</ol>
+</p></statement>
+
+<hint><p>
+	Rather than trying to wrangle trig identities, plug in <m>\theta=\pi</m> as soon as you can for part (a). For part (c), remember that you need the chain rule if you want to make use of your previous derivatives.
+</p></hint>
+
+<answer><p>
+	(a) <m>\frac{\sqrt{17}}{4}</m></p><p>
+	(b) <m>\frac{4}{\sqrt{17}}</m></p><p>
+	(c) (i) <m>4\sqrt{\pi} </m></p><p>
+	(ii) <m>\big( 16\pi\,,\, -4\,,\, -4\pi\big)</m></p><p>
+	(iii) <m>4\sqrt{17}\,\pi</m>
+</p></answer>
+
+<solution><p> (a)
+	For the specified curve <m>\vr(\pi) = \big(-4,0,\frac{1}{4}\big)</m> and
+	<md>
+<mrow>
+	\vr(\theta) &amp;= \Big(4 \cos\theta\,,\, 2\sin\theta\,,\,
+	\frac{1}{4}\cos(2\theta)\Big)
+</mrow><mrow>
+	\vv(\theta)=\vr'(\theta) &amp;= \Big(-4 \sin\theta\,,\, 2\cos\theta\,,\,
+	-\frac{1}{2}\sin(2\theta)\Big)
+</mrow><mrow>
+	\va(\theta) = \vr''(\theta) &amp;= \Big(-4 \cos\theta\,,\, -2\sin\theta\,,\,
+	-\cos(2\theta)\Big)
+</mrow><mrow>
+	\vv(\pi) &amp;= \big(0\,,\, -2\,,\, 0\big)
+</mrow><mrow>
+	\va(\pi) &amp;= \big(4\,,\, 0\,,\, -1\big)
+</mrow><mrow>
+	\vv(\pi) \times \va(\pi) &amp;= \big(2\,,\, 0\,,\, 8\big)
+	</mrow>
+</md>
+	So the curvature at <m>\theta=\pi</m> is
+	<md>
+<mrow>
+	\ka(\pi)&amp;=\frac{|\vv(\pi) \times \va(\pi)|}{|\vv(\pi)|^3}
+	=\frac{|(2,0,8)|}{|(0,-2,0)|^3}
+	=\frac{\sqrt{17}}{4}
+	</mrow>
+</md>
+</p>
+
+<p>	(b) The radius is
+	<me>
+	\frac{1}{\ka(\pi)} = \frac{4}{\sqrt{17}}
+	</me>
+</p>
+
+<p>	(c) Set <m>\vR(t) = \vr(t^2)</m>. Then
+	<md>
+<mrow>
+	\vR'(t)&amp;=2t\,\vr'(t^2)
+</mrow><mrow>
+	\vR''(t) &amp;= 2\,\vr'(t^2) +4t^2\,\vr''(t^2)
+	</mrow>
+</md>
+	In particular,
+	<md>
+<mrow>
+	\vR(\sqrt{\pi}) &amp;= \Big(-4\,,\, 0\,,\,  \frac{1}{4}\Big)
+</mrow><mrow>
+	\vR'(\sqrt{\pi}) &amp;= 2\sqrt{\pi}\,\vv(\pi)
+	=\big(0\,,\, -4\sqrt{\pi}\,,\, 0\big)
+</mrow><mrow>
+	\text{speed} = \big|\vR'(\sqrt{\pi})\big| &amp;=4\sqrt{\pi}
+</mrow><mrow>
+	\text{acceleration}=\vR''(\sqrt{\pi})
+	&amp;= 2\,\vv(\pi)+4\pi\,\va(\pi)
+	= \big( 16\pi\,,\, -4\,,\, -4\pi\big)
+	</mrow>
+</md>
+</p>
+
+<p>	The normal component of the acceleration has magnitude
+	<md>
+<mrow>
+	\ka\Big(\diff{s}{t}\Big)^2 = \frac{\sqrt{17}}{4}\big(4\sqrt{\pi}\big)^2
+	=4\sqrt{17}\,\pi
+	</mrow>
+</md>
+</p></solution>
+</exercise></exercisegroup>
+
+</exercises>
