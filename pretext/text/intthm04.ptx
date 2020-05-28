@@ -1633,7 +1633,7 @@ Let <m>\vE</m> and <m>\vB</m> be the (time dependent) electric and magnetic
 fields and define
 </p>
 
-<sidebyside widths="45% 28%" vaign="middle">
+<sidebyside widths="45% 28%" valign="middle">
 <p><md>
 <mrow>
 \oint_C\vE\cdot \dee{\vr}&amp;=\text{voltage around }C
