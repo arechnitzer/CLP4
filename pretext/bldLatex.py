@@ -10,9 +10,6 @@ import os
 import subprocess
 import lxml.etree as ET
 
-# Hopefully only these paths need setting
-pretextPath = "/home/andrew/Projects/mathbook"
-# pretextPath = "/home/feldman/pretext/mathbook"
 # source file
 sourceFile = "./clp_4_vc.ptx"
 # output file
@@ -20,12 +17,12 @@ outFile = "clp_4_vc.tex"
 
 # Hopefully don't need hacking
 # xslt pretext file
-xsltFile = pretextPath + "/xsl/mathbook-latex.xsl"
+xsltFile = "./xsl/mathbook-latex.xsl"
 # the schema to check against
-xsFile = pretextPath + "/schema/pretext.rng"
+xsFile = "./schema/pretextCLP.rng"
 xs = ET.RelaxNG(ET.parse(xsFile))
 # mbx location
-mbx = pretextPath + "/script/mbx"
+mbx = "./script/mbx"
 
 # now some tag operations
 # each in this list should be a 4-ple [ancestor-tag, tag, replace-before, replace-after]
@@ -42,7 +39,7 @@ myTags = [
 ]
 
 # These ["foo", "bar"] does replacement of <foo> with <bar>
-# Joel - you might want these when hacking the pretext image sizes, and then comment out to do a proper compile.
+# You might want these when hacking the pretext image sizes, and then comment out to do a proper compile.
 myRep = [
     # I had these set so that I could see all parts of exercises on page.
     # breaks validation, but really helps debugging.
@@ -61,9 +58,9 @@ mySubs = [
 
 # build parameters as dict
 param = {
-    "exercise.divisional.answer": "'yes'",
-    "exercise.divisional.hint": "'yes'",
-    "exercise.divisional.solution": "'yes'",
+    "exercise.divisional.answer": "'no'",
+    "exercise.divisional.hint": "'no'",
+    "exercise.divisional.solution": "'no'",
 }
 
 
@@ -160,16 +157,15 @@ try:
         print("\tSource is valid")
     else:
         print("\tValidation problems:")
-        for er in xs.error_log:
-            print(er.path, er)
-        # print(xs.error_log)
+        print(xs.error_log)
 except Exception as err:
     print(">>> ERROR <<< ")
     print(err)
     exit(1)
 
 # all passed so now build
-os.makedirs("site", exist_ok=True)
+for dir in ["site", "site/knowl", "site/figs", "site/images", "site/pfigs"]:
+    os.makedirs(dir, exist_ok=True)
 
 # read in the pretext xslt magic
 print("Read in xsl file")

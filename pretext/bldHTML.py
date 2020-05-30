@@ -10,21 +10,19 @@ import os
 import subprocess
 import lxml.etree as ET
 
-# Hopefully only these paths need setting
-pretextPath = "/home/andrew/Projects/mathbook"
 # source file
 sourceFile = "./clp_4_vc.ptx"
 # output directory
 outDir = "./site"
 
-# Hopefully don't need hacking
+currentDir = os.getcwd()
 # xslt pretext file
-xsltFile = pretextPath + "/xsl/mathbook-html.xsl"
+xsltFile = currentDir + "/xsl/mathbook-html.xsl"
 # the schema to check against
-xsFile = pretextPath + "/schema/pretext.rng"
+xsFile = currentDir +  "/schema/pretextCLP.rng"
 xs = ET.RelaxNG(ET.parse(xsFile))
 # mbx location
-ptx = pretextPath + "/pretext/pretext"
+ptx = currentDir + "/pretext/pretext"
 
 # now some tag operations
 # each in this list should be a 4-ple [ancestor-tag, tag, replace-before, replace-after]
@@ -41,13 +39,13 @@ myTags = [
 ]
 
 # These ["foo", "bar"] does replacement of <foo> with <bar>
-# Joel - you might want these when hacking the pretext image sizes, and then comment out to do a proper compile.
+# You might want these when hacking the pretext image sizes, and then comment out to do a proper compile.
 myRep = [
     # I had these set so that I could see all parts of exercises on page.
     # breaks validation, but really helps debugging.
-    ["hint", "statement",],
-    ["answer", "statement"],
-    ["solution", "statement"],
+    # ["hint", "statement",],
+    # ["answer", "statement"],
+    # ["solution", "statement"],
 ]
 
 # ["foo", pretextStuff] replaces <foo/> with pretextStuff
@@ -60,9 +58,9 @@ mySubs = [
 
 # build parameters as dict
 param = {
-    "exercise.divisional.answer": "'yes'",
-    "exercise.divisional.hint": "'yes'",
-    "exercise.divisional.solution": "'yes'",
+    "exercise.divisional.answer": "'no'",
+    "exercise.divisional.hint": "'no'",
+    "exercise.divisional.solution": "'no'",
 }
 
 
@@ -182,10 +180,9 @@ os.chdir(outDir)
 print("Transform the source")
 htmlSource = transform(procd, **param)
 print("HTML written")
+print("Error log:")
+print(transform.error_log)
 print("Processing tikz to svg")
 subprocess.check_output(
     [ptx, "-c", "latex-image", "-f", "svg", "-d", "images", "../" + sourceFile]
 )
-
-print("Error log:")
-print(transform.error_log)
