@@ -1228,9 +1228,14 @@ Using similar triangles:
  y&amp;=h=\frac{p}{2}H &amp; x&amp;=\sqrt{4-H^2}-b=\left(1-\frac{p}{2}\right)\sqrt{4-H^2}
 </mrow><mrow>
 \diff{y}{t}&amp;=\frac{p}{2}\diff{H}{t}=-\frac{p}{4}
-&amp;\diff{x}{t}&amp;=\left(1-\frac{p}{2}\right)\frac{-H}{\sqrt{4-H^2}}\diff{H}{t}=\left(1-\frac{p}{2}\right)\frac{H}{2\sqrt{4-H^2}}
+&amp;\diff{x}{t}&amp;=\left(1-\frac{p}{2}\right)\frac{-H}{\sqrt{4-H^2}}\diff{H}{t}
+</mrow><mrow>
+&amp;&amp;&amp;=\left(1-\frac{p}{2}\right)\frac{H}{2\sqrt{4-H^2}}
 </mrow>
-<intertext>When <m>H=1</m>:</intertext><mrow>
+</md>
+When <m>H=1</m>:
+<md>
+<mrow>
 \left.\diff{y}{t}\right|_{H=1}&amp;=-\frac{p}{4}
 &amp;\left.\diff{x}{t}\right|_{H=1}&amp;=\left(1-\frac{p}{2}\right)\frac{1}{2\sqrt{3}}
 </mrow>
