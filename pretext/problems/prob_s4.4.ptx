@@ -234,7 +234,7 @@ is
 &amp; (\text{by part (c) of Theorem }<xref ref="thm_gradIdentities"/>)
 </mrow><mrow>
 &amp;=\vZero&amp;
-&amp; (\text{(by part (b) of Theorem }<xref ref="thm_degTwoIdentities"/>)
+&amp; (\text{by part (b) of Theorem }<xref ref="thm_degTwoIdentities"/>)
 </mrow>
 </md>
 Another way to see that <m>\vnabla\times[\phi\vnabla\psi+\psi\vnabla\phi]=\vZero</m>
