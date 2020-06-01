@@ -2621,11 +2621,11 @@ Choosing the minus sign to give the downward pointing normal
 &amp;=-\int_1^5\hskip-3pt\dee{Z}\int_0^{2\pi}\hskip-6.5pt\dee{\theta}\
     \Big(-\frac{1}{2}\overbrace{[5-Z]^{3/2}\cos^3\theta}^{x^3}
            - \overbrace{[5-Z]^{3/2}\cos\theta\sin^2\theta}^{xy^2} \,,\,
-   </mrow><mrow>&amp;\hskip3.5in
+   </mrow><mrow>&amp;\hskip3.3in
          -\frac{1}{2}\overbrace{[5-Z]^{3/2}\sin^3\theta}^{y^3} \,,\,
          \overbrace{Z^2}^{z^2}\Big)
 </mrow><mrow>
-&amp;\hskip3in \cdot
+&amp;\hskip2.8in \cdot
     \big(\sqrt{5-Z}\cos\theta\,,\,\sqrt{5-Z}\sin\theta\,,\, 1/2\big)
 </mrow><mrow>
 &amp;=-\int_1^5\hskip-3pt\dee{Z}\int_0^{2\pi}\hskip-6.5pt\dee{\theta}\
@@ -3515,16 +3515,16 @@ The specified integral is
    2\int_0^{\pi/4}\dee{\varphi} \int_0^{2\pi}\dee{\theta}\ \sin\varphi\
    \big(2\sin\varphi\cos\varphi\cos\theta\,,\,
       2\sin^2\varphi\sin\theta\cos\theta\,,\,
-</mrow><mrow>&amp;\hskip4.1in
+</mrow><mrow>&amp;\hskip3.9in
       2\sin\varphi\cos\varphi\sin\theta\big)\cdot
-</mrow><mrow>&amp;\hskip3.2in
+</mrow><mrow>&amp;\hskip3.0in
 \cdot \big(\sin\varphi\cos\theta\,,\,\cos\varphi\,,\, \sin\varphi\sin\theta\big)
 </mrow><mrow>
 &amp;\hskip0.25in=
    4\int_0^{\pi/4}\dee{\varphi} \int_0^{2\pi}\dee{\theta}\
    \Big\{\sin^3\varphi\cos\varphi\cos^2\theta
         +\sin^3\varphi\cos\varphi\sin\theta\cos\theta
-    </mrow><mrow>&amp;\hskip4.1in       
+    </mrow><mrow>&amp;\hskip3.9in       
    +\sin^3\varphi\cos\varphi\sin^2\theta
    \Big\}
 </mrow><mrow>

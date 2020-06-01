@@ -103,8 +103,8 @@ d.  B
 Every <m>\vF</m> in this problem is defined and has continuous first-order partial derivatives on all of <m>\mathbb R^2</m> or <m>\mathbb R^3</m>. The characterization in Theorem<nbsp/><xref ref="thm_screenConserv"/> tells us that our fields will be conservative if and only if they pass the screening test, i.e. have curl 0.
 </p>
 
-<p><ol label="a">
-<li> <md>
+<p> a.
+<md>
 <mrow>\vF&amp;=x\hi + z\hj + y\hk
 </mrow><mrow>
 \vnabla \times \vF&amp;=\Big(\frac{\partial F_3}{\partial y} -\frac{\partial F_2}{\partial z} \Big)\hi
@@ -115,8 +115,10 @@ Every <m>\vF</m> in this problem is defined and has continuous first-order parti
 </mrow>
 </md>
 This field passes the screening test.  Since <m>\vF</m> is defined and has continuous first-order partial derivatives on all of <m>\mathbb R^3</m>, it is conservative. So, we have option A.
-</li>
-<li>  <md>
+</p>
+
+<p>  b.
+<md>
 <mrow>\vF&amp;=y^2z\hi + x^2z\hj + x^2y\hk
 </mrow><mrow>
 \vnabla \times \vF&amp;=\Big(\frac{\partial F_3}{\partial y} -\frac{\partial F_2}{\partial z} \Big)\hi
@@ -127,8 +129,9 @@ This field passes the screening test.  Since <m>\vF</m> is defined and has conti
 </mrow>
 </md>
 So, <m>\vF</m> fails the screening test.  So, it's not conservative. That's option B.
-</li>
-<li>
+</p>
+
+<p> c.
  <md>
 <mrow>\vF&amp;=(xe^{xy}+1)\hi + (ye^{xy}+z)\hj + \left( \frac1z+y\right)\hk
 </mrow><mrow>
@@ -140,8 +143,9 @@ So, <m>\vF</m> fails the screening test.  So, it's not conservative. That's opti
 </mrow>
 </md>
 <m>\vF</m> passes the screening test. Since <m>\vF</m> is defined and has continuous first-order partial derivatives on all of <m>\mathbb R^3</m>, it is conservative. So, we have option A.
-</li>
-<li>
+</p>
+
+<p> d.
  <md>
 <mrow>\vF&amp;=y\cos(xy)\hi + x\sin(xy)\hj
 </mrow><mrow>
@@ -154,9 +158,9 @@ So, <m>\vF</m> fails the screening test.  So, it's not conservative. That's opti
 </md>
 <m>\vF</m> fails the screening test, so it is not conservative.
 That is Option B.
-</li>
-</ol>
-</p></solution>
+</p>
+
+</solution>
 </exercise>
 
 <exercise>
@@ -522,7 +526,6 @@ So, for all paths from <m>\vr(t_0)=(1,0,-1)</m> to <m>\vr(t_1)=(0,-2,3)</m>,
 &amp;=9\frac{1}{2}
 </mrow>
 </md>
-.
 </p>
 
 </solution>
