@@ -273,12 +273,12 @@ if <m>\om = f_1\om_1+f_2\om_2</m>, where <m>f_1</m>,<m>f_2</m> are
 functions and <m>\om_1,\om_2</m> are forms, then
 <me>
 \big(f_1\om_1+f_2\om_2\big)\wedge \om'= f_1 (\om_1\wedge\om')
-+f_2 (\om_1\wedge\om')
++f_2 (\om_2\wedge\om')
 </me>
 Similarly,
 <me>
 \om\wedge\big(f_1\om'_1+f_2\om'_2\big)= f_1 (\om\wedge\om'_1)
-+f_2 (\om\wedge\om'_1)
++f_2 (\om\wedge\om'_2)
 </me>
 </li>
 <li>
