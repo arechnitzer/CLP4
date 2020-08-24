@@ -878,7 +878,7 @@ The solution is
 <md>
 <mrow>
 T(z,t)&amp;=T_0
-+T_Ae^{-\sqrt{\sigma \over 2\sigma}\ z}
++T_Ae^{-\sqrt{\sigma \over 2\alpha}\ z}
      \cos\Big(\sigma t-\sqrt{\frac{\sigma }{2\alpha}}\ z\Big)
 </mrow><mrow>
 &amp;\hskip1in+T_De^{-\sqrt{\delta \over 2\alpha}\ z}

@@ -45,8 +45,8 @@ public class heat3 extends Template {
           fTeXlabel(75, 5, "br", "air") ;
           fTeXlabel(75, -5, "tr", "earth") ;
           fTeXlabel(85, 0, "lc", 
-                 "$z=0$, $T(0,t)=T_0+T_A\\cos(\\alpha t)+T_D\\cos(\\delta t)$") ;
-          fTeXlabel(0, -25, "cc", "$T_t=\\kappa T_{zz}$") ;
+                 "$z=0$, $T(0,t)=T_0+T_A\\cos(\\sigma t)+T_D\\cos(\\delta t)$") ;
+          fTeXlabel(0, -25, "cc", "$T_t=\\alpha T_{zz}$") ;
           
      }
 }
