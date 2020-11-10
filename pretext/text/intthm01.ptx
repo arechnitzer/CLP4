@@ -512,11 +512,11 @@ Substituting in
 -\frac{\partial F_1}{\partial z}\Big)
 +\frac{\partial }{\partial z}\Big(\frac{\partial F_2}{\partial x}
 -\frac{\partial F_1}{\partial y}\Big)\cr
-&amp;=\color{red}{\frac{\partial^2 F_3}{\partial x\partial y}}
--\color{blue}{\frac{\partial^2 F_2}{\partial x\partial z}}
--\color{red}{\frac{\partial^2 F_3}{\partial y\partial x}}
+&amp;={\color{red}{\frac{\partial^2 F_3}{\partial x\partial y}}}
+-{\color{blue}{\frac{\partial^2 F_2}{\partial x\partial z}}}
+-{\color{red}{\frac{\partial^2 F_3}{\partial y\partial x}}}
 +\frac{\partial^2 F_1}{\partial y\partial z}
-+\color{blue}{\frac{\partial^2 F_2}{\partial z\partial x}}
++{\color{blue}{\frac{\partial^2 F_2}{\partial z\partial x}}}
 -\frac{\partial^2 F_1}{\partial z\partial y}
 </mrow><mrow>
 &amp;=0
@@ -751,21 +751,21 @@ On the other hand, the right hand side
 &amp;\hskip0.5in-(a_1b_1+a_2b_2+a_3b_3)(c_1\hi+c_2\hj+c_3\hk)
 </mrow><mrow>
 =\ &amp;
-\hi\ \big[\color{blue}{a_1b_1c_1}
+\hi\ \big[{\color{blue}{a_1b_1c_1}}
          +a_2b_1c_2+a_3b_1c_3-
-         \color{blue}{a_1b_1c_1}
+         {\color{blue}{a_1b_1c_1}}
          -a_2b_2c_1-a_3b_3c_1\big]
 </mrow><mrow>
 {+}&amp;\hj\ \big[a_1b_2c_1
-      +\color{blue}{a_2b_2c_2}
+      +{\color{blue}{a_2b_2c_2}}
       +a_3b_2c_3-a_1b_1c_2
-      -\color{blue}{a_2b_2c_2}
+      -{\color{blue}{a_2b_2c_2}}
       -a_3b_3c_2\big]
 </mrow><mrow>
 {+}&amp;\hk\ \big[a_1b_3c_1+a_2b_3c_2
-          +\color{blue}{a_3b_3c_3}
+          +{\color{blue}{a_3b_3c_3}}
           -a_1b_1c_3-a_2b_2c_3
-          -\color{blue}{a_3b_3c_3}\big]
+          -{\color{blue}{a_3b_3c_3}}\big]
 </mrow><mrow>
 {=}\ &amp;
 \hi\ [a_2b_1c_2+a_3b_1c_3-a_2b_2c_1-a_3b_3c_1]

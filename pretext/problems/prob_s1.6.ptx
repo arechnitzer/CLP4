@@ -592,31 +592,31 @@ z(t)&amp;=\frac43 t^{3/2} &amp; z'(t)&amp;=2\sqrt{t}
 </md>
 <md>
 <mrow>
-\color{blue}{\sqrt{x'(t)^2+y'(t)^2+z'(t)^2}} &amp;=\sqrt{1+2t+t^2+1-2t+t^2+4t}
+{\color{blue}{\sqrt{x'(t)^2+y'(t)^2+z'(t)^2}}} &amp;=\sqrt{1+2t+t^2+1-2t+t^2+4t}
 </mrow><mrow>
-&amp;=\sqrt{2(t^2+2t+1)}=\color{blue}{\sqrt{2}(t+1)}
+&amp;=\sqrt{2(t^2+2t+1)}={\color{blue}{\sqrt{2}(t+1)}}
 </mrow><mrow>
-\color{red}{\rho(x(t),y(t),z(t))}&amp;= \frac{x(t)+y(t)}{2}={\frac{(t+t^2/2 )+( t -  t^2/2)}{2}}=\color{red}{t}
+{\color{red}{\rho(x(t),y(t),z(t))}}&amp;= \frac{x(t)+y(t)}{2}={\frac{(t+t^2/2 )+( t -  t^2/2)}{2}}={\color{red}{t}}
 </mrow>
 </md>
 <md>
 <mrow>
-\int_C \color{red}\rho \,\dee{s}&amp;=\int_0^4 \color{red}{t}\,\color{blue}{\sqrt{2}(t+1)}\,\dee{t}
+\int_C {\color{red}{\rho}} \,\dee{s}&amp;=\int_0^4 {\color{red}{t}}\,{\color{blue}{\sqrt{2}(t+1)}}\,\dee{t}
 =\frac{2^3\cdot 11\sqrt{2}}{3}
 </mrow><mrow>
-\int_C x \color{red}\rho \,\dee{s}&amp;=\int_0^4 \left(t+\frac12t^2\right) \color{red}{t}\,\color{blue}{\sqrt{2}(t+1)}\,\dee{t}
+\int_C x {\color{red}{\rho}} \,\dee{s}&amp;=\int_0^4 \left(t+\frac12t^2\right) {\color{red}{t}}\,{\color{blue}{\sqrt{2}(t+1)}}\,\dee{t}
 =\sqrt{2}\int_0^{2^2} \left(\frac{t^4}{2}+\frac{3}{2}t^3
                                  +t^2\right)\ \dee{t}
 </mrow><mrow>
             &amp;=\sqrt{2}\left(\frac{2^9}{5} +3(2^5)+\frac{2^6}{3}\right)
 =\frac{2^5\cdot103\sqrt 2}{15}
 </mrow><mrow>
-\int_C y \color{red}\rho \,\dee{s}&amp;=\int_0^4 \left(t-\frac12t^2\right)\color{red}{t}\, \color{blue}{\sqrt{2}(t+1)}\,\dee{t}=\sqrt2\int_0^{2^2}\left(-\frac{t^4}{2}+\frac{t^3}{2}+t^2 \right)\dee{t}
+\int_C y {\color{red}{\rho}} \,\dee{s}&amp;=\int_0^4 \left(t-\frac12t^2\right){\color{red}{t}}\, {\color{blue}{\sqrt{2}(t+1)}}\,\dee{t}=\sqrt2\int_0^{2^2}\left(-\frac{t^4}{2}+\frac{t^3}{2}+t^2 \right)\dee{t}
 </mrow><mrow>
 &amp;=\sqrt{2}\left(-\frac{2^9}{5}+{2^5}+\frac{2^6}{3} \right)
 =-\frac{2^5\cdot 23\sqrt 2}{15}
 </mrow><mrow>
-\int_C z \color{red} \rho\, \dee{s}&amp;=\int_0^4 \left(\frac{4}{3}t^{3/2}\right) \color{red}{t}\, \color{blue}{\sqrt{2}(t+1)}\,\dee{t}=\frac{4\sqrt2}{3}\int_0^{2^2}
+\int_C z {\color{red}{\rho}}\, \dee{s}&amp;=\int_0^4 \left(\frac{4}{3}t^{3/2}\right) {\color{red}{t}}\, {\color{blue}{\sqrt{2}(t+1)}}\,\dee{t}=\frac{4\sqrt2}{3}\int_0^{2^2}
 \left( t^{7/2}+t^{5/2}\right)\dee{t}
 </mrow><mrow>
 &amp;=\frac{4\sqrt2}{3}\left( \frac{2^{10}}{9}+\frac{2^8}{7}\right)=\frac{2^{10}\cdot37\sqrt{2}}{7\cdot 3^3}
