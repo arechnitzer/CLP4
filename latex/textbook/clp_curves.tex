@@ -23,7 +23,7 @@ have to be. It can be simply a parameter that is used to label the
 different points on the curve that $\vr(t)$ sweeps out. We then say 
 that $\vr(t)$ provides a parameterization of the curve.
 
-\begin{eg}\label{eg:paramCircle}
+\begin{eg}[Parametrization of  $x^2+y^2=a^2$]\label{eg:paramCircle}
 While we will often use $t$ as the parameter in a parametrized curve $\vr(t)$,
 there is no need to call it $t$. Sometimes it is natural to use a different 
 name for the parameter. For example, consider the circle $x^2+y^2=a^2$.
@@ -55,6 +55,118 @@ For all $t$,
 is well-defined and obeys $x(t)^2+y(t)^2=a^2$. But this $\vr(t)$ does not
 cover the entire circle because $y(t)$ is always positive.
 
+\end{eg}
+
+\begin{eg}[Parametrization of  $(x-h)^2+(y-k)^2=a^2$]\label{eg:paramCircleB}
+We can tweak the parametrization of Example \ref{eg:paramCircle} to get
+a parametrization of the circle of radius $a$ that is centred on $(h,k)$.
+One way to do so is to redraw the sketch of Example \ref{eg:paramCircle}
+with the circle translated so that its centre is at $(h,k)$.
+\begin{efig}
+\begin{center}
+     \includegraphics{parCirclehk.pdf}
+\end{center}
+\end{efig}
+We see from the sketch that 
+\begin{equation*}
+\vr(\theta) = \big(h+a\cos\theta\,,\,k+a\sin\theta\big)\qquad
+0\le \theta< 2\pi
+\end{equation*}
+is a parametrization of the circle $(x-h)^2+(y-k)^2=a^2$.
+
+A second way to come up with this parametrization is to observe that 
+we can turn the trig identity $\cos^2 t + \sin^2 t=1$ into 
+the equation $(x-h)^2+(y-k)^2=a^2$ of the circle by
+\begin{itemize}
+\item
+multiplying the trig identity by $a^2$ to get
+$(a\cos t)^2 +(a\sin t)^2 =a^2$ and then
+\item
+setting $\ a\cos t=x-h\ $ and $\ a\sin t=y-k\ $, which turns  $(a\cos t)^2 +(a\sin t)^2 =a^2$ into $(x-h)^2+(y-k)^2=a^2$.
+\end{itemize}
+\end{eg}
+
+\begin{eg}[Parametrization of  $\frac{x^2}{a^2}+\frac{y^2}{b^2}=1$ and of
+$x^{2/3}+y^{2/3}=a^{2/3}$]    \label{eg:paramEllipse}
+
+We can build parametrizations of the curves $\frac{x^2}{a^2}+\frac{y^2}{b^2}=1$ 
+and $x^{2/3}+y^{2/3}=a^{2/3}$ from the trig identity $\cos^2 t + \sin^2 t=1$,
+like we did in the second part of the last example.
+\begin{itemize}
+\item
+Setting $\ \cos t=\frac{x}{a}\ $ and $\ \sin t=\frac{y}{b}\ $ turns  
+$\cos^2 t +\sin^2 t =1$ into $\frac{x^2}{a^2}+\frac{y^2}{b^2}=1$.
+
+\item
+Setting $\ \cos t= \big(\frac{x}{a}\big)^{\frac{1}{3}}\ $ and 
+$\ \sin t=\big(\frac{y}{a}\big)^{\frac{1}{3}}\ $ turns  
+$\cos^2 t +\sin^2 t =1$ into $\frac{x^{2/3}}{a^{2/3}}+\frac{y^{2/3}}{a^{2/3}}=1$.
+\end{itemize}
+So
+\begin{alignat*}{3}
+\vr(t) &= \big(a\cos t\,,\,b\sin t\big)\qquad &0\le t< 2\pi
+\\
+\vr(t) &= \big(a\cos^3 t\,,\,a\sin^3 t\big) &0\le t< 2\pi
+\end{alignat*}
+give parametrizations of $\frac{x^2}{a^2}+\frac{y^2}{b^2}=1$ 
+and $x^{2/3}+y^{2/3}=a^{2/3}$, respectively. To see that running $t$ from $0$ to $2\pi$ runs $\vr(t)$ once around the curve, look at the figures below.
+\begin{wfig}
+\begin{center}
+     \includegraphics{parEllipse.pdf}\quad
+     \includegraphics{astroid4.pdf}
+\end{center}
+\end{wfig}
+The curve $x^{2/3}+y^{2/3}=a^{2/3}$ is called an astroid. From its equation,
+we would expect its sketch to look like a deformed circle. But it is probably 
+not so obvious that it would have the pointy bits of the right hand figure.
+We will not explain here why they arise. The astroid is studied in some 
+detail in Example \ref{eg:astroid}.
+In particular, the above sketch is carefully developed there.  
+ 
+\end{eg}
+
+\begin{eg}[Parametrization of  $e^y=1+x^2$]\label{eg:paramMessy}
+A very easy method that can often create parametrizations for a curve is to use $x$ or $y$ as a parameter. Because we can solve $e^y=1+x^2$ for $y$ as a function of $x$, namely $y=\ln\big(1+x^2\big)$, we can use $x$ as 
+the parameter simply by setting $t=x$. This gives the parametrization
+\begin{equation*}
+\vr(t) = \big(t\,,\,\ln(1+t^2)\big)\qquad -\infty<t<\infty
+\end{equation*}  
+\end{eg}
+
+\begin{eg}[Parametrization of  $x^2+y^2=a^2$, again]\label{eg:paramCircleC}
+It is also quite common that one can use either $x$ or $y$ to parametrize part of, but all of, a curve. A simple example is the circle $x^2+y^2=a^2$.
+For each $-a<x<a$, there are two points on the circle with that value of $x$.
+So one cannot use $x$ to parametrize the whole circle.
+Similarly, for each $-a<y<a$, there are two points on the circle with that value of $y$. So one cannot use $y$ to parametrize the whole circle. On the other 
+hand
+\begin{alignat*}{3}
+\vr(t) &= \big(t\,,\,\sqrt{a^2-t^2}\big)\qquad &-a<t<a \\
+\vr(t) &= \big(t\,,\,-\sqrt{a^2-t^2}\big)\qquad &-a<t<a
+\end{alignat*}
+provide parametrizations of the top half and bottom half, respectively,
+of the circle using $x$ as the parameter, and
+\begin{alignat*}{3}
+\vr(t) &= \big(\sqrt{a^2-t^2}\,,\,t\big)\qquad &-a<t<a \\
+\vr(t) &= \big(-\sqrt{a^2-t^2}\,,\,t\big)\qquad &-a<t<a
+\end{alignat*}
+provide parametrizations of the right half and left half, respectively,
+of the circle using $y$ as the parameter.
+\end{eg}
+
+\begin{eg}[Unparametrization of  $\vr(t)=(\cos t, 7-t)$] \label{eg:unparam}
+In this example, we will undo the parametrization $\vr(t)=(\cos t, 7-t)$
+and find the Cartesian equation of the curve in question. We may rewrite the
+parametrization as
+\begin{align*}
+x&=\cos t \\
+y&=7-t
+\end{align*}
+Note that we can eliminate the parameter $t$ simply by using the second equation 
+to solve for $t$ as a function of $y$. Namely $t=7-y$. Substituting this
+into the first equation  gives us the Cartesian equation
+\begin{equation*}
+x=\cos(7-y)
+\end{equation*}
 \end{eg}
 
 Curves often arise as the intersection of two surfaces. For example,
@@ -163,7 +275,117 @@ each of its components.
 And of course differentiation interacts with arithmetic operations, 
 like addition, in the obvious way. Only a little more thought is required to 
 see that differentiation interacts quite nicely with dot and cross 
-products too.  
+products too.  Here are some examples.
+
+\begin{eg}\label{eg:diffDot}
+Let
+\begin{align*}
+\va(t)&= t^2\,\hi + t^4\,\hj + t^6\,\hk
+\\
+\vb(t)&= e^{-t}\,\hi + e^{-3t}\,\hj + e^{-5t}\,\hk
+\\
+\ga(t)&= t^2
+\\
+s(t)&= \sin t
+\end{align*}
+We are about to compute some derivatives. To make it easier to follow what is going on, we'll use some colour. When we apply the product rule
+\begin{align*}
+\diff{}{t}\big[f(t)\,g(t)\big]
+&=\textcolor{blue}{f'(t)}\,g(t) + f(t)\,\textcolor{blue}{g'(t)}
+\end{align*} 
+we'll use blue to highlight the factors $f'(t)$ and $g'(t)$.
+Here we go.
+\begin{align*}
+\ga(t)\,\vb(t) & = t^2e^{-t}\,\hi + t^2 e^{-3t}\,\hj + t^2 e^{-5t}\,\hk
+\\
+\implies \diff{}{t}\big[\ga(t)\vb(t)\big]
+&=\big[\textcolor{blue}{2t} e^{-t}
+           \textcolor{blue}{-}t^2\textcolor{blue}{e^{-t}}\big]\hi
+  +\big[\textcolor{blue}{2t} e^{-3t}
+           \textcolor{blue}{-3}t^2\textcolor{blue}{e^{-3t}}\big]\hj
+  +\big[\textcolor{blue}{2t} e^{-5t}
+          \textcolor{blue}{-5}t^2e^{-5t}\big]\hk
+\\
+&=\textcolor{blue}{2t}\big\{e^{-t}\,\hi + e^{-3t}\,\hj + e^{-5t}\,\hk\big\}
++ t^2
+    \textcolor{blue}{\big\{-e^{-t}\,\hi -3 e^{-3t}\,\hj -5 e^{-5t}\,\hk\big\}}
+\\
+&=\textcolor{blue}{\ga'(t)}\vb(t)
+         +\ga(t)\textcolor{blue}{\vb'(t)}
+\end{align*}
+and 
+\begin{align*}
+\va(t)\cdot\vb(t) & = t^2e^{-t} + t^4 e^{-3t} + t^6 e^{-5t}
+\\
+\implies \diff{}{t}\big[\va(t)\cdot\vb(t)\big]
+&=\big[\textcolor{blue}{2t} e^{-t}
+            \textcolor{blue}{-}t^2\textcolor{blue}{e^{-t}}\big]
+  +\big[\textcolor{blue}{4t^3} e^{-3t}
+            \textcolor{blue}{-3}t^4\textcolor{blue}{e^{-3t}}\big]
+  +\big[\textcolor{blue}{6t^5} e^{-5t}
+             \textcolor{blue}{-5}t^6\textcolor{blue}{e^{-5t}}\big]
+\\
+&=\big[\textcolor{blue}{2t} e^{-t}
+            +\textcolor{blue}{4t^3} e^{-3t}
+            +\textcolor{blue}{6t^5} e^{-5t}\big]
+  +\big[\textcolor{blue}{-}t^2\textcolor{blue}{e^{-t}}
+             \textcolor{blue}{-3}t^4\textcolor{blue}{e^{-3t}}
+             \textcolor{blue}{-5t}^6\textcolor{blue}{e^{-5t}}\big]
+\\
+&=\textcolor{blue}{\big\{2t\,\hi+4t^3\,\hj+6t^5\,\hk\big\}}\cdot
+           \big\{e^{-t}\,\hi + e^{-3t}\,\hj + e^{-5t}\,\hk\big\}\\&\hskip0.5in
+  +\big\{t^2\,\hi + t^4\,\hj + t^6\,\hk\big\}\cdot
+         \textcolor{blue}{\big\{-e^{-t}\,\hi-3e^{-3t}\,\hj-5e^{-5t}\,\hk\big\}}
+\\
+&=\textcolor{blue}{\va'(t)}\cdot\vb(t)+\va(t)\cdot\textcolor{blue}{\vb'(t)}
+\end{align*}
+and
+\begin{align*}
+\va(t)\times\vb(t) 
+&=\det\left[\begin{matrix}\hi& \hj &\hk\\ 
+                            t^2 & t^4 & t^6\\ 
+                            e^{-t} & e^{-3t} & e^{-5t}\end{matrix}\right] \\
+&=\hi\big(t^4 e^{-5t}-t^6 e^{-3t}) 
+  -\hj(t^2 e^{-5t}- t^6 e^{-t}) 
+   +\hk(t^2 e^{-3t}-t^4 e^{-t})
+\\
+\implies \diff{}{t}\big[\va(t)\times\vb(t)\big]
+&=\ \hi\big(\ \textcolor{blue}{4t^3} e^{-5t}\ \ 
+        -\ \textcolor{blue}{6t^5} e^{-3t}) 
+  \ -\ \hj(\ \textcolor{blue}{2t} e^{-5t}
+      \ -\  \textcolor{blue}{6t^5} e^{-t}) 
+   +\hk(\ \textcolor{blue}{2t} e^{-3t}
+   \ -\ \textcolor{blue}{4t^3} e^{-t}) \\&\hskip0.1in
+ +\hi\big(\textcolor{blue}{-5}t^4 \textcolor{blue}{e^{-5t}}
+           \textcolor{blue}{+3}t^6 \textcolor{blue}{e^{-3t}}) 
+  -\hj(\textcolor{blue}{-5}t^2 \textcolor{blue}{e^{-5t}}
+          \textcolor{blue}{+} t^6 \textcolor{blue}{e^{-t}}) 
+   +\hk(\textcolor{blue}{-3}t^2 \textcolor{blue}{e^{-3t}}
+     \textcolor{blue}{+}t^4 \textcolor{blue}{e^{-t}})
+\\
+&=\textcolor{blue}{\big\{2t\,\hi+4t^3\,\hj+6t^5\,\hk\big\}}\times
+           \big\{e^{-t}\,\hi + e^{-3t}\,\hj + e^{-5t}\,\hk\big\}\\&\hskip0.1in
+  +\big\{t^2\,\hi + t^4\,\hj + t^6\,\hk\big\}\times
+         \textcolor{blue}{\big\{-e^{-t}\,\hi-3e^{-3t}\,\hj-5e^{-5t}\,\hk\big\}}
+\\
+&=\textcolor{blue}{\va'(t)}\times\vb(t)+\va(t)\times\textcolor{blue}{\vb'(t)}
+\end{align*}
+and
+\begin{align*}
+\va\big(s(t)\big)
+&=(\sin t)^2\,\hi +(\sin t)^4\,\hj + (\sin t)^6\,\hk
+\\
+\implies \diff{}{t}\big[\va\big(s(t)\big)\big]
+&=2(\sin t)\cos t\,\hi +4(\sin t)^3\cos t\,\hj + 6(\sin t)^5\cos t\,\hk
+\\
+&=\big\{2(\sin t)\,\hi +4(\sin t)^3\hj + 6(\sin t)^5\hk\big\}\cos t 
+\\
+&=\va'\big(s(t)\big)\,s'(t)
+\end{align*}
+\end{eg}
+
+Of course these examples extend to general (differentiable)
+$\va(t)$, $\vb(t)$, $\ga(t)$ and $s(t)$ and give us (most of) the following theorem. 
 
 \begin{theorem}[Arithmetic of differentiation]\label{thm:DIFFalgebra}
 Let 
@@ -396,7 +618,51 @@ s(\pi)-s(0)&= \int_{0}^\pi \big|\vr'(t)\big|\,\dee{t}
 \end{eg}
 \goodbreak
 
-\begin{eg}\label{eg:astroid}
+\begin{eg}[Velocity and acceleration]\label{eg:velAccel}
+Imagine that, at time $t$, a particle is at 
+\begin{equation*}
+\vr(t) = \left[h+a\cos\left(2\pi\frac{t}{T}\right)\right]\hi
+            +\left[k+a\sin\left(2\pi\frac{t}{T}\right)\right]\hj
+\end{equation*}
+As $|\vr(t) -h\,\hi-k\,\hj| = a$, the particle is running around the circle of radius $a$ centred on $(h,k)$. When $t$ increases by $T$, the argument, $2\pi\frac{t}{T}$, of $\cos\left(2\pi\tfrac{t}{T}\right)$ and 
+$\sin\left(2\pi\tfrac{t}{T}\right)$ increases by exactly $2\pi$ and the particle runs exactly once around the circle. In particular, it travels a distance 
+$2\pi a$. So it is moving at speed  $\frac{2\pi a}{T}$. 
+According to Lemma \ref{lem:CVvelocityEtc}, it has 
+\begin{align*}
+\text{velocity }
+       &=\vr'(t)=-\frac{2\pi a}{T}\sin\left(2\pi\frac{t}{T}\right)\hi
+            +\frac{2\pi a}{T}\cos\left(2\pi\frac{t}{T}\right)\hj
+      \\
+\text{speed}
+       &= \diff{s}{t}(t)=|\vr'(t)|=\frac{2\pi a}{T} \\
+\text{acceleration}
+       &=\vr''(t)
+        =-\frac{4\pi^2 a}{T^2}\cos\left(2\pi\frac{t}{T}\right)\hi
+            -\frac{4\pi^2 a}{T^2}\sin\left(2\pi\frac{t}{T}\right)\hj 
+        = - \frac{4\pi^2}{T^2}\big[\vr(t) -h\,\hi-k\,\hj\big]
+\end{align*}
+Here are some observations.
+\begin{itemize}
+\item 
+The velocity $\vr'(t)$ has dot product zero with $\vr(t) -h\,\hi-k\,\hj$, which is the radius vector from the centre of the circle to the particle.
+So the velocity is perpendicular to the radius vector, and hence parallel to the 
+tangent vector of the circle at $\vr(t)$.
+\item 
+The speed given by Lemma \ref{lem:CVvelocityEtc} is exactly the speed
+we found above, just before we started applying Lemma \ref{lem:CVvelocityEtc}.
+\item 
+The acceleration $\vr''(t)$ points in the direction opposite to the radius 
+vector.
+\end{itemize}
+
+\begin{efig}
+\begin{center}
+     \includegraphics{circleVA.pdf}
+\end{center}
+\end{efig}
+\end{eg}
+
+\begin{eg}[Perimeter of the astroid]\label{eg:astroid}
 In this example, we find the perimeter of the astroid\footnote{
 Astroid should not be confused with asteroid, though both words derive 
 from the Greek word for star.}

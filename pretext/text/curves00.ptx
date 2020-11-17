@@ -29,7 +29,7 @@
   that <m>\vr(t)</m> provides a parameterization of the curve.
   </p>
 
-  <example xml:id="eg_paramCircle">
+  <example xml:id="eg_paramCircle"><title>Parametrization of  <m>x^2+y^2=a^2</m></title>
   <p>
   While we will often use <m>t</m> as the parameter in a parametrized curve <m>\vr(t)</m>,
   there is no need to call it <m>t</m>. Sometimes it is natural to use a different
@@ -67,6 +67,142 @@
   </p>
 
   </example>
+
+<example xml:id="eg_paramCircleB"><title>Parametrization of  <m>(x-h)^2+(y-k)^2=a^2</m></title>
+<p>
+We can tweak the parametrization of Example <xref ref="eg_paramCircle"/> to get
+a parametrization of the circle of radius <m>a</m> that is centred on <m>(h,k)</m>.
+One way to do so is to redraw the sketch of Example <xref ref="eg_paramCircle"/>
+with the circle translated so that its centre is at <m>(h,k)</m>.
+</p>
+
+<sidebyside width="64%">
+<image source="figs/parCirclehk"/>
+</sidebyside>
+
+<p>
+We see from the sketch that 
+<me>
+\vr(\theta) = \big(h+a\cos\theta\,,\,k+a\sin\theta\big)\qquad
+0\le \theta\lt 2\pi
+</me>
+is a parametrization of the circle <m>(x-h)^2+(y-k)^2=a^2</m>.
+</p>
+
+<p>
+A second way to come up with this parametrization is to observe that 
+we can turn the trig identity <m>\cos^2 t + \sin^2 t=1</m> into 
+the equation <m>(x-h)^2+(y-k)^2=a^2</m> of the circle by
+<ul>
+<li>
+multiplying the trig identity by <m>a^2</m> to get
+<m>(a\cos t)^2 +(a\sin t)^2 =a^2</m> and then
+</li><li>
+setting <m>\ a\cos t=x-h\ </m> and <m>\ a\sin t=y-k\ </m>, which turns  <m>(a\cos t)^2 +(a\sin t)^2 =a^2</m> into <m>(x-h)^2+(y-k)^2=a^2</m>.
+</li>
+</ul>
+</p>
+</example>
+
+<example xml:id="eg_paramEllipse"><title>Parametrization of  <m>\frac{x^2}{a^2}+\frac{y^2}{b^2}=1</m> and of <m>x^{2/3}+y^{2/3}=a^{2/3}</m></title>
+
+<p>
+We can build parametrizations of the curves <m>\frac{x^2}{a^2}+\frac{y^2}{b^2}=1</m> 
+and <m>x^{2/3}+y^{2/3}=a^{2/3}</m> from the trig identity <m>\cos^2 t + \sin^2 t=1</m>,
+like we did in the second part of the last example.
+<ul>
+<li>
+Setting <m>\ \cos t=\frac{x}{a}\ </m> and <m>\ \sin t=\frac{y}{b}\ </m> turns  
+<m>\cos^2 t +\sin^2 t =1</m> into <m>\frac{x^2}{a^2}+\frac{y^2}{b^2}=1</m>.
+</li><li>
+Setting <m>\ \cos t= \big(\frac{x}{a}\big)^{\frac{1}{3}}\ </m> and 
+<m>\ \sin t=\big(\frac{y}{a}\big)^{\frac{1}{3}}\ </m> turns  
+<m>\cos^2 t +\sin^2 t =1</m> into <m>\frac{x^{2/3}}{a^{2/3}}+\frac{y^{2/3}}{a^{2/3}}=1</m>.
+</li>
+</ul>
+So
+<md alignment="alignat">
+<mrow>
+\vr(t) &amp;= \big(a\cos t\,,\,b\sin t\big)\qquad &amp;0\le t\lt 2\pi
+</mrow><mrow>
+\vr(t) &amp;= \big(a\cos^3 t\,,\,a\sin^3 t\big) &amp;0\le t\lt 2\pi
+</mrow>
+</md>
+give parametrizations of <m>\frac{x^2}{a^2}+\frac{y^2}{b^2}=1</m> 
+and <m>x^{2/3}+y^{2/3}=a^{2/3}</m>, respectively. To see that running <m>t</m> from <m>0</m> to <m>2\pi</m> runs <m>\vr(t)</m> once around the curve, look at the figures below.
+</p>
+<sidebyside widths="45% 46%" valign="middle">
+<image source="figs/parEllipse"/>
+<image source="figs/astroid4"/>
+</sidebyside>
+<p>
+The curve <m>x^{2/3}+y^{2/3}=a^{2/3}</m> is called an astroid. From its equation,
+we would expect its sketch to look like a deformed circle. But it is probably 
+not so obvious that it would have the pointy bits of the right hand figure.
+We will not explain here why they arise. The astroid is studied in some 
+detail in Example <xref ref="eg_astroid"/>.
+In particular, the above sketch is carefully developed there.  
+</p>
+</example>
+
+<example xml:id="eg_paramMessy"><title>Parametrization of <m>e^y=1+x^2</m></title>
+<p>
+A very easy method that can often create parametrizations for a curve is to use <m>x</m> or <m>y</m> as a parameter. Because we can solve <m>e^y=1+x^2</m> for <m>y</m> as a function of <m>x</m>, namely <m>y=\ln\big(1+x^2\big)</m>, we can use <m>x</m> as 
+the parameter simply by setting <m>t=x</m>. This gives the parametrization
+<me>
+\vr(t) = \big(t\,,\,\ln(1+t^2)\big)\qquad -\infty\lt t\lt \infty
+</me>
+</p>  
+</example>
+
+<example xml:id="eg_paramCircleC"><title>Parametrization of <m>x^2+y^2=a^2</m>, again</title>
+<p>
+It is also quite common that one can use either <m>x</m> or <m>y</m> to parametrize part of, but all of, a curve. A simple example is the circle <m>x^2+y^2=a^2</m>.
+For each <m>-a\lt x\lt a</m>, there are two points on the circle with that value of <m>x</m>.
+So one cannot use <m>x</m> to parametrize the whole circle.
+Similarly, for each <m>-a\lt y\lt a</m>, there are two points on the circle with that value of <m>y</m>. So one cannot use <m>y</m> to parametrize the whole circle. On the other hand
+<md alignment="alignat">
+<mrow>
+\vr(t) &amp;= \big(t\,,\,\sqrt{a^2-t^2}\big)\qquad &amp;-a\lt t\lt a 
+</mrow><mrow>
+\vr(t) &amp;= \big(t\,,\,-\sqrt{a^2-t^2}\big)\qquad &amp;-a\lt t\lt a
+</mrow>
+</md>
+provide parametrizations of the top half and bottom half, respectively,
+of the circle using <m>x</m> as the parameter, and
+<md alignment="alignat">
+<mrow>
+\vr(t) &amp;= \big(\sqrt{a^2-t^2}\,,\,t\big)\qquad &amp;-a\lt t\lt a 
+</mrow><mrow>
+\vr(t) &amp;= \big(-\sqrt{a^2-t^2}\,,\,t\big)\qquad &amp;-a\lt t\lt a
+</mrow>
+</md>
+provide parametrizations of the right half and left half, respectively,
+of the circle using <m>y</m> as the parameter.
+</p>
+</example>
+
+
+<example xml:id="eg_unparam"><title>Unparametrization of  <m>\vr(t)=(\cos t, 7-t)</m></title>
+<p>In this example, we will undo the parametrization <m>\vr(t)=(\cos t, 7-t)</m>
+and find the Cartesian equation of the curve in question. We may rewrite the
+parametrization as
+<md>
+<mrow>
+x&amp;=\cos t 
+</mrow><mrow>
+y&amp;=7-t
+</mrow>
+</md>
+Note that we can eliminate the parameter <m>t</m> simply by using the second equation 
+to solve for <m>t</m> as a function of <m>y</m>. Namely <m>t=7-y</m>. Substituting this
+into the first equation  gives us the Cartesian equation
+<me>
+x=\cos(7-y)
+</me>
+</p>
+</example>
+
 
   <p>Curves often arise as the intersection of two surfaces. For example,
   the intersection of the ellipsoid <m>x^2+\frac{y^2}{2}+\frac{z^2}{3}=1</m>
