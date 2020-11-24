@@ -46,7 +46,7 @@
   That is,
   <me>
   \vr(\theta) = \big(a\cos\theta\,,\,a\sin\theta\big)\qquad
-  0\le \theta\le 2\pi
+  0\le \theta\lt 2\pi
   </me>
   is a parametrization of the circle <m>x^2+y^2=a^2</m>. Just looking at the figure above, it is clear that, as <m>\theta</m> runs from <m>0</m> to <m>2\pi</m>, <m>\vr(\theta)</m>
   traces out the full circle.
