@@ -520,14 +520,14 @@ namely <m>y(t)=a\sin^3 t</m>.
 </ul>
 Our parametrization is
 <me>
-\vr(t) = a\cos^3t\hi + a\sin^3 t\hj
+\vr(t) = a\cos^3t\,\hi + a\sin^3 t\,\hj
 </me>
 By Lemma <xref ref="lem_CVtanArclen"/>
 <md>
 <mrow>
-\vr(t) &amp;= a\cos^3t\hi + a\sin^3 t\hj
+\vr(t) &amp;= a\cos^3t\,\hi + a\sin^3 t\,\hj
 </mrow><mrow>
-\vr'(t) &amp;= -3a\sin t\cos^2t\hi + 3a\sin^2 t\cos t\hj
+\vr'(t) &amp;= -3a\sin t\cos^2t\,\hi + 3a\sin^2 t\cos t\,\hj
 </mrow><mrow>
 \diff{s}{t}(t)&amp;=\big|\vr'(t)\big|
 = \sqrt{9a^2\sin^2t\cos^4t + 9a^2\sin^4t\cos^2t}
@@ -537,10 +537,10 @@ By Lemma <xref ref="lem_CVtanArclen"/>
  &amp;=3a\big|\sin t\cos t\big|
 </mrow><mrow>
 \hat\vT(t) &amp;= \frac{\vr'(t)}{|\vr'(t))|}
-=  \frac{\sin t\cos t}{|\sin t\cos t|}\ \big(-\cos t\hi+\sin t\hj\big)
+=  \frac{\sin t\cos t}{|\sin t\cos t|}\ \big(-\cos t\,\hi+\sin t\,\hj\big)
 
 </mrow><mrow>
- &amp;=  \sgn\!\big(\!\sin t\cos t\big)\ \big(-\cos t\hi+\sin t\hj\big)
+ &amp;=  \sgn\!\big(\!\sin t\cos t\big)\ \big(-\cos t\,\hi+\sin t\,\hj\big)
 </mrow>
 </md>
 Here <m>\sgn\!\big(\!\sin t\cos t\big)</m> means <q>the sign of <m>\sin t\cos t</m></q>, i.e <m>+1</m> when <m>\sin t\cos t \gt 0</m> and <m>-1</m> when <m>\sin t\cos t \lt 0</m>. So
@@ -553,14 +553,14 @@ Here <m>\sgn\!\big(\!\sin t\cos t\big)</m> means <q>the sign of <m>\sin t\cos t<
 </mrow><mrow>
                            -1&amp;\text{if } \sin t \gt 0,\ \cos t \lt 0
                               \text{ or } \sin t \lt 0,\ \cos t \gt 0
-                \end{cases}\right\}\big(-\cos t\hi+\sin t\hj\big)
+                \end{cases}\right\}\big(-\cos t\,\hi+\sin t\,\hj\big)
 </mrow><mrow>
  &amp;=\left.\begin{cases}1&amp;\text{if } 0 \lt  t \lt \frac{\pi}{2}
                                             \text{ or }  \pi \lt  t \lt \frac{3\pi}{2}
 </mrow><mrow>
                            -1&amp;\text{if }  \frac{\pi}{2} \lt t \lt \pi
                                           \text{ or }  \frac{3\pi}{2} \lt t \lt 2\pi
-                \end{cases}\right\}\big(-\cos t\hi+\sin t\hj\big)
+                \end{cases}\right\}\big(-\cos t\,\hi+\sin t\,\hj\big)
 </mrow>
 </md>
 </p>
@@ -605,11 +605,29 @@ i.e. at <m>t=0</m>, <m>\frac{\pi}{2}</m>, <m>\pi</m>, <m>\frac{3\pi}{2}</m>, etc
 flips. To be precise
 <md>
 <mrow>
-\lim_{t\rightarrow 0-}\hat T(t) &amp;= \hi &amp;
-\lim_{t\rightarrow 0+}\hat T(t) &amp;= -\hi
+\lim_{t\rightarrow 0-}\hat T(t) 
+&amp;= \lim_{t\rightarrow 0-} \sgn\!\big(\!\sin t\cos t\big)\ 
+       \lim_{t\rightarrow 0-} \big(-\cos t\,\hi+\sin t\,\hj\big)
+=\hi 
 </mrow><mrow>
-\lim_{t\rightarrow \pi/2-}\hat T(t) &amp;= \hj &amp;
-\lim_{t\rightarrow \pi/2+}\hat T(t) &amp;= -\hj
+\lim_{t\rightarrow 0+}\hat T(t) 
+&amp;= \lim_{t\rightarrow 0+}\sgn\!\big(\!\sin t\cos t\big)\ 
+       \lim_{t\rightarrow 0+}\big(-\cos t\,\hi+\sin t\,\hj\big)
+=-\hi
+</mrow>
+</md>
+and
+<md>
+<mrow>
+\lim_{t\rightarrow \pi/2-}\hat T(t) 
+&amp;= \lim_{t\rightarrow \pi/2-}\sgn\!\big(\!\sin t\cos t\big)\ 
+       \lim_{t\rightarrow \pi/2-}\big(-\cos t\,\hi+\sin t\,\hj\big)
+=\hj 
+</mrow><mrow>
+\lim_{t\rightarrow \pi/2+}\hat T(t) 
+&amp;= \lim_{t\rightarrow \pi/2+}\sgn\!\big(\!\sin t\cos t\big)\ 
+       \lim_{t\rightarrow \pi/2+}\big(-\cos t\,\hi+\sin t\,\hj\big)
+=-\hj
 </mrow>
 </md>
 and so on. This signals cusps in the curve at <m>t=0</m>, i.e. at <m>\vr(0) = a\hi</m>,
@@ -644,7 +662,7 @@ arc length of the part of the astroid in the first quadrant, and then multiply b
 </example>
 
 
-<example xml:id="eg_zeroSpeed">
+<example xml:id="eg_zeroSpeed"><title><m>\vr'(t)=\vZero</m></title>
 <p>
 In the last example, we found that the astroid  had
 cusps at those points <m>\vr(t)</m> where the velocity <m>\vr'(t)</m> vanished.
@@ -667,11 +685,11 @@ of all of these. They all have <m>\vr'(t)=0</m>. They are sketched below.
 \vr_1(t) &amp;= (t^5, t^2) &amp;
 \vr_1'(t)&amp;= (5t^4, 2t)
 </mrow><mrow>
-\vr_2(t) &amp;= \left.\begin{cases} (t^2, 0) &amp; \text{if }  t\le 0 \\
-                        (0 , t^2) &amp; \text{if } t\ge 0
+\vr_2(t) &amp;= \left.\begin{cases} (t^2, 0) &amp; \text{if }  t\ge 0 \\
+                        (0 , t^2) &amp; \text{if } t\le 0
           \end{cases}\right\}\qquad &amp;
-\vr_2'(t)&amp;= \left.\begin{cases} (2t, 0) &amp; \text{if }  t\le 0 \\
-                        (0 , 2t) &amp; \text{if } t\ge 0
+\vr_2'(t)&amp;= \left.\begin{cases} (2t, 0) &amp; \text{if }  t\ge 0 \\
+                        (0 , 2t) &amp; \text{if } t\le 0
           \end{cases} \right\}
 </mrow><mrow>
 \vr_3(t) &amp;= (t^3, 0) &amp;
@@ -688,7 +706,7 @@ of all of these. They all have <m>\vr'(t)=0</m>. They are sketched below.
 
 </example>
 
-<example xml:id="eg_corkscrew">
+<example xml:id="eg_corkscrew"><title>Corkscrew</title>
 <p>
 We'll find the arc length of
 <me>

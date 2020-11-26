@@ -524,7 +524,7 @@ Note that the velocity $\vv(t) = \vr'(t)$ is a vector quantity while the
 speed $\diff{s}{t}(t)=|\vr'(t)|$ is a scalar quantity.
 
 
-\begin{eg}\label{eg:paramCircleTan}
+\begin{eg}[Circumference of a circle]\label{eg:paramCircleTan}
 In general it can be quite difficult to compute arc lengths.
 So, as an easy warmup example, we will compute the circumference of the circle
 $x^2+y^2=a^2$. We'll also find a unit tangent to the circle at any point on
@@ -576,7 +576,7 @@ that has been known\footnote{It is Proposition 18 in Book 3 of Euclid's Elements
 \end{eg}
 
 
-\begin{eg}\label{eg:paramHelix}
+\begin{eg}[Arc length of a helix]\label{eg:paramHelix}
 Consider the curve
 \begin{equation*}
 \vr(t) = 6\sin(2t)\hi + 6\cos(2t)\hj +5t\hk
@@ -688,20 +688,20 @@ namely $y(t)=a\sin^3 t$.
 \end{itemize}
 Our parametrization is 
 \begin{equation*}
-\vr(t) = a\cos^3t\hi + a\sin^3 t\hj
+\vr(t) = a\cos^3t\,\hi + a\sin^3 t\,\hj
 \end{equation*}
 By Lemma \ref{lem:CVtanArclen}
 \begin{align*}
-\vr(t) &= a\cos^3t\hi + a\sin^3 t\hj \\
-\vr'(t) &= -3a\sin t\cos^2t\hi + 3a\sin^2 t\cos t\hj \\
+\vr(t) &= a\cos^3t\,\hi + a\sin^3 t\,\hj \\
+\vr'(t) &= -3a\sin t\cos^2t\,\hi + 3a\sin^2 t\cos t\,\hj \\
 \diff{s}{t}(t)&=\big|\vr'(t)\big| 
 = \sqrt{9a^2\sin^2t\cos^4t + 9a^2\sin^4t\cos^2t} \\
 & = 3a \sqrt{\sin^2t\cos^2t(\cos^2t+\sin^2t)} \\
  &=3a\big|\sin t\cos t\big| \\
 \hat\vT(t) &= \frac{\vr'(t)}{|\vr'(t))|}
-=  \frac{\sin t\cos t}{|\sin t\cos t|}\ \big(-\cos t\hi+\sin t\hj\big)
+=  \frac{\sin t\cos t}{|\sin t\cos t|}\ \big(-\cos t\,\hi+\sin t\,\hj\big)
 \\
- &=  \sgn\!\big(\!\sin t\cos t\big)\ \big(-\cos t\hi+\sin t\hj\big) 
+ &=  \sgn\!\big(\!\sin t\cos t\big)\ \big(-\cos t\,\hi+\sin t\,\hj\big) 
 \end{align*}
 Here $\sgn\!\big(\!\sin t\cos t\big)$ means ``the sign of $\sin t\cos t$'', i.e $+1$ when $\sin t\cos t>0$ and $-1$ when $\sin t\cos t<0$. So
 \begin{align*}
@@ -710,13 +710,13 @@ Here $\sgn\!\big(\!\sin t\cos t\big)$ means ``the sign of $\sin t\cos t$'', i.e 
                               or $\ \ \sin t<0,\ \cos t<0$}\\
                            -1&\text{if $\ \sin t>0,\ \cos t<0\ \ $ 
                               or $\ \ \sin t<0,\ \cos t>0$}
-                \end{cases}\right\}\big(-\cos t\hi+\sin t\hj\big)
+                \end{cases}\right\}\big(-\cos t\,\hi+\sin t\,\hj\big)
 \\
  &=\left.\begin{cases}1&\text{if $\ \ 0< t<\frac{\pi}{2}\ \ $ 
                                             or $\ \ \pi< t<\frac{3\pi}{2}$}\\
                            -1&\text{if $\ \ \frac{\pi}{2}<t<\pi\ \ $ 
                                           or $\ \ \frac{3\pi}{2}<t<2\pi$}
-                \end{cases}\right\}\big(-\cos t\hi+\sin t\hj\big)
+                \end{cases}\right\}\big(-\cos t\,\hi+\sin t\,\hj\big)
 \end{align*}
 
 Before we go on to sketch the astroid and compute its perimeter, we can 
@@ -752,10 +752,25 @@ Something weird happens at those values of $t$ where $\sin t\cos t$ changes sign
 i.e. at $t=0$, $\frac{\pi}{2}$, $\pi$, $\frac{3\pi}{2}$, etc. Namely $\hat T(t)$ 
 flips. To be precise
 \begin{align*}
-\lim_{t\rightarrow 0-}\hat T(t) &= \hi &
-\lim_{t\rightarrow 0+}\hat T(t) &= -\hi \\
-\lim_{t\rightarrow \pi/2-}\hat T(t) &= \hj &
-\lim_{t\rightarrow \pi/2+}\hat T(t) &= -\hj 
+\lim_{t\rightarrow 0-}\hat T(t) 
+&=\lim_{t\rightarrow 0-}  \sgn\!\big(\!\sin t\cos t\big)\   
+         \lim_{t\rightarrow 0-}\big(-\cos t\,\hi+\sin t\,\hj\big)
+= \hi \\
+\lim_{t\rightarrow 0+}\hat T(t) 
+&= \lim_{t\rightarrow 0+}\sgn\!\big(\!\sin t\cos t\big)\ 
+\lim_{t\rightarrow 0+}\big(-\cos t\,\hi+\sin t\,\hj\big)
+=-\hi \\
+\end{align*}
+and 
+\begin{align*}
+\lim_{t\rightarrow \pi/2-}\hat T(t) 
+&= \lim_{t\rightarrow \pi/2-}\sgn\!\big(\!\sin t\cos t\big)\ 
+\lim_{t\rightarrow \pi/2-}\big(-\cos t\,\hi+\sin t\,\hj\big)
+=\hj \\
+\lim_{t\rightarrow \pi/2+}\hat T(t) 
+&= \lim_{t\rightarrow \pi/2+}\sgn\!\big(\!\sin t\cos t\big)\ 
+\lim_{t\rightarrow \pi/2+}\big(-\cos t\,\hi+\sin t\,\hj\big)
+=-\hj 
 \end{align*}
 and so on. This signals cusps in the curve at $t=0$, i.e. at $\vr(0) = a\hi$,
 and at $t=\frac{\pi}{2}$, i.e. at $\vr(\frac{\pi}{2}) = a\hj$, and so on. So
@@ -782,7 +797,7 @@ arc length of the part of the astroid in the first quadrant, and then multiply b
 \end{eg}
 
 
-\begin{eg}\label{eg:zeroSpeed}
+\begin{eg}[$\vr'(t)=\vZero$]\label{eg:zeroSpeed}
 In the last example, we found that the astroid  had
 cusps at those points $\vr(t)$ where the velocity $\vr'(t)$ vanished.
 In this example, we will explore a little further what can happen when
@@ -802,11 +817,11 @@ of all of these. They all have $\vr'(t)=0$. They are sketched below.
 \vr_1(t) &= (t^5, t^2) &
 \vr_1'(t)&= (5t^4, 2t) 
 \\[0.1in]
-\vr_2(t) &= \left.\begin{cases} (t^2, 0) & \text{if $t\le 0$} \\
-                        (0 , t^2) & \text{if $t\ge 0$}
+\vr_2(t) &= \left.\begin{cases} (t^2, 0) & \text{if $t\ge 0$} \\
+                        (0 , t^2) & \text{if $t\le 0$}
           \end{cases}\right\}\qquad &
-\vr_2'(t)&= \left.\begin{cases} (2t, 0) & \text{if $t\le 0$} \\
-                        (0 , 2t) & \text{if $t\ge 0$}
+\vr_2'(t)&= \left.\begin{cases} (2t, 0) & \text{if $t\ge 0$} \\
+                        (0 , 2t) & \text{if $t\le 0$}
           \end{cases} \right\}
 \\[0.1in]
 \vr_3(t) &= (t^3, 0) &
@@ -823,7 +838,7 @@ of all of these. They all have $\vr'(t)=0$. They are sketched below.
 
 \end{eg}
 
-\begin{eg}\label{eg:corkscrew}
+\begin{eg}[Corkscrew]\label{eg:corkscrew}
 We'll find the arc length of 
 \begin{equation*}
 \vr(t) = t\cos t\,\hi + t\sin t\,\hj +t\,\hk\qquad
