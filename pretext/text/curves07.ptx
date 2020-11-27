@@ -145,7 +145,8 @@ force (i.e. it can push you upward to keep you from falling to
 the centre of the Earth), it is not capable of applying a downward
 normal force. That is the hill cannot pull down on you to keep you
 on the hill. Only gravity can keep you grounded. There are two
-main possibilities.
+main possibilities<fn>We assume that you are going downhill and that the
+curvature <m>\ka\gt 0</m>.</fn>.
 </p>
 
 <sidebyside widths="25% 25%" valign="middle">

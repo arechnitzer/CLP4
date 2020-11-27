@@ -2287,7 +2287,8 @@ force (i.e. it can push you upward to keep you from falling to
 the centre of the Earth), it is not capable of applying a downward 
 normal force. That is the hill cannot pull down on you to keep you 
 on the hill. Only gravity can keep you grounded. There are two 
-main possibilities.
+main possibilities\footnote{We assume that you are going downhill and that the
+curvature $\ka>0$.}.
 
 \begin{efig}
 \begin{center}
@@ -2426,7 +2427,7 @@ more energy than that required to reach the top, i.e. to reach height $2a$.
 
 \section{Optional --- Polar Coordinates}\label{sec:polar}
 
-So far we have always vectors in two dimensions using the basis vectors
+So far we have always written vectors in two dimensions in terms of the basis vectors
 $\hi$ and $\hj$. This is not always convenient. For example, when working in 
 polar coordinates it is often convenient to use basis vectors
 $\hat\vr(\theta)$, $\hat\vth(\theta)$ which depend on the value of the
@@ -2462,7 +2463,7 @@ $\hat\vth(\theta)$ follows just from the fact that $|\hat\vr(\theta)| = 1$.
          &\implies  \diff{\hat\vr}{\theta}(\theta)\perp \hat\vr(\theta)
          \implies \diff{\hat\vr}{\theta}(\theta)\parallel \hat\vth(\theta)
 \end{align*}
-Similarly that $\diff{\hat\vth}{\theta}(\theta)$ is some scalar 
+Similarly, that $\diff{\hat\vth}{\theta}(\theta)$ is some scalar 
 multiple of $\hat\vr(\theta)$ follows just from the fact 
 that $|\hat\vth(\theta)| = 1$.
 
@@ -2544,14 +2545,15 @@ $\diff{\theta}{t}=\Omega$ and
 \difftwo{r}{t}-\Omega^2\ r = 0
 \end{equation*}
 The general solution to this constant coefficient second order
-ordinary differential equation is 
+ordinary differential equation is\footnote{A review of the technique used to find this solution is given in Appendix \ref{ap:ODE}. In any event, it is easy to check that $r(t)=A e^{\Omega\,t} + B e^{-\Omega\,t}$ really does obey
+$\difftwo{r}{t}-\Omega^2\ r = 0$.} 
 $$
 r(t)  = A e^{\Omega\,t} + B e^{-\Omega\,t}
 $$ 
 where $A$ and $B$ are arbitrary constants that are determined by initial
 conditions. 
 Just as an example, if $r(0)= 1$ and $r'(0)= 0$,
-then $A+B=0$ and $A-B=0$, so that $A=B=\frac{1}{2}$ and
+then $A+B=1$ and $A\Omega-B\Omega=0$, so that $A=B=\frac{1}{2}$ and
 \begin{equation*}
 r(t)  = \frac{1}{2}\big(e^{\Omega\,t}+e^{-\Omega\,t}\big)\qquad
 \end{equation*}
@@ -2560,7 +2562,7 @@ and the bead follows the polar coordinate curve
 \begin{equation*}
 r(\theta) = \frac{1}{2}\big(e^{\theta}+e^{-\theta}\big)
 \end{equation*}
-which is a spiral.
+Observe that $r(\theta)$ is $1$ when $\theta=0$, increases as $\theta$ increases, and tends to $\infty$ as $\theta\rightarrow+\infty$. The curve is a spiral.
 \begin{efig}
 \begin{center}
     \includegraphics{beadCurve.pdf}
@@ -2608,7 +2610,7 @@ $r\cos\theta$. The point $Q$ on the line $L$ in the figure above
 has $x$-coordinate $p$.
 So the distance from $P$ to $L$, which is also the distance from $P$ to
 $Q$, is $p-r\cos\theta$.  The distance from $P$ to $F$ is $r$. We require that 
-the distance from $P$ to $F$ is $\veps$ times the distance form $P$ to $L$.
+the distance from $P$ to $F$ is $\veps$ times the distance from $P$ to $L$.
 So
 \begin{equation*}
 r=\veps\big(p-r\cos\theta\big)

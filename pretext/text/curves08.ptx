@@ -7,7 +7,7 @@
 
 <title>Optional <mdash/> Polar Coordinates</title>
 
-<p>So far we have always vectors in two dimensions using the basis vectors
+<p>So far we have always written vectors in two dimensions in terms of the basis vectors
 <m>\hi</m> and <m>\hj</m>. This is not always convenient. For example, when working in
 polar coordinates it is often convenient to use basis vectors
 <m>\hat\vr(\theta)</m>, <m>\hat\vth(\theta)</m> which depend on the value of the
@@ -61,7 +61,7 @@ That <m>\diff{\hat\vr}{\theta}(\theta)</m> is some scalar multiple of
          \implies \diff{\hat\vr}{\theta}(\theta)\parallel \hat\vth(\theta)
 </mrow>
 </md>
-Similarly that <m>\diff{\hat\vth}{\theta}(\theta)</m> is some scalar
+Similarly, that <m>\diff{\hat\vth}{\theta}(\theta)</m> is some scalar
 multiple of <m>\hat\vr(\theta)</m> follows just from the fact
 that <m>|\hat\vth(\theta)| = 1</m>.
 </p>
@@ -174,14 +174,15 @@ As the rod is rotating at <m>\Omega\,</m>rad/sec,
 \difftwo{r}{t}-\Omega^2\ r = 0
 </me>
 The general solution to this constant coefficient second order
-ordinary differential equation is
+ordinary differential equation is<fn>A review of the technique used to find this solution is given in Appendix <xref ref="ap_ODE"/>. In any event, it is easy to check that <m>r(t)=A e^{\Omega\,t} + B e^{-\Omega\,t}</m> really does obey
+<m>\difftwo{r}{t}-\Omega^2\ r = 0</m>.</fn>
 <me>
 r(t)  = A e^{\Omega\,t} + B e^{-\Omega\,t}
 </me>
 where <m>A</m> and <m>B</m> are arbitrary constants that are determined by initial
 conditions.
 Just as an example, if <m>r(0)= 1</m> and <m>r'(0)= 0</m>,
-then <m>A+B=0</m> and <m>A-B=0</m>, so that <m>A=B=\frac{1}{2}</m> and
+then <m>A+B=1</m> and <m>A\Omega-B\Omega=0</m>, so that <m>A=B=\frac{1}{2}</m> and
 <me>
 r(t)  = \frac{1}{2}\big(e^{\Omega\,t}+e^{-\Omega\,t}\big)\qquad
 </me>
@@ -190,7 +191,7 @@ and the bead follows the polar coordinate curve
 <me>
 r(\theta) = \frac{1}{2}\big(e^{\theta}+e^{-\theta}\big)
 </me>
-which is a spiral.
+Observe that <m>r(\theta)</m> is <m>1</m> when <m>\theta=0</m>, increases as <m>\theta</m> increases, and tends to <m>\infty</m> as <m>\theta\rightarrow+\infty</m>. The curve is a spiral.
 </p>
 
 <sidebyside width="40%">
@@ -242,7 +243,7 @@ If <m>P</m> has polar coordinates <m>(r,\theta)</m>, then <m>P</m> has <m>x</m>-
 has <m>x</m>-coordinate <m>p</m>.
 So the distance from <m>P</m> to <m>L</m>, which is also the distance from <m>P</m> to
 <m>Q</m>, is <m>p-r\cos\theta</m>.  The distance from <m>P</m> to <m>F</m> is <m>r</m>. We require that
-the distance from <m>P</m> to <m>F</m> is <m>\veps</m> times the distance form <m>P</m> to <m>L</m>.
+the distance from <m>P</m> to <m>F</m> is <m>\veps</m> times the distance from <m>P</m> to <m>L</m>.
 So
 <me>
 r=\veps\big(p-r\cos\theta\big)
