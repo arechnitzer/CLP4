@@ -24,10 +24,10 @@ each of length <m>\De t=\frac{b-a}{n}</m>. We denote by
 <li><p>
 Then we approximate the length of the part of the curve between
 <m>\vr\big(t_{\ell-1}\big)</m> and <m>\vr\big(t_\ell\big)</m> by
-<m>\big|\vr\big(t_{\ell-1}\big)-\vr\big(t_\ell\big)\big|</m> and the mass
+<m>\big|\vr\big(t_\ell\big)-\vr\big(t_{\ell-1}\big)\big|</m> and the mass
 of the part of the curve between <m>\vr\big(t_{\ell-1}\big)</m>
 and <m>\vr\big(t_\ell\big)</m> by <m>\rho\big(\vr(t_\ell)\big)
-\big|\vr\big(t_{\ell-1}\big)-\vr\big(t_\ell\big)\big|</m>.
+\big|\vr\big(t_\ell\big)-\vr\big(t_{\ell-1}\big)\big|</m>.
 </p>
 
 <sidebyside width="50%">
@@ -38,9 +38,9 @@ and <m>\vr\big(t_\ell\big)</m> by <m>\rho\big(\vr(t_\ell)\big)
 This gives us, as an approximate mass for <m>\cC</m> of
 <me>
 \sum_{\ell=1}^n \rho\big(\vr(t_\ell)\big)
-    \big|\vr\big(t_{\ell-1}\big)-\vr\big(t_\ell\big)\big|
+    \big|\vr\big(t_\ell\big)-\vr\big(t_{\ell-1}\big)\big|
 =\sum_{\ell=1}^n \rho\big(\vr(t_\ell)\big)
-   \bigg|\frac{\vr\big(t_{\ell-1}\big)-\vr\big(t_\ell\big)}
+   \bigg|\frac{\vr\big(t_\ell\big)-\vr\big(t_{\ell-1}\big)}
                           {t_\ell-t_{\ell-1}}\bigg|\De t
 </me>
 </li>
@@ -53,7 +53,7 @@ of points. (<m>\vr'(t)</m> need not exist at all at those points.)</fn>
 that <m>\vr(t)</m> is continuously differentiable and that <m>\rho(\vr)</m>
 is continuous we get
 <me>
-\text{Mass of } \cC = \int_a^b \rho\big(\vr(t)\big) \Big|\diff{\vr}{t}(t)\Big|\,\dee{t}
+\text{Mass of } \cC = \int_a^b \rho\big(\vr(t)\big) \left|\diff{\vr}{t}(t)\right|\,\dee{t}
 </me>
 which we take to be a definition.
 </p>

@@ -21,7 +21,9 @@ our attention to a very small part of the curve near the point of
 interest <m>\vr(t)</m>, the curve will, to a very good approximation lie in
 some plane. So we can still define, for example, the osculating circle
 to the curve at <m>\vr(t)</m> to be the circle in that plane that fits the
-curve best near <m>\vr(t)</m>. And we still have the formulae
+curve best near <m>\vr(t)</m>. And we still have the formulae<fn>The arguments in the proof of Theorem <xref ref="thm_curvatureFormulae"/> that we used to verify 
+these formulae work in any plane, not just the <m>xy</m>-plane. Just choose 
+<m>\hi</m> and <m>\hj</m> to be any two mutually perpendicular unit vectors in the plane.</fn>
 <md>
 <mrow>
 \vv&amp;=\diff{\vr}{t}=\diff{s}{t}\,\hat\vT
@@ -138,6 +140,9 @@ It is now an easy matter to compute
 &amp;=\tau(s)\hat\vB(s)-\ka(s)\hat\vT(s)
 </mrow>
 </md>
+To see that <m>\hat\vN(s)\times\hat\vT(s)=-\hat\vB(s)</m> and
+<m>\hat\vB(s)\times\hat\vN(s)=-\hat\vT(s)</m>, just look at the right hand figure above.
+
 </p>
 
 <p>Now suppose that we have a curve that is parametrized by <m>t</m> rather than <m>s</m>.
@@ -146,7 +151,7 @@ How do we find the torsion <m>\tau</m>? The most obvious method is to
 <li>
 recall that <m>\vv\times\va = \ka \big(\diff{s}{t}\big)^3\hat\vT\times\hat\vN
                           = \ka \big(\diff{s}{t}\big)^3\hat\vB</m>
-and that <m>\vB(t)</m> is a unit vector. So
+and that <m>\hat\vB(t)</m> is a unit vector. So
 <me>
 \hat\vB(t) = \frac{\vv(t)\times\va(t)}{|\vv(t)\times\va(t)|}
 </me>
@@ -154,7 +159,7 @@ and that <m>\vB(t)</m> is a unit vector. So
 <li> Having found <m>\vB(t)</m> we can differentiate it and use
 <m>\diff{\hat\vB}{s}(s) = -\tau(s)\hat\vN(s)</m> and the chain rule to give
 <me>
-\diff{\vB}{t} = -\tau\diff{s}{t} \hat\vN
+\diff{\vB}{t} = \diff{\vB}{s}\diff{s}{t} = -\tau\diff{s}{t} \hat\vN
 </me>
 from which we can read off <m>\tau</m>, provided we know <m>\diff{s}{t}</m> and
 <m>\hat\vN</m>.
@@ -257,8 +262,9 @@ let <m>\cM(s)</m> be the antiderivative of <m>M(s)</m> that obeys <m>\cM(0)=0</m
 &amp;\iff \diff{}{s}\Big(e^{-\cM(s)}\vx(s)\Big) = 0
 </mrow>
 </md>
-by the product rule. So <m>e^{-\cM(s)}\vx(s)</m> is a constant, which to satisfy
-the initial condition, must be <m>\vx_0</m>. That is <m>\vx(s) = \vx_0 e^{\cM(s)}</m>.
+by the product rule.  So <m>e^{-\cM(s)}\vx(s)</m> is a constant independent of <m>s</m>. 
+In particular <m>e^{-\cM(s)}\vx(s)=e^{-\cM(0)}\vx(0)= \vx_0</m> so that 
+ <m>\vx(s) = \vx_0 e^{\cM(s)}</m>.
 This argument can be generalized to any natural number <m>n</m>. But that is
 beyond the scope of this book.
 </p>
@@ -323,7 +329,7 @@ are screwing into a nut, and you turn the bolt in the direction of the
 </fn>
 on the right above),
 then it moves in the direction of your thumb (as
-in the black arrow of the figure on the right above).
+in the long straight arrow of the figure on the right above).
 </p>
 
 <p>To determine the curvature and torsion of this curve we compute
@@ -346,7 +352,8 @@ From <m>\vv(t)</m> we read off
            +\frac{b}{\sqrt{a^2+b^2}}\,\hk
 </mrow>
 </md>
-From <m>\va(t)</m>, and the fact that <m>\difftwo{s}{t}=0</m>, we read off that
+From <m>\va=\difftwo{s}{t}\,\hat\vT+\ka\big(\diff{s}{t}\big)^2\hat\vN
+=\ka(a^2+b^2)\hat\vN</m>, we read off that
 <md>
 <mrow>
 \ka(t)=\frac{a}{a^2+b^2}\qquad
@@ -370,7 +377,8 @@ From
 we read off
 <md>
 <mrow>
-\hat\vB &amp; = \frac{b}{\sqrt{a^2+b^2}}\sin t\,\hi
+\hat\vB(t) &amp;= \frac{\vv(t)\times\va(t)}{|\vv(t)\times\va(t)|} 
+            = \frac{b}{\sqrt{a^2+b^2}}\sin t\,\hi
            -\frac{b}{\sqrt{a^2+b^2}} \cos t\,\hj
            +\frac{a}{\sqrt{a^2+b^2}}\,\hk
 </mrow>

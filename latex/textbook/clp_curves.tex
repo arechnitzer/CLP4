@@ -957,12 +957,12 @@ so gives the parametrization
 \item[$\circ$] 
 The third uses arc length from $(r,0)$ as the parameter. We have seen, 
 in Example \ref{eg:paramCircleTan}, that the arc length from $(r,0)$
-to $\vr_2(\theta)$ is just $s=r\theta$. So the point on the semicircle 
+to $\vr_1(\theta)$ is just $s=r\theta$. So the point on the semicircle 
 that is arc length $s$ away from $(r,0)$ is
 \begin{equation*}
 \raisebox{-37pt}[37pt][30pt]{\smash{\includegraphics{reparCircleC.pdf}}}
 \quad
-\vr_3(s) = \vr_2\Big(\frac{s}{r}\Big) 
+\vr_3(s) = \vr_1\Big(\frac{s}{r}\Big) 
 = \Big(r\cos\frac{s}{r}\,,\,r\sin\frac{s}{r}\Big)
 %\quad
 %0\le s\le \pi r
@@ -998,7 +998,7 @@ which runs from $0$, at $t=0$, to $\frac{3a}{2}$, at $t=\frac{\pi}{2}$.
 This is relatively clean and we can invert $s(t)$ to find $t$ 
 as a function of $s$.
 The value, $T(s)$, of $t$ that corresponds to any given 
-$0\le s\le\frac{3a}{3}$ is determined by
+$0\le s\le\frac{3a}{2}$ is determined by
 \begin{equation*}
 s=\frac{3a}{4}\big[1-\cos\big(2T(s)\big)\big]\qquad
 \iff\qquad
@@ -1023,8 +1023,8 @@ s=\frac{3a}{4}\big[1-\cos\big(2T(s)\big)\big]
 \end{align*}
 Consequently the desired parametrization is
 \begin{equation*}
-\vR(s) = a\Big[1-\frac{2s}{3a}\Big]^{3/2}\hi
-        + a\Big[\frac{2s}{3a}\Big]^{3/2}\hj
+\vR(s) = a\left[1-\frac{2s}{3a}\right]^{3/2}\hi
+        + a\left[\frac{2s}{3a}\right]^{3/2}\hj
 \qquad
 0\le s \le \frac{3a}{2}
 \end{equation*}
@@ -1101,7 +1101,7 @@ Thus $\dee{s} = \rho\,|\dee{\theta}|$. When $\dee{\theta}$ is a macroscopic
 angle, this is of course an approximation. But in the limit as 
 $\dee{\theta}\rightarrow 0$, we should end up with
 \begin{equation*}
-\rho = \Big|\diff{s}{\theta}\Big|
+\rho = \left|\diff{s}{\theta}\right|
 \end{equation*} 
 We now have a formula for the radius of curvature, but not in a very 
 convenient form, because to evaluate it we would need to know the arc length
@@ -1142,7 +1142,7 @@ The vector $\hat\vT$ is also tangent to the red circle. As
 the tangent and radius vectors for circles are perpendicular to 
 each other\footnote{We saw that in Example \ref{eg:paramCircleTan}.}, 
 we have that $\phi=\theta+\frac{\pi}{2}$ and hence 
-$\rho = \Big|\diff{s}{\phi}\Big|$ too.
+$\rho = \big|\diff{s}{\phi}\big|$ too.
 \end{itemize}
 \begin{wfig}
 \begin{center}
@@ -1153,7 +1153,7 @@ $\rho = \Big|\diff{s}{\phi}\Big|$ too.
 \end{wfig}
 We are now in a position to develop a bunch of formulae for the radius
 of curvature $\rho$ and the curvature $\ka=\frac{1}{\rho}$, that are more 
-convenient than $\ka = \Big|\diff{s}{\phi}\Big|^{-1}$. These formulae
+convenient than $\ka = \big|\diff{s}{\phi}\big|^{-1}$. These formulae
 will use the 
 \begin{notn}\label{notn:curveNotation}
 If $\vr(t)$ is a parametrized curve, then
@@ -1191,9 +1191,9 @@ the angle\footnote{The notation $\measuredangle(\hi,\hat\vT)$
 means ``the angle between $\hi$ and $\hat\vT$''.} 
 $\phi=\measuredangle(\hi,\hat\vT)$, then
 \begin{equation*}
-\rho = \Big|\diff{s}{\phi}\Big|\qquad
-\ka = \Big|\diff{s}{\phi}\Big|^{-1}\qquad
-\ka = \Big|\diff{\phi}{s}\Big|
+\rho = \left|\diff{s}{\phi}\right|\qquad
+\ka = \left|\diff{s}{\phi}\right|^{-1}\qquad
+\ka = \left|\diff{\phi}{s}\right|
 \end{equation*}
 
 \item\label{thm:curvatureFormulae:part:b}
@@ -1209,11 +1209,11 @@ that points toward the centre of curvature.
 Given $\vr(t)$, i.e. if we have a general parametrized curve,
 then
 \begin{align*}
-\diff{\hat\vT}{t} = \ka \diff{s}{t} \hat\vN\quad
-\vv(t) =  \diff{s}{t}(t)\,\hat\vT(t) \quad
+\diff{\hat\vT}{t} = \ka \diff{s}{t} \hat\vN\qquad
+\vv(t) =  \diff{s}{t}(t)\,\hat\vT(t) \qquad
 \va(t) %= \difftwo{\vr}{t} 
        =  \difftwo{s}{t}\hat\vT
-                           + \ka\Big(\diff{s}{t}\Big)^2\hat\vN
+                           + \ka\left(\diff{s}{t}\right)^2\hat\vN
 \end{align*}
 
 \item 
@@ -1224,8 +1224,15 @@ Given $\big(x(t)\,,\,y(t)\big)$, (for curves in the $xy$-plane)
 { {\big[\big(\diff{x}{t}\big)^2+\big(\diff{y}{t}\big)^2\big]}^{3/2} }
 \end{equation*}
 
+\end{enumerate}
+\end{theorem}
 
-\item\label{thm:curvatureFormulae:part:e}
+\addtocounter{theorem}{-1}
+\begin{theorem}[continued]
+\begin{enumerate}[(a)]
+
+
+\item[(e)]\label{thm:curvatureFormulae:part:e}
 Given $y(x)$, (again for curves in the $xy$-plane)
 \begin{equation*}
 \ka 
@@ -1315,7 +1322,7 @@ so $\diff{\hat\vT}{\phi}$ is downward pointing,
 so $\diff{\hat\vT}{\phi}=-\hat\vN$ (the centre of curvature is the red dot 
 above the curve) and
 \item[$\circ$] as $s$ increases (i.e. as you move in the direction of the
-arrow on the curve), $\phi$ decreases (on the far right hand part of the curve $\phi\approx\frac{\pi}{2}$, while on the far left hand part of the curve $\phi\approx 0$), so $\diff{\phi}{s}<0$ and
+arrow on the curve), $\phi$ decreases (on the far right hand part of the curve $\phi\approx\frac{3\pi}{2}$, while on the far left hand part of the curve $\phi\approx\pi$), so $\diff{\phi}{s}<0$ and
 $\ka = \big|\diff{\phi}{s}\big| = - \diff{\phi}{s}$.
 \item[$\circ$] So by ($*$),
 $\diff{\hat\vT}{s} = \diff{\hat\vT}{\phi} \diff{\phi}{s}
@@ -1560,16 +1567,17 @@ Next, from $\va(t)$, we read off that
 \va(t) &=\big(\cos t - t\sin t\big)\hi +\big(\sin t+t\cos t\big)\hj\qquad
 \text{and}  \\
 \va(t)&=\difftwo{s}{t}(t)\,\hat\vT(t)
-                             +\ka(t)\big(\diff{s}{t}(t)\big)^2\hat\vN(t)
+                             +\ka(t)\left(\diff{s}{t}(t)\right)^2\hat\vN(t)
 \qquad\text{(by Theorem \ref{thm:curvatureFormulae}.c)} \\
 &=\cos t\,\hi + \sin t\,\hj +t^2\ka(t) \hat\vN(t) \\
 \implies 
 t^2\ka(t) \hat\vN(t)&= - t\sin t\,\hi + t\cos t\,\hj
 \end{align*}
-so that 
+so that $t^2\ka(t)$ is the length of $- t\sin t\,\hi + t\cos t\,\hj$, which is $t$. Thus
 \begin{align*}
 \ka(t) = \frac{1}{t} \quad\text{and}\quad
-\hat\vN(t)= -\sin t\,\hi + \cos t\,\hj
+\hat\vN(t)= \frac{- t\sin t\,\hi + t\cos t\,\hj}{t^2\ka(t)} 
+          = -\sin t\,\hi + \cos t\,\hj
 \end{align*}
 As an alternative calculation of the curvature, we have
 \begin{align*}
@@ -1600,7 +1608,9 @@ our attention to a very small part of the curve near the point of
 interest $\vr(t)$, the curve will, to a very good approximation lie in 
 some plane. So we can still define, for example, the osculating circle 
 to the curve at $\vr(t)$ to be the circle in that plane that fits the 
-curve best near $\vr(t)$. And we still have the formulae
+curve best near $\vr(t)$. And we still have the formulae\footnote{The arguments in the proof of Theorem \ref{thm:curvatureFormulae} that we used to verify 
+these formulae work in any plane, not just the $xy$-plane. Just choose 
+$\hi$ and $\hj$ to be any two mutually perpendicular unit vectors in the plane.}
 \begin{align*}
 \vv&=\diff{\vr}{t}=\diff{s}{t}\,\hat\vT\\
 \diff{\hat\vT}{s} &= \ka\hat\vN\\
@@ -1697,6 +1707,8 @@ It is now an easy matter to compute
   +\hat\vB(s)\times\big(\ka(s)\hat\vN(s)\big) \\
 &=\tau(s)\hat\vB(s)-\ka(s)\hat\vT(s)
 \end{align*}
+To see that $\hat\vN(s)\times\hat\vT(s)=-\hat\vB(s)$ and
+$\hat\vB(s)\times\hat\vN(s)=-\hat\vT(s)$, just look at the right hand figure above.
 
 
 Now suppose that we have a curve that is parametrized by $t$ rather than $s$.
@@ -1705,7 +1717,7 @@ How do we find the torsion $\tau$? The most obvious method is to
 \item
 recall that $\vv\times\va = \ka \big(\diff{s}{t}\big)^3\hat\vT\times\hat\vN
                           = \ka \big(\diff{s}{t}\big)^3\hat\vB$
-and that $\vB(t)$ is a unit vector. So
+and that $\hat\vB(t)$ is a unit vector. So
 \begin{equation*}
 \hat\vB(t) = \frac{\vv(t)\times\va(t)}{|\vv(t)\times\va(t)|}
 \end{equation*}
@@ -1713,7 +1725,7 @@ and that $\vB(t)$ is a unit vector. So
 \item Having found $\vB(t)$ we can differentiate it and use
 $\diff{\hat\vB}{s}(s) = -\tau(s)\hat\vN(s)$ and the chain rule to give
 \begin{equation*}
-\diff{\vB}{t} = -\tau\diff{s}{t} \hat\vN
+\diff{\vB}{t} = \diff{\vB}{s}\diff{s}{t} = -\tau\diff{s}{t} \hat\vN
 \end{equation*}
 from which we can read off $\tau$, provided we know $\diff{s}{t}$ and
 $\hat\vN$.
@@ -1796,8 +1808,9 @@ let $\cM(s)$ be the antiderivative of $M(s)$ that obeys $\cM(0)=0$. Then
 &\iff e^{-\cM(s)}\diff{}{s}\vx(s) - M(s) e^{-\cM(s)} \vx(s)=0 \\
 &\iff \diff{}{s}\Big(e^{-\cM(s)}\vx(s)\Big) = 0
 \end{align*}
-by the product rule. So $e^{-\cM(s)}\vx(s)$ is a constant, which to satisfy 
-the initial condition, must be $\vx_0$. That is $\vx(s) = \vx_0 e^{\cM(s)}$.
+by the product rule. So $e^{-\cM(s)}\vx(s)$ is a constant independent of $s$. 
+In particular $e^{-\cM(s)}\vx(s)=e^{-\cM(0)}\vx(0)= \vx_0$ so that 
+ $\vx(s) = \vx_0 e^{\cM(s)}$.
 This argument can be generalized to any natural number $n$. But that is 
 beyond the scope of this book.
 
@@ -1854,7 +1867,7 @@ are screwing into a nut, and you turn the bolt in the direction of the
 https:/\hskip-1pt/commons.wikimedia.org/wiki/File:Right\_hand\_rule\_simple.png
 } on the right above), 
 then it moves in the direction of your thumb (as 
-in the black arrow of the figure on the right above). 
+in the long straight arrow of the figure on the right above). 
 
 To determine the curvature and torsion of this curve we compute
 \begin{align*}
@@ -1869,7 +1882,8 @@ From $\vv(t)$ we read off
            +\frac{a}{\sqrt{a^2+b^2}} \cos t\,\hj
            +\frac{b}{\sqrt{a^2+b^2}}\,\hk
 \end{align*}
-From $\va(t)$, and the fact that $\difftwo{s}{t}=0$, we read off that
+From $\va=\difftwo{s}{t}\,\hat\vT+\ka\big(\diff{s}{t}\big)^2\hat\vN
+=\ka(a^2+b^2)\hat\vN$, we read off that
 \begin{align*}
 \ka(t)=\frac{a}{a^2+b^2}\qquad
 \hat\vN(t) = -\cos t\,\hi-\sin t\,\hj
@@ -1885,7 +1899,8 @@ From
 \end{align*}
 we read off
 \begin{align*}
-\hat\vB & = \frac{b}{\sqrt{a^2+b^2}}\sin t\,\hi
+\hat\vB(t) & = \frac{\vv(t)\times\va(t)}{|\vv(t)\times\va(t)|}
+= \frac{b}{\sqrt{a^2+b^2}}\sin t\,\hi
            -\frac{b}{\sqrt{a^2+b^2}} \cos t\,\hj
            +\frac{a}{\sqrt{a^2+b^2}}\,\hk
 \end{align*}
@@ -2054,10 +2069,10 @@ $t_\ell = a + \ell\De t$ the right hand end of interval number $\ell$.
 \item[$\circ$]
 Then we approximate the length of the part of the curve between
 $\vr\big(t_{\ell-1}\big)$ and $\vr\big(t_\ell\big)$ by
-$\big|\vr\big(t_{\ell-1}\big)-\vr\big(t_\ell\big)\big|$ and the mass
+$\big|\vr\big(t_\ell\big)-\vr\big(t_{\ell-1}\big)\big|$ and the mass
 of the part of the curve between $\vr\big(t_{\ell-1}\big)$ 
 and $\vr\big(t_\ell\big)$ by $\rho\big(\vr(t_\ell)\big)
-\big|\vr\big(t_{\ell-1}\big)-\vr\big(t_\ell\big)\big|$.
+\big|\vr\big(t_\ell\big)-\vr\big(t_{\ell-1}\big)\big|$.
 \begin{nfig}
 \begin{center}
     \includegraphics{parCurveL.pdf}
@@ -2069,9 +2084,9 @@ and $\vr\big(t_\ell\big)$ by $\rho\big(\vr(t_\ell)\big)
 This gives us, as an approximate mass for $\cC$ of
 \begin{equation*}
 \sum_{\ell=1}^n \rho\big(\vr(t_\ell)\big)
-    \big|\vr\big(t_{\ell-1}\big)-\vr\big(t_\ell\big)\big|
+    \big|\vr\big(t_\ell\big)-\vr\big(t_{\ell-1}\big)\big|
 =\sum_{\ell=1}^n \rho\big(\vr(t_\ell)\big)
-   \bigg|\frac{\vr\big(t_{\ell-1}\big)-\vr\big(t_\ell\big)}
+   \bigg|\frac{\vr\big(t_\ell\big)-\vr\big(t_{\ell-1}\big)}
                           {t_\ell-t_{\ell-1}}\bigg|\De t
 \end{equation*}
 \end{itemize}
@@ -2083,7 +2098,7 @@ of points. ($\vr'(t)$ need not exist at all at those points.)}
  that $\vr(t)$ is continuously differentiable and that $\rho(\vr)$ 
 is continuous we get
 \begin{equation*}
-\text{Mass of $\cC$} = \int_a^b \rho\big(\vr(t)\big) \Big|\diff{\vr}{t}(t)\Big|\,\dee{t}
+\text{Mass of $\cC$} = \int_a^b \rho\big(\vr(t)\big) \left|\diff{\vr}{t}(t)\right|\,\dee{t}
 \end{equation*}
 which we take to be a definition.
 \begin{defn}\label{def:lineIntegral}

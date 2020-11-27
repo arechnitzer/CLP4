@@ -88,7 +88,7 @@ Thus <m>\dee{s} = \rho\,|\dee{\theta}|</m>. When <m>\dee{\theta}</m> is a macros
 angle, this is of course an approximation. But in the limit as
 <m>\dee{\theta}\rightarrow 0</m>, we should end up with
 <me>
-\rho = \Big|\diff{s}{\theta}\Big|
+\rho = \left|\diff{s}{\theta}\right|
 </me>
 We now have a formula for the radius of curvature, but not in a very
 convenient form, because to evaluate it we would need to know the arc length
@@ -135,7 +135,7 @@ The vector <m>\hat\vT</m> is also tangent to the red circle. As
 the tangent and radius vectors for circles are perpendicular to
 each other<fn>We saw that in Example <xref ref="eg_paramCircleTan"/>.</fn>,
 we have that <m>\phi=\theta+\frac{\pi}{2}</m> and hence
-<m>\rho = \Big|\diff{s}{\phi}\Big|</m> too.
+<m>\rho = \big|\diff{s}{\phi}\big|</m> too.
 </li>
 </ul>
 </p>
@@ -149,7 +149,7 @@ we have that <m>\phi=\theta+\frac{\pi}{2}</m> and hence
 <p>
 We are now in a position to develop a bunch of formulae for the radius
 of curvature <m>\rho</m> and the curvature <m>\ka=\frac{1}{\rho}</m>, that are more
-convenient than <m>\ka = \Big|\diff{s}{\phi}\Big|^{-1}</m>. These formulae
+convenient than <m>\ka = \big|\diff{s}{\phi}\big|^{-1}</m>. These formulae
 will use the
 </p>
 
@@ -194,9 +194,9 @@ the angle<fn>The notation <m>\measuredangle(\hi,\hat\vT)</m>
 means <q>the angle between <m>\hi</m> and <m>\hat\vT</m></q>.</fn>
 <m>\phi=\measuredangle(\hi,\hat\vT)</m>, then
 <me>
-\rho = \Big|\diff{s}{\phi}\Big|\qquad
-\ka = \Big|\diff{s}{\phi}\Big|^{-1}\qquad
-\ka = \Big|\diff{\phi}{s}\Big|
+\rho = \left|\diff{s}{\phi}\right|\qquad
+\ka = \left|\diff{s}{\phi}\right|^{-1}\qquad
+\ka = \left|\diff{\phi}{s}\right|
 </me>
 </li>
 <li xml:id="thm_curvatureFormulae_part_b">
@@ -213,11 +213,11 @@ Given <m>\vr(t)</m>, i.e. if we have a general parametrized curve,
 then
 <md>
 <mrow>
-\diff{\hat\vT}{t} = \ka \diff{s}{t} \hat\vN\quad
-\vv(t) =  \diff{s}{t}(t)\,\hat\vT(t) \quad
+\diff{\hat\vT}{t} = \ka \diff{s}{t} \hat\vN\qquad
+\vv(t) =  \diff{s}{t}(t)\,\hat\vT(t) \qquad
 \va(t)
        =  \difftwo{s}{t}\hat\vT
-                           + \ka\Big(\diff{s}{t}\Big)^2\hat\vN
+                           + \ka\left(\diff{s}{t}\right)^2\hat\vN
 </mrow>
 </md>
 </li>
@@ -328,7 +328,7 @@ so <m>\diff{\hat\vT}{\phi}=-\hat\vN</m> (the centre of curvature is the red dot
 above the curve) and
 </p></li>
 <li> as <m>s</m> increases (i.e. as you move in the direction of the
-arrow on the curve), <m>\phi</m> decreases (on the far right hand part of the curve <m>\phi\approx\frac{\pi}{2}</m>, while on the far left hand part of the curve <m>\phi\approx 0</m>), so <m>\diff{\phi}{s} \lt 0</m> and
+arrow on the curve), <m>\phi</m> decreases (on the far right hand part of the curve <m>\phi\approx\frac{3\pi}{2}</m>, while on the far left hand part of the curve <m>\phi\approx\pi</m>), so <m>\diff{\phi}{s} \lt 0</m> and
 <m>\ka = \big|\diff{\phi}{s}\big| = - \diff{\phi}{s}</m>.
 </li>
 <li> So by (<m>*</m>),
@@ -586,7 +586,7 @@ Next, from <m>\va(t)</m>, we read off that
 \text{and}
 </mrow><mrow>
 \va(t)&amp;=\difftwo{s}{t}(t)\,\hat\vT(t)
-                             +\ka(t)\big(\diff{s}{t}(t)\big)^2\hat\vN(t)
+                             +\ka(t)\left(\diff{s}{t}(t)\right)^2\hat\vN(t)
 </mrow>
 <intertext>(by Theorem <xref ref="thm_curvatureFormulae"/> .c)</intertext>
 <mrow>
@@ -596,11 +596,11 @@ Next, from <m>\va(t)</m>, we read off that
 t^2\ka(t) \hat\vN(t)&amp;= - t\sin t\,\hi + t\cos t\,\hj
 </mrow>
 </md>
-so that
+so that <m>t^2\ka(t)</m> is the length of <m>- t\sin t\,\hi + t\cos t\,\hj</m>, which is <m>t</m>. Thus
 <md>
 <mrow>
 \ka(t) = \frac{1}{t} \quad\text{and}\quad
-\hat\vN(t)= -\sin t\,\hi + \cos t\,\hj
+\hat\vN(t)= \frac{- t\sin t\,\hi + t\cos t\,\hj}{t^2\ka(t)}  = -\sin t\,\hi + \cos t\,\hj
 </mrow>
 </md>
 As an alternative calculation of the curvature, we have
