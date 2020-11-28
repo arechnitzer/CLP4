@@ -21,7 +21,7 @@ and is centred on the origin. This is easy to parametrize:
 <mrow>
 &amp;\vr(t)=\rho\cos t\,\hi+ \rho\sin t\,\hj
 </mrow><mrow>
-&amp;0\le t\le 2\pi
+&amp;0\le t\lt 2\pi
 </mrow>
 </md>
 </p>
@@ -40,7 +40,7 @@ is still parallel to the <m>xy</m>-plane, we just translate by <m>\vc</m>:
 <mrow>
 &amp;\vr(t)=\vc+\rho\cos t\,\hi+ \rho\sin t\,\hj
 </mrow><mrow>
-&amp; 0\le t\le 2\pi
+&amp; 0\le t\lt 2\pi
 </mrow>
 </md>
 </p>
@@ -68,7 +68,7 @@ parametrizing a general circle is to replace <m>\hi</m> and <m>\hj</m> by two ne
 &amp;
 \vr(t)=\vc+\rho\cos t\,\hi'+ \rho\sin t\,\hj'
 </mrow><mrow>
-&amp; 0\le t\le 2\pi
+&amp; 0\le t\lt 2\pi
 </mrow>
 </md></p>
 </sidebyside>
@@ -147,7 +147,7 @@ Substituting in <m>\vc=(0,0,0)</m>, <m>\rho=2</m>, <m>\hi'=(1,0,0)</m> and
 </mrow><mrow>
 &amp;=2\big(\cos t, \frac{\sin t}{\sqrt{2}},\frac{\sin t}{\sqrt{2}}\big)
 </mrow><mrow>
-&amp; 0\le t\le 2\pi
+&amp; 0\le t\lt 2\pi
 </mrow>
 </md></p>
 </sidebyside>

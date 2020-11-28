@@ -2759,10 +2759,10 @@ and check how it depends on time. By the product rule,
 \begin{equation}
 \diff{\vOm}{t}(t) =\diff{\ }{t}\big(\vr(t)\times\vv(t)\big)
 =\vv(t)\times\vv(t) + \vr(t)\times\va(t)
-=\frac{1}{m}\vr(t)\times\vF\big(\vr(t))\big)
+=\frac{1}{m}\vr(t)\times\vF\big(\vr(t)\big)
 =\vZero
 \tag{A}\end{equation}
-because $\vr(t)$ and $\vF\big(\vr(t))\big)$ are parallel.
+because $\vr(t)$ and $\vF\big(\vr(t)\big)$ are parallel.
 So $\vOm(t)$ is\footnote{Physicists call $m\,\vOm(t)$ the angular momentum at time $t$ and refer to (A) as (an example of) conservation of angular momentum.
 Conservation of angular momentum is exploited in gyro-compasses and by 
 ice skaters (to spin faster/slower).} 
@@ -2854,21 +2854,21 @@ We saw in Lemma \ref{lem:polar}.c, that if we write $\vr(t) = r(t)\,\hat\vr(t)$,
 then 
 \begin{align*}
 \difftwo{\vr}{t} = 
-  \Big(\difftwo{r}{t}-r\ \Big(\diff{\theta}{t}\Big)^2\Big) \hat\vr
-   +\Big(r\ \difftwo{\theta}{t} + 2 \diff{r}{t}\ \diff{\theta}{t}\Big)\hat\vth
+  \left(\difftwo{r}{t}-r\ \left(\diff{\theta}{t}\right)^2\right) \hat\vr
+  +\left(r\ \difftwo{\theta}{t} + 2 \diff{r}{t}\ \diff{\theta}{t}\right)\hat\vth
 = -\frac{GM}{r^3}\vr
 = -\frac{GM}{r^2}\hat\vr
 \end{align*}
 The $\hat\vr$ and $\hat\vth$ components of this equation are
 \begin{align*}
-\difftwo{r}{t}-r\ \Big(\diff{\theta}{t}\Big)^2 &= -\frac{GM}{r^2} \\[0.05in]
+\difftwo{r}{t}-r\ \left(\diff{\theta}{t}\right)^2 &= -\frac{GM}{r^2} \\[0.05in]
 r\ \difftwo{\theta}{t} + 2 \diff{r}{t}\ \diff{\theta}{t} &= 0
 \end{align*}
 The second of these two equations only tells us that
 \begin{equation*}
-\diff{\ }{t}\Big\{r^2\,\diff{\theta}{t}\Big\} 
-= r\Big\{
-     r\ \difftwo{\theta}{t} + 2 \diff{r}{t}\ \diff{\theta}{t}\Big\} = 0
+\diff{\ }{t}\left\{r^2\,\diff{\theta}{t}\right\} 
+= r\left\{
+     r\ \difftwo{\theta}{t} + 2 \diff{r}{t}\ \diff{\theta}{t}\right\} = 0
 \implies 
 r^2\,\diff{\theta}{t} = h,\quad\text{a constant}
 \end{equation*}
@@ -2899,7 +2899,8 @@ and our equation becomes
 \difftwo{u}{\theta} + u = \frac{GM}{h^2}
 \end{equation}
 This is a second order, linear, ordinary differential equation
-with constant coefficients.  Recall that the general solution of such an 
+with constant coefficients.  Recall\footnote{See Appendix \ref{ap:ODE}.} 
+that the general solution of such an 
 equation is the sum of a ``particular solution'' (i.e. any one solution,
 which in this case we can take to be the constant function $\frac{GM}{h^2}$)
 plus the general solution of the homogeneous equation
@@ -3027,8 +3028,8 @@ That is, $\phi=\frac{3\pi}{2}$ when $\theta=\frac{\pi}{2}$.
 So $\phi=3\theta$  and $P$ has coordinates
 \begin{equation*}
 \frac{3}{4}a\big(\cos\theta,\sin\theta\big)
-+\frac{1}{4}a\big(\cos\phi,\sin\phi\big)
-=\frac{a}{4}\big(3\cos\theta+\cos 3\theta,3\sin\theta-3\sin\theta\big)
++\frac{1}{4}a\big(\cos\phi,-\sin\phi\big)
+=\frac{a}{4}\big(3\cos\theta+\cos 3\theta,3\sin\theta-\sin 3\theta\big)
 \end{equation*}
 As, recalling your double angle, or even better your triple angle, 
 trig identities,
@@ -3092,7 +3093,7 @@ and is centred on the origin. This is easy to parametrize:
 \begin{equation*}
 \raisebox{-40pt}[70pt][40pt]{\smash{\includegraphics{circle1.pdf}}}\qquad\quad
 \vr(t)=\rho\cos t\,\hi+ \rho\sin t\,\hj
-\qquad 0\le t\le 2\pi
+\qquad 0\le t< 2\pi
 \end{equation*}
 Now let's move the circle so that its centre is at some general point
 $\vc$. To parametrize this new circle, which still has radius $\rho$ and which 
@@ -3100,7 +3101,7 @@ is still parallel to the $xy$-plane, we just translate by $\vc$:
 \begin{equation*}
 \raisebox{-60pt}[60pt][58pt]{\smash{\includegraphics{circle2.pdf}}}\qquad\quad
 \vr(t)=\vc+\rho\cos t\,\hi+ \rho\sin t\,\hj
-\qquad 0\le t\le 2\pi
+\qquad 0\le t< 2\pi
 \end{equation*}
 Finally, let's consider a circle in general position. The secret to 
 parametrizing a general circle is to replace $\hi$ and $\hj$ by two new vectors
@@ -3113,7 +3114,7 @@ $\hi'$ and $\hj'$ which
 \begin{equation*}
 \raisebox{-70pt}[50pt][70pt]{\smash{\includegraphics{circle3.pdf}}}\qquad\quad
 \vr(t)=\vc+\rho\cos t\,\hi'+ \rho\sin t\,\hj'
-\qquad 0\le t\le 2\pi
+\qquad 0\le t< 2\pi
 \end{equation*} 
 To check that this is correct, observe that
 \begin{itemize}\itemsep1pt \parskip0pt \parsep0pt %\itemindent-15pt
@@ -3170,7 +3171,7 @@ $\hj'=\frac{1}{\sqrt{2}}(0,1,1)$ gives
 \raisebox{-70pt}[50pt][0pt]{\smash{\includegraphics{circle4.pdf}}}\qquad\quad
 \vr(t)&=2\cos t\,(1,0,0)+ 2\sin t\,\frac{1}{\sqrt{2}}(0,1,1) \\
 &=2\big(\cos t, \frac{\sin t}{\sqrt{2}},\frac{\sin t}{\sqrt{2}}\big)
-\qquad 0\le t\le 2\pi\\
+\qquad 0\le t< 2\pi\\
 \end{align*}
 To check this, note that $x=2\cos t$, $y=\sqrt{2}\sin t$,
 $z=\sqrt{2}\sin t$ satisfies both $x^2+y^2+z^2=4$ and $z=y$.
