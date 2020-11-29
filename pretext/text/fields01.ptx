@@ -278,14 +278,24 @@ following sketch.
 </figure>
 
 <p>
-From this sketch we see that, for example, in the first quadrant,
-the fluid is moving upwards and to the left. We also see that there is one
-point, namely <m>(0,0)</m>, where the vector field is exactly zero. It's the
-black dot in the centre of the figure above.
-Putting all of this
-accumulated wisdom together, and also noticing that <m>\vv(x,y)</m> is smaller
-when <m>(x,y)</m> is closer to the origin and <m>\vv(x,y)</m> is larger when
-<m>(x,y)</m> is farther from the origin, we come up with this better
+From this sketch we see that, for example, in the first quadrant, 
+<ul>
+<li>
+   the fluid is moving upwards and to the left and
+</li><li>
+   the fluid crosses the <m>x</m>-axis vertically (so that close to the <m>x</m>-axis, 
+   the arrows will be almost vertical) and
+</li><li>
+   the fluid crosses the <m>y</m>-axis horizontally (so that close to the <m>y</m>-axis, 
+   the arrows will be almost horizontal) and
+</li><li>
+   there is one point, namely <m>(0,0)</m>, where the vector field is exactly 
+   zero. It's the black dot in the centre of the figure above. Furthermore
+   <m>\vv(x,y)=\Omega(-y\hi+x\hj)</m> is smaller when <m>(x,y)</m> is closer to <m>(0,0)</m> 
+   and  <m>\vv(x,y)</m> is larger when <m>(x,y)</m> is farther from <m>(0,0)</m>, 
+</li>
+</ul>
+Putting all of this accumulated wisdom together, we come up with this better 
 sketch of the vector field.
 </p>
 
