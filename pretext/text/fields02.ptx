@@ -198,7 +198,7 @@ This is exactly the statement that <m>y=Y(x)</m> is a solution of the differenti
 \diff{y}{x}(x) = \frac{v_2\big(x,y\big)}{v_1\big(x,y\big)}
 </me>
 It is conventional to pretend<fn>Of course <m>\diff{y}{x}</m> is not the ratio of <m>\dee{y}</m> and <m>\dee{x}</m>. However pretending that it is provides a simple
-way to remember the technique that is used to solve the equation. You have used this mnemonic device before when you learned how to solve separable differential equations.</fn>
+way to remember the technique that is used to solve the equation. You may have used this mnemonic device before when you learned how to solve separable differential equations. Section 2.4 of the CLP-2 text contains a treatment of separable differential equations, including a justification for the mnemonic device.</fn>
 that <m>\diff{y}{x}</m> is the ratio of <m>\dee{y}</m> and <m>\dee{x}</m> and rewrite the differential equation<fn>Here is another nonrigorous, but intuitive way
 to come up with this equation. Suppose that our stick is at <m>(x,y)</m>
 and has velocity <m>\big(\diff{x} {t}(t)\,,\,\diff{y}{t}(t)\big)</m>.
@@ -396,9 +396,10 @@ This <m>a(u)=\frac{\vR'(u)\cdot\vv(\vR(u))}{\vv(\vR(u))\cdot\vv(\vR(u))}</m>
 is necessarily nonzero and continuous. Since <m>a(u)</m> is nonzero and continuous,
 it never changes sign. That is, either <m>a(u) \gt 0</m> for all  <m>u</m>,
 or <m>a(u) \lt 0</m> for all <m>u</m>. Let <m>T(u)</m> be an antiderivative of <m>a(u)</m>. Then <m>T(u)</m>
-is strictly monotone (and continuous) and hence invertible. That is, there
+is strictly monotone (and continuous) and hence is invertible. That is, there
 is a continuous function <m>U(t)</m> that obeys <m>U\big(T(u)\big)=u</m> for all
-<m>a \lt u \lt b</m> and <m>T\big(U(t)\big)=t</m> for all <m>t</m> in the range of <m>U</m>. Set
+<m>a \lt u \lt b</m> and <m>T\big(U(t)\big)=t</m> for all <m>t</m> in the range of <m>U</m>. Differentiating <m>T\big(U(t)\big)=t</m> gives <m>T'\big(U(t)\big)\,U'(t)=1</m> 
+and hence <m>U'(t) = \frac{1}{T'(U(t))}</m>. Set
 <m>\vr(t) = \vR\big(U(t)\big)</m>.
 Then
 <md>
@@ -433,7 +434,7 @@ x'(t)=0\qquad y'(t)=0
 which forces both <m>x(t)</m> and <m>y(t)</m> to be constants. So each field line is
 just a single point. On the other hand every nonconstant
 <m>\vR(u)</m> obeys <m>\vR'(u)\times\vv\big(\vR(u)\big)=\vZero</m> but is not
-contained in a field line.
+contained in a field line. (As <m>\vR(u)</m> is not constant, it covers more than one point, while each field line is just a single point.) 
 </p></example>
 
 
@@ -485,7 +486,7 @@ covers the horizontal half-line
 \Set{(x,D)}{x \lt 0}
 </me>
 in the left half-plane.
-It is illustrated by the blue line in the figure below.
+It is illustrated by the blue line in the figure below  (with a different value of <m>D</m> than for the red line).
 </li>
 </ul>
 </p>
