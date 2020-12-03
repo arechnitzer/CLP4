@@ -1805,13 +1805,22 @@ and its paddles along <m>C_\veps</m>, as in the figure below, except that
 <p>
 the paddlewheel is really expensive and has a lot more than just four
 paddles. Pretend<fn>Method acting might help you here.</fn>
- that you are one of the paddles. If the paddlewheel
-is rotating at <m>\Om</m> radians per unit time, then you are moving
-at speed <m>\Om \veps</m>. If you are at <m>\vr</m>, the component of the fluid velocity in your direction of motion, i.e. tangential to <m>C_\veps</m>, is <m>\vv(\vr)\cdot\diff{\vr}{s}</m>,
-because <m>\diff{\vr}{s}</m>, with <m>s</m> denoting arc length along the circle,
-is a unit vector tangential to
-<m>C_\veps</m>. All paddles have to move at the same speed. So the speed of the
+that you are one of the paddles. 
+<ul>
+<li>
+If the paddlewheel is rotating at <m>\Om</m> radians per unit time, then in one 
+unit of time you sweep out an arc of a circle of radius <m>\veps</m> that subtends 
+an angle <m>\Om</m>. That arc has length <m>\Om\veps</m>. So you are moving at speed 
+<m>\Om \veps</m>. 
+</li><li>
+If you are at <m>\vr</m>, the component of the fluid velocity in your direction of motion, i.e. tangential to <m>C_\veps</m>, is <m>\vv(\vr)\cdot\diff{\vr}{s}</m>,
+because <m>\hvt=\diff{\vr}{s}</m>, with <m>s</m> denoting arc length along the circle, 
+is a unit vector tangential to <m>C_\veps</m>. 
+</li><li>
+All paddles have to move at the same speed. So the speed of the 
 paddles, <m>\Om\veps</m>, should be the average value of <m>\vv(\vr)\cdot\diff{\vr}{s}</m> around the circle.
+</li>
+</ul>
 Thus the rate of rotation, <m>\Om</m>, of the  paddlewheel should be
 determined by
 <md>

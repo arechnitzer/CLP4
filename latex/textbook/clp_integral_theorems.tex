@@ -1463,13 +1463,21 @@ and its paddles along $C_\veps$, as in the figure below, except that
 \end{nfig}
 }
 the paddlewheel is really expensive and has a lot more than just four
-paddles. Pretend\footnote{Method acting might help you here.} that you are one of the paddles. If the paddlewheel
-is rotating at $\Om$ radians per unit time, then you are moving
-at speed $\Om \veps$. If you are at $\vr$, the component of the fluid velocity in your direction of motion, i.e. tangential to $C_\veps$, is $\vv(\vr)\cdot\diff{\vr}{s}$,
-because $\diff{\vr}{s}$, with $s$ denoting arc length along the circle, 
-is a unit vector tangential to 
-$C_\veps$. All paddles have to move at the same speed. So the speed of the 
+paddles. Pretend\footnote{Method acting might help you here.} that you are one of the paddles. 
+\begin{itemize}
+\item
+If the paddlewheel is rotating at $\Om$ radians per unit time, then in one 
+unit of time you sweep out an arc of a circle of radius $\veps$ that subtends 
+an angle $\Om$. That arc has length $\Om\veps$. So you are moving at speed 
+$\Om \veps$. 
+\item
+If you are at $\vr$, the component of the fluid velocity in your direction of motion, i.e. tangential to $C_\veps$, is $\vv(\vr)\cdot\diff{\vr}{s}$,
+because $\hvt=\diff{\vr}{s}$, with $s$ denoting arc length along the circle, 
+is a unit vector tangential to $C_\veps$. 
+\item
+All paddles have to move at the same speed. So the speed of the 
 paddles, $\Om\veps$, should be the average value of $\vv(\vr)\cdot\diff{\vr}{s}$ around the circle.
+\end{itemize}
 Thus the rate of rotation, $\Om$, of the  paddlewheel should be
 determined by
 \begin{align*}
@@ -1569,22 +1577,22 @@ and the $\sin^2t$ and $\cos^2 t$ terms are easily integrated using
 \end{equation*}
 So we are left with
 \begin{align*}
-\oint_{C_\veps} \vv(\vr)\cdot \dee{\vr}
+\oint_{C_\veps} \vv(\vr)\cdot \dee{\vr} 
 &= \pi\veps^2\vB\cdot\hj - \pi\veps^2\vC\cdot\hi
 +\int_0^{2\pi} \vR(\vr(t))
         \cdot \big(-\veps\sin t\,\hi +\veps\cos t\,\hj\big)\ \dee{t}
 \end{align*}
 which implies that
 \begin{align*}
-\lim_{\veps\rightarrow 0}\frac{1}{\pi\veps^2}
-         \oint_{C_\veps} \vv(\vr)\cdot \dee{\vr}
-&= \frac{\partial \vv_2}{\partial x}(0,0,0) 
+&\lim_{\veps\rightarrow 0}\frac{1}{\pi\veps^2}
+         \oint_{C_\veps} \vv(\vr)\cdot \dee{\vr} \\
+&\hskip0.5in= \frac{\partial \vv_2}{\partial x}(0,0,0) 
   - \frac{\partial \vv_1}{\partial y}(0,0,0)
    +\lim_{\veps\rightarrow 0}\!
      \frac{1}{\pi\veps^2}
            \int_0^{2\pi}\!\!\!\! \vR(\vr(t))
         \cdot \big(-\veps\sin t\,\hi +\veps\cos t\,\hj\big)\,\dee{t} \\
-&= \big(\vnabla\times\vv(0,0,0)\big)\cdot\hk
+&\hskip0.5in= \big(\vnabla\times\vv(0,0,0)\big)\cdot\hk
    +\lim_{\veps\rightarrow 0}
      \frac{1}{\pi\veps^2}
            \int_0^{2\pi} \vR(\vr(t))
