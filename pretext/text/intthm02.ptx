@@ -388,7 +388,7 @@ Appendix <xref ref="ap_spherCoord"/>, if you need to refresh your memory.)
 \bigg[\int_0^{a}\rho^4\,\dee{\rho}\bigg]
 </mrow><mrow>
 &amp;=\big[2\pi\big]\Big[-\cos\varphi\Big]_0^{\frac{\pi}{2}}
-   \Big[\frac{\rho^5}{5}\Big]_0^a
+   \left[\frac{\rho^5}{5}\right]_0^a
 </mrow><mrow>
 &amp;=\frac{2\pi a^5}{5}
 </mrow>
@@ -528,7 +528,7 @@ So
 \tripInt_V\vnabla\cdot\vF\ \dee{V}
 =9\,\text{Vol}(V)
 =9\int_1^2 \pi z^2\,\dee{z}
-=9\Big[\frac{\pi z^3}{3}\Big]_1^2
+=9\left[\frac{\pi z^3}{3}\right]_1^2
 =9\times \pi\frac{7}{3}
 =21\pi
 </mrow>
@@ -574,7 +574,7 @@ V = \Set{(x,y,z)}{{\big(x^2+y^2\big)}^2\le z,\ \ 0\le z\le 1 }
 </md>
 The boundary of <m>V</m> is the union of <m>S</m>, with outward pointing normal <m>-\vn</m>
 (recall that the problem specifies that the symbol <m>\hn</m> refers to
-the upward point normal)  and the disk
+the upward pointing normal)  and the disk
 <me>
 D = \Set{(x,y,z)}{z= 1,\ \  {\big(x^2+y^2\big)}^2\le 1}
 </me>
@@ -710,7 +710,7 @@ Here <m>\ka</m> is another positive physical constant called the thermal
 conductivity of the object. So the rate at which heat is conducted
 across an element of surface area <m>\dee{S}</m> at <m>(x,y,z)</m> in the direction of
 its unit normal <m>\hn</m> is given by <m>-\ka\hn\cdot\vnabla T(x,y,z,t)\,\dee{S}</m> at
-time <m>t</m>. For example, in the figure
+time <m>t</m>. (See Lemma <xref ref="lem_fluxInterp"/>.) For example, in the figure
 </p>
 
 <sidebyside width="25%">
@@ -745,7 +745,7 @@ time interval <m>\dee{t}</m> is given by the integral
 </sidebyside>
 
 <p>
-In this same time interval the temperature at a point  <m>(x,y,z)</m> in <m>V</m>
+In this same time interval, the temperature at a point  <m>(x,y,z)</m> in <m>V</m>
 changes by <m>\frac{\partial T}{\partial t}(x,y,z,t)\,\dee{t}</m>. If the density of
 the object at <m>(x,y,z)</m> is <m>\rho(x,y,z)</m>, the amount of heat energy
 required to increase the temperature of an infinitesimal volume <m>\dee{V}</m> of
@@ -783,8 +783,8 @@ As both integrals are over the same volume <m>V</m>, we have
 =0
 </mrow><mrow>
 &amp;\hskip1in\implies
-\tripInt_{V} \Big[\ka\vnabla^2 T
-          -C\rho\frac{\partial T}{\partial t}\Big]\,\dee{V}=0
+\tripInt_{V} \left[\ka\vnabla^2 T
+          -C\rho\frac{\partial T}{\partial t}\right]\,\dee{V}=0
 \tag{H}
 </mrow>
 </md>

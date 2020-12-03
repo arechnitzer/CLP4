@@ -2214,7 +2214,7 @@ Appendix \ref{ap:spherCoord}, if you need to refresh your memory.)
 \bigg[\int_0^{\nicefrac{\pi}{2}}\sin\varphi\,\dee{\varphi}\bigg]
 \bigg[\int_0^{a}\rho^4\,\dee{\rho}\bigg] \\
 &=\big[2\pi\big]\Big[-\cos\varphi\Big]_0^{\nicefrac{\pi}{2}}
-   \Big[\frac{\rho^5}{5}\Big]_0^a \\
+   \left[\frac{\rho^5}{5}\right]_0^a \\
 &=\frac{2\pi a^5}{5}
 \end{align*}
 
@@ -2330,7 +2330,7 @@ So
 \tripInt_V\vnabla\cdot\vF\ \dee{V}
 =9\,\text{Vol}(V)
 =9\int_1^2 \pi z^2\,\dee{z}
-=9\Big[\frac{\pi z^3}{3}\Big]_1^2
+=9\left[\frac{\pi z^3}{3}\right]_1^2
 =9\times \pi\frac{7}{3}
 =21\pi
 \end{align*}
@@ -2384,7 +2384,7 @@ V = \Set{(x,y,z)}{{\big(x^2+y^2\big)}^2\le z,\ \ 0\le z\le 1 }
 \end{align*}
 The boundary of $V$ is the union of $S$, with outward pointing normal $-\vn$
 (recall that the problem specifies that the symbol $\hn$ refers to
-the upward point normal)  and the disk
+the upward pointing normal)  and the disk
 \begin{equation*}
 D = \Set{(x,y,z)}{z= 1,\ \  {\big(x^2+y^2\big)}^2\le 1}
 \end{equation*}
@@ -2500,7 +2500,7 @@ Here $\ka$ is another positive physical constant called the thermal
 conductivity of the object. So the rate at which heat is conducted
 across an element of surface area $\dee{S}$ at $(x,y,z)$ in the direction of 
 its unit normal $\hn$ is given by $-\ka\hn\cdot\vnabla T(x,y,z,t)\,\dee{S}$ at 
-time $t$. For example, in the figure
+time $t$. (See Lemma \ref{lem:fluxInterp}.) For example, in the figure
 \begin{nfig}
 \begin{center}
     \includegraphics{heat1.pdf}
@@ -2527,7 +2527,7 @@ time interval $\dee{t}$ is given by the integral
 \hskip0.5in\raisebox{-32pt}[68pt][30pt]
                          {\smash{\includegraphics{heat2}}}
 \end{equation*}
-In this same time interval the temperature at a point  $(x,y,z)$ in $V$
+In this same time interval, the temperature at a point  $(x,y,z)$ in $V$
 changes by $\frac{\partial T}{\partial t}(x,y,z,t)\,\dee{t}$. If the density of 
 the object at $(x,y,z)$ is $\rho(x,y,z)$, the amount of heat energy  
 required to increase the temperature of an infinitesimal volume $\dee{V}$ of 
@@ -2563,8 +2563,8 @@ As both integrals are over the same volume $V$, we have
 -\tripInt_V C\rho\frac{\partial T}{\partial t}\,\dee{V}
 =0
 \implies 
-\tripInt_{V} \Big[\ka\vnabla^2 T
-          -C\rho\frac{\partial T}{\partial t}\Big]\,\dee{V}=0
+\tripInt_{V} \left[\ka\vnabla^2 T
+          -C\rho\frac{\partial T}{\partial t}\right]\,\dee{V}=0
 \tag{H}\end{equation}
 where $\vnabla^2=\vnabla\cdot\vnabla=\frac{\partial^2\hfill}{\partial x^2}+
 \frac{\partial^2\hfill}{\partial y^2}+\frac{\partial^2\hfill}{\partial z^2}$
