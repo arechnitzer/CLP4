@@ -8,6 +8,10 @@
 
 \graphicspath{{figures/misc/}}
 
+\usepackage{xr}
+   \externaldocument[PROB4-]{clp_4_vc_problems} 
+   \newcommand{\eref}[2]{\ref*{#1-#2}}
+
 \begin{document}
 %% Cover image, not numbered
 \setcounter{page}{0}\includepdf[noautoscale=false]{figures/misc/clp4-cover.pdf}

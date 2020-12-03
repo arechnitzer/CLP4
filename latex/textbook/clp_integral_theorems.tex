@@ -333,12 +333,20 @@ For example, the proof of Theorem \ref{thm:curlIdentities}.c is
 \qquad\text{(by Theorem \ref{thm:DIFFalgebra}.b)}\\
 &=(\vnabla f)\times\vF + f\,\vnabla\times\vF
 \end{align*}
+The similar verification of Theorems \ref{thm:gradIdentities}.c,d,
+      \ref{thm:divIdentities}.c and
+      \ref{thm:laplaceIdentities}.c
+are left as exercises. The latter two are parts (a) and (c) of 
+Question \eref{PROB4}{prb vector identity} in Section 4.1 of the CLP-4 problembook.
+
 For Theorem \ref{thm:divIdentities}.d, the computation is also easy if 
 one uses the fact that  
 \begin{equation*}
 \va\cdot(\vb\times\vc)=(\va\times\vb)\cdot\vc
 \end{equation*} 
-which is Lemma \ref{lem:tripProd}.a below.
+which is Lemma \ref{lem:tripProd}.a below. The verification of 
+Theorem \ref{thm:divIdentities}.d is part (b) of 
+Question \eref{PROB4}{prb vector identity} in Section 4.1 of the CLP-4 problembook.
 
 \bigskip
 \noindent That leaves the proofs of 
@@ -669,7 +677,7 @@ $\vF = \vnabla\times\vA$ for some some vector field $\vA$, then
 \vnabla\cdot\vF = \vnabla\cdot(\vnabla\times\vA) = 0
 \end{equation*}
 When $\vF = \vnabla\times\vA$, $\vA$ is called a \emph{vector potential}
-for $\vF$. We shall see in Theorem \ref{thm:screenVector}, below,
+for $\vF$. We shall see in Theorem \ref{thm:screenVectorB}, below,
 that, conversely, if $\vF(\vx)$ is defined and has continuous first 
 order partial derivatives on all of $\bbbr^3$, and if $\vnabla\cdot\vF=0$, 
 then $\vF$ has a vector potential\footnote{Does this remind you of 
@@ -683,7 +691,7 @@ As an example, consider the Maxwell's equations
 \vnabla\times\vE +\frac{1}{c}\frac{\partial\vB}{\partial t}&=0 
 \end{align*}
 that we saw in Example \ref{eg:ITmaxwell}. The first equation implies
-that (assuming $\vB$ is sufficiently smooth and decaying) there is a 
+that (assuming $\vB$ is sufficiently smooth) there is a 
 vector field $\vA$, called the magnetic potential, with 
 $\vB=\vnabla\times\vA$. Substituting this into the second equation 
 gives
@@ -1096,7 +1104,7 @@ work. So not only have we proven that a vector potential exists, but we have fou
 \end{proof}
 
 \begin{warning}\label{warn:screeningC}
-Note that in Theorem \ref{thm:screenVector} we are assuming that
+Note that in Theorem \ref{thm:screenVectorB} we are assuming that
 $\vB$ passes the screening test on \emph{all} of $\bbbr^3$.
 If that is not the case, for example
 because the vector field is not defined on all of $\bbbr^3$, then 
