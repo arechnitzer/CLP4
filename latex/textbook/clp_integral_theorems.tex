@@ -337,7 +337,7 @@ The similar verification of Theorems \ref{thm:gradIdentities}.c,d,
       \ref{thm:divIdentities}.c and
       \ref{thm:laplaceIdentities}.c
 are left as exercises. The latter two are parts (a) and (c) of 
-Question \eref{PROB4}{prb vector identity} in Section 4.1 of the CLP-4 problembook.
+Question \eref{PROB4}{prb vector identity} in Section 4.1 of the CLP-4 problem book.
 
 For Theorem \ref{thm:divIdentities}.d, the computation is also easy if 
 one uses the fact that  
@@ -346,7 +346,7 @@ one uses the fact that
 \end{equation*} 
 which is Lemma \ref{lem:tripProd}.a below. The verification of 
 Theorem \ref{thm:divIdentities}.d is part (b) of 
-Question \eref{PROB4}{prb vector identity} in Section 4.1 of the CLP-4 problembook.
+Question \eref{PROB4}{prb vector identity} in Section 4.1 of the CLP-4 problem book.
 
 \bigskip
 \noindent That leaves the proofs of 
@@ -2623,7 +2623,7 @@ We also assume that the temperature $T(0,t)$ at the surface of the Earth
 is primarily determined by solar heating and is given by
 \begin{equation}
 T(0,t)=T_0+T_A\cos(\sigma t)+T_D\cos(\delta t)
-\tag{IC}\end{equation}
+\tag{BC}\end{equation}
 Here $T_0$ is the long term
 average of the temperature at the surface of the Earth, 
 $T_A\cos(\sigma t)$ gives seasonal temperature variations and 
@@ -2643,7 +2643,7 @@ $\delta =2\pi$ and
 $\sigma =\frac{2\pi}{1\ {\rm year}}=\frac{2\pi}{365{\rm days}}$.
 Then $T_A\cos(\sigma t)$ has period one year and 
 $T_D\cos(\delta t)$ has period one day.
-The solution to the initial value problem (HE)+(IC) can be found by separation
+The solution to the initial value problem (HE)+(BC) can be found by separation
 of variables, a standard topic in courses on partial differential equations.
 The solution is
 \begin{equation}
@@ -2654,7 +2654,7 @@ T(z,t)=T_0
  \cos\Big(\delta t-\sqrt{\frac{\delta }{2\alpha}}\ z\Big)
 \tag{SLN}\end{equation}
 Whether or not you can find this solution, 
-you can, and should, check that (SLN) satisfies both (HE) and (IC). 
+you can, and should, check that (SLN) satisfies both (HE) and (BC). 
 
 Now let's see what we can learn from the solution (SLN).
 For any fixed $z$, the time average of $T(z,t)$ is $T_0$ (just because the average
@@ -3000,18 +3000,18 @@ illustrated in the figure
 The total force due to the pressure acting on the cube
 is the sum 
 \begin{align*}
-&-P\big(x+\frac{\dee{x}}{2},y,z\big)\,dy\dee{z}\,\hi
-+P\big(x-\frac{\dee{x}}{2},y,z\big)\,dy\dee{z}\,\hi\\
-&-P\big(x,y+\frac{dy}{2},z\big)\,\dee{x}\dee{z}\,\hj
-+P\big(x,y-\frac{dy}{2},z\big)\,\dee{x}\dee{z}\,\hj\\
-&-P\big(x,y,z+\frac{\dee{z}}{2}\big)\,\dee{x}dy\,\hk
-+P\big(x,y,z-\frac{\dee{z}}{2}\big)\,\dee{x}dy\,\hk
+&-P\left(x+\frac{\dee{x}}{2},y,z\right)\,dy\dee{z}\,\hi
++P\left(x-\frac{\dee{x}}{2},y,z\right)\,dy\dee{z}\,\hi\\
+&-P\left(x,y+\frac{dy}{2},z\right)\,\dee{x}\dee{z}\,\hj
++P\left(x,y-\frac{dy}{2},z\right)\,\dee{x}\dee{z}\,\hj\\
+&-P\left(x,y,z+\frac{\dee{z}}{2}\right)\,\dee{x}dy\,\hk
++P\left(x,y,z-\frac{\dee{z}}{2}\right)\,\dee{x}dy\,\hk
 \end{align*}
 of the forces acting on the six faces.
 Consider the $\hi$ component and rewrite it as
 \begin{align*}
-&-P\big(x+\frac{\dee{x}}{2},y,z\big)\,dy\dee{z}\,\hi
-+P\big(x-\frac{\dee{x}}{2},y,z\big)\,dy\dee{z}\,\hi \\
+&-P\left(x+\frac{\dee{x}}{2},y,z\right)\,dy\dee{z}\,\hi
++P\left(x-\frac{\dee{x}}{2},y,z\right)\,dy\dee{z}\,\hi \\
 &\hskip1in
 =-\frac{P(x+{\dee{x}\over2},y,z)-P(x-{\dee{x}\over2},y,z)}{\dee{x}}\,\hi\ 
      \dee{x} \dee{y} \dee{z} \\
@@ -3117,7 +3117,7 @@ Substituting it in gives
             {\tripInt_V\rhof\,\dee{V}}-\vr_0\bigg\}\times\vB
 \end{alignat*}
 So the torque generated at $\vr_0$ by pressure over the entire surface
-is the same as a force $\vB$ all applied at the single point
+is the same as the torque generated at $\vr_0$ by a force $\vB$ applied at the single point
 \begin{equation*}
 \vC_\vB=\frac{\tripInt_V \vr\rhof\,\dee{V}}{\tripInt_V\rhof\,\dee{V}}
 \end{equation*}
@@ -3204,7 +3204,7 @@ in the directions of the arrows and think about how the boat will respond.
 %%%%%%%%%%%%%%%%%
 
 In this section, we derive the properties of torque that we used in 
-the last example. Newton's law of motion says that the position $\vr(t)$ 
+the last section. Newton's law of motion says that the position $\vr(t)$ 
 of a single particle moving under the influence
 of a force $\vF$ obeys $m\vr''(t)=\vF$. Similarly, the positions $\vr_i(t)$, 
 $1\le i\le n$, of a set of particles moving under the influence
@@ -3425,7 +3425,7 @@ $1\le i\le n$, must be zero.
 \subsection{Optional --- Solving Poisson's Equation}\label{sec:poisson}
 %%%%%%%%%%%%%%%%%
 
-In this section we shall use the divergence theorem find a formula for the solution of Poisson's equation
+In this section we shall use the divergence theorem to find a formula for the solution of Poisson's equation
 \begin{equation*}
 \vnabla^2\varphi = 4\pi\rho
 \end{equation*}
@@ -3507,7 +3507,8 @@ $\frac{1}{|\vr-\vr_0|}$. The first two properties are
 \tag{P2}\end{align}
 and are valid for all $\vr\ne \vr_0$. Verification of the first property is
 a simple one line computation. Verification of the second property is
-a simple three line computation. 
+a simple three line computation. (See the solution to Question 
+\eref{PROB4}{poisson} in Section 4.1 of the CLP-4 problem book.)
 
 The other property of $\frac{1}{|\vr-\vr_0|}$ 
 that we shall use is the following. Let $S_\veps$ be the sphere of 

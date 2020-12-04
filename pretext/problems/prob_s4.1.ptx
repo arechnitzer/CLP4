@@ -521,7 +521,7 @@ yz&amp;2xz&amp;e^{xy}\end{matrix}\right]
 </solution>
 </exercise>
 
-<exercise><title><fromexam>M317 2008A</fromexam></title>
+<exercise xml:id="poisson"><title><fromexam>M317 2008A</fromexam></title>
 <statement><p>
 In the following, we use the notation
 <m>\vr = x\,\hi + y\,\hj + z\,\hk</m>, <m>r = |\vr|</m>, and <m>k</m> is some number

@@ -534,7 +534,9 @@ potential always yields another potential, we can always choose
 <m>\varphi(\vZero)=0</m>. Then <m>\varphi(P_1)=\int_\cC\vF\cdot\dee{\vr}</m> for any
 curve <m>\cC</m> that starts at <m>\vZero</m> and ends at <m>P_1</m>. So define,
 for each point <m>\vx</m>, <m>\varphi(\vx)=\int_\cC\vF\cdot\dee{\vr}</m> for any
-curve <m>\cC</m> that starts at <m>\vZero</m> and ends at <m>\vx</m>.
+curve <m>\cC</m> that starts at <m>\vZero</m> and ends at <m>\vx</m>. Note that, since we 
+we are assuming that (c) is true, the integral <m>\int_\cC\vF\cdot\dee{\vr}</m>
+takes the same value for all curves <m>\cC</m> that start at <m>\vZero</m> and end at <m>\vx</m>.
 </p>
 
 <p>We now verify that, for this chosen <m>\varphi</m>, we really do have <m>\vF=\vnabla\varphi</m>.

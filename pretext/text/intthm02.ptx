@@ -855,7 +855,7 @@ We also assume that the temperature <m>T(0,t)</m> at the surface of the Earth
 is primarily determined by solar heating and is given by
 <me>
 T(0,t)=T_0+T_A\cos(\sigma t)+T_D\cos(\delta t)
-\tag{IC}
+\tag{BC}
 </me>
 Here <m>T_0</m> is the long term
 average of the temperature at the surface of the Earth,
@@ -872,7 +872,7 @@ average of the temperature at the surface of the Earth,
 <m>\sigma =\frac{2\pi}{1\ {\rm year}}=\frac{2\pi}{365{\rm days}}</m>.
 Then <m>T_A\cos(\sigma t)</m> has period one year and
 <m>T_D\cos(\delta t)</m> has period one day.
-The solution to the initial value problem (HE)+(IC) can be found by separation
+The solution to the initial value problem (HE)+(BC) can be found by separation
 of variables, a standard topic in courses on partial differential equations.
 The solution is
 <md>
@@ -887,7 +887,7 @@ T(z,t)&amp;=T_0
 </mrow>
 </md>
 Whether or not you can find this solution,
-you can, and should, check that (SLN) satisfies both (HE) and (IC).
+you can, and should, check that (SLN) satisfies both (HE) and (BC).
 </p>
 
 <p>Now let's see what we can learn from the solution (SLN).
@@ -1183,22 +1183,22 @@ The total force due to the pressure acting on the cube
 is the sum
 <md>
 <mrow>
-&amp;-P\big(x+\frac{\dee{x}}{2},y,z\big)\,dy\dee{z}\,\hi
-+P\big(x-\frac{\dee{x}}{2},y,z\big)\,dy\dee{z}\,\hi
+&amp;-P\left(x+\frac{\dee{x}}{2},y,z\right)\,dy\dee{z}\,\hi
++P\left(x-\frac{\dee{x}}{2},y,z\right)\,dy\dee{z}\,\hi
 </mrow><mrow>
-&amp;-P\big(x,y+\frac{dy}{2},z\big)\,\dee{x}\dee{z}\,\hj
-+P\big(x,y-\frac{dy}{2},z\big)\,\dee{x}\dee{z}\,\hj
+&amp;-P\left(x,y+\frac{dy}{2},z\right)\,\dee{x}\dee{z}\,\hj
++P\left(x,y-\frac{dy}{2},z\right)\,\dee{x}\dee{z}\,\hj
 </mrow><mrow>
-&amp;-P\big(x,y,z+\frac{\dee{z}}{2}\big)\,\dee{x}dy\,\hk
-+P\big(x,y,z-\frac{\dee{z}}{2}\big)\,\dee{x}dy\,\hk
+&amp;-P\left(x,y,z+\frac{\dee{z}}{2}\right)\,\dee{x}dy\,\hk
++P\left(x,y,z-\frac{\dee{z}}{2}\right)\,\dee{x}dy\,\hk
 </mrow>
 </md>
 of the forces acting on the six faces.
 Consider the <m>\hi</m> component and rewrite it as
 <md>
 <mrow>
-&amp;-P\big(x+\frac{\dee{x}}{2},y,z\big)\,dy\dee{z}\,\hi
-+P\big(x-\frac{\dee{x}}{2},y,z\big)\,dy\dee{z}\,\hi
+&amp;-P\left(x+\frac{\dee{x}}{2},y,z\right)\,dy\dee{z}\,\hi
++P\left(x-\frac{\dee{x}}{2},y,z\right)\,dy\dee{z}\,\hi
 </mrow><mrow>
 &amp;\hskip1in
 =-\frac{P(x+{\dee{x}\over2},y,z)-P(x-{\dee{x}\over2},y,z)}{\dee{x}}\,\hi\
@@ -1326,7 +1326,7 @@ Substituting it in gives
 </mrow>
 </md>
 So the torque generated at <m>\vr_0</m> by pressure over the entire surface
-is the same as a force <m>\vB</m> all applied at the single point
+is the same  the torque generated at $\vr_0$ by a force <m>\vB</m> applied at the single point
 <me>
 \vC_\vB=\frac{\tripInt_V \vr\rhof\,\dee{V}}{\tripInt_V\rhof\,\dee{V}}
 </me>
@@ -1404,7 +1404,7 @@ in the directions of the arrows and think about how the boat will respond.
 
 
 <p>In this section, we derive the properties of torque that we used in
-the last example. Newton's law of motion says that the position <m>\vr(t)</m>
+the last section. Newton's law of motion says that the position <m>\vr(t)</m>
 of a single particle moving under the influence
 of a force <m>\vF</m> obeys <m>m\vr''(t)=\vF</m>. Similarly, the positions <m>\vr_i(t)</m>,
 <m>1\le i\le n</m>, of a set of particles moving under the influence
@@ -1670,7 +1670,7 @@ That is, the torque about point <m>\vp</m> due to all of the forces <m>\vF_i</m>
   <title>Optional <mdash/> Solving Poisson's Equation</title>
 
 
-<p>In this section we shall use the divergence theorem find a formula for the solution of Poisson's equation
+<p>In this section we shall use the divergence theorem to find a formula for the solution of Poisson's equation
 <me>
 \vnabla^2\varphi = 4\pi\rho
 </me>
@@ -1772,7 +1772,8 @@ We shall exploit three properties of the function
 </md>
 and are valid for all <m>\vr\ne \vr_0</m>. Verification of the first property is
 a simple one line computation. Verification of the second property is
-a simple three line computation.
+a simple three line computation. (See the solution to Question 
+6 in Section 4.1 of the CLP-4 problem book.)
 </p>
 
 <p>The other property of <m>\frac{1}{|\vr-\vr_0|}</m>
