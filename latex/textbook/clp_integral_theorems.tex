@@ -4429,7 +4429,7 @@ $\vr(u_0,v)$, in $\bbbr^3$ with $v$ starting at $v_0$ and increasing,
 we move into the interior of $S$. The forward tangent to this new path, 
 $\frac{\partial \vr}{\partial v}(u_0,v_0)$,
 points from $ \vr(u_0,v_0)$ into the interior of $S$. It's the blue arrow in
-the figure on the left below.
+the figure on the right below.
 
 \begin{wfig}
 \begin{center}
@@ -4461,7 +4461,7 @@ the integrals.
 \noindent
 \emph{The surface integral:}\ \ \
 
-Since $F=F_1\hi$, so that 
+Since $F=F_1\,\hi$, so that 
 \begin{align*}
 \vnabla\times\vF
 &=\det\left[\begin{matrix} \hi & \hj & \hk \\[0.05in]
@@ -4469,8 +4469,8 @@ Since $F=F_1\hi$, so that
                          \frac{\partial\hfill}{\partial z} \\[0.05in]
          F_1 & 0 & 0
        \end{matrix}\right] 
-= \big(0,\frac{\partial F_1}{\partial z}, 
-                -\frac{\partial F_1}{\partial y}\big)
+= \left(0,\frac{\partial F_1}{\partial z}, 
+                -\frac{\partial F_1}{\partial y}\right)
 \end{align*}
 and 
 \begin{align*}
@@ -4503,7 +4503,7 @@ and
                 -\frac{\partial F_1}{\partial y}\right)
    \cdot\frac{\partial \vr}{\partial u}
 \times \frac{\partial \vr}{\partial v}\ \dee{u}\,\dee{v}\cr
-&\hskip.15in=\dblInt_{R}\Big\{\frac{\partial F_1}{\partial z}
+&\hskip.15in=\dblInt_{R}\left\{\frac{\partial F_1}{\partial z}
                     \left(\frac{\partial z}{\partial u}
                          \frac{\partial x}{\partial v}
                        -\frac{\partial x}{\partial u}
@@ -4513,7 +4513,7 @@ and
                          \frac{\partial y}{\partial v}
                        -\frac{\partial y}{\partial u}
                        \frac{\partial x}{\partial v}\right)
-\Big\}\,\dee{u}\,\dee{v}
+\right\}\,\dee{u}\,\dee{v}
 \end{align*}
 Now we examine the line integral and show that it equals this one.
 
@@ -4550,9 +4550,9 @@ By Green's Theorem, we have
 \begin{align*}
 \oint_{\partial S}\vF\cdot \dee{\vr}
 &=\oint_{\partial R}M(u,v)\ \dee{u}+N(u,v)\ \dee{v}\cr
-=\dblInt_{R}\Big\{&\frac{\partial N}{\partial u}-\frac{\partial M}{\partial v}
-\Big\}\ \dee{u} \dee{v}\cr
-=\dblInt_{R}\Big\{&
+=\dblInt_{R}\bigg\{&\frac{\partial N}{\partial u}-\frac{\partial M}{\partial v}
+\bigg\}\ \dee{u} \dee{v}\cr
+=\dblInt_{R}\bigg\{&
                \frac{\partial\hfill}{\partial u}\big[
                      F_1\big({x(u,v),y(u,v),z(u,v)}\big)
                      \big]\frac{\partial x}{\partial v}
@@ -4561,9 +4561,9 @@ By Green's Theorem, we have
                      F_1\big({x(u,v),y(u,v),z(u,v)}\big)
                      \big]\frac{\partial x}{\partial u}
                    -F_1\frac{\partial^2 x}{\partial v\partial u}
-                                        \Big\}\ \dee{u} \dee{v}
+                                        \bigg\}\ \dee{u} \dee{v}
 \displaybreak[0]\\
-=\dblInt_{R}\Big\{&
+=\dblInt_{R}\bigg\{&
                \textcolor{blue}{\Big(\frac{\partial F_1}{\partial x}
                      \frac{\partial x}{\partial u}}
                      +\frac{\partial F_1}{\partial y}
@@ -4583,8 +4583,8 @@ By Green's Theorem, we have
                      \Big)\frac{\partial x}{\partial u}
                 \textcolor{red}{
                    -F_1\frac{\partial^2 x}{\partial v\partial u}}
-                                        \Big\}\ \dee{u} \dee{v}\cr
-=\dblInt_{R}\Big\{&\Big(\frac{\partial F_1}{\partial y}
+                                        \bigg\}\ \dee{u} \dee{v}\cr
+=\dblInt_{R}\bigg\{&\Big(\frac{\partial F_1}{\partial y}
                      \frac{\partial y}{\partial u}
                      +\frac{\partial F_1}{\partial z}
                      \frac{\partial z}{\partial u}
@@ -4595,7 +4595,7 @@ By Green's Theorem, we have
                      +\frac{\partial F_1}{\partial z}
                      \frac{\partial z}{\partial v}
                      \Big)\frac{\partial x}{\partial u}
-\Big\}\,\dee{u}\, \dee{v}\cr
+\bigg\}\,\dee{u}\, \dee{v}\cr
 \noalign{\vskip.05in}
 &\hskip-33pt=\dblInt_{S}\vnabla\times\vF\cdot\hn\,\dee{S}
 \end{align*}

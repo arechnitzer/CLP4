@@ -168,7 +168,7 @@ holds <m>u</m> fixed at <m>u_0</m> and increases <m>v</m>, we move into the inte
 we move into the interior of <m>S</m>. The forward tangent to this new path,
 <m>\frac{\partial \vr}{\partial v}(u_0,v_0)</m>,
 points from <m> \vr(u_0,v_0)</m> into the interior of <m>S</m>. It's the blue arrow in
-the figure on the left below.
+the figure on the right below.
 </p>
 
 <sidebyside widths="40% 18% 40%" valign="top">
@@ -199,7 +199,7 @@ the integrals.
 <p><em>The surface integral:</em>
 </p>
 
-<p>Since <m>F=F_1\hi</m>, so that
+<p>Since <m>F=F_1\,\hi</m>, so that
 <md>
 <mrow>
 \vnabla\times\vF
@@ -208,8 +208,8 @@ the integrals.
                          \frac{\partial }{\partial z} \\
          F_1 &amp; 0 &amp; 0
        \end{matrix}\right]
-= \big(0,\frac{\partial F_1}{\partial z},
-                -\frac{\partial F_1}{\partial y}\big)
+= \left(0,\frac{\partial F_1}{\partial z},
+                -\frac{\partial F_1}{\partial y}\right)
 </mrow>
 </md>
 and
@@ -249,7 +249,7 @@ and
                 -\frac{\partial F_1}{\partial y}\right)
    \cdot\frac{\partial \vr}{\partial u}
 \times \frac{\partial \vr}{\partial v}\ \dee{u}\,\dee{v}\cr
-&amp;\hskip.15in=\dblInt_{R}\Big\{\frac{\partial F_1}{\partial z}
+&amp;\hskip.15in=\dblInt_{R}\left\{\frac{\partial F_1}{\partial z}
                     \left(\frac{\partial z}{\partial u}
                          \frac{\partial x}{\partial v}
                        -\frac{\partial x}{\partial u}
@@ -259,7 +259,7 @@ and
                          \frac{\partial y}{\partial v}
                        -\frac{\partial y}{\partial u}
                        \frac{\partial x}{\partial v}\right)
-\Big\}\,\dee{u}\,\dee{v}
+\right\}\,\dee{u}\,\dee{v}
 </mrow>
 </md>
 Now we examine the line integral and show that it equals this one.
@@ -307,9 +307,9 @@ N(u,v)&amp;=\vF\big(\vr(u,v)\big)\cdot\frac{\partial\vr}{\partial v}(u,v)
 <mrow>
 \oint_{\partial S}\vF\cdot \dee{\vr}
 &amp;=\oint_{\partial R}M(u,v)\ \dee{u}+N(u,v)\ \dee{v}\cr
-=\dblInt_{R}\Big\{&amp;\frac{\partial N}{\partial u}-\frac{\partial M}{\partial v}
-\Big\}\ \dee{u} \dee{v}\cr
-=\dblInt_{R}\Big\{&amp;
+=\dblInt_{R}\bigg\{&amp;\frac{\partial N}{\partial u}-\frac{\partial M}{\partial v}
+\bigg\}\ \dee{u} \dee{v}\cr
+=\dblInt_{R}\bigg\{&amp;
                \frac{\partial }{\partial u}\big[
                      F_1\big({x(u,v),y(u,v),z(u,v)}\big)
                      \big]\frac{\partial x}{\partial v}
@@ -319,10 +319,10 @@ N(u,v)&amp;=\vF\big(\vr(u,v)\big)\cdot\frac{\partial\vr}{\partial v}(u,v)
                      F_1\big({x(u,v),y(u,v),z(u,v)}\big)
                      \big]\frac{\partial x}{\partial u}
                    -F_1\frac{\partial^2 x}{\partial v\partial u}
-                                        \Big\}\ \dee{u} \dee{v}
+                                        \bigg\}\ \dee{u} \dee{v}
 
 </mrow><mrow>
-=\dblInt_{R}\Big\{&amp;
+=\dblInt_{R}\bigg\{&amp;
                {\color{blue}{\Big(\frac{\partial F_1}{\partial x}
                      \frac{\partial x}{\partial u}}}
                      +\frac{\partial F_1}{\partial y}
@@ -342,8 +342,8 @@ N(u,v)&amp;=\vF\big(\vr(u,v)\big)\cdot\frac{\partial\vr}{\partial v}(u,v)
                      \Big)\frac{\partial x}{\partial u}
                 {\color{red}{
                    -F_1\frac{\partial^2 x}{\partial v\partial u}}}
-                                        \Big\}\ \dee{u} \dee{v}\cr
-=\dblInt_{R}\Big\{&amp;\Big(\frac{\partial F_1}{\partial y}
+                                        \bigg\}\ \dee{u} \dee{v}\cr
+=\dblInt_{R}\bigg\{&amp;\Big(\frac{\partial F_1}{\partial y}
                      \frac{\partial y}{\partial u}
                      +\frac{\partial F_1}{\partial z}
                      \frac{\partial z}{\partial u}
@@ -353,7 +353,7 @@ N(u,v)&amp;=\vF\big(\vr(u,v)\big)\cdot\frac{\partial\vr}{\partial v}(u,v)
                      \frac{\partial y}{\partial v}
                      +\frac{\partial F_1}{\partial z}
                      \frac{\partial z}{\partial v}
-                     \Big)\frac{\partial x}{\partial u}
+                     \bigg)\frac{\partial x}{\partial u}
 \Big\}\,\dee{u}\, \dee{v}
 </mrow><mrow>
 &amp;\hskip-33pt=\dblInt_{S}\vnabla\times\vF\cdot\hn\,\dee{S}
