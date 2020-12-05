@@ -3669,7 +3669,7 @@ which is exactly equation (V).
 %%%%%%%%%%%%%%%%%%%%%%%%%%
 Our next variant of the fundamental theorem of calculus is 
 Green's\footnote{George Green (1793--1841) was a British 
-mathematical-physicist. He spent much of the early part of his life
+mathematical physicist. He spent much of the early part of his life
 working in his father's bakery and grain mill. He was finally admitted
 as an undergraduate to Cambridge in 1832, aged nearly forty.} theorem, which 
 relates an integral, of a derivative of a (vector-valued) function,
@@ -3743,8 +3743,8 @@ at \emph{every} point of $R$.
 Then
 \begin{equation*}
 \oint_{C} \big[F_1(x,y)\,\dee{x} +F_2(x,y)\,\dee{y}\big]
- =\dblInt_{R}\Big(\frac{\partial F_2}{\partial x} 
-                - \frac{\partial F_1}{\partial y}\Big)\ \dee{x}\dee{y}
+ =\dblInt_{R}\left(\frac{\partial F_2}{\partial x} 
+                - \frac{\partial F_1}{\partial y}\right)\ \dee{x}\dee{y}
 \end{equation*}
 \end{theorem}
 
@@ -3800,7 +3800,7 @@ applied to $\vG$ and $V$, namely
 \dblInt_{\partial V} \vG\cdot\hn\,\dee{S}
 &=\tripInt_V\vnabla\cdot\vG\ \dee{V} 
 \end{align*}
-gives us exactly Green's theorem. 
+gives us exactly Green's theorem, as we shall now see.
 
 Since $\vnabla\cdot\vG = \frac{\partial F_2}{\partial x} 
                 - \frac{\partial F_1}{\partial y}$,  the right hand side is just
@@ -3808,11 +3808,11 @@ Since $\vnabla\cdot\vG = \frac{\partial F_2}{\partial x}
 \tripInt_V\vnabla\cdot\vG\ \dee{V}
 &= \dblInt_{R}\dee{x}\dee{y}\int_0^1\dee{z} \ \vnabla\cdot\vG \\
 &= \dblInt_{R}\dee{x}\dee{y}\int_0^1\dee{z} \ 
-        \Big(\frac{\partial F_2}{\partial x}(x,y) 
-                - \frac{\partial F_1}{\partial y}(x,y)\Big) \\
+        \left(\frac{\partial F_2}{\partial x}(x,y) 
+                - \frac{\partial F_1}{\partial y}(x,y)\right) \\
 &= \dblInt_{R}\dee{x}\dee{y}\
-        \Big(\frac{\partial F_2}{\partial x}(x,y) 
-                - \frac{\partial F_1}{\partial y}(x,y)\Big) 
+        \left(\frac{\partial F_2}{\partial x}(x,y) 
+                - \frac{\partial F_1}{\partial y}(x,y)\right) 
 \end{align*}
 because the integrand is independent of $z$. This is exactly the right 
 hand side of Green's theorem.
@@ -3831,25 +3831,25 @@ the outward unit normal on the (horizontal, flat) bottom is $-\hk$  so that
 We have used the fact that the $\hk$ component of $\vG$ is exactly zero
 to discard the integrals over the top and bottom of $\partial V$. 
 To evaluate the integral over the side, we'll parametrize the side. Suppose that 
-$\vr(t)=x(t)\hi +y(t)\hj$, $a\le t\le b$,
+$\vr(t)=x(t)\,\hi +y(t)\,\hj$, $a\le t\le b$,
 is a parametrization of $C$, with the arrow in the figure above giving the
 direction of increasing $t$. Then we can use
 \begin{align*}
-\vR(t,z)  = \vr(t) +z\hk
-          = x(t)\hi +y(t)\hj +z\hk \qquad a\le t\le b,\ 0\le z\le 1
+\vR(t,z)  = \vr(t) +z\,\hk
+          = x(t)\,\hi +y(t)\,\hj +z\,\hk \qquad a\le t\le b,\ 0\le z\le 1
 \end{align*}
 as a parametrization of the side. We'll use \eqref{eq:SUdSparam} to determine
 $\hn\,\dee{S}$ for the side. Since
 \begin{align*}
-\frac{\partial\vR}{\partial t}(t,z) & = x'(t)\hi +y'(t)\hj \\
+\frac{\partial\vR}{\partial t}(t,z) & = x'(t)\,\hi +y'(t)\,\hj \\
 \frac{\partial\vR}{\partial z}(t,z) & = \hk 
 \end{align*}
- gives
+\eqref{eq:SUdSparam} gives
 \begin{align*}
 \hn\,\dee{S} &= \frac{\partial\vR}{\partial t}(t,z)\times 
                \frac{\partial\vR}{\partial z}(t,z)\ \dee{t}\dee{z} \\
-&= \big(x'(t)\hi +y'(t)\hj\big)\times \hk\ \dee{t}\dee{z} \\
-&= \big(-x'(t)\hj +y'(t)\hi\big)\ \dee{t}\dee{z}
+&= \big(x'(t)\,\hi +y'(t)\,\hj\big)\times \hk\ \dee{t}\dee{z} \\
+&= \big(-x'(t)\,\hj +y'(t)\,\hi\big)\ \dee{t}\dee{z}
 \end{align*}
 Note that with this choice of $\pm$ sign (that is, 
 $\frac{\partial\vR}{\partial t}\times 
@@ -3868,11 +3868,11 @@ We can now compute the surface integral directly.
 \dblInt_{\partial V} \vG\cdot\hn\,\dee{S}
 &=\dblInt_{\text{side}} \vG\cdot\hn\,\dee{S}  \\
 &=\int_a^b\dee{t}\int_0^1\dee{z}\ \vG\big(\vR(t,z)\big)\cdot 
-          \big(-x'(t)\hj +y'(t)\hi\big)
+          \big(-x'(t)\,\hj +y'(t)\,\hi\big)
 \\
 &=\int_a^b\dee{t}\int_0^1\dee{z}\ 
          \big(F_2(x(t),y(t))\,\hi -F_1(x(t),y(t))\,\hj\big)\cdot 
-          \big(-x'(t)\hj +y'(t)\hi\big) \\
+          \big(-x'(t)\,\hj +y'(t)\,\hi\big) \\
 &=\int_a^b\dee{t}\ 
          \big[F_2(x(t),y(t))\,y'(t) +F_1(x(t),y(t))\,x'(t)\big]
 \\
@@ -3962,7 +3962,7 @@ by the astroid $x^{2/3} + y^{2/3} = a^{2/3}$.
 \end{nfig}
 In Example \ref{eg:astroid} we found the parametrization
 \begin{equation*}
-\vr(t) = x(t)\,\hi + y(t)\,\hj = a\cos^3t\hi + a\sin^3 t\hj
+\vr(t) = x(t)\,\hi + y(t)\,\hj = a\cos^3t\,\hi + a\sin^3 t\,\hj
 \qquad 0\le t\le 2\pi
 \end{equation*}
 for the astroid. So, by Corollary \ref{cor:greens},
@@ -3989,7 +3989,7 @@ Evaluate
 \end{equation*}
 where
 \begin{equation*}
-\vB = \frac{-y\hi+x\hj}{x^2+y^2}
+\vB = \frac{-y\,\hi+x\,\hj}{x^2+y^2}
 \end{equation*}
 and $C$ is the curve
 \begin{align*}
@@ -4006,7 +4006,7 @@ $X(t)=\cos t$, $Y(t)=\sin t$, $Z(t)=0$, it would be the unit circle
 centred on the origin in the $xy$-plane, traversed counterclockwise.
 For $-\frac{\pi}{2}\le u\le \frac{\pi}{2}$, the function $\sin u$ 
 increases monotonically with  $u$ and is of the same sign as $u$ so that,  
-since $|\sin t|\le 1<\frac{\pi}{2}$,
+since $|\sin t|,|\cos t|\le 1<\frac{\pi}{2}$,
 \begin{itemize}\itemsep1pt \parskip0pt \parsep0pt %\itemindent-15pt
 \item[$\circ$]
 $x(t) = \sin\big(\cos t)$ has the same sign as $X(t)=\cos t$ and is increasing
@@ -4039,8 +4039,8 @@ it looks like Green's theorem gives us, trivially,
 \begin{equation*}
 \oint_C\vB\cdot\dee{\vr}
 =\oint_C\big[\vB_1\,\dee{x} +\vB_2\,\dee{y}\big]
-= \dblInt_{R}\Big(\frac{\partial B_2}{\partial x} 
-                - \frac{\partial B_1}{\partial y}\Big)\ \dee{x}\dee{y}
+= \dblInt_{R}\left(\frac{\partial B_2}{\partial x} 
+                - \frac{\partial B_1}{\partial y}\right)\ \dee{x}\dee{y}
 =0
 \end{equation*}
 where $R$ is the region inside our curve $C$. 
@@ -4142,7 +4142,7 @@ Evaluate
 \end{equation*}
 where
 \begin{equation*}
-\vB = \frac{-y\hi+x\hj}{x^2+y^2}
+\vB = \frac{-y\,\hi+x\,\hj}{x^2+y^2}
 \end{equation*}
 and $C$ is the curve
 \begin{align*}
