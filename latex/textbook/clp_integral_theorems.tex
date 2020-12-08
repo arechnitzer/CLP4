@@ -5035,7 +5035,7 @@ In fact, since
                  &\frac{\partial\hfill}{\partial y}
                  &\frac{\partial\hfill}{\partial z}\\
                 \cos x +  y+z&x+z&x+y\end{matrix}\right] \\
-&=\hi\big(1-1)\big)-\hj\big(1-1\big)+\hk\big(1-1\big) \\
+&=\hi\big(1-1\big)-\hj\big(1-1\big)+\hk\big(1-1\big) \\
 &=\vZero 
 \end{align*}
 This $\vF$ is conservative! (In fact 
@@ -5150,7 +5150,8 @@ is a vector potential for $\vG$, which we can quickly check.
 
 Parametrizing $C$ by
 $\vr(t) = \cos t\,\hi+\sin t\,\hj$, $0\le t\le 2\pi$,
-Stokes' theorem gives (recalling that $z=0$ on $C$)
+Stokes' theorem gives (recalling that $z=0$ on $C$ so that
+$\vF\big(\vr(t)\big)=x^2\,\hj\Big|_{x=\cos t}=\cos^2t$)
 \begin{align*}
 \dblInt_S\vG\cdot\hn\,\dee{S}
 &= \dblInt_S\vnabla\times\vF\cdot\hn\,\dee{S}
@@ -5255,9 +5256,9 @@ $x=2\cos t$, $y=\sqrt{2}\sin t$, $z=\sqrt{2}\sin t$ satisfies both
 $x^2+y^2+z^2=4$ and $z=y$. 
 
 At $t=0$, $\vr(0)=(2,0,0)$. As $t$ increases,
-$z(t)=\sqrt{2}$ increases and $\vr(t)$ moves upwards towards 
+$z(t)=\sqrt{2}\sin t$ increases and $\vr(t)$ moves upwards towards 
 $\vr\big(\frac{\pi}{2}\big)=(0,\sqrt{2},\sqrt{2})$.
-This is the desired counterclockwise direction. Now that we have a 
+This is the desired counterclockwise direction (when viewed from above). Now that we have a 
 parametrization, we can set up the integral.
 \begin{align*}
 \vr(t)&=\big(2\cos t, \sqrt{2}\sin t,\sqrt{2}\sin t\big)\cr
@@ -5331,7 +5332,8 @@ the domain of integration is
 R=\Set{(x,y)}{(x,y,z)\text{ is in }S\text{ for some }z}
 \end{equation*}
 To determine precisely what this domain of integration is, we observe that
-since $z=y$ on $S$
+since $z=y$ on $S$, $x^2+y^2+z^2\le 4$ is the same as $x^2+2y^2\le 4$ on $S$, 
+so that  
 \begin{equation*}
 S=\Set{(x,y,z)}{x^2+2y^2\le 4,\ z=y}
 \implies R=\Set{(x,y)}{x^2+2y^2\le 4}
@@ -5454,7 +5456,7 @@ in the surface, giving it a very small boundary. Then take the limit as the hole
      =\oint_{\partial S}\vA\cdot\dee{\vr}
      =0
 \end{align*}
-by Stokes' theorem. But we found in Example \ref{eg:fluxIntegralA}, 
+by Stokes' theorem, since $\partial S$ is empty. But we found in Example \ref{eg:fluxIntegralA}, 
 with $m=1$, that the flux of $\vB$ through any sphere centred on 
 the origin is $4\pi$.
 
@@ -5537,7 +5539,7 @@ tells us the orientation of $D_\veps$. Give the circle $C_\veps$ the
 corresponding orientation using the right hand rule.
 That is, if the fingers of your right hand are pointing in the corresponding
 direction of motion along $C_\veps$ and your palm is facing $D_\veps$, then 
-the thumb is pointing in the direction $\hn$.
+your thumb is pointing in the direction $\hn$.
 \begin{nfig}
 \begin{center}
     \includegraphics{prepaddle.pdf}

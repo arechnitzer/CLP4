@@ -589,7 +589,7 @@ $z=f(x,y)$. Then, renaming $u$ to $x$ and $v$ to $y$, we may reuse part (a):
 \begin{equation*}
 \vr(x,y) = \big(x,y, f(x,y)\big)
 \end{equation*}
-parametrizes the surface and, at $\big(x_0,y_0,z_0=f(x_0,y_0)\big)$,
+parametrizes the surface and, at $\big(x_0,y_0,z_0\big)=f(x_0,y_0)\big)$,
 \begin{align*}
 \vT_x &= \frac{\partial\vr }{\partial x}(x_0,y_0)
 =\big(1\,,\,
@@ -796,14 +796,15 @@ parametrization by exploiting the hyperbolic trig functions
 \end{equation*}  
 The functions have properties\footnote{This is no accident: 
 $\cosh u = \cos(iu)$ and $\sinh u = -i\sin(iu)$, where $i$ is the usual 
-complex number that obeys $i^2=-1$.} that are very 
-similar to those of $\sin\theta$ and $\cos\theta$.
+complex number that obeys $i^2=-1$. You can verify these formulae by just checking that $\cosh u$ and $\cos(iu)$ have the same Taylor expansions 
+and that $\sinh u$ and $-i\sin(iu)$ have the same Taylor expansions.} 
+that are very similar to those of $\sin\theta$ and $\cos\theta$.
 \begin{align*}
 \diff{\ }{u} \cosh u= \sinh u \qquad 
 \diff{\ }{u} \sinh u= \cosh u \qquad 
 \cosh^2 u -\sinh^2 u =1
 \end{align*}
-We can set $r=\cosh u$, $z=\sinh u$ to yield the parametrization
+Observe that we can turn $r^2-z^2=1$ into $\cosh^2 u -\sinh^2 u =1$ simply by setting $r=\cosh u$, $z=\sinh u$. Doing so yields the parametrization
 \begin{align*}
 \vr(\theta,u) = \cosh u\,\cos\theta\,\hi +\cosh u\,\sin\theta\,\hj
       +\sinh u\,\hk

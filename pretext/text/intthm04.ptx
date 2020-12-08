@@ -895,7 +895,7 @@ Stokes' theorem.
                  &amp;\frac{\partial }{\partial z} \\
                 \cos x +  y+z&amp;x+z&amp;x+y\end{matrix}\right]
 </mrow><mrow>
-&amp;=\hi\big(1-1)\big)-\hj\big(1-1\big)+\hk\big(1-1\big)
+&amp;=\hi\big(1-1\big)-\hj\big(1-1\big)+\hk\big(1-1\big)
 </mrow><mrow>
 &amp;=\vZero
 </mrow>
@@ -1027,7 +1027,8 @@ is a vector potential for <m>\vG</m>, which we can quickly check.
 
 <p>Parametrizing <m>C</m> by
 <m>\vr(t) = \cos t\,\hi+\sin t\,\hj</m>, <m>0\le t\le 2\pi</m>,
-Stokes' theorem gives (recalling that <m>z=0</m> on <m>C</m>)
+Stokes' theorem gives (recalling that <m>z=0</m> on <m>C</m>  so that
+<m>\vF\big(\vr(t)\big)=x^2\,\hj\Big|_{x=\cos t}=\cos^2t</m>)
 <md>
 <mrow>
 \dblInt_S\vG\cdot\hn\,\dee{S}
@@ -1154,9 +1155,9 @@ To check that this parametrization is correct, note that
 </p>
 
 <p>At <m>t=0</m>, <m>\vr(0)=(2,0,0)</m>. As <m>t</m> increases,
-<m>z(t)=\sqrt{2}</m> increases and <m>\vr(t)</m> moves upwards towards
+<m>z(t)=\sqrt{2}\sin t</m> increases and <m>\vr(t)</m> moves upwards towards
 <m>\vr\big(\frac{\pi}{2}\big)=(0,\sqrt{2},\sqrt{2})</m>.
-This is the desired counterclockwise direction. Now that we have a
+This is the desired counterclockwise direction (when viewed from above). Now that we have a
 parametrization, we can set up the integral.
 <md>
 <mrow>
@@ -1250,7 +1251,7 @@ the domain of integration is
 R=\Set{(x,y)}{(x,y,z)\text{ is in }S\text{ for some }z}
 </me>
 To determine precisely what this domain of integration is, we observe that
-since <m>z=y</m> on <m>S</m>
+since <m>z=y</m> on <m>S</m>, <m>x^2+y^2+z^2\le 4</m> is the same as <m>x^2+2y^2\le 4</m> on <m>S</m>,
 <me>
 S=\Set{(x,y,z)}{x^2+2y^2\le 4,\ z=y}
 \implies R=\Set{(x,y)}{x^2+2y^2\le 4}
@@ -1400,7 +1401,7 @@ in the surface, giving it a very small boundary. Then take the limit as the hole
      =0
 </mrow>
 </md>
-by Stokes' theorem. But we found in Example <xref ref="eg_fluxIntegralA"/>,
+by Stokes' theorem, since <m>\partial S</m> is empty. But we found in Example <xref ref="eg_fluxIntegralA"/>,
 with <m>m=1</m>, that the flux of <m>\vB</m> through any sphere centred on
 the origin is <m>4\pi</m>.
 </p>
@@ -1507,7 +1508,7 @@ tells us the orientation of <m>D_\veps</m>. Give the circle <m>C_\veps</m> the
 corresponding orientation using the right hand rule.
 That is, if the fingers of your right hand are pointing in the corresponding
 direction of motion along <m>C_\veps</m> and your palm is facing <m>D_\veps</m>, then
-the thumb is pointing in the direction <m>\hn</m>.
+your thumb is pointing in the direction <m>\hn</m>.
 </p>
 
 <sidebyside width="20%">
