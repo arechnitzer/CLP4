@@ -65,9 +65,9 @@ public class cubeB extends Template {
           fLine(x1+x2, y1+y2, x1+x2+x3, y1+y2+y3) ;
           fLine(x3+x2, y3+y2, x1+x2+x3, y1+y2+y3) ;
           
-          fTeXlabel(x1/2-8,y1/2-10, "lt", "$\\scriptstyle\\veps\\vb_2(t)$") ;
-          fTeXlabel(-4,y2/2, "lb", "$\\scriptstyle\\veps\\vb_1(t)$") ;
-          fTeXlabel(x3/2-7,y3-10, "tr", "$\\scriptstyle\\veps\\vb_3(t)$") ;
+          fTeXlabel(x1/2-8,y1/2-10, "lt", "$\\scriptstyle\\veps\\vb^{(2)}(t)$") ;
+          fTeXlabel(-4,y2/2, "lb", "$\\scriptstyle\\veps\\vb^{(1)}(t)$") ;
+          fTeXlabel(x3/2-7,y3-10, "tr", "$\\scriptstyle\\veps\\vb^{(3)}(t)$") ;
 
 
           

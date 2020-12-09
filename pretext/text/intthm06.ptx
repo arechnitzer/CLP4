@@ -39,11 +39,11 @@ nearest neighbour corners are <m>\veps\ha{1},\ \veps\ha{2}</m> and <m>\veps\ha{3
 
 <p>As time progresses,
 the chunk of fluid moves. In particular, the corners move. Let us denote by
-<m>\veps\vb_1(t)</m> the vector, at time <m>t</m>,
-joining the <m>n_1=n_2=n_3=0</m> corner to the <m>n_1=1,\
-n_2=n_3=0</m> corner. Define <m>\veps\vb_2(t)</m> and <m>\veps\vb_3(t)</m> similarly.
+<m>\veps\vb^{(1)}(t)</m> the vector, at time <m>t</m>,
+joining the <m>n_1=n_2=n_3=0</m> corner to the <m>n_1=1,\ n_2=n_3=0</m> corner. 
+Define <m>\veps\vb^{(2)}(t)</m> and <m>\veps\vb^{(3)}(t)</m> similarly.
 For times very close to <m>t_0</m> we can think of our chunk of fluid as being
-essentially a parallelepiped with edges <m>\veps\vb_k(t)</m>.
+essentially a parallelepiped with edges <m>\veps\vb^{(k)}(t)</m>.
 </p>
 
 <sidebyside width="28%">
@@ -51,54 +51,56 @@ essentially a parallelepiped with edges <m>\veps\vb_k(t)</m>.
 </sidebyside>
 
 <p>
-By concentrating on the edges <m>\veps\vb_k(t)</m> of the chunk of fluid, rather
+By concentrating on the edges <m>\veps\vb^{(k)}(t)</m> of the chunk of fluid, rather
 than the corners, we are ignoring any translations that the chunk of
 fluid might have undergone. We want, instead, to determine
 how the size and orientation of the parallelepiped changes  as <m>t</m> increases.
 </p>
 
-<p>At time <m>t_0</m>, <m>\vb_k=\ha{k}</m>.
+<p>At time <m>t_0</m>, <m>\vb^{(k)}=\ha{k}</m>.
 The velocities  of the corners of the chunk of fluid at time <m>t_0</m> are
 <me>
 \vv\big(\vx_0+n_1\veps\ha{1}+n_2\veps\ha{2}+n_3\veps\ha{3},t_0\big)
 </me>
-In particular, at time <m>t_0</m>, the tail of <m>\veps\vb_k</m> has velocity
-<m>\vv(\vx_0,t_0)</m> and the head of <m>\veps\vb_k</m> has velocity
+In particular, at time <m>t_0</m>, the tail of <m>\veps\vb^{(k)}</m> has velocity
+<m>\vv(\vx_0,t_0)</m> and the head of <m>\veps\vb^{(k)}</m> has velocity
 <m>\vv(\vx_0+\veps\ha{k},t_0)</m>. Consequently (using a Taylor approximation),
 <me>
-\veps\diff{\vb_k}{t}(t_0)=\vv\big(\vx_0+\veps\ha{k},t_0\big)
+\veps\diff{\vb^{(k)}}{t}(t_0)=\vv\big(\vx_0+\veps\ha{k},t_0\big)
       -\vv\big(\vx_0,t_0\big)
 =\smsum_{j=1}^3\veps\frac{\partial\vv}{\partial x_j}\big(\vx_0,t_0\big)\ha{k}_j
 +O(\veps^2)
 </me>
 and so
 <me>
-\diff{\vb_k}{t}(t_0)
+\diff{\vb^{(k)}}{t}(t_0)
 =\smsum_{j=1}^3\frac{\partial\vv}{\partial x_j}\big(\vx_0,t_0\big)\ha{k}_j
 +O(\veps)
 </me>
 The notation <m>O(\veps^n)</m> represents a function that is bounded by a constant
 times <m>\veps^n</m> for all sufficiently small <m>\veps</m>. That is, we are saying that
-<m>\diff{\vb_k}{t}(t_0)</m> is
+<m>\diff{\vb^{(k)}}{t}(t_0)</m> is
 <m>\smsum_{j=1}^3\frac{\partial\vv}{\partial x_j}\big(\vx_0,t_0\big)\ha{k}_j</m>
 plus a small error that is bounded by a constant time <m>\veps</m>.
 The notation <m>\ha{k}_j</m>
 just refers to the <m>j^{\rm th}</m> component of the vector <m>\ha{k}</m>.
 </p>
 
-<p>Define the <m>3\times 3</m> matrix <m>\cV</m> by
+<p>Denote by <m>\cV</m> the <m>3\times 3</m> matrix whose <m>(i,j)</m> matrix element is
 <me>
 \cV_{i,j}=\frac{\partial \vv_i}{\partial x_j}\big(\vx_0,t_0\big)
+\qquad 1\le i,j\le 3
 \tag{M}
 </me>
 Then we can write the above more compactly:
 <me>
-\diff{\vb_k}{t}(t_0)=\cV\vb_k(t_0)+O(\veps)
+\diff{\vb^{(k)}}{t}(t_0)=\cV\vb^{(k)}(t_0)+O(\veps)
 </me>
-We study the behaviour of <m>\vb_k(t)</m> for small <m>\veps</m>  and <m>t</m> close to
+Here <m>\cV\vb^{(k)}(t_0)</m> is the product of the <m>3\times 3</m> matrix <m>\cV</m> and the <m>3\times 1</m> column vector <m>\vb^{(k)}(t_0)</m>. 
+We study the behaviour of <m>\vb^{(k)}(t)</m> for small <m>\veps</m>  and <m>t</m> close to
 <m>t_0</m>, by studying the behaviour of the solutions to the initial value problems
 <me>
-\diff{\vb_k}{t}(t)=\cV\vb_k(t)\qquad \vb_k(t_0)=\ha{k}
+\diff{\vb^{(k)}}{t}(t)=\cV\vb^{(k)}(t)\qquad \vb^{(k)}(t_0)=\ha{k}
 \tag{IVP}
 </me>
 To warm up, we first look at two two-dimensional examples. In both
@@ -106,7 +108,7 @@ examples, the velocity field <m>\vv(x,y)</m> is linear in <m>(x,y)</m>.
 Consequently, in these examples, <m>\vv\big(\vx_0+\veps\ha{k},t_0\big)-\vv\big(\vx_0,t_0\big)</m>
 is exactly <m>\smsum_{j=1}^3\veps\frac{\partial\vv}
 {\partial x_j}\big(\vx_0,t_0\big)\ha{k}_j</m> and
- the solution to (IVP) coincides with the exact <m>\vb_k(t)</m>.
+ the solution to (IVP) coincides with the exact <m>\vb^{(k)}(t)</m>.
 Following each example, we discuss a broad class of <m>\cV</m>'s that generate
 behaviour similar to that example.
 </p>
@@ -176,21 +178,21 @@ Denote by <m>\la_k,\ 1\le k\le d</m>, the eigenvalues of <m>\cV</m> and choose
 <m>d</m> mutually perpendicular real unit vectors, <m>\ha{k}</m>,  that obey
 <m>\cV\ha{k}=\la_k\ha{k}</m> for all <m>1\le k\le d</m>. Then
 <me>
-\vb_k(t)=e^{\la_k (t-t_0)}\ \ha{k}
+\vb^{(k)}(t)=e^{\la_k (t-t_0)}\ \ha{k}
 </me>
 obeys
 <me>
-\diff{\vb_k}{t}(t)=\la_ke^{\la_k (t-t_0)}\ \ha{k}=e^{\la_k (t-t_0)}\ \cV\ha{k}
-=\cV\vb_k(t)\qquad\text{and}\qquad
-\vb_k(t_0)= \ha{k}
+\diff{\vb^{(k)}}{t}(t)=\la_ke^{\la_k (t-t_0)}\ \ha{k}=e^{\la_k (t-t_0)}\ \cV\ha{k}
+=\cV\vb^{(k)}(t)\quad\text{and}\quad
+\vb^{(k)}(t_0)= \ha{k}
 </me>
-So <m>\vb_k(t)=e^{\la_k (t-t_0)}\ \ha{k}</m> satisfies (IVP) for all <m>t</m> and
+So <m>\vb^{(k)}(t)=e^{\la_k (t-t_0)}\ \ha{k}</m> satisfies (IVP) for all <m>t</m> and
 <m>1\le k\le d</m>.
 </p>
 
 <p>If we start, at time <m>t_0</m>, with a cube whose edges, <m>\ha{k}</m>,
  are eigenvectors of <m>\cV</m>, then as time progresses the edges,
-<m>\vb_k(t)</m>, of the chunk of fluid never change direction. But their lengths
+<m>\vb^{(k)}(t)</m>, of the chunk of fluid never change direction. But their lengths
 change with the relative rate of change of length per unit time being <m>\la_k</m>
 for edge number <m>k</m>. This rate of change may be positive (the edge grows
 with time) or negative (the edge shrinks in time) depending on the sign
@@ -250,12 +252,12 @@ and is the identity matrix when <m>t=t_0</m>. So
 <m>\vb'(t)=\cV\vb(t)</m> and <m>\vb(t_0)=\ve</m>.
 </p>
 
-<p>Pick any <m>d</m> vectors <m>\ve_k,\ 1\le k\le d</m>, and
-define <m>\vb_k(t)=e^{\cV (t-t_0)}\ve_k</m>. Also let <m>E</m> be the <m>d\times d</m> matrix
-whose <m>k^{\rm th}</m> column is <m>\ve_k</m> and <m>E(t)</m>  be the <m>d\times d</m> matrix
-whose <m>k^{\rm th}</m> column is <m>\vb_k(t)</m>. Then the volume of the parallelepiped
-with edges <m>\ve_k,\ 1\le k\le d</m>, is <m>V(t_0)=\det E</m> and the volume of the
-parallelepiped with edges <m>\vb_k(t),\ 1\le k\le d</m>, is
+<p>Pick any <m>d</m> vectors <m>\ve^{(k)},\ 1\le k\le d</m>, and
+define <m>\vb^{(k)}(t)=e^{\cV (t-t_0)}\ve^{(k)}</m>. Also let <m>E</m> be the <m>d\times d</m> matrix
+whose <m>k^{\rm th}</m> column is <m>\ve^{(k)}</m> and <m>E(t)</m>  be the <m>d\times d</m> matrix
+whose <m>k^{\rm th}</m> column is <m>\vb^{(k)}(t)</m>. Then the volume of the parallelepiped
+with edges <m>\ve^{(k)},\ 1\le k\le d</m>, is <m>V(t_0)=\det E</m> and the volume of the
+parallelepiped with edges <m>\vb^{(k)}(t),\ 1\le k\le d</m>, is
 <me>
 V(t)=\det E(t)=\det\big(e^{\cV (t-t_0)}E\big)
 =\det\big(e^{\cV (t-t_0)}\big)\det E
@@ -263,8 +265,9 @@ V(t)=\det E(t)=\det\big(e^{\cV (t-t_0)}E\big)
 </me>
 Of course now we have to compute the determinant of the exponential of a matrix.
 Luckily, there is an easy way to do this.
-For any <m>d\times d</m> matrix <m>B</m>, <m>\det e^B=e^{\tr B}</m>, so<fn>Again, we won't prove this. But for a diagonal matrix, it is easy <mdash/> just compute
-both sides. So for a diagonalizable matrix it is also easy <mdash/> diagonalize.</fn>
+For any <m>d\times d</m> matrix <m>B</m>, we have<fn>Again, we won't prove this. But for a diagonal matrix, it is easy <mdash/> just compute both sides. So for a diagonalizable matrix it is also easy <mdash/> diagonalize.</fn> <m>\det e^B=e^{\tr B}</m>, 
+where <m>\tr B</m>, called the trace of the matrix <m>B</m>, is the sum of the diagonal matrix elements of <m>B</m>.
+So
 <me>
 V(t)=e^{(t-t_0)\tr \cV }V(t_0)\qquad\Rightarrow\qquad
 \frac{V'(t_0)}{V(t_0)}=\tr \cV=\sum_{i=1}^d \cV_{i,i}
@@ -305,8 +308,8 @@ in this example, no matter
 what direction vectors <m>\ha{k}</m> we pick, the chunk of fluid just
 rotates at one radian
 per unit time. In the figure below, the outlined
-rectangle is the initial square. That is, the square with edges <m>\vb_k(t_0)=\ha{k}</m>.
-The shaded rectangle is that with edges <m>\vb_k(t)</m> for some <m>t</m> a bit
+rectangle is the initial square. That is, the square with edges <m>\vb^{(k)}(t_0)=\ha{k}</m>.
+The shaded rectangle is that with edges <m>\vb^{(k)}(t)</m> for some <m>t</m> a bit
 bigger than <m>t_0</m>.
 </p>
 
@@ -437,19 +440,19 @@ is.  When <m>\cV</m> is antisymmetric, <m>A</m> and <m>\cV</m> coincide. The mat
 is (to write it out explicitly)
 <me>
 \frac{1}{2}\!\!\left[\begin{matrix}0 &amp;
-                        \!\!\!\frac{\partial v_1}{\partial x_2}\big(\vx_0,t_0\big)
-                   \!-\!\frac{\partial v_2}{\partial x_1}\big(\vx_0,t_0\big)&amp;
+                        \!\!\!\frac{\partial \vv_1}{\partial x_2}\big(\vx_0,t_0\big)
+                   \!-\!\frac{\partial \vv_2}{\partial x_1}\big(\vx_0,t_0\big)&amp;
                         \!\!\!\frac{\partial v_1}{\partial x_3}\big(\vx_0,t_0\big)
-                  \!-\!\frac{\partial v_3}{\partial x_1}\big(\vx_0,t_0\big)\\
-                        \!-\frac{\partial v_1}{\partial x_2}\big(\vx_0,t_0\big)
-                   \!+\!\frac{\partial v_2}{\partial x_1}\big(\vx_0,t_0\big)&amp;
+                  \!-\!\frac{\partial \vv_3}{\partial x_1}\big(\vx_0,t_0\big)\\
+                        \!-\frac{\partial \vv_1}{\partial x_2}\big(\vx_0,t_0\big)
+                   \!+\!\frac{\partial \vv_2}{\partial x_1}\big(\vx_0,t_0\big)&amp;
                         0 &amp;
-                     \! \!\!\frac{\partial v_2}{\partial x_3}\big(\vx_0,t_0\big)
-                     \!-\!\frac{\partial v_3}{\partial x_2}\big(\vx_0,t_0\big)\\
-                      \!-\!\frac{\partial v_1}{\partial x_3}\big(\vx_0,t_0\big)
-                    \!+\!\frac{\partial v_3}{\partial x_1}\big(\vx_0,t_0\big)&amp;
-                       \!\!-\!\frac{\partial v_2}{\partial x_3}\big(\vx_0,t_0\big)
-                    \!+\!\frac{\partial v_3}{\partial x_2}\big(\vx_0,t_0\big)&amp;
+                     \! \!\!\frac{\partial \vv_2}{\partial x_3}\big(\vx_0,t_0\big)
+                     \!-\!\frac{\partial \vv_3}{\partial x_2}\big(\vx_0,t_0\big)\\
+                      \!-\!\frac{\partial \vv_1}{\partial x_3}\big(\vx_0,t_0\big)
+                    \!+\!\frac{\partial \vv_3}{\partial x_1}\big(\vx_0,t_0\big)&amp;
+                       \!\!-\!\frac{\partial \vv_2}{\partial x_3}\big(\vx_0,t_0\big)
+                    \!+\!\frac{\partial \vv_3}{\partial x_2}\big(\vx_0,t_0\big)&amp;
                      0\end{matrix}\right]
 </me>
 Comparing this with (R), we see that

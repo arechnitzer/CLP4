@@ -1,4 +1,4 @@
-lbl file prepared by figPac Mon Aug 14 11:49:18 PDT 2017
+lbl file prepared by figPac Tue Dec 08 14:58:32 PST 2020
 93.95
 101.18
 0
@@ -15,17 +15,17 @@ lbl file prepared by figPac Mon Aug 14 11:49:18 PDT 2017
 99.47
 0
 2
-$\scriptstyle\veps\vb_2(t)$
+$\scriptstyle\veps\vb^{(2)}(t)$
 51.67
 62.74
 0
 0
-$\scriptstyle\veps\vb_1(t)$
+$\scriptstyle\veps\vb^{(1)}(t)$
 39.46
 58.47
 2
 2
-$\scriptstyle\veps\vb_3(t)$
+$\scriptstyle\veps\vb^{(3)}(t)$
 -1000
 0/1/2 left/center/right
 0/1/2 bottom/center/top
