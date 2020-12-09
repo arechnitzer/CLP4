@@ -1526,12 +1526,12 @@ We may parametrize\footnote{We did so previously, with different variable names,
 \vr(z,\theta) &= z\cos\theta\,\hi +  z\sin\theta\,\hj + z\,\hk \qquad
 0\le z\le 1,\ 0\le\theta\le 2\pi
 \end{align*}
-The because
+Then because
 \begin{align*}
 \frac{\partial\vr}{\partial z}
    =  \cos\theta\,\hi +  \sin\theta\,\hj + \hk \qquad\text{and}\qquad
-\frac{\partial\vr}{\partial z}
-   =  -z\sin\theta\,\hi +  z\c0s\theta\,\hj 
+\frac{\partial\vr}{\partial\theta}
+   =  -z\sin\theta\,\hi +  z\cos\theta\,\hj 
 \end{align*}
 \eqref{eq:SUdSparam} yields\footnote{Again the formula for $\dee{S}$ is
    very neat. Think about why.}
@@ -1671,10 +1671,12 @@ When $\varphi=0$, $u=(a-b)^2$ and when $\varphi =\pi$, $u=(a+b)^2$, so
 \vF 
 &=  \frac{\pi G\mu m a}{b} \hk\int_{(a-b)^2}^{(a+b)^2} 
      \dee{u}\  \frac{\frac{a^2+b^2-u}{2b}-b}  {u^{3/2}} \\
+&=  \frac{\pi G\mu m a}{b} \hk\int_{(a-b)^2}^{(a+b)^2} 
+     \dee{u}\  \frac{\frac{a^2-b^2-u}{2b}}  {u^{3/2}} \\
 &=  \frac{\pi G\mu m a}{b} \hk\Big[ 
       \Big(\frac{a^2-b^2}{2b}\Big)\frac{u^{-1/2}}{-1/2}
-            -\frac{u^{1/2}}{1/2(2b)}
-   \Big]_{(a-b)^2}^{(a+b)^2}\\
+            -\Big(\frac{1}{2b}\Big)\frac{u^{1/2}}{1/2}
+   \Big]_{(a-b)^2}^{(a+b)^2}
 \end{align*}
 Recalling that $u^{1/2}$ is the \emph{positive} square root,
 \begin{align*}
@@ -1838,8 +1840,10 @@ x(t)  = \sqrt{R^2-Z^2} \cos\left(\sqrt{\frac{4\pi G\rho}{3}}\ t\right)
 \end{equation*}
 The train reaches $M$ when $x(t)  = -\sqrt{R^2-Z^2}$. That is, when
 $\cos\left(\sqrt{\frac{4\pi G\rho}{3}}\ t\right)=-1$. So the transit
-time from $V$ to $M$ is
+time, $T$, from $V$ to $M$ obeys
 \begin{equation*}
+\sqrt{\frac{4\pi G\rho}{3}}\ T=\pi
+\implies
 T= \pi  \sqrt{\frac{3}{4\pi G\rho}}
   = \sqrt{\frac{3\pi}{4 G\rho}}
 \end{equation*}
