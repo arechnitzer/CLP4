@@ -6169,13 +6169,14 @@ centered on the $\ell^{\rm th}$ puncture.
 
 
 %%%%%%%%%%%%%%%%%%%%%%%%%
-\section{Optional --- More Interpretation of Div and Curl}
+\section[Optional --- More Interpretation of Div and Curl]
+    {Really Optional --- More Interpretation of Div and Curl}
 %%%%%%%%%%%%%%%%%%%%%%%%%
 
 
 We are now going to determine, in much more detail than before\footnote{We'll 
 also use some more mathematics than before. In this section, we'll
-use eigenvalues and eigenvectors and solve some simple systems of
+use matrix eigenvalues and eigenvectors and solve some simple systems of
 ordinary differential equations. We'll also need to use a lot of subscripts and 
 superscripts. It only looks intimidating.
 },
@@ -6766,16 +6767,21 @@ The $A$ part of the flow rotates clockwise about  the origin at one radian
 per unit time.
 
 
-Here are some figures to help us visualize this. The first shows 
-a square with edges $\ha{1},\ \ha{2}$
+Here are some figures to help us visualize this. 
+\begin{itemize}\itemsep1pt \parskip0pt \parsep0pt \itemindent-15pt
+\item
+The first shows  a square with edges $\ha{1},\ \ha{2}$
 and its image under the full flow $t=0.4$ later.  Under this full flow
-the vector $\ha{k}\rightarrow e^{0.4\cV}\ha{k}$. The second shows its image 
-under $0.4$ time units of the $S$-flow (that is, $\ha{k}\rightarrow e^{0.4S}\ha{k}$).
+the vector $\ha{k}\rightarrow e^{0.4\cV}\ha{k}$. The darkly shaded parallelepiped has edges $e^{0.4\cV}\ha{k}$.
+\item
+The second shows its image under $0.4$ time units of the $S$-flow (that is, $\ha{k}\rightarrow e^{0.4S}\ha{k}$). The lightly shaded rectangle 
+has edges $e^{0.4S}\ha{k}$.
+\item
  The third applies $0.4$ time units of the $A$-flow to the shaded rectangle
 of the middle figure. So the lightly shaded rectangle of the third figure
 has edges $e^{0.4S}\ha{k}$ and the darkly shaded rectangle 
 has edges $e^{0.4A}e^{0.4S}\ha{k}$.
-
+\end{itemize}
 \begin{wfig}
 \begin{center}
     \includegraphics{square3.pdf}\qquad
@@ -6783,9 +6789,10 @@ has edges $e^{0.4A}e^{0.4S}\ha{k}$.
     \includegraphics{square5.pdf}
 \end{center}
 \end{wfig}
-Of course $e^{0.4A}e^{0.4S}\ha{k}$ is not a very good approximation
-for $e^{0.4(A+S)}\ha{k}$. It is much better to take
-$\big[e^{0.4A/n}e^{0.4S/n}\big]^{n}\ha{k}$ with $n$ large. 
+Of course $e^{0.4A}e^{0.4S}\ha{k}$ (as in the darly shaded rectangle of the right hand figure) is not a very good approximation for $e^{0.4(A+S)}\ha{k}$ 
+(as in the darkly shaded parallelepiped of the left hand figure). 
+It is much better to take $\big[e^{0.4A/n}e^{0.4S/n}\big]^{n}\ha{k}$ with $n$ large. 
+
 Each of the following figures shows two parallelepipeds. In each,
 the shaded region has edges
 $e^{0.4\cV}\ha{k}=e^{0.4(A+S)}\ha{k}$ and the outlined region has edges 

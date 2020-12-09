@@ -5,11 +5,11 @@
 <!-- This work is licensed under the Creative Commons Attribution-NonCommercial-ShareAlike 4.0 International License-->
 <!-- https://creativecommons.org/licenses/by-nc-sa/4.0 -->
 
-<title>Optional <mdash/> More Interpretation of Div and Curl</title>
+<title>Really Optional <mdash/> More Interpretation of Div and Curl</title>
 
 
 <p>We are now going to determine, in much more detail than before<fn>We'll  also use some more mathematics than before. In this section, we'll
-use eigenvalues and eigenvectors and solve some simple systems of
+use matrix eigenvalues and eigenvectors and solve some simple systems of
 ordinary differential equations. We'll also need to use a lot of subscripts and
 superscripts. It only looks intimidating.</fn>,
 what the divergence and curl of a vector field tells us about the
@@ -639,15 +639,21 @@ The <m>A</m> part of the flow rotates clockwise about  the origin at one radian
 per unit time.
 </p>
 
-<p>Here are some figures to help us visualize this. The first shows
-a square with edges <m>\ha{1},\ \ha{2}</m>
+<p>Here are some figures to help us visualize this. 
+<ul>
+<li> The first shows a square with edges <m>\ha{1},\ \ha{2}</m>
 and its image under the full flow <m>t=0.4</m> later.  Under this full flow
-the vector <m>\ha{k}\rightarrow e^{0.4\cV}\ha{k}</m>. The second shows its image
-under <m>0.4</m> time units of the <m>S</m>-flow (that is, <m>\ha{k}\rightarrow e^{0.4S}\ha{k}</m>).
+the vector <m>\ha{k}\rightarrow e^{0.4\cV}\ha{k}</m>. The darkly shaded parallelepiped has edges <m>e^{0.4\cV}\ha{k}</m>.
+</li><li>
+The second shows its image
+under <m>0.4</m> time units of the <m>S</m>-flow (that is, <m>\ha{k}\rightarrow e^{0.4S}\ha{k}</m>). The lightly shaded rectangle has edges <m>e^{0.4S}\ha{k}</m>.
+</li><li>
  The third applies <m>0.4</m> time units of the <m>A</m>-flow to the shaded rectangle
-of the middle figure. So the lightly shaded rectangle of the third figure
+of the second figure. So the lightly shaded rectangle of the third figure
 has edges <m>e^{0.4S}\ha{k}</m> and the darkly shaded rectangle
 has edges <m>e^{0.4A}e^{0.4S}\ha{k}</m>.
+</li>
+</ul>
 </p>
 
 <sidebyside widths="33% 32%" valign="middle">
@@ -660,8 +666,8 @@ has edges <m>e^{0.4A}e^{0.4S}\ha{k}</m>.
 </sidebyside>
 
 <p>
-Of course <m>e^{0.4A}e^{0.4S}\ha{k}</m> is not a very good approximation
-for <m>e^{0.4(A+S)}\ha{k}</m>. It is much better to take
+Of course <m>e^{0.4A}e^{0.4S}\ha{k}</m>  (as in the darly shaded rectangle of the third figure) is not a very good approximation
+for <m>e^{0.4(A+S)}\ha{k}</m> (as in the darkly shaded parallelepiped of the first figure). It is much better to take
 <m>\big[e^{0.4A/n}e^{0.4S/n}\big]^{n}\ha{k}</m> with <m>n</m> large.
 Each of the following figures shows two parallelepipeds. In each,
 the shaded region has edges
