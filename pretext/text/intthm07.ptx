@@ -652,7 +652,7 @@ If <m>\om</m> is a <m>k</m>-form, then <m>\dee{\om}</m> is a <m>k+1</m>-form, wi
 <m>\dee{}</m> being the unique<fn>That <m>\dee{}</m> is unique just means that
 the action of <m>\dee{}</m> on <em>any</em> differential form is completely
 determined by the four rules (a), (b), (c), (d). We will see in
-Example <xref ref="eg_diffFormDiff"/>.b,c,d, that this is indeed the case.</fn>
+Example <xref ref="eg_diffFormDiff"/>.c,d,e, that this is indeed the case.</fn>
 such operator that obeys
 <ol label="a">
 <li>
@@ -778,7 +778,7 @@ For any <m>2</m>-form
 </mrow><mrow>
 &amp;\hskip0.5in=\dee{F_1}\wedge\dee{y}\wedge\dee{z}
 + \dee{F_2}\wedge\dee{z}\wedge\dee{x}
-+ \dee{F_3}\wedge\dee{x}\wedge\dee{y}\big]
++ \dee{F_3}\wedge\dee{x}\wedge\dee{y}
 
 </mrow><mrow>
 &amp;\hskip0.5in=\Big(\frac{\partial F_1}{\partial x}\ \dee{x}
