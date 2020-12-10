@@ -6293,10 +6293,10 @@ is
 If one chooses $\ha{1}=\hi$ and $\ha{2}=\hj$, the edges, 
 $\vb^{(1)}(t)=e^{2t}\ha{1}$ and  $\vb^{(2)}(t)=e^{3t}\ha{2}$, of the chunk of
 fluid never change direction. But their lengths do change. The relative rate
-of change of length per unit time, $|\diff{\vb_k}{t}(t)|/|\vb_k(t)|$, 
+of change of length per unit time, $|\diff{\vb^{(k)}}{t}(t)|/|\vb^{(k)}(t)|$, 
 is $2$ for $\vb^{(1)}$ and 3 for $\vb^{(2)}$. In the figure below, the darker
-rectangle is the initial square. That is, the square with edges $\vb_k(t_0)=\ha{k}$.
-The lighter rectangle is that with edges $\vb_k(t)$ for some $t$ a bit
+rectangle is the initial square. That is, the square with edges $\vb^{(k)}(t_0)=\ha{k}$.
+The lighter rectangle is that with edges $\vb^{(k)}(t)$ for some $t$ a bit
 bigger than $t_0$.
 
 \begin{nfig}
@@ -6772,7 +6772,7 @@ Here are some figures to help us visualize this.
 \item
 The first shows  a square with edges $\ha{1},\ \ha{2}$
 and its image under the full flow $t=0.4$ later.  Under this full flow
-the vector $\ha{k}\rightarrow e^{0.4\cV}\ha{k}$. The darkly shaded parallelepiped has edges $e^{0.4\cV}\ha{k}$.
+the vector $\ha{k}\rightarrow e^{0.4\cV}\ha{k}$. The darkly shaded parallelogram has edges $e^{0.4\cV}\ha{k}$.
 \item
 The second shows its image under $0.4$ time units of the $S$-flow (that is, $\ha{k}\rightarrow e^{0.4S}\ha{k}$). The lightly shaded rectangle 
 has edges $e^{0.4S}\ha{k}$.
@@ -6790,10 +6790,10 @@ has edges $e^{0.4A}e^{0.4S}\ha{k}$.
 \end{center}
 \end{wfig}
 Of course $e^{0.4A}e^{0.4S}\ha{k}$ (as in the darly shaded rectangle of the right hand figure) is not a very good approximation for $e^{0.4(A+S)}\ha{k}$ 
-(as in the darkly shaded parallelepiped of the left hand figure). 
+(as in the darkly shaded parallelogram of the left hand figure). 
 It is much better to take $\big[e^{0.4A/n}e^{0.4S/n}\big]^{n}\ha{k}$ with $n$ large. 
 
-Each of the following figures shows two parallelepipeds. In each,
+Each of the following figures shows two parallelograms. In each,
 the shaded region has edges
 $e^{0.4\cV}\ha{k}=e^{0.4(A+S)}\ha{k}$ and the outlined region has edges 
 $\big[e^{0.4A/n}e^{0.4S/n}\big]^{n}\ha{k}$.

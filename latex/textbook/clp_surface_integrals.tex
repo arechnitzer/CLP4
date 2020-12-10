@@ -2016,9 +2016,8 @@ and the rate at which fluid is crossing through $\dee{S}$ is
 \end{itemize}
 Integrating $\dee{S}$ over a surface $S$, we conclude that
 \begin{lemma}\label{lem:fluxInterp}
+The rate at which fluid mass is crossing through a surface $S$ is the flux integral
 \begin{align*}
-&\text{The rate at which fluid is crossing through a surface $S$ is the flux integral}\\
-&\hskip1.2in
 \dblInt_S \rho(x,y,z,t)\vv(x,y,z,t)\cdot\hn(x,y,z)\,\dee{S}
 \end{align*}
 Here $\rho$ is the density of the fluid, $\vv$ is
@@ -2026,7 +2025,10 @@ the velocity field of the fluid, and $\hn(x,y,z)$ is a unit normal
 to $S$ at $(x,y,z)$.
 If the flux integral is positive the fluid is crossing in the direction 
 $\hn$. If it is negative the fluid is crossing opposite to the direction 
-of~$\hn$.
+of~$\hn$. The rate at which volume of fluid is crossing through a surface $S$ is the flux integral
+\begin{align*}
+\dblInt_S \vv(x,y,z,t)\cdot\hn(x,y,z)\,\dee{S}
+\end{align*}
 \end{lemma}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -2060,8 +2062,7 @@ the flux gives the rate at which fluid crosses the sphere in the outward
 direction. If we were to use the inward pointing normal, the flux 
 would give the rate at which fluid crosses the sphere in the inward 
 direction.
-} pointing Lemma \ref{lem:fluxInterp} normal at 
-a point $(x,y,z)$ on the sphere is
+} pointing normal at a point $(x,y,z)$ on the sphere is
 \begin{equation*}
 \hn(x,y,z) = \hat\vr(x,y,z) = \frac{x\hi + y\hj + z\hk}{\sqrt{x^2+y^2+z^2}}
 = \frac{x\hi + y\hj + z\hk}{R}
@@ -2078,7 +2079,7 @@ So the flux of $\vv$ outward through the sphere is
 \\
 &=4\pi m
 \end{align*}
-This is the rate at which fluid is exiting the sphere.
+This is the rate at which volume of fluid is exiting the sphere.
 In our derivation of the vector field we assumed that the fluid is
 incompressible, so it is also the rate at which the point source is 
 creating fluid.
@@ -2377,7 +2378,8 @@ and $y(r,\theta)$, we have
 \begin{align*}
 &\frac{x(r,\theta)^2}{4} + \frac{y(r,\theta)^2}{9}
     =r^2\cos^2\theta+r^2\sin^2\theta = r^2 \\
-\implies  &\frac{x(r,\theta)^2}{4} + \frac{y(r,\theta)^2}{9} +z(r,\theta)^2=1
+\implies  &\frac{x(r,\theta)^2}{4} + \frac{y(r,\theta)^2}{9} +z(r,\theta)^2
+     = r^2 + \left(\sqrt{1-r^2}\right)^2=1
 \end{align*}
 as desired. Further $z(r,\theta)\ge 0$ by our choice of square root in the
 definition of $z(r,\theta)$.
@@ -2418,11 +2420,11 @@ odd natural numbers $m$,
 \int_S \vF\cdot\hn\, \dee{S}
 &=\int_0^1 dr\int_0^{2\pi}\hskip-6pt\dee{\theta}\ 6r\sqrt{1-r^2} \\
 &=12\pi\int_0^1 dr\ r\sqrt{1-r^2}
-=12\pi\Big[-\frac{1}{3}(1-r^2)^{3/2}\Big]_0^1\\
+=12\pi\Big[-\frac{1}{3}{(1-r^2)}^{3/2}\Big]_0^1\\
 &=4\pi
 \end{align*}
 The integral was evaluated by guessing (and checking) that 
-$-\frac{1}{3}(1-r^2)^{3/2}$ is an antiderivative of $r\sqrt{1-r^2}$.
+$-\frac{1}{3}{(1-r^2)}^{3/2}$ is an antiderivative of $r\sqrt{1-r^2}$.
 It can also be done by substituting $u=1-r^2$, 
 $\dee{u}=-2r\,\dee{r}$.
 
@@ -2696,7 +2698,7 @@ to the surface using \eqref{eq:SUdSparam}. The partial derivatives
       + \sin\big(\nicefrac{\theta}{2}\big) \hk
 \end{align*}
 are relatively messy, so let's just consider the case $v=0$ 
-(i.e. find the normal vectors a the backbone).
+(i.e. find the normal vectors on the backbone).
 Then
 \begin{align*}
 \frac{\partial\vr}{\partial\theta}(\theta,0)
