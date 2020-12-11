@@ -159,7 +159,7 @@ A <m>3</m>-form is an expression of the form
 with <m>f(x,y,z)</m> being a function of three variables.
 </li>
 </ol>
-At this stage (there'll more later), just think of <q><m>\dee{x}</m></q>,
+At this stage (there'll be more later), just think of <q><m>\dee{x}</m></q>,
 <q><m>\dee{y}</m></q>, <q><m>\dee{z}</m></q>, <q><m>\dee{x}\wedge\dee{y}</m></q>, and so on,
 as symbols.  Do not yet attempt to attach any significance to them.
 </p></statement>
@@ -847,7 +847,7 @@ variables that happens to be independent of one of the three variables.</fn>
 <mrow>
 \dee{f(t)} &amp; = \diff{f}{t}(t)\,\dee{t}
 </mrow><mrow>
-\dee{f(uv)}
+\dee{f(u,v)}
 &amp;=\frac{\partial f}{\partial u}(u,v)\ \dee{u}
 +\frac{\partial f}{\partial v}(u,v)\ \dee{v}
 </mrow>
@@ -1062,7 +1062,7 @@ Here <m>\partial D</m> is the boundary of <m>D</m> (suitably oriented).
 </theorem>
 
 
-<p>To see the connection between the general Stokes' Theorem <xref ref="thm_GenStokes"/>
+<p>To see the connection between the general Stokes' theorem <xref ref="thm_GenStokes"/>
 and the Stokes' and divergence theorems of the earlier part of this chapter,
 here are the <m>k=1</m> and <m>k=2</m> cases of Theorem <xref ref="thm_GenStokes"/> again.
 <ul>
@@ -1078,7 +1078,7 @@ d\om = (\vnabla\times\vF)_1\,\dee{y}\wedge\dee{z}
 So, by parts (c) (but with <m>\vF</m> replaced by <m>\vnabla\times\vF</m>) and (b)
 of Definition <xref ref="def_differentialFormInt"/>,
 the conclusion <m>\int_D d\om=\int_{\partial D}\om</m> of
-(the general) Stokes' Theorem <xref ref="thm_GenStokes"/> is
+(the general) Stokes' theorem <xref ref="thm_GenStokes"/> is
 <md>
 <mrow>
 \dblInt_S \vnabla\times\vF\cdot\hn\,\dee{S}
@@ -1101,7 +1101,7 @@ d\om = \vnabla\cdot\vF\,\dee{x}\wedge\dee{y}\wedge\dee{z}
 So, by parts (d) (with <m>f =\vnabla\cdot\vF</m>) and (c)
 of Definition <xref ref="def_differentialFormInt"/>,
 the conclusion <m>\int_D d\om=\int_{\partial D}\om</m> of
-(the general) Stokes' Theorem <xref ref="thm_GenStokes"/> is
+(the general) Stokes' theorem <xref ref="thm_GenStokes"/> is
 <md>
 <mrow>
 \tripInt_V \vnabla\cdot\vF\,\dee{x}\dee{y}\dee{z}

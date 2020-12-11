@@ -143,7 +143,7 @@ A $3$-form is an expression of the form
 with $f(x,y,z)$ being a function of three variables.
 
 \end{enumerate}
-At this stage (there'll more later), just think of ``$\dee{x}$'', 
+At this stage (there'll be more later), just think of ``$\dee{x}$'', 
 ``$\dee{y}$'', ``$\dee{z}$'', ``$\dee{x}\wedge\dee{y$}'', and so on, 
 as symbols.  Do not yet attempt to attach any significance to them. 
 \end{defn}
@@ -807,7 +807,7 @@ variables that happens to be independent of one of the three variables.
 } for functions of one or two variables also apply.
 \begin{align*}
 \dee{f(t)} & = \diff{f}{t}(t)\,\dee{t} \\
-\dee{f(uv)}
+\dee{f(u,v)}
 &=\frac{\partial f}{\partial u}(u,v)\ \dee{u}
 +\frac{\partial f}{\partial v}(u,v)\ \dee{v}
 \end{align*}
@@ -1012,7 +1012,7 @@ domain of integration, then
 Here $\partial D$ is the boundary of $D$ (suitably oriented).
 \end{theorem}
 
-To see the connection between the general Stokes' Theorem \ref{thm:GenStokes}
+To see the connection between the general Stokes' theorem \ref{thm:GenStokes}
 and the Stokes' and divergence theorems of the earlier part of this chapter, 
 here are the $k=1$ and $k=2$ cases of Theorem \ref{thm:GenStokes} again.
 \begin{itemize}
@@ -1028,7 +1028,7 @@ d\om = (\vnabla\times\vF)_1\,\dee{y}\wedge\dee{z}
 So, by parts (c) (but with $\vF$ replaced by $\vnabla\times\vF$) and (b)
 of Definition \ref{def:differentialFormInt},
 the conclusion $\int_D d\om=\int_{\partial D}\om$ of 
-(the general) Stokes' Theorem \ref{thm:GenStokes} is
+(the general) Stokes' theorem \ref{thm:GenStokes} is
 \begin{align*}
 \dblInt_S \vnabla\times\vF\cdot\hn\,\dee{S}
 =\int_S d\om=\int_{\partial S}\om
@@ -1049,7 +1049,7 @@ d\om = \vnabla\cdot\vF\,\dee{x}\wedge\dee{y}\wedge\dee{z}
 So, by parts (d) (with $f =\vnabla\cdot\vF$) and (c)
 of Definition \ref{def:differentialFormInt},
 the conclusion $\int_D d\om=\int_{\partial D}\om$ of 
-(the general) Stokes' Theorem \ref{thm:GenStokes} is
+(the general) Stokes' theorem \ref{thm:GenStokes} is
 \begin{align*}
 \tripInt_V \vnabla\cdot\vF\,\dee{x}\dee{y}\dee{z} 
 =\int_V d\om=\int_{\partial V}\om
