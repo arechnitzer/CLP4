@@ -80,20 +80,19 @@ Integrating <m>\dee{S}</m> over a surface <m>S</m>, we conclude that
 
 <lemma xml:id="lem_fluxInterp">
 <statement><p>
-<md>
-<mrow>
-&amp;\text{The rate at which fluid is crossing through a surface $S$ is the flux integral}
-</mrow><mrow>
-&amp;\hskip1.2in
+The rate at which fluid mass is crossing through a surface <m>S</m> is the flux integral
+<me>
 \dblInt_S \rho(x,y,z,t)\vv(x,y,z,t)\cdot\hn(x,y,z)\,\dee{S}
-</mrow>
-</md>
+</me>
 Here <m>\rho</m> is the density of the fluid, <m>\vv</m> is
 the velocity field of the fluid, and <m>\hn(x,y,z)</m> is a unit normal
 to <m>S</m> at <m>(x,y,z)</m>.
 If the flux integral is positive the fluid is crossing in the direction
 <m>\hn</m>. If it is negative the fluid is crossing opposite to the direction
-of<nbsp/><m>\hn</m>.
+of<nbsp/><m>\hn</m>. The rate at which volume of fluid is crossing through a surface <m>S</m> is the flux integral
+<me>
+\dblInt_S \vv(x,y,z,t)\cdot\hn(x,y,z)\,\dee{S}
+</me>
 </p></statement>
 </lemma>
 
@@ -132,7 +131,7 @@ Then the outward<fn>It doesn't really matter which unit normal we pick here. We 
 the flux gives the rate at which fluid crosses the sphere in the outward
 direction. If we were to use the inward pointing normal, the flux
 would give the rate at which fluid crosses the sphere in the inward
-direction.</fn> pointing Lemma <xref ref="lem_fluxInterp"/> normal at
+direction.</fn> pointing normal at
 a point <m>(x,y,z)</m> on the sphere is
 <me>
 \hn(x,y,z) = \hat\vr(x,y,z) = \frac{x\hi + y\hj + z\hk}{\sqrt{x^2+y^2+z^2}}
@@ -154,7 +153,7 @@ So the flux of <m>\vv</m> outward through the sphere is
 &amp;=4\pi m
 </mrow>
 </md>
-This is the rate at which fluid is exiting the sphere.
+This is the rate at which volume of fluid is exiting the sphere.
 In our derivation of the vector field we assumed that the fluid is
 incompressible, so it is also the rate at which the point source is
 creating fluid.
@@ -527,7 +526,8 @@ and <m>y(r,\theta)</m>, we have
 &amp;\frac{x(r,\theta)^2}{4} + \frac{y(r,\theta)^2}{9}
     =r^2\cos^2\theta+r^2\sin^2\theta = r^2
 </mrow><mrow>
-\implies  &amp;\frac{x(r,\theta)^2}{4} + \frac{y(r,\theta)^2}{9} +z(r,\theta)^2=1
+\implies  &amp;\frac{x(r,\theta)^2}{4} + \frac{y(r,\theta)^2}{9} +z(r,\theta)^2
+= r^2 + \left(\sqrt{1-r^2}\right)^2=1
 </mrow>
 </md>
 as desired. Further <m>z(r,\theta)\ge 0</m> by our choice of square root in the
@@ -540,12 +540,10 @@ definition of <m>z(r,\theta)</m>.
 \Big(\frac{\partial x}{\partial \theta},\frac{\partial y}{\partial \theta},
 \frac{\partial z}{\partial \theta}\Big)
 &amp;=(-2r\sin\theta,3r\cos\theta,0)
-
 </mrow><mrow>
 \Big(\frac{\partial x}{\partial r},\frac{\partial y}{\partial r},
 \frac{\partial z}{\partial r}\Big)
 &amp;=\Big(2\cos\theta,3\sin\theta,-\frac{r}{\sqrt{1-r^2}}\Big)
-
 </mrow><mrow>
 \hn \dee{S}&amp;=
 -\Big(\frac{\partial x}{\partial\theta},\frac{\partial y}{\partial\theta},
@@ -581,13 +579,13 @@ odd natural numbers <m>m</m>,
 &amp;=\int_0^1 dr\int_0^{2\pi}\hskip-6pt\dee{\theta}\ 6r\sqrt{1-r^2}
 </mrow><mrow>
 &amp;=12\pi\int_0^1 dr\ r\sqrt{1-r^2}
-=12\pi\Big[-\frac{1}{3}(1-r^2)^{3/2}\Big]_0^1
+=12\pi\Big[-\frac{1}{3}{(1-r^2)}^{3/2}\Big]_0^1
 </mrow><mrow>
 &amp;=4\pi
 </mrow>
 </md>
 The integral was evaluated by guessing (and checking) that
-<m>-\frac{1}{3}(1-r^2)^{3/2}</m> is an antiderivative of <m>r\sqrt{1-r^2}</m>.
+<m>-\frac{1}{3}{(1-r^2)}^{3/2}</m> is an antiderivative of <m>r\sqrt{1-r^2}</m>.
 It can also be done by substituting <m>u=1-r^2</m>,
 <m>\dee{u}=-2r\,\dee{r}</m>.
 </p>
@@ -657,7 +655,7 @@ Then switch to polar coordinates, <m>X=r\cos\theta</m>, <m>Y=r\sin\theta</m>,
 &amp;=\int_0^1 dr\int_0^{2\pi}\hskip-6pt\dee{\theta}\ 6r\sqrt{1-r^2}
 =12\pi\int_0^1 dr\ r\sqrt{1-r^2}
 </mrow><mrow>
-&amp;=12\pi\Big[-\frac{1}{3}(1-r^2)^{3/2}\Big]_0^1
+&amp;=12\pi\Big[-\frac{1}{3}{(1-r^2)}^{3/2}\Big]_0^1
 =4\pi
 </mrow>
 </md>

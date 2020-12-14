@@ -140,7 +140,7 @@ If not, is there an easy way to tell whether or not a vector field
 is conservative?
 </li>
 <li>
-If we know that a given vector field is conservative, how do find a potential
+If we know that a given vector field is conservative, how do you find a potential
 for it?
 </li>
 </ul>
@@ -693,7 +693,7 @@ for any function <m>\zeta(z)</m>. Finally to have the third equation of
 to obey
 <md>
 <mrow>
-&amp;\frac{\partial \ }{\partial z}\big(xy^2+x^2z^2-x+\frac{y^2}{2}+\zeta(z)\big)
+&amp;\frac{\partial \ }{\partial z}\left(xy^2+x^2z^2-x+\frac{y^2}{2}+\zeta(z)\right)
  = 2x^2z+z^3
 </mrow><mrow>
 &amp;\hskip1in\iff 2x^2z +\zeta'(z) = 2x^2z + z^3
@@ -703,7 +703,7 @@ to obey
 &amp;\hskip1in\iff \zeta(z) = \frac{z^4}{4} + C
 </mrow>
 </md>
-for any constant <m>C</m>. So one possible potential, namely that with <m>C=0</m> is
+for any constant <m>C</m>. So one possible potential, namely that with <m>C=0</m>, is
 <me>
 \varphi(x,y,z)
 =xy^2+x^2z^2-x+\frac{y^2}{2}+\frac{z^4}{4}
@@ -720,7 +720,7 @@ as desired.
 
 <example xml:id="eg_screeningCounterexample"><title>Optional: First look at <m>-\frac{y}{x^2+y^2}\hi + \frac{x}{x^2+y^2}\hj</m></title>
 <p>
-Now is a good time to reread the Warning <xref ref="warn_screening"/>.
+Now is a good time to reread Warning <xref ref="warn_screening"/>.
 In this example we will show that the vector field
 <md>
 <mrow>

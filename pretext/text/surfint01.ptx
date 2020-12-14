@@ -33,7 +33,7 @@ one centred on the origin
 We can also specify that the surface
 is the set of points <m>(x,y,z)</m> that satisfy the equation
 <m>G(x,y,z)=0</m>, or, more generally<fn>Of courses we can always convert the equation <m>G(x,y,z)=K</m> into <m>H(x,y,z)=0</m>
-with <m>H(x,y,z)=G(x,y,z)-K</m>. But it often more convenient to use <m>G(x,y,z)=K</m>.
+with <m>H(x,y,z)=G(x,y,z)-K</m>. But it is often more convenient to use <m>G(x,y,z)=K</m>.
 </fn>, satisfy the equation <m>G(x,y,z)=K</m>,
 with <m>K</m> a constant. For example, the sphere of radius
 one centred on the origin is the set of points that obey

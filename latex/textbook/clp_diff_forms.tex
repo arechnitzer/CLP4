@@ -143,7 +143,7 @@ A $3$-form is an expression of the form
 with $f(x,y,z)$ being a function of three variables.
 
 \end{enumerate}
-At this stage (there'll more later), just think of ``$\dee{x}$'', 
+At this stage (there'll be more later), just think of ``$\dee{x}$'', 
 ``$\dee{y}$'', ``$\dee{z}$'', ``$\dee{x}\wedge\dee{y$}'', and so on, 
 as symbols.  Do not yet attempt to attach any significance to them. 
 \end{defn}
@@ -187,7 +187,14 @@ The sum of two $2$-forms is the $2$-form
           + (F_3+G_3)\,\dee{x}\wedge\dee{y} 
 \end{align*}
 
-\item
+\end{enumerate}
+\end{defn}
+
+\addtocounter{theorem}{-1}
+\begin{defn}[continued]
+\begin{enumerate}[(a)]
+
+\item[(d)]
 The sum of two $3$-forms is the $3$-form
 \begin{align*} 
    f\,\dee{x}\wedge\dee{y}\wedge\dee{z} 
@@ -247,6 +254,41 @@ Similarly,
 \end{equation*}
 
 
+%\item[(c)] %% (c)  
+%%The product is graded anticommutative. This means that 
+%If $\om$ is a $k$-form and $\om'$ is a  $k'$-form then \begin{equation*}
+%   \om\wedge\om'=(-1)^{kk'}\om'\wedge\om
+%\end{equation*}
+%That is, if at least one of $k$ and $k'$ is even, then
+%\begin{equation*}
+%\om\wedge\om'=\om'\wedge\om
+%\end{equation*}
+%(so that the wedge product is commutative) 
+%and if $k$ and $k'$ are \emph{both odd} then 
+%\begin{equation*}
+%\om\wedge\om'=-\om'\wedge\om
+%\end{equation*} 
+%(so that the wedge product is anticommutative).
+%In particular, if $\om$ is a $d$-form with $d$ \emph{odd}
+%\begin{equation*}
+%\om\wedge\om = 0
+%\end{equation*}
+
+%\item[(d)] %% (d) 
+%The wedge product is associative. This means that
+%\begin{equation*}
+%(\om\wedge\om')\wedge\om''=\om\wedge\big(\om'\wedge\om''\big)
+%\end{equation*}
+
+
+
+\end{enumerate}
+\end{defn}
+
+\addtocounter{theorem}{-1}
+\begin{defn}[continued]
+\begin{enumerate}[(a)]
+
 \item[(c)] %% (c)  
 %The product is graded anticommutative. This means that 
 If $\om$ is a $k$-form and $\om'$ is a  $k'$-form then \begin{equation*}
@@ -266,21 +308,6 @@ In particular, if $\om$ is a $d$-form with $d$ \emph{odd}
 \begin{equation*}
 \om\wedge\om = 0
 \end{equation*}
-
-%\item[(d)] %% (d) 
-%The wedge product is associative. This means that
-%\begin{equation*}
-%(\om\wedge\om')\wedge\om''=\om\wedge\big(\om'\wedge\om''\big)
-%\end{equation*}
-
-
-
-\end{enumerate}
-\end{defn}
-
-\addtocounter{theorem}{-1}
-\begin{defn}[continued]
-\begin{enumerate}[(a)]
 
 \item[(d)] %% (d) 
 The wedge product is associative. This means that
@@ -356,13 +383,13 @@ be any two $1$-forms. Their product is
      + G_3\,\dee{z}\big] \\
    &= \ \big(F_1\,\dee{x}\big)\wedge\big(G_1\,\dee{x}\big)
      +\big(F_1\,\dee{x}\big)\wedge\big(G_2\,\dee{y}\big)
-     +\big(F_1\,\dee{x}\big)\wedge\big(G_3\,\dee{y}\big) \\
-   &\hskip0.1in +\big(F_2\,\dee{x}\big)\wedge\big(G_1\,\dee{x}\big)
-     +\big(F_2\,\dee{x}\big)\wedge\big(G_2\,\dee{y}\big)
-     +\big(F_2\,\dee{x}\big)\wedge\big(G_3\,\dee{y}\big) \\
-   &\hskip0.1in+ \big(F_3\,\dee{x}\big)\wedge\big(G_1\,\dee{x}\big)
-     +\big(F_3\,\dee{x}\big)\wedge\big(G_2\,\dee{y}\big)
-     +\big(F_3\,\dee{x}\big)\wedge\big(G_3\,\dee{y}\big) \\
+     +\big(F_1\,\dee{x}\big)\wedge\big(G_3\,\dee{z}\big) \\
+   &\hskip0.1in +\big(F_2\,\dee{y}\big)\wedge\big(G_1\,\dee{x}\big)
+     +\big(F_2\,\dee{y}\big)\wedge\big(G_2\,\dee{y}\big)
+     +\big(F_2\,\dee{y}\big)\wedge\big(G_3\,\dee{z}\big) \\
+   &\hskip0.1in+ \big(F_3\,\dee{z}\big)\wedge\big(G_1\,\dee{x}\big)
+     +\big(F_3\,\dee{z}\big)\wedge\big(G_2\,\dee{y}\big)
+     +\big(F_3\,\dee{z}\big)\wedge\big(G_3\,\dee{z}\big) \\
    &\hskip0.5in\text{(by linearity, i.e. by part (b) of 
                       Definition \ref{def:differentialFormMult})} 
 \displaybreak[0]\\
@@ -617,7 +644,7 @@ If $\om$ is a $k$-form, then $\dee{\om}$ is a $k+1$-form, with
 $\dee{}$ being the unique\footnote{That $\dee{}$ is unique just means that
 the action of $\dee{}$ on \emph{any} differential form is completely 
 determined by the four rules (a), (b), (c), (d). We will see in 
-Example \ref{eg:diffFormDiff}.b,c,d, that this is indeed the case.} 
+Example \ref{eg:diffFormDiff}.c,d,e, that this is indeed the case.} 
 such operator that obeys
 \begin{enumerate}[(a)]
 \item
@@ -727,7 +754,7 @@ For any $2$-form
 \\
 &\hskip0.5in=\dee{F_1}\wedge\dee{y}\wedge\dee{z} 
 + \dee{F_2}\wedge\dee{z}\wedge\dee{x}  
-+ \dee{F_3}\wedge\dee{x}\wedge\dee{y}\big]
++ \dee{F_3}\wedge\dee{x}\wedge\dee{y}
 \\
 &\hskip0.5in=\Big(\frac{\partial F_1}{\partial x}\ \dee{x}
       +\frac{\partial F_1}{\partial y}\ \dee{y}
@@ -780,7 +807,7 @@ variables that happens to be independent of one of the three variables.
 } for functions of one or two variables also apply.
 \begin{align*}
 \dee{f(t)} & = \diff{f}{t}(t)\,\dee{t} \\
-\dee{f(uv)}
+\dee{f(u,v)}
 &=\frac{\partial f}{\partial u}(u,v)\ \dee{u}
 +\frac{\partial f}{\partial v}(u,v)\ \dee{v}
 \end{align*}
@@ -985,7 +1012,7 @@ domain of integration, then
 Here $\partial D$ is the boundary of $D$ (suitably oriented).
 \end{theorem}
 
-To see the connection between the general Stokes' Theorem \ref{thm:GenStokes}
+To see the connection between the general Stokes' theorem \ref{thm:GenStokes}
 and the Stokes' and divergence theorems of the earlier part of this chapter, 
 here are the $k=1$ and $k=2$ cases of Theorem \ref{thm:GenStokes} again.
 \begin{itemize}
@@ -1001,7 +1028,7 @@ d\om = (\vnabla\times\vF)_1\,\dee{y}\wedge\dee{z}
 So, by parts (c) (but with $\vF$ replaced by $\vnabla\times\vF$) and (b)
 of Definition \ref{def:differentialFormInt},
 the conclusion $\int_D d\om=\int_{\partial D}\om$ of 
-(the general) Stokes' Theorem \ref{thm:GenStokes} is
+(the general) Stokes' theorem \ref{thm:GenStokes} is
 \begin{align*}
 \dblInt_S \vnabla\times\vF\cdot\hn\,\dee{S}
 =\int_S d\om=\int_{\partial S}\om
@@ -1022,7 +1049,7 @@ d\om = \vnabla\cdot\vF\,\dee{x}\wedge\dee{y}\wedge\dee{z}
 So, by parts (d) (with $f =\vnabla\cdot\vF$) and (c)
 of Definition \ref{def:differentialFormInt},
 the conclusion $\int_D d\om=\int_{\partial D}\om$ of 
-(the general) Stokes' Theorem \ref{thm:GenStokes} is
+(the general) Stokes' theorem \ref{thm:GenStokes} is
 \begin{align*}
 \tripInt_V \vnabla\cdot\vF\,\dee{x}\dee{y}\dee{z} 
 =\int_V d\om=\int_{\partial V}\om

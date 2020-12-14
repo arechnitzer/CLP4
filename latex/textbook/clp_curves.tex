@@ -23,7 +23,7 @@ have to be. It can be simply a parameter that is used to label the
 different points on the curve that $\vr(t)$ sweeps out. We then say 
 that $\vr(t)$ provides a parameterization of the curve.
 
-\begin{eg}\label{eg:paramCircle}
+\begin{eg}[Parametrization of  $x^2+y^2=a^2$]\label{eg:paramCircle}
 While we will often use $t$ as the parameter in a parametrized curve $\vr(t)$,
 there is no need to call it $t$. Sometimes it is natural to use a different 
 name for the parameter. For example, consider the circle $x^2+y^2=a^2$.
@@ -37,7 +37,7 @@ the point $\big(a\cos\theta\,,\,a\sin\theta\big)$ on the circle.
 That is,
 \begin{equation*}
 \vr(\theta) = \big(a\cos\theta\,,\,a\sin\theta\big)\qquad
-0\le \theta\le 2\pi
+0\le \theta < 2\pi
 \end{equation*}
 is a parametrization of the circle $x^2+y^2=a^2$. Just looking at the figure above, it is clear that, as $\theta$ runs from $0$ to $2\pi$, $\vr(\theta)$
 traces out the full circle. 
@@ -55,6 +55,118 @@ For all $t$,
 is well-defined and obeys $x(t)^2+y(t)^2=a^2$. But this $\vr(t)$ does not
 cover the entire circle because $y(t)$ is always positive.
 
+\end{eg}
+
+\begin{eg}[Parametrization of  $(x-h)^2+(y-k)^2=a^2$]\label{eg:paramCircleB}
+We can tweak the parametrization of Example \ref{eg:paramCircle} to get
+a parametrization of the circle of radius $a$ that is centred on $(h,k)$.
+One way to do so is to redraw the sketch of Example \ref{eg:paramCircle}
+with the circle translated so that its centre is at $(h,k)$.
+\begin{efig}
+\begin{center}
+     \includegraphics{parCirclehk.pdf}
+\end{center}
+\end{efig}
+We see from the sketch that 
+\begin{equation*}
+\vr(\theta) = \big(h+a\cos\theta\,,\,k+a\sin\theta\big)\qquad
+0\le \theta< 2\pi
+\end{equation*}
+is a parametrization of the circle $(x-h)^2+(y-k)^2=a^2$.
+
+A second way to come up with this parametrization is to observe that 
+we can turn the trig identity $\cos^2 t + \sin^2 t=1$ into 
+the equation $(x-h)^2+(y-k)^2=a^2$ of the circle by
+\begin{itemize}
+\item
+multiplying the trig identity by $a^2$ to get
+$(a\cos t)^2 +(a\sin t)^2 =a^2$ and then
+\item
+setting $\ a\cos t=x-h\ $ and $\ a\sin t=y-k\ $, which turns  $(a\cos t)^2 +(a\sin t)^2 =a^2$ into $(x-h)^2+(y-k)^2=a^2$.
+\end{itemize}
+\end{eg}
+
+\begin{eg}[Parametrization of  $\frac{x^2}{a^2}+\frac{y^2}{b^2}=1$ and of
+$x^{2/3}+y^{2/3}=a^{2/3}$]    \label{eg:paramEllipse}
+
+We can build parametrizations of the curves $\frac{x^2}{a^2}+\frac{y^2}{b^2}=1$ 
+and $x^{2/3}+y^{2/3}=a^{2/3}$ from the trig identity $\cos^2 t + \sin^2 t=1$,
+like we did in the second part of the last example.
+\begin{itemize}
+\item
+Setting $\ \cos t=\frac{x}{a}\ $ and $\ \sin t=\frac{y}{b}\ $ turns  
+$\cos^2 t +\sin^2 t =1$ into $\frac{x^2}{a^2}+\frac{y^2}{b^2}=1$.
+
+\item
+Setting $\ \cos t= \big(\frac{x}{a}\big)^{\frac{1}{3}}\ $ and 
+$\ \sin t=\big(\frac{y}{a}\big)^{\frac{1}{3}}\ $ turns  
+$\cos^2 t +\sin^2 t =1$ into $\frac{x^{2/3}}{a^{2/3}}+\frac{y^{2/3}}{a^{2/3}}=1$.
+\end{itemize}
+So
+\begin{alignat*}{3}
+\vr(t) &= \big(a\cos t\,,\,b\sin t\big)\qquad &0\le t< 2\pi
+\\
+\vr(t) &= \big(a\cos^3 t\,,\,a\sin^3 t\big) &0\le t< 2\pi
+\end{alignat*}
+give parametrizations of $\frac{x^2}{a^2}+\frac{y^2}{b^2}=1$ 
+and $x^{2/3}+y^{2/3}=a^{2/3}$, respectively. To see that running $t$ from $0$ to $2\pi$ runs $\vr(t)$ once around the curve, look at the figures below.
+\begin{wfig}
+\begin{center}
+     \includegraphics{parEllipse.pdf}\quad
+     \includegraphics{astroid4.pdf}
+\end{center}
+\end{wfig}
+The curve $x^{2/3}+y^{2/3}=a^{2/3}$ is called an astroid. From its equation,
+we would expect its sketch to look like a deformed circle. But it is probably 
+not so obvious that it would have the pointy bits of the right hand figure.
+We will not explain here why they arise. The astroid is studied in some 
+detail in Example \ref{eg:astroid}.
+In particular, the above sketch is carefully developed there.  
+ 
+\end{eg}
+
+\begin{eg}[Parametrization of  $e^y=1+x^2$]\label{eg:paramMessy}
+A very easy method that can often create parametrizations for a curve is to use $x$ or $y$ as a parameter. Because we can solve $e^y=1+x^2$ for $y$ as a function of $x$, namely $y=\ln\big(1+x^2\big)$, we can use $x$ as 
+the parameter simply by setting $t=x$. This gives the parametrization
+\begin{equation*}
+\vr(t) = \big(t\,,\,\ln(1+t^2)\big)\qquad -\infty<t<\infty
+\end{equation*}  
+\end{eg}
+
+\begin{eg}[Parametrization of  $x^2+y^2=a^2$, again]\label{eg:paramCircleC}
+It is also quite common that one can use either $x$ or $y$ to parametrize part of, but all of, a curve. A simple example is the circle $x^2+y^2=a^2$.
+For each $-a<x<a$, there are two points on the circle with that value of $x$.
+So one cannot use $x$ to parametrize the whole circle.
+Similarly, for each $-a<y<a$, there are two points on the circle with that value of $y$. So one cannot use $y$ to parametrize the whole circle. On the other 
+hand
+\begin{alignat*}{3}
+\vr(t) &= \big(t\,,\,\sqrt{a^2-t^2}\big)\qquad &-a<t<a \\
+\vr(t) &= \big(t\,,\,-\sqrt{a^2-t^2}\big)\qquad &-a<t<a
+\end{alignat*}
+provide parametrizations of the top half and bottom half, respectively,
+of the circle using $x$ as the parameter, and
+\begin{alignat*}{3}
+\vr(t) &= \big(\sqrt{a^2-t^2}\,,\,t\big)\qquad &-a<t<a \\
+\vr(t) &= \big(-\sqrt{a^2-t^2}\,,\,t\big)\qquad &-a<t<a
+\end{alignat*}
+provide parametrizations of the right half and left half, respectively,
+of the circle using $y$ as the parameter.
+\end{eg}
+
+\begin{eg}[Unparametrization of  $\vr(t)=(\cos t, 7-t)$] \label{eg:unparam}
+In this example, we will undo the parametrization $\vr(t)=(\cos t, 7-t)$
+and find the Cartesian equation of the curve in question. We may rewrite the
+parametrization as
+\begin{align*}
+x&=\cos t \\
+y&=7-t
+\end{align*}
+Note that we can eliminate the parameter $t$ simply by using the second equation 
+to solve for $t$ as a function of $y$. Namely $t=7-y$. Substituting this
+into the first equation  gives us the Cartesian equation
+\begin{equation*}
+x=\cos(7-y)
+\end{equation*}
 \end{eg}
 
 Curves often arise as the intersection of two surfaces. For example,
@@ -163,7 +275,117 @@ each of its components.
 And of course differentiation interacts with arithmetic operations, 
 like addition, in the obvious way. Only a little more thought is required to 
 see that differentiation interacts quite nicely with dot and cross 
-products too.  
+products too.  Here are some examples.
+
+\begin{eg}\label{eg:diffDot}
+Let
+\begin{align*}
+\va(t)&= t^2\,\hi + t^4\,\hj + t^6\,\hk
+\\
+\vb(t)&= e^{-t}\,\hi + e^{-3t}\,\hj + e^{-5t}\,\hk
+\\
+\ga(t)&= t^2
+\\
+s(t)&= \sin t
+\end{align*}
+We are about to compute some derivatives. To make it easier to follow what is going on, we'll use some colour. When we apply the product rule
+\begin{align*}
+\diff{}{t}\big[f(t)\,g(t)\big]
+&=\textcolor{blue}{f'(t)}\,g(t) + f(t)\,\textcolor{blue}{g'(t)}
+\end{align*} 
+we'll use blue to highlight the factors $f'(t)$ and $g'(t)$.
+Here we go.
+\begin{align*}
+\ga(t)\,\vb(t) & = t^2e^{-t}\,\hi + t^2 e^{-3t}\,\hj + t^2 e^{-5t}\,\hk
+\\
+\implies \diff{}{t}\big[\ga(t)\vb(t)\big]
+&=\big[\textcolor{blue}{2t} e^{-t}
+           \textcolor{blue}{-}t^2\textcolor{blue}{e^{-t}}\big]\hi
+  +\big[\textcolor{blue}{2t} e^{-3t}
+           \textcolor{blue}{-3}t^2\textcolor{blue}{e^{-3t}}\big]\hj
+  +\big[\textcolor{blue}{2t} e^{-5t}
+          \textcolor{blue}{-5}t^2e^{-5t}\big]\hk
+\\
+&=\textcolor{blue}{2t}\big\{e^{-t}\,\hi + e^{-3t}\,\hj + e^{-5t}\,\hk\big\}
++ t^2
+    \textcolor{blue}{\big\{-e^{-t}\,\hi -3 e^{-3t}\,\hj -5 e^{-5t}\,\hk\big\}}
+\\
+&=\textcolor{blue}{\ga'(t)}\vb(t)
+         +\ga(t)\textcolor{blue}{\vb'(t)}
+\end{align*}
+and 
+\begin{align*}
+\va(t)\cdot\vb(t) & = t^2e^{-t} + t^4 e^{-3t} + t^6 e^{-5t}
+\\
+\implies \diff{}{t}\big[\va(t)\cdot\vb(t)\big]
+&=\big[\textcolor{blue}{2t} e^{-t}
+            \textcolor{blue}{-}t^2\textcolor{blue}{e^{-t}}\big]
+  +\big[\textcolor{blue}{4t^3} e^{-3t}
+            \textcolor{blue}{-3}t^4\textcolor{blue}{e^{-3t}}\big]
+  +\big[\textcolor{blue}{6t^5} e^{-5t}
+             \textcolor{blue}{-5}t^6\textcolor{blue}{e^{-5t}}\big]
+\\
+&=\big[\textcolor{blue}{2t} e^{-t}
+            +\textcolor{blue}{4t^3} e^{-3t}
+            +\textcolor{blue}{6t^5} e^{-5t}\big]
+  +\big[\textcolor{blue}{-}t^2\textcolor{blue}{e^{-t}}
+             \textcolor{blue}{-3}t^4\textcolor{blue}{e^{-3t}}
+             \textcolor{blue}{-5t}^6\textcolor{blue}{e^{-5t}}\big]
+\\
+&=\textcolor{blue}{\big\{2t\,\hi+4t^3\,\hj+6t^5\,\hk\big\}}\cdot
+           \big\{e^{-t}\,\hi + e^{-3t}\,\hj + e^{-5t}\,\hk\big\}\\&\hskip0.5in
+  +\big\{t^2\,\hi + t^4\,\hj + t^6\,\hk\big\}\cdot
+         \textcolor{blue}{\big\{-e^{-t}\,\hi-3e^{-3t}\,\hj-5e^{-5t}\,\hk\big\}}
+\\
+&=\textcolor{blue}{\va'(t)}\cdot\vb(t)+\va(t)\cdot\textcolor{blue}{\vb'(t)}
+\end{align*}
+and
+\begin{align*}
+\va(t)\times\vb(t) 
+&=\det\left[\begin{matrix}\hi& \hj &\hk\\ 
+                            t^2 & t^4 & t^6\\ 
+                            e^{-t} & e^{-3t} & e^{-5t}\end{matrix}\right] \\
+&=\hi\big(t^4 e^{-5t}-t^6 e^{-3t}) 
+  -\hj(t^2 e^{-5t}- t^6 e^{-t}) 
+   +\hk(t^2 e^{-3t}-t^4 e^{-t})
+\\
+\implies \diff{}{t}\big[\va(t)\times\vb(t)\big]
+&=\ \hi\big(\ \textcolor{blue}{4t^3} e^{-5t}\ \ 
+        -\ \textcolor{blue}{6t^5} e^{-3t}) 
+  \ -\ \hj(\ \textcolor{blue}{2t} e^{-5t}
+      \ -\  \textcolor{blue}{6t^5} e^{-t}) 
+   +\hk(\ \textcolor{blue}{2t} e^{-3t}
+   \ -\ \textcolor{blue}{4t^3} e^{-t}) \\&\hskip0.1in
+ +\hi\big(\textcolor{blue}{-5}t^4 \textcolor{blue}{e^{-5t}}
+           \textcolor{blue}{+3}t^6 \textcolor{blue}{e^{-3t}}) 
+  -\hj(\textcolor{blue}{-5}t^2 \textcolor{blue}{e^{-5t}}
+          \textcolor{blue}{+} t^6 \textcolor{blue}{e^{-t}}) 
+   +\hk(\textcolor{blue}{-3}t^2 \textcolor{blue}{e^{-3t}}
+     \textcolor{blue}{+}t^4 \textcolor{blue}{e^{-t}})
+\\
+&=\textcolor{blue}{\big\{2t\,\hi+4t^3\,\hj+6t^5\,\hk\big\}}\times
+           \big\{e^{-t}\,\hi + e^{-3t}\,\hj + e^{-5t}\,\hk\big\}\\&\hskip0.1in
+  +\big\{t^2\,\hi + t^4\,\hj + t^6\,\hk\big\}\times
+         \textcolor{blue}{\big\{-e^{-t}\,\hi-3e^{-3t}\,\hj-5e^{-5t}\,\hk\big\}}
+\\
+&=\textcolor{blue}{\va'(t)}\times\vb(t)+\va(t)\times\textcolor{blue}{\vb'(t)}
+\end{align*}
+and
+\begin{align*}
+\va\big(s(t)\big)
+&=(\sin t)^2\,\hi +(\sin t)^4\,\hj + (\sin t)^6\,\hk
+\\
+\implies \diff{}{t}\big[\va\big(s(t)\big)\big]
+&=2(\sin t)\cos t\,\hi +4(\sin t)^3\cos t\,\hj + 6(\sin t)^5\cos t\,\hk
+\\
+&=\big\{2(\sin t)\,\hi +4(\sin t)^3\hj + 6(\sin t)^5\hk\big\}\cos t 
+\\
+&=\va'\big(s(t)\big)\,s'(t)
+\end{align*}
+\end{eg}
+
+Of course these examples extend to general (differentiable)
+$\va(t)$, $\vb(t)$, $\ga(t)$ and $s(t)$ and give us (most of) the following theorem. 
 
 \begin{theorem}[Arithmetic of differentiation]\label{thm:DIFFalgebra}
 Let 
@@ -302,7 +524,7 @@ Note that the velocity $\vv(t) = \vr'(t)$ is a vector quantity while the
 speed $\diff{s}{t}(t)=|\vr'(t)|$ is a scalar quantity.
 
 
-\begin{eg}\label{eg:paramCircleTan}
+\begin{eg}[Circumference of a circle]\label{eg:paramCircleTan}
 In general it can be quite difficult to compute arc lengths.
 So, as an easy warmup example, we will compute the circumference of the circle
 $x^2+y^2=a^2$. We'll also find a unit tangent to the circle at any point on
@@ -354,7 +576,7 @@ that has been known\footnote{It is Proposition 18 in Book 3 of Euclid's Elements
 \end{eg}
 
 
-\begin{eg}\label{eg:paramHelix}
+\begin{eg}[Arc length of a helix]\label{eg:paramHelix}
 Consider the curve
 \begin{equation*}
 \vr(t) = 6\sin(2t)\hi + 6\cos(2t)\hj +5t\hk
@@ -396,7 +618,51 @@ s(\pi)-s(0)&= \int_{0}^\pi \big|\vr'(t)\big|\,\dee{t}
 \end{eg}
 \goodbreak
 
-\begin{eg}\label{eg:astroid}
+\begin{eg}[Velocity and acceleration]\label{eg:velAccel}
+Imagine that, at time $t$, a particle is at 
+\begin{equation*}
+\vr(t) = \left[h+a\cos\left(2\pi\frac{t}{T}\right)\right]\hi
+            +\left[k+a\sin\left(2\pi\frac{t}{T}\right)\right]\hj
+\end{equation*}
+As $|\vr(t) -h\,\hi-k\,\hj| = a$, the particle is running around the circle of radius $a$ centred on $(h,k)$. When $t$ increases by $T$, the argument, $2\pi\frac{t}{T}$, of $\cos\left(2\pi\tfrac{t}{T}\right)$ and 
+$\sin\left(2\pi\tfrac{t}{T}\right)$ increases by exactly $2\pi$ and the particle runs exactly once around the circle. In particular, it travels a distance 
+$2\pi a$. So it is moving at speed  $\frac{2\pi a}{T}$. 
+According to Lemma \ref{lem:CVvelocityEtc}, it has 
+\begin{align*}
+\text{velocity }
+       &=\vr'(t)=-\frac{2\pi a}{T}\sin\left(2\pi\frac{t}{T}\right)\hi
+            +\frac{2\pi a}{T}\cos\left(2\pi\frac{t}{T}\right)\hj
+      \\
+\text{speed}
+       &= \diff{s}{t}(t)=|\vr'(t)|=\frac{2\pi a}{T} \\
+\text{acceleration}
+       &=\vr''(t)
+        =-\frac{4\pi^2 a}{T^2}\cos\left(2\pi\frac{t}{T}\right)\hi
+            -\frac{4\pi^2 a}{T^2}\sin\left(2\pi\frac{t}{T}\right)\hj 
+        = - \frac{4\pi^2}{T^2}\big[\vr(t) -h\,\hi-k\,\hj\big]
+\end{align*}
+Here are some observations.
+\begin{itemize}
+\item 
+The velocity $\vr'(t)$ has dot product zero with $\vr(t) -h\,\hi-k\,\hj$, which is the radius vector from the centre of the circle to the particle.
+So the velocity is perpendicular to the radius vector, and hence parallel to the 
+tangent vector of the circle at $\vr(t)$.
+\item 
+The speed given by Lemma \ref{lem:CVvelocityEtc} is exactly the speed
+we found above, just before we started applying Lemma \ref{lem:CVvelocityEtc}.
+\item 
+The acceleration $\vr''(t)$ points in the direction opposite to the radius 
+vector.
+\end{itemize}
+
+\begin{efig}
+\begin{center}
+     \includegraphics{circleVA.pdf}
+\end{center}
+\end{efig}
+\end{eg}
+
+\begin{eg}[Perimeter of the astroid]\label{eg:astroid}
 In this example, we find the perimeter of the astroid\footnote{
 Astroid should not be confused with asteroid, though both words derive 
 from the Greek word for star.}
@@ -422,20 +688,20 @@ namely $y(t)=a\sin^3 t$.
 \end{itemize}
 Our parametrization is 
 \begin{equation*}
-\vr(t) = a\cos^3t\hi + a\sin^3 t\hj
+\vr(t) = a\cos^3t\,\hi + a\sin^3 t\,\hj
 \end{equation*}
 By Lemma \ref{lem:CVtanArclen}
 \begin{align*}
-\vr(t) &= a\cos^3t\hi + a\sin^3 t\hj \\
-\vr'(t) &= -3a\sin t\cos^2t\hi + 3a\sin^2 t\cos t\hj \\
+\vr(t) &= a\cos^3t\,\hi + a\sin^3 t\,\hj \\
+\vr'(t) &= -3a\sin t\cos^2t\,\hi + 3a\sin^2 t\cos t\,\hj \\
 \diff{s}{t}(t)&=\big|\vr'(t)\big| 
 = \sqrt{9a^2\sin^2t\cos^4t + 9a^2\sin^4t\cos^2t} \\
 & = 3a \sqrt{\sin^2t\cos^2t(\cos^2t+\sin^2t)} \\
  &=3a\big|\sin t\cos t\big| \\
 \hat\vT(t) &= \frac{\vr'(t)}{|\vr'(t))|}
-=  \frac{\sin t\cos t}{|\sin t\cos t|}\ \big(-\cos t\hi+\sin t\hj\big)
+=  \frac{\sin t\cos t}{|\sin t\cos t|}\ \big(-\cos t\,\hi+\sin t\,\hj\big)
 \\
- &=  \sgn\!\big(\!\sin t\cos t\big)\ \big(-\cos t\hi+\sin t\hj\big) 
+ &=  \sgn\!\big(\!\sin t\cos t\big)\ \big(-\cos t\,\hi+\sin t\,\hj\big) 
 \end{align*}
 Here $\sgn\!\big(\!\sin t\cos t\big)$ means ``the sign of $\sin t\cos t$'', i.e $+1$ when $\sin t\cos t>0$ and $-1$ when $\sin t\cos t<0$. So
 \begin{align*}
@@ -444,13 +710,13 @@ Here $\sgn\!\big(\!\sin t\cos t\big)$ means ``the sign of $\sin t\cos t$'', i.e 
                               or $\ \ \sin t<0,\ \cos t<0$}\\
                            -1&\text{if $\ \sin t>0,\ \cos t<0\ \ $ 
                               or $\ \ \sin t<0,\ \cos t>0$}
-                \end{cases}\right\}\big(-\cos t\hi+\sin t\hj\big)
+                \end{cases}\right\}\big(-\cos t\,\hi+\sin t\,\hj\big)
 \\
  &=\left.\begin{cases}1&\text{if $\ \ 0< t<\frac{\pi}{2}\ \ $ 
                                             or $\ \ \pi< t<\frac{3\pi}{2}$}\\
                            -1&\text{if $\ \ \frac{\pi}{2}<t<\pi\ \ $ 
                                           or $\ \ \frac{3\pi}{2}<t<2\pi$}
-                \end{cases}\right\}\big(-\cos t\hi+\sin t\hj\big)
+                \end{cases}\right\}\big(-\cos t\,\hi+\sin t\,\hj\big)
 \end{align*}
 
 Before we go on to sketch the astroid and compute its perimeter, we can 
@@ -486,10 +752,25 @@ Something weird happens at those values of $t$ where $\sin t\cos t$ changes sign
 i.e. at $t=0$, $\frac{\pi}{2}$, $\pi$, $\frac{3\pi}{2}$, etc. Namely $\hat T(t)$ 
 flips. To be precise
 \begin{align*}
-\lim_{t\rightarrow 0-}\hat T(t) &= \hi &
-\lim_{t\rightarrow 0+}\hat T(t) &= -\hi \\
-\lim_{t\rightarrow \pi/2-}\hat T(t) &= \hj &
-\lim_{t\rightarrow \pi/2+}\hat T(t) &= -\hj 
+\lim_{t\rightarrow 0-}\hat T(t) 
+&=\lim_{t\rightarrow 0-}  \sgn\!\big(\!\sin t\cos t\big)\   
+         \lim_{t\rightarrow 0-}\big(-\cos t\,\hi+\sin t\,\hj\big)
+= \hi \\
+\lim_{t\rightarrow 0+}\hat T(t) 
+&= \lim_{t\rightarrow 0+}\sgn\!\big(\!\sin t\cos t\big)\ 
+\lim_{t\rightarrow 0+}\big(-\cos t\,\hi+\sin t\,\hj\big)
+=-\hi \\
+\end{align*}
+and 
+\begin{align*}
+\lim_{t\rightarrow \pi/2-}\hat T(t) 
+&= \lim_{t\rightarrow \pi/2-}\sgn\!\big(\!\sin t\cos t\big)\ 
+\lim_{t\rightarrow \pi/2-}\big(-\cos t\,\hi+\sin t\,\hj\big)
+=\hj \\
+\lim_{t\rightarrow \pi/2+}\hat T(t) 
+&= \lim_{t\rightarrow \pi/2+}\sgn\!\big(\!\sin t\cos t\big)\ 
+\lim_{t\rightarrow \pi/2+}\big(-\cos t\,\hi+\sin t\,\hj\big)
+=-\hj 
 \end{align*}
 and so on. This signals cusps in the curve at $t=0$, i.e. at $\vr(0) = a\hi$,
 and at $t=\frac{\pi}{2}$, i.e. at $\vr(\frac{\pi}{2}) = a\hj$, and so on. So
@@ -516,7 +797,7 @@ arc length of the part of the astroid in the first quadrant, and then multiply b
 \end{eg}
 
 
-\begin{eg}\label{eg:zeroSpeed}
+\begin{eg}[$\vr'(t)=\vZero$]\label{eg:zeroSpeed}
 In the last example, we found that the astroid  had
 cusps at those points $\vr(t)$ where the velocity $\vr'(t)$ vanished.
 In this example, we will explore a little further what can happen when
@@ -536,11 +817,11 @@ of all of these. They all have $\vr'(t)=0$. They are sketched below.
 \vr_1(t) &= (t^5, t^2) &
 \vr_1'(t)&= (5t^4, 2t) 
 \\[0.1in]
-\vr_2(t) &= \left.\begin{cases} (t^2, 0) & \text{if $t\le 0$} \\
-                        (0 , t^2) & \text{if $t\ge 0$}
+\vr_2(t) &= \left.\begin{cases} (t^2, 0) & \text{if $t\ge 0$} \\
+                        (0 , t^2) & \text{if $t\le 0$}
           \end{cases}\right\}\qquad &
-\vr_2'(t)&= \left.\begin{cases} (2t, 0) & \text{if $t\le 0$} \\
-                        (0 , 2t) & \text{if $t\ge 0$}
+\vr_2'(t)&= \left.\begin{cases} (2t, 0) & \text{if $t\ge 0$} \\
+                        (0 , 2t) & \text{if $t\le 0$}
           \end{cases} \right\}
 \\[0.1in]
 \vr_3(t) &= (t^3, 0) &
@@ -557,7 +838,7 @@ of all of these. They all have $\vr'(t)=0$. They are sketched below.
 
 \end{eg}
 
-\begin{eg}\label{eg:corkscrew}
+\begin{eg}[Corkscrew]\label{eg:corkscrew}
 We'll find the arc length of 
 \begin{equation*}
 \vr(t) = t\cos t\,\hi + t\sin t\,\hj +t\,\hk\qquad
@@ -676,12 +957,12 @@ so gives the parametrization
 \item[$\circ$] 
 The third uses arc length from $(r,0)$ as the parameter. We have seen, 
 in Example \ref{eg:paramCircleTan}, that the arc length from $(r,0)$
-to $\vr_2(\theta)$ is just $s=r\theta$. So the point on the semicircle 
+to $\vr_1(\theta)$ is just $s=r\theta$. So the point on the semicircle 
 that is arc length $s$ away from $(r,0)$ is
 \begin{equation*}
 \raisebox{-37pt}[37pt][30pt]{\smash{\includegraphics{reparCircleC.pdf}}}
 \quad
-\vr_3(s) = \vr_2\Big(\frac{s}{r}\Big) 
+\vr_3(s) = \vr_1\Big(\frac{s}{r}\Big) 
 = \Big(r\cos\frac{s}{r}\,,\,r\sin\frac{s}{r}\Big)
 %\quad
 %0\le s\le \pi r
@@ -717,7 +998,7 @@ which runs from $0$, at $t=0$, to $\frac{3a}{2}$, at $t=\frac{\pi}{2}$.
 This is relatively clean and we can invert $s(t)$ to find $t$ 
 as a function of $s$.
 The value, $T(s)$, of $t$ that corresponds to any given 
-$0\le s\le\frac{3a}{3}$ is determined by
+$0\le s\le\frac{3a}{2}$ is determined by
 \begin{equation*}
 s=\frac{3a}{4}\big[1-\cos\big(2T(s)\big)\big]\qquad
 \iff\qquad
@@ -742,8 +1023,8 @@ s=\frac{3a}{4}\big[1-\cos\big(2T(s)\big)\big]
 \end{align*}
 Consequently the desired parametrization is
 \begin{equation*}
-\vR(s) = a\Big[1-\frac{2s}{3a}\Big]^{3/2}\hi
-        + a\Big[\frac{2s}{3a}\Big]^{3/2}\hj
+\vR(s) = a\left[1-\frac{2s}{3a}\right]^{3/2}\hi
+        + a\left[\frac{2s}{3a}\right]^{3/2}\hj
 \qquad
 0\le s \le \frac{3a}{2}
 \end{equation*}
@@ -820,7 +1101,7 @@ Thus $\dee{s} = \rho\,|\dee{\theta}|$. When $\dee{\theta}$ is a macroscopic
 angle, this is of course an approximation. But in the limit as 
 $\dee{\theta}\rightarrow 0$, we should end up with
 \begin{equation*}
-\rho = \Big|\diff{s}{\theta}\Big|
+\rho = \left|\diff{s}{\theta}\right|
 \end{equation*} 
 We now have a formula for the radius of curvature, but not in a very 
 convenient form, because to evaluate it we would need to know the arc length
@@ -861,7 +1142,7 @@ The vector $\hat\vT$ is also tangent to the red circle. As
 the tangent and radius vectors for circles are perpendicular to 
 each other\footnote{We saw that in Example \ref{eg:paramCircleTan}.}, 
 we have that $\phi=\theta+\frac{\pi}{2}$ and hence 
-$\rho = \Big|\diff{s}{\phi}\Big|$ too.
+$\rho = \big|\diff{s}{\phi}\big|$ too.
 \end{itemize}
 \begin{wfig}
 \begin{center}
@@ -872,7 +1153,7 @@ $\rho = \Big|\diff{s}{\phi}\Big|$ too.
 \end{wfig}
 We are now in a position to develop a bunch of formulae for the radius
 of curvature $\rho$ and the curvature $\ka=\frac{1}{\rho}$, that are more 
-convenient than $\ka = \Big|\diff{s}{\phi}\Big|^{-1}$. These formulae
+convenient than $\ka = \big|\diff{s}{\phi}\big|^{-1}$. These formulae
 will use the 
 \begin{notn}\label{notn:curveNotation}
 If $\vr(t)$ is a parametrized curve, then
@@ -910,9 +1191,9 @@ the angle\footnote{The notation $\measuredangle(\hi,\hat\vT)$
 means ``the angle between $\hi$ and $\hat\vT$''.} 
 $\phi=\measuredangle(\hi,\hat\vT)$, then
 \begin{equation*}
-\rho = \Big|\diff{s}{\phi}\Big|\qquad
-\ka = \Big|\diff{s}{\phi}\Big|^{-1}\qquad
-\ka = \Big|\diff{\phi}{s}\Big|
+\rho = \left|\diff{s}{\phi}\right|\qquad
+\ka = \left|\diff{s}{\phi}\right|^{-1}\qquad
+\ka = \left|\diff{\phi}{s}\right|
 \end{equation*}
 
 \item\label{thm:curvatureFormulae:part:b}
@@ -928,11 +1209,11 @@ that points toward the centre of curvature.
 Given $\vr(t)$, i.e. if we have a general parametrized curve,
 then
 \begin{align*}
-\diff{\hat\vT}{t} = \ka \diff{s}{t} \hat\vN\quad
-\vv(t) =  \diff{s}{t}(t)\,\hat\vT(t) \quad
+\diff{\hat\vT}{t} = \ka \diff{s}{t} \hat\vN\qquad
+\vv(t) =  \diff{s}{t}(t)\,\hat\vT(t) \qquad
 \va(t) %= \difftwo{\vr}{t} 
        =  \difftwo{s}{t}\hat\vT
-                           + \ka\Big(\diff{s}{t}\Big)^2\hat\vN
+                           + \ka\left(\diff{s}{t}\right)^2\hat\vN
 \end{align*}
 
 \item 
@@ -943,8 +1224,15 @@ Given $\big(x(t)\,,\,y(t)\big)$, (for curves in the $xy$-plane)
 { {\big[\big(\diff{x}{t}\big)^2+\big(\diff{y}{t}\big)^2\big]}^{3/2} }
 \end{equation*}
 
+\end{enumerate}
+\end{theorem}
 
-\item\label{thm:curvatureFormulae:part:e}
+\addtocounter{theorem}{-1}
+\begin{theorem}[continued]
+\begin{enumerate}[(a)]
+
+
+\item[(e)]\label{thm:curvatureFormulae:part:e}
 Given $y(x)$, (again for curves in the $xy$-plane)
 \begin{equation*}
 \ka 
@@ -1034,7 +1322,7 @@ so $\diff{\hat\vT}{\phi}$ is downward pointing,
 so $\diff{\hat\vT}{\phi}=-\hat\vN$ (the centre of curvature is the red dot 
 above the curve) and
 \item[$\circ$] as $s$ increases (i.e. as you move in the direction of the
-arrow on the curve), $\phi$ decreases (on the far right hand part of the curve $\phi\approx\frac{\pi}{2}$, while on the far left hand part of the curve $\phi\approx 0$), so $\diff{\phi}{s}<0$ and
+arrow on the curve), $\phi$ decreases (on the far right hand part of the curve $\phi\approx\frac{3\pi}{2}$, while on the far left hand part of the curve $\phi\approx\pi$), so $\diff{\phi}{s}<0$ and
 $\ka = \big|\diff{\phi}{s}\big| = - \diff{\phi}{s}$.
 \item[$\circ$] So by ($*$),
 $\diff{\hat\vT}{s} = \diff{\hat\vT}{\phi} \diff{\phi}{s}
@@ -1279,16 +1567,17 @@ Next, from $\va(t)$, we read off that
 \va(t) &=\big(\cos t - t\sin t\big)\hi +\big(\sin t+t\cos t\big)\hj\qquad
 \text{and}  \\
 \va(t)&=\difftwo{s}{t}(t)\,\hat\vT(t)
-                             +\ka(t)\big(\diff{s}{t}(t)\big)^2\hat\vN(t)
+                             +\ka(t)\left(\diff{s}{t}(t)\right)^2\hat\vN(t)
 \qquad\text{(by Theorem \ref{thm:curvatureFormulae}.c)} \\
 &=\cos t\,\hi + \sin t\,\hj +t^2\ka(t) \hat\vN(t) \\
 \implies 
 t^2\ka(t) \hat\vN(t)&= - t\sin t\,\hi + t\cos t\,\hj
 \end{align*}
-so that 
+so that $t^2\ka(t)$ is the length of $- t\sin t\,\hi + t\cos t\,\hj$, which is $t$. Thus
 \begin{align*}
 \ka(t) = \frac{1}{t} \quad\text{and}\quad
-\hat\vN(t)= -\sin t\,\hi + \cos t\,\hj
+\hat\vN(t)= \frac{- t\sin t\,\hi + t\cos t\,\hj}{t^2\ka(t)} 
+          = -\sin t\,\hi + \cos t\,\hj
 \end{align*}
 As an alternative calculation of the curvature, we have
 \begin{align*}
@@ -1319,7 +1608,9 @@ our attention to a very small part of the curve near the point of
 interest $\vr(t)$, the curve will, to a very good approximation lie in 
 some plane. So we can still define, for example, the osculating circle 
 to the curve at $\vr(t)$ to be the circle in that plane that fits the 
-curve best near $\vr(t)$. And we still have the formulae
+curve best near $\vr(t)$. And we still have the formulae\footnote{The arguments in the proof of Theorem \ref{thm:curvatureFormulae} that we used to verify 
+these formulae work in any plane, not just the $xy$-plane. Just choose 
+$\hi$ and $\hj$ to be any two mutually perpendicular unit vectors in the plane.}
 \begin{align*}
 \vv&=\diff{\vr}{t}=\diff{s}{t}\,\hat\vT\\
 \diff{\hat\vT}{s} &= \ka\hat\vN\\
@@ -1416,6 +1707,8 @@ It is now an easy matter to compute
   +\hat\vB(s)\times\big(\ka(s)\hat\vN(s)\big) \\
 &=\tau(s)\hat\vB(s)-\ka(s)\hat\vT(s)
 \end{align*}
+To see that $\hat\vN(s)\times\hat\vT(s)=-\hat\vB(s)$ and
+$\hat\vB(s)\times\hat\vN(s)=-\hat\vT(s)$, just look at the right hand figure above.
 
 
 Now suppose that we have a curve that is parametrized by $t$ rather than $s$.
@@ -1424,7 +1717,7 @@ How do we find the torsion $\tau$? The most obvious method is to
 \item
 recall that $\vv\times\va = \ka \big(\diff{s}{t}\big)^3\hat\vT\times\hat\vN
                           = \ka \big(\diff{s}{t}\big)^3\hat\vB$
-and that $\vB(t)$ is a unit vector. So
+and that $\hat\vB(t)$ is a unit vector. So
 \begin{equation*}
 \hat\vB(t) = \frac{\vv(t)\times\va(t)}{|\vv(t)\times\va(t)|}
 \end{equation*}
@@ -1432,7 +1725,7 @@ and that $\vB(t)$ is a unit vector. So
 \item Having found $\vB(t)$ we can differentiate it and use
 $\diff{\hat\vB}{s}(s) = -\tau(s)\hat\vN(s)$ and the chain rule to give
 \begin{equation*}
-\diff{\vB}{t} = -\tau\diff{s}{t} \hat\vN
+\diff{\vB}{t} = \diff{\vB}{s}\diff{s}{t} = -\tau\diff{s}{t} \hat\vN
 \end{equation*}
 from which we can read off $\tau$, provided we know $\diff{s}{t}$ and
 $\hat\vN$.
@@ -1515,8 +1808,9 @@ let $\cM(s)$ be the antiderivative of $M(s)$ that obeys $\cM(0)=0$. Then
 &\iff e^{-\cM(s)}\diff{}{s}\vx(s) - M(s) e^{-\cM(s)} \vx(s)=0 \\
 &\iff \diff{}{s}\Big(e^{-\cM(s)}\vx(s)\Big) = 0
 \end{align*}
-by the product rule. So $e^{-\cM(s)}\vx(s)$ is a constant, which to satisfy 
-the initial condition, must be $\vx_0$. That is $\vx(s) = \vx_0 e^{\cM(s)}$.
+by the product rule. So $e^{-\cM(s)}\vx(s)$ is a constant independent of $s$. 
+In particular $e^{-\cM(s)}\vx(s)=e^{-\cM(0)}\vx(0)= \vx_0$ so that 
+ $\vx(s) = \vx_0 e^{\cM(s)}$.
 This argument can be generalized to any natural number $n$. But that is 
 beyond the scope of this book.
 
@@ -1573,7 +1867,7 @@ are screwing into a nut, and you turn the bolt in the direction of the
 https:/\hskip-1pt/commons.wikimedia.org/wiki/File:Right\_hand\_rule\_simple.png
 } on the right above), 
 then it moves in the direction of your thumb (as 
-in the black arrow of the figure on the right above). 
+in the long straight arrow of the figure on the right above). 
 
 To determine the curvature and torsion of this curve we compute
 \begin{align*}
@@ -1588,7 +1882,8 @@ From $\vv(t)$ we read off
            +\frac{a}{\sqrt{a^2+b^2}} \cos t\,\hj
            +\frac{b}{\sqrt{a^2+b^2}}\,\hk
 \end{align*}
-From $\va(t)$, and the fact that $\difftwo{s}{t}=0$, we read off that
+From $\va=\difftwo{s}{t}\,\hat\vT+\ka\big(\diff{s}{t}\big)^2\hat\vN
+=\ka(a^2+b^2)\hat\vN$, we read off that
 \begin{align*}
 \ka(t)=\frac{a}{a^2+b^2}\qquad
 \hat\vN(t) = -\cos t\,\hi-\sin t\,\hj
@@ -1604,7 +1899,8 @@ From
 \end{align*}
 we read off
 \begin{align*}
-\hat\vB & = \frac{b}{\sqrt{a^2+b^2}}\sin t\,\hi
+\hat\vB(t) & = \frac{\vv(t)\times\va(t)}{|\vv(t)\times\va(t)|}
+= \frac{b}{\sqrt{a^2+b^2}}\sin t\,\hi
            -\frac{b}{\sqrt{a^2+b^2}} \cos t\,\hj
            +\frac{a}{\sqrt{a^2+b^2}}\,\hk
 \end{align*}
@@ -1773,10 +2069,10 @@ $t_\ell = a + \ell\De t$ the right hand end of interval number $\ell$.
 \item[$\circ$]
 Then we approximate the length of the part of the curve between
 $\vr\big(t_{\ell-1}\big)$ and $\vr\big(t_\ell\big)$ by
-$\big|\vr\big(t_{\ell-1}\big)-\vr\big(t_\ell\big)\big|$ and the mass
+$\big|\vr\big(t_\ell\big)-\vr\big(t_{\ell-1}\big)\big|$ and the mass
 of the part of the curve between $\vr\big(t_{\ell-1}\big)$ 
 and $\vr\big(t_\ell\big)$ by $\rho\big(\vr(t_\ell)\big)
-\big|\vr\big(t_{\ell-1}\big)-\vr\big(t_\ell\big)\big|$.
+\big|\vr\big(t_\ell\big)-\vr\big(t_{\ell-1}\big)\big|$.
 \begin{nfig}
 \begin{center}
     \includegraphics{parCurveL.pdf}
@@ -1788,9 +2084,9 @@ and $\vr\big(t_\ell\big)$ by $\rho\big(\vr(t_\ell)\big)
 This gives us, as an approximate mass for $\cC$ of
 \begin{equation*}
 \sum_{\ell=1}^n \rho\big(\vr(t_\ell)\big)
-    \big|\vr\big(t_{\ell-1}\big)-\vr\big(t_\ell\big)\big|
+    \big|\vr\big(t_\ell\big)-\vr\big(t_{\ell-1}\big)\big|
 =\sum_{\ell=1}^n \rho\big(\vr(t_\ell)\big)
-   \bigg|\frac{\vr\big(t_{\ell-1}\big)-\vr\big(t_\ell\big)}
+   \bigg|\frac{\vr\big(t_\ell\big)-\vr\big(t_{\ell-1}\big)}
                           {t_\ell-t_{\ell-1}}\bigg|\De t
 \end{equation*}
 \end{itemize}
@@ -1802,7 +2098,7 @@ of points. ($\vr'(t)$ need not exist at all at those points.)}
  that $\vr(t)$ is continuously differentiable and that $\rho(\vr)$ 
 is continuous we get
 \begin{equation*}
-\text{Mass of $\cC$} = \int_a^b \rho\big(\vr(t)\big) \Big|\diff{\vr}{t}(t)\Big|\,\dee{t}
+\text{Mass of $\cC$} = \int_a^b \rho\big(\vr(t)\big) \left|\diff{\vr}{t}(t)\right|\,\dee{t}
 \end{equation*}
 which we take to be a definition.
 \begin{defn}\label{def:lineIntegral}
@@ -1991,7 +2287,8 @@ force (i.e. it can push you upward to keep you from falling to
 the centre of the Earth), it is not capable of applying a downward 
 normal force. That is the hill cannot pull down on you to keep you 
 on the hill. Only gravity can keep you grounded. There are two 
-main possibilities.
+main possibilities\footnote{We assume that you are going downhill and that the
+curvature $\ka>0$.}.
 
 \begin{efig}
 \begin{center}
@@ -2130,7 +2427,7 @@ more energy than that required to reach the top, i.e. to reach height $2a$.
 
 \section{Optional --- Polar Coordinates}\label{sec:polar}
 
-So far we have always vectors in two dimensions using the basis vectors
+So far we have always written vectors in two dimensions in terms of the basis vectors
 $\hi$ and $\hj$. This is not always convenient. For example, when working in 
 polar coordinates it is often convenient to use basis vectors
 $\hat\vr(\theta)$, $\hat\vth(\theta)$ which depend on the value of the
@@ -2166,7 +2463,7 @@ $\hat\vth(\theta)$ follows just from the fact that $|\hat\vr(\theta)| = 1$.
          &\implies  \diff{\hat\vr}{\theta}(\theta)\perp \hat\vr(\theta)
          \implies \diff{\hat\vr}{\theta}(\theta)\parallel \hat\vth(\theta)
 \end{align*}
-Similarly that $\diff{\hat\vth}{\theta}(\theta)$ is some scalar 
+Similarly, that $\diff{\hat\vth}{\theta}(\theta)$ is some scalar 
 multiple of $\hat\vr(\theta)$ follows just from the fact 
 that $|\hat\vth(\theta)| = 1$.
 
@@ -2248,14 +2545,15 @@ $\diff{\theta}{t}=\Omega$ and
 \difftwo{r}{t}-\Omega^2\ r = 0
 \end{equation*}
 The general solution to this constant coefficient second order
-ordinary differential equation is 
+ordinary differential equation is\footnote{A review of the technique used to find this solution is given in Appendix \ref{ap:ODE}. In any event, it is easy to check that $r(t)=A e^{\Omega\,t} + B e^{-\Omega\,t}$ really does obey
+$\difftwo{r}{t}-\Omega^2\ r = 0$.} 
 $$
 r(t)  = A e^{\Omega\,t} + B e^{-\Omega\,t}
 $$ 
 where $A$ and $B$ are arbitrary constants that are determined by initial
 conditions. 
 Just as an example, if $r(0)= 1$ and $r'(0)= 0$,
-then $A+B=0$ and $A-B=0$, so that $A=B=\frac{1}{2}$ and
+then $A+B=1$ and $A\Omega-B\Omega=0$, so that $A=B=\frac{1}{2}$ and
 \begin{equation*}
 r(t)  = \frac{1}{2}\big(e^{\Omega\,t}+e^{-\Omega\,t}\big)\qquad
 \end{equation*}
@@ -2264,7 +2562,7 @@ and the bead follows the polar coordinate curve
 \begin{equation*}
 r(\theta) = \frac{1}{2}\big(e^{\theta}+e^{-\theta}\big)
 \end{equation*}
-which is a spiral.
+Observe that $r(\theta)$ is $1$ when $\theta=0$, increases as $\theta$ increases, and tends to $\infty$ as $\theta\rightarrow+\infty$. The curve is a spiral.
 \begin{efig}
 \begin{center}
     \includegraphics{beadCurve.pdf}
@@ -2312,7 +2610,7 @@ $r\cos\theta$. The point $Q$ on the line $L$ in the figure above
 has $x$-coordinate $p$.
 So the distance from $P$ to $L$, which is also the distance from $P$ to
 $Q$, is $p-r\cos\theta$.  The distance from $P$ to $F$ is $r$. We require that 
-the distance from $P$ to $F$ is $\veps$ times the distance form $P$ to $L$.
+the distance from $P$ to $F$ is $\veps$ times the distance from $P$ to $L$.
 So
 \begin{equation*}
 r=\veps\big(p-r\cos\theta\big)
@@ -2461,10 +2759,10 @@ and check how it depends on time. By the product rule,
 \begin{equation}
 \diff{\vOm}{t}(t) =\diff{\ }{t}\big(\vr(t)\times\vv(t)\big)
 =\vv(t)\times\vv(t) + \vr(t)\times\va(t)
-=\frac{1}{m}\vr(t)\times\vF\big(\vr(t))\big)
+=\frac{1}{m}\vr(t)\times\vF\big(\vr(t)\big)
 =\vZero
 \tag{A}\end{equation}
-because $\vr(t)$ and $\vF\big(\vr(t))\big)$ are parallel.
+because $\vr(t)$ and $\vF\big(\vr(t)\big)$ are parallel.
 So $\vOm(t)$ is\footnote{Physicists call $m\,\vOm(t)$ the angular momentum at time $t$ and refer to (A) as (an example of) conservation of angular momentum.
 Conservation of angular momentum is exploited in gyro-compasses and by 
 ice skaters (to spin faster/slower).} 
@@ -2556,21 +2854,21 @@ We saw in Lemma \ref{lem:polar}.c, that if we write $\vr(t) = r(t)\,\hat\vr(t)$,
 then 
 \begin{align*}
 \difftwo{\vr}{t} = 
-  \Big(\difftwo{r}{t}-r\ \Big(\diff{\theta}{t}\Big)^2\Big) \hat\vr
-   +\Big(r\ \difftwo{\theta}{t} + 2 \diff{r}{t}\ \diff{\theta}{t}\Big)\hat\vth
+  \left(\difftwo{r}{t}-r\ \left(\diff{\theta}{t}\right)^2\right) \hat\vr
+  +\left(r\ \difftwo{\theta}{t} + 2 \diff{r}{t}\ \diff{\theta}{t}\right)\hat\vth
 = -\frac{GM}{r^3}\vr
 = -\frac{GM}{r^2}\hat\vr
 \end{align*}
 The $\hat\vr$ and $\hat\vth$ components of this equation are
 \begin{align*}
-\difftwo{r}{t}-r\ \Big(\diff{\theta}{t}\Big)^2 &= -\frac{GM}{r^2} \\[0.05in]
+\difftwo{r}{t}-r\ \left(\diff{\theta}{t}\right)^2 &= -\frac{GM}{r^2} \\[0.05in]
 r\ \difftwo{\theta}{t} + 2 \diff{r}{t}\ \diff{\theta}{t} &= 0
 \end{align*}
 The second of these two equations only tells us that
 \begin{equation*}
-\diff{\ }{t}\Big\{r^2\,\diff{\theta}{t}\Big\} 
-= r\Big\{
-     r\ \difftwo{\theta}{t} + 2 \diff{r}{t}\ \diff{\theta}{t}\Big\} = 0
+\diff{\ }{t}\left\{r^2\,\diff{\theta}{t}\right\} 
+= r\left\{
+     r\ \difftwo{\theta}{t} + 2 \diff{r}{t}\ \diff{\theta}{t}\right\} = 0
 \implies 
 r^2\,\diff{\theta}{t} = h,\quad\text{a constant}
 \end{equation*}
@@ -2601,7 +2899,8 @@ and our equation becomes
 \difftwo{u}{\theta} + u = \frac{GM}{h^2}
 \end{equation}
 This is a second order, linear, ordinary differential equation
-with constant coefficients.  Recall that the general solution of such an 
+with constant coefficients.  Recall\footnote{See Appendix \ref{ap:ODE}.} 
+that the general solution of such an 
 equation is the sum of a ``particular solution'' (i.e. any one solution,
 which in this case we can take to be the constant function $\frac{GM}{h^2}$)
 plus the general solution of the homogeneous equation
@@ -2729,8 +3028,8 @@ That is, $\phi=\frac{3\pi}{2}$ when $\theta=\frac{\pi}{2}$.
 So $\phi=3\theta$  and $P$ has coordinates
 \begin{equation*}
 \frac{3}{4}a\big(\cos\theta,\sin\theta\big)
-+\frac{1}{4}a\big(\cos\phi,\sin\phi\big)
-=\frac{a}{4}\big(3\cos\theta+\cos 3\theta,3\sin\theta-3\sin\theta\big)
++\frac{1}{4}a\big(\cos\phi,-\sin\phi\big)
+=\frac{a}{4}\big(3\cos\theta+\cos 3\theta,3\sin\theta-\sin 3\theta\big)
 \end{equation*}
 As, recalling your double angle, or even better your triple angle, 
 trig identities,
@@ -2794,7 +3093,7 @@ and is centred on the origin. This is easy to parametrize:
 \begin{equation*}
 \raisebox{-40pt}[70pt][40pt]{\smash{\includegraphics{circle1.pdf}}}\qquad\quad
 \vr(t)=\rho\cos t\,\hi+ \rho\sin t\,\hj
-\qquad 0\le t\le 2\pi
+\qquad 0\le t< 2\pi
 \end{equation*}
 Now let's move the circle so that its centre is at some general point
 $\vc$. To parametrize this new circle, which still has radius $\rho$ and which 
@@ -2802,7 +3101,7 @@ is still parallel to the $xy$-plane, we just translate by $\vc$:
 \begin{equation*}
 \raisebox{-60pt}[60pt][58pt]{\smash{\includegraphics{circle2.pdf}}}\qquad\quad
 \vr(t)=\vc+\rho\cos t\,\hi+ \rho\sin t\,\hj
-\qquad 0\le t\le 2\pi
+\qquad 0\le t< 2\pi
 \end{equation*}
 Finally, let's consider a circle in general position. The secret to 
 parametrizing a general circle is to replace $\hi$ and $\hj$ by two new vectors
@@ -2815,7 +3114,7 @@ $\hi'$ and $\hj'$ which
 \begin{equation*}
 \raisebox{-70pt}[50pt][70pt]{\smash{\includegraphics{circle3.pdf}}}\qquad\quad
 \vr(t)=\vc+\rho\cos t\,\hi'+ \rho\sin t\,\hj'
-\qquad 0\le t\le 2\pi
+\qquad 0\le t< 2\pi
 \end{equation*} 
 To check that this is correct, observe that
 \begin{itemize}\itemsep1pt \parskip0pt \parsep0pt %\itemindent-15pt
@@ -2872,7 +3171,7 @@ $\hj'=\frac{1}{\sqrt{2}}(0,1,1)$ gives
 \raisebox{-70pt}[50pt][0pt]{\smash{\includegraphics{circle4.pdf}}}\qquad\quad
 \vr(t)&=2\cos t\,(1,0,0)+ 2\sin t\,\frac{1}{\sqrt{2}}(0,1,1) \\
 &=2\big(\cos t, \frac{\sin t}{\sqrt{2}},\frac{\sin t}{\sqrt{2}}\big)
-\qquad 0\le t\le 2\pi\\
+\qquad 0\le t< 2\pi\\
 \end{align*}
 To check this, note that $x=2\cos t$, $y=\sqrt{2}\sin t$,
 $z=\sqrt{2}\sin t$ satisfies both $x^2+y^2+z^2=4$ and $z=y$.

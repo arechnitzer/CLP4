@@ -413,6 +413,10 @@ For example, the proof of Theorem <xref ref="thm_curlIdentities"/>.c is
 </mrow>
 </md>
 In the second line we used Theorem <xref ref="thm_DIFFalgebra"/>.b.
+The similar verification of Theorems <xref ref="thm_gradIdentities"/>.c,d,
+      <xref ref="thm_divIdentities"/>.c, and
+     <xref ref="thm_laplaceIdentities"/>.c
+are left as exercises. The latter two are parts (a) and (c) of Question 3 in Section 4.1 of the CLP-4 problembook.
 </p>
 
 <p>
@@ -421,7 +425,9 @@ one uses the fact that
 <me>
 \va\cdot(\vb\times\vc)=(\va\times\vb)\cdot\vc
 </me>
-which is Lemma <xref ref="lem_tripProd"/>.a below.
+which is Lemma <xref ref="lem_tripProd"/>.a below. The verification of 
+Theorem <xref ref="thm_divIdentities"/>.d is part (b) of 
+Question 3 in Section 4.1 of the CLP-4 problembook.
 </p>
 
 <p>That leaves the proofs of
@@ -512,11 +518,11 @@ Substituting in
 -\frac{\partial F_1}{\partial z}\Big)
 +\frac{\partial }{\partial z}\Big(\frac{\partial F_2}{\partial x}
 -\frac{\partial F_1}{\partial y}\Big)\cr
-&amp;=\color{red}{\frac{\partial^2 F_3}{\partial x\partial y}}
--\color{blue}{\frac{\partial^2 F_2}{\partial x\partial z}}
--\color{red}{\frac{\partial^2 F_3}{\partial y\partial x}}
+&amp;={\color{red}{\frac{\partial^2 F_3}{\partial x\partial y}}}
+-{\color{blue}{\frac{\partial^2 F_2}{\partial x\partial z}}}
+-{\color{red}{\frac{\partial^2 F_3}{\partial y\partial x}}}
 +\frac{\partial^2 F_1}{\partial y\partial z}
-+\color{blue}{\frac{\partial^2 F_2}{\partial z\partial x}}
++{\color{blue}{\frac{\partial^2 F_2}{\partial z\partial x}}}
 -\frac{\partial^2 F_1}{\partial z\partial y}
 </mrow><mrow>
 &amp;=0
@@ -751,21 +757,21 @@ On the other hand, the right hand side
 &amp;\hskip0.5in-(a_1b_1+a_2b_2+a_3b_3)(c_1\hi+c_2\hj+c_3\hk)
 </mrow><mrow>
 =\ &amp;
-\hi\ \big[\color{blue}{a_1b_1c_1}
+\hi\ \big[{\color{blue}{a_1b_1c_1}}
          +a_2b_1c_2+a_3b_1c_3-
-         \color{blue}{a_1b_1c_1}
+         {\color{blue}{a_1b_1c_1}}
          -a_2b_2c_1-a_3b_3c_1\big]
 </mrow><mrow>
 {+}&amp;\hj\ \big[a_1b_2c_1
-      +\color{blue}{a_2b_2c_2}
+      +{\color{blue}{a_2b_2c_2}}
       +a_3b_2c_3-a_1b_1c_2
-      -\color{blue}{a_2b_2c_2}
+      -{\color{blue}{a_2b_2c_2}}
       -a_3b_3c_2\big]
 </mrow><mrow>
 {+}&amp;\hk\ \big[a_1b_3c_1+a_2b_3c_2
-          +\color{blue}{a_3b_3c_3}
+          +{\color{blue}{a_3b_3c_3}}
           -a_1b_1c_3-a_2b_2c_3
-          -\color{blue}{a_3b_3c_3}\big]
+          -{\color{blue}{a_3b_3c_3}}\big]
 </mrow><mrow>
 {=}\ &amp;
 \hi\ [a_2b_1c_2+a_3b_1c_3-a_2b_2c_1-a_3b_3c_1]
@@ -801,7 +807,7 @@ It says that if a vector field <m>\vF</m> is of the form
 \vnabla\cdot\vF = \vnabla\cdot(\vnabla\times\vA) = 0
 </me>
 When <m>\vF = \vnabla\times\vA</m>, <m>\vA</m> is called a <em>vector potential</em>
-for <m>\vF</m>. We shall see in Theorem <xref ref="thm_screenVector"/>, below,
+for <m>\vF</m>. We shall see in Theorem <xref ref="thm_screenVectorB"/>, below,
 that, conversely, if <m>\vF(\vx)</m> is defined and has continuous first
 order partial derivatives on all of <m>\bbbr^3</m>, and if <m>\vnabla\cdot\vF=0</m>,
 then <m>\vF</m> has a vector potential<fn>Does this remind you of
@@ -818,7 +824,7 @@ Theorem <xref ref="thm_degTwoIdentities"/>.a is indeed another screening test.
 </mrow>
 </md>
 that we saw in Example <xref ref="eg_ITmaxwell"/>. The first equation implies
-that (assuming <m>\vB</m> is sufficiently smooth and decaying) there is a
+that (assuming <m>\vB</m> is sufficiently smooth) there is a
 vector field <m>\vA</m>, called the magnetic potential, with
 <m>\vB=\vnabla\times\vA</m>. Substituting this into the second equation
 gives
@@ -1321,7 +1327,7 @@ work. So not only have we proven that a vector potential exists, but we have fou
 
 <warning xml:id="warn_screeningC">
 <p>
-Note that in Theorem <xref ref="thm_screenVector"/> we are assuming that
+Note that in Theorem <xref ref="thm_screenVectorB"/> we are assuming that
 <m>\vB</m> passes the screening test on <em>all</em> of <m>\bbbr^3</m>.
 If that is not the case, for example
 because the vector field is not defined on all of <m>\bbbr^3</m>, then
@@ -1799,13 +1805,22 @@ and its paddles along <m>C_\veps</m>, as in the figure below, except that
 <p>
 the paddlewheel is really expensive and has a lot more than just four
 paddles. Pretend<fn>Method acting might help you here.</fn>
- that you are one of the paddles. If the paddlewheel
-is rotating at <m>\Om</m> radians per unit time, then you are moving
-at speed <m>\Om \veps</m>. If you are at <m>\vr</m>, the component of the fluid velocity in your direction of motion, i.e. tangential to <m>C_\veps</m>, is <m>\vv(\vr)\cdot\diff{\vr}{s}</m>,
-because <m>\diff{\vr}{s}</m>, with <m>s</m> denoting arc length along the circle,
-is a unit vector tangential to
-<m>C_\veps</m>. All paddles have to move at the same speed. So the speed of the
+that you are one of the paddles. 
+<ul>
+<li>
+If the paddlewheel is rotating at <m>\Om</m> radians per unit time, then in one 
+unit of time you sweep out an arc of a circle of radius <m>\veps</m> that subtends 
+an angle <m>\Om</m>. That arc has length <m>\Om\veps</m>. So you are moving at speed 
+<m>\Om \veps</m>. 
+</li><li>
+If you are at <m>\vr</m>, the component of the fluid velocity in your direction of motion, i.e. tangential to <m>C_\veps</m>, is <m>\vv(\vr)\cdot\diff{\vr}{s}</m>,
+because <m>\hvt=\diff{\vr}{s}</m>, with <m>s</m> denoting arc length along the circle, 
+is a unit vector tangential to <m>C_\veps</m>. 
+</li><li>
+All paddles have to move at the same speed. So the speed of the 
 paddles, <m>\Om\veps</m>, should be the average value of <m>\vv(\vr)\cdot\diff{\vr}{s}</m> around the circle.
+</li>
+</ul>
 Thus the rate of rotation, <m>\Om</m>, of the  paddlewheel should be
 determined by
 <md>

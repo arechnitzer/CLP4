@@ -80,13 +80,13 @@ and check how it depends on time. By the product rule,
 \diff{\vOm}{t}(t) &amp;=\diff{\ }{t}\big(\vr(t)\times\vv(t)\big)
 =\vv(t)\times\vv(t) + \vr(t)\times\va(t)
 </mrow><mrow>
-&amp;=\frac{1}{m}\vr(t)\times\vF\big(\vr(t))\big)
+&amp;=\frac{1}{m}\vr(t)\times\vF\big(\vr(t)\big)
 </mrow><mrow>
 &amp;=\vZero
 \tag{A}
 </mrow>
 </md>
-because <m>\vr(t)</m> and <m>\vF\big(\vr(t))\big)</m> are parallel.
+because <m>\vr(t)</m> and <m>\vF\big(\vr(t)\big)</m> are parallel.
 So <m>\vOm(t)</m> is<fn>Physicists call <m>m\,\vOm(t)</m> the angular momentum at time <m>t</m> and refer to (A) as (an example of) conservation of angular momentum. Conservation of angular momentum is exploited in gyro-compasses and by ice skaters (to spin faster/slower).</fn>
 in fact independent of <m>t</m>. It is a constant vector that we'll just denote <m>\vOm</m>.
 </p>

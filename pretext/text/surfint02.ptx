@@ -201,7 +201,7 @@ Next assume that the surface is given by the equation
 <me>
 \vr(x,y) = \big(x,y, f(x,y)\big)
 </me>
-parametrizes the surface and, at <m>\big(x_0,y_0,z_0=f(x_0,y_0)\big)</m>,
+parametrizes the surface and, at <m>\big(x_0,y_0,z_0\big)=f(x_0,y_0)\big)</m>,
 <md>
 <mrow>
 \vT_x &amp;= \frac{\partial\vr }{\partial x}(x_0,y_0)
@@ -454,7 +454,8 @@ parametrization by exploiting the hyperbolic trig functions
 </me>
 The functions have properties<fn>
   This is no accident: <m>\cosh u = \cos(iu)</m> and <m>\sinh u = -i\sin(iu)</m>,
-  where <m>i</m> is the usual complex number that obeys <m>i^2=-1</m>.
+  where <m>i</m> is the usual complex number that obeys <m>i^2=-1</m>.  You can verify these formulae by just checking that <m>\cosh u</m> and <m>\cos(iu)</m> have the same Taylor expansions 
+and that <m>\sinh u</m> and <m>-i\sin(iu)</m> have the same Taylor expansions.
 </fn> that are very
 similar to those of <m>\sin\theta</m> and <m>\cos\theta</m>.
 <md>

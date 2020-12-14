@@ -38,8 +38,8 @@ then
 <md>
 <mrow>
 \difftwo{\vr}{t} &amp;=
-  \Big(\difftwo{r}{t}-r\ \Big(\diff{\theta}{t}\Big)^2\Big) \hat\vr
-   +\Big(r\ \difftwo{\theta}{t} + 2 \diff{r}{t}\ \diff{\theta}{t}\Big)\hat\vth
+  \left(\difftwo{r}{t}-r\ \left(\diff{\theta}{t}\right)^2\right) \hat\vr
+   +\left(r\ \difftwo{\theta}{t} + 2 \diff{r}{t}\ \diff{\theta}{t}\right)\hat\vth
 </mrow><mrow>
 &amp;= -\frac{GM}{r^3}\vr
 = -\frac{GM}{r^2}\hat\vr
@@ -48,16 +48,16 @@ then
 The <m>\hat\vr</m> and <m>\hat\vth</m> components of this equation are
 <md>
 <mrow>
-\difftwo{r}{t}-r\ \Big(\diff{\theta}{t}\Big)^2 &amp;= -\frac{GM}{r^2}
+\difftwo{r}{t}-r\ \left(\diff{\theta}{t}\right)^2 &amp;= -\frac{GM}{r^2}
 </mrow><mrow>
 r\ \difftwo{\theta}{t} + 2 \diff{r}{t}\ \diff{\theta}{t} &amp;= 0
 </mrow>
 </md>
 The second of these two equations only tells us that
 <me>
-\diff{\ }{t}\Big\{r^2\,\diff{\theta}{t}\Big\}
-= r\Big\{
-     r\ \difftwo{\theta}{t} + 2 \diff{r}{t}\ \diff{\theta}{t}\Big\} = 0
+\diff{\ }{t}\left\{r^2\,\diff{\theta}{t}\right\}
+= r\left\{
+     r\ \difftwo{\theta}{t} + 2 \diff{r}{t}\ \diff{\theta}{t}\right\} = 0
 \implies
 r^2\,\diff{\theta}{t} = h,\quad\text{a constant}
 </me>
@@ -107,7 +107,7 @@ and our equation becomes
 
 <p>
 This is a second order, linear, ordinary differential equation
-with constant coefficients.  Recall that the general solution of such an
+with constant coefficients.  Recall<fn>See Appendix <xref ref="ap_ODE"/>.</fn> that the general solution of such an
 equation is the sum of a <q>particular solution</q> (i.e. any one solution,
 which in this case we can take to be the constant function <m>\frac{GM}{h^2}</m>)
 plus the general solution of the homogeneous equation

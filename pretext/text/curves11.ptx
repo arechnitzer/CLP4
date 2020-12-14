@@ -70,8 +70,8 @@ That is, <m>\phi=\frac{3\pi}{2}</m> when <m>\theta=\frac{\pi}{2}</m>.
 So <m>\phi=3\theta</m>  and <m>P</m> has coordinates
 <me>
 \frac{3}{4}a\big(\cos\theta,\sin\theta\big)
-+\frac{1}{4}a\big(\cos\phi,\sin\phi\big)
-=\frac{a}{4}\big(3\cos\theta+\cos 3\theta,3\sin\theta-3\sin\theta\big)
++\frac{1}{4}a\big(\cos\phi,-\sin\phi\big)
+=\frac{a}{4}\big(3\cos\theta+\cos 3\theta,3\sin\theta-\sin 3\theta\big)
 </me>
 As, recalling your double angle, or even better your triple angle,
 trig identities,

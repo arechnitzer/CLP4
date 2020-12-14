@@ -905,13 +905,13 @@ We may parametrize<fn>We did so previously, with different variable names, in Ex
 0\le z\le 1,\ 0\le\theta\le 2\pi
 </mrow>
 </md>
-The because
+Then because
 <md>
 <mrow>
 \frac{\partial\vr}{\partial z}
    =  \cos\theta\,\hi +  \sin\theta\,\hj + \hk \qquad\text{and}\qquad
-\frac{\partial\vr}{\partial z}
-   =  -z\sin\theta\,\hi +  z\c0s\theta\,\hj
+\frac{\partial\vr}{\partial\theta}
+   =  -z\sin\theta\,\hi +  z\cos\theta\,\hj
 </mrow>
 </md>
 <xref ref="eq_SUdSparam"/> yields<fn>Again the formula for <m>\dee{S}</m> is very neat. Think about why.</fn>
@@ -1081,9 +1081,12 @@ When <m>\varphi=0</m>, <m>u=(a-b)^2</m> and when <m>\varphi =\pi</m>, <m>u=(a+b)
 &amp;=  \frac{\pi G\mu m a}{b} \hk\int_{(a-b)^2}^{(a+b)^2}
      \dee{u}\  \frac{\frac{a^2+b^2-u}{2b}-b}  {u^{3/2}}
 </mrow><mrow>
+&amp;=  \frac{\pi G\mu m a}{b} \hk\int_{(a-b)^2}^{(a+b)^2}
+     \dee{u}\  \frac{\frac{a^2-b^2-u}{2b}}  {u^{3/2}}
+</mrow><mrow>
 &amp;=  \frac{\pi G\mu m a}{b} \hk\Big[
       \Big(\frac{a^2-b^2}{2b}\Big)\frac{u^{-1/2}}{-1/2}
-            -\frac{u^{1/2}}{1/2(2b)}
+            -\Big(\frac{1}{2b}\Big)\frac{u^{1/2}}{1/2}
    \Big]_{(a-b)^2}^{(a+b)^2}
 </mrow>
 </md>
@@ -1264,8 +1267,10 @@ x(t)  = \sqrt{R^2-Z^2} \cos\left(\sqrt{\frac{4\pi G\rho}{3}}\ t\right)
 </me>
 The train reaches <m>M</m> when <m>x(t)  = -\sqrt{R^2-Z^2}</m>. That is, when
 <m>\cos\left(\sqrt{\frac{4\pi G\rho}{3}}\ t\right)=-1</m>. So the transit
-time from <m>V</m> to <m>M</m> is
+time, <m>T</m>, from <m>V</m> to <m>M</m> obeys
 <me>
+\sqrt{\frac{4\pi G\rho}{3}}\ T=\pi
+\implies
 T= \pi  \sqrt{\frac{3}{4\pi G\rho}}
   = \sqrt{\frac{3\pi}{4 G\rho}}
 </me>

@@ -333,12 +333,20 @@ For example, the proof of Theorem \ref{thm:curlIdentities}.c is
 \qquad\text{(by Theorem \ref{thm:DIFFalgebra}.b)}\\
 &=(\vnabla f)\times\vF + f\,\vnabla\times\vF
 \end{align*}
+The similar verification of Theorems \ref{thm:gradIdentities}.c,d,
+      \ref{thm:divIdentities}.c and
+      \ref{thm:laplaceIdentities}.c
+are left as exercises. The latter two are parts (a) and (c) of 
+Question \eref{PROB4}{prb vector identity} in Section 4.1 of the CLP-4 problem book.
+
 For Theorem \ref{thm:divIdentities}.d, the computation is also easy if 
 one uses the fact that  
 \begin{equation*}
 \va\cdot(\vb\times\vc)=(\va\times\vb)\cdot\vc
 \end{equation*} 
-which is Lemma \ref{lem:tripProd}.a below.
+which is Lemma \ref{lem:tripProd}.a below. The verification of 
+Theorem \ref{thm:divIdentities}.d is part (b) of 
+Question \eref{PROB4}{prb vector identity} in Section 4.1 of the CLP-4 problem book.
 
 \bigskip
 \noindent That leaves the proofs of 
@@ -669,7 +677,7 @@ $\vF = \vnabla\times\vA$ for some some vector field $\vA$, then
 \vnabla\cdot\vF = \vnabla\cdot(\vnabla\times\vA) = 0
 \end{equation*}
 When $\vF = \vnabla\times\vA$, $\vA$ is called a \emph{vector potential}
-for $\vF$. We shall see in Theorem \ref{thm:screenVector}, below,
+for $\vF$. We shall see in Theorem \ref{thm:screenVectorB}, below,
 that, conversely, if $\vF(\vx)$ is defined and has continuous first 
 order partial derivatives on all of $\bbbr^3$, and if $\vnabla\cdot\vF=0$, 
 then $\vF$ has a vector potential\footnote{Does this remind you of 
@@ -683,7 +691,7 @@ As an example, consider the Maxwell's equations
 \vnabla\times\vE +\frac{1}{c}\frac{\partial\vB}{\partial t}&=0 
 \end{align*}
 that we saw in Example \ref{eg:ITmaxwell}. The first equation implies
-that (assuming $\vB$ is sufficiently smooth and decaying) there is a 
+that (assuming $\vB$ is sufficiently smooth) there is a 
 vector field $\vA$, called the magnetic potential, with 
 $\vB=\vnabla\times\vA$. Substituting this into the second equation 
 gives
@@ -1096,7 +1104,7 @@ work. So not only have we proven that a vector potential exists, but we have fou
 \end{proof}
 
 \begin{warning}\label{warn:screeningC}
-Note that in Theorem \ref{thm:screenVector} we are assuming that
+Note that in Theorem \ref{thm:screenVectorB} we are assuming that
 $\vB$ passes the screening test on \emph{all} of $\bbbr^3$.
 If that is not the case, for example
 because the vector field is not defined on all of $\bbbr^3$, then 
@@ -1455,13 +1463,21 @@ and its paddles along $C_\veps$, as in the figure below, except that
 \end{nfig}
 }
 the paddlewheel is really expensive and has a lot more than just four
-paddles. Pretend\footnote{Method acting might help you here.} that you are one of the paddles. If the paddlewheel
-is rotating at $\Om$ radians per unit time, then you are moving
-at speed $\Om \veps$. If you are at $\vr$, the component of the fluid velocity in your direction of motion, i.e. tangential to $C_\veps$, is $\vv(\vr)\cdot\diff{\vr}{s}$,
-because $\diff{\vr}{s}$, with $s$ denoting arc length along the circle, 
-is a unit vector tangential to 
-$C_\veps$. All paddles have to move at the same speed. So the speed of the 
+paddles. Pretend\footnote{Method acting might help you here.} that you are one of the paddles. 
+\begin{itemize}
+\item
+If the paddlewheel is rotating at $\Om$ radians per unit time, then in one 
+unit of time you sweep out an arc of a circle of radius $\veps$ that subtends 
+an angle $\Om$. That arc has length $\Om\veps$. So you are moving at speed 
+$\Om \veps$. 
+\item
+If you are at $\vr$, the component of the fluid velocity in your direction of motion, i.e. tangential to $C_\veps$, is $\vv(\vr)\cdot\diff{\vr}{s}$,
+because $\hvt=\diff{\vr}{s}$, with $s$ denoting arc length along the circle, 
+is a unit vector tangential to $C_\veps$. 
+\item
+All paddles have to move at the same speed. So the speed of the 
 paddles, $\Om\veps$, should be the average value of $\vv(\vr)\cdot\diff{\vr}{s}$ around the circle.
+\end{itemize}
 Thus the rate of rotation, $\Om$, of the  paddlewheel should be
 determined by
 \begin{align*}
@@ -1561,22 +1577,22 @@ and the $\sin^2t$ and $\cos^2 t$ terms are easily integrated using
 \end{equation*}
 So we are left with
 \begin{align*}
-\oint_{C_\veps} \vv(\vr)\cdot \dee{\vr}
+\oint_{C_\veps} \vv(\vr)\cdot \dee{\vr} 
 &= \pi\veps^2\vB\cdot\hj - \pi\veps^2\vC\cdot\hi
 +\int_0^{2\pi} \vR(\vr(t))
         \cdot \big(-\veps\sin t\,\hi +\veps\cos t\,\hj\big)\ \dee{t}
 \end{align*}
 which implies that
 \begin{align*}
-\lim_{\veps\rightarrow 0}\frac{1}{\pi\veps^2}
-         \oint_{C_\veps} \vv(\vr)\cdot \dee{\vr}
-&= \frac{\partial \vv_2}{\partial x}(0,0,0) 
+&\lim_{\veps\rightarrow 0}\frac{1}{\pi\veps^2}
+         \oint_{C_\veps} \vv(\vr)\cdot \dee{\vr} \\
+&\hskip0.5in= \frac{\partial \vv_2}{\partial x}(0,0,0) 
   - \frac{\partial \vv_1}{\partial y}(0,0,0)
    +\lim_{\veps\rightarrow 0}\!
      \frac{1}{\pi\veps^2}
            \int_0^{2\pi}\!\!\!\! \vR(\vr(t))
         \cdot \big(-\veps\sin t\,\hi +\veps\cos t\,\hj\big)\,\dee{t} \\
-&= \big(\vnabla\times\vv(0,0,0)\big)\cdot\hk
+&\hskip0.5in= \big(\vnabla\times\vv(0,0,0)\big)\cdot\hk
    +\lim_{\veps\rightarrow 0}
      \frac{1}{\pi\veps^2}
            \int_0^{2\pi} \vR(\vr(t))
@@ -2198,7 +2214,7 @@ Appendix \ref{ap:spherCoord}, if you need to refresh your memory.)
 \bigg[\int_0^{\nicefrac{\pi}{2}}\sin\varphi\,\dee{\varphi}\bigg]
 \bigg[\int_0^{a}\rho^4\,\dee{\rho}\bigg] \\
 &=\big[2\pi\big]\Big[-\cos\varphi\Big]_0^{\nicefrac{\pi}{2}}
-   \Big[\frac{\rho^5}{5}\Big]_0^a \\
+   \left[\frac{\rho^5}{5}\right]_0^a \\
 &=\frac{2\pi a^5}{5}
 \end{align*}
 
@@ -2314,7 +2330,7 @@ So
 \tripInt_V\vnabla\cdot\vF\ \dee{V}
 =9\,\text{Vol}(V)
 =9\int_1^2 \pi z^2\,\dee{z}
-=9\Big[\frac{\pi z^3}{3}\Big]_1^2
+=9\left[\frac{\pi z^3}{3}\right]_1^2
 =9\times \pi\frac{7}{3}
 =21\pi
 \end{align*}
@@ -2368,7 +2384,7 @@ V = \Set{(x,y,z)}{{\big(x^2+y^2\big)}^2\le z,\ \ 0\le z\le 1 }
 \end{align*}
 The boundary of $V$ is the union of $S$, with outward pointing normal $-\vn$
 (recall that the problem specifies that the symbol $\hn$ refers to
-the upward point normal)  and the disk
+the upward pointing normal)  and the disk
 \begin{equation*}
 D = \Set{(x,y,z)}{z= 1,\ \  {\big(x^2+y^2\big)}^2\le 1}
 \end{equation*}
@@ -2484,7 +2500,7 @@ Here $\ka$ is another positive physical constant called the thermal
 conductivity of the object. So the rate at which heat is conducted
 across an element of surface area $\dee{S}$ at $(x,y,z)$ in the direction of 
 its unit normal $\hn$ is given by $-\ka\hn\cdot\vnabla T(x,y,z,t)\,\dee{S}$ at 
-time $t$. For example, in the figure
+time $t$. (See Lemma \ref{lem:fluxInterp}.) For example, in the figure
 \begin{nfig}
 \begin{center}
     \includegraphics{heat1.pdf}
@@ -2511,7 +2527,7 @@ time interval $\dee{t}$ is given by the integral
 \hskip0.5in\raisebox{-32pt}[68pt][30pt]
                          {\smash{\includegraphics{heat2}}}
 \end{equation*}
-In this same time interval the temperature at a point  $(x,y,z)$ in $V$
+In this same time interval, the temperature at a point  $(x,y,z)$ in $V$
 changes by $\frac{\partial T}{\partial t}(x,y,z,t)\,\dee{t}$. If the density of 
 the object at $(x,y,z)$ is $\rho(x,y,z)$, the amount of heat energy  
 required to increase the temperature of an infinitesimal volume $\dee{V}$ of 
@@ -2547,8 +2563,8 @@ As both integrals are over the same volume $V$, we have
 -\tripInt_V C\rho\frac{\partial T}{\partial t}\,\dee{V}
 =0
 \implies 
-\tripInt_{V} \Big[\ka\vnabla^2 T
-          -C\rho\frac{\partial T}{\partial t}\Big]\,\dee{V}=0
+\tripInt_{V} \left[\ka\vnabla^2 T
+          -C\rho\frac{\partial T}{\partial t}\right]\,\dee{V}=0
 \tag{H}\end{equation}
 where $\vnabla^2=\vnabla\cdot\vnabla=\frac{\partial^2\hfill}{\partial x^2}+
 \frac{\partial^2\hfill}{\partial y^2}+\frac{\partial^2\hfill}{\partial z^2}$
@@ -2607,7 +2623,7 @@ We also assume that the temperature $T(0,t)$ at the surface of the Earth
 is primarily determined by solar heating and is given by
 \begin{equation}
 T(0,t)=T_0+T_A\cos(\sigma t)+T_D\cos(\delta t)
-\tag{IC}\end{equation}
+\tag{BC}\end{equation}
 Here $T_0$ is the long term
 average of the temperature at the surface of the Earth, 
 $T_A\cos(\sigma t)$ gives seasonal temperature variations and 
@@ -2627,7 +2643,7 @@ $\delta =2\pi$ and
 $\sigma =\frac{2\pi}{1\ {\rm year}}=\frac{2\pi}{365{\rm days}}$.
 Then $T_A\cos(\sigma t)$ has period one year and 
 $T_D\cos(\delta t)$ has period one day.
-The solution to the initial value problem (HE)+(IC) can be found by separation
+The solution to the initial value problem (HE)+(BC) can be found by separation
 of variables, a standard topic in courses on partial differential equations.
 The solution is
 \begin{equation}
@@ -2638,7 +2654,7 @@ T(z,t)=T_0
  \cos\Big(\delta t-\sqrt{\frac{\delta }{2\alpha}}\ z\Big)
 \tag{SLN}\end{equation}
 Whether or not you can find this solution, 
-you can, and should, check that (SLN) satisfies both (HE) and (IC). 
+you can, and should, check that (SLN) satisfies both (HE) and (BC). 
 
 Now let's see what we can learn from the solution (SLN).
 For any fixed $z$, the time average of $T(z,t)$ is $T_0$ (just because the average
@@ -2984,18 +3000,18 @@ illustrated in the figure
 The total force due to the pressure acting on the cube
 is the sum 
 \begin{align*}
-&-P\big(x+\frac{\dee{x}}{2},y,z\big)\,dy\dee{z}\,\hi
-+P\big(x-\frac{\dee{x}}{2},y,z\big)\,dy\dee{z}\,\hi\\
-&-P\big(x,y+\frac{dy}{2},z\big)\,\dee{x}\dee{z}\,\hj
-+P\big(x,y-\frac{dy}{2},z\big)\,\dee{x}\dee{z}\,\hj\\
-&-P\big(x,y,z+\frac{\dee{z}}{2}\big)\,\dee{x}dy\,\hk
-+P\big(x,y,z-\frac{\dee{z}}{2}\big)\,\dee{x}dy\,\hk
+&-P\left(x+\frac{\dee{x}}{2},y,z\right)\,dy\dee{z}\,\hi
++P\left(x-\frac{\dee{x}}{2},y,z\right)\,dy\dee{z}\,\hi\\
+&-P\left(x,y+\frac{dy}{2},z\right)\,\dee{x}\dee{z}\,\hj
++P\left(x,y-\frac{dy}{2},z\right)\,\dee{x}\dee{z}\,\hj\\
+&-P\left(x,y,z+\frac{\dee{z}}{2}\right)\,\dee{x}dy\,\hk
++P\left(x,y,z-\frac{\dee{z}}{2}\right)\,\dee{x}dy\,\hk
 \end{align*}
 of the forces acting on the six faces.
 Consider the $\hi$ component and rewrite it as
 \begin{align*}
-&-P\big(x+\frac{\dee{x}}{2},y,z\big)\,dy\dee{z}\,\hi
-+P\big(x-\frac{\dee{x}}{2},y,z\big)\,dy\dee{z}\,\hi \\
+&-P\left(x+\frac{\dee{x}}{2},y,z\right)\,dy\dee{z}\,\hi
++P\left(x-\frac{\dee{x}}{2},y,z\right)\,dy\dee{z}\,\hi \\
 &\hskip1in
 =-\frac{P(x+{\dee{x}\over2},y,z)-P(x-{\dee{x}\over2},y,z)}{\dee{x}}\,\hi\ 
      \dee{x} \dee{y} \dee{z} \\
@@ -3101,7 +3117,7 @@ Substituting it in gives
             {\tripInt_V\rhof\,\dee{V}}-\vr_0\bigg\}\times\vB
 \end{alignat*}
 So the torque generated at $\vr_0$ by pressure over the entire surface
-is the same as a force $\vB$ all applied at the single point
+is the same as the torque generated at $\vr_0$ by a force $\vB$ applied at the single point
 \begin{equation*}
 \vC_\vB=\frac{\tripInt_V \vr\rhof\,\dee{V}}{\tripInt_V\rhof\,\dee{V}}
 \end{equation*}
@@ -3188,7 +3204,7 @@ in the directions of the arrows and think about how the boat will respond.
 %%%%%%%%%%%%%%%%%
 
 In this section, we derive the properties of torque that we used in 
-the last example. Newton's law of motion says that the position $\vr(t)$ 
+the last section. Newton's law of motion says that the position $\vr(t)$ 
 of a single particle moving under the influence
 of a force $\vF$ obeys $m\vr''(t)=\vF$. Similarly, the positions $\vr_i(t)$, 
 $1\le i\le n$, of a set of particles moving under the influence
@@ -3409,7 +3425,7 @@ $1\le i\le n$, must be zero.
 \subsection{Optional --- Solving Poisson's Equation}\label{sec:poisson}
 %%%%%%%%%%%%%%%%%
 
-In this section we shall use the divergence theorem find a formula for the solution of Poisson's equation
+In this section we shall use the divergence theorem to find a formula for the solution of Poisson's equation
 \begin{equation*}
 \vnabla^2\varphi = 4\pi\rho
 \end{equation*}
@@ -3491,7 +3507,8 @@ $\frac{1}{|\vr-\vr_0|}$. The first two properties are
 \tag{P2}\end{align}
 and are valid for all $\vr\ne \vr_0$. Verification of the first property is
 a simple one line computation. Verification of the second property is
-a simple three line computation. 
+a simple three line computation. (See the solution to Question 
+\eref{PROB4}{poisson} in Section 4.1 of the CLP-4 problem book.)
 
 The other property of $\frac{1}{|\vr-\vr_0|}$ 
 that we shall use is the following. Let $S_\veps$ be the sphere of 
@@ -3652,7 +3669,7 @@ which is exactly equation (V).
 %%%%%%%%%%%%%%%%%%%%%%%%%%
 Our next variant of the fundamental theorem of calculus is 
 Green's\footnote{George Green (1793--1841) was a British 
-mathematical-physicist. He spent much of the early part of his life
+mathematical physicist. He spent much of the early part of his life
 working in his father's bakery and grain mill. He was finally admitted
 as an undergraduate to Cambridge in 1832, aged nearly forty.} theorem, which 
 relates an integral, of a derivative of a (vector-valued) function,
@@ -3726,8 +3743,8 @@ at \emph{every} point of $R$.
 Then
 \begin{equation*}
 \oint_{C} \big[F_1(x,y)\,\dee{x} +F_2(x,y)\,\dee{y}\big]
- =\dblInt_{R}\Big(\frac{\partial F_2}{\partial x} 
-                - \frac{\partial F_1}{\partial y}\Big)\ \dee{x}\dee{y}
+ =\dblInt_{R}\left(\frac{\partial F_2}{\partial x} 
+                - \frac{\partial F_1}{\partial y}\right)\ \dee{x}\dee{y}
 \end{equation*}
 \end{theorem}
 
@@ -3783,7 +3800,7 @@ applied to $\vG$ and $V$, namely
 \dblInt_{\partial V} \vG\cdot\hn\,\dee{S}
 &=\tripInt_V\vnabla\cdot\vG\ \dee{V} 
 \end{align*}
-gives us exactly Green's theorem. 
+gives us exactly Green's theorem, as we shall now see.
 
 Since $\vnabla\cdot\vG = \frac{\partial F_2}{\partial x} 
                 - \frac{\partial F_1}{\partial y}$,  the right hand side is just
@@ -3791,11 +3808,11 @@ Since $\vnabla\cdot\vG = \frac{\partial F_2}{\partial x}
 \tripInt_V\vnabla\cdot\vG\ \dee{V}
 &= \dblInt_{R}\dee{x}\dee{y}\int_0^1\dee{z} \ \vnabla\cdot\vG \\
 &= \dblInt_{R}\dee{x}\dee{y}\int_0^1\dee{z} \ 
-        \Big(\frac{\partial F_2}{\partial x}(x,y) 
-                - \frac{\partial F_1}{\partial y}(x,y)\Big) \\
+        \left(\frac{\partial F_2}{\partial x}(x,y) 
+                - \frac{\partial F_1}{\partial y}(x,y)\right) \\
 &= \dblInt_{R}\dee{x}\dee{y}\
-        \Big(\frac{\partial F_2}{\partial x}(x,y) 
-                - \frac{\partial F_1}{\partial y}(x,y)\Big) 
+        \left(\frac{\partial F_2}{\partial x}(x,y) 
+                - \frac{\partial F_1}{\partial y}(x,y)\right) 
 \end{align*}
 because the integrand is independent of $z$. This is exactly the right 
 hand side of Green's theorem.
@@ -3814,25 +3831,25 @@ the outward unit normal on the (horizontal, flat) bottom is $-\hk$  so that
 We have used the fact that the $\hk$ component of $\vG$ is exactly zero
 to discard the integrals over the top and bottom of $\partial V$. 
 To evaluate the integral over the side, we'll parametrize the side. Suppose that 
-$\vr(t)=x(t)\hi +y(t)\hj$, $a\le t\le b$,
+$\vr(t)=x(t)\,\hi +y(t)\,\hj$, $a\le t\le b$,
 is a parametrization of $C$, with the arrow in the figure above giving the
 direction of increasing $t$. Then we can use
 \begin{align*}
-\vR(t,z)  = \vr(t) +z\hk
-          = x(t)\hi +y(t)\hj +z\hk \qquad a\le t\le b,\ 0\le z\le 1
+\vR(t,z)  = \vr(t) +z\,\hk
+          = x(t)\,\hi +y(t)\,\hj +z\,\hk \qquad a\le t\le b,\ 0\le z\le 1
 \end{align*}
 as a parametrization of the side. We'll use \eqref{eq:SUdSparam} to determine
 $\hn\,\dee{S}$ for the side. Since
 \begin{align*}
-\frac{\partial\vR}{\partial t}(t,z) & = x'(t)\hi +y'(t)\hj \\
+\frac{\partial\vR}{\partial t}(t,z) & = x'(t)\,\hi +y'(t)\,\hj \\
 \frac{\partial\vR}{\partial z}(t,z) & = \hk 
 \end{align*}
- gives
+\eqref{eq:SUdSparam} gives
 \begin{align*}
 \hn\,\dee{S} &= \frac{\partial\vR}{\partial t}(t,z)\times 
                \frac{\partial\vR}{\partial z}(t,z)\ \dee{t}\dee{z} \\
-&= \big(x'(t)\hi +y'(t)\hj\big)\times \hk\ \dee{t}\dee{z} \\
-&= \big(-x'(t)\hj +y'(t)\hi\big)\ \dee{t}\dee{z}
+&= \big(x'(t)\,\hi +y'(t)\,\hj\big)\times \hk\ \dee{t}\dee{z} \\
+&= \big(-x'(t)\,\hj +y'(t)\,\hi\big)\ \dee{t}\dee{z}
 \end{align*}
 Note that with this choice of $\pm$ sign (that is, 
 $\frac{\partial\vR}{\partial t}\times 
@@ -3851,11 +3868,11 @@ We can now compute the surface integral directly.
 \dblInt_{\partial V} \vG\cdot\hn\,\dee{S}
 &=\dblInt_{\text{side}} \vG\cdot\hn\,\dee{S}  \\
 &=\int_a^b\dee{t}\int_0^1\dee{z}\ \vG\big(\vR(t,z)\big)\cdot 
-          \big(-x'(t)\hj +y'(t)\hi\big)
+          \big(-x'(t)\,\hj +y'(t)\,\hi\big)
 \\
 &=\int_a^b\dee{t}\int_0^1\dee{z}\ 
          \big(F_2(x(t),y(t))\,\hi -F_1(x(t),y(t))\,\hj\big)\cdot 
-          \big(-x'(t)\hj +y'(t)\hi\big) \\
+          \big(-x'(t)\,\hj +y'(t)\,\hi\big) \\
 &=\int_a^b\dee{t}\ 
          \big[F_2(x(t),y(t))\,y'(t) +F_1(x(t),y(t))\,x'(t)\big]
 \\
@@ -3945,7 +3962,7 @@ by the astroid $x^{2/3} + y^{2/3} = a^{2/3}$.
 \end{nfig}
 In Example \ref{eg:astroid} we found the parametrization
 \begin{equation*}
-\vr(t) = x(t)\,\hi + y(t)\,\hj = a\cos^3t\hi + a\sin^3 t\hj
+\vr(t) = x(t)\,\hi + y(t)\,\hj = a\cos^3t\,\hi + a\sin^3 t\,\hj
 \qquad 0\le t\le 2\pi
 \end{equation*}
 for the astroid. So, by Corollary \ref{cor:greens},
@@ -3972,7 +3989,7 @@ Evaluate
 \end{equation*}
 where
 \begin{equation*}
-\vB = \frac{-y\hi+x\hj}{x^2+y^2}
+\vB = \frac{-y\,\hi+x\,\hj}{x^2+y^2}
 \end{equation*}
 and $C$ is the curve
 \begin{align*}
@@ -3989,7 +4006,7 @@ $X(t)=\cos t$, $Y(t)=\sin t$, $Z(t)=0$, it would be the unit circle
 centred on the origin in the $xy$-plane, traversed counterclockwise.
 For $-\frac{\pi}{2}\le u\le \frac{\pi}{2}$, the function $\sin u$ 
 increases monotonically with  $u$ and is of the same sign as $u$ so that,  
-since $|\sin t|\le 1<\frac{\pi}{2}$,
+since $|\sin t|,|\cos t|\le 1<\frac{\pi}{2}$,
 \begin{itemize}\itemsep1pt \parskip0pt \parsep0pt %\itemindent-15pt
 \item[$\circ$]
 $x(t) = \sin\big(\cos t)$ has the same sign as $X(t)=\cos t$ and is increasing
@@ -4022,8 +4039,8 @@ it looks like Green's theorem gives us, trivially,
 \begin{equation*}
 \oint_C\vB\cdot\dee{\vr}
 =\oint_C\big[\vB_1\,\dee{x} +\vB_2\,\dee{y}\big]
-= \dblInt_{R}\Big(\frac{\partial B_2}{\partial x} 
-                - \frac{\partial B_1}{\partial y}\Big)\ \dee{x}\dee{y}
+= \dblInt_{R}\left(\frac{\partial B_2}{\partial x} 
+                - \frac{\partial B_1}{\partial y}\right)\ \dee{x}\dee{y}
 =0
 \end{equation*}
 where $R$ is the region inside our curve $C$. 
@@ -4125,7 +4142,7 @@ Evaluate
 \end{equation*}
 where
 \begin{equation*}
-\vB = \frac{-y\hi+x\hj}{x^2+y^2}
+\vB = \frac{-y\,\hi+x\,\hj}{x^2+y^2}
 \end{equation*}
 and $C$ is the curve
 \begin{align*}
@@ -4412,7 +4429,7 @@ $\vr(u_0,v)$, in $\bbbr^3$ with $v$ starting at $v_0$ and increasing,
 we move into the interior of $S$. The forward tangent to this new path, 
 $\frac{\partial \vr}{\partial v}(u_0,v_0)$,
 points from $ \vr(u_0,v_0)$ into the interior of $S$. It's the blue arrow in
-the figure on the left below.
+the figure on the right below.
 
 \begin{wfig}
 \begin{center}
@@ -4444,7 +4461,7 @@ the integrals.
 \noindent
 \emph{The surface integral:}\ \ \
 
-Since $F=F_1\hi$, so that 
+Since $F=F_1\,\hi$, so that 
 \begin{align*}
 \vnabla\times\vF
 &=\det\left[\begin{matrix} \hi & \hj & \hk \\[0.05in]
@@ -4452,8 +4469,8 @@ Since $F=F_1\hi$, so that
                          \frac{\partial\hfill}{\partial z} \\[0.05in]
          F_1 & 0 & 0
        \end{matrix}\right] 
-= \big(0,\frac{\partial F_1}{\partial z}, 
-                -\frac{\partial F_1}{\partial y}\big)
+= \left(0,\frac{\partial F_1}{\partial z}, 
+                -\frac{\partial F_1}{\partial y}\right)
 \end{align*}
 and 
 \begin{align*}
@@ -4486,7 +4503,7 @@ and
                 -\frac{\partial F_1}{\partial y}\right)
    \cdot\frac{\partial \vr}{\partial u}
 \times \frac{\partial \vr}{\partial v}\ \dee{u}\,\dee{v}\cr
-&\hskip.15in=\dblInt_{R}\Big\{\frac{\partial F_1}{\partial z}
+&\hskip.15in=\dblInt_{R}\left\{\frac{\partial F_1}{\partial z}
                     \left(\frac{\partial z}{\partial u}
                          \frac{\partial x}{\partial v}
                        -\frac{\partial x}{\partial u}
@@ -4496,7 +4513,7 @@ and
                          \frac{\partial y}{\partial v}
                        -\frac{\partial y}{\partial u}
                        \frac{\partial x}{\partial v}\right)
-\Big\}\,\dee{u}\,\dee{v}
+\right\}\,\dee{u}\,\dee{v}
 \end{align*}
 Now we examine the line integral and show that it equals this one.
 
@@ -4533,9 +4550,9 @@ By Green's Theorem, we have
 \begin{align*}
 \oint_{\partial S}\vF\cdot \dee{\vr}
 &=\oint_{\partial R}M(u,v)\ \dee{u}+N(u,v)\ \dee{v}\cr
-=\dblInt_{R}\Big\{&\frac{\partial N}{\partial u}-\frac{\partial M}{\partial v}
-\Big\}\ \dee{u} \dee{v}\cr
-=\dblInt_{R}\Big\{&
+=\dblInt_{R}\bigg\{&\frac{\partial N}{\partial u}-\frac{\partial M}{\partial v}
+\bigg\}\ \dee{u} \dee{v}\cr
+=\dblInt_{R}\bigg\{&
                \frac{\partial\hfill}{\partial u}\big[
                      F_1\big({x(u,v),y(u,v),z(u,v)}\big)
                      \big]\frac{\partial x}{\partial v}
@@ -4544,9 +4561,9 @@ By Green's Theorem, we have
                      F_1\big({x(u,v),y(u,v),z(u,v)}\big)
                      \big]\frac{\partial x}{\partial u}
                    -F_1\frac{\partial^2 x}{\partial v\partial u}
-                                        \Big\}\ \dee{u} \dee{v}
+                                        \bigg\}\ \dee{u} \dee{v}
 \displaybreak[0]\\
-=\dblInt_{R}\Big\{&
+=\dblInt_{R}\bigg\{&
                \textcolor{blue}{\Big(\frac{\partial F_1}{\partial x}
                      \frac{\partial x}{\partial u}}
                      +\frac{\partial F_1}{\partial y}
@@ -4566,8 +4583,8 @@ By Green's Theorem, we have
                      \Big)\frac{\partial x}{\partial u}
                 \textcolor{red}{
                    -F_1\frac{\partial^2 x}{\partial v\partial u}}
-                                        \Big\}\ \dee{u} \dee{v}\cr
-=\dblInt_{R}\Big\{&\Big(\frac{\partial F_1}{\partial y}
+                                        \bigg\}\ \dee{u} \dee{v}\cr
+=\dblInt_{R}\bigg\{&\Big(\frac{\partial F_1}{\partial y}
                      \frac{\partial y}{\partial u}
                      +\frac{\partial F_1}{\partial z}
                      \frac{\partial z}{\partial u}
@@ -4578,7 +4595,7 @@ By Green's Theorem, we have
                      +\frac{\partial F_1}{\partial z}
                      \frac{\partial z}{\partial v}
                      \Big)\frac{\partial x}{\partial u}
-\Big\}\,\dee{u}\, \dee{v}\cr
+\bigg\}\,\dee{u}\, \dee{v}\cr
 \noalign{\vskip.05in}
 &\hskip-33pt=\dblInt_{S}\vnabla\times\vF\cdot\hn\,\dee{S}
 \end{align*}
@@ -5018,7 +5035,7 @@ In fact, since
                  &\frac{\partial\hfill}{\partial y}
                  &\frac{\partial\hfill}{\partial z}\\
                 \cos x +  y+z&x+z&x+y\end{matrix}\right] \\
-&=\hi\big(1-1)\big)-\hj\big(1-1\big)+\hk\big(1-1\big) \\
+&=\hi\big(1-1\big)-\hj\big(1-1\big)+\hk\big(1-1\big) \\
 &=\vZero 
 \end{align*}
 This $\vF$ is conservative! (In fact 
@@ -5133,7 +5150,8 @@ is a vector potential for $\vG$, which we can quickly check.
 
 Parametrizing $C$ by
 $\vr(t) = \cos t\,\hi+\sin t\,\hj$, $0\le t\le 2\pi$,
-Stokes' theorem gives (recalling that $z=0$ on $C$)
+Stokes' theorem gives (recalling that $z=0$ on $C$ so that
+$\vF\big(\vr(t)\big)=x^2\,\hj\Big|_{x=\cos t}=\cos^2t$)
 \begin{align*}
 \dblInt_S\vG\cdot\hn\,\dee{S}
 &= \dblInt_S\vnabla\times\vF\cdot\hn\,\dee{S}
@@ -5238,9 +5256,9 @@ $x=2\cos t$, $y=\sqrt{2}\sin t$, $z=\sqrt{2}\sin t$ satisfies both
 $x^2+y^2+z^2=4$ and $z=y$. 
 
 At $t=0$, $\vr(0)=(2,0,0)$. As $t$ increases,
-$z(t)=\sqrt{2}$ increases and $\vr(t)$ moves upwards towards 
+$z(t)=\sqrt{2}\sin t$ increases and $\vr(t)$ moves upwards towards 
 $\vr\big(\frac{\pi}{2}\big)=(0,\sqrt{2},\sqrt{2})$.
-This is the desired counterclockwise direction. Now that we have a 
+This is the desired counterclockwise direction (when viewed from above). Now that we have a 
 parametrization, we can set up the integral.
 \begin{align*}
 \vr(t)&=\big(2\cos t, \sqrt{2}\sin t,\sqrt{2}\sin t\big)\cr
@@ -5314,7 +5332,8 @@ the domain of integration is
 R=\Set{(x,y)}{(x,y,z)\text{ is in }S\text{ for some }z}
 \end{equation*}
 To determine precisely what this domain of integration is, we observe that
-since $z=y$ on $S$
+since $z=y$ on $S$, $x^2+y^2+z^2\le 4$ is the same as $x^2+2y^2\le 4$ on $S$, 
+so that  
 \begin{equation*}
 S=\Set{(x,y,z)}{x^2+2y^2\le 4,\ z=y}
 \implies R=\Set{(x,y)}{x^2+2y^2\le 4}
@@ -5437,7 +5456,7 @@ in the surface, giving it a very small boundary. Then take the limit as the hole
      =\oint_{\partial S}\vA\cdot\dee{\vr}
      =0
 \end{align*}
-by Stokes' theorem. But we found in Example \ref{eg:fluxIntegralA}, 
+by Stokes' theorem, since $\partial S$ is empty. But we found in Example \ref{eg:fluxIntegralA}, 
 with $m=1$, that the flux of $\vB$ through any sphere centred on 
 the origin is $4\pi$.
 
@@ -5520,7 +5539,7 @@ tells us the orientation of $D_\veps$. Give the circle $C_\veps$ the
 corresponding orientation using the right hand rule.
 That is, if the fingers of your right hand are pointing in the corresponding
 direction of motion along $C_\veps$ and your palm is facing $D_\veps$, then 
-the thumb is pointing in the direction $\hn$.
+your thumb is pointing in the direction $\hn$.
 \begin{nfig}
 \begin{center}
     \includegraphics{prepaddle.pdf}
@@ -6150,13 +6169,14 @@ centered on the $\ell^{\rm th}$ puncture.
 
 
 %%%%%%%%%%%%%%%%%%%%%%%%%
-\section{Optional --- More Interpretation of Div and Curl}
+\section[Optional --- More Interpretation of Div and Curl]
+    {Really Optional --- More Interpretation of Div and Curl}
 %%%%%%%%%%%%%%%%%%%%%%%%%
 
 
 We are now going to determine, in much more detail than before\footnote{We'll 
 also use some more mathematics than before. In this section, we'll
-use eigenvalues and eigenvectors and solve some simple systems of
+use matrix eigenvalues and eigenvectors and solve some simple systems of
 ordinary differential equations. We'll also need to use a lot of subscripts and 
 superscripts. It only looks intimidating.
 },
@@ -6181,68 +6201,70 @@ nearest neighbour corners are $\veps\ha{1},\ \veps\ha{2}$ and $\veps\ha{3}$.
 
 As time progresses, 
 the chunk of fluid moves. In particular, the corners move. Let us denote by 
-$\veps\vb_1(t)$ the vector, at time $t$,
+$\veps\vb^{(1)}(t)$ the vector, at time $t$,
 joining the $n_1=n_2=n_3=0$ corner to the $n_1=1,\
-n_2=n_3=0$ corner. Define $\veps\vb_2(t)$ and $\veps\vb_3(t)$ similarly.
+n_2=n_3=0$ corner. Define $\veps\vb^{(2)}(t)$ and $\veps\vb^{(3)}(t)$ similarly.
 For times very close to $t_0$ we can think of our chunk of fluid as being
-essentially a parallelepiped with edges $\veps\vb_k(t)$. 
+essentially a parallelepiped with edges $\veps\vb^{(k)}(t)$. 
 \begin{nfig}
 \begin{center}
     \includegraphics{cubeB.pdf}
 \end{center}
 \end{nfig}
-By concentrating on the edges $\veps\vb_k(t)$ of the chunk of fluid, rather
+By concentrating on the edges $\veps\vb^{(k)}(t)$ of the chunk of fluid, rather
 than the corners, we are ignoring any translations that the chunk of
 fluid might have undergone. We want, instead, to determine
 how the size and orientation of the parallelepiped changes  as $t$ increases.
 
-At time $t_0$, $\vb_k=\ha{k}$.
+At time $t_0$, $\vb^{(k)}=\ha{k}$.
 The velocities  of the corners of the chunk of fluid at time $t_0$ are 
 \begin{equation*}
 \vv\big(\vx_0+n_1\veps\ha{1}+n_2\veps\ha{2}+n_3\veps\ha{3},t_0\big)
 \end{equation*}
-In particular, at time $t_0$, the tail of $\veps\vb_k$ has velocity 
-$\vv(\vx_0,t_0)$ and the head of $\veps\vb_k$ has velocity 
+In particular, at time $t_0$, the tail of $\veps\vb^{(k)}$ has velocity 
+$\vv(\vx_0,t_0)$ and the head of $\veps\vb^{(k)}$ has velocity 
 $\vv(\vx_0+\veps\ha{k},t_0)$. Consequently (using a Taylor approximation), 
 \begin{equation*}
-\veps\diff{\vb_k}{t}(t_0)=\vv\big(\vx_0+\veps\ha{k},t_0\big)
+\veps\diff{\vb^{(k)}}{t}(t_0)=\vv\big(\vx_0+\veps\ha{k},t_0\big)
       -\vv\big(\vx_0,t_0\big)
 =\smsum_{j=1}^3\veps\frac{\partial\vv}{\partial x_j}\big(\vx_0,t_0\big)\ha{k}_j
 +O(\veps^2)
 \end{equation*}
 and so
 \begin{equation*}
-\diff{\vb_k}{t}(t_0)
+\diff{\vb^{(k)}}{t}(t_0)
 =\smsum_{j=1}^3\frac{\partial\vv}{\partial x_j}\big(\vx_0,t_0\big)\ha{k}_j
 +O(\veps)
 \end{equation*}
 The notation $O(\veps^n)$ represents a function that is bounded by a constant
 times $\veps^n$ for all sufficiently small $\veps$. That is, we are saying that
-$\diff{\vb_k}{t}(t_0)$ is 
+$\diff{\vb^{(k)}}{t}(t_0)$ is 
 $\smsum_{j=1}^3\frac{\partial\vv}{\partial x_j}\big(\vx_0,t_0\big)\ha{k}_j$
 plus a small error that is bounded by a constant time $\veps$.
 The notation $\ha{k}_j$
 just refers to the $j^{\rm th}$ component of the vector $\ha{k}$.
 
-Define the $3\times 3$ matrix $\cV$ by
+Denote by $\cV$ the $3\times 3$ matrix whose $(i,j)$ matrix element is
 \begin{equation}
 \cV_{i,j}=\frac{\partial \vv_i}{\partial x_j}\big(\vx_0,t_0\big)
+\qquad 1\le i,j\le 3
 \tag{M}\end{equation}
 Then we can write the above more compactly:
 \begin{equation*}
-\diff{\vb_k}{t}(t_0)=\cV\vb_k(t_0)+O(\veps)
+\diff{\vb^{(k)}}{t}(t_0)=\cV\vb^{(k)}(t_0)+O(\veps)
 \end{equation*}
-We study the behaviour of $\vb_k(t)$ for small $\veps$  and $t$ close to
+Here $\cV\vb^{(k)}(t_0)$ is the product of the $3\times 3$ matrix $\cV$ and the $3\times 1$ column vector $\vb^{(k)}(t_0)$. 
+We study the behaviour of $\vb^{(k)}(t)$ for small $\veps$  and $t$ close to
 $t_0$, by studying the behaviour of the solutions to the initial value problems
 \begin{equation}
-\diff{\vb_k}{t}(t)=\cV\vb_k(t)\qquad \vb_k(t_0)=\ha{k}
+\diff{\vb^{(k)}}{t}(t)=\cV\vb^{(k)}(t)\qquad \vb^{(k)}(t_0)=\ha{k}
 \tag{IVP}\end{equation}
 To warm up, we first look at two two-dimensional examples. In both 
 examples, the velocity field $\vv(x,y)$ is linear in $(x,y)$. 
 Consequently, in these examples, $\vv\big(\vx_0+\veps\ha{k},t_0\big)-\vv\big(\vx_0,t_0\big)$
 is exactly $\smsum_{j=1}^3\veps\frac{\partial\vv}
 {\partial x_j}\big(\vx_0,t_0\big)\ha{k}_j$ and 
- the solution to (IVP) coincides with the exact $\vb_k(t)$.
+ the solution to (IVP) coincides with the exact $\vb^{(k)}(t)$.
 Following each example, we discuss a broad class of $\cV$'s that generate  
 behaviour similar to that example. 
 
@@ -6269,12 +6291,12 @@ is
 \vb(t)=\left[\begin{matrix}e^{2t}&0\\ 0&e^{3t}\end{matrix}\right]\vb(0)
 \end{equation*}
 If one chooses $\ha{1}=\hi$ and $\ha{2}=\hj$, the edges, 
-$\vb_1(t)=e^{2t}\ha{1}$ and  $\vb_2(t)=e^{3t}\ha{2}$, of the chunk of
+$\vb^{(1)}(t)=e^{2t}\ha{1}$ and  $\vb^{(2)}(t)=e^{3t}\ha{2}$, of the chunk of
 fluid never change direction. But their lengths do change. The relative rate
-of change of length per unit time, $|\diff{\vb_k}{t}(t)|/|\vb_k(t)|$, 
-is $2$ for $\vb_1$ and 3 for $\vb_3$. In the figure below, the darker
-rectangle is the initial square. That is, the square with edges $\vb_k(t_0)=\ha{k}$.
-The lighter rectangle is that with edges $\vb_k(t)$ for some $t$ a bit
+of change of length per unit time, $|\diff{\vb^{(k)}}{t}(t)|/|\vb^{(k)}(t)|$, 
+is $2$ for $\vb^{(1)}$ and 3 for $\vb^{(2)}$. In the figure below, the darker
+rectangle is the initial square. That is, the square with edges $\vb^{(k)}(t_0)=\ha{k}$.
+The lighter rectangle is that with edges $\vb^{(k)}(t)$ for some $t$ a bit
 bigger than $t_0$.
 
 \begin{nfig}
@@ -6310,20 +6332,20 @@ Denote by $\la_k,\ 1\le k\le d$, the eigenvalues of $\cV$ and choose
 $d$ mutually perpendicular real unit vectors, $\ha{k}$,  that obey 
 $\cV\ha{k}=\la_k\ha{k}$ for all $1\le k\le d$. Then
 \begin{equation*}
-\vb_k(t)=e^{\la_k (t-t_0)}\ \ha{k}
+\vb^{(k)}(t)=e^{\la_k (t-t_0)}\ \ha{k}
 \end{equation*}
 obeys
 \begin{equation*}
-\diff{\vb_k}{t}(t)=\la_ke^{\la_k (t-t_0)}\ \ha{k}=e^{\la_k (t-t_0)}\ \cV\ha{k}
-=\cV\vb_k(t)\qquad\text{and}\qquad
-\vb_k(t_0)= \ha{k}
+\diff{\vb^{(k)}}{t}(t)=\la_ke^{\la_k (t-t_0)}\ \ha{k}=e^{\la_k (t-t_0)}\ \cV\ha{k}
+=\cV\vb^{(k)}(t)\qquad\text{and}\qquad
+\vb^{(k)}(t_0)= \ha{k}
 \end{equation*}
-So $\vb_k(t)=e^{\la_k (t-t_0)}\ \ha{k}$ satisfies (IVP) for all $t$ and 
+So $\vb^{(k)}(t)=e^{\la_k (t-t_0)}\ \ha{k}$ satisfies (IVP) for all $t$ and 
 $1\le k\le d$. 
 
 If we start, at time $t_0$, with a cube whose edges, $\ha{k}$,
  are eigenvectors of $\cV$, then as time progresses the edges, 
-$\vb_k(t)$, of the chunk of fluid never change direction. But their lengths 
+$\vb^{(k)}(t)$, of the chunk of fluid never change direction. But their lengths 
 change with the relative rate of change of length per unit time being $\la_k$
 for edge number $k$. This rate of change may be positive (the edge grows
 with time) or negative (the edge shrinks in time) depending on the sign
@@ -6375,12 +6397,12 @@ and is the identity matrix when $t=t_0$. So
 $\vb(t)=e^{\cV (t-t_0)}\ve$ really does obey 
 $\vb'(t)=\cV\vb(t)$ and $\vb(t_0)=\ve$. 
 
-Pick any $d$ vectors $\ve_k,\ 1\le k\le d$, and 
-define $\vb_k(t)=e^{\cV (t-t_0)}\ve_k$. Also let $E$ be the $d\times d$ matrix
-whose $k^{\rm th}$ column is $\ve_k$ and $E(t)$  be the $d\times d$ matrix
-whose $k^{\rm th}$ column is $\vb_k(t)$. Then the volume of the parallelepiped
-with edges $\ve_k,\ 1\le k\le d$, is $V(t_0)=\det E$ and the volume of the 
-parallelepiped with edges $\vb_k(t),\ 1\le k\le d$, is 
+Pick any $d$ vectors $\ve^{(k)},\ 1\le k\le d$, and 
+define $\vb^{(k)}(t)=e^{\cV (t-t_0)}\ve^{(k)}$. Also let $E$ be the $d\times d$ matrix
+whose $k^{\rm th}$ column is $\ve^{(k)}$ and $E(t)$  be the $d\times d$ matrix
+whose $k^{\rm th}$ column is $\vb^{(k)}(t)$. Then the volume of the parallelepiped
+with edges $\ve^{(k)},\ 1\le k\le d$, is $V(t_0)=\det E$ and the volume of the 
+parallelepiped with edges $\vb^{(k)}(t),\ 1\le k\le d$, is 
 \begin{equation*}
 V(t)=\det E(t)=\det\big(e^{\cV (t-t_0)}E\big)
 =\det\big(e^{\cV (t-t_0)}\big)\det E
@@ -6388,8 +6410,10 @@ V(t)=\det E(t)=\det\big(e^{\cV (t-t_0)}E\big)
 \end{equation*}
 Of course now we have to compute the determinant of the exponential of a matrix.
 Luckily, there is an easy way to do this.
-For any $d\times d$ matrix $B$, $\det e^B=e^{\tr B}$, so\footnote{Again, we won't prove this. But for a diagonal matrix, it is easy --- just compute
-both sides. So for a diagonalizable matrix it is also easy --- diagonalize.} 
+For any $d\times d$ matrix $B$, we have\footnote{Again, we won't prove this. 
+But for a diagonal matrix, it is easy --- just compute both sides. So for 
+a diagonalizable matrix it is also easy --- diagonalize.}
+$\det e^B=e^{\tr B}$, where $\tr B$, called the trace of the matrix $B$, is the sum of the diagonal matrix elements of $B$. So 
 \begin{equation*}
 V(t)=e^{(t-t_0)\tr \cV }V(t_0)\qquad\Rightarrow\qquad
 \frac{V'(t_0)}{V(t_0)}=\tr \cV=\sum_{i=1}^d \cV_{i,i}
@@ -6430,8 +6454,8 @@ in this example, no matter
 what direction vectors $\ha{k}$ we pick, the chunk of fluid just 
 rotates at one radian
 per unit time. In the figure below, the outlined
-rectangle is the initial square. That is, the square with edges $\vb_k(t_0)=\ha{k}$.
-The shaded rectangle is that with edges $\vb_k(t)$ for some $t$ a bit
+rectangle is the initial square. That is, the square with edges $\vb^{(k)}(t_0)=\ha{k}$.
+The shaded rectangle is that with edges $\vb^{(k)}(t)$ for some $t$ a bit
 bigger than $t_0$.
 
 \begin{nfig}
@@ -6550,19 +6574,19 @@ is.  When $\cV$ is antisymmetric, $A$ and $\cV$ coincide. The matrix $A$
 is (to write it out explicitly)
 \begin{equation*}
 A\!=\!\frac{1}{2}\!\!\left[\begin{matrix}0 & 
-                        \frac{\partial v_1}{\partial x_2}\big(\vx_0,t_0\big)
-                   \!-\!\frac{\partial v_2}{\partial x_1}\big(\vx_0,t_0\big)&
-                        \frac{\partial v_1}{\partial x_3}\big(\vx_0,t_0\big)
-                  \!-\!\frac{\partial v_3}{\partial x_1}\big(\vx_0,t_0\big)\cr
-                        -\frac{\partial v_1}{\partial x_2}\big(\vx_0,t_0\big)
-                   \!+\!\frac{\partial v_2}{\partial x_1}\big(\vx_0,t_0\big)&
+                        \frac{\partial \vv_1}{\partial x_2}\big(\vx_0,t_0\big)
+                   \!-\!\frac{\partial \vv_2}{\partial x_1}\big(\vx_0,t_0\big)&
+                        \frac{\partial \vv_1}{\partial x_3}\big(\vx_0,t_0\big)
+                  \!-\!\frac{\partial \vv_3}{\partial x_1}\big(\vx_0,t_0\big)\cr
+                        -\frac{\partial \vv_1}{\partial x_2}\big(\vx_0,t_0\big)
+                   \!+\!\frac{\partial \vv_2}{\partial x_1}\big(\vx_0,t_0\big)&
                         0 &
-                        \frac{\partial v_2}{\partial x_3}\big(\vx_0,t_0\big)
-                   \!-\!\frac{\partial v_3}{\partial x_2}\big(\vx_0,t_0\big)\cr
-                       -\frac{\partial v_1}{\partial x_3}\big(\vx_0,t_0\big)
-                    \!+\!\frac{\partial v_3}{\partial x_1}\big(\vx_0,t_0\big)&
-                       -\frac{\partial v_2}{\partial x_3}\big(\vx_0,t_0\big)
-                    \!+\!\frac{\partial v_3}{\partial x_2}\big(\vx_0,t_0\big)&
+                        \frac{\partial \vv_2}{\partial x_3}\big(\vx_0,t_0\big)
+                   \!-\!\frac{\partial \vv_3}{\partial x_2}\big(\vx_0,t_0\big)\cr
+                       -\frac{\partial \vv_1}{\partial x_3}\big(\vx_0,t_0\big)
+                    \!+\!\frac{\partial \vv_3}{\partial x_1}\big(\vx_0,t_0\big)&
+                       -\frac{\partial \vv_2}{\partial x_3}\big(\vx_0,t_0\big)
+                    \!+\!\frac{\partial \vv_3}{\partial x_2}\big(\vx_0,t_0\big)&
                      0\end{matrix}\right]
 \end{equation*}
 Comparing this with (R), we see that
@@ -6743,16 +6767,21 @@ The $A$ part of the flow rotates clockwise about  the origin at one radian
 per unit time.
 
 
-Here are some figures to help us visualize this. The first shows 
-a square with edges $\ha{1},\ \ha{2}$
+Here are some figures to help us visualize this. 
+\begin{itemize}\itemsep1pt \parskip0pt \parsep0pt \itemindent-15pt
+\item
+The first shows  a square with edges $\ha{1},\ \ha{2}$
 and its image under the full flow $t=0.4$ later.  Under this full flow
-the vector $\ha{k}\rightarrow e^{0.4\cV}\ha{k}$. The second shows its image 
-under $0.4$ time units of the $S$-flow (that is, $\ha{k}\rightarrow e^{0.4S}\ha{k}$).
+the vector $\ha{k}\rightarrow e^{0.4\cV}\ha{k}$. The darkly shaded parallelogram has edges $e^{0.4\cV}\ha{k}$.
+\item
+The second shows its image under $0.4$ time units of the $S$-flow (that is, $\ha{k}\rightarrow e^{0.4S}\ha{k}$). The lightly shaded rectangle 
+has edges $e^{0.4S}\ha{k}$.
+\item
  The third applies $0.4$ time units of the $A$-flow to the shaded rectangle
 of the middle figure. So the lightly shaded rectangle of the third figure
 has edges $e^{0.4S}\ha{k}$ and the darkly shaded rectangle 
 has edges $e^{0.4A}e^{0.4S}\ha{k}$.
-
+\end{itemize}
 \begin{wfig}
 \begin{center}
     \includegraphics{square3.pdf}\qquad
@@ -6760,10 +6789,11 @@ has edges $e^{0.4A}e^{0.4S}\ha{k}$.
     \includegraphics{square5.pdf}
 \end{center}
 \end{wfig}
-Of course $e^{0.4A}e^{0.4S}\ha{k}$ is not a very good approximation
-for $e^{0.4(A+S)}\ha{k}$. It is much better to take
-$\big[e^{0.4A/n}e^{0.4S/n}\big]^{n}\ha{k}$ with $n$ large. 
-Each of the following figures shows two parallelepipeds. In each,
+Of course $e^{0.4A}e^{0.4S}\ha{k}$ (as in the darly shaded rectangle of the right hand figure) is not a very good approximation for $e^{0.4(A+S)}\ha{k}$ 
+(as in the darkly shaded parallelogram of the left hand figure). 
+It is much better to take $\big[e^{0.4A/n}e^{0.4S/n}\big]^{n}\ha{k}$ with $n$ large. 
+
+Each of the following figures shows two parallelograms. In each,
 the shaded region has edges
 $e^{0.4\cV}\ha{k}=e^{0.4(A+S)}\ha{k}$ and the outlined region has edges 
 $\big[e^{0.4A/n}e^{0.4S/n}\big]^{n}\ha{k}$.

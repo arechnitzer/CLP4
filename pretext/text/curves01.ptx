@@ -40,11 +40,132 @@ each of its components.
 </p></statement>
 </definition>
 
-
 <p>And of course differentiation interacts with arithmetic operations,
 like addition, in the obvious way. Only a little more thought is required to
 see that differentiation interacts quite nicely with dot and cross
-products too.
+products too. Here are some examples.
+</p>
+
+<example xml:id="eg_diffDot">
+<p>
+Let
+<md>
+<mrow>
+\va(t)&amp;= t^2\,\hi + t^4\,\hj + t^6\,\hk
+</mrow><mrow>
+\vb(t)&amp;= e^{-t}\,\hi + e^{-3t}\,\hj + e^{-5t}\,\hk
+</mrow><mrow>
+\ga(t)&amp;= t^2
+</mrow><mrow>
+s(t)&amp;= \sin t
+</mrow>
+</md>
+We are about to compute some derivatives. To make it easier to follow what is going on, we'll use some colour. When we apply the product rule
+<me>
+\diff{}{t}\big[f(t)\,g(t)\big]
+={\color{blue}{f'(t)}}\,g(t) + f(t)\,{\color{blue}{g'(t)}}
+</me> 
+we'll use blue to highlight the factors <m>f'(t)</m> and <m>g'(t)</m>.
+Here we go.
+<md>
+<mrow>
+\ga(t)\,\vb(t) &amp; = t^2e^{-t}\,\hi + t^2 e^{-3t}\,\hj + t^2 e^{-5t}\,\hk
+</mrow>
+</md>
+gives
+<md>
+<mrow>
+\diff{}{t}\big[\ga(t)\vb(t)\big]
+&amp;=\big[{\color{blue}{2t}} e^{-t}{\color{blue}{-}}t^2{\color{blue}{e^{-t}}}\big]\hi
+  +\big[{\color{blue}{2t}} e^{-3t}{\color{blue}{-3}}t^2{\color{blue}{e^{-3t}}}\big]\hj
+  +\big[{\color{blue}{2t}} e^{-5t}{\color{blue}{-5}}t^2{\color{blue}{e^{-5t}}}\big]\hk
+</mrow><mrow>
+&amp;={\color{blue}{2t}}\big\{e^{-t}\,\hi + e^{-3t}\,\hj + e^{-5t}\,\hk\big\}
++ t^2{\color{blue}{\big\{-e^{-t}\,\hi -3 e^{-3t}\,\hj -5 e^{-5t}\,\hk\big\}}}
+</mrow><mrow>
+&amp;={\color{blue}{\ga'(t)}}\vb(t)+\ga(t){\color{blue}{\vb'(t)}}
+</mrow>
+</md>
+and 
+<md>
+<mrow>
+\va(t)\cdot\vb(t) &amp; = t^2e^{-t} + t^4 e^{-3t} + t^6 e^{-5t}
+</mrow>
+</md>
+gives
+<md>
+<mrow>
+\diff{}{t}\big[\va(t)\cdot\vb(t)\big]
+&amp;=\big[{\color{blue}{2t}} e^{-t}{\color{blue}{-}}t^2{\color{blue}{e^{-t}}}\big]
+  +\big[{\color{blue}{4t^3}} e^{-3t}{\color{blue}{-3}}t^4{\color{blue}{e^{-3t}}}\big]
+  +\big[{\color{blue}{6t^5}} e^{-5t}{\color{blue}{-5}}t^6{\color{blue}{e^{-5t}}}\big]
+</mrow><mrow>
+&amp;=\big[{\color{blue}{2t}} e^{-t}+{\color{blue}{4t^3}} e^{-3t}+{\color{blue}{6t^5}} e^{-5t}\big]
+  +\big[{\color{blue}{-}}t^2{\color{blue}{e^{-t}}}
+         {\color{blue}{-3}}t^4{\color{blue}{e^{-3t}}}
+         {\color{blue}{-5}}t^6{\color{blue}{e^{-5t}}}\big]
+</mrow><mrow>
+&amp;={\color{blue}{\big\{2t\,\hi+4t^3\,\hj+6t^5\,\hk\big\}}}\cdot
+           \big\{e^{-t}\,\hi + e^{-3t}\,\hj + e^{-5t}\,\hk\big\}\\&amp;\hskip0.5in
+  +\big\{t^2\,\hi + t^4\,\hj + t^6\,\hk\big\}\cdot
+         {\color{blue}{\big\{-e^{-t}\,\hi-3e^{-3t}\,\hj-5e^{-5t}\,\hk\big\}}}
+</mrow><mrow>
+&amp;={\color{blue}{\va'(t)}}\cdot\vb(t)+\va(t)\cdot{\color{blue}{\vb'(t)}}
+</mrow>
+</md>
+and
+<md>
+<mrow>
+\va(t)\times\vb(t) 
+&amp;=\det\left[\begin{matrix}\hi&amp; \hj &amp;\hk\\ 
+                            t^2 &amp; t^4 &amp; t^6\\ 
+                            e^{-t} &amp; e^{-3t} &amp; e^{-5t}\end{matrix}\right]
+</mrow><mrow>
+&amp;=\hi\big(t^4 e^{-5t}-t^6 e^{-3t}) 
+  -\hj(t^2 e^{-5t}- t^6 e^{-t}) 
+   +\hk(t^2 e^{-3t}-t^4 e^{-t})
+</mrow>
+</md>
+gives
+<md>
+<mrow>
+&amp;\diff{}{t}\big[\va(t)\times\vb(t)\big]
+</mrow><mrow>
+&amp;=\ \hi\big(\ {\color{blue}{4t^3}} e^{-5t}\ \ -\ {\color{blue}{6t^5}} e^{-3t}) 
+  \ -\ \hj(\ {\color{blue}{2t}} e^{-5t}\ -\  {\color{blue}{6t^5}} e^{-t}) 
+   +\hk(\ {\color{blue}{2t}} e^{-3t}\ -\ {\color{blue}{4t^3}} e^{-t}) \\&amp;\hskip0.1in
+ +\hi\big({\color{blue}{-5}}t^4 {\color{blue}{e^{-5t}}}{\color{blue}{+3}}t^6 {\color{blue}{e^{-3t}}}) 
+  -\hj({\color{blue}{-5}}t^2 {\color{blue}{e^{-5t}}}{\color{blue}{+}} t^6 {\color{blue}{e^{-t}}}) 
+   +\hk({\color{blue}{-3}}t^2 {\color{blue}{e^{-3t}}}{\color{blue}{+}}t^4 {\color{blue}{e^{-t}}})
+</mrow><mrow>
+&amp;={\color{blue}{\big\{2t\,\hi+4t^3\,\hj+6t^5\,\hk\big\}}}\times
+           \big\{e^{-t}\,\hi + e^{-3t}\,\hj + e^{-5t}\,\hk\big\}\\&amp;\hskip0.5in
+  +\big\{t^2\,\hi + t^4\,\hj + t^6\,\hk\big\}\times
+         {\color{blue}{\big\{-e^{-t}\,\hi-3e^{-3t}\,\hj-5e^{-5t}\,\hk\big\}}}
+</mrow><mrow>
+&amp;={\color{blue}{\va'(t)}}\times\vb(t)+\va(t)\times{\color{blue}{\vb'(t)}}
+</mrow>
+</md>
+and
+<md>
+<mrow>
+\va\big(s(t)\big)
+&amp;=(\sin t)^2\,\hi +(\sin t)^4\,\hj + (\sin t)^6\,\hk
+</mrow><mrow>
+\implies \diff{}{t}\big[\va\big(s(t)\big)\big]
+&amp;=2(\sin t)\cos t\,\hi +4(\sin t)^3\cos t\,\hj + 6(\sin t)^5\cos t\,\hk
+</mrow><mrow>
+&amp;=\big\{2(\sin t)\,\hi +4(\sin t)^3\hj + 6(\sin t)^5\hk\big\}\cos t 
+</mrow><mrow>
+&amp;=\va'\big(s(t)\big)\,s'(t)
+</mrow>
+</md>
+</p>
+</example>
+
+<p>
+Of course these examples extend to general (differentiable)
+<m>\va(t)</m>, <m>\vb(t)</m>, <m>\ga(t)</m> and <m>s(t)</m> and give us (most of) the following theorem.
 </p>
 
 <theorem xml:id="thm_DIFFalgebra"><title>Arithmetic of differentiation</title>
@@ -207,7 +328,7 @@ Note that the velocity <m>\vv(t) = \vr'(t)</m> is a vector quantity while the
 speed <m>\diff{s}{t}(t)=|\vr'(t)|</m> is a scalar quantity.
 </p>
 
-<example xml:id="eg_paramCircleTan">
+<example xml:id="eg_paramCircleTan"><title>Circumference of a circle</title>
 <p>
 In general it can be quite difficult to compute arc lengths.
 So, as an easy warmup example, we will compute the circumference of the circle
@@ -266,7 +387,7 @@ that has been known<fn>It is Proposition 18 in Book 3 of Euclid's Elements. It w
  for thousands of years.
 </p></example>
 
-<example xml:id="eg_paramHelix">
+<example xml:id="eg_paramHelix"><title>Arc length of a helix</title>
 <p>
 Consider the curve
 <me>
@@ -319,7 +440,56 @@ s(\pi)-s(0)&amp;= \int_{0}^\pi \big|\vr'(t)\big|\,\dee{t}
 </md>
 </p></example>
 
-<example xml:id="eg_astroid">
+<example xml:id="eg_velAccel"><title>Velocity and acceleration</title>
+<p>
+Imagine that, at time <m>t</m>, a particle is at 
+<me>
+\vr(t) = \left[h+a\cos\left(2\pi\frac{t}{T}\right)\right]\hi
+            +\left[k+a\sin\left(2\pi\frac{t}{T}\right)\right]\hj
+</me>
+As <m>|\vr(t) -h\,\hi-k\,\hj| = a</m>, the particle is running around the circle of radius <m>a</m> centred on <m>(h,k)</m>. When <m>t</m> increases by <m>T</m>, the argument, <m>2\pi\frac{t}{T}</m>, of <m>\cos\left(2\pi\tfrac{t}{T}\right)</m> and 
+<m>\sin\left(2\pi\tfrac{t}{T}\right)</m> increases by exactly <m>2\pi</m> and the particle runs exactly once around the circle. In particular, it travels a distance 
+<m>2\pi a</m>. So it is moving at speed  <m>\frac{2\pi a}{T}</m>. 
+According to Lemma <xref ref="lem_CVvelocityEtc"/>, it has 
+<md>
+<mrow>
+\text{velocity }
+      =\vr'(t) &amp;=-\frac{2\pi a}{T}\sin\left(2\pi\frac{t}{T}\right)\hi
+            +\frac{2\pi a}{T}\cos\left(2\pi\frac{t}{T}\right)\hj
+</mrow><mrow>
+\text{speed}
+       = \diff{s}{t}(t)&amp;=|\vr'(t)|=\frac{2\pi a}{T}
+</mrow><mrow>
+\text{acceleration}
+       =\vr''(t)
+        &amp;=-\frac{4\pi^2 a}{T^2}\cos\left(2\pi\frac{t}{T}\right)\hi
+            -\frac{4\pi^2 a}{T^2}\sin\left(2\pi\frac{t}{T}\right)\hj 
+</mrow><mrow>
+        &amp;= - \frac{4\pi^2}{T^2}\big[\vr(t) -h\,\hi-k\,\hj\big]
+</mrow>
+</md>
+Here are some observations.
+<ul>
+<li> 
+The velocity <m>\vr'(t)</m> has dot product zero with <m>\vr(t) -h\,\hi-k\,\hj</m>, which is the radius vector from the centre of the circle to the particle.
+So the velocity is perpendicular to the radius vector, and hence parallel to the 
+tangent vector of the circle at <m>\vr(t)</m>.
+</li><li>
+The speed given by Lemma <xref ref="lem_CVvelocityEtc"/> is exactly the speed
+we found above, just before we started applying Lemma <xref ref="lem_CVvelocityEtc"/>.
+</li><li> 
+The acceleration <m>\vr''(t)</m> points in the direction opposite to the radius 
+vector.
+</li>
+</ul>
+</p>
+
+<sidebyside width="38%">
+<image source="figs/circleVA"/>
+</sidebyside>
+</example>
+
+<example xml:id="eg_astroid"><title>Perimeter of the astroid</title>
 <p>
 In this example, we find the perimeter of the astroid<fn>
 Astroid should not be confused with asteroid, though both words derive
@@ -350,14 +520,14 @@ namely <m>y(t)=a\sin^3 t</m>.
 </ul>
 Our parametrization is
 <me>
-\vr(t) = a\cos^3t\hi + a\sin^3 t\hj
+\vr(t) = a\cos^3t\,\hi + a\sin^3 t\,\hj
 </me>
 By Lemma <xref ref="lem_CVtanArclen"/>
 <md>
 <mrow>
-\vr(t) &amp;= a\cos^3t\hi + a\sin^3 t\hj
+\vr(t) &amp;= a\cos^3t\,\hi + a\sin^3 t\,\hj
 </mrow><mrow>
-\vr'(t) &amp;= -3a\sin t\cos^2t\hi + 3a\sin^2 t\cos t\hj
+\vr'(t) &amp;= -3a\sin t\cos^2t\,\hi + 3a\sin^2 t\cos t\,\hj
 </mrow><mrow>
 \diff{s}{t}(t)&amp;=\big|\vr'(t)\big|
 = \sqrt{9a^2\sin^2t\cos^4t + 9a^2\sin^4t\cos^2t}
@@ -367,10 +537,10 @@ By Lemma <xref ref="lem_CVtanArclen"/>
  &amp;=3a\big|\sin t\cos t\big|
 </mrow><mrow>
 \hat\vT(t) &amp;= \frac{\vr'(t)}{|\vr'(t))|}
-=  \frac{\sin t\cos t}{|\sin t\cos t|}\ \big(-\cos t\hi+\sin t\hj\big)
+=  \frac{\sin t\cos t}{|\sin t\cos t|}\ \big(-\cos t\,\hi+\sin t\,\hj\big)
 
 </mrow><mrow>
- &amp;=  \sgn\!\big(\!\sin t\cos t\big)\ \big(-\cos t\hi+\sin t\hj\big)
+ &amp;=  \sgn\!\big(\!\sin t\cos t\big)\ \big(-\cos t\,\hi+\sin t\,\hj\big)
 </mrow>
 </md>
 Here <m>\sgn\!\big(\!\sin t\cos t\big)</m> means <q>the sign of <m>\sin t\cos t</m></q>, i.e <m>+1</m> when <m>\sin t\cos t \gt 0</m> and <m>-1</m> when <m>\sin t\cos t \lt 0</m>. So
@@ -383,14 +553,14 @@ Here <m>\sgn\!\big(\!\sin t\cos t\big)</m> means <q>the sign of <m>\sin t\cos t<
 </mrow><mrow>
                            -1&amp;\text{if } \sin t \gt 0,\ \cos t \lt 0
                               \text{ or } \sin t \lt 0,\ \cos t \gt 0
-                \end{cases}\right\}\big(-\cos t\hi+\sin t\hj\big)
+                \end{cases}\right\}\big(-\cos t\,\hi+\sin t\,\hj\big)
 </mrow><mrow>
  &amp;=\left.\begin{cases}1&amp;\text{if } 0 \lt  t \lt \frac{\pi}{2}
                                             \text{ or }  \pi \lt  t \lt \frac{3\pi}{2}
 </mrow><mrow>
                            -1&amp;\text{if }  \frac{\pi}{2} \lt t \lt \pi
                                           \text{ or }  \frac{3\pi}{2} \lt t \lt 2\pi
-                \end{cases}\right\}\big(-\cos t\hi+\sin t\hj\big)
+                \end{cases}\right\}\big(-\cos t\,\hi+\sin t\,\hj\big)
 </mrow>
 </md>
 </p>
@@ -435,11 +605,29 @@ i.e. at <m>t=0</m>, <m>\frac{\pi}{2}</m>, <m>\pi</m>, <m>\frac{3\pi}{2}</m>, etc
 flips. To be precise
 <md>
 <mrow>
-\lim_{t\rightarrow 0-}\hat T(t) &amp;= \hi &amp;
-\lim_{t\rightarrow 0+}\hat T(t) &amp;= -\hi
+\lim_{t\rightarrow 0-}\hat T(t) 
+&amp;= \lim_{t\rightarrow 0-} \sgn\!\big(\!\sin t\cos t\big)\ 
+       \lim_{t\rightarrow 0-} \big(-\cos t\,\hi+\sin t\,\hj\big)
+=\hi 
 </mrow><mrow>
-\lim_{t\rightarrow \pi/2-}\hat T(t) &amp;= \hj &amp;
-\lim_{t\rightarrow \pi/2+}\hat T(t) &amp;= -\hj
+\lim_{t\rightarrow 0+}\hat T(t) 
+&amp;= \lim_{t\rightarrow 0+}\sgn\!\big(\!\sin t\cos t\big)\ 
+       \lim_{t\rightarrow 0+}\big(-\cos t\,\hi+\sin t\,\hj\big)
+=-\hi
+</mrow>
+</md>
+and
+<md>
+<mrow>
+\lim_{t\rightarrow \pi/2-}\hat T(t) 
+&amp;= \lim_{t\rightarrow \pi/2-}\sgn\!\big(\!\sin t\cos t\big)\ 
+       \lim_{t\rightarrow \pi/2-}\big(-\cos t\,\hi+\sin t\,\hj\big)
+=\hj 
+</mrow><mrow>
+\lim_{t\rightarrow \pi/2+}\hat T(t) 
+&amp;= \lim_{t\rightarrow \pi/2+}\sgn\!\big(\!\sin t\cos t\big)\ 
+       \lim_{t\rightarrow \pi/2+}\big(-\cos t\,\hi+\sin t\,\hj\big)
+=-\hj
 </mrow>
 </md>
 and so on. This signals cusps in the curve at <m>t=0</m>, i.e. at <m>\vr(0) = a\hi</m>,
@@ -474,7 +662,7 @@ arc length of the part of the astroid in the first quadrant, and then multiply b
 </example>
 
 
-<example xml:id="eg_zeroSpeed">
+<example xml:id="eg_zeroSpeed"><title><m>\vr'(t)=\vZero</m></title>
 <p>
 In the last example, we found that the astroid  had
 cusps at those points <m>\vr(t)</m> where the velocity <m>\vr'(t)</m> vanished.
@@ -497,11 +685,11 @@ of all of these. They all have <m>\vr'(t)=0</m>. They are sketched below.
 \vr_1(t) &amp;= (t^5, t^2) &amp;
 \vr_1'(t)&amp;= (5t^4, 2t)
 </mrow><mrow>
-\vr_2(t) &amp;= \left.\begin{cases} (t^2, 0) &amp; \text{if }  t\le 0 \\
-                        (0 , t^2) &amp; \text{if } t\ge 0
+\vr_2(t) &amp;= \left.\begin{cases} (t^2, 0) &amp; \text{if }  t\ge 0 \\
+                        (0 , t^2) &amp; \text{if } t\le 0
           \end{cases}\right\}\qquad &amp;
-\vr_2'(t)&amp;= \left.\begin{cases} (2t, 0) &amp; \text{if }  t\le 0 \\
-                        (0 , 2t) &amp; \text{if } t\ge 0
+\vr_2'(t)&amp;= \left.\begin{cases} (2t, 0) &amp; \text{if }  t\ge 0 \\
+                        (0 , 2t) &amp; \text{if } t\le 0
           \end{cases} \right\}
 </mrow><mrow>
 \vr_3(t) &amp;= (t^3, 0) &amp;
@@ -518,7 +706,7 @@ of all of these. They all have <m>\vr'(t)=0</m>. They are sketched below.
 
 </example>
 
-<example xml:id="eg_corkscrew">
+<example xml:id="eg_corkscrew"><title>Corkscrew</title>
 <p>
 We'll find the arc length of
 <me>

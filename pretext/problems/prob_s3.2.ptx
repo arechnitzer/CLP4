@@ -113,7 +113,7 @@ to the surface <m>S</m> at <m>(x_0,y_0,z_0)</m> is
 \pdiff{G}{y}\big( x_0\,,\,y_0\,,\,z_0\big)\,,\,
 \pdiff{G}{z}\big( x_0\,,\,y_0\,,\,z_0\big)\right) \cdot
 </mrow><mrow>
-&amp;\hskip3in\left( x-x_0\,,\, y-y_0\,,\,z-z_0\right) = 0
+&amp;\hskip2in\left( x-x_0\,,\, y-y_0\,,\,z-z_0\right) = 0
 </mrow>
 </md>
 or
@@ -168,26 +168,26 @@ tangent plane to <m>S</m> at <m>\vr_0</m>. As <m>(x,y,z)</m> is on the tangent l
 at <m>\vr_0</m> then there is a <m>t</m> such that, by (E1),
 <md>
 <mrow>
-&amp;\pdiff{G}{x}\big( x_0\,,\,y_0\,,\,z_0\big)\ \color{blue}{\{x-x_0\}}
-+\pdiff{G}{y}\big( x_0\,,\,y_0\,,\,z_0\big)\ \color{blue}{\{y-y_0\}}
+&amp;\pdiff{G}{x}\big( x_0\,,\,y_0\,,\,z_0\big)\ {\color{blue}{\{x-x_0\}}}
++\pdiff{G}{y}\big( x_0\,,\,y_0\,,\,z_0\big)\ {\color{blue}{\{y-y_0\}}}
 </mrow><mrow>
-&amp;\hskip2in+\pdiff{G}{z}\big( x_0\,,\,y_0\,,\,z_0\big)\ \color{blue}{\{z-z_0\}}
+&amp;\hskip2in+\pdiff{G}{z}\big( x_0\,,\,y_0\,,\,z_0\big)\ {\color{blue}{\{z-z_0\}}}
 </mrow><mrow>
 &amp;=\pdiff{G}{x}\big( x_0\,,\,y_0\,,\,z_0\big)\
-               \color{blue}{\big\{ t\,x'(t_0)\big\}}
+               {\color{blue}{\big\{ t\,x'(t_0)\big\}}}
 +\pdiff{G}{y}\big( x_0\,,\,y_0\,,\,z_0\big)\
-               \color{blue}{\big\{ t\,y'(t_0)\big\}}
+               {\color{blue}{\big\{ t\,y'(t_0)\big\}}}
 </mrow><mrow>
 &amp;\hskip2in+\pdiff{G}{z}\big( x_0\,,\,y_0\,,\,z_0\big)\
-               \color{blue}{\big\{ t\,z'(t_0)\big\}}
+               {\color{blue}{\big\{ t\,z'(t_0)\big\}}}
 </mrow><mrow>
-&amp;=\color{blue}{t}\Big[\pdiff{G}{x}\big( x_0\,,\,y_0\,,\,z_0\big)\
-                \color{blue}{x'(t_0)}
+&amp;={\color{blue}{t}}\Big[\pdiff{G}{x}\big( x_0\,,\,y_0\,,\,z_0\big)\
+                {\color{blue}{x'(t_0)}}
 +\pdiff{G}{y}\big( x_0\,,\,y_0\,,\,z_0\big)\
-                \color{blue}{y'(t_0)}
+                {\color{blue}{y'(t_0)}}
 </mrow><mrow>
 &amp;\hskip2in+\pdiff{G}{z}\big( x_0\,,\,y_0\,,\,z_0\big)\
-                 \color{blue}{z'(t_0)} \Big]
+                 {\color{blue}{z'(t_0)}} \Big]
 </mrow><mrow>
 &amp;=0
 </mrow>

@@ -59,7 +59,7 @@ so gives the parametrization
 <li><p>
 The third uses arc length from <m>(r,0)</m> as the parameter. We have seen,
 in Example <xref ref="eg_paramCircleTan"/>, that the arc length from <m>(r,0)</m>
-to <m>\vr_2(\theta)</m> is just <m>s=r\theta</m>. So the point on the semicircle
+to <m>\vr_1(\theta)</m> is just <m>s=r\theta</m>. So the point on the semicircle
 that is arc length <m>s</m> away from <m>(r,0)</m> is
 </p>
 
@@ -68,7 +68,7 @@ that is arc length <m>s</m> away from <m>(r,0)</m> is
   <p>
   <md>
   <mrow>
-  &amp;\vr_3(s) = \vr_2\Big(\frac{s}{r}\Big)
+  &amp;\vr_3(s) = \vr_1\Big(\frac{s}{r}\Big)
   </mrow><mrow>
   &amp;= \Big(r\cos\frac{s}{r}\,,\,r\sin\frac{s}{r}\Big)
   </mrow><mrow>
@@ -113,7 +113,7 @@ which runs from <m>0</m>, at <m>t=0</m>, to <m>\frac{3a}{2}</m>, at <m>t=\frac{\
 This is relatively clean and we can invert <m>s(t)</m> to find <m>t</m>
 as a function of <m>s</m>.
 The value, <m>T(s)</m>, of <m>t</m> that corresponds to any given
-<m>0\le s\le\frac{3a}{3}</m> is determined by
+<m>0\le s\le\frac{3a}{2}</m> is determined by
 <me>
 s=\frac{3a}{4}\big[1-\cos\big(2T(s)\big)\big]\qquad
 \iff\qquad
@@ -143,8 +143,8 @@ s=\frac{3a}{4}\big[1-\cos\big(2T(s)\big)\big]
 </md>
 Consequently the desired parametrization is
 <me>
-\vR(s) = a\Big[1-\frac{2s}{3a}\Big]^{3/2}\hi
-        + a\Big[\frac{2s}{3a}\Big]^{3/2}\hj
+\vR(s) = a\left[1-\frac{2s}{3a}\right]^{3/2}\hi
+        + a\left[\frac{2s}{3a}\right]^{3/2}\hj
 \qquad
 0\le s \le \frac{3a}{2}
 </me>

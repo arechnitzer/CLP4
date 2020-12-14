@@ -10,7 +10,7 @@
 
 <p>Our next variant of the fundamental theorem of calculus is
 Green's<fn>George Green (1793<ndash/>1841) was a British
-mathematical-physicist. He spent much of the early part of his life
+mathematical physicist. He spent much of the early part of his life
 working in his father's bakery and grain mill. He was finally admitted
 as an undergraduate to Cambridge in 1832, aged nearly forty.</fn>
  theorem, which
@@ -101,8 +101,8 @@ at <em>every</em> point of <m>R</m>.
 Then
 <me>
 \oint_{C} \big[F_1(x,y)\,\dee{x} +F_2(x,y)\,\dee{y}\big]
- =\dblInt_{R}\Big(\frac{\partial F_2}{\partial x}
-                - \frac{\partial F_1}{\partial y}\Big)\ \dee{x}\dee{y}
+ =\dblInt_{R}\left(\frac{\partial F_2}{\partial x}
+                - \frac{\partial F_1}{\partial y}\right)\ \dee{x}\dee{y}
 </me>
 </p></statement>
 </theorem>
@@ -175,7 +175,7 @@ applied to <m>\vG</m> and <m>V</m>, namely
 &amp;=\tripInt_V\vnabla\cdot\vG\ \dee{V}
 </mrow>
 </md>
-gives us exactly Green's theorem.
+gives us exactly Green's theorem, as we shall now see.
 </p>
 
 <p>Since <m>\vnabla\cdot\vG = \frac{\partial F_2}{\partial x}
@@ -186,12 +186,12 @@ gives us exactly Green's theorem.
 &amp;= \dblInt_{R}\dee{x}\dee{y}\int_0^1\dee{z} \ \vnabla\cdot\vG
 </mrow><mrow>
 &amp;= \dblInt_{R}\dee{x}\dee{y}\int_0^1\dee{z} \
-        \Big(\frac{\partial F_2}{\partial x}(x,y)
-                - \frac{\partial F_1}{\partial y}(x,y)\Big)
+        \left(\frac{\partial F_2}{\partial x}(x,y)
+                - \frac{\partial F_1}{\partial y}(x,y)\right)
 </mrow><mrow>
 &amp;= \dblInt_{R}\dee{x}\dee{y}\
-        \Big(\frac{\partial F_2}{\partial x}(x,y)
-                - \frac{\partial F_1}{\partial y}(x,y)\Big)
+        \left(\frac{\partial F_2}{\partial x}(x,y)
+                - \frac{\partial F_1}{\partial y}(x,y)\right)
 </mrow>
 </md>
 because the integrand is independent of <m>z</m>. This is exactly the right
@@ -215,33 +215,33 @@ the outward unit normal on the (horizontal, flat) bottom is <m>-\hk</m>  so that
 We have used the fact that the <m>\hk</m> component of <m>\vG</m> is exactly zero
 to discard the integrals over the top and bottom of <m>\partial V</m>.
 To evaluate the integral over the side, we'll parametrize the side. Suppose that
-<m>\vr(t)=x(t)\hi +y(t)\hj</m>, <m>a\le t\le b</m>,
+<m>\vr(t)=x(t)\,\hi +y(t)\,\hj</m>, <m>a\le t\le b</m>,
 is a parametrization of <m>C</m>, with the arrow in the figure above giving the
 direction of increasing <m>t</m>. Then we can use
 <md>
 <mrow>
-\vR(t,z)  = \vr(t) +z\hk
-          = x(t)\hi +y(t)\hj +z\hk \qquad a\le t\le b,\ 0\le z\le 1
+\vR(t,z)  = \vr(t) +z\,\hk
+          = x(t)\,\hi +y(t)\,\hj +z\,\hk \qquad a\le t\le b,\ 0\le z\le 1
 </mrow>
 </md>
-as a parametrization of the side. We'll use <xref ref="eq_SUdSparam"/> to determine
+as a parametrization of the side. We'll use (<xref ref="eq_SUdSparam"/>) to determine
 <m>\hn\,\dee{S}</m> for the side. Since
 <md>
 <mrow>
-\frac{\partial\vR}{\partial t}(t,z) &amp; = x'(t)\hi +y'(t)\hj
+\frac{\partial\vR}{\partial t}(t,z) &amp; = x'(t)\,\hi +y'(t)\,\hj
 </mrow><mrow>
 \frac{\partial\vR}{\partial z}(t,z) &amp; = \hk
 </mrow>
 </md>
- gives
+(<xref ref="eq_SUdSparam"/>) gives
 <md>
 <mrow>
 \hn\,\dee{S} &amp;= \frac{\partial\vR}{\partial t}(t,z)\times
                \frac{\partial\vR}{\partial z}(t,z)\ \dee{t}\dee{z}
 </mrow><mrow>
-&amp;= \big(x'(t)\hi +y'(t)\hj\big)\times \hk\ \dee{t}\dee{z}
+&amp;= \big(x'(t)\,\hi +y'(t)\,\hj\big)\times \hk\ \dee{t}\dee{z}
 </mrow><mrow>
-&amp;= \big(-x'(t)\hj +y'(t)\hi\big)\ \dee{t}\dee{z}
+&amp;= \big(-x'(t)\,\hj +y'(t)\,\hi\big)\ \dee{t}\dee{z}
 </mrow>
 </md>
 Note that with this choice of <m>\pm</m> sign (that is,
@@ -265,12 +265,12 @@ We can now compute the surface integral directly.
 =\dblInt_{\text{side}} \vG\cdot\hn\,\dee{S}
 </mrow><mrow>
 &amp;\hskip0.25in=\int_a^b\dee{t}\int_0^1\dee{z}\ \vG\big(\vR(t,z)\big)\cdot
-          \big(-x'(t)\hj +y'(t)\hi\big)
+          \big(-x'(t)\,\hj +y'(t)\,\hi\big)
 
 </mrow><mrow>
 &amp;\hskip0.25in=\int_a^b\dee{t}\int_0^1\dee{z}\
          \big(F_2(x(t),y(t))\,\hi -F_1(x(t),y(t))\,\hj\big)\cdot
-          \big(-x'(t)\hj +y'(t)\hi\big)
+          \big(-x'(t)\,\hj +y'(t)\,\hi\big)
 </mrow><mrow>
 &amp;\hskip0.25in=\int_a^b\dee{t}\
          \big[F_2(x(t),y(t))\,y'(t) +F_1(x(t),y(t))\,x'(t)\big]
@@ -386,7 +386,7 @@ by the astroid <m>x^{2/3} + y^{2/3} = a^{2/3}</m>.
 <p>
 In Example <xref ref="eg_astroid"/> we found the parametrization
 <me>
-\vr(t) = x(t)\,\hi + y(t)\,\hj = a\cos^3t\hi + a\sin^3 t\hj
+\vr(t) = x(t)\,\hi + y(t)\,\hj = a\cos^3t\,\hi + a\sin^3 t\,\hj
 \qquad 0\le t\le 2\pi
 </me>
 for the astroid. So, by Corollary <xref ref="cor_greens"/>,
@@ -422,7 +422,7 @@ Evaluate
 </me>
 where
 <me>
-\vB = \frac{-y\hi+x\hj}{x^2+y^2}
+\vB = \frac{-y\,\hi+x\,\hj}{x^2+y^2}
 </me>
 and <m>C</m> is the curve
 <md>
@@ -445,7 +445,7 @@ First let's think about the curve <m>C</m>. If the curve were just
 centred on the origin in the <m>xy</m>-plane, traversed counterclockwise.
 For <m>-\frac{\pi}{2}\le u\le \frac{\pi}{2}</m>, the function <m>\sin u</m>
 increases monotonically with  <m>u</m> and is of the same sign as <m>u</m> so that,
-since <m>|\sin t|\le 1 \lt \frac{\pi}{2}</m>,
+since <m>|\sin t|,|\cos t|\le 1 \lt \frac{\pi}{2}</m>,
 <ul>
 <li>
 <m>x(t) = \sin\big(\cos t)</m> has the same sign as <m>X(t)=\cos t</m> and is increasing
@@ -487,8 +487,8 @@ it looks like Green's theorem gives us, trivially,
 <me>
 \oint_C\vB\cdot\dee{\vr}
 =\oint_C\big[\vB_1\,\dee{x} +\vB_2\,\dee{y}\big]
-= \dblInt_{R}\Big(\frac{\partial B_2}{\partial x}
-                - \frac{\partial B_1}{\partial y}\Big)\ \dee{x}\dee{y}
+= \dblInt_{R}\left(\frac{\partial B_2}{\partial x}
+                - \frac{\partial B_1}{\partial y}\right)\ \dee{x}\dee{y}
 =0
 </me>
 where <m>R</m> is the region inside our curve <m>C</m>.
@@ -609,7 +609,7 @@ Evaluate
 </me>
 where
 <me>
-\vB = \frac{-y\hi+x\hj}{x^2+y^2}
+\vB = \frac{-y\,\hi+x\,\hj}{x^2+y^2}
 </me>
 and <m>C</m> is the curve
 <md>

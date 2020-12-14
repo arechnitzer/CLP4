@@ -188,7 +188,7 @@ to the surface using <xref ref="eq_SUdSparam"/>. The partial derivatives
 </mrow>
 </md>
 are relatively messy, so let's just consider the case <m>v=0</m>
-(i.e. find the normal vectors a the backbone).
+(i.e. find the normal vectors on the backbone).
 Then
 <md>
 <mrow>
