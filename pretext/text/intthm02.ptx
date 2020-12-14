@@ -1773,7 +1773,7 @@ We shall exploit three properties of the function
 and are valid for all <m>\vr\ne \vr_0</m>. Verification of the first property is
 a simple one line computation. Verification of the second property is
 a simple three line computation. (See the solution to Question 
-6 in Section 4.1 of the CLP-4 problem book.)
+6 in Section 4.1.)
 </p>
 
 <p>The other property of <m>\frac{1}{|\vr-\vr_0|}</m>
