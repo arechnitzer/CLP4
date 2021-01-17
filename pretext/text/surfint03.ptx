@@ -458,7 +458,7 @@ is exactly <m>\Set{(x,y)\in\bbbr^2}{x^2+y^2\le a^2}</m>.
 <p>
 Let's parametrize the hemisphere <m>x^2+y^2+z^2=a^2</m>, <m>z\ge 0</m>,
 using as parameters the polar coordinates <m>r</m>, <m>\theta</m> of the
-cylindrical coordinates
+cylindrical coordinates<fn>The symbols <m>r</m>, <m>\theta</m>, <m>z</m> are the standard mathematics symbols for the cylindrical coordinates. Appendix  <xref ref="ap_ISO"/> gives another set of symbols that is commonly used in the physical sciences and engineering.</fn>
 </p>
 
 <sidebyside widths="45% 25%" valign="middle">
