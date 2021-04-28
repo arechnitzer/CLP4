@@ -4,8 +4,8 @@
 
 <covers front="cover/clp4-cover"/>
 <latex-preamble>
-  <package>palatino</package>
-	<package>mathrsfs</package>
+  <!-- <package>palatino</package> -->
+	<!-- <package>mathrsfs</package> -->
 	<package>cancel</package>
 	<!-- <package>nicefrac</package> -->
 </latex-preamble>

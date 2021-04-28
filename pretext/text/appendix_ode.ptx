@@ -59,12 +59,17 @@ has the trivial solution <m>y(t)=0</m>.
 <li>
 An <term>initial value problem</term>  is a problem in which one is to find
 an unknown function <m>y(t)</m> that satisfies both a given ODE and given
-initial conditions, like <m>y(0)=1</m>, <m>y'(0)=0</m>.
-</li>
+initial conditions, like <m>y(t_0)=1</m>, <m>y'(t_0)=0</m>. Note that all of the 
+conditions involve the function <m>y(t)</m> (or its derivatives) evaluated at 
+a single time <m>t=t_0</m>.
+</li> 
 <li>
 A <term>boundary value problem</term>  is a problem in which one is to find
 an unknown function <m>y(t)</m> that satisfies both a given ODE and given
-boundary conditions, like <m>y(0)=0</m>, <m>y(1)=0</m>.
+boundary conditions, like <m>y(t_0)=0</m>, <m>y(t_1)=0</m>. Note that the conditions 
+involve the function <m>y(t)</m> (or its derivatives) evaluated at two different 
+times. 
+
 </li>
 </ol>
 </p></statement>

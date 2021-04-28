@@ -54,7 +54,6 @@ it is said to have \emph{variable coefficients}. For example,
 the ODE $y''(t)+7y(t)=\sin t$ is constant coefficient, while 
 $y''(t)+ty(t)=\sin t$ is variable coefficient.
 
-
 \end{enumerate}
 \end{defn}
 
@@ -72,12 +71,17 @@ has the trivial solution $y(t)=0$.
 \item[(g)] %% (g) 
 An \emph{initial value problem}  is a problem in which one is to find
 an unknown function $y(t)$ that satisfies both a given ODE and given
-initial conditions, like $y(0)=1$, $y'(0)=0$. 
+initial conditions, like $y(t_0)=1$, $y'(t_0)=0$. Note that all of the 
+conditions involve the function $y(t)$ (or its derivatives) evaluated at 
+a single time $t=t_0$.
 
 \item[(h)] %% (h) 
 A \emph{boundary value problem}  is a problem in which one is to find
 an unknown function $y(t)$ that satisfies both a given ODE and given
-boundary conditions, like $y(0)=0$, $y(1)=0$. 
+boundary conditions, like $y(t_0)=0$, $y(t_1)=0$. Note that the conditions 
+involve the function $y(t)$ (or its derivatives) evaluated at two different 
+times. 
+
 
 \end{enumerate}
 \end{defn}
@@ -116,7 +120,14 @@ In \eqref{eqn:ODEgensln}, $y_p$ is called the ``particular solution'' and
 $C_1y_1(t)+C_2y_2(t)+\cdots+C_n y_n(t)$ is called the 
 ``complementary solution''.
 
-\item %% (b) 
+\end{enumerate}
+\end{theorem}
+
+\addtocounter{theorem}{-1}
+\begin{theorem}[continued]
+\begin{enumerate}[(a)]
+
+\item[(b)] %% (b) 
 Given any constants $b_0$, $\cdots$, $b_{n-1}$ there is exactly
 one function $y(t)$ that obeys the ODE \eqref{eqn:ODEordern} and the initial
 conditions

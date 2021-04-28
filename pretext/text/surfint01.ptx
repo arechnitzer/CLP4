@@ -159,7 +159,7 @@ the points inside the dashed circle.)
 <p>We can parametrize the unit sphere by using spherical coordinates,
 which you should have seen before.
 As a reminder, here is a figure showing the definitions of the
-three spherical coordinates
+three spherical coordinates<fn>The symbols <m>\rho</m>, <m>\varphi</m>, <m>\theta</m> are the standard mathematics symbols for the spherical coordinates. Appendix  <xref ref="ap_ISO"/> gives another set of symbols that is commonly used in the physical sciences and engineering.</fn>
 <md>
 <mrow>
 \rho&amp;=\text{ distance from }(x,y,z)\text{ to }(0,0,0)

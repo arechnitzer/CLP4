@@ -231,7 +231,7 @@ From the diagram, we see that <m>P</m> is <m>a\cos \theta</m> units above the ce
 
 <exercise xml:id="prob_s1_0last">
 <statement><p>
-The curve <m>C</m> is defined to be the intersection of the ellipsoid
+The curve <m>C</m> is defined to be the intersection of the hyperboloid
 <me>
 x^2-\frac{1}{4}y^2+3z^2=1</me>
 </p>
@@ -265,7 +265,7 @@ We aren't concerned with <m>x</m>, so we can eliminate it by solving for it in o
 </mrow>
 <intertext>Since <m>y</m> is small, the left hand is close to <m>1</m>
          and the right hand side is close to <m>(2z)^2</m>.
-         So <m>(2z^2)\approx 1</m>. Since <m>z</m> is negative,
+         So <m>(2z)^2\approx 1</m>. Since <m>z</m> is negative,
          <m>z\approx -\frac{1}{2}</m> and  <m>2z+\frac{y}{2} \lt 0</m>. Also, <m>1-\frac{y^2}{2}</m> is positive, so it has a real square root.
 </intertext>
 <mrow>

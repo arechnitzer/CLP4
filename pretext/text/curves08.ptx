@@ -68,7 +68,7 @@ that <m>|\hat\vth(\theta)| = 1</m>.
 
 <lemma xml:id="lem_polar">
 <statement><p>
-If we parametrize a curve by giving its polar coordinates<fn>As usual <m>r</m> is the distance from the origin to the point and <m>\theta</m> is angle between the <m>x</m>-axis and the vector from the origin to the point.</fn>
+If we parametrize a curve by giving its polar coordinates<fn>As usual <m>r</m> is the distance from the origin to the point and <m>\theta</m> is angle between the <m>x</m>-axis and the vector from the origin to the point. The symbols <m>r</m>, <m>\theta</m> are the standard mathematics symbols for the polar coordinates. Appendix  <xref ref="ap_ISO"/> gives another set of symbols that is commonly used in the physical sciences and engineering.</fn>
  <m>\big(r(t)\,,\,\theta(t)\big)</m>, then
 <ol label="a">
 <li> the position vector of the point at time <m>t</m> is
