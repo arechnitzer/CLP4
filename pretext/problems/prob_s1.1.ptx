@@ -603,8 +603,26 @@ Since <m>\vr'(t) = (2t,0,t^2)</m>, the specified unit tangent at <m>t=1</m> is
 </p>
 
 <p> (b)
-We are to find the arc length between <m>\vr(0)</m> and <m>\vr(-1)</m>.
-As <m>\diff{s}{t}=\sqrt{4t^2+t^4}</m>, the
+We are to find the arc length between <m>(0,3,0)</m> and <m>(1,3,-1/3)</m>.
+As <m>\diff{s}{t}=|\vr'(t)|=\sqrt{4t^2+t^4}</m>, that arc length is the integral of
+<m>\sqrt{4t^2+t^4}</m> with <m>t</m> running between the value of <m>t</m> for which
+<m>\vr(t)=(0,3,0)</m> and the value of <m>t</m> for which <m>\vr(t)=(1,3,-1/3)</m>.
+To find those two values of <m>t</m>, we observe that
+<ul>
+<li>
+the first component of <m>\vr(t)</m>, namely <m>t^2</m>, matches the first component
+of <m>(0,3,0)</m>, namely <m>0</m>,  only when <m>t=0</m>. So we would guess that the <m>t</m> 
+corresponding to <m>(0,3,0)</m> is <m>t=0</m>.
+As <m>\vr(0) = (0^2,3,\frac{1}{3}0^3)=(0,3,0)</m>, this is indeed the case.
+</li><li>
+The first component of <m>\vr(t)</m>, namely <m>t^2</m>, matches the first component
+of <m>(1,3,-1/3)</m>, namely <m>1</m>, only when <m>t=\pm 1</m>. For the third component of <m>\vr(t)</m>, namely <m>\frac{1}{3}t^3</m>, to match the third component
+of <m>(1,3,-1/3)</m>, namely <m>-1/3</m>, we need <m>t\lt 0</m>.  So we would guess that the <m>t</m> 
+corresponding to <m>(1,3,-1/3)</m> is <m>t=-1</m>.
+To check that this is indeed the case, we compute <m>\vr(-1) = \big((-1)^2,3,\frac{1}{3}(-1)^3\big)=(1,3,-1/3)</m>.
+</li>
+</ul>
+So <m>t</m> runs  from <m>-1</m> to <m>0</m> and
 <md>
 <mrow>
 \text{arc length} &amp;= \int_{-1}^0 \sqrt{4t^2+t^4}\ \dee{t}
