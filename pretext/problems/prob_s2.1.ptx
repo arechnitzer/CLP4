@@ -364,7 +364,7 @@ When the twig is at <m>(x,y)</m> it has velocity <m>\vv(x,y)</m>.
 <solution><p>
 (a)
 At time <m>0</m> the velocity of the twig is
-<m>\vv(1,1) =\hi+\hj</m>. So at time <m>t=0.1</m>, the position of the
+<m>\vv(1,1) =\hi+\hj</m>. So at time <m>t=0.01</m>, the position of the
 twig is approximately
 <me>
 (1,1) + 0.01(1,1) = (1.01\,,\,1.01)
@@ -373,10 +373,10 @@ twig is approximately
 
 <p>(b)
 At time <m>0</m> the velocity of the twig is
-<m>\vv(0,0) =\vZero</m>. So at time <m>t=0.1</m>, the position of the
+<m>\vv(0,0) =\vZero</m>. So at time <m>t=0.01</m>, the position of the
 twig is
 <me>
-(0,0) + 0.1(0,0) = (0\,,\,0)
+(0,0) + 0.01(0,0) = (0\,,\,0)
 </me>
 </p>
 
