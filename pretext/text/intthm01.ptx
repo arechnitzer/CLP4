@@ -18,7 +18,7 @@ they would be worth using.
 
 <p>For example,
 one of Maxwell's equations (relating the electric field <m>\vE</m> and
-the magnetic field <m>\vB</m>) written without the use this notation is
+the magnetic field <m>\vB</m>) written without the use of this notation is
 <md>
 <mrow>
 &amp;\Big(\frac{\partial E_3}{\partial y} -\frac{\partial E_2}{\partial z}\Big)\hi
