@@ -1,4 +1,4 @@
-                  /*  File:  cone.java    */
+                  /*  File:  coneP.java    */
 
 
 import figPac.* ;
@@ -7,12 +7,12 @@ import java.applet.* ;
 import java.awt.* ;
 
 
-public class cone extends Template {
+public class coneP extends Template {
 
-     static {templateClass = new cone() ; }
+     static {templateClass = new coneP() ; }
 
      public void setup() {
-          filePrefix = "cone" ;    // used as the prefix for any ps or lbl files written
+          filePrefix = "coneP" ;    // used as the prefix for any ps or lbl files written
           outputPsFile = true ;
           outputLblFile = true ;
           xsize = 3*0.6 ;      
