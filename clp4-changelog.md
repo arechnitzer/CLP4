@@ -8,6 +8,8 @@ permalink: /CLP4-changelog/
 
 # CLP-4 Vector Calculus textbook
 
+* August 5, 2021 - Fixed a figure file name bug in Sections 3.2 and 4.2.
+* July 26, 2021 - Typo correction in Section 4.1.
 * March 25, 2021 -  Tweaked Definition I.1.
 * January 17, 2021 - Typo correction in Lemma 1.1.5 (html and combined versions only).
 * January 16, 2021 - Added an appendix giving the ISO coordinate system notation.
@@ -44,6 +46,8 @@ permalink: /CLP4-changelog/
 *   September 29, 2017 - tweaked definition 2.1.1
 
 # CLP-4 Vector Calculus problem book
+* July 21, 2021 - Typo corrections in S-5 of Section 2.1.
+* June 8, 2021 - Expanded S-13 of Section 1.1.
 * February 25, 2021 - Typo corrections in Q[5] of Section 1.1.
 * December 23, 2020 - Added one question to Section 1.1 and two questions to Sections 3.3 and 4.1.
 * May 26, 2020 - Typo correction in Q[6] of Section 3.1.
