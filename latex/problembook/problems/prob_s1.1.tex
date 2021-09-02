@@ -539,8 +539,25 @@ Since $\vr'(t) = (2t,0,t^2)$, the specified unit tangent at $t=1$ is
 \end{equation*}
 
 \noindent (b)
-We are to find the arc length between $\vr(0)$ and $\vr(-1)$. 
-As $\diff{s}{t}=\sqrt{4t^2+t^4}$, the 
+We are to find the arc length between $(0,3,0)$ and $(1,3,-1/3)$.
+As $\diff{s}{t}=|\vr'(t)|=\sqrt{4t^2+t^4}$, that arc length is the integral of
+$\sqrt{4t^2+t^4}$ with $t$ running between the value of $t$ for which
+$\vr(t)=(0,3,0)$ and the value of $t$ for which $\vr(t)=(1,3,-1/3)$.
+To find those two values of $t$, we observe that
+\begin{itemize}
+\item
+the first component of $\vr(t)$, namely $t^2$, matches the first component
+of $(0,3,0)$, namely $0$,  only when $t=0$. So we would guess that the $t$ 
+corresponding to $(0,3,0)$ is $t=0$.
+As $\vr(0) = (0^2,3,\frac{1}{3}0^3)=(0,3,0)$, this is indeed the case.
+\item   
+The first component of $\vr(t)$, namely $t^2$, matches the first component
+of $(1,3,-1/3)$, namely 1, only when $t=\pm 1$. For the third component of $\vr(t)$, namely $\frac{1}{3}t^3$, to match the third component
+of $(1,3,-1/3)$, namely $-1/3$, we need $t<0$.  So we would guess that the $t$ 
+corresponding to $(1,3,-1/3)$ is $t=-1$.
+To check that this is indeed the case, we compute $\vr(-1) = \big((-1)^2,3,\frac{1}{3}(-1)^3\big)=(1,3,-1/3)$.
+\end{itemize}
+So $t$ runs  from $-1$ to $0$ and
 \begin{align*}
 \text{arc length} &= \int_{-1}^0 \sqrt{4t^2+t^4}\ \dee{t}
 \end{align*}
