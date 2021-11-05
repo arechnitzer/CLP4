@@ -262,22 +262,22 @@ None exists: $\pdiff{F_2}{z}=\frac13x^3$, while $\pdiff{F_3}{y}=\frac{1}{3}x^3+1
 
 %%%%%%%%%%%%%%%%%%%
 \begin{question}
-Find a potential $\varphi$ for \[\vF(x,y)=\left( \frac{x}{x^2+y^2+z^2}\right)\hi+\left( \frac{y}{x^2+y^2+z^2}\right)\hj+\left( \frac{z}{x^2+y^2+z^2}\right)\hk,\] or prove none exists. 
+Find a potential $\varphi(x,y,z)$ for \[\vF(x,y,z)=\left( \frac{x}{x^2+y^2+z^2}\right)\hi+\left( \frac{y}{x^2+y^2+z^2}\right)\hj+\left( \frac{z}{x^2+y^2+z^2}\right)\hk,\] or prove none exists. 
 \end{question}
 \begin{hint}
 $\displaystyle\int\frac{x}{x^2+y^2+z^2}\,\dee{x}$ can be evaluated by inspection, or with the substitution \\$u=x^2+y^2+z^2$.
 \end{hint}
 \begin{answer}
-$\varphi = \frac12\ln(x^2+y^2+z^2)$
+$\varphi(x,y,z) = \frac12\ln(x^2+y^2+z^2)$
 \end{answer}
 \begin{solution}
-If $\varphi$ is a potential for $\vF$, then:
+If $\varphi(x,y,z)$ is a potential for $\vF(x,y,z)$, then:
 \begin{itemize}
-\item $\pdiff{\varphi}{x}=\frac{x}{x^2+y^2+z^2}$, so $\varphi = \frac12\ln(x^2+y^2+z^2)+\psi_1(y,z)$
-\item $\pdiff{\varphi}{y}=\frac{y}{x^2+y^2+z^2}$, so $\varphi = \frac12\ln(x^2+y^2+z^2)+\psi_2(x,z)$
-\item $\pdiff{\varphi}{z}=\frac{z}{x^2+y^2+z^2}$, so $\varphi = \frac12\ln(x^2+y^2+z^2)+\psi_2(x,y)$
+\item $\pdiff{\varphi}{x}(x,y,z)=\frac{x}{x^2+y^2+z^2}$, so $\varphi(x,y,z) = \frac12\ln(x^2+y^2+z^2)+\psi_1(y,z)$
+\item $\pdiff{\varphi}{y}(x,y,z)=\frac{y}{x^2+y^2+z^2}$, so $\varphi(x,y,z) = \frac12\ln(x^2+y^2+z^2)+\psi_2(x,z)$
+\item $\pdiff{\varphi}{z}(x,y,z)=\frac{z}{x^2+y^2+z^2}$, so $\varphi(x,y,z) = \frac12\ln(x^2+y^2+z^2)+\psi_2(x,y)$
 \end{itemize}
-So, for instance, $\varphi= \frac{1}{2}\ln(x^2+y^2+z^2)$ is a potential for $\vF$.
+So, for instance, $\varphi(x,y,z)= \frac{1}{2}\ln(x^2+y^2+z^2)$ is a potential for $\vF(x,y,z)$.
 
 \end{solution}
 

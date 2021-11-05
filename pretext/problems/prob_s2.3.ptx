@@ -320,27 +320,27 @@ None exists: <m>\pdiff{F_2}{z}=\frac13x^3</m>, while <m>\pdiff{F_3}{y}=\frac{1}{
 
 <exercise>
 <statement><p>
-Find a potential <m>\varphi</m> for <me>
-\vF(x,y)=\left( \frac{x}{x^2+y^2+z^2}\right)\hi+\left( \frac{y}{x^2+y^2+z^2}\right)\hj+\left( \frac{z}{x^2+y^2+z^2}\right)\hk,</me>
+Find a potential <m>\varphi(x,y,z)</m> for <me>
+\vF(x,y,z)=\left( \frac{x}{x^2+y^2+z^2}\right)\hi+\left( \frac{y}{x^2+y^2+z^2}\right)\hj+\left( \frac{z}{x^2+y^2+z^2}\right)\hk,</me>
  or prove none exists.
 </p></statement>
 <hint><p>
 <m>\displaystyle\int\frac{x}{x^2+y^2+z^2}\,\dee{x}</m> can be evaluated by inspection, or with the substitution <m>u=x^2+y^2+z^2</m>.
 </p></hint>
 <answer><p>
-<m>\varphi = \frac12\ln(x^2+y^2+z^2)</m>
+<m>\varphi(x,y,z) = \frac12\ln(x^2+y^2+z^2)</m>
 </p></answer>
 <solution><p>
-If <m>\varphi</m> is a potential for <m>\vF</m>, then:
+If <m>\varphi(x,y,z)</m> is a potential for <m>\vF(x,y,z)</m>, then:
 <ul>
-<li> <m>\pdiff{\varphi}{x}=\frac{x}{x^2+y^2+z^2}</m>, so <m>\varphi = \frac12\ln(x^2+y^2+z^2)+\psi_1(y,z)</m>
+<li> <m>\pdiff{\varphi}{x}(x,y,z)=\frac{x}{x^2+y^2+z^2}</m>, so <m>\varphi(x,y,z) = \frac12\ln(x^2+y^2+z^2)+\psi_1(y,z)</m>
 </li>
-<li> <m>\pdiff{\varphi}{y}=\frac{y}{x^2+y^2+z^2}</m>, so <m>\varphi = \frac12\ln(x^2+y^2+z^2)+\psi_2(x,z)</m>
+<li> <m>\pdiff{\varphi}{y}(x,y,z)=\frac{y}{x^2+y^2+z^2}</m>, so <m>\varphi(x,y,z) = \frac12\ln(x^2+y^2+z^2)+\psi_2(x,z)</m>
 </li>
-<li> <m>\pdiff{\varphi}{z}=\frac{z}{x^2+y^2+z^2}</m>, so <m>\varphi = \frac12\ln(x^2+y^2+z^2)+\psi_2(x,y)</m>
+<li> <m>\pdiff{\varphi}{z}(x,y,z)=\frac{z}{x^2+y^2+z^2}</m>, so <m>\varphi(x,y,z) = \frac12\ln(x^2+y^2+z^2)+\psi_2(x,y)</m>
 </li>
 </ul>
-So, for instance, <m>\varphi= \frac{1}{2}\ln(x^2+y^2+z^2)</m> is a potential for <m>\vF</m>.
+So, for instance, <m>\varphi(x,y,z)= \frac{1}{2}\ln(x^2+y^2+z^2)</m> is a potential for <m>\vF(x,y,z)</m>.
 </p>
 
 </solution>
