@@ -533,7 +533,7 @@ any integrals.
 </p><p>
 (b) (i) <m>\int_0^{2\pi}\dee{\theta}\int_0^1\dee{r}\ \frac{2r}{\sqrt{4-r^2}}</m>
 </p><p>
-(b) (ii) <m>\frac{32\pi}{3}</m>
+(b) (ii) <m>16\pi</m>
 </p></answer>
 
 <solution><p>
@@ -588,7 +588,7 @@ becomes a perfect ball of radius <m>2</m>.
 The area of the pink dimple in the figure above is identical to the area
 of the blue cap in that figure. So the total surface area of the
 Death Star is exactly the surface area of a sphere of radius <m>2</m> and so
-is <m>\frac{4}{3}\pi 2^3=\frac{32\pi}{3}</m>.
+is <m>4\pi 2^2=16\pi</m>.
 </p>
 
 </solution>
