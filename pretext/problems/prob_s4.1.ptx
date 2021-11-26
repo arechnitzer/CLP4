@@ -666,7 +666,7 @@ be no <m>x</m>'s, <m>y</m>'s, or <m>z</m>'s in your answers.
   +\hj\pdiff{}{y}
   +\hk\pdiff{}{z} \right)
 \big(x^2+y^2+z^2\big)
-=2x\,\hi +2y\,\hj +2\,\hk
+=2x\,\hi +2y\,\hj +2z\,\hk
 =2\vr
 </me>
 </p>
