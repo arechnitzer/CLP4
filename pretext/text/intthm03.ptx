@@ -640,7 +640,7 @@ the <m>xy</m>-plane that is of radius <m>a</m> and is centered on the origin.
 We can explicitly compute
 <m>\oint_{C_a}\vB\cdot\dee{\vr}</m>. To do so just parametrize
 <m>C_a</m> by <m>x(t)=a\cos t</m>, <m>y(t) = a\sin t</m>, <m>z(t)=0</m>. Then
-<m>x'(t)=-a\sin t</m>, <m>y(t) = a\cos t</m> and
+<m>x'(t)=-a\sin t</m>, <m>y'(t) = a\cos t</m> and
 <md>
 <mrow>
 \oint_{C_a}\vB\cdot\dee{\vr}
