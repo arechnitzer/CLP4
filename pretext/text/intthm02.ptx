@@ -311,7 +311,7 @@ section above. So
 </mrow>
 </md>
 Here <m>S_c\downarrow</m> is the surface <m>S_c</m> with normal vector <m>-\hk</m> and
-<m>S_c\uparrow</m>  is the surface <m>S_c</m> with normal vector <m>-\hk</m>.
+<m>S_c\uparrow</m>  is the surface <m>S_c</m> with normal vector <m>+\hk</m>.
 So the second and fourth integrals  are identical
 except that <m>\hn=-\hk</m> in the second integral and <m>\hn=+\hk</m> in the
 fourth integral. So they cancel exactly and
@@ -1326,7 +1326,7 @@ Substituting it in gives
 </mrow>
 </md>
 So the torque generated at <m>\vr_0</m> by pressure over the entire surface
-is the same  the torque generated at $\vr_0$ by a force <m>\vB</m> applied at the single point
+is the same  the torque generated at <m>\vr_0</m> by a force <m>\vB</m> applied at the single point
 <me>
 \vC_\vB=\frac{\tripInt_V \vr\rhof\,\dee{V}}{\tripInt_V\rhof\,\dee{V}}
 </me>
