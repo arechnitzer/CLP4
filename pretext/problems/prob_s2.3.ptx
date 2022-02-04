@@ -695,7 +695,7 @@ So, at the point <m>(1,1,1)</m>, the particle has speed <m>\sqrt{14}</m>.
 <statement><p>
 For some differentiable, real-valued functions <m>f,g,h:\mathbb R \to \mathbb R</m>, we define
 <me>
-\vF=2f(x)f'(x)\hi+g'(y)h(z)\hj+g(y)h'(z).</me>
+\vF=2f(x)f'(x)\hi+g'(y)h(z)\hj+g(y)h'(z)\hk.</me>
 </p>
 
 <p>Verify that <m>\vF</m> is conservative.
