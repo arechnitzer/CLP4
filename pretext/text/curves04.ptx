@@ -397,11 +397,11 @@ curvature is
 <mrow>
 \vr(t) +\frac{1}{\ka(t)}\hat\vN(t)
 &amp;=\Big(a-\frac{a^2+b^2}{a}\Big)\cos t\,\hi
- +\Big(a-\frac{a^2+b^2}{a}\Big)\sin t\,\hi
+ +\Big(a-\frac{a^2+b^2}{a}\Big)\sin t\,\hj
  +bt\,\hk
 </mrow><mrow>
 &amp;=-\frac{b^2}{a}\cos t\,\hi
-  -\frac{b^2}{a}\sin t\,\hi
+  -\frac{b^2}{a}\sin t\,\hj
  +bt\,\hk
 </mrow>
 </md>
