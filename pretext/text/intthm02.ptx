@@ -336,7 +336,7 @@ the hemispherical region
 </p>
 <sidebyside widths="45% 24%" valign="middle">
 <p><me>
-V=\Set{(x,y,z}{x^2+y^2+z^2\le a^2,\ z\ge 0}
+V=\Set{(x,y,z)}{x^2+y^2+z^2\le a^2,\ z\ge 0}
 </me></p>
 <image source="figs/hemisphere"/>
 </sidebyside>
@@ -564,7 +564,7 @@ Evaluate the flux integral <m>\dblInt_S \vF\cdot\hn\,\dee{S}</m> where
 <solution>
 <p>
 This integral can be evaluated in much the same way as we evaluated
-the integral of Example<nbsp/><xref ref="eg_divThmC"/>. We first define a solid <m>V</m>
+the integral of Example<nbsp/><xref ref="eg_divThmB"/>. We first define a solid <m>V</m>
 whose boundary <m>\partial V</m> contains <m>S</m>. A good, and hopefully obvious,
 choice is
 <md>
