@@ -3982,7 +3982,7 @@ surface, and the centre of mass of the volume enclosed by the surface.
 
 <answer><p>
 (a) <m>\vnabla\cdot\vF =2+2z</m> </p><p>
-(b) <m>\pi\frac{23}{6} 5^3 =479\frac{1}{6}\pi</m>
+(b) <m>\pi\frac{23}{6} 5^3 =\frac{2875}{6}\pi</m>
 </p>
 
 <p>(c) Let <m>S</m> be an oriented surface that encloses a solid <m>V</m> and has outward pointing normal. If <m>\bar z = -\frac{9}{2|V|}-1</m>, where <m>|V|</m> is the
@@ -4060,7 +4060,7 @@ is the area of a disk of radius <m>\sqrt{25-z^2}</m>. Continuing,
 &amp;= \pi\,5^3 \Big(\frac{4}{3}+\frac{5}{2}\Big)
 </mrow><mrow>
 &amp;=\pi\frac{23}{6} 5^3
-=479\frac{1}{6}\pi
+=\frac{2875}{6}\pi
 </mrow>
 </md>
 </p>
