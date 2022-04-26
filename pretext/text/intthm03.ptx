@@ -291,7 +291,7 @@ hand side of Green's theorem.
 <p>
 Evaluate
 <me>
-\oint_C\big[(x-xy)\,\dee{x} + (y^3+1)\,\dee{y}
+\oint_C\big[(x-xy)\,\dee{x} + (y^3+1)\,\dee{y}\big]
 </me>
 where <m>C</m> is the curve given in the figure
 </p>
