@@ -133,13 +133,13 @@ So, <m>\vF</m> fails the screening test.  So, it's not conservative. That's opti
 
 <p> c.
  <md>
-<mrow>\vF&amp;=(xe^{xy}+1)\hi + (ye^{xy}+z)\hj + \left( \frac1z+y\right)\hk
+<mrow>\vF&amp;=(ye^{xy}+1)\hi + (xe^{xy}+z)\hj + \left( \frac1z+y\right)\hk
 </mrow><mrow>
 \vnabla \times \vF&amp;=\Big(\frac{\partial F_3}{\partial y} -\frac{\partial F_2}{\partial z} \Big)\hi
 +\Big(\frac{\partial F_1}{\partial z} -\frac{\partial F_3}{\partial x} \Big)\hj
 +\Big(\frac{\partial F_2}{\partial x} -\frac{\partial F_1}{\partial y} \Big)\hk
 </mrow><mrow>
-&amp;=(1-1)\hi+(0-0)\hj+(e^{xy}(xy+1)-xye^{xy}(xy+1))\hk = \mathbf0
+&amp;=(1-1)\hi+(0-0)\hj+\{e^{xy}(xy+1)-e^{xy}(xy+1)\}\hk = \mathbf0
 </mrow>
 </md>
 <m>\vF</m> passes the screening test. Since <m>\vF</m> is defined and has continuous first-order partial derivatives on all of <m>\mathbb R^3</m>, it is conservative. So, we have option A.
