@@ -131,12 +131,12 @@ into <m>\cos\big(T(s)\big)</m>'s and <m>\sin\big(T(s)\big)</m>'s.
 <md>
 <mrow>
 s=\frac{3a}{4}\big[1-\cos\big(2T(s)\big)\big]
-&amp;=\frac{3a}{4}\big[1-\big(2\cos^2\big(T(s)-1\big)\big]
+&amp;=\frac{3a}{4}\big[1-\big\{2\cos^2\big(T(s)\big)-1\big\}\big]
 </mrow><mrow>
 &amp;\iff \cos^2\big(T(s)\big)=1-\frac{2s}{3a}
 </mrow><mrow>
 s=\frac{3a}{4}\big[1-\cos\big(2T(s)\big)\big]
-&amp;=\frac{3a}{4}\big[1-\big(1-2\sin^2\big(T(s)\big)\big]
+&amp;=\frac{3a}{4}\big[1-\big\{1-2\sin^2\big(T(s)\big)\big\}\big]
 </mrow><mrow>
 &amp;\iff \sin^2\big(T(s)\big)=\frac{2s}{3a}
 </mrow>
