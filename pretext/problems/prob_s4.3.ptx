@@ -118,7 +118,7 @@ So, using <m>-C_3</m> to denote the line segment from <m>(0,1)</m> to <m>(1,1)</
 <statement><p>
  Let <m>R</m> be a finite region in the <m>xy</m>-plane,
 whose boundary, <m>C</m>, consists of a single, piecewise smooth, simple
-closed curve that is oriented couterclockwise.
+closed curve that is oriented counterclockwise.
 <q>Simple</q> means that the curve does not intersect itself.
 Use Green's theorem to show that
 <me>
