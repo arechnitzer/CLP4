@@ -84,7 +84,7 @@ For each of the following fields, decide which of the following holds:
 </li>
 <li> <m>\vF=y^2z\hi + x^2z\hj + x^2y\hk</m>
 </li>
-<li> <m>\vF=(ye^{xy}+1)\hi + (xe^{xy}+z)\hj + \left( \frac1z+y\right)\hk</m>
+<li> <m>\vF=(ye^{xy}+1)\hi + (xe^{xy}+z)\hj + \left(z+y\right)\hk</m>
 </li>
 <li> <m>\vF=y\cos(xy)\hi + x\sin(xy)\hj </m>
 </li>
@@ -133,7 +133,7 @@ So, <m>\vF</m> fails the screening test.  So, it's not conservative. That's opti
 
 <p> c.
  <md>
-<mrow>\vF&amp;=(ye^{xy}+1)\hi + (xe^{xy}+z)\hj + \left( \frac1z+y\right)\hk
+<mrow>\vF&amp;=(ye^{xy}+1)\hi + (xe^{xy}+z)\hj + \left( z+y\right)\hk
 </mrow><mrow>
 \vnabla \times \vF&amp;=\Big(\frac{\partial F_3}{\partial y} -\frac{\partial F_2}{\partial z} \Big)\hi
 +\Big(\frac{\partial F_1}{\partial z} -\frac{\partial F_3}{\partial x} \Big)\hj
