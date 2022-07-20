@@ -223,7 +223,7 @@ is <m>\int_C\vF\cdot\dee{\vr}=0</m> for all closed paths <m>C</m>?
 </p></statement>
 
 <hint><p>
-Review Theorem<nbsp/><xref ref="thm_pathIndepConserv"/>.
+Use Theorems<nbsp/><xref ref="thm_pathIndepConserv"/> and <xref ref="thm_screenConserv"/>.
 </p></hint>
 
 <answer><p>
@@ -231,24 +231,22 @@ Review Theorem<nbsp/><xref ref="thm_pathIndepConserv"/>.
 </p></answer>
 
 <solution><p>
-By Theorem<nbsp/><xref ref="thm_pathIndepConserv"/>, the condition that
- <q><m>\int_C\vF\cdot\dee{\vr}=0</m> for all closed paths <m>C</m></q>
-is equivalent to the condition that <q><m>\vF</m> is conservative</q>, which,
-since <m>\vF</m> is defined on all of <m>\bbbr^3</m>, is equivalent to the condition
-that <m>\vF</m> pass the screening test
+Note <m>\vF</m> is defined and continuous on all of <m>\mathbb R^3</m>. By  Theorem<nbsp/><xref ref="thm_pathIndepConserv"/>, the integral <m>\ \int_C\vF\cdot \dee{\vr}=0\ </m> for all closed paths <m>C</m>
+if and only if <m>\vF</m> is conservative. Furthermore, <m>\vF</m> has continuous first-order partial derivatives on all of <m>\bbbr^3</m>. Using Theorem<nbsp/><xref ref="thm_screenConserv"/>, <m>\vF</m> is conservative if
+and only if it passes the scsreening test <m>\vnabla\times\vF=\vZero</m>:
 <md>
 <mrow>
-\vZero =\vnabla\times \vF
+\vZero=\vnabla\times\vF
 &amp;=\det\left[\begin{matrix}\hi&amp;\hj&amp;\hk \\
-     \frac{\partial }{\partial x}&amp;
-        \frac{\partial }{\partial y}&amp;
-        \frac{\partial }{\partial z}\\
-        e^x \sin y &amp; ae^x \cos y + bz &amp; cx\end{matrix}\right]
+            \frac{\partial }{\partial x}&amp;
+            \frac{\partial }{\partial y}&amp;
+            \frac{\partial }{\partial z} \\
+  e^x\sin y &amp; ae^x\cos y+bz &amp; cx\end{matrix}\right]
 </mrow><mrow>
-&amp;= -b\,\hi-c\,\hj+\big(ae^x\cos y-e^x\cos y\big)\,\hk
+&amp;=(0-b)\hi-(c-0)\hj+(ae^x\cos y-e^x\cos y)\hk
 </mrow>
 </md>
-which is the case if and only if <m>b=c=0</m> and <m>a=1</m>.
+This is the case if and only if <m>a=1,\ b=c=0</m>.
 </p></solution>
 </exercise>
 
@@ -706,41 +704,6 @@ Then
 </p>
 
 </solution>
-</exercise>
-
-<exercise><title><fromexam>M317 2003A</fromexam></title>
-<statement><p>
-Let <m>\ \vF= e^x\sin y\,\hi+[ae^x\cos y+bz]\,\hj+cx\,\hk</m>.
-For which values of the constants <m>a,\ b,\ c</m> is
-<m>\ \int_C\vF\cdot \dee{\vr}=0\ </m> for all closed paths <m>C</m>?
-</p></statement>
-
-<hint><p>
-Use Theorems<nbsp/><xref ref="thm_pathIndepConserv"/> and <xref ref="thm_screenConserv"/>.
-</p></hint>
-
-<answer><p>
-<m>a=1,\ b=c=0</m>
-</p></answer>
-
-<solution><p>
-Note <m>\vF</m> is defined and continuous on all of <m>\mathbb R^3</m>. By  Theorem<nbsp/><xref ref="thm_pathIndepConserv"/>, the integral <m>\ \int_C\vF\cdot \dee{\vr}=0\ </m> for all closed paths <m>C</m>
-if and only if <m>\vF</m> is conservative. Furthermore, <m>\vF</m> has continuous first-order partial derivatives on all of <m>\bbbr^3</m>. Using Theorem<nbsp/><xref ref="thm_screenConserv"/>, <m>\vF</m> is conservative if
-and only if <m>\vnabla\times\vF=\vZero</m>:
-<md>
-<mrow>
-\vZero=\vnabla\times\vF
-&amp;=\det\left[\begin{matrix}\hi&amp;\hj&amp;\hk \\
-            \frac{\partial }{\partial x}&amp;
-            \frac{\partial }{\partial y}&amp;
-            \frac{\partial }{\partial z} \\
-  e^x\sin y &amp; ae^x\cos y+bz &amp; cx\end{matrix}\right]
-</mrow><mrow>
-&amp;=(0-b)\hi-(c-0)\hj+(ae^x\cos y-e^x\cos y)\hk
-</mrow>
-</md>
-So <m>a=1,\ b=c=0</m>.
-</p></solution>
 </exercise>
 
 <exercise>

@@ -175,31 +175,28 @@ is $\int_C\vF\cdot\dee{\vr}=0$ for all closed paths $C$?
 \end{question}
 
 \begin{hint} 
-Review Theorem~\eref{CLP317}{thm:pathIndepConserv} in the text.
+Use Theorems~\eref{CLP317}{thm:pathIndepConserv} and \eref{CLP317}{thm:screenConserv} in the CLP-4 text.
 \end{hint}
 
 \begin{answer} 
-$a=1$, $b=c=0$
+$a=1,\ b=c=0$
 \end{answer}
 
 \begin{solution} 
-By Theorem~\eref{CLP317}{thm:pathIndepConserv}, the condition that 
- ``$\int_C\vF\cdot\dee{\vr}=0$ for all closed paths $C$''
-is equivalent to the condition that ``$\vF$ is conservative'', which, 
-since $\vF$ is defined on all of $\bbbr^3$, is equivalent to the condition 
-that $\vF$ pass the screening test
+Note $\vF$ is defined and continuous on all of $\mathbb R^3$. By  Theorem~\eref{CLP317}{thm:pathIndepConserv}, the integral $\ \int_C\vF\cdot \dee{\vr}=0\ $ for all closed paths $C$
+if and only if $\vF$ is conservative. Furthermore, $\vF$ has continuous first-order partial derivatives on all of $\bbbr^3$. Using Theorem~\eref{CLP317}{thm:screenConserv}, $\vF$ is conservative if
+and only if it passes the screening test $\vnabla\times\vF=\vZero$:
 \begin{align*}
-\vZero =\vnabla\times \vF
+\vZero=\vnabla\times\vF
 &=\det\left[\begin{matrix}\hi&\hj&\hk\\[0.03in] 
-     \frac{\partial\hfill}{\partial x}&
-        \frac{\partial\hfill}{\partial y}&
-        \frac{\partial\hfill}{\partial z}\\[0.03in]
-e^x \sin y & ae^x \cos y + bz & cx\end{matrix}\right]
-= -b\,\hi-c\,\hj+\big(ae^x\cos y-e^x\cos y\big)\,\hk
+            \frac{\partial\hfill}{\partial x}&
+            \frac{\partial\hfill}{\partial y}&
+            \frac{\partial\hfill}{\partial z}\\[0.03in]
+  e^x\sin y & ae^x\cos y+bz & cx\end{matrix}\right] \\
+&=(0-b)\hi-(c-0)\hj+(ae^x\cos y-e^x\cos y)\hk
 \end{align*}
-which is the case if and only if $b=c=0$ and $a=1$.
+This is the case if and only if $a=1,\ b=c=0$.
 \end{solution}
-
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \begin{question}
@@ -602,37 +599,6 @@ $$
 
 \end{solution}
 
-
-%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\begin{question}[M317 2003A] %2
-Let $\ \vF= e^x\sin y\,\hi+[ae^x\cos y+bz]\,\hj+cx\,\hk$. 
-For which values of the constants $a,\ b,\ c$ is 
-$\ \int_C\vF\cdot \dee{\vr}=0\ $ for all closed paths $C$?
-\end{question}
-
-\begin{hint} 
-Use Theorems~\eref{CLP317}{thm:pathIndepConserv} and \eref{CLP317}{thm:screenConserv} in the CLP-4 text.
-\end{hint}
-
-\begin{answer} 
-$a=1,\ b=c=0$
-\end{answer}
-
-\begin{solution} 
-Note $\vF$ is defined and continuous on all of $\mathbb R^3$. By  Theorem~\eref{CLP317}{thm:pathIndepConserv}, the integral $\ \int_C\vF\cdot \dee{\vr}=0\ $ for all closed paths $C$
-if and only if $\vF$ is conservative. Furthermore, $\vF$ has continuous first-order partial derivatives on all of $\bbbr^3$. Using Theorem~\eref{CLP317}{thm:screenConserv}, $\vF$ is conservative if
-and only if $\vnabla\times\vF=\vZero$:
-\begin{align*}
-\vZero=\vnabla\times\vF
-&=\det\left[\begin{matrix}\hi&\hj&\hk\\[0.03in] 
-            \frac{\partial\hfill}{\partial x}&
-            \frac{\partial\hfill}{\partial y}&
-            \frac{\partial\hfill}{\partial z}\\[0.03in]
-  e^x\sin y & ae^x\cos y+bz & cx\end{matrix}\right] \\
-&=(0-b)\hi-(c-0)\hj+(ae^x\cos y-e^x\cos y)\hk
-\end{align*}
-So $a=1,\ b=c=0$.
-\end{solution}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \begin{question}
