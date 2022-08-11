@@ -7,7 +7,17 @@ permalink: /CLP4-changelog/
 ---
 
 # CLP-4 Vector Calculus textbook
-
+* July 14, 2022 - Typo corrections in Sections 4.1.2 and 4.1.5.
+* July 10, 2022 - Typo corrections in Section 3.3.3.
+* July 9, 2022 - Typo correction in Example 1.2.2.
+* July 8, 2022 - Typo correction in footnote 1 of Section 3.1.
+* April 25, 2022 - Typo correction in Example 4.3.4.
+* March 18, 2022 - Typo corrections in Examples 4.2.4 and 4.2.6.
+* March 3, 2022 - Typo correction in Example 1.4.4.
+* January 18, 2022 - Typo correction in Lemma 1.1.5.
+* January 6, 2022 - Typo corrections in Sections 4.2 and 4.2.3.
+* December 16, 2021 - Typo correction in Example 1.0.5.
+* December 1, 2021 - Typo correction in Example 4.3.8.
 * August 5, 2021 - Fixed a figure file name bug in Sections 3.2 and 4.2.
 * July 26, 2021 - Typo correction in Section 4.1.
 * March 25, 2021 -  Tweaked Definition I.1.
@@ -46,6 +56,23 @@ permalink: /CLP4-changelog/
 *   September 29, 2017 - tweaked definition 2.1.1
 
 # CLP-4 Vector Calculus problem book
+* July 19, 2022 - Removed the redundant Q[12] of Section 2.4.
+* July 15, 2022 - Corrected Q[2(c)] of Section 2.4.
+* July 14, 2022 - Typo correction in Q[2] of Section 4.3.
+* July 4, 2022 - Typo corrections in S-2(c) of Section 2.4.
+* April 24, 2022 - Notational improvement in A-40 and S-40 of Section 4.2.
+* April 19, 2022 - Spelling correction in the title of Section 2.4.
+* April 11, 2022 - Typo correction in Q[4] of Section 1.6.
+* February 4, 2022 - Typo correction in Q[15] of Section 2.3.
+* January 6, 2022 - Typo corrections in Q[22] of Section 3.3 and Q[1] of Section 4.1.
+* January 2, 2022 - Typo correction in S[8] of Section 3.2.
+* November 29, 2021 - Typo correction in Q[29] of Section 3.3.
+* November 23, 2021 - Typo correction in S-7b of Section 4.1.
+* November 23, 2021 - Specified the orientation in Q[6] and Q[7] of Section 4.2.
+* November 23, 2021 - Typo correction in S-2 of Section 4.2.
+* November 15, 2021 - Correction to the end of A-8 and S-8 of Section 3.3.
+* November 4, 2021 - Typo corrections in Q[3], A-3, S-3 of Section 2.1.
+* November 4, 2021 - Typo corrections in Q[9], A-9, S-9 of Section 2.3.
 * July 21, 2021 - Typo corrections in S-5 of Section 2.1.
 * June 8, 2021 - Expanded S-13 of Section 1.1.
 * February 25, 2021 - Typo corrections in Q[5] of Section 1.1.
