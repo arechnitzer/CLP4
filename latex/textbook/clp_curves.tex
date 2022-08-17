@@ -134,7 +134,7 @@ the parameter simply by setting $t=x$. This gives the parametrization
 \end{eg}
 
 \begin{eg}[Parametrization of  $x^2+y^2=a^2$, again]\label{eg:paramCircleC}
-It is also quite common that one can use either $x$ or $y$ to parametrize part of, but all of, a curve. A simple example is the circle $x^2+y^2=a^2$.
+It is also quite common that one can use either $x$ or $y$ to parametrize part of, but not all of, a curve. A simple example is the circle $x^2+y^2=a^2$.
 For each $-a<x<a$, there are two points on the circle with that value of $x$.
 So one cannot use $x$ to parametrize the whole circle.
 Similarly, for each $-a<y<a$, there are two points on the circle with that value of $y$. So one cannot use $y$ to parametrize the whole circle. On the other 
@@ -512,12 +512,12 @@ particle at time $t$, then
        &=\vv(t)=\vr'(t)=\big(x'(t)\,,\,y'(t)\,,\,z'(t)\big) 
         = \diff{s}{t}(t)\,\hat\vT(t)\\
 \text{speed at time $t$}
-       &= \diff{s}{t}(t)=|\vv(t)|=|\vr'(t)|=\sqrt{(x'(t)^2+y'(t)^2+z'(t)^2} \\
+       &= \diff{s}{t}(t)=|\vv(t)|=|\vr'(t)|=\sqrt{x'(t)^2+y'(t)^2+z'(t)^2} \\
 \text{acceleration at time $t$}
        &=\va(t)=\vr''(t)=\vv'(t)=\big(x''(t)\,,\,y''(t)\,,\,z''(t)\big) \\
 \intertext{and the distance travelled between times $T_0$ and $T$ is}
   s(T)-s(T_0)&= \int_{T_0}^T \Big|\diff{\vr}{t}(t)\Big|\,\dee{t}
-       = \int_{T_0}^T \sqrt{(x'(t)^2+y'(t)^2+z'(t)^2}\,\dee{t}
+       = \int_{T_0}^T \sqrt{x'(t)^2+y'(t)^2+z'(t)^2}\,\dee{t}
 \end{align*}
 \end{lemma}
 Note that the velocity $\vv(t) = \vr'(t)$ is a vector quantity while the
@@ -1015,10 +1015,10 @@ in $s=\frac{3a}{4}\big[1-\cos\big(2T(s)\big)\big]$
 into $\cos\big(T(s)\big)$'s and $\sin\big(T(s)\big)$'s.
 \begin{align*}
 s=\frac{3a}{4}\big[1-\cos\big(2T(s)\big)\big]
-=\frac{3a}{4}\big[1-\big(2\cos^2\big(T(s)-1\big)\big]
+=\frac{3a}{4}\big[1-\big\{2\cos^2\big(T(s)\big)-1\big\}\big]
 &\iff \cos^2\big(T(s)\big)=1-\frac{2s}{3a} \\
 s=\frac{3a}{4}\big[1-\cos\big(2T(s)\big)\big]
-=\frac{3a}{4}\big[1-\big(1-2\sin^2\big(T(s)\big)\big]
+=\frac{3a}{4}\big[1-\big\{1-2\sin^2\big(T(s)\big)\big\}\big]
 &\iff \sin^2\big(T(s)\big)=\frac{2s}{3a}
 \end{align*}
 Consequently the desired parametrization is
@@ -1915,10 +1915,10 @@ curvature is
 \begin{align*}
 \vr(t) +\frac{1}{\ka(t)}\hat\vN(t)
 &=\Big(a-\frac{a^2+b^2}{a}\Big)\cos t\,\hi
- +\Big(a-\frac{a^2+b^2}{a}\Big)\sin t\,\hi
+ +\Big(a-\frac{a^2+b^2}{a}\Big)\sin t\,\hj
  +bt\,\hk \\
 &=-\frac{b^2}{a}\cos t\,\hi
-  -\frac{b^2}{a}\sin t\,\hi
+  -\frac{b^2}{a}\sin t\,\hj
  +bt\,\hk 
 \end{align*}
 which is another helix. In the figure below, the red curve is the original
@@ -3179,7 +3179,7 @@ $z=\sqrt{2}\sin t$ satisfies both $x^2+y^2+z^2=4$ and $z=y$.
 
 \end{eg}
 
-\begin{eg}\label{eg:paramCircleB}
+\begin{eg}\label{eg:paramCircleBB}
 Let $C$ be the circle that passes through the three points
 $(3,0,0)$, $(0,3,0)$ and $(0,0,3)$. 
 \begin{itemize}\itemsep1pt \parskip0pt \parsep0pt %\itemindent-15pt

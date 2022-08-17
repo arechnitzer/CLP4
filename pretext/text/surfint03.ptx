@@ -344,7 +344,7 @@ for some constants <m>A</m>, <m>B</m>, <m>C</m>, <m>D</m>. Since <m>(0,0,0)</m> 
 <m>z=\frac{1}{D}(-Bx-Cy)</m>. The general proof is based on the fact that,
 under reasonable hypotheses, the first order Taylor expansion is a
 good approximation to <m>G</m> near <m>(0,0,0)</m>.</fn>
-the equation <m>G(x,y,z)=K</m> for <m>z</m> as a function of <m>x</m> and <m>y</m>. That is, the surface also obeys <m>z=f(x,z)</m> for a function <m>f(x,y)</m>
+the equation <m>G(x,y,z)=K</m> for <m>z</m> as a function of <m>x</m> and <m>y</m>. That is, the surface also obeys <m>z=f(x,y)</m> for a function <m>f(x,y)</m>
 that satisfies
 <me>
 G\big(x,y,f(x,y)\big) = K
@@ -378,7 +378,7 @@ and
 &amp;=\frac{\vnabla G\big(x,y,f(x,y)\big)}{G_z\big(x,y,f(x,y)\big)}
 </mrow>
 </md>
-So, by (<xref ref="eq_SUdSparam"/>),
+So, by (<xref ref="eq_SUdSgraph"/>),
 </p>
 
 <fact xml:id="eq_SUdSimplicit">
@@ -428,7 +428,7 @@ So, by (<xref ref="eq_SUdSparam"/>),
 If, for some point <m>(x_0,y_0,z_0)</m> we have
 <m>G_x(x_0,y_0,z_0)=
  G_y(x_0,y_0,z_0)=
- G_z(x_0,y_0,z_0)= 0</m>, we also have problem! Often this is a sign
+ G_z(x_0,y_0,z_0)= 0</m>, we also have a problem! Often this is a sign
 that our surface is not smooth at <m>(x_0,y_0,z_0)</m> and in fact does not
 have a normal vector there. For an example of this, see
 Example <xref ref="eg_tangentPlaneA"/>.

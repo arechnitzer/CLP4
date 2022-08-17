@@ -49,7 +49,8 @@ Which statement is the most true about the line integral
   <image source="pfigs/OE12J_2"/>
 </sidebyside>
 
-<p>
+</li>
+<li><p>
 <m>\vnabla\cdot\vF</m> at the point <m>N</m> (in the picture) is:
 <ol label="(A)">
 <li> Positive
@@ -666,7 +667,7 @@ be no <m>x</m>'s, <m>y</m>'s, or <m>z</m>'s in your answers.
   +\hj\pdiff{}{y}
   +\hk\pdiff{}{z} \right)
 \big(x^2+y^2+z^2\big)
-=2x\,\hi +2y\,\hj +2\,\hk
+=2x\,\hi +2y\,\hj +2z\,\hk
 =2\vr
 </me>
 </p>

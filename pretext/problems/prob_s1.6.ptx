@@ -145,7 +145,7 @@ Following Definition<nbsp/><xref ref="def_lineIntegral"/>:
 
 <exercise>
 <statement><p>
-	A hoop of radius <m>r</m> traces out the curve <m>x^2+y^2=1</m>, where <m>x</m> and <m>y</m> are measured in metres. At a point <m>(x,y)</m>, its density is <m>x^2</m> kg per metre. What is the mass of the hoop?
+	A hoop of radius <m>1</m> traces out the curve <m>x^2+y^2=1</m>, where <m>x</m> and <m>y</m> are measured in metres. At a point <m>(x,y)</m>, its density is <m>x^2</m> kg per metre. What is the mass of the hoop?
 </p></statement>
 <hint><p>
 	Parametrize the circle in the usual way.

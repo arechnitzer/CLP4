@@ -505,7 +505,7 @@ G(-1,1,2) = (-1)(1)(2)^2 + (1)^2 (2)^3 - 3 - (-1)^2
 </md>
 By part (c) of Theorem <xref ref="thm_normalVectors"/>, since
 <md alignment="alignat">
-<mrow>{5}
+<mrow>
 G_x(x,y,z)&amp;=yz^2 -2x \qquad &amp;
     G_x(-1,1,2)&amp;=6
 </mrow><mrow>

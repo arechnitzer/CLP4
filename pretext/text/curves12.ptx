@@ -159,7 +159,7 @@ To check this, note that <m>x=2\cos t</m>, <m>y=\sqrt{2}\sin t</m>,
 
 </example>
 
-<example xml:id="eg_paramCircleB">
+<example xml:id="eg_paramCircleBB">
 <p>
 Let <m>C</m> be the circle that passes through the three points
 <m>(3,0,0)</m>, <m>(0,3,0)</m> and <m>(0,0,3)</m>.

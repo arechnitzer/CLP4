@@ -183,7 +183,7 @@ So
 </p>
 
 <p>(b) By part (a), with <m>\phi=x^2+y^2+z^2</m> and
-<m>\vnabla\phi = 2x\,\hi+2y\,\hj+2x\,\hk</m>,
+<m>\vnabla\phi = 2x\,\hi+2y\,\hj+2z\,\hk</m>,
 <md>
 <mrow>
 \frac{1}{2|V|}\dblInt_{\partial V} (x^2+y^2+z^2)\,\hn\,\dee{S}
@@ -621,8 +621,8 @@ so that
 <exercise>
 <statement><p>
 Evaluate the integral <m>\dblInt_S\vF\cdot \hn\,\dee{S}</m>,
-where <m>\vF=(x,y,1)</m> and <m>S</m> is the surface <m>z=1-x^2-y^2</m>,
-for <m>x^2+y^2\le 1</m>, by two methods.
+where <m>\vF=(x,y,1)</m>, <m>S</m> is the surface <m>z=1-x^2-y^2</m>
+for <m>x^2+y^2\le 1</m>, and <m>\hn</m> is the upward pointing normal, by two methods.
 <ol label="a">
 <li>
 First, by direct computation of the surface integral.
@@ -649,8 +649,8 @@ into thin horizontal pancakes. See Section 1.6 in the CLP-2 text.
 
 <solution><p>
 (a)  Let <m>G(x,y,z) = x^2+y^2+z</m>. Then the surface is <m>G(x,y,z)=1</m>
-and <m>\vnabla G(x,y,z) = 2x\,\hi+2y\,\hj+\hk</m> so that,
-by (<xref ref="eq_SUdSimplicit"/>),
+and <m>\vnabla G(x,y,z) = 2x\,\hi+2y\,\hj+\hk</m>  is upward pointing (i.e. the coefficient of 
+<m>\hk</m> is positive)  so that, by (<xref ref="eq_SUdSimplicit"/>),
 <md>
 <mrow>
 \hn\,\dee{S}&amp;=\frac{\vnabla G}{\vnabla G\cdot\hk}\ \dee{x}\,\dee{y}
@@ -742,7 +742,7 @@ it has volume <m>\pi(1-z)\,\dee{z}</m>. So
 Find the divergence of the vector field <m>\vF = (z + \sin y, zy, \sin x \cos y)</m>.
 </li>
 <li>
-Find the flux of the vector field <m>\vF</m> of (a) through the sphere of
+Find the flux of the vector field <m>\vF</m> of (a) outward through the sphere of
 radius <m>3</m> centred at the origin in <m>\bbbr^3</m> .
 </li>
 </ol>
@@ -777,7 +777,7 @@ The divergence is
 V=\Set{(x,y,z)}{x^2+y^2+z^2\le 9}
 </mrow>
 </md>
-By the divergence theorem (assuming that we are to find the <em>outward</em>
+By the divergence theorem (note that we are to find the <em>outward</em>
 flux),
 <md>
 <mrow>
@@ -3982,7 +3982,7 @@ surface, and the centre of mass of the volume enclosed by the surface.
 
 <answer><p>
 (a) <m>\vnabla\cdot\vF =2+2z</m> </p><p>
-(b) <m>\pi\frac{23}{6} 5^3 =479\frac{1}{6}\pi</m>
+(b) <m>\pi\frac{23}{6} 5^3 =\frac{2875}{6}\pi</m>
 </p>
 
 <p>(c) Let <m>S</m> be an oriented surface that encloses a solid <m>V</m> and has outward pointing normal. If <m>\bar z = -\frac{9}{2|V|}-1</m>, where <m>|V|</m> is the
@@ -4060,7 +4060,7 @@ is the area of a disk of radius <m>\sqrt{25-z^2}</m>. Continuing,
 &amp;= \pi\,5^3 \Big(\frac{4}{3}+\frac{5}{2}\Big)
 </mrow><mrow>
 &amp;=\pi\frac{23}{6} 5^3
-=479\frac{1}{6}\pi
+=\frac{2875}{6}\pi
 </mrow>
 </md>
 </p>

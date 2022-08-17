@@ -1090,7 +1090,7 @@ so that the right hand side is
          B_3(x,y,z) 
         + \int_0^z\Big(-\frac{\partial B_3}{\partial z}(x,y,\tilde z) \Big)
                                         \ \dee{\tilde z}
-       = B_3(x,y,z) +\Big[-B_3(x,y,\tilde z\Big]^{\tilde z=z}_{\tilde z=0}
+       = B_3(x,y,z) +\Big[-B_3(x,y,\tilde z)\Big]^{\tilde z=z}_{\tilde z=0}
        =B_3(x,y,0)
 \end{align*}
 by the fundamental theorem of calculus. So we just have to choose $M$ and $N$ to
@@ -1436,8 +1436,8 @@ To specify the integrals involved, let $C_\veps$ be the circle which
 \item[$\circ$] is oriented in the standard way with respect to $\hn$.
    Imagine standing on the circle with your feet on the plane through $\vr_0$ 
    perpendicular to $\hn$, with the vector from your feet to your head in the
-   same direction as  $\hn$ and with your left arm point towards $\vr_0$.
-   Then your are facing in the positive direction for $C_\veps$.
+   same direction as  $\hn$ and with your left arm pointing towards $\vr_0$.
+   Then you are facing in the positive direction for $C_\veps$.
 \end{itemize}
 \begin{nfig}
 \begin{center}
@@ -2173,7 +2173,7 @@ Evaluate the flux integral $\dblInt_S \vF\cdot\hn\,\dee{S}$ where
 $\hn $ is the outward normal to $S$, which is the surface of 
 the hemispherical region
 \begin{equation*}
-V=\Set{(x,y,z}{x^2+y^2+z^2\le a^2,\ z\ge 0}
+V=\Set{(x,y,z)}{x^2+y^2+z^2\le a^2,\ z\ge 0}
 \hskip0.5in\raisebox{-37pt}[30pt][20pt]
                          {\smash{\includegraphics{hemisphere}}}
 \end{equation*}
@@ -2376,7 +2376,7 @@ $z={\big(x^2+y^2\big)}^2$ with $0\le z\le 1$, and
 \medskip
 \noindent\textit{Solution}.
 This integral can be evaluated in much the same way as we evaluated 
-the integral of Example~\ref{eg:divThmC}. We first define a solid $V$ 
+the integral of Example~\ref{eg:divThmB}. We first define a solid $V$ 
 whose boundary $\partial V$ contains $S$. A good, and hopefully obvious, 
 choice is
 \begin{align*}
@@ -3889,7 +3889,7 @@ hand side of Green's theorem.
 \noindent\textit{Problem}:
 Evaluate
 \begin{equation*}
-\oint_C\big[(x-xy)\,\dee{x} + (y^3+1)\,\dee{y}
+\oint_C\big[(x-xy)\,\dee{x} + (y^3+1)\,\dee{y}\big]
 \end{equation*}
 where $C$ is the curve given in the figure
 \begin{nfig}
@@ -4166,7 +4166,7 @@ the $xy$-plane that is of radius $a$ and is centered on the origin.
 We can explicitly compute
 $\oint_{C_a}\vB\cdot\dee{\vr}$. To do so just parametrize 
 $C_a$ by $x(t)=a\cos t$, $y(t) = a\sin t$, $z(t)=0$. Then
-$x'(t)=-a\sin t$, $y(t) = a\cos t$ and
+$x'(t)=-a\sin t$, $y'(t) = a\cos t$ and
 \begin{align*}
 \oint_{C_a}\vB\cdot\dee{\vr}
 %&=\oint_{C_a}\big[\vB_1\,\dee{x} +\vB_2\,\dee{y}\big]

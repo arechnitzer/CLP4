@@ -1307,7 +1307,7 @@ so that the right hand side is
          B_3(x,y,z)
         + \int_0^z\Big(-\frac{\partial B_3}{\partial z}(x,y,\tilde z) \Big)
                                         \ \dee{\tilde z}
-       &amp;= B_3(x,y,z) +\Big[-B_3(x,y,\tilde z\Big]^{\tilde z=z}_{\tilde z=0}
+       &amp;= B_3(x,y,z) +\Big[-B_3(x,y,\tilde z)\Big]^{\tilde z=z}_{\tilde z=0}
 </mrow><mrow>
        &amp;=B_3(x,y,0)
 </mrow>
@@ -1774,8 +1774,8 @@ To specify the integrals involved, let <m>C_\veps</m> be the circle which
 <li>  is oriented in the standard way with respect to <m>\hn</m>.
    Imagine standing on the circle with your feet on the plane through <m>\vr_0</m>
    perpendicular to <m>\hn</m>, with the vector from your feet to your head in the
-   same direction as  <m>\hn</m> and with your left arm point towards <m>\vr_0</m>.
-   Then your are facing in the positive direction for <m>C_\veps</m>.
+   same direction as  <m>\hn</m> and with your left arm pointing towards <m>\vr_0</m>.
+   Then you are facing in the positive direction for <m>C_\veps</m>.
 </li>
 </ul>
 </p>
