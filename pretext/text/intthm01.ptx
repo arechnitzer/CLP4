@@ -137,7 +137,7 @@ which form the foundation of classical electromagnetism.
 </mrow><mrow>
 \vnabla\times\vE +\frac{1}{c}\frac{\partial\vB}{\partial t}&amp;=0
 </mrow><mrow>
-\vnabla\times\vB -\frac{1}{c}\frac{\partial\vB}{\partial t}&amp;=\frac{4\pi}{c}\vJ
+\vnabla\times\vB -\frac{1}{c}\frac{\partial\vE}{\partial t}&amp;=\frac{4\pi}{c}\vJ
 </mrow>
 </md>
 Here <m>\vE</m> is the electric field, <m>\vB</m> is the magnetic field, <m>\rho</m> is the charge density, <m>\vJ</m> is the current density and <m>c</m> is the speed of light.
