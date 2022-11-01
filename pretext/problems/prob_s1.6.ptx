@@ -10,7 +10,7 @@
 
 <exercise>
 <statement><p>
-Give an equation for arclength of a curve <m>C</m> as a line integral.
+Give an equation for the arc length of a curve <m>C</m> as a line integral.
 </p></statement>
 <hint><p>
 Your differential is <m>\dee{s}</m>, where <m>s</m> is arclength.
@@ -174,7 +174,7 @@ Following Definition<nbsp/><xref ref="def_lineIntegral"/>:
 
 <exercise>
 <statement><p>
-	Compute <m>\int_C (xy+z) \dee{s}</m> where <m>C</m> is the straight line from <m>(1,2,3)</m> to <m>(2,4,5)</m>.
+	Compute <m>\int_C (xy+z) \dee{s}</m> where <m>C</m> is the line segment from <m>(1,2,3)</m> to <m>(2,4,5)</m>.
 </p></statement>
 <hint><p>
 	<m>C</m> can be parametrized as <m>(1+t,2+2t,3+2t)</m> for <m>0 \le t \le 1</m>.
