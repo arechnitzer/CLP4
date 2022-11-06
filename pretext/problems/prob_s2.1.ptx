@@ -446,7 +446,7 @@ Since all conveyors point towards the origin, the direction of motion of an obje
 
 <exercise>
 <statement><p>
-Friendly bees fly towards your face from all directions. The  speed of each bee is inversely proportional to its distance from your face.  Find a vector field for the velocity of the swarm.
+Friendly (?) bees fly towards your face from all directions. The  speed of each bee is inversely proportional to its distance from your face.  Find a vector field for the velocity of the swarm.
 </p></statement>
 
 <hint><p>
@@ -461,10 +461,10 @@ If your face is at the origin, then <m>\vv(x,y,z)=-\frac{\alpha}{{x^2+y^2+z^2}}(
 </p></answer>
 
 <solution><p>
-Set your face to be at the origin of our coordinate system, <m>(0,0,0)</m>. A bee at position <m>(x,y,z)</m> is a distance of <m>\sqrt{x^2+y^2+z^2}</m> from your face, heading in the direction <m>(-x,-y,-z)</m>. So, the unit vector indicating the direction of one friendly bee is <m>\frac{-1}{\sqrt{x^2+y^2+z^2}}(x,y,z)</m>. Now all we need to find is the length of this vector, i.e. the speed of the friendly bee.
+Set your face to be at the origin of our coordinate system, <m>(0,0,0)</m>. A bee at position <m>(x,y,z)</m> is a distance of <m>\sqrt{x^2+y^2+z^2}</m> from your face, heading in the direction <m>(-x,-y,-z)</m>. So, the unit vector indicating the direction of travel of one bee is <m>\frac{-1}{\sqrt{x^2+y^2+z^2}}(x,y,z)</m>. Now all we need to find is the length of the velocity vector, i.e. the speed of the bee.
 </p>
 
-<p>The speed of the friendly bee is inversely proportional to <m>\sqrt{x^2+y^2+z^2}</m>, its distance from your face. (Bees that are farther away are buzzing towards you more excitedly.) So, speed is given by <m>\frac{\alpha}{\sqrt{x^2+y^2+z^2}}</m> for some constant <m>\alpha</m>.
+<p>The speed of the friendly bee is inversely proportional to <m>\sqrt{x^2+y^2+z^2}</m>, its distance from your face. (Bees that are closer to you are buzzing towards you more excitedly.) So, the speed is given by <m>\frac{\alpha}{\sqrt{x^2+y^2+z^2}}</m> for some constant <m>\alpha</m>.
 </p>
 
 <p>The bee velocity has the direction of the unit vector <m>\frac{-1}{\sqrt{x^2+y^2+z^2}}(x,y,z)</m> with length  <m>\frac{\alpha}{\sqrt{x^2+y^2+z^2}}</m> for some positive constant <m>\alpha</m>. That is,
