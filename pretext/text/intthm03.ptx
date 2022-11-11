@@ -635,7 +635,7 @@ correctly.
 
 <p><ul>
 <li>
-Let <m>a \gt 0</m> and denote by <m>C_a</m> the clockwise oriented circle in
+Let <m>a \gt 0</m> and denote by <m>C_a</m> the counterclockwise oriented circle in
 the <m>xy</m>-plane that is of radius <m>a</m> and is centered on the origin.
 We can explicitly compute
 <m>\oint_{C_a}\vB\cdot\dee{\vr}</m>. To do so just parametrize
