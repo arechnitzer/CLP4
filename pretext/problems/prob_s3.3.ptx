@@ -2835,7 +2835,7 @@ the outward normal to the surface <m>S</m>.
 </p></statement>
 
 <hint><p>
-You can use the the cylindrical coordinates <m>\theta</m> and <m>z</m> to
+You can use the cylindrical coordinates <m>\theta</m> and <m>z</m> to
 parametrize the hyperboloid.
 </p></hint>
 

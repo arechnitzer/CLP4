@@ -1390,7 +1390,7 @@ Recall that <m>\theta</m> is the angle between our  direction of motion and
 the gradient vector <m>\vnabla f(\vr_0)</m>. So to maximize the rate of change of
 temperature that we feel, as we pass through <m>\vr_0</m>, we should
 choose our direction of motion
-to be the direction of the the gradient vector <m>\vnabla f(\vr_0)</m>.
+to be the direction of the gradient vector <m>\vnabla f(\vr_0)</m>.
 In conclusion
 </p>
 

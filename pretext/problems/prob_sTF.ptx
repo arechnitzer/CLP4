@@ -572,7 +572,7 @@ your parametrisation.)
 Let <m>H</m> be the helical ramp (also known as a helicoid) which revolves around
 the <m>z</m>-axis in a clockwise direction viewed from above, beginning
 at the y-axis when <m>z = 0</m>, and rising <m>2\pi</m> units each time it makes
-a full revolution. Let <m>S</m> be the the portion
+a full revolution. Let <m>S</m> be the portion
 of <m>H</m> which lies outside the cylinder <m>x^2 + y^2 = 4</m>, above the
 <m>z = 0</m> plane and below the <m>z = 5</m> plane.
 Choose one of the following functions and give the domain on which the
