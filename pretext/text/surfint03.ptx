@@ -159,10 +159,10 @@ are tangent vectors to the curves <m>\vr(t\,,\,v_0)</m> and <m>\vr(u_0\,,\,t)</m
 respectively. Both of these curves lie in <m>S</m>.
 So <m>\frac{\partial\vr}{\partial u}(u_0\,,\,v_0)</m>
 and <m>\frac{\partial\vr}{\partial v}(u_0\,,\,v_0)</m> are tangent
-vectors to <m>S</m> at <m>(u_0,v_0)</m> and the cross product
+vectors to <m>S</m> at <m>\vr(u_0,v_0)</m> and the cross product
 <m>\frac{\partial\vr}{\partial u}(u_0\,,\,v_0)\times
               \frac{\partial\vr}{\partial v}(u_0\,,\,v_0)</m>
-is perpendicular to <m>S</m> at <m>(u_0,v_0)</m>. We have found
+is perpendicular to <m>S</m> at <m>\vr(u_0,v_0)</m>. We have found
 both <m>\dee{S}</m> and <m>\hn\,\dee{S}</m>, where <m>\hn</m> is a unit normal vector
 to the surface.
 </p>
