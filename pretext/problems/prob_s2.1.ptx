@@ -423,26 +423,6 @@ of the twig at time <m>10</m> will be
 
 <exercisegroup><introduction><procedural/></introduction>
 
-<exercise>
-<statement><p>
-A platform with many small conveyor belts is aligned on a coordinate plane. Every conveyor belt moves an object on top of it in the direction of the origin, and a conveyor belt at position <m>(x,y)</m> causes an object on top of it to move with speed <m>y</m>. Assume the objects do not interfere with one another.
-</p>
-
-<p> Give a vector-valued formula for the velocity of an object at position <m>(x,y)</m>.
- </p></statement>
-
-<hint><p>
-If you know the speed and direction of an object, you can find its velocity.
-</p></hint>
-
-<answer><p>
-<m>\vv(x,y)=\frac{-y}{\sqrt{x^2+y^2}}(x,y)</m>
-</p></answer>
-
-<solution><p>
-Since all conveyors point towards the origin, the direction of motion of an object at location <m>(x,y)</m> is <m>\frac{(-x,-y)}{\sqrt{x^2+y^2}}</m>. Its magnitude is <m>y</m>, so <m>\vv(x,y)=\frac{-y}{\sqrt{x^2+y^2}}(x,y)</m>.
-</p></solution>
-</exercise>
 
 <exercise>
 <statement><p>
