@@ -23,7 +23,7 @@ First we need to define some properties of curves.
 <definition xml:id="def_Green">
 <statement>
 <p>
-<ol label="a">
+<ol marker="a">
 <li>
 A curve <m>C</m> with parametrization <m>\vr(t)</m>, <m>a\le t\le b</m>, is said to be
 <term>closed</term> if <m>\vr(a)=\vr(b)</m>.

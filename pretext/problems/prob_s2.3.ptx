@@ -39,7 +39,7 @@ False, in general.
 <exercise>
 <statement><p>
 For each of the following fields, decide which of the following holds:
-<ol label="A">
+<ol marker="A">
 <li> The screening test for conservative vector fields tells us <m>\vF</m> is conservative.
 </li>
 <li> The screening test for conservative vector fields tells us <m>\vF</m> is <alert>not</alert> conservative.
@@ -51,7 +51,7 @@ For each of the following fields, decide which of the following holds:
 </p>
 
 <p>
-<ol label="a">
+<ol marker="a">
 <li> <m>\vF=x\hi + z\hj + y\hk</m>
 </li>
 <li> <m>\vF=y^2z\hi + x^2z\hj + x^2y\hk</m>
@@ -154,7 +154,7 @@ Let <m>\varphi</m> be a potential for <m>\vF</m>. Define <m>\phi=\varphi+ax+by+c
 <exercise>
 <statement><p>
 Prove, or find a counterexample to, each of the following statements.
-<ol label="a">
+<ol marker="a">
 <li>
 If <m>\vF</m> is a conservative field and <m>\vG</m> is  a non-conservative field, then <m>\vF+\vG</m> is non-conservative.
 </li>
@@ -171,7 +171,7 @@ b. What if <m>\vF</m> and <m>\vG</m> are quite similar? </p><p>
 c. Find a potential for <m>\vF+\vG</m>.
 </p></hint>
 <answer><p>
-<ol label="a">
+<ol marker="a">
 <li><p> If <m>\vF+\vG</m> is <em>conservative</em> for any particular <m>\vF</m> and <m>\vG</m>, then by definition, there exists a potential <m>\varphi</m> with <m>\vF+\vG = \vnabla \varphi</m>.
 </p>
 
@@ -190,7 +190,7 @@ c. Find a potential for <m>\vF+\vG</m>.
 </ol>
 </p></answer>
 <solution><p>
-<ol label="a">
+<ol marker="a">
 <li><p>
    If <m>\vF+\vG</m> is <em>conservative</em> for any particular <m>\vF</m> and <m>\vG</m>, then by definition, there exists a potential <m>\varphi</m> with <m>\vF+\vG = \vnabla \varphi</m>.
 </p>
@@ -350,7 +350,7 @@ So, for instance, <m>\varphi(x,y,z)= \frac{1}{2}\ln(x^2+y^2+z^2)</m> is a potent
 <statement><p>
 Determine whether or not each of the following vector
 fields are conservative. Find the potential if it is.
-<ol label="a">
+<ol marker="a">
 <li>
    <m>\vF(x,y,z)=x\hi-2y\hj+3z\hk</m>
 </li>
@@ -435,7 +435,7 @@ So <m>\vF</m> is not conservative.
 Let
 <m>\vF= e^{(z^2)}\,\hi+2Byz^3\,\hj
           +\big(Axze^{(z^2)}+3By^2z^2\big)\,\hk</m>.
-<ol label="a">
+<ol marker="a">
 <li>
 For what values of the constants <m>A</m> and <m>B</m> is the
 vector field <m>\vF</m> conservative on <m>\bbbr^3</m>?

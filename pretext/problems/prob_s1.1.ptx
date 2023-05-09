@@ -15,7 +15,7 @@
 <statement><p>
 Find the specified parametrization of the first quadrant part
 of the circle <m>x^2+y^2=a^2</m>.
-<ol label="a">
+<ol marker="a">
 <li>
   In terms of the <m>y</m> coordinate.
 </li>
@@ -176,7 +176,7 @@ The curve <q>crosses itself</q> when the same coordinates occur for different va
 \end{tikzpicture}</latex-image></image>
 </sidebyside><p>
 A circle of radius <m>a</m> rolls along the <m>x</m>-axis in the positive direction, starting with its centre at <m>(a,a)</m>. In that position, we mark the topmost point on the circle <m>P</m>. As the circle moves, <m>P</m> moves with it. Let <m>\theta</m> be  the angle the circle has rolled <mdash/> see the diagram below.
-<ol label="a">
+<ol marker="a">
 <li> Give the position of the centre of the circle as a function of <m>\theta</m>.
 </li>
 <li> Give the position of <m>P</m> as a function of <m>\theta</m>.
@@ -397,7 +397,7 @@ Express
 </me>
 in terms of <m>\vr</m>, <m>\vr'</m> , <m>\vr''</m> , and <m>\vr'''</m>.
 Select the correct answer.
-<ol label="a">
+<ol marker="a">
 <li> <m>(\vr'\times\vr'' )\cdot\vr'''</m>
 </li>
 <li>  <m>(\vr'\times\vr'' )\cdot\vr + (\vr\times\vr' )\cdot\vr'''</m>
@@ -479,7 +479,7 @@ Find the speed of a particle with the given position function
 \vr(t) = 5 \sqrt{2}\,t\,\hi + e^{5t}\,\hj - e^{-5t}\,\hk
 </me>
 Select the correct answer:
-<ol label="a">
+<ol marker="a">
 <li>
 <m>|\vv(t)| = \big(e^{5t} + e^{-5t}\big)</m>
 </li>
@@ -569,7 +569,7 @@ The path is a helix with radius <m>a</m> and with each turn having height <m>2\p
 </exercise>
 
 <exercise><title><fromexam>M317 2013D</fromexam></title>
-<statement><p><ol label="a">
+<statement><p><ol marker="a">
 <li>
 Let
 <me>
@@ -753,7 +753,7 @@ A curve in <m>\bbbr^3</m> is given by the vector equation
 <m>\vr(t) = \left(2t \cos t, 2t \sin t,\frac{t^3}{3}\right)</m>
 </p>
 
-<p><ol label="a">
+<p><ol marker="a">
 <li>
 Find the length of the curve between <m>t = 0</m> and <m>t = 2</m>.
 </li>
@@ -829,7 +829,7 @@ z(t) &amp;= \frac{\pi^3}{3} + \pi^2 t
 <statement><p>
 Let <m>\vr(t) = \big(3 \cos t, 3 \sin t, 4t\big)</m> be the position vector
 of a particle as a function of time <m>t \ge 0</m>.
-<ol label="a">
+<ol marker="a">
 <li>
 Find the velocity of the particle as a function of time <m>t</m>.
 </li>
@@ -874,7 +874,7 @@ the arclength of its path between <m>t = 1</m> and <m>t = 2</m> is
 <statement><p>
 The plane <m>\ z=2x+3y\ </m> intersects the cylinder
 <m>\ x^2+y^2=9\ </m> in an ellipse.
-<ol label="a">
+<ol marker="a">
 <li>
 Find a parametrization of the ellipse.
 </li>
@@ -945,7 +945,7 @@ s=\int_0^{2\pi} \sqrt{45+45\cos^2\theta-108\sin\theta\cos\theta}\,\dee{\theta}
 	<me>
 	\vr(t) = \frac{1}{3}\cos^3 t\,\hi +\frac{1}{3} \sin^3 t\,\hj + \sin^3 t\,\hk
 	</me>
-	<ol label="a">
+	<ol marker="a">
 <li>
 		Compute the arc length of the curve from <m>t = 0</m> to <m>t = \frac{\pi}{2}</m>.
 </li>
@@ -1100,7 +1100,7 @@ the arc length is
  Let <m>C</m> be the part of the curve of intersection of the
 parabolic cylinder <m>x = y^2</m> and the hyperbolic  paraboloid <m>3z = 2xy</m>
 with <m>y\ge 0</m>.
-<ol label="a">
+<ol marker="a">
 <li>
    Write a vector parametric equation for <m>C</m> using <m>x</m> as the parameter.
 </li>
@@ -1334,7 +1334,7 @@ is at <m>(1,3,6)</m> its velocity <m>\vv</m> and acceleration <m>\va</m> are giv
 \vv =6\,\hi+12\,\hj+12\,\hk\qquad
 \va = 27\,\hi+30\,\hj+6\,\hk
 </me>
-<ol label="a">
+<ol marker="a">
 <li>
  Write a vector parametric equation for <m>\cC</m> using
 <m>u=\frac{z}{6}</m> as a parameter.
@@ -1444,7 +1444,7 @@ It moves under a force
 <me>
 \vF(t) = -3t\,\hi + \sin t\,\hj + 2e^{2t}\,\hk.
 </me>
-<ol label="a">
+<ol marker="a">
 <li>
 Determine the position <m>\vr(t)</m> of the particle depending on <m>t</m>.
 </li>
@@ -1542,7 +1542,7 @@ the surfaces <m>y=x^2</m> and <m>z=\frac{2}{3}x^3</m>.
 A particle moves along <m>C</m> with constant speed such that <m>\diff{x}{t} \gt 0</m>.
 The particle is at <m>(0,0,0)</m> at time <m>t=0</m> and is at <m>(3,9,18)</m> at time
 <m>t=\frac{7}{2}</m>.
-<ol label="a">
+<ol marker="a">
 <li>
 Find the length of the part of <m>C</m> between <m>(0,0,0)</m> and <m>(3,9,18)</m>.
 </li>

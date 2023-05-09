@@ -14,7 +14,7 @@ The first step is to simply specify surfaces carefully.
 </p>
 
 <p>There are three common ways to specify a surface in three dimensions.
-<ol label="a">
+<ol marker="a">
 <li> <em>Graph of a function:</em>
 Probably the most common way
 to specify a surface is to give its equation in the form

@@ -17,7 +17,7 @@ R=\Set{(x,y)}{0\le x\le 1,\ 0\le y\le 1}
 </mrow>
 </md>
 and let <m>f(x,y)</m> have continuous first partial derivatives.
-<ol label="a">
+<ol marker="a">
 <li>
 Use the fundamental theorem of calculus to show that
 <md>
@@ -213,7 +213,7 @@ So, by Green's theorem,
 <statement><p>
 Integrate <m>\ds\frac{1}{2\pi}\oint_C \frac{x\,\dee{y}-y\,\dee{x}}{x^2+y^2}</m>
 counterclockwise around
-<ol label="a">
+<ol marker="a">
 <li> the circle <m>x^2+y^2=a^2</m>
 </li>
 <li> the boundary of the square with vertices
@@ -771,7 +771,7 @@ So Green's theorem gives
 Consider the closed region enclosed by the curves
 <m>y = x^2 + 4x + 4</m> and <m>y = 4 - x^2</m>. Let
 <m>C</m> be its boundary and suppose that <m>C</m> is oriented counter-clockwise.
-<ol label="a">
+<ol marker="a">
 <li>
    Draw the <em>oriented</em> curve <m>C</m> carefully in the <m>xy</m>-plane.
 </li>
@@ -1051,7 +1051,7 @@ So
 
 <exercise><title><fromexam>M317 2015A</fromexam></title>
 <statement><p>
-<ol label="a">
+<ol marker="a">
 <li>
 Use Green's theorem to evaluate the line integral
 <me>
@@ -1358,7 +1358,7 @@ defined for <m>(x,y) \ne (0, 0)</m>, and suppose <m>Q_x = P_y</m> for
 <m>(x,y) \ne  (0, 0)</m>. In the following <m>I_j = \int_{C_j} \vF\cdot\dee{\vr}</m>
 for integer <m>j</m>, and all <m>C_j</m> are positively oriented circles. Suppose
 <m>I_1 = \pi</m> where <m>C_1</m> is the circle <m>x^2 + y^2 = 1</m>.
-<ol label="a">
+<ol marker="a">
 <li>
 Find <m>I_2</m> for <m>C_2 : (x - 2)^2 + y^2 = 1</m>. Explain briefly.
 </li>
@@ -1517,7 +1517,7 @@ Consider the vector field <m>\vF = P\,\hi + Q\,\hj</m>, where
 P=\frac{x+y}{x^2+y^2},\qquad
 Q=\frac{y-x}{x^2+y^2}
 </me>
-<ol label="a">
+<ol marker="a">
 <li>
 Compute and simplify <m>Q_x - P_y</m>.
 </li>
@@ -1674,7 +1674,7 @@ By part (b), with <m>R=r</m>, <m>\int_{C_r} \vF\cdot\dee{\vr}=-2\pi</m>, so
 
 <exercise><title><fromexam>M317 2017D</fromexam></title>
 <statement><p>
-<ol label="a">
+<ol marker="a">
 <li>
 Evaluate
 <me>
@@ -1836,7 +1836,7 @@ First, here is a sketch of the curve <m>C</m>.
 
 <p>
 We'll evaluate this integral in three different ways.
-<ol label="(1)">
+<ol marker="(1)">
 <li><p> <em>Direct evaluation:</em> To evaluate the integral directly,
 we'll parametrize <m>C</m> using <m>y</m> as the parameter. That is, we'll make <m>y(t)=t</m>:
 <md>
@@ -2107,7 +2107,7 @@ This is the case if and only if
 Let
 <m>\vF(x,y) = \frac{y^3}{ {(x^2+y^2)}^2}\hi
               -\frac{xy^2}{ {(x^2+y^2)}^2}\hj</m>, <m>(x,y)\ne (0,0)</m>.
-<ol label="a">
+<ol marker="a">
 <li>
 Compute <m>\oint_C\vF\cdot \dee{\vr}</m> where <m>C</m> is the unit circle
 in the <m>xy</m>-plane, positively oriented.
@@ -2283,7 +2283,7 @@ so that
 Let <m>R</m> be the region in the first quadrant of the <m>xy</m>-plane
 bounded by the coordinate axes and the curve <m>y=1-x^2</m>. Let <m>\cC</m> be the
 boundary of <m>R</m>, oriented counterclockwise.
-<ol label="a">
+<ol marker="a">
 <li>
 Evaluate <m>\int_\cC x\,\dee{s}</m>.
 </li>
@@ -2365,14 +2365,14 @@ All together
 <statement><p>
 Let <m>C</m> be the curve defined by the intersection of the surfaces
 <m>z = x + y</m> and <m>z = x^2 + y^2</m>.
-<ol label="a">
+<ol marker="a">
 <li>
 Show that <m>C</m> is a simple closed curve.
 </li>
 <li>
 <p>
 Evaluate <m>\oint_C \vF \cdot \dee{\vr}</m> where
-<ol label="(i)">
+<ol marker="(i)">
 <li>
  <m>\vF = x^2\,\hi + y^2\,\hj + 3 e^z\,\hk</m>.
 </li>

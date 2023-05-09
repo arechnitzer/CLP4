@@ -23,7 +23,7 @@ R=\Set{(x,y)}{0\le x\le 1,\ 0\le y\le 1}
 </mrow>
 </md>
 and let <m>f(x,y,z)</m> have continuous first partial derivatives.
-<ol label="a">
+<ol marker="a">
 <li>
 Use the fundamental theorem of calculus to show that
 <md>
@@ -134,7 +134,7 @@ So the divergence theorem gives
 
 <exercise>
 <statement><p>
-<ol label="a">
+<ol marker="a">
 <li>
 By applying the divergence theorem to <m>\vF=\phi\,\va</m>,
 where <m>\va</m> is an arbitrary constant vector, show that
@@ -206,7 +206,7 @@ by the outward pointing normal. If
 \vF(x,y,z)=\big(x,y,z^2\big)
 </me>
 evaluate the flux of <m>\vF</m> through <m>S</m>
-<ol label="a">
+<ol marker="a">
 <li>
    directly and
 </li>
@@ -344,7 +344,7 @@ By oddness under <m>z\rightarrow -z</m>, the <m>z</m> integral vanishes, so that
 <m>\dblInt_S\vF\cdot \hn\,\dee{S}</m>, where <m>\vF=z\,\hk</m>,
 <m>S</m> is the surface <m>x^2+y^2+z^2=a^2</m>
 and <m>\hn</m> is the outward pointing unit normal to <m>S</m>.
-<ol label="a">
+<ol marker="a">
 <li>
 First, by direct computation of the surface integral.
 </li>
@@ -482,7 +482,7 @@ Here is a sketch of the first octant part of <m>S</m> and <m>D</m>.
 </li>
 </ul>
 Denote by <m>|V|</m> the volume of <m>V</m> and compute, in terms of <m>|V|</m>,
-<ol label="a">
+<ol marker="a">
 <li>
 <m>\ds \dblInt_{D}\vF\cdot \hn\,\dee{S}</m> with <m>\hn</m> pointing downward
 </li>
@@ -623,7 +623,7 @@ so that
 Evaluate the integral <m>\dblInt_S\vF\cdot \hn\,\dee{S}</m>,
 where <m>\vF=(x,y,1)</m>, <m>S</m> is the surface <m>z=1-x^2-y^2</m>
 for <m>x^2+y^2\le 1</m>, and <m>\hn</m> is the upward pointing normal, by two methods.
-<ol label="a">
+<ol marker="a">
 <li>
 First, by direct computation of the surface integral.
 </li>
@@ -737,7 +737,7 @@ it has volume <m>\pi(1-z)\,\dee{z}</m>. So
 </exercise>
 
 <exercise><title><fromexam>M317 2012D</fromexam></title>
-<statement><p><ol label="a">
+<statement><p><ol marker="a">
 <li>
 Find the divergence of the vector field <m>\vF = (z + \sin y, zy, \sin x \cos y)</m>.
 </li>
@@ -1065,7 +1065,7 @@ and the desired flux is
 <statement><p>
 Let <m>\vF(x,y,z) = \vr/r^3</m> where <m>\vr= x\,\hi + y\,\hj + z\,\hk</m> and
 <m>r = |\vr|</m>.
-<ol label="a">
+<ol marker="a">
 <li>
 Find <m>\vnabla \cdot \vF</m>.
 </li>
@@ -1256,7 +1256,7 @@ x^2 + \frac{y^2}{4} +\frac{z^2}{4} = 1
 with the unit normal pointing outward.
 </p>
 
-<p><ol label="a">
+<p><ol marker="a">
 <li>
 Parameterize <m>S</m>.
 </li>
@@ -2276,7 +2276,7 @@ Let <m>E</m> be the solid region between the plane <m>z = 4</m> and the parabolo
 \vF = \Big(-\frac{1}{3}x^3 + e^{z^2}\Big)\hi
      + \Big(-\frac{1}{3}y^3 + x\tan z\Big)\hj + 4z\hk
 </me>
-<ol label="a">
+<ol marker="a">
 <li>
 Compute the flux of <m>\vF</m> outward through the boundary of <m>E</m>.
 </li>
@@ -2375,7 +2375,7 @@ Consider the vector field
 \vF(x,y,z) = \frac{x\,\hi+y\,\hj+z\,\hk}
                   {{[x^2 + y^2 + z^2\big]}^{3/2}}
 </me>
-<ol label="a">
+<ol marker="a">
 <li>
    Compute <m>\vnabla\cdot\vF</m>.
 </li>
@@ -2617,7 +2617,7 @@ Consider the vector field
 </me>
 Let the surface <m>S</m> be the part of the sphere <m>x^2 + y^2 + z^2 = 4</m>
 that lies above the plane <m>z = 1</m> and be oriented downwards.
-<ol label="a">
+<ol marker="a">
 <li>
 Find the divergence of <m>\vF</m>.
 </li>
@@ -2786,7 +2786,7 @@ Switching to spherical coordinates (see Appendix <xref ref="ap_spherCoord"/>)
 <statement><p>
 Consider the vector field <m>\vF(x,y,z)
 =-2xy\,\hi+\big(y^2+\sin(xz)\big)\,\hj+(x^2+y^2)\,\hk</m>.
-<ol label="a">
+<ol marker="a">
 <li>
 Calculate <m>\nabla\cdot \vF</m>.
 </li>
@@ -3286,7 +3286,7 @@ outside the cylinder <m>\ x^2+y^2=2\ </m>
 </li>
 </ul>
 Compute
-<ol label="a">
+<ol marker="a">
 <li>
 <m>\dblInt_{S_1}\vF\cdot \hn\,\dee{S}</m>  with <m>\hn</m> pointing inward
 </li>
@@ -3544,7 +3544,7 @@ smaller convex solids.
 <statement><p>
 Let <m>S</m> be the sphere of radius <m>3</m>, centered at the origin and
 with outward orientation. Given the vector field <m>\vF(x,y,z) = (0, 0, x + z)</m>:
-<ol label="a">
+<ol marker="a">
 <li>
 Calculate (using the definition) the flux of <m>\vF</m> through <m>S</m>
 <me>
@@ -3757,7 +3757,7 @@ gives
 </exercise>
 
 <exercise><title><fromexam>M317 2013D</fromexam></title>
-<statement><p><ol label="a">
+<statement><p><ol marker="a">
 <li>
 Find an upward pointing unit normal vector to the surface <m>z = xy</m> at the
 point <m>(1, 1, 1)</m>.
@@ -3957,7 +3957,7 @@ This implies
 </exercise>
 
 <exercise><title><fromexam>M317 2013D</fromexam></title>
-<statement><p><ol label="a">
+<statement><p><ol marker="a">
 <li>
 Find the divergence of the vector field <m>\vF  = (x + \sin y, z + y, z^2)</m>.
 </li>
@@ -4109,7 +4109,7 @@ centred on <m>\big(0,0, -\frac{11}{2}\big)</m>.
 <exercise><title><fromexam>M317 2011D</fromexam></title>
 <statement><p>
 Evaluate the surface integrals. (Use any method you like.)
-<ol label="a">
+<ol marker="a">
 <li>
 <m>\dblInt_S z^2\,\dee{S}</m>, if <m>S</m> is the part of the cone
 <m>x^2 + y^2 = 4z^2</m> where <m>0 \le x \le y</m> and <m>0 \le z \le 1</m>.
@@ -4307,7 +4307,7 @@ Let <m>\vF = [ a ( y^2 + z^2 ) + bxz ]\,\hi
           + [ c ( x^2 + z^2 ) + dyz ]\,\hj
           + x^2\,\hk</m>
 where <m>a</m>, <m>b</m>, <m>c</m>, and <m>d</m> are constants.
-<ol label="a">
+<ol marker="a">
 <li>
 Find the flux of <m>\vF</m> upwards across <m>\sigma_1</m>.
 </li>
@@ -4489,7 +4489,7 @@ Now on <m>V_b</m>, <m>z\ge 0</m> and <m>z \gt 0</m> except on <m>\sigma_3</m>. S
 <statement><p>
 Let <m>S</m> be the ellipsoid <m>x^2+2y^2+3z^2=16</m> and <m>\hn</m> its outward unit
 normal.
-<ol label="a">
+<ol marker="a">
 <li>
 Find <m>\dblInt_S \vF\cdot\hn\,\dee{S}</m> if
 <m>\vF(x,y,z)=\dfrac{(x,y,z)-(2,1,1)}{{\big[(x-2)^2+(y-1)^2+(z-1)^2\big]}^{3/2}}</m>.
@@ -4865,7 +4865,7 @@ Let <m>u=u(x,y,z)</m> be a solution of Laplace's Equation,
 in <m>\bbbr^3</m>. Let <m>\cR</m> be a smooth solid in <m>\bbbr^3</m>.
 </p>
 
-<p><ol label="a">
+<p><ol marker="a">
 <li>
 Prove that the total flux of <m>\vF = \nabla u</m> out through the
 boundary of <m>\cR</m> is zero.
@@ -4955,7 +4955,7 @@ Let <m>\cR</m> be the part of the solid cylinder <m>x^2 + (y-1)^2 \le 1</m>
 satisfying <m>0\le z \le y^2</m>;
 let <m>\cS</m> be the boundary of <m>\cR</m>.
 Given <m>\vF = x^2\,\hi + 2y\,\hj - 2z\,\hk</m>,
-<ol label="a">
+<ol marker="a">
 <li>
 Find the total flux of <m>\vF</m> outward through <m>\cS</m>.
 </li>

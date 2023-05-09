@@ -18,7 +18,7 @@ of several variables. Such a function is called a vector field.
 
 <definition xml:id="def_vectorField">
 <statement><p>
-<ol label="a">
+<ol marker="a">
 <li>
 A vector field in the plane is a rule which assigns to each point <m>(x,y)</m>
 in a subset, <m>D</m>, of the <m>xy</m>-plane, a two component vector <m>\vv(x,y)</m>.

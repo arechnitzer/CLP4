@@ -265,7 +265,7 @@ is
 and the surface <m>z=y^2</m> oriented in the counterclockwise direction as seen
 from <m>(0,0,100)</m>. Let <m>\vF=(x^2-y\,,\,y^2+x\,,\,1)</m>. Calculate
 <m>\oint_C\vF\cdot \dee{\vr}</m>
-<ol label="a">
+<ol marker="a">
 <li> by direct evaluation
 </li>
 <li> by using Stokes' Theorem.
@@ -861,7 +861,7 @@ The ellipse <m>D</m>, that is <m>\tfrac{x^2}{4}+y^2\le 1</m>, has semi-axes
 <statement><p>
 Consider the vector field <m>\vF(x,y, z) = z^2 \,\hi + x^2 \,\hj + y^2\,\hk</m>
 in <m>\bbbr^3</m>.
-<ol label="a">
+<ol marker="a">
 <li>
 Compute the line integral <m>I_1 = \int_{C_1}\vF\cdot\dee{\vr}</m>
 where <m>C_1</m> is the curve consisting of three line segments,
@@ -976,7 +976,7 @@ three parameterized curves
 &amp;0 \le t \le \pi/2
 </mrow>
 </md>
-<ol label="a">
+<ol marker="a">
 <li>
 Draw a picture of <m>C</m>. Clearly mark each of the curves <m>C_1</m>, <m>C_2</m>, and <m>C_3</m>
 and indicate the orientations given by the parameterizations.
@@ -1171,7 +1171,7 @@ oriented this way.
 <p>Let <m>\vF = \big(-zy, zx, xy \cos(yz)\big)</m>.
 </p>
 
-<p><ol label="a">
+<p><ol marker="a">
 <li>
 Let <m>S_1</m> be the part of the cone that lies between the planes
 <m>z = 0</m> and <m>z = 4</m>. Note that <m>S_1</m> does not include any part of
@@ -1365,7 +1365,7 @@ Stokes' theorem (Theorem <xref ref="thm_Stokes"/>) gives
 
 <exercise><title><fromexam>M317 2013D</fromexam></title>
 <statement><p>
-<ol label="a">
+<ol marker="a">
 <li>
 Consider the vector field <m>\vF(x, y, z) = (z^2 , x^2 , y^2)</m> in
 <m>\bbbr^3</m>. Compute the line integral <m>\oint_C \vF\cdot\dee{\vr}</m>, where
@@ -2042,7 +2042,7 @@ from <m>(0,0,2)</m> to <m>(0,3,0)</m>, and
 from <m>(0,3,0)</m> to <m>(0,0,0)</m>.
 </p>
 
-<p><ol label="a">
+<p><ol marker="a">
 <li>
 Draw a picture of <m>C</m>. Clearly indicate the orientation
 on each line segment.
@@ -2655,7 +2655,7 @@ and so has area <m>\pi ab = \pi\times4\times 2=8\pi</m> and centroid
 
 <exercise><title><fromexam>M317 2012D</fromexam></title>
 <statement><p>
-<ol label="a">
+<ol marker="a">
 <li>
 Find the curl of the vector field
 <m>\vF  = \big(2 + x^2 + z\,,\, 0\,,\, 3 + x^2 z\big)</m>.
@@ -2761,7 +2761,7 @@ Consequently the integral of interest
 
 <exercise><title><fromexam>M317 2012D</fromexam></title>
 <statement><p>
-<ol label="a">
+<ol marker="a">
 <li>
 Let <m>S</m> be the bucket shaped surface consisting of the cylindrical surface
 <m>y^2 + z^2 = 9</m> between <m>x = 0</m> and <m>x = 5</m>, and the disc inside the
@@ -2897,13 +2897,13 @@ Let
 \vF(x, y, z) = \Big(\frac{y}{x} +x^{1+x^2}\,,\, x^2-y^{1+y^2}\,,\,
                        \cos^5(\ln z)\Big)
 </me>
-<ol label="a">
+<ol marker="a">
 <li>
 Write down the domain <m>D</m> of <m>\vF</m>.
 </li>
 <li><p>
 Circle the correct statement(s):
-<ol label="a">
+<ol marker="a">
 <li> D is connected.
 </li>
 <li> D is simply connected.
@@ -3057,7 +3057,7 @@ it is known that <m>\vF</m> is of the form
 </me>
 for some real numbers <m>a</m> and <m>b</m>. It is further known that
 <m>\vF = \vnabla\times\vG</m> for some differentiable vector field <m>\vG</m>.
-<ol label="a">
+<ol marker="a">
 <li>
 Determine <m>a</m> and <m>b</m>.
 </li>
@@ -3645,7 +3645,7 @@ Let <m>S</m> be the part of the half cone
 z=\sqrt{x^2+y^2},\quad  y\ge 0,
 </me>
 that lies below the plane <m>z=1</m>.
-<ol label="a">
+<ol marker="a">
 <li>
 Find a parametrization for <m>S</m>.
 </li>

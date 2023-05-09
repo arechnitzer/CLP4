@@ -60,7 +60,7 @@ which we take to be a definition.
 
 <definition xml:id="def_lineIntegral">
 <statement><p>
-<ol label="a">
+<ol marker="a">
 <li>
 For a parametrized curve <m>\big(x(t),y(t), z(t)\big)</m>, <m>a\le t\le b</m>,
 in <m>\bbbr^3</m> that we call <m>\cC</m>, and for a function <m>f(x,y,z)</m>, we define

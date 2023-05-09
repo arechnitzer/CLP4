@@ -332,7 +332,7 @@ Imagine that the vector field <m>\vv(x,y) = x\,\hi+y\,\hj</m>
 </p>
 
 <p>is the velocity field of a moving fluid.
-<ol label="a">
+<ol marker="a">
 <li>
 At time <m>0</m> you drop a twig into the fluid at
 the point <m>(1,1)</m>. What is the approximate position of the twig
@@ -999,7 +999,7 @@ What is the geometric interpretation of each summand?
 <statement><p>
 Sketch each of the following vector fields, by
 drawing a figure like Figure <xref ref="fig_sourceField"/>.
-<ol label="a">
+<ol marker="a">
 <li>
    <m>\vv(x,y) = x\,\hi+y\,\hj</m>.
 </li>
@@ -1129,7 +1129,7 @@ A particle of unit mass at position <m>(x,y)</m> has distance <m>D_1=\sqrt{x^2+y
 
 <exercise>
 <statement><p>
-<ol label="a.">
+<ol marker="a.">
 <li><p>
 A pole leans against a vertical wall. The pole has length 2, and it touches the wall at height <m>H=1</m>. The pole slides down, still touching the wall, with its height decreasing at a rate of <m>\diff{H}{t}=0.5</m>.
 </p>
@@ -1197,7 +1197,7 @@ b. <m>\vV(x,y,z)=\left(
 </p></answer>
 
 <solution><p>
-<ol label="a.">
+<ol marker="a.">
 <li><p>
 	Consider a point <m>P</m> on the pole that is a distance <m>p</m> away from the bottom end. Use this point to make a smaller right triangle, as in the picture below.
 </p>

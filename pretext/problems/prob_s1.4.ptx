@@ -158,7 +158,7 @@ is the conventional computation for both <m>\va(t)</m> and <m>\vb(t)</m>.
 <exercise>
 <statement><p>
 Consider a curve that is parametrized by arc length <m>s</m>.
-<ol label="a">
+<ol marker="a">
 <li>
 Show that if the curve has curvature <m>\ka(s)=0</m>
 for all <m>s</m>, then the curve is a straight line.
@@ -237,7 +237,7 @@ the curve also lies on a plane, so it is a circle.
 <statement><p>
 The surface <m>z=x^2+y^2</m> is sliced by the plane <m>x=y</m>.
 The resulting curve is oriented from <m>(0,0,0)</m> to <m>(1,1,2)</m>.
-<ol label="a">
+<ol marker="a">
 <li>
 Sketch the curve from <m>(0,0,0)</m> to <m>(1,1,2)</m>.
 </li>
@@ -292,7 +292,7 @@ Let <m>C</m> be the space curve
 \vr(t) = \big(e^t - e^{-t}\big)\,\hi + \big(e^t + e^{-t}\big)\,\hj +2t\,\hk
 </mrow>
 </md>
-<ol label="a">
+<ol marker="a">
 <li>
 Find <m>\vr'</m>, <m>\vr''</m> and the curvature of <m>C</m>.
 </li>
@@ -521,7 +521,7 @@ From this, we read off
 </exercise>
 
 <exercise><title><fromexam>M317 2013D</fromexam></title>
-<statement><p><ol label="a">
+<statement><p><ol marker="a">
 <li>
 Consider the parametrized space curve
 <me>
@@ -587,7 +587,7 @@ the curvature
 	Let <m>C</m> be the osculating circle to the helix
 	<m>\vr(t) =\big(\cos t\,,\,\sin t\,,\,t\big)</m>
 	at the point where <m>t=\pi/6</m>. Find:
-<ol label="a">
+<ol marker="a">
 <li>
 		the radius of curvature of <m>C</m>
 </li>
@@ -697,7 +697,7 @@ the curvature
 </exercise>
 
 <exercise><title><fromexam>M317 2012D</fromexam></title>
-<statement><p><ol label="a">
+<statement><p><ol marker="a">
 <li>
 Consider the parametrized space curve
 <me>
@@ -766,7 +766,7 @@ a_T(t) = \difftwo{s}{t}
 Suppose, in terms of the time parameter <m>t</m> , a particle moves along the path
 <m>\vr(t) = (\sin t - t \cos t )\,\hi + (\cos t + t \sin t )\,\hj + t^2\,\hk</m>,
 <m>1 \le t  \lt  \infty</m>.
-<ol label="a">
+<ol marker="a">
 <li>
 Find the speed of the particle at time <m>t</m>.
 </li>
@@ -874,7 +874,7 @@ Consequently, by part (a),
 Assume the paraboloid <m>z = x^2 + y^2</m> and the plane <m>2x + z = 8</m>
 intersect in a curve <m>C</m>. <m>C</m> is traversed counter-clockwise
 if viewed from the positive <m>z</m>-axis.
-<ol label="a">
+<ol marker="a">
 <li>
 Parametrize the curve <m>C</m>.
 </li>
@@ -993,7 +993,7 @@ Consider the curve <m>C</m> given by
 \vr(t) = \frac{1}{3} t^3\,\hi + \frac{1}{\sqrt{2}} t^2\,\hj + t\,\hk,\qquad
 -\infty  \lt  t  \lt  \infty.
 </me>
-<ol label="a">
+<ol marker="a">
 <li>
 Find the unit tangent <m>\hat\vT(t)</m> as a function of <m>t</m>.
 </li>
@@ -1122,7 +1122,7 @@ Using our previous work:
 <statement><p>
 Suppose the curve <m>C</m> is the intersection of the cylinder <m>x^2 +y^2 = 1</m>
 with the plane <m>x+y+z = 1</m>.
-<ol label="a">
+<ol marker="a">
 <li>
 Find a parameterization of <m>C</m>.
 </li>
@@ -1316,7 +1316,7 @@ and
 </exercise>
 
 <exercise><title><fromexam>M317 2015A</fromexam></title>
-<statement><p><ol label="a">
+<statement><p><ol marker="a">
 <li>
 Find the length of the curve  <m>\vr(t)=\big(1,\frac{t^2}{2},\frac{t^3}{3}\big)</m>
 for <m>0\le t\le 1</m>.
@@ -1415,7 +1415,7 @@ A particle moves along a curve with position vector given by
 for <m>-\infty  \lt  t  \lt  \infty</m>.
 </p>
 
-<p><ol label="a">
+<p><ol marker="a">
 <li>
 Find the velocity as a function of <m>t</m>.
 </li>
@@ -1558,7 +1558,7 @@ Consider the curve <m>C</m> given by
 \vr(t) =\frac{t^3}{3}\,\hi + \frac{t^2}{\sqrt{2}}\,\hj + t\,\hk \qquad
 -\infty  \lt  t  \lt  \infty
 </me>
-<ol label="a">
+<ol marker="a">
 <li>
 Find the unit tangent <m>\hat\vT(t)</m> as a function of <m>t</m>.
 </li>
@@ -1666,7 +1666,7 @@ First some preliminary computations.
 <exercise><title><fromexam>M317 2016D</fromexam></title>
 <statement><p>
 A curve in <m>\bbbr^3</m> is given by <m>\vr(t) = (t^2\,,\, t\,,\, t^3)</m>.
-<ol label="a">
+<ol marker="a">
 <li>
 Find the parametric equations of the tangent line to the curve at the point
 <m>(1, -1, -1)</m>.
@@ -1755,7 +1755,7 @@ A curve in <m>\bbbr^3</m> is given by
 \qquad
 0 \le t  \lt  \infty
 </me>
-<ol label="a">
+<ol marker="a">
 <li>
 Find the length of the curve <m>\vr(t)</m> from <m>\vr(0) = (0, 1, 0)</m> to
 <m>\vr(\pi) = (\pi, -1, \pi^2)</m>.
@@ -1824,7 +1824,7 @@ trajectory so that its position at any time <m>t</m> is
 <me>
 x=\frac{4\sqrt{2}}{3}t^{3/2},\ y=\frac{4\sqrt{2}}{3}t^{3/2},\ z=t(2-t)
 </me>
-<ol label="a">
+<ol marker="a">
 <li>
 Assuming that the flight ends when <m>z=0</m>, find out how far
 the rocket travels.
@@ -1930,7 +1930,7 @@ path parametrized by
 <me>
 x=\cos^3t,\ y=\sin ^3t,\ z=2\sin^2 t
 </me>
-<ol label="a">
+<ol marker="a">
 <li>
 Calculate the arc length of this path for <m>0\le t\le \pi/2</m>.
 </li>
@@ -2017,7 +2017,7 @@ we have
 <statement><p>
 Suppose that  the curve <m>C</m> is the intersection of the cylinder <m>x^2 +y^2 = 1</m>
 with the surface  <m>z =x^2 - y^2</m>.
-<ol label="a">
+<ol marker="a">
 <li>
 Find a parameterization of <m>C</m>.
 </li>
@@ -2339,7 +2339,7 @@ Consider the curve <m>C</m> in 3 dimensions given by
 for <m>t \in\bbbr</m>.
 </p>
 
-<p><ol label="a">
+<p><ol marker="a">
 <li>
 Compute the unit tangent vector <m>\vT(t)</m>.
 </li>
@@ -2396,7 +2396,7 @@ Let
 \vv := \hj + \sqrt{3}\,\hk\quad
 \vw := -\sqrt{3}\,\hj + \hk
 </me>
-<ol label="(i)">
+<ol marker="(i)">
 <li>
       Express <m>\hi</m>, <m>\hj</m>, <m>\hk</m> in terms of <m>\vu</m>, <m>\vv</m>, <m>\vw</m>.
 </li>
@@ -2657,7 +2657,7 @@ x=\sin(2\theta),\qquad y=1-\cos(2\theta),\qquad z=2\cos\theta,\qquad
  0\le\theta\le\frac{\pi}{2}
 </me>
    Let <m>P</m> denote the point on the trail where <m>x = 1</m>.
-<ol label="a">
+<ol marker="a">
 <li>
    Find the vectors <m>\hat\vT, \hat\vN, \hat\vB</m> and
    the curvature <m>\ka</m> of the ski trail at the point <m>P</m>.
@@ -2665,7 +2665,7 @@ x=\sin(2\theta),\qquad y=1-\cos(2\theta),\qquad z=2\cos\theta,\qquad
 <li><p>
 The skier's acceleration at <m>P</m> is <m>\va = (-2, 3, -2\sqrt{2})</m>.
            Find, at <m>P</m>,
-<ol label="(i)">
+<ol marker="(i)">
 <li>
 the rate of change of the skier's speed and
 </li>
@@ -2802,7 +2802,7 @@ Hence <m>|v|=\sqrt{3}</m>; since <m>v=|\vv|</m>, <m>v=\sqrt3</m>. Then
 	A particle moves so that its position vector is given by
 	<m>\vr(t) = \big(\cos t\,,\, \sin t\,,\, c \sin t\big)</m>, where <m>t  \gt  0</m>
 	and <m>c</m> is a constant.
-	<ol label="a">
+	<ol marker="a">
 <li>
 		Find the velocity <m>\vv(t)</m> and the acceleration <m>\va(t)</m> of the particle.
 </li>
@@ -2878,7 +2878,7 @@ Hence <m>|v|=\sqrt{3}</m>; since <m>v=|\vv|</m>, <m>v=\sqrt3</m>. Then
 	\frac{1}{4}\cos(2\theta)\Big),\qquad
 	0 \le \theta \le 2\pi
 	</me>
-	<ol label="a">
+	<ol marker="a">
 <li>
 		Compute the curvature of the track at the point <m>\big(-4, 0, \frac{1}{4}\big)</m>.
 </li>
@@ -2891,7 +2891,7 @@ Hence <m>|v|=\sqrt{3}</m>; since <m>v=|\vv|</m>, <m>v=\sqrt3</m>. Then
 		A car drives down the track so that its position at time <m>t</m> is given by
 		<m>\vr(t^2)</m>. (Note the relationship between <m>t</m> and <m>\theta</m> is <m>\theta = t^2</m>).
 		Compute the following quantities.
-<ol label="(i)">
+<ol marker="(i)">
 <li>
 			The speed at the point <m>\big(-4, 0, \frac{1}{4}\big)</m>.
 </li>

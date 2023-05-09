@@ -51,7 +51,7 @@ which we now define.
 
 <definition xml:id="def_pSmoothSurface">
 <statement><p>
-<ol label="a">
+<ol marker="a">
 <li>
 A surface is <term>smooth</term> if it has a parametrization
 <m>\vr(u,v)</m> with continuous partial derivatives

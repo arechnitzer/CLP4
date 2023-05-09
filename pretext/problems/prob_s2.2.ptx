@@ -19,7 +19,7 @@ moving water at the point <m>(x,y)</m> in the first quadrant of the <m>xy</m>-pl
 
 <p>
   Sketch the path followed by a rubber ducky dropped in at the point
-<ol label="a">
+<ol marker="a">
 <li> <m>(0,2)</m>
 </li>
 <li> <m>(1,0)</m>
@@ -114,7 +114,7 @@ So the vector field is <m>\vv(x,y) = \big(v_1(x,y)\,,\,v_2(x,y)\big)
 <exercise><title><fromexam>M317 2010A</fromexam></title>
 <statement><p>
 Consider the function <m>f(x,y) = xy</m>.
-<ol label="a">
+<ol marker="a">
 <li>
 Explicitly determine the field lines (flow lines) of
 <m>\vF(x,y) = \vnabla f</m>.

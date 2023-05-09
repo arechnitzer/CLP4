@@ -12,7 +12,7 @@
 <exercise><title><fromexam>M317 2013D</fromexam></title>
 <statement><p>
 True or false?
-<ol label="a">
+<ol marker="a">
 <li>
 <m>\vnabla\cdot(\va \times\vr) = 0</m>, where <m>\va</m> is a constant vector in
 <m>\bbbr^3</m> , and <m>\vr</m> is the vector field <m>\vr= (x, y, z)</m>.
@@ -196,7 +196,7 @@ a constant. The normal vector to a spiral is not constant.
 <exercise><title><fromexam>M317 2012D</fromexam></title>
 <statement><p>
 True or false?
-<ol label="a">
+<ol marker="a">
 <li>
 <m>\vnabla\times(\va \times\vr) = 0</m>, where <m>\va</m> is a constant vector in
 <m>\bbbr^3</m> , and <m>\vr</m> is the vector field <m>\vr= (x, y, z)</m>.
@@ -450,7 +450,7 @@ True. If the speed <m>|\vv|</m> is constant then
 </exercise>
 
 <exercise><title><fromexam>M317 2011D</fromexam></title>
-<statement><p><ol label="a">
+<statement><p><ol marker="a">
 <li>
 True or false? If <m>\vr(t)</m> is the position at time <m>t</m> of an object moving
 in <m>\bbbr^3</m>, and <m>\vr(t)</m> is twice differentiable, then <m>|\vr''(t)|</m> is
@@ -543,7 +543,7 @@ we can orient <m>S</m> by always choosing the normal vector that points into <m>
 
 <exercise><title><fromexam>M317 2010D</fromexam></title>
 <statement>
-<p><ol label="a">
+<p><ol marker="a">
 <li><p>
 In the curve shown below (a helix lying in the surface of a cone), is the
 curvature increasing, decreasing, or constant as z increases?
@@ -577,7 +577,7 @@ of <m>H</m> which lies outside the cylinder <m>x^2 + y^2 = 4</m>, above the
 <m>z = 0</m> plane and below the <m>z = 5</m> plane.
 Choose one of the following functions and give the domain on which the
 function you have chosen parametrizes S. (Hint: Only one of the following functions is possible.)
-<ol label="a">
+<ol marker="a">
 <li>
 <m>\vr(u, v) = \big(u \cos v, u \sin v, u\big)</m>
 </li>
@@ -625,7 +625,7 @@ the five curves <m>R</m>, <m>S</m>, <m>T</m>, <m>U</m>, and <m>V</m> shown in th
 </sidebyside>
 <p>
   Which of the following is necessarily true?
-<ol label="(1)">
+<ol marker="(1)">
 <li> <m>\int_S \vF\cdot\dee{\vr} = \int_T \vF\cdot\dee{\vr}</m>
 </li>
 <li> <m>\int_R \vF\cdot\dee{\vr} = \int_S \vF\cdot\dee{\vr}
@@ -1002,7 +1002,7 @@ So, all together, <m>\oint_\cC \vF\cdot\dee{\vr} \lt 0</m>, and consequently
 <exercise><title><fromexam>M317 2010D</fromexam></title>
 <statement><p>
 Say whether the following statements are true or false.
-<ol label="a">
+<ol marker="a">
 <li>
 If <m>\vF</m> is a 3D vector field defined on all of <m>\bbbr^3</m> ,
 and <m>S_1</m> and <m>S_2</m> are two surfaces with the same boundary, but
@@ -1192,7 +1192,7 @@ and all vector fields <m>\vF(x, y, z)</m> have domain <m>\bbbr^3</m> unless
 specified otherwise.
 </p>
 
-<p><ol label="a">
+<p><ol marker="a">
 <li>
 If <m>f</m> is a continuous real valued function and <m>S</m> a smooth oriented
 surface, then
@@ -1345,7 +1345,7 @@ is plotted below.
 <p>
 In the following questions, give the answer that
 is best supported by the plot.
-<ol label="a">
+<ol marker="a">
 <li>
 The derivative <m>P_y</m> at the point labelled <m>A</m> is
    (a) positive, (b) negative, (c) zero,
@@ -1431,7 +1431,7 @@ and <m>\int_{\cC_2}\vF\cdot\dee{\vr} \lt 0</m>.
 Which of the following statements are true (T) and which are false (F)?
 </p>
 
-<p><ol label="a">
+<p><ol marker="a">
 <li>
 The curve defined by
 <me>
@@ -1600,7 +1600,7 @@ of Theorem <xref ref="thm_degTwoIdentities"/>.a.
 <exercise><title><fromexam>M317 2007A</fromexam></title>
 <statement><p>
 Which of the following statements are true (T) and which are false (F)?
-<ol label="a">
+<ol marker="a">
 <li>
 If a smooth curve <m>C</m> is parameterized by <m>\vr(s)</m> where <m>s</m>
 is arc length, then the tangent vector <m>\vr'(s)</m> satisfies
@@ -1754,7 +1754,7 @@ have continuous partial derivatives of all orders everywhere.
 Mark each of the following as True (T) or False (F).
 </p>
 
-<p><ol label="a">
+<p><ol marker="a">
 <li>
 If <m>C</m> is a closed curve and <m>\vnabla f=\vZero</m>, then <m>\int_C f\,\dee{s}=0</m>.
 </li>
@@ -1919,7 +1919,7 @@ Say whether the following statements are true (T) or false
 everywhere and have derivatives of all orders everywhere.
 </p>
 
-<p><ol label="a">
+<p><ol marker="a">
 <li>
 The divergence of <m>\vnabla\times\vF</m> is zero, for every <m>\vF</m>.
 </li>
@@ -2114,7 +2114,7 @@ then <m>\dblInt_{S_1} \vF \cdot \hn\,\dee{S}
 <statement><p>
 Find the correct identity, if <m>f</m> is a function and <m>\vG</m> and <m>\vF</m>
 are vector fields. Select the true statement.
-<ol label="a">
+<ol marker="a">
 <li>
 <m>\vnabla\cdot(f \vF) = f \vnabla\times(\vF) + (\vnabla f ) \times\vF</m>
 </li>
@@ -2151,7 +2151,7 @@ True or False. Consider vector fields <m>\vF</m> and scalar functions
 Let <m>\vr=(x,y,z)</m> represent a variable point in space, and let
 <m>\vom = (\om_1,\om_2,\om_3)</m> be a constant vector. Let <m>\Om</m> be a smoothly
 bounded domain with outer normal <m>\hn</m>. Which of the following are identites, always valid under these assumptions?
-<ol label="a">
+<ol marker="a">
 <li>
 <m>\vnabla\cdot\vnabla f = 0</m>
 </li>
@@ -2346,7 +2346,7 @@ integral and  strictly negative in the lower integral.
 <exercise><title><fromexam>M317 2011A</fromexam></title>
 <statement><p>
 Determine if the given statements are True or False. Provide a reason or a counterexample.
-<ol label="a">
+<ol marker="a">
 <li>
 A constant vector field is conservative on <m>\bbbr^3</m>.
 </li>
@@ -2424,7 +2424,7 @@ possible domain for this vector field is also <m>\Set{(x,y,z)}{x^2+y^2 \gt 0}</m
 <exercise><title><fromexam>M317 2012J</fromexam></title>
 <statement><p>
 Provide a short answer to each question.
-<ol label="a">
+<ol marker="a">
 <li>
 Compute <m>\vnabla\cdot\big(x^2 y\,\hi + e^y \sin x\,\hj + e^{zx}\,\hk\big)</m>
 </li>
@@ -2439,7 +2439,7 @@ Let
 </me>
 and let <m>D</m> be the domain of <m>\vF</m>. Consider the following four
 statments.
-<ol label="(I)">
+<ol marker="(I)">
 <li>  <m>D</m> is connected
 </li>
 <li>  <m>D</m> is disconnected
@@ -2450,7 +2450,7 @@ statments.
 </li>
 </ol>
 Choose one of the following:
-<ol label="(i)">
+<ol marker="(i)">
 <li> (II) and (III) are true
 </li>
 <li> (I) and (III) are true
@@ -2547,7 +2547,7 @@ Recall that <m>f \in C^k</m> means that all derivatives of <m>f</m> up to order
 <m>k</m> exist and are continuous.
 </p>
 
-<p><ol label="a">
+<p><ol marker="a">
 <li>
 <m>\vnabla\times(f \vnabla f ) = \vZero</m> for all <m>C^2</m> scalar functions <m>f</m>
 in <m>\bbbr^3</m>.
@@ -2668,7 +2668,7 @@ is zero.
 <exercise><title><fromexam>M317 2004A</fromexam></title>
 <statement><p>
   True or false (reasons must be given):
-<ol label="a">
+<ol marker="a">
 <li>
 If a smooth vector field on <m>\bbbr^3</m> is curl free and divergence
 free, then its potential is harmonic. By definition, <m>\phi(x,y,z)</m>
@@ -2730,7 +2730,7 @@ The following statements may be true or false. Decide which.
 If true, give a proof. If false, provide a counter-example.
 </p>
 
-<p><ol label="a">
+<p><ol marker="a">
 <li>
 If <m>f</m> is any smooth function defined in
 <m>\bbbr^3</m> and if <m>C</m> is any circle, then
@@ -2766,7 +2766,7 @@ But <m>\vnabla\cdot(x\,\hi+y\,\hj+z\,\hk)=3</m>.
 <exercise><title><fromexam>M317 2002A</fromexam></title>
 <statement><p>
 Short answers:
-<ol label="a">
+<ol marker="a">
 <li>
  Let <m>S</m> be the level surface <m>f(x,y,z)=0</m>. Why is
 <m>\int_C \vnabla f\cdot \dee{\vr}=0</m> for any curve <m>C</m> on <m>S</m>?
@@ -2840,7 +2840,7 @@ A region <m>R</m> is bounded by a simple closed curve <m>\cC</m>. The curve <m>\
 in the direction of <m>\cC</m>. Determine  whether or not
 each of the following expressions is equal to the area of <m>R</m>.
 You must justify your conclusions.
-<ol label="a">
+<ol marker="a">
 <li>
 <m>\ds\frac{1}{2} \int_\cC -y \,d x +x \,d y</m>
 </li>
@@ -2903,7 +2903,7 @@ We apply Green's Theorem:
 <statement><p>
 Say whether each of the following statements is true or false
 and <em>explain why</em>.
-<ol label="a">
+<ol marker="a">
 <li>
 A moving particle has velocity and acceleration
 vectors that satisfy <m>|\vv| = 1</m> and <m>|\va|=1</m>
@@ -2988,7 +2988,7 @@ for every closed curve <m>C</m>.
 <exercise><title><fromexam>M317 2000D, 2001A</fromexam></title>
 <statement><p>
 Three quickies:
-<ol label="a">
+<ol marker="a">
 <li>
 A moving particle with position <m>\vr(t) = (x(t),y(t),z(t))</m>
 satisfies

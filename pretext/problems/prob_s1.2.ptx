@@ -52,7 +52,7 @@ A curve <m>\vR=\va(t)</m> is reparametrized in terms of arclength as <m>\vR=\vb(
 </p>
 
 <p>You may assume <m>\va'(t)</m>  and <m>\vb'(s)</m> exist and are nonzero for all <m>t,s\ge0</m>.
-<ol label="A">
+<ol marker="A">
 <li> they are parallel and point in the same direction
 </li>
 <li> they are parallel and point in opposite directions
@@ -113,7 +113,7 @@ So, the vectors <m>\diff{\vb}{s}</m> and <m>\diff{\va}{t}</m> differ only by the
 
 <exercise><title><fromexam>M317 2012D</fromexam></title>
 <statement><p>
-<ol label="a">
+<ol marker="a">
 <li>
 Let
 <me>
@@ -199,7 +199,7 @@ This problem is about the logarithmic spiral in the plane
 <me>
 \vr(t) = e^t (\cos t, \sin t),\qquad t \in \bbbr
 </me>
-<ol label="a">
+<ol marker="a">
 <li>
 Find the arc length of the piece of this spiral which is contained in the unit
 circle.

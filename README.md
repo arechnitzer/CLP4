@@ -8,8 +8,6 @@ It is licensed under a [Creative Commons Attribution-NonCommercial-ShareAlike 4.
 <img src="https://i.creativecommons.org/l/by-nc-sa/4.0/88x31.png" />
 
 
-**Note** This repository is a work-in-progress and will (hopefully) be updated regularly during 2020.
-
 ## Source files
 In this repository we give two sets of source files - latex and pretext.
 

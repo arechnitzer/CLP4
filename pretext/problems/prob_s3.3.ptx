@@ -12,7 +12,7 @@
 <statement><p>
 Let <m>0 \lt \theta \lt \frac{\pi}{2}</m>, and <m>a,b \gt 0</m>. Denote by <m>S</m> the part of
 the surface <m>z=y\,\tan\theta</m> with <m>0\le x\le a</m>, <m>0\le y\le b</m>.
-<ol label="a">
+<ol marker="a">
 <li>
 Find the surface area of <m>S</m> without using any calculus.
 </li>
@@ -77,7 +77,7 @@ and
 <statement><p>
 Let <m>a,b,c  \gt  0</m>. Denote by <m>S</m> the triangle with vertices <m>(a,0,0)</m>,
 <m>(0,b,0)</m> and <m>(0,0,c)</m>.
-<ol label="a">
+<ol marker="a">
 <li>
 Find the surface area of <m>S</m> in three different ways, each using
 (<xref ref="eq_SUdSgraph"/>).
@@ -226,7 +226,7 @@ Let <m>a,h \gt 0</m>. Denote by <m>S</m> the part of the cylinder <m>x^2+z^2=a^2
 </sidebyside>
 
 <p>
-<ol label="a">
+<ol marker="a">
 <li>
 Find the surface area of <m>S</m> without using any calculus.
 </li>
@@ -487,7 +487,7 @@ So, by (<xref ref="eq_SUdSgraph"/>),
 
 <exercise><title><fromexam>M253 2016D</fromexam></title>
 <statement><p>
-<ol label="a">
+<ol marker="a">
 <li>
 To find the surface area of the surface <m>z = f (x,y)</m> above the region <m>D</m>,
 we integrate <m>\dblInt_D F(x,y)\ \dee{A}</m>. What is <m>F(x,y)</m>?
@@ -503,7 +503,7 @@ The diagram below shows the slice where <m>y = 0</m>.
 </sidebyside>
 
 <p>
-<ol label="(i)">
+<ol marker="(i)">
 <li>
 The Rebels want to paint part of the surface of Death Star hot pink; specifically, the concave part (indicated with a thick line in the diagram).
 To help them determine how much paint is needed, carefully fill in the
@@ -1010,7 +1010,7 @@ Consider the surface integral
 <me>
 I = \dblInt_\cS (x^2+y^2)\,\dee{S}.
 </me>
-<ol label="a">
+<ol marker="a">
 <li>
 Express <m>I</m> as a double integral over a disk
 in the <m>xy</m>-plane.
@@ -1120,7 +1120,7 @@ t^3\,\dee{t}\,\dee{\theta}.
 Evaluate, for each of the following,
  the flux <m>\ \dblInt_S\vF\cdot\hn \,\dee{S}\ </m> where <m>\hn</m> is
 the outward normal to the surface <m>S</m>.
-<ol label="a">
+<ol marker="a">
 <li>
 <m>\ \vF={(x^2+y^2+z^2)}^n(x\,\hi+y\,\hj+z\,\hk)\ </m>
 and the surface <m>S</m> is the sphere <m>x^2+y^2+z^2=a^2</m>.
@@ -1295,7 +1295,7 @@ positive. The flux through the top, as well as the total flux, is
 <statement><p>
  Let <m>\cS</m> be the part of the surface <m>x^2+y^2+2z=2</m> that
 lies above the square <m>-1\le x\le 1</m>, <m>-1\le y\le 1</m>.
-<ol label="a">
+<ol marker="a">
 <li>
 Find <m>\ds\dblInt_\cS \frac{x^2+y^2}{\sqrt{1+x^2+y^2}}\ \dee{S}</m>.
 </li>
@@ -1369,7 +1369,7 @@ since <m>z=1-\half(x^2+y^2)</m> on <m>\cS</m>.
 <statement><p>
 Let <m>\cS</m> be the part of the surface <m>z=xy</m> that
 lies above the square <m>0\le x\le 1</m>, <m>0\le y\le 1</m> in the <m>xy</m>-plane.
-<ol label="a">
+<ol marker="a">
 <li>
 Find <m>\ds\dblInt_\cS \frac{x^2y}{\sqrt{1+x^2+y^2}}\ \dee{S}</m>.
 </li>
@@ -1525,7 +1525,7 @@ Switching to polar coordinates
 </exercise>
 
 <exercise><title><fromexam>M317 2013D</fromexam></title>
-<statement><p><ol label="a">
+<statement><p><ol marker="a">
 <li>
 Find a parametrization of the surface <m>S</m> of the cone whose vertex is
 at the point <m>(0, 0, 3)</m>, and whose base is the circle <m>x^2 + y^2 = 4</m>
@@ -2284,7 +2284,7 @@ and
 Let <m>S</m> be the surface obtained by revolving the curve
 <m>z = e^y</m> , <m>0 \le y \le 1</m>, around the <m>y</m>-axis, with the
 orientation of <m>S</m> having <m>\hn</m> pointing toward the <m>y</m>-axis.
-<ol label="a">
+<ol marker="a">
 <li>
 Draw a picture of <m>S</m> and find a parameterization of <m>S</m>.
 </li>
@@ -2982,7 +2982,7 @@ Finally, the flux integral over the whole apple core surface is
 <exercisegroup><introduction><application/></introduction>
 
 <exercise><title><fromexam>M317 2012D</fromexam></title>
-<statement><p><ol label="a">
+<statement><p><ol marker="a">
 <li>
 Consider the surface <m>S</m> given by the equation
 <me>
@@ -3101,7 +3101,7 @@ Assume that <m>\vnabla f \ne \vZero</m> on <m>S</m>. Let <m>\vF</m> be the gradi
 <m>\vF = \vnabla f</m>.
 </p>
 
-<p><ol label="a">
+<p><ol marker="a">
 <li>
 Let <m>C</m> be a piecewise smooth curve contained in <m>S</m>
 (not necessarily closed).
@@ -3156,13 +3156,13 @@ So, at any point of <m>S</m>,
 
 <exercise><title><fromexam>M317 2011A</fromexam></title>
 <statement><p>
-<ol label="a">
+<ol marker="a">
 <li><p>
 Give parametric descriptions of the form
 <m>\vr(u, v) = \big(x(u,v)\,,\, y(u,v)\,,\, z(u,v)\big)</m>
 for the following surfaces. Be sure to state the domains of your
 parametrizations.
-<ol label="(i)">
+<ol marker="(i)">
 <li>
 The part of the plane <m>2x + 4y + 3z = 16</m> in the first octant
 <me>
@@ -3379,7 +3379,7 @@ So the area is
 <exercise><title><fromexam>M317 2017D</fromexam></title>
 <statement><p>
 Let <m>S</m> be the part of the sphere <m>x^2+y^2+z^2=2</m> where <m>y\ge 1</m>, oriented away from the origin.
-<ol label="a">
+<ol marker="a">
 <li>
 Compute
 <me>

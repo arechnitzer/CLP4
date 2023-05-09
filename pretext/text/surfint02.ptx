@@ -51,7 +51,7 @@ theorem.
 
 <theorem xml:id="thm_normalVectors"><title>Normal vectors to surfaces</title>
 <statement><p>
-<ol label="a">
+<ol marker="a">
 <li>
 Let
 <md>

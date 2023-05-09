@@ -8,7 +8,7 @@
 
 <definition xml:id="def_apODE">
 <statement><p>
-<ol label="a">
+<ol marker="a">
 <li>
 A <term>differential equation</term> is an equation for an
 unknown function that contains the derivatives of that unknown function.
@@ -84,7 +84,7 @@ times.
 Assume that the coefficients <m>a_0(t)</m>, <m>a_1(t)</m>, <m>\cdots</m>, <m>a_{n-1}(t)</m>,
 <m>a_n(t)</m> and <m>F(t)</m> are continuous functions and that
 <m>a_0(t)</m> is not zero.
-<ol label="a">
+<ol marker="a">
 <li><p>
 The general solution to the ODE <xref ref="eqn_ODEordern"/> is of the form
 <men xml:id="eqn_ODEgensln">
@@ -456,7 +456,7 @@ numbers. So there is nothing stopping <m>C_1=C'_1+C'_2</m>, and
 <m>C_2=i(C'_1-C'_2)</m> from being real numbers.
 </p>
 
-<p><ol label="a">
+<p><ol marker="a">
 <li>
 Now consider the boundary value problem
 <men xml:id="eqnbvpA">

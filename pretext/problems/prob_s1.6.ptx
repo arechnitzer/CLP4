@@ -34,7 +34,7 @@ This fits the form of Definition<nbsp/><xref ref="def_lineIntegral"/> with <m>f(
 
 <exercise>
 <statement><p>
-<ol label="a">
+<ol marker="a">
 <li>
 Show that the integral <m>\int_\cC f(x,y)\,ds</m>
 along the curve <m>\cC</m> given in polar coordinates by
@@ -197,7 +197,7 @@ Following Definition<nbsp/><xref ref="def_lineIntegral"/>:
 <exercise>
 <statement><p>
 Evaluate the path integral <m>\int_\cC f(x,y,z)\,\dee{s}</m> for
-<ol label="a">
+<ol marker="a">
 <li>
 <m>f(x,y,z)=x\cos z</m>,  <m>\cC:\vr(t)=t\hi+t^2\hj</m>,
 <m>0\le t\le 1</m>.
@@ -293,7 +293,7 @@ under a force
 \vF(t) = \hj - \sin t\,\hk
 </me>
 where <m>t</m> denotes time.
-<ol label="a">
+<ol marker="a">
 <li>
 Find the position <m>\vr(t)</m> of the particle as a function of <m>t</m>.
 </li>
@@ -475,7 +475,7 @@ and
 	<me>
 	\vr(t)=t\cos t\,\hi+t\sin t\,\hj+t^2\,\hk,\qquad 0\le t\le \pi
 	</me>
-	<ol label="a">
+	<ol marker="a">
 <li>
 		Find the unit tangent <m>\hT</m> to <m>\cC</m> at the point <m>(-\pi,0,\pi^2)</m>.
 </li>

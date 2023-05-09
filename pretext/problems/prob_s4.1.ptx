@@ -14,12 +14,12 @@ Let <m>\vF = P\,\hi + Q\,\hj</m> be the two dimensional vector field
 shown below.
 </p>
 
-<p><ol label="a">
+<p><ol marker="a">
 <li><p>
 Assuming that the vector field in the picture is a force field, the work
 done by the vector field on a particle moving from point <m>A</m> to <m>B</m>
 along the given path is:
-<ol label="(A)">
+<ol marker="(A)">
 <li>  Positive
 </li>
 <li>  Negative
@@ -33,7 +33,7 @@ along the given path is:
 <li><p>
 Which statement is the most true about the line integral
 <m>\int_{C_2} \vF\cdot\dee{\vr}</m>:
-<ol label = "(A)">
+<ol marker="(A)">
 <li>  <m>\int_{C_2} \vF\cdot\dee{\vr} \gt 0</m>
 </li>
 <li>  <m>\int_{C_2} \vF\cdot\dee{\vr}=0</m>
@@ -52,7 +52,7 @@ Which statement is the most true about the line integral
 </li>
 <li><p>
 <m>\vnabla\cdot\vF</m> at the point <m>N</m> (in the picture) is:
-<ol label="(A)">
+<ol marker="(A)">
 <li> Positive
 </li>
 <li> Negative
@@ -65,7 +65,7 @@ Which statement is the most true about the line integral
 </li>
 <li><p>
 <m>Q_x - P_y</m> at the point <m>Q</m> is:
-<ol label="(A)">
+<ol marker="(A)">
 <li> Positive
 </li>
 <li> Negative
@@ -80,7 +80,7 @@ Which statement is the most true about the line integral
 Assuming that <m>\vF = P\,\hi + Q\,\hj</m>, which of the following
 statements is correct about <m>\frac{\partial P}{\partial x}</m>
 at the point <m>D</m>?
-<ol label="(A)">
+<ol marker="(A)">
 <li> <m>\frac{\partial P}{\partial x}=0</m>  at <m>D</m>.
 </li>
 <li> <m>\frac{\partial P}{\partial x} \gt 0</m>  at <m>D</m>.
@@ -168,7 +168,7 @@ so is not perpendicular to it.
 <exercise>
 <statement><p>
 Verify the vector identities
-<ol label="a">
+<ol marker="a">
 <li>
 <m>\vnabla\cdot(f\vF)=f\vnabla\cdot\vF+\vF\cdot\vnabla f</m>
 </li>
@@ -302,7 +302,7 @@ So by part (a), twice,
 <statement><p>
 Evaluate <m>\vnabla\cdot\vF</m> and <m>\vnabla\times\vF</m> for each of
 the following vector fields.
-<ol label="a">
+<ol marker="a">
 <li> <m>\vF=x\,\hi+y\,\hj+z\,\hk</m>
 </li>
 <li> <m>\vF=xy^2\hi-yz^2\hj+zx^2\hk</m>
@@ -451,7 +451,7 @@ By definition
 
 <exercise><title><fromexam>M317 2015A</fromexam></title>
 <statement><p>
-<ol label="a">
+<ol marker="a">
 <li>
 Compute and simplify <m>\vnabla\cdot\big(\frac{\vr}{r}\big)</m>
 for <m>\vr=(x,y,z)</m> and <m>r=|(x,y,z)|</m>. Express your answer in
@@ -527,7 +527,7 @@ yz&amp;2xz&amp;e^{xy}\end{matrix}\right]
 In the following, we use the notation
 <m>\vr = x\,\hi + y\,\hj + z\,\hk</m>, <m>r = |\vr|</m>, and <m>k</m> is some number
 <m>k = 0, 1, -1, 2, -2, \dots</m>.
-<ol label="a">
+<ol marker="a">
 <li>
 Find the value <m>k</m> for which
 <me>
@@ -627,7 +627,7 @@ vector <m>\va = a_1\,\hi + a_2\,\hj + a_3\,\hk</m>. Compute and simplify
 the following quantities.
 Answers must be expressed in terms of <m>\va</m>, <m>\vr</m>, and <m>r</m>. There should
 be no <m>x</m>'s, <m>y</m>'s, or <m>z</m>'s in your answers.
-<ol label="a">
+<ol marker="a">
 <li>
 <m>\vnabla\cdot\vr</m>
 </li>
@@ -739,7 +739,7 @@ Let
 \vr = x\,\hi + y\,\hj + z\,\hk,\qquad
 r = |\vr|
 </me>
-<ol label="a">
+<ol marker="a">
 <li>
 Compute <m>a</m> where <m>\vnabla\big(\frac{1}{r}\big) =- r^a\,\vr</m>.
 </li>
@@ -832,7 +832,7 @@ so that <m>a=12</m>.
 <statement><p>
 Find, if possible, a vector field <m>\vA</m> that has <m>\hk</m>
 component <m>A_3=0</m> and that is a vector potential for
-<ol label="a">
+<ol marker="a">
 <li> <m>\vF=(1+yz)\hi+(2y+zx)\hj+(3z^2+xy)\hk</m>
 </li>
 <li> <m>\vG= yz\hi+zx\hj+xy\hk</m>
@@ -898,7 +898,7 @@ Let
 </md>
 </p>
 
-<p><ol label="a">
+<p><ol marker="a">
 <li>
 Determine the domain of <m>\vF</m>.
 </li>
@@ -1039,7 +1039,7 @@ also show that <m>\vF</m> must be of the form
 \vF(x,y,z)=(xz+xy)\hi+\alpha(yz-xy)\hj+\beta(yz+xz)\hk
 </me>
 where <m>\alpha</m> and <m>\beta</m> are constant.
-<ol label="a">
+<ol marker="a">
 <li>
 Determine <m>\alpha</m> and <m>\beta</m>.
 </li>
@@ -1113,7 +1113,7 @@ A rigid body rotates at an angular velocity of <m>\Om</m> rad/sec
 about an axis that passes through the origin and has direction <m>\Ha</m>. When
 you are standing at the head of <m>\Ha</m> looking towards the origin, the rotation
 is counterclockwise. Set <m>\vOm=\Om\Ha</m>.
-<ol label="a">
+<ol marker="a">
 <li>
 Show that the velocity of the point <m>\vr=(x,y,z)</m> on the body is <m>\vOm\times\vr</m>.
 </li>
