@@ -114,7 +114,7 @@ that lies inside the cylinder <m>x^2 + y^2 = 9</m> and above the plane <m>z = 1<
 <p>Which of the following are parameterizations of <m>S</m>?
 </p>
 
-<p><ol label="a">
+<p><ol marker="a">
 <li>
 The vector function
 <me>
@@ -252,7 +252,7 @@ that lies inside the cylinder
 Which of the following are parameterizations of <m>S</m>?
 </p>
 
-<p><ol label="a">
+<p><ol marker="a">
 <li><p>
 <me>\vr(\phi,\theta) = 2\sin \phi\cos\theta\,\hi  +2\cos \phi\,\hj
                     +2\sin \phi\sin\theta\,\hk </me>
@@ -360,7 +360,7 @@ and <m>\phi</m> runs from <m>0</m> to <m>2\pi</m>.
 Let <m>S</m> be the part of the paraboloid <m>z + x^2 + y^2 = 4</m> lying between
 the planes <m>z = 0</m> and <m>z = 1</m>. For each of the following, indicate
 whether or not it correctly parameterizes the surface <m>S</m>.
-<ol label="a">
+<ol marker="a">
 <li>
 <m>\vr(u,v) = u\,\hi + v\,\hj + (4 - u^2 - v^2)\,\hk</m>,
 <m>0 \le u^2 + v^2 \le 1</m>
@@ -455,7 +455,7 @@ with <m>z\ge 0</m>.
 </p>
 
 <p>Consider the following parameterizations:
-<ol label="A">
+<ol marker="A">
 <li>
 <md>
 <mrow>
@@ -608,7 +608,7 @@ parameterization of each of the given surfaces. Note that there
 may be one or more valid parameterization for each
 surface, and not necessarily all of the above parameterizations
 will be used.
-<ol label="a">
+<ol marker="a">
 <li>
 The part of <m>S_1</m> contained inside <m>S_2</m>:
 </li>
@@ -782,7 +782,7 @@ So parametrizations H and L work.
 Parametrize a solid of rotation about a line not parallel to an axis. Maybe first show that the plane you're rotating is normal to that axis.
 </p>
 
-<p><ol label="a">
+<p><ol marker="a">
 <li> Give a parametric equation for the circle of radius 1, centred at <m>(2,2,4)</m>, lying in the plane <m>x=y</m>.
 </li>
 <li> Give a parametrized equation for the surface formed by rotating the circle from part (a) about the line <m>\vr(t)=4\hi+4\hj+t\hk</m>.

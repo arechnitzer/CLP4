@@ -69,7 +69,7 @@ So
 <exercise>
 <statement><p>
 For each of the following fields, decide which of the following holds:
-<ol label="A">
+<ol marker="A">
 <li> The characterization of conservative vector fields, Theorem<nbsp/><xref ref="thm_screenConserv"/> (with Theorem<nbsp/><xref ref="thm_screen"/>),  tells us <m>\vF</m> is conservative.
 </li>
 <li> The characterization of conservative vector fields, Theorem<nbsp/><xref ref="thm_screenConserv"/> (with Theorem<nbsp/><xref ref="thm_screen"/>), tells us <m>\vF</m> is <alert>not</alert> conservative.
@@ -79,7 +79,7 @@ For each of the following fields, decide which of the following holds:
 </ol>
 </p>
 
-<p><ol label="a">
+<p><ol marker="a">
 <li> <m>\vF=x\hi + z\hj + y\hk</m>
 </li>
 <li> <m>\vF=y^2z\hi + x^2z\hj + x^2y\hk</m>
@@ -375,7 +375,7 @@ Consider the vector field
               +\frac{2x + y}{x^2+y^2}\,\hj
               + z\,\hk
 </me>
-<ol label="a">
+<ol marker="a">
 <li>
 Determine the domain of <m>\vF</m>.
 </li>
@@ -587,7 +587,7 @@ Hence
 <exercise>
 <statement><p>
 Evaluate <m>\int_\cC\vF\cdot \dee{\vr}</m> for
-<ol label="a">
+<ol marker="a">
 <li>
 <m>\vF(x,y)=xy\,\hi-x^2\,\hj</m> along <m>y=x^2</m> from <m>(0,0)</m> to <m>(1,1)</m>.
 </li>
@@ -710,7 +710,7 @@ Then
 <statement><p>
  Let  <m>\vF = 6x^2yz^2\,\hi + (2x^3z^2 + 2y - xz)\,\hj
 + 4x^3yz\,\hk</m> and let <m>\vG = yz\,\hi + xy\,\hk</m>.
-<ol label="a">
+<ol marker="a">
 <li>
 For what value of the constant <m>\la</m> is the vector field
 <m>\vH = \vF +  \la\vG</m> conservative on 3-space?
@@ -1349,7 +1349,7 @@ So the line integral
 
 <exercise><title><fromexam>M317 2002A</fromexam></title>
 <statement><p>
-<ol label="a">
+<ol marker="a">
 <li>
 For which values of the constants <m>\alpha</m>, <m>\beta</m> and <m>\gamma</m>
 is the vector field
@@ -1444,7 +1444,7 @@ Using Theorem<nbsp/><xref ref="thm_workIntegral"/>:
 <exercise><title><fromexam>M317 2016A</fromexam></title>
 <statement><p>
 Consider the vector field <m>\vF(x,y,z) = (\cos x, 2 + \sin y, e^z)</m>.
-<ol label="a">
+<ol marker="a">
 <li>
    Compute the curl of <m>\vF</m>.
 </li>
@@ -1546,7 +1546,7 @@ Since <m>\vF=\vnabla f</m>,
 </exercise>
 
 <exercise><title><fromexam>M317 2013D</fromexam></title>
-<statement><p><ol label="a">
+<statement><p><ol marker="a">
 <li>
 Consider the vector field
 <me>
@@ -1651,7 +1651,7 @@ where <m>a</m> and <m>b</m> are some real numbers. From theoretical consideratio
 it is known that <m>\vF</m> is conservative.
 </p>
 
-<p><ol label="a">
+<p><ol marker="a">
 <li>
 Determine <m>a</m> and <m>b</m>.
 </li>
@@ -1808,7 +1808,7 @@ Let
      +(2xye^{3z}+3x^2y^2\big)\,\hj
      +Bxy^2e^{3z}\,\hk
 </me>
-<ol label="a">
+<ol marker="a">
 <li>
 Find all values of <m>A</m> and <m>B</m> for which the vector field <m>\vF</m>
 is conservative.
@@ -1923,7 +1923,7 @@ So
 
 <exercise xml:id="nonconserv2"><title><fromexam>M317 2018A</fromexam></title>
 <statement><p>
-<ol label="(a)">
+<ol marker="(a)">
 <li>
 For which value(s) of the constants <m>a,b</m> is the vector
 field
@@ -2071,7 +2071,7 @@ Consider the vector field
 \vF(x, y, z) = -2y \cos x \sin x\,\hi + (\cos^2 x + (1 + yz) e^{yz} )\,\hj
                 + y^2 e^{yz}\,\hk
 </me>
-<ol label="a">
+<ol marker="a">
 <li>
 Find a real valued function <m>f (x, y, z)</m> such that <m>\vF = \vnabla f</m>.
 </li>
@@ -2158,7 +2158,7 @@ works for any constant <m>C</m>.
 <exercise><title><fromexam>M317 2005D</fromexam></title>
 <statement><p>
 Consider the vector field <m>\vF(x, y, z) = 2x\,\hi + 2y\,\hj + 2z\,\hk</m>.
-<ol label="a">
+<ol marker="a">
 <li>
 Compute <m>\vnabla\times\vF</m>.
 </li>
@@ -2230,7 +2230,7 @@ and let
 <me>
 \vF = \big(e^{yz}\,,\, xze^{yz} + ze^y\,,\, xye^{yz} + e^y\big)
 </me>
-<ol label="a">
+<ol marker="a">
 <li>
 Compute and simplify <m>\vnabla\times\vF</m>.
 </li>
@@ -2304,7 +2304,7 @@ works for any constant <m>C</m>. So the specified work integral is
 
 <exercise><title><fromexam>M317 2017A</fromexam></title>
 <statement><p>
-<ol label="a">
+<ol marker="a">
 <li>
 Show that the planar vector field
 <me>
@@ -2393,7 +2393,7 @@ Consider the following force field, in which <m>m,n,p,q</m> are constants:
 \vF
 = (mxyz + z^2 - ny^2)\,\hi + (x^2 z - 4xy)\,\hj + (x^2y + pxz + qz^3)\,\hk
 </me>
-<ol label="a">
+<ol marker="a">
 <li>
 Find all values of <m>m,n,p,q</m> such that
 <m>\oint_\cC \vF\cdot \dee{\vr} = 0</m> for all piecewise smooth closed
@@ -2494,6 +2494,97 @@ Here <m>\vr'(t) = (0,0,1)</m>, so direct calculation gives
 </me>
 </p></solution>
 </exercise>
+
+<exercise><title><fromexam>M317 2012J</fromexam></title>
+<statement><p>
+A particle of mass <m>m = 1</m> has position <m>\vr(0) = \hj</m> and
+velocity <m>\vv_0 = \hi + \hk</m> at time <m>t = 0</m>. The particle moves
+under a force
+<me>
+\vF(t) = \hj - \sin t\,\hk
+</me>
+where <m>t</m> denotes time.
+<ol label="a">
+<li>
+Find the position <m>\vr(t)</m> of the particle as a function of <m>t</m>.
+</li>
+<li>
+Find the position <m>\vr(t_1)</m> of the particle when it crosses the
+plane <m>x = \pi/2</m> for the first time at <m>t_1</m>.
+</li>
+<li>
+Determine the work done by <m>\vF</m> in moving the particle from <m>\vr(0)</m> to
+<m>\vr(t_1)</m>.
+</li>
+</ol>
+</p></statement>
+
+<hint><p>
+Newton's law of motion is <m>\vF=m\va</m>. The work done over a displacement <m>\dee{\vr}</m> is <m>W=\vF \cdot \dee{\vr}</m>.
+</p></hint>
+
+<answer><p>
+(a) <m>\vr(t) = t\,\hi +\Big(1+\frac{t^2}{2}\Big)\,\hj + \sin t\,\hk</m></p><p>
+(b) <m>\vr(\pi/2) = \frac{\pi}{2}\,\hi  +\Big(1+\frac{\pi^2}{8}\Big)\,\hj + \hk</m>
+   </p><p>
+(c) <m>\frac{\pi^2}{8}-\frac{1}{2}</m>
+</p></answer>
+
+<solution><p>
+(a) Since the particle has mass <m>m=1</m>, Newton's law of motion
+<m>m\va=\vF</m> simplifies to
+<me>
+\vr''(t) = \hj - \sin t\,\hk
+</me>
+Integrating once gives
+<me>
+\vr'(t) = t\,\hj + \cos t\,\hk + \mathbf{C}
+</me>
+for some constant vector <m>\mathbf{C}</m>.
+To satisfy the initial condition that <m>\vr'(0) = \vv_0=\hi+\hk</m>,
+we need
+<md>
+<mrow>
+\hi+\hk = \vr'(0) = \hk + \mathbf{C}
+\implies \mathbf{C} = \hi
+</mrow>
+</md>
+So
+<me>
+\vr'(t)
+        = \hi + t\,\hj + \cos t\,\hk
+</me>
+Integrating a second time, and imposing the initial condition that <m>\vr(0)
+=\hj</m>, gives
+<me>
+\vr(t)  = t\,\hi + \frac{t^2}{2}\,\hj + \sin t\,\hk +\hj
+        = t\,\hi +\Big(1+\frac{t^2}{2}\Big)\,\hj + \sin t\,\hk
+</me>
+</p>
+
+<p>(b) The particle has <m>x(t) =\pi/2</m> when <m>t=\pi/2</m>. So
+<me>
+\vr(\pi/2) = \frac{\pi}{2}\,\hi  +\Big(1+\frac{\pi^2}{8}\Big)\,\hj + \hk
+</me>
+</p>
+
+<p>(c) The work done is
+<md>
+<mrow>
+\text{Work} &amp;= \int_0^{\pi/2} \vF(t)\cdot\vr'(t)\ \dee{t}
+</mrow><mrow>
+  &amp;= \int_0^{\pi/2} \big(\hj - \sin t\,\hk\big)\cdot
+         \big(\hi + t\,\hj + \cos t\,\hk\big)\ \dee{t}
+</mrow><mrow>
+  &amp;= \int_0^{\pi/2} \big(t-\sin t\cos t\big)\,\dee{t}
+</mrow><mrow>
+  &amp;= \Big[\frac{t^2}{2} +\frac{1}{2}\cos^2 t\Big]_0^{\pi/2}
+</mrow><mrow>
+  &amp; = \frac{\pi^2}{8}-\frac{1}{2}
+</mrow>
+</md>
+</p></solution>
+</exercise>
 </exercisegroup>
 
 <exercisegroup><introduction><application/></introduction>
@@ -2502,7 +2593,7 @@ Here <m>\vr'(t) = (0,0,1)</m>, so direct calculation gives
 <statement><p>
 Let <m>C</m> be the curve from <m>(0,0,0)</m> to <m>(1,1,1)</m> along the
 intersection of the surfaces <m>y=x^2</m> and <m>z=x^3</m>.
-<ol label="a">
+<ol marker="a">
 <li>
 Find <m>\int_C \rho\, \dee{s}</m> if <m>s</m> is arc length along <m>C</m> and <m>\rho=8x+36z</m>.
 </li>
@@ -2672,7 +2763,7 @@ and
 <exercise><title><fromexam>M317 2011D</fromexam></title>
 <statement><p>
 Evaluate the line integrals below. (Use any method you like.)
-<ol label="a">
+<ol marker="a">
 <li>
 <m>\int_C (x^2 + y)\,\dee{x} + x\,\dee{y}</m>, where <m>C</m> is the arc of the parabola
 <m>y = 9 - x^2</m> from <m>(-3, 0)</m> to <m>(3, 0)</m>.
@@ -2797,7 +2888,7 @@ A particle of mass <m>m = 1</m> has position <m>\vr_0 = \hj</m> and velocity
 <m>\vF(t) = \hj - \sin t\, \hk</m>, where <m>t</m> denotes time.
 </p>
 
-<p><ol label="a">
+<p><ol marker="a">
 <li>
 Find the position <m>\vr(t)</m> of the particle as a function of <m>t</m>.
 </li>
@@ -2889,7 +2980,7 @@ The work done between time <m>t=0</m> and time <m>t=\pi/2</m> is
 
 <exercise xml:id="path1"><title><fromexam>M317 2012D</fromexam></title>
 <statement>
-<p>	<ol label="a">
+<p>	<ol marker="a">
 <li>
 		Consider the vector field <m>\vF\big(x,y\big)= (3y, x-1)</m> in <m>\bbbr^2</m> . Compute
 		the line integral
@@ -3377,7 +3468,7 @@ Consider the vector field <m>\vF</m> defined as
                     x^2 \cos(x^2 z) \Big)
 </me>
 where <m>a</m> and <m>b</m> are real valued constants.
-<ol label="a">
+<ol marker="a">
 <li>
 Compute <m>\vnabla\times\vF</m>.
 </li>
@@ -3525,7 +3616,7 @@ Let <m>C</m> be the curve from <m>(0,0,0)</m> to <m>(1,1,1)</m> along the
 intersection of the surfaces <m>y=x^2</m> and <m>z=x^3</m>.
 </p>
 
-<p><ol label="a">
+<p><ol marker="a">
 <li>
 Find <m>\int_C \vF\cdot \dee{\vr}</m> if
  <m>\vF=(xz-y)\,\hi + (z+x)\,\hj+ y\,\hk</m>.
@@ -3622,7 +3713,7 @@ All together,
  The vector field
 <m>\vF(x,y,z)= Ax^3y^2z\,\hi+\big(z^3+Bx^4yz\big)\,\hj
 +\big(3yz^2-x^4y^2\big)\,\hk</m> is conservative on <m>\bbbr^3</m>.
-<ol label="a">
+<ol marker="a">
 <li>
 Find the values of the constants <m>A</m> and <m>B</m>.
 </li>
@@ -3795,7 +3886,7 @@ is acted on by  a force
 </me>
 At <m>t=0</m>, the particle has velocity zero and is located at the
 point <m>(1,2,3)</m>.
-<ol label="a">
+<ol marker="a">
 <li>
 Find the velocity vector <m>\vv(t)</m> for <m>t\ge 0</m>.
 </li>
@@ -3916,7 +4007,7 @@ The curvature is (see \S<xref ref="sec_CurveCompendium"/>)
 	x=y=\frac{4\sqrt{2}}{3}t^{3/2},\ z=t(2-t)
 	</m>
 	from take-off at <m>t=0</m> to landing at <m>t=2</m>.
-	<ol label="a">
+	<ol marker="a">
 <li>
 		What is the total distance the plane travels on this flight?
 </li>

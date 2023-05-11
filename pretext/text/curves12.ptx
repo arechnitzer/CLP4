@@ -50,7 +50,7 @@ is still parallel to the <m>xy</m>-plane, we just translate by <m>\vc</m>:
 Finally, let's consider a circle in general position. The secret to
 parametrizing a general circle is to replace <m>\hi</m> and <m>\hj</m> by two new vectors
 <m>\hi'</m> and <m>\hj'</m> which
-<ol label="a">
+<ol marker="a">
 <li> are unit vectors,
 </li>
 <li> are parallel to the plane of the desired circle and

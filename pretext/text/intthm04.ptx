@@ -1103,7 +1103,7 @@ where
 </li>
 <li><p>
 <m>\hi'</m> and <m>\hj'</m> are two vectors that
-<ol label="a">
+<ol marker="a">
 <li> are unit vectors,
 </li>
 <li> are parallel to the plane <m>z=y</m> and

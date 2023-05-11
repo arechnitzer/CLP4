@@ -23,7 +23,7 @@ and that's what we'll use.
 
 <definition xml:id="def_curvature">
 <statement><p>
-<ol label="a">
+<ol marker="a">
 <li>
 The circle which best approximates a given curve near a given
 point is called the <term>circle of curvature</term> or the
@@ -184,7 +184,7 @@ that points toward the centre of curvature.
 
 <theorem xml:id="thm_curvatureFormulae">
 <statement>
-<p><ol label="a">
+<p><ol marker="a">
 <li>
 Given<fn>The equation <m>s=s(\phi)</m> is called the <q>intrinsic
 equation of the curve</q>.</fn>
@@ -243,7 +243,9 @@ Given <m>y(x)</m>, (again for curves in the <m>xy</m>-plane)
 
 <proof>
 <p>
-(a)
+  <ol marker="(a)">
+    <li>
+<p>
 Given <m>s(\phi)</m>, then
 <me>
 \rho = \Big|\diff{s}{\phi}\Big|\qquad
@@ -257,8 +259,10 @@ function of <m>s</m>, and that
 \ka = \Big|\diff{\phi}{s}\Big|
 </me>
 </p>
+    </li>
 
-<p> (b)
+<li>
+<p>
 Given <m>\vr(s)</m>,
 then, by Lemma <xref ref="lem_CVtanArclen"/>.c, <m>\hat\vT(s) = \vr'(s)</m>
 is a unit tangent to the curve at <m>\vr(s)</m> and
@@ -346,7 +350,10 @@ Note that if <m>\ka(s)=0</m>, then <m>\hat\vN(s)</m> is not defined. This makes 
 if the curve is (locally) a straight line, there is no <q>best fitting circle</q>.
 </p>
 
-<p> (c)
+</li>
+
+<li>
+<p>
 Given <m>\vr(t)</m>,
 i.e. if we have a general parametrized curve, we can determine a unit
 tangent vector by using Lemma <xref ref="lem_CVtanArclen"/>:
@@ -372,9 +379,9 @@ that the acceleration
                            + \ka\Big(\diff{s}{t}\Big)^2\hat\vN
 </me>
 </p>
-
-<p xml:id="clpcurvesthm_curvatureFormulae_partd">
-(d)
+</li>
+<li xml:id="clpcurvesthm_curvatureFormulae_partd">
+<p>
 Given <m>\big(x(t)\,,\,y(t)\big)</m>, (for curves in the <m>xy</m>-plane),
 we can read off the curvature from
 <md>
@@ -409,8 +416,9 @@ will be either <m>+\hk</m> or <m>-\hk</m>. In both cases,
 </mrow>
 </md>
 </p>
-
-<p> (e)
+</li>
+<li>
+<p> 
 Given <m>y(x)</m>, again for curves in the <m>xy</m>-plane,
 we can parametrize the curve using <m>x</m> as the parameter:
 <me>
@@ -431,7 +439,11 @@ and
 =\frac{\big|\difftwo{y}{x}\big|}
 { {\big[1+\big(\diff{y}{x}\big)^2\big]}^{3/2} }
 </me>
-</p></proof>
+</p>
+</li>
+</ol>
+</p>
+</proof>
 
 <p>
 Take another look at Theorem <xref ref="thm_curvatureFormulae"/>

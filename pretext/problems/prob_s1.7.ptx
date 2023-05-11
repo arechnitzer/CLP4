@@ -458,7 +458,7 @@ U&amp;=mg\diff{y}{s}
 A snowmachine is cautiously descending a hill in low gear. Its engine provides a force <m>M\hT</m> parallel to the direction of motion. The engine provides whatever force is necessary to keep the snowmachine moving at a constant speed, <m>|\vv|</m>. Its treads do not slip.
 </p>
 
-<p><ol label="a">
+<p><ol marker="a">
 <li> Give a formula for <m>M</m> in terms of the mass <m>m</m> of the snowmachine, the acceleration due to gravity <m>g</m>, and the tangent vector <m>\hT</m> to the hill.
 </li>
 <li> Let <m>\hT</m> point in the downhill direction. Do you expect <m>M</m> to be positive or negative as the snowmachine moves downhill?
@@ -542,7 +542,7 @@ A skateboarder rolls along a culvert with elliptical cross-section described by 
 with coordinates measured in metres.
 </p>
 
-<p><ol label="a">
+<p><ol marker="a">
 <li> Give the height <m>y_S</m> (in terms of <m>m</m>, <m>g</m>, and <m>E</m>) where the skater's speed is zero.
 </li>
 <li> Write an equation relating <m>E</m>, <m>m</m>, <m>g</m>, and <m>y_A</m>, where <m>y_A</m> is the <m>y</m>-value where the skater would become airborne, i.e. where <m>W=0</m>. (You do not have to solve for <m>y_A</m> explicitly.)
@@ -667,7 +667,7 @@ due to gravity and <m>\vN\big(\vr(t)\big)</m> is the force that the roller-coast
 track applies to the car to keep the car on the track. Since the track
 is frictionless, <m>\vN\big(\vr(t)\big)</m> is always perpendicular
 to <m>\vv(t)=\diff{\vr}{t}(t)</m>.
-<ol label="a">
+<ol marker="a">
 <li>
 Prove that <m>E(t)=\half m |\vv(t)|^2 +mg \vr(t)\cdot\hk</m> is a
 constant, independent of <m>t</m>. (This is called <q>conservation of energy</q>.)

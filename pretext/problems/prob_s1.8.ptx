@@ -109,7 +109,7 @@ are related to the cartesian coordinates <m>x</m>, <m>y</m>, by <m>x=r\cos\theta
 
 <exercise>
 <statement><p>
-<ol label="a">
+<ol marker="a">
 <li>
 Find <em>all</em> pairs <m>(r,\theta)</m> such that
 <me>
@@ -308,7 +308,7 @@ Also define, for each angle <m>\theta</m>, the vectors
 \he_\theta(\theta) = -\sin\theta\ \hi + \cos\theta\ \hj
 </mrow>
 </md>
-<ol label="a">
+<ol marker="a">
 <li>
 Determine, for each angle <m>\theta</m>, the lengths of the vectors
 <m>\he_r(\theta)</m> and <m>\he_\theta(\theta)</m> and the angle between

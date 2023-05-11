@@ -129,7 +129,7 @@ meaningless symbols.
 
 <definition xml:id="def_differentialForm">
 <statement><p>
-<ol label="a">
+<ol marker="a">
 <li>
 A <m>0</m>-form is a function <m>f(x,y,z)</m>.
 </li>
@@ -174,7 +174,7 @@ you would expect it to.
 
 <definition xml:id="def_differentialFormAdd"><title>Addition of differential forms</title>
 <statement><p>
-<ol label="a">
+<ol marker="a">
 <li>
 The sum of the <m>0</m>-forms  <m>f</m> and <m>g</m> is the <m>0</m>-form <m>f+g</m>.
 </li>
@@ -244,7 +244,7 @@ If <m>\om</m> is a <m>k</m>-form and <m>\om'</m> is a
 <m>k'</m>-form then the product will be a <m>(k+k')</m>-form and will be denoted
 <m>\om\wedge\om'</m> (read <q>omega wedge omega prime</q>). It is
 determined by the following properties.
-<ol label="a">
+<ol marker="a">
 <li>
 If <m>f</m> is a function (i.e. a <m>0</m>-form), then
 <md>
@@ -654,7 +654,7 @@ the action of <m>\dee{}</m> on <em>any</em> differential form is completely
 determined by the four rules (a), (b), (c), (d). We will see in
 Example <xref ref="eg_diffFormDiff"/>.c,d,e, that this is indeed the case.</fn>
 such operator that obeys
-<ol label="a">
+<ol marker="a">
 <li>
 <m>\dee{}</m> is linear. That is, if <m>\om_1,\om_2</m> are <m>k</m>-forms and
 <m>a_1,a_2\in\bbbr</m>, then
@@ -700,7 +700,7 @@ For any differential form <m>\om</m>,
 
 <example xml:id="eg_diffFormDiff">
 <p>
-<ol label="a">
+<ol marker="a">
 <li>
 If <m>f(x,y,z) = x</m>, then
 <me>
@@ -852,7 +852,7 @@ variables that happens to be independent of one of the three variables.</fn>
 +\frac{\partial f}{\partial v}(u,v)\ \dee{v}
 </mrow>
 </md>
-<ol label="a">
+<ol marker="a">
 <li>
 Let <m>F_1(x,y,z)\,\dee{x} + F_2(x,y,z)\,\dee{y} + F_3(x,y,z)\,\dee{z}</m>
 be a <m>1</m>-form. Suppose that we substitute <m>x=x(t)</m>, <m>y=y(t)</m> and <m>z=z(t)</m>,
@@ -937,7 +937,7 @@ Then, writing <m>\vr(u,v) = \big(x(u,v),y(u,v),z(u,v)\big)</m>,
 
 <lemma xml:id="lemma_dGradCurlDiv">
 <statement><p>
-<ol label="a">
+<ol marker="a">
 <li>
 For any <m>0</m>-form
 <me>
@@ -983,7 +983,7 @@ For any <m>3</m>-form
 <definition xml:id="def_differentialFormInt">
   <title>Integration of differential forms</title>
 <statement><p>
-<ol label="a">
+<ol marker="a">
 <li>
 Let <m>f(x,y,z)</m> be a  <m>0</m>-form and <m>P=(x_0,y_0,z_0)\in\bbbr^3</m> be a point.
 Then

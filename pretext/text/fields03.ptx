@@ -15,7 +15,7 @@ but that still arise in many applications are <q>conservative vector fields</q>.
 
 <definition xml:id="def_conservative">
 <statement><p>
-<ol label="a">
+<ol marker="a">
 <li>
 The vector field <m>\vF</m> is said to be <term>conservative</term> if there
 exists a function <m>\varphi</m> such that <m>\vF = \vnabla\varphi</m>. Then
@@ -152,7 +152,7 @@ But first, a couple of more examples.
 <p>
 In this example we will show that the vector field <m>\vF(x,y) = x\,\hi-y\,\hj</m>
 is conservative and find both its potential and its field lines.
-<ol label="a">
+<ol marker="a">
 <li> <em>The potential:</em> Our vector field <m>\vF(x,y) = x\,\hi-y\,\hj</m>
 is conservative if we can find a <m>\varphi</m> obeying
 <md>
@@ -422,7 +422,7 @@ the determinant helps with that.
 
 <theorem xml:id="thm_screen"><title>Screening test for conservative vector fields.</title>
 <statement><p>
-<ol label="a">
+<ol marker="a">
 <li>
 Assume that <m>F_1(x,y)</m> and <m>F_2(x,y)</m> are continuously differentiable.
 If the vector field <m>F_1(x,y)\hi + F_2(x,y)\hj</m> is conservative, then

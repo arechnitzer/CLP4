@@ -112,7 +112,7 @@ Set <m>P_0=(0,0)</m>, <m>P_1=(1,1)</m> and<fn>The reader should check that this 
 \vF(x,y) = xy\,\hi + (y^2+1)\,\hj
 </me>
 We shall consider three curves, all starting at <m>P_0</m> and ending at <m>P_1</m>.
-<ol label="a">
+<ol marker="a">
 <li>
 Let <m>\cC_1</m> be the straight line from <m>P_0</m> to <m>P_1</m>.
 </li>
@@ -134,7 +134,7 @@ Let <m>\cC_3</m> be the part of the parabola <m>x=y^2</m> from <m>P_0</m> to <m>
 <p>
 We shall calculate the work <m>\int_{\cC_i}\vF\cdot\dee{\vr}</m> for each of
 the curves.
-<ol label="a">
+<ol marker="a">
 <li>
 We parametrize <m>\cC_1</m> by <m>\vr(t) = t\,\hi+t\,\hj</m> with <m>t</m> running from <m>0</m> to <m>1</m>.
 Then <m>x(t)=t</m> and <m>y(t)=t</m> so that
@@ -216,7 +216,7 @@ Set<fn>Again, the reader should verify that this vector field is not conservativ
 \vF(x,y) = 2y\,\hi + 3x\,\hj
 </me>
 This time we consider two curves.
-<ol label="a">
+<ol marker="a">
 <li>
 Let <m>\cC_1</m> be circle <m>x^2+y^2=1</m>, traversed once counterclockwise, starting
 at <m>(1,0)</m>.
@@ -227,7 +227,7 @@ Let <m>\cC_2</m> be (trivial) curve which just consists of the single point <m>(
 </ol>
 We shall calculate the work <m>\int_{\cC_i}\vF\cdot\dee{\vr}</m> for each
 curve.
-<ol label="a">
+<ol marker="a">
 <li><p>
 We parametrize <m>\cC_1</m> by <m>\vr(t) = \cos t\,\hi+\sin t\,\hj</m> with <m>t</m>
 running from <m>0</m> to <m>2\pi</m>, just as we did in Example <xref ref="eg_paramCircle"/>.
@@ -465,7 +465,7 @@ as desired.
 <statement><p>
 Let <m>\vF</m> be a vector field that is defined and continuous on all of <m>\bbbr^2</m>
 (or <m>\bbbr^3</m>). Then the following three statements are equivalent.
-<ol label="a">
+<ol marker="a">
 <li>
 <m>\vF</m> is conservative. That is, there exists a function <m>\varphi</m> such that
 <m>\vF=\vnabla\varphi</m>.

@@ -215,7 +215,7 @@ W&amp;=\frac{2}{a}(E-mgy)+\frac{mg}{a}(a-y)
 Imagine now that you start at the bottom of the culvert, that is at <m>y=0</m>,
 with energy <m>E \gt 0</m>. As time progresses, <m>y</m> increases and consequently <m>|\vv|</m>
 and <m>W</m> both decrease, as, of course, they should. This continues until one of the following three things happen.
-<ol label="(i)">
+<ol marker="(i)">
 <li>
 <m>|\vv|</m> hits 0, in which case you stop rising and start descending.
 The speed <m>|\vv|</m> is zero when <m>y=y_S=\frac{E}{mg}</m>.

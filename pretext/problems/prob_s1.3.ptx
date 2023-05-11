@@ -265,7 +265,7 @@ of <m>y=f(x)</m> at <m>x=0</m>.
 <exercise>
 <statement><p>
 Given a curve <m>\vr(t)=(e^t,t^2+t)</m>, compute the following quantities:
-<ol label="A">
+<ol marker="A">
 <li> <m>\vv(t)</m>
 </li>
 <li> <m>\va(t)</m>
@@ -282,7 +282,7 @@ Given a curve <m>\vr(t)=(e^t,t^2+t)</m>, compute the following quantities:
 You can find the last two quantities by making use of the first three. Looking ahead, the formula list in Section<nbsp/><xref ref="sec_CurveCompendium"/> might come in handy.
 </p></hint>
 <answer><p>
-<ol label="A">
+<ol marker="A">
 <li> <m>\vv(t)=(e^t,2t+1)</m>
 </li>
 <li> <m>\va(t)=(e^t,2)</m>
@@ -302,7 +302,7 @@ You can find the last two quantities by making use of the first three. Looking a
 
 </answer>
 <solution><p>
-<ol label="A">
+<ol marker="A">
 <li> <m>\vv(t)=\vr'(t)=(e^t,2t+1)</m>
 </li>
 <li> <m>\va(t)=\vr''(t)=(e^t,2)</m>
@@ -426,7 +426,7 @@ So <m>\ka_{\rm max}=\frac{a}{b^2}</m> and <m>\ka_{\rm min}=\frac{b}{a^2}</m>.
 
 <exercise><title><fromexam>M317 2018A</fromexam></title>
 <statement><p>
-<ol label="a">
+<ol marker="a">
 <li>
 Find the curvature of <m>y=e^x</m> at <m>(0,1)</m>.
 </li>
@@ -514,7 +514,7 @@ the parametrized curve
 \vr(t) = \big(t - \sin t\,,\, 1 - \cos t\big)
 </me>
 with <m>t  \gt  0</m>.
-<ol label="a">
+<ol marker="a">
 <li>
 Sketch the curve in the <m>xy</m>-plane for <m>0  \lt  t  \lt  4\pi</m>.
 </li>
@@ -714,7 +714,7 @@ The curve is <m>y=y(x)=\frac{x^3}{3}</m>. Since <m>y'(x) = x^2</m> and
   {\big[1+x^4\big]^{3/2}}
 </mrow>
 </md>
- We'd like to find the critical points of <m>\ka(x)</m>, but differentiating it looks messy. Since <m>\ka(x)</m> has only nonnegative values, its maxima correspond the the maxima of the function <m>\ka^2(x)</m>. So, we find the critical points of <m>\ka^2(x)</m> instead, to save ourselves some computational toil.
+ We'd like to find the critical points of <m>\ka(x)</m>, but differentiating it looks messy. Since <m>\ka(x)</m> has only nonnegative values, its maxima correspond the maxima of the function <m>\ka^2(x)</m>. So, we find the critical points of <m>\ka^2(x)</m> instead, to save ourselves some computational toil.
 <md>
 <mrow>
 0&amp;=\diff{ }{x}\ka(x)^2

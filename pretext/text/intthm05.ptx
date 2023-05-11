@@ -54,7 +54,7 @@ nonzero everywhere.
 <definition xml:id="def_COopen">
 <statement><p>
 Let <m>n\ge 1</m> be an integer.
-<ol label="a">
+<ol marker="a">
 <li>
 Let <m>\va\in\bbbr^n</m> and <m>\veps \gt 0</m>. The open ball of radius <m>\veps</m>
 centred on <m>\va</m> is
@@ -83,7 +83,7 @@ Here are some examples to help explain this definition.
 
 <example xml:id="ex_COopen">
 <p>
-<ol label="a">
+<ol marker="a">
 <li>
 The <term>open rectangle</term>
            <m>\cO=\big\{\ (x,y)\in\bbbr^2\ \big|\ 0 \lt x \lt 1,\ 0 \lt y \lt 1\ \big\}</m>
@@ -135,7 +135,7 @@ that the point <m>(1,0)</m> is <em>not</em> in the union.
 </me>
 is connected.
 For example,  the straight line segment from <m>(2,0)</m> to <m>(0,0)</m> remains
-in the  the union.
+in the union.
 </p>
 
 <sidebyside widths="30% 30%" valign="middle">
@@ -184,7 +184,7 @@ Note that the last line of this theorem contains only a one way implication.
 
 <theorem xml:id="thm_closedExact">
 <statement><p>
-<ol label="a">
+<ol marker="a">
 <li>
 If <m>\cD</m> has the property that
 <me>

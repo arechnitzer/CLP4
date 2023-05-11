@@ -86,7 +86,7 @@ So <m>\diff{\hat\vB}{s}(s)</m> must be parallel to <m>\hat\vN(s)</m>.
 
 <definition xml:id="def_torsion">
 <statement><p>
-<ol label="a">
+<ol marker="a">
 <li> The <term>binormal vector</term> at <m>\vr(s)</m> is
 <m>\hat\vB(s) = \hat\vT(s)\times \hat\vN(s)</m>.
 The normal vector <m>\hat\vN(s)</m> is sometimes called the unit

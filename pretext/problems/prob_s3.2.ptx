@@ -541,7 +541,7 @@ z = x^2 - 2xy + y^2 .
 </me>
 </p>
 
-<p><ol label="a">
+<p><ol marker="a">
 <li>
 Find the equation of the tangent plane to the surface at <m>x = a</m>, <m>y = 2a</m>.
 </li>
@@ -952,7 +952,7 @@ So <m>(x_0,y_0,z_0)</m> satisfies the required conditions if and only if there i
 
 <exercise><title><fromexam>M200 2000D</fromexam></title>
 <statement><p>
-<ol label="a">
+<ol marker="a">
 <li>
 Find a vector perpendicular at the point
 <m>(1,1,3)</m> to the surface with equation <m>x^2+z^2=10</m>.

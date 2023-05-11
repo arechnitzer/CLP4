@@ -47,7 +47,7 @@ and is called <q>del</q> or <q>nabla</q>.  Here are the definitions.
 
 <definition xml:id="def_gradDivCurl">
 <statement><p>
-<ol label="a">
+<ol marker="a">
 <li>
 The <term>gradient</term> of a scalar-valued function <m>f(x,y,z)</m> is the vector field
 <me>
@@ -137,7 +137,7 @@ which form the foundation of classical electromagnetism.
 </mrow><mrow>
 \vnabla\times\vE +\frac{1}{c}\frac{\partial\vB}{\partial t}&amp;=0
 </mrow><mrow>
-\vnabla\times\vB -\frac{1}{c}\frac{\partial\vB}{\partial t}&amp;=\frac{4\pi}{c}\vJ
+\vnabla\times\vB -\frac{1}{c}\frac{\partial\vE}{\partial t}&amp;=\frac{4\pi}{c}\vJ
 </mrow>
 </md>
 Here <m>\vE</m> is the electric field, <m>\vB</m> is the magnetic field, <m>\rho</m> is the charge density, <m>\vJ</m> is the current density and <m>c</m> is the speed of light.
@@ -165,7 +165,7 @@ number of them. Many are included just for completeness. Only a relatively small
 
 <theorem xml:id="thm_gradIdentities"><title>Gradient Identities</title>
 <statement><p>
-<ol label="(a)">
+<ol marker="(a)">
 <li>
 <m>\color{red}{\vnabla(f+g)=\vnabla f+\vnabla g}</m>
 </li>
@@ -201,7 +201,7 @@ of a vector-valued function.
 
 <theorem xml:id="thm_divIdentities"><title>Divergence Identities</title>
 <statement><p>
-<ol label="(a)">
+<ol marker="(a)">
 <li>
 <m>\color{red}{\vnabla\cdot(\vF+\vG)=\vnabla\cdot\vF+\vnabla \cdot\vG}</m>
 </li>
@@ -221,7 +221,7 @@ of a vector-valued function.
 
 <theorem xml:id="thm_curlIdentities"><title>Curl Identities</title>
 <statement><p>
-<ol label="(a)">
+<ol marker="(a)">
 <li>
 <m>\color{red}{\vnabla\times(\vF+\vG)=\vnabla\times\vF+\vnabla \times\vG} </m>
 </li>
@@ -252,7 +252,7 @@ of a vector-valued function.
 
 <theorem xml:id="thm_laplaceIdentities"><title>Laplacian Identities</title>
 <statement><p>
-<ol label="(a)">
+<ol marker="(a)">
 <li>
 <m>\color{red}{ \vnabla^2(f+g)=\vnabla^2 f+\vnabla^2 g }</m>
 </li>
@@ -268,7 +268,7 @@ of a vector-valued function.
 
 <theorem xml:id="thm_degTwoIdentities"><title>Degree Two Identities</title>
 <statement><p>
-<ol label="(a)">
+<ol marker="(a)">
 <li>
 <m>\color{red}{\vnabla\cdot(\vnabla\times\vF)=0 \qquad}</m>
  (divergence of curl)
@@ -644,7 +644,7 @@ Hence
 
 <lemma xml:id="lem_tripProd">
 <statement><p>
-<ol label="a">
+<ol marker="a">
 <li>
 <m>\va\cdot(\vb\times\vc)=(\va\times\vb)\cdot\vc</m>
 </li>
@@ -1390,7 +1390,7 @@ Recall that <m>\theta</m> is the angle between our  direction of motion and
 the gradient vector <m>\vnabla f(\vr_0)</m>. So to maximize the rate of change of
 temperature that we feel, as we pass through <m>\vr_0</m>, we should
 choose our direction of motion
-to be the direction of the the gradient vector <m>\vnabla f(\vr_0)</m>.
+to be the direction of the gradient vector <m>\vnabla f(\vr_0)</m>.
 In conclusion
 </p>
 

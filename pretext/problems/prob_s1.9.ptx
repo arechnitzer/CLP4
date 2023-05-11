@@ -14,11 +14,11 @@ of a particle at time <m>t</m> . Suppose the motion of the particle satisfies
 the differential equation
 <m>\difftwo{\vr}{t} = f (r) \vr</m>
 where <m>r = |\vr|</m> .
-<ol label="a">
+<ol marker="a">
 <li><p>
 Suppose <m>f(r)</m> is an arbitrary function of <m>r</m> . Prove or disprove each
 of the following statements.
-<ol label="(i)">
+<ol marker="(i)">
 <li>
 The motion of the particle is planar.
 </li>
@@ -204,7 +204,7 @@ the job.
 An object moves along a curve in the <m>xy</m>-plane having polar
 equation <m>r=\frac{1}{\theta+\al}</m> (where <m>\al</m> is a constant) under the influence
 of a central force so that the object has no transverse acceleration.
-<ol label="a">
+<ol marker="a">
 <li>
 Verify that <m>r^2\dot\theta=h</m> remains constant as the object
 moves.
