@@ -1866,7 +1866,7 @@ top of the <q>ice cream cone</q>
 </sidebyside>
 
 <p>
-Note that the the paraboloid <m>z = 2 - x^2 - y^2</m> and the cone
+Note that the paraboloid <m>z = 2 - x^2 - y^2</m> and the cone
 <m>z = \sqrt{x^2+y^2}</m> intersect along the circle <m>x^2+y^2=1</m>, <m>z=1</m>.
 Probably the simplest solid whose boundary includes <m>S</m> is
 <me>

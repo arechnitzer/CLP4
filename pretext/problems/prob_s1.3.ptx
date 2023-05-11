@@ -714,7 +714,7 @@ The curve is <m>y=y(x)=\frac{x^3}{3}</m>. Since <m>y'(x) = x^2</m> and
   {\big[1+x^4\big]^{3/2}}
 </mrow>
 </md>
- We'd like to find the critical points of <m>\ka(x)</m>, but differentiating it looks messy. Since <m>\ka(x)</m> has only nonnegative values, its maxima correspond the the maxima of the function <m>\ka^2(x)</m>. So, we find the critical points of <m>\ka^2(x)</m> instead, to save ourselves some computational toil.
+ We'd like to find the critical points of <m>\ka(x)</m>, but differentiating it looks messy. Since <m>\ka(x)</m> has only nonnegative values, its maxima correspond the maxima of the function <m>\ka^2(x)</m>. So, we find the critical points of <m>\ka^2(x)</m> instead, to save ourselves some computational toil.
 <md>
 <mrow>
 0&amp;=\diff{ }{x}\ka(x)^2

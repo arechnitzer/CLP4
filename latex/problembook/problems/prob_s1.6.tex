@@ -9,7 +9,7 @@
 %%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%
 \begin{question}
-Give an equation for arclength of a curve $C$ as a line integral.
+Give an equation for the arc length of a curve $C$ as a line integral.
 \end{question}
 \begin{hint}
 Your differential is $\dee{s}$, where $s$ is arclength.
@@ -182,7 +182,7 @@ Following Definition~\eref{CLP317}{def:lineIntegral}:
 
 %%%%%%%%%%%%%%%%%%%
 \begin{question}
-	Compute $\int_C (xy+z) \dee{s}$ where $C$ is the straight line from $(1,2,3)$ to $(2,4,5)$.
+	Compute $\int_C (xy+z) \dee{s}$ where $C$ is the line segment from $(1,2,3)$ to $(2,4,5)$.
 \end{question}
 \begin{hint}
 	$C$ can be parametrized as $(1+t,2+2t,3+2t)$ for $0 \le t \le 1$.
@@ -269,84 +269,6 @@ Remember $\diff{}{t}\{\ln t\} = \frac{1}{t}$ and $\diff{}{t}\{\arcsec t\} = \fra
 		&=\int_1^{\sqrt{2}} \frac{\sqrt{t^2-1}}{t}\sqrt{\frac{1}{t^2(t^2-1)}+\frac{1}{t^2}} \,\dee{t}\\
 		&=\int_1^{\sqrt 2}\frac1t\,\dee{t}=\frac{1}{2}\ln 2
 	\end{align*}
-\end{solution}
-
-
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\begin{question}[M317 2012J] %3
-A particle of mass $m = 1$ has position $\vr(0) = \hj$ and 
-velocity $\vv_0 = \hi + \hk$ at time $t = 0$. The particle moves 
-under a force 
-\begin{equation*}
-\vF(t) = \hj - \sin t\,\hk
-\end{equation*}
-where $t$ denotes time.
-\begin{enumerate}[(a)]
-\item
-Find the position $\vr(t)$ of the particle as a function of $t$.
-\item
-Find the position $\vr(t_1)$ of the particle when it crosses the 
-plane $x = \pi/2$ for the first time at $t_1$.
-\item
-Determine the work done by $\vF$ in moving the particle from $\vr(0)$ to 
-$\vr(t_1)$.
-\end{enumerate}
-\end{question}
-
-\begin{hint} 
-Newton's law of motion is $\vF=m\va$. The work done over a displacement $\dee{\vr}$ is $W=\vF \cdot \dee{\vr}$.
-\end{hint}
-
-\begin{answer} 
-(a) $\vr(t) = t\,\hi +\Big(1+\frac{t^2}{2}\Big)\,\hj + \sin t\,\hk$\qquad
-(b) $\vr(\pi/2) = \frac{\pi}{2}\,\hi  +\Big(1+\frac{\pi^2}{8}\Big)\,\hj + \hk$
-   \qquad
-(c) $\frac{\pi^2}{8}-\frac{1}{2}$
-\end{answer}
-
-\begin{solution}
-(a) Since the particle has mass $m=1$, Newton's law of motion 
-$m\va=\vF$ simplifies to
-\begin{equation*}
-\vr''(t) = \hj - \sin t\,\hk
-\end{equation*}
-Integrating once gives
-\begin{equation*}
-\vr'(t) = t\,\hj + \cos t\,\hk + \mathbf{C}
-\end{equation*}
-for some constant vector $\mathbf{C}$.
-To satisfy the initial condition that $\vr'(0) = \vv_0=\hi+\hk$, 
-we need
-\begin{align*}
-\hi+\hk = \vr'(0) = \hk + \mathbf{C}
-\implies \mathbf{C} = \hi
-\end{align*}
-So
-\begin{equation*}
-\vr'(t) %= t\,\hj +(\cos t-1)\,\hk +\vv_0
-        = \hi + t\,\hj + \cos t\,\hk 
-\end{equation*}
-Integrating a second time, and imposing the initial condition that $\vr(0)
-=\hj$, gives
-\begin{equation*}
-\vr(t)  = t\,\hi + \frac{t^2}{2}\,\hj + \sin t\,\hk +\hj
-        = t\,\hi +\Big(1+\frac{t^2}{2}\Big)\,\hj + \sin t\,\hk
-\end{equation*}
-
-(b) The particle has $x(t) =\pi/2$ when $t=\pi/2$. So
-\begin{equation*}
-\vr(\pi/2) = \frac{\pi}{2}\,\hi  +\Big(1+\frac{\pi^2}{8}\Big)\,\hj + \hk
-\end{equation*}
-
-(c) The work done is
-\begin{align*}
-\text{Work} &= \int_0^{\pi/2} \vF(t)\cdot\vr'(t)\ \dee{t} \\
-  &= \int_0^{\pi/2} \big(\hj - \sin t\,\hk\big)\cdot
-         \big(\hi + t\,\hj + \cos t\,\hk\big)\ \dee{t} \\
-  &= \int_0^{\pi/2} \big(t-\sin t\cos t\big)\,\dee{t} \\
-  &= \Big[\frac{t^2}{2} +\frac{1}{2}\cos^2 t\Big]_0^{\pi/2} \\
-  & = \frac{\pi^2}{8}-\frac{1}{2}
-\end{align*}
 \end{solution}
 
 
