@@ -2504,7 +2504,7 @@ under a force
 \vF(t) = \hj - \sin t\,\hk
 </me>
 where <m>t</m> denotes time.
-<ol label="a">
+<ol marker="a">
 <li>
 Find the position <m>\vr(t)</m> of the particle as a function of <m>t</m>.
 </li>
