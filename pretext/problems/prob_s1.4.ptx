@@ -2875,7 +2875,7 @@ Hence <m>|v|=\sqrt{3}</m>; since <m>v=|\vv|</m>, <m>v=\sqrt3</m>. Then
 	A race track between two hills is described by the parametric curve
 	<me>
 	\vr(\theta) = \Big(4 \cos\theta\,,\, 2\sin\theta\,,\,
-	\frac{1}{4}\cos(2\theta)\Big),\qquad
+	\tfrac{1}{4}\cos(2\theta)\Big),\qquad
 	0 \le \theta \le 2\pi
 	</me>
 	<ol marker="a">
@@ -2900,7 +2900,7 @@ Hence <m>|v|=\sqrt{3}</m>; since <m>v=|\vv|</m>, <m>v=\sqrt3</m>. Then
 </li>
 <li>
 			The magnitude of the normal component of the acceleration at the point
-			<me>\big(-4, 0, \frac{1}{4}\big)</me>.
+			<me>\big(-4, 0, \tfrac{1}{4}\big)</me>.
 </li>
 </ol></p>
 </li>
