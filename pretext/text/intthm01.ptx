@@ -1787,7 +1787,7 @@ To specify the integrals involved, let <m>C_\veps</m> be the circle which
 <p>
   We shall show in Lemma <xref ref="lem_curlInterp"/>, below, that
 <me>
-\vnabla\times v(\vr_0)\cdot \hn
+\vnabla\times \vv(\vr_0)\cdot \hn
 =\lim_{\veps\rightarrow 0}\frac{1}{\pi\veps^2}
          \oint_{C_\veps} \vv(\vr)\cdot \dee{\vr}
 </me>
