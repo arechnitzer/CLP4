@@ -1,14 +1,14 @@
 %!PS-Adobe-2.0 EPSF-2.0
-%%Creator: dvips(k) 5.995 Copyright 2015 Radical Eye Software
+%%Creator: dvips(k) 5.999 Copyright 2019 Radical Eye Software
 %%Title: figure.dvi
-%%CreationDate: Fri Nov 17 21:26:46 2017
+%%CreationDate: Fri Dec 22 20:45:38 2023
 %%BoundingBox: 246 433 394 576
 %%DocumentFonts: CMMI12 CMR12 CMR8 CMBX12
 %%EndComments
 %DVIPSWebPage: (www.radicaleye.com)
 %DVIPSCommandLine: dvips -E -o OE15A_6.eps figure
 %DVIPSParameters: dpi=600
-%DVIPSSource:  TeX output 2017.11.17:2126
+%DVIPSSource:  TeX output 2023.12.22:1243
 %%BeginProcSet: tex.pro 0 0
 %!
 /TeXDict 300 dict def TeXDict begin/N{def}def/B{bind def}N/S{exch}N/X{S
@@ -55,6 +55,411 @@ rlineto fill grestore}B/a{moveto}B/delta 0 N/tail{A/delta X 0 rmoveto}B
 B/g{0 M}B/h{1 M}B/i{2 M}B/j{3 M}B/k{4 M}B/w{0 rmoveto}B/l{p -4 w}B/m{p
 -3 w}B/n{p -2 w}B/o{p -1 w}B/q{p 1 w}B/r{p 2 w}B/s{p 3 w}B/t{p 4 w}B/x{
 0 S rmoveto}B/y{3 2 roll p a}B/bos{/SS save N}B/eos{SS restore}B end
+
+%%EndProcSet
+%%BeginProcSet: l3backend-dvips.pro 0 0
+%%
+%% This is file `l3backend-dvips.pro',
+%% generated with the docstrip utility.
+%%
+%% The original source files were:
+%%
+%% l3backend-header.dtx  (with options: `header,dvips')
+%% 
+%% Copyright (C) 1990-2020 The LaTeX3 Project
+%% 
+%% It may be distributed and/or modified under the conditions of
+%% the LaTeX Project Public License (LPPL), either version 1.3c of
+%% this license or (at your option) any later version.  The latest
+%% version of this license is in the file:
+%% 
+%%    https://www.latex-project.org/lppl.txt
+%% 
+%% This file is part of the "l3backend bundle" (The Work in LPPL)
+%% and all files in that bundle must be distributed together.
+%% 
+%% File: l3backend-header.dtx
+true setglobal
+/pdf.globaldict 4 dict def
+false setglobal
+
+/pdf.cvs { 65534 string cvs } def
+/pdf.dvi.pt { 72.27 mul Resolution div } def
+/pdf.pt.dvi { 72.27 div Resolution mul } def
+/pdf.rect.ht { dup 1 get neg exch 3 get add } def
+/pdf.linkmargin { 1 pdf.pt.dvi } def
+/pdf.linkdp.pad { 0 } def
+/pdf.linkht.pad { 0 } def
+/pdf.rect
+  { /Rect [ pdf.llx pdf.lly pdf.urx pdf.ury ] } def
+/pdf.save.ll
+  {
+    currentpoint
+    /pdf.lly exch def
+    /pdf.llx exch def
+  }
+    def
+/pdf.save.ur
+  {
+    currentpoint
+    /pdf.ury exch def
+    /pdf.urx exch def
+  }
+    def
+/pdf.save.linkll
+  {
+    currentpoint
+    pdf.linkmargin add
+    pdf.linkdp.pad add
+    /pdf.lly exch def
+    pdf.linkmargin sub
+    /pdf.llx exch def
+  }
+    def
+/pdf.save.linkur
+  {
+    currentpoint
+    pdf.linkmargin sub
+    pdf.linkht.pad sub
+    /pdf.ury exch def
+    pdf.linkmargin add
+    /pdf.urx exch def
+  }
+    def
+/pdf.dest.anchor
+  {
+    currentpoint exch
+    pdf.dvi.pt 72 add
+    /pdf.dest.x exch def
+    pdf.dvi.pt
+    vsize 72 sub exch sub
+    /pdf.dest.y exch def
+  }
+    def
+/pdf.dest.point
+  { pdf.dest.x pdf.dest.y } def
+/pdf.dest2device
+  {
+    /pdf.dest.y exch def
+    /pdf.dest.x exch def
+    matrix currentmatrix
+    matrix defaultmatrix
+    matrix invertmatrix
+    matrix concatmatrix
+    cvx exec
+    /pdf.dev.y exch def
+    /pdf.dev.x exch def
+    /pdf.tmpd exch def
+    /pdf.tmpc exch def
+    /pdf.tmpb exch def
+    /pdf.tmpa exch def
+    pdf.dest.x pdf.tmpa mul
+      pdf.dest.y pdf.tmpc mul add
+      pdf.dev.x add
+    pdf.dest.x pdf.tmpb mul
+     pdf.dest.y pdf.tmpd mul add
+     pdf.dev.y add
+  }
+    def
+/pdf.bordertracking false def
+/pdf.bordertracking.begin
+  {
+    SDict /pdf.bordertracking true put
+    SDict /pdf.leftboundary undef
+    SDict /pdf.rightboundary undef
+    /a where
+      {
+        /a
+          {
+            currentpoint pop
+            SDict /pdf.rightboundary known dup
+              {
+                SDict /pdf.rightboundary get 2 index lt
+                  { not }
+                if
+              }
+            if
+              { pop }
+              { SDict exch /pdf.rightboundary exch put }
+            ifelse
+            moveto
+            currentpoint pop
+            SDict /pdf.leftboundary known dup
+              {
+                SDict /pdf.leftboundary get 2 index gt
+                  { not }
+                if
+              }
+            if
+              { pop }
+              { SDict exch /pdf.leftboundary exch put }
+            ifelse
+          }
+        put
+      }
+    if
+  }
+    def
+/pdf.bordertracking.end
+  {
+    /a where { /a { moveto } put } if
+    /x where { /x { 0 exch rmoveto } put } if
+    SDict /pdf.leftboundary known
+      { pdf.outerbox 0 pdf.leftboundary put }
+    if
+    SDict /pdf.rightboundary known
+      { pdf.outerbox 2 pdf.rightboundary put }
+    if
+    SDict /pdf.bordertracking false put
+  }
+    def
+  /pdf.bordertracking.endpage
+{
+  pdf.bordertracking
+    {
+      pdf.bordertracking.end
+      true setglobal
+      pdf.globaldict
+        /pdf.brokenlink.rect [ pdf.outerbox aload pop ] put
+      pdf.globaldict
+        /pdf.brokenlink.skip pdf.baselineskip put
+      pdf.globaldict
+        /pdf.brokenlink.dict
+          pdf.link.dict pdf.cvs put
+      false setglobal
+      mark pdf.link.dict cvx exec /Rect
+        [
+          pdf.llx
+          pdf.lly
+          pdf.outerbox 2 get pdf.linkmargin add
+          currentpoint exch pop
+          pdf.outerbox pdf.rect.ht sub pdf.linkmargin sub
+        ]
+      /ANN pdf.pdfmark
+    }
+  if
+}
+  def
+/pdf.bordertracking.continue
+  {
+    /pdf.link.dict pdf.globaldict
+      /pdf.brokenlink.dict get def
+    /pdf.outerbox pdf.globaldict
+      /pdf.brokenlink.rect get def
+    /pdf.baselineskip pdf.globaldict
+      /pdf.brokenlink.skip get def
+    pdf.globaldict dup dup
+    /pdf.brokenlink.dict undef
+    /pdf.brokenlink.skip undef
+    /pdf.brokenlink.rect undef
+    currentpoint
+    /pdf.originy exch def
+    /pdf.originx exch def
+    /a where
+      {
+        /a
+          {
+            moveto
+            SDict
+            begin
+            currentpoint pdf.originy ne exch
+              pdf.originx ne or
+              {
+                pdf.save.linkll
+                /pdf.lly
+                  pdf.lly pdf.outerbox 1 get sub def
+                pdf.bordertracking.begin
+              }
+            if
+            end
+          }
+        put
+      }
+    if
+    /x where
+      {
+        /x
+          {
+            0 exch rmoveto
+            SDict~
+            begin
+            currentpoint
+            pdf.originy ne exch pdf.originx ne or
+              {
+                pdf.save.linkll
+                /pdf.lly
+                  pdf.lly pdf.outerbox 1 get sub def
+                pdf.bordertracking.begin
+              }
+            if
+            end
+          }
+        put
+      }
+    if
+  }
+    def
+/pdf.breaklink
+  {
+    pop
+    counttomark 2 mod 0 eq
+      {
+        counttomark /pdf.count exch def
+          {
+           pdf.count 0 eq { exit } if
+           counttomark 2 roll
+           1 index /Rect eq
+             {
+               dup 4 array copy
+               dup dup
+                 1 get
+                 pdf.outerbox pdf.rect.ht
+                 pdf.linkmargin 2 mul add sub
+                 3 exch put
+               dup
+                 pdf.outerbox 2 get
+                 pdf.linkmargin add
+                 2 exch put
+               dup dup
+                 3 get
+                 pdf.outerbox pdf.rect.ht
+                 pdf.linkmargin 2 mul add add
+                 1 exch put
+               /pdf.currentrect exch  def
+               pdf.breaklink.write
+                 {
+                   pdf.currentrect
+                   dup
+                     pdf.outerbox 0 get
+                     pdf.linkmargin sub
+                     0 exch put
+                   dup
+                     pdf.outerbox 2 get
+                     pdf.linkmargin add
+                     2 exch put
+                   dup dup
+                     1 get
+                     pdf.baselineskip add
+                     1 exch put
+                   dup dup
+                     3 get
+                     pdf.baselineskip add
+                     3 exch put
+                   /pdf.currentrect exch def
+                   pdf.breaklink.write
+                  }
+                1 index 3 get
+                pdf.linkmargin 2 mul add
+                pdf.outerbox pdf.rect.ht add
+                2 index 1 get sub
+                pdf.baselineskip div round cvi 1 sub
+                exch
+              repeat
+              pdf.currentrect
+              dup
+                pdf.outerbox 0 get
+                pdf.linkmargin sub
+                0 exch put
+              dup dup
+                1 get
+                pdf.baselineskip add
+                1 exch put
+              dup dup
+                3 get
+                pdf.baselineskip add
+                3 exch put
+              dup 2 index 2 get  2 exch put
+              /pdf.currentrect exch def
+              pdf.breaklink.write
+              SDict /pdf.pdfmark.good false put
+              exit
+            }
+            { pdf.count 2 sub /pdf.count exch def }
+          ifelse
+        }
+      loop
+    }
+  if
+  /ANN
+}
+  def
+/pdf.breaklink.write
+  {
+    counttomark 1 sub
+    index /_objdef eq
+      {
+        counttomark -2 roll
+        dup wcheck
+          {
+            readonly
+            counttomark 2 roll
+          }
+          { pop pop }
+        ifelse
+      }
+    if
+    counttomark 1 add copy
+    pop pdf.currentrect
+    /ANN pdfmark
+  }
+    def
+/pdf.pdfmark
+  {
+    SDict /pdf.pdfmark.good true put
+    dup /ANN eq
+      {
+        pdf.pdfmark.store
+        pdf.pdfmark.dict
+          begin
+            Subtype /Link eq
+            currentdict /Rect known and
+            SDict /pdf.outerbox known and
+            SDict /pdf.baselineskip known and
+              {
+                Rect 3 get
+                pdf.linkmargin 2 mul add
+                pdf.outerbox pdf.rect.ht add
+                Rect 1 get sub
+                pdf.baselineskip div round cvi 0 gt
+                  { pdf.breaklink }
+                if
+              }
+            if
+          end
+        SDict /pdf.outerbox undef
+        SDict /pdf.baselineskip undef
+        currentdict /pdf.pdfmark.dict undef
+      }
+    if
+    pdf.pdfmark.good
+      { pdfmark }
+      { cleartomark }
+    ifelse
+  }
+    def
+/pdf.pdfmark.store
+  {
+    /pdf.pdfmark.dict 65534 dict def
+    counttomark 1 add copy
+    pop
+      {
+        dup mark eq
+          {
+            pop
+            exit
+          }
+          {
+            pdf.pdfmark.dict
+            begin def end
+          }
+        ifelse
+      }
+    loop
+}
+  def
+%% 
+%%
+%% End of file `l3backend-dvips.pro'.
 
 %%EndProcSet
 %%BeginProcSet: texps.pro 0 0
@@ -206,8 +611,8 @@ FontDirectory/CMBX12 known{/CMBX12 findfont dup/UniqueID known{dup
 end readonly def
 /Encoding 256 array
 0 1 255 {1 index exch /.notdef put} for
+dup 78 /N put
 dup 107 /k put
-dup 110 /n put
 readonly def
 currentdict end
 currentfile eexec
@@ -390,25 +795,26 @@ A79D8CD8E78C200FF7CFA3DAED0B9E87E6141C88B436D8FCBA50AC195FCBB9BC
 47314DEE4B29E5D22180BDB1BDA7D33406FD340DC3991F50800BDC90F7678EF1
 1064986DDA53A77FBE2EDD38E20C41EF86CD50E8EC167344A3F3B3C3BD83CD80
 87BE64CAB70004E636FCC0B60C1E624A19A63D8B3B27EE2B6FD0FFDC310AC6FD
-BC56E92FDE53A26F13B6BEF922905F5F23BB3A32CED1422F409F848C2646ECFD
-EE7B21FCE9760E87E5A869A3593F9925FDD6708A5EBE92E9DBC4BFE3A3554A9D
-76F3B30CE051CF09F5B1A2AF3A1847EDD8C6C2FA5C7D9306F786E97CEAF05544
-72112B81994DCF2645B4868EF21FA8CB10AE7E05E9FD06F499EFAACF8ABE6534
-AB1E9C2A1D80DB9B47D89FBE8FF9C24C4C3D1B6D5760F40DEA1CA05D2C2BCDB8
-4B3E170CE77604600533D072EF1DCA032AB972A94B5801BA7944CF44F575B27E
-5B765F7B53F0C4F58D1D32751A149AA11A51380901BC82312BA31FF882C33D52
-B49F7D336DD3FD6DAFC9856C5FA2E01ED8CE7908299C7FD34A9F32D677936024
-E8B20FC9F1CB3926B8DD2B8D0BA9C742030F1046552ECE7500D6F878148374A2
-4A350045C2DBCD68146CFFDCAE52D1D9781CC6A9541C433BC69F107BF133E2F4
-3F656B7CAFBC1D082A1E266FFA31E49D7307AF619B393DA5D4A715736D773BEE
-81F14B6359C459927A6BFAFE00AF5043F454DF5E318C96B954FDFFA86677E71F
-E75C324F5F83F0327ACA12FB5D1FCDDB58E28D267E56626884D346F9E3647210
-B07209B682B0B8C4ADBDC7AC0372FEBF00A7967A562A78F0C5C013C695C40DD6
-E441F52A499C577093CEE8CD7E9B6843E4E9B9FAA0106F0B90A45FB30F40EF5F
-96ED354B8E773099B9F07ED25AC613F8C5BD37F7C2B3B2E6F8B3EE10C75E9D94
-75D12C5EE9CD36B339E6B20E189458CD0C457DE064544E28119F752D43267713
-D968BC3FA1FE7426CAF574B7585E9DF0D017030EE58888946560F8404E57EC79
-C51BA01033
+BC56E92FDE53A26F13B6BEF922905F5F23BB1F6D74B7FB4034416C03D9795E48
+1121DE40D73A56CAA57A9317677E1F46C69995E8D2ACE29C021C03BD292C9B5F
+CC7CA077D2AC0367ACB9910685147ED87B138083A39E3C5FBE2A6F950DC2710A
+C67A6727A1184D25E724B8B6E2C00602F49526B9081B6950BEEF792A883C4F46
+B8DEE0A895EDABDB69BA19C0DB5D901B7B2FC54A888556FDAFF135B712A70370
+53F322E8CAFBCCBD0DB1474271633D5AEC470C4E7F21AEC18FFFE79418238F65
+A2870F4C398E12D2F1F9CB286AF456D28EB714ACE4C37A0E4C20A9E53F8F4390
+68E91FCCEAEA92CFDD2A6F326DB01F8EF532E2BE9A5762B7D5D6A2590BD90793
+958840F474A5A935F3309BF375AA068A62E2B9D20DFD70398CEDCCDBAB989FCF
+99FF36D596E9825CCBB71F45A0D78D6158E6322908612BC555586E410FA70198
+DD82FF8F3A7649C205A9B9734B1AD2264DB659E92CBC4FE39A9582212B107375
+B4B4193E1E06EE2A16522A856B572901AE73EADC48541DA493BF4222812D10F9
+8FEB0DBEF48DD0037DA5E9EB5B46B914D99F112DD0A500F7224D7BD5DEE631BE
+35CC74AE8F81604B59EDF00D0CCEEFC6CD690E0073B881890DBF13A9F91E97FA
+FD6D11913A80B83EDC5A44212A0027386DF4301840C452D2E02FB4C744D76BFD
+87909E6895C3F1C59446906DCD1EDF2E7337AD7E4D33BC331BB975056DF2BEA8
+0DA96E32723FCC1E14EE0B7BC3396C8732CE63CBA16A04B74EACBAA995B9D704
+881910A72C5EDED4D974689F2B98B179EADABFB835CBB3BD57FA06544ED29C07
+55097E303B328695E516958D8046C26BDE7CE479EF833C470075EDDFA9D364C0
+3D1C93A47C896F07EACD7982B2B535B6172E36438C7D
 0000000000000000000000000000000000000000000000000000000000000000
 0000000000000000000000000000000000000000000000000000000000000000
 0000000000000000000000000000000000000000000000000000000000000000
@@ -1213,7 +1619,7 @@ cleartomark
 {restore}if
 %%EndFont 
 TeXDict begin 40258437 52099154 1000 600 600 (figure.dvi)
-@start /Fa 145[62 2[59 107[{}2 99.6264 /CMBX12 rf /Fb
+@start /Fa 148[59 28[88 78[{}2 99.6264 /CMBX12 rf /Fb
 205[35 50[{}1 66.4176 /CMR8 rf /Fc 161[49 32[76 8[49
 8[76 43[{}4 99.6264 /CMR12 rf /Fd 133[45 48 55 36[60
 14[81 68[{}5 99.6264 /CMMI12 rf end
@@ -1230,7 +1636,7 @@ TeXDict begin 1 0 bop 0 TeXcolorgray Black 0 TeXcolorgray
 %%BoundingBox:       0.0 0.0     108.0 144.0
 %%Title:              
 %%Created by:        Figure.java
-%%Date:              Fri Nov 17 21:26:05 PST 2017
+%%Date:              Fri Dec 22 12:43:13 PST 2023
 %%EndComments
 
 gsave
@@ -1312,7 +1718,7 @@ newpath
 107.34545454545454  16.753483464463613  lineto stroke
 newpath
 23.56363636363638  16.753483464463613  moveto
-2.618181818181821  2.113150101965944  lineto stroke
+2.618181818181821  2.1131501019659478  lineto stroke
 newpath
 23.56363636363638  111.84523805293236  moveto
 102.10909090909091  111.84523805293236  lineto stroke
@@ -1321,7 +1727,7 @@ newpath
 3.9272727272727295  98.1199255255908  lineto stroke
 newpath
 23.56363636363638  16.753483464463613  moveto
-2.618181818181821  2.113150101965944  lineto stroke
+2.618181818181821  2.1131501019659478  lineto stroke
 [3 3] 1.5 setdash
 newpath
 23.56363636363638  16.753483464463613  moveto
@@ -1371,14 +1777,14 @@ newpath
   23.56363636363638  16.753483464463613  moveto
   22.581818181818196  16.30494722456771  lineto
   21.600000000000016  16.331869757614143  lineto
-  20.61818181818183  16.834251063602924  lineto
+  20.61818181818183  16.834251063602927  lineto
   19.63636363636365  17.81209114253405  lineto
   18.654545454545467  19.26538999440752  lineto
   17.672727272727286  21.19414761922333  lineto
   16.690909090909106  23.598364016981485  lineto
   15.709090909090921  26.478039187681986  lineto
   14.727272727272737  29.833173131324834  lineto
-  13.745454545454555  33.663765847910014  lineto
+  13.745454545454555  33.66376584791002  lineto
   12.763636363636373  37.96981733743755  lineto
   11.78181818181819  42.75132759990743  lineto
   10.800000000000006  48.00829663531965  lineto
@@ -1420,8 +1826,8 @@ grestore
  @endspecial 1679 1327 a Fd(z)2425 2229 y(y)1458 2383
 y(x)2196 1850 y(z)33 b Fc(=)27 b Fd(x)2432 1814 y Fb(2)2494
 1850 y Fc(+)22 b Fd(y)2644 1814 y Fb(2)1916 1398 y Fd(z)33
-b Fc(=)27 b(4)1763 1279 y(^)1757 1305 y Fa(k)1919 1921
-y Fc(^)1913 1922 y Fa(n)1489 1878 y Fd(S)1880 1504 y(D)p
+b Fc(=)27 b(4)1763 1279 y(^)1757 1305 y Fa(k)1919 1896
+y Fc(^)1900 1922 y Fa(N)1489 1878 y Fd(S)1880 1504 y(D)p
 0 TeXcolorgray 0 TeXcolorgray eop end
 %%Trailer
 

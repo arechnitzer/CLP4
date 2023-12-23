@@ -2268,13 +2268,13 @@ Switching to polar coordinates, the flux is
 </solution>
 </exercise>
 
-<exercise><title><fromexam>M317 2015A</fromexam></title>
+<exercise>
 <statement><p>
 Let <m>E</m> be the solid region between the plane <m>z = 4</m> and the paraboloid
 <m>z = x^2 + y^2</m>. Let
 <me>
 \vF = \Big(-\frac{1}{3}x^3 + e^{z^2}\Big)\hi
-     + \Big(-\frac{1}{3}y^3 + x\tan z\Big)\hj + 4z\hk
+     + \Big(-\frac{1}{3}y^3 + x\sin z\Big)\hj + 4z\hk
 </me>
 <ol marker="a">
 <li>
@@ -2282,7 +2282,7 @@ Compute the flux of <m>\vF</m> outward through the boundary of <m>E</m>.
 </li>
 <li>
 Let <m>S</m> be the part of the paraboloid <m>z = x^2 + y^2</m> lying below the
-<m>z = 4</m> plane oriented so that <m>\hn</m> has a positive <m>\hk</m> component.
+<m>z = 4</m> plane oriented with a normal vector <m>\hN</m> that has a positive <m>\hk</m> component.
 Compute the flux of <m>\vF</m> through <m>S</m>.
 </li>
 </ol>
@@ -2332,8 +2332,8 @@ So
 </md>
 </p>
 
-<p>(b) The boundary of <m>S</m> consists of two parts <mdash/> <m>S</m>, but with downward
-pointing normal, on the bottom and the disk
+<p>(b) The boundary of <m>E</m> consists of two parts <mdash/> <m>S</m>, but with downward
+pointing normal <m>\hn=-\hN</m>, on the bottom and the disk
 <me>
 D =\Set{(x,y,z)}{z=4,\ x^2+y^2\le 4}
 </me>
@@ -2349,17 +2349,17 @@ So, by part (a),
 <md>
 <mrow>
 \frac{64}{3}\pi =\dblInt_{\partial E}\vF\cdot\hn\,\dee{S}
-&amp;=-\dblInt_S \vF\cdot\hn\,\dee{S}
+&amp;=-\dblInt_S \vF\cdot\hN\,\dee{S}
   +\dblInt_D \vF\cdot\hk\,\dee{S}
 </mrow><mrow>
-&amp;=-\dblInt_S \vF\cdot\hn\,\dee{S}
+&amp;=-\dblInt_S \vF\cdot\hN\,\dee{S}
   +\dblInt_D \overbrace{4z}^{\vF\cdot\hk}\,\dee{S}
 </mrow>
 </md>
 Since <m>z=4</m> on <m>D</m>, and <m>D</m> is a disk of radius 2,
 <md>
 <mrow>
-\dblInt_S \vF\cdot\hn\,\dee{S}
+\dblInt_S \vF\cdot\hN\,\dee{S}
 =-\frac{64}{3}\pi +16\dblInt_D \dee{S}
 =-\frac{64}{3}\pi +16(4\pi)
 =\frac{128}{3}\pi
@@ -5329,6 +5329,9 @@ the divergence theorem gives
 </p>
 
 </solution>
-</exercise></exercisegroup>
+</exercise>
+
+
+</exercisegroup>
 
 </exercises>

@@ -1862,12 +1862,12 @@ Switching to polar coordinates, the flux is
 \end{solution}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\begin{question}[M317 2015A]  %6
+\begin{question}
 Let $E$ be the solid region between the plane $z = 4$ and the paraboloid 
 $z = x^2 + y^2$. Let
 \begin{equation*}
 \vF = \Big(-\frac{1}{3}x^3 + e^{z^2}\Big)\hi 
-     + \Big(-\frac{1}{3}y^3 + x\tan z\Big)\hj + 4z\hk
+     + \Big(-\frac{1}{3}y^3 + x\sin z\Big)\hj + 4z\hk
 \end{equation*}
 \begin{enumerate}[(a)]
 \item
@@ -1875,7 +1875,7 @@ Compute the flux of $\vF$ outward through the boundary of $E$.
 
 \item
 Let $S$ be the part of the paraboloid $z = x^2 + y^2$ lying below the 
-$z = 4$ plane oriented so that $\hn$ has a positive $\hk$ component. 
+$z = 4$ plane oriented with a normal vector $\hN$ that has a positive $\hk$ component. 
 Compute the flux of $\vF$ through $S$.
 \end{enumerate}
 
@@ -1915,8 +1915,8 @@ So
 =\frac{64}{3}\pi
 \end{align*}
 
-(b) The boundary of $S$ consists of two parts --- $S$, but with downward
-pointing normal, on the bottom and the disk
+(b) The boundary of $E$ consists of two parts --- $S$, but with downward
+pointing normal $\hn = -\hN$, on the bottom and the disk
 \begin{equation*}
 D =\Set{(x,y,z)}{z=4,\ x^2+y^2\le 4}
 \end{equation*} 
@@ -1927,14 +1927,14 @@ with normal $\hk$, on top.
 So, by part (a),
 \begin{align*}
 \frac{64}{3}\pi =\dblInt_{\partial E}\vF\cdot\hn\,\dee{S}
-=-\dblInt_S \vF\cdot\hn\,\dee{S} 
+=-\dblInt_S \vF\cdot\hN\,\dee{S} 
   +\dblInt_D \vF\cdot\hk\,\dee{S}
-=-\dblInt_S \vF\cdot\hn\,\dee{S} 
+=-\dblInt_S \vF\cdot\hN\,\dee{S} 
   +\dblInt_D \overbrace{4z}^{\vF\cdot\hk}\,\dee{S}
 \end{align*}
 Since $z=4$ on $D$, and $D$ is a disk of radius 2,
 \begin{align*}
-\dblInt_S \vF\cdot\hn\,\dee{S} 
+\dblInt_S \vF\cdot\hN\,\dee{S} 
 =-\frac{64}{3}\pi +16\dblInt_D \dee{S}
 =-\frac{64}{3}\pi +16(4\pi)
 =\frac{128}{3}\pi
@@ -4450,3 +4450,5 @@ the divergence theorem gives
 \end{align*}
 
 \end{solution}
+
+

@@ -130,7 +130,7 @@ public class OE15A_6 extends Template {
           double y1=0.5*Y ;   double z1 = y1*y1 ;
           double L = 0.5; double y2 = y1-L ;  double z2 = z1+2*L ;
           fArrow3d(0,y1,z1,  0,y2,z2) ;
-          fTeXlabel3d(0, y2+0.1, z2+0.1, "bc", "$\\hn$") ;
+          fTeXlabel3d(0, y2+0.1, z2+0.1, "bc", "$\\hN$") ;
 
           fEnv("lineWidth", 2.0) ;
           fEnv("useColorPs", "true") ;
