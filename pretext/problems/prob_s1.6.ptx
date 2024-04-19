@@ -305,6 +305,16 @@ Sketch <m>C</m> and determine the normal vectors from the sketch. You can use <m
 </p></answer>
 
 <solution><p>
+You may have noticed that the orientation of (i.e. the direction of motion along) the curve <m>C</m> was not specified in the question. That's because the value of the integral is independent of the orientation of <m>C</m>:
+<ul>
+<li> 
+At each point of <m>C</m>, <m>\vF(x,y) = xy^2 \,\hi + ye^x \,\hj</m>, independent of the orientation.
+</li><li> 
+At each point of <m>C</m>, <m>\hn</m> is the outward pointing normal, independent of the orientation.
+</li><li>
+<m>ds\gt 0</m>, independent of the orientation.   
+</li>
+</ul>
 Here is a sketch of the rectangle <m>R</m>.
 </p>
 
@@ -313,7 +323,8 @@ Here is a sketch of the rectangle <m>R</m>.
 </sidebyside>
 
 <p>
-Its boundary consists of four line segments.
+We have arbitrarily chosen to traverse <m>C</m> in the counterclockwise direction.
+The boundary of <m>R</m> consists of four line segments.
 <ul>
 <li>
 <m>L_1</m> from <m>(0,-1)</m> to <m>(3,-1)</m>, with <m>\hn = -\hj</m>
@@ -376,6 +387,29 @@ and
 =e^3-1
 </mrow>
 </md>
+As a check, we'll now verify that we get the same answer for <m>\int_{L_3} \vF\cdot(\hj)\,\dee{s}</m>,
+when we parametrize <m>L_3</m> by
+<me>
+\vr(t) = (0,1) + t\big\{(3,1)-(0,1)\big\}
+       = \big(3t,1\big)\qquad
+0\le t\le 1
+</me>
+so that, this time, <m>\vr(0) = (0,1)</m> is the initial point of <m>L_3</m> and
+<m>\vr(1) = (3,1)</m> is the final point of <m>L_3</m>. This time
+<me>
+\vr'(t) = (3,0)\qquad
+\diff{s}{t}(t) = |\vr'(t)| = 3
+</me>
+and
+<me>
+\int_{L_3} \vF\cdot \hj\,\dee{s}
+=\int_0^1 \vF\big(\vr(t)\big)\cdot \hj\,\diff{s}{t}(t)\,\dee{t}
+=\int_0^1\overbrace{e^{3t}}^{y(t)e^{x(t)}}\,
+\overbrace{3}^{\diff{s}{t}(t)}\,\dee{t}
+=e^{3t}\Big|_0^1
+=e^3-1
+</me>
+So both orientations of <m>L_3</m> give the same value of <m>\int_{L_3} \vF\cdot(\hj)\,\dee{s}</m>.
 </p></solution>
 </exercise>
 

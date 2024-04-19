@@ -91,7 +91,7 @@ Then
            \end{matrix}\right|
 </mrow>
 </md>
-is normal (i.e. perpendicular) to the surface at <m>(x_0,y_0,z_0)</m>.
+is normal (i.e. perpendicular) to the surface at <m>(x_0,y_0,z_0)</m>, if <m>\vn \ne \vZero</m>.
 </li>
 <li>
 Let <m>(x_0,y_0,z_0)=f(x_0,y_0)</m> be a point on the surface <m>z=f(x,y)</m>. Then,
