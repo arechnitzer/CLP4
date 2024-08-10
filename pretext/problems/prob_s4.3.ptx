@@ -2319,21 +2319,26 @@ Then
 \int_{\cC_2} x\,\dee{s}&amp;=\int_0^1 x\,\dee{x}=\frac{1}{2}
 </mrow>
 </md>
-On <m>\cC_3</m>, <m>y=1-x^2</m> so that <m>\diff{y}{x}=-2x</m> and
-<me>
-\dee{s} =\sqrt{\dee{x}^2+\dee{y}^2}
-        =\sqrt{1+\Big(\diff{y}{x}\Big)^2}\,\dee{x}
-        =\sqrt{1+4x^2}\,\dee{x}
-</me>
-and
+To evaluate the integral along <m>\cC_3</m>, we use the parametrization
+<md>
+<mrow>
+\big(x(t),y(t)\big) &amp;= \big(1-t\,,\, 1-(1-t)^2\big)
+\qquad 0\le t\le 1 
+</mrow><mrow>
+\big(x'(t),y'(t)\big) &amp;= \big(-1\,,\, 2(1-t)\big) 
+</mrow><mrow>
+\diff{s}{t}(t) &amp;= \sqrt{x'(t)^2 +y'(t)^2} =\sqrt{1 + 4 (1-t)^2}
+</mrow>
+</md>
+So
 <md>
 <mrow>
 \int_{\cC_3} x\,\dee{s}
-&amp;
-=\int_0^1 x\sqrt{1+4x^2}\,\dee{x}
+&amp;=\int_0^1 x(t) \diff{s}{t}(t)\,\dee{t}
+=\int_0^1 (1-t)\sqrt{1+4(1-t)^2}\,\dee{t}
 </mrow><mrow>
-&amp;=\Big[\frac{1}{12}(1+4x^2)^{3/2}\Big]_0^1
-=\frac{1}{12}\big[5^{3/2}-1\big]
+&amp;=\Big[-\frac{1}{12}{(1+4(1-t)^2)}^{3/2}\Big]_0^1
+=\frac{1}{12}\big[-1+5^{3/2}\big]
 </mrow>
 </md>
 All together
