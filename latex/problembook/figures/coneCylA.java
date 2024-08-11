@@ -35,7 +35,7 @@ public class coneCylA extends Template {
           fLine(0, ymin,0, ymax) ;
           fTeXlabel(xmax, -1.07, "tr", "$x$") ;
           fTeXlabel(-0.04, ymax, "tr", "$y$") ;
-          fTeXlabel(-0.87, 0.5, "br", "$x^2+y^2=2ax$") ;
+          fTeXlabel(-0.87, 0.5, "br", "$x^2+y^2=2ay$") ;
 
 
 
