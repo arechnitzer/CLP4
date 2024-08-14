@@ -2268,7 +2268,7 @@ Switching to polar coordinates, the flux is
 </solution>
 </exercise>
 
-<exercise>
+<exercise xml:id="prb_flux_surface">
 <statement><p>
 Let <m>E</m> be the solid region between the plane <m>z = 4</m> and the paraboloid
 <m>z = x^2 + y^2</m>. Let
@@ -5364,8 +5364,8 @@ But beware of the singularity in <m>\tan z</m> at <m>z=\tfrac{\pi}{2}</m>.
 </p></answer>
 
 <solution><p> (a)
-This question is very similar to question 22 above. 
-The only difference is that the term <m>x\sin z</m> in the <m>\vF</m> of question 22
+This question is very similar to question <xref ref="prb_flux_surface"/> above. 
+The only difference is that the term <m>x\sin z</m> in the <m>\vF</m> of question <xref ref="prb_flux_surface"/>
 has been replaced with <m>x\root{3}\of{\tan z}</m> in this question. But that is a significant 
 change, because <m>\tan z</m> is singular (i.e. becomes infinite) at <m>z=\tfrac{\pi}{2}</m>
 and <m>E</m> includes many points with <m>z=\tfrac{\pi}{2}</m>. Consequently, we may not
