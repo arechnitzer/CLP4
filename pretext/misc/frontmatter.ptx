@@ -46,11 +46,8 @@
 
 		<edition>CLP4 Vector Calculus: May 2021</edition>
 
-		<website>
-			<name>
-				<c>CLP-4</c>
-			</name>
-			<address>http://www.math.ubc.ca/~CLP/</address>
+    <website>
+      <url href="http://www.math.ubc.ca/~CLP/">CLP-4</url>
 		</website>
 
 		<copyright>
