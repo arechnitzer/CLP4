@@ -2268,13 +2268,13 @@ Switching to polar coordinates, the flux is
 </solution>
 </exercise>
 
-<exercise><title><fromexam>M317 2015A</fromexam></title>
+<exercise xml:id="prb_flux_surface">
 <statement><p>
 Let <m>E</m> be the solid region between the plane <m>z = 4</m> and the paraboloid
 <m>z = x^2 + y^2</m>. Let
 <me>
 \vF = \Big(-\frac{1}{3}x^3 + e^{z^2}\Big)\hi
-     + \Big(-\frac{1}{3}y^3 + x\tan z\Big)\hj + 4z\hk
+     + \Big(-\frac{1}{3}y^3 + x\sin z\Big)\hj + 4z\hk
 </me>
 <ol marker="a">
 <li>
@@ -2282,7 +2282,7 @@ Compute the flux of <m>\vF</m> outward through the boundary of <m>E</m>.
 </li>
 <li>
 Let <m>S</m> be the part of the paraboloid <m>z = x^2 + y^2</m> lying below the
-<m>z = 4</m> plane oriented so that <m>\hn</m> has a positive <m>\hk</m> component.
+<m>z = 4</m> plane oriented with a normal vector <m>\hN</m> that has a positive <m>\hk</m> component.
 Compute the flux of <m>\vF</m> through <m>S</m>.
 </li>
 </ol>
@@ -2332,8 +2332,8 @@ So
 </md>
 </p>
 
-<p>(b) The boundary of <m>S</m> consists of two parts <mdash/> <m>S</m>, but with downward
-pointing normal, on the bottom and the disk
+<p>(b) The boundary of <m>E</m> consists of two parts <mdash/> <m>S</m>, but with downward
+pointing normal <m>\hn=-\hN</m>, on the bottom and the disk
 <me>
 D =\Set{(x,y,z)}{z=4,\ x^2+y^2\le 4}
 </me>
@@ -2349,17 +2349,17 @@ So, by part (a),
 <md>
 <mrow>
 \frac{64}{3}\pi =\dblInt_{\partial E}\vF\cdot\hn\,\dee{S}
-&amp;=-\dblInt_S \vF\cdot\hn\,\dee{S}
+&amp;=-\dblInt_S \vF\cdot\hN\,\dee{S}
   +\dblInt_D \vF\cdot\hk\,\dee{S}
 </mrow><mrow>
-&amp;=-\dblInt_S \vF\cdot\hn\,\dee{S}
+&amp;=-\dblInt_S \vF\cdot\hN\,\dee{S}
   +\dblInt_D \overbrace{4z}^{\vF\cdot\hk}\,\dee{S}
 </mrow>
 </md>
 Since <m>z=4</m> on <m>D</m>, and <m>D</m> is a disk of radius 2,
 <md>
 <mrow>
-\dblInt_S \vF\cdot\hn\,\dee{S}
+\dblInt_S \vF\cdot\hN\,\dee{S}
 =-\frac{64}{3}\pi +16\dblInt_D \dee{S}
 =-\frac{64}{3}\pi +16(4\pi)
 =\frac{128}{3}\pi
@@ -5329,6 +5329,246 @@ the divergence theorem gives
 </p>
 
 </solution>
-</exercise></exercisegroup>
+</exercise>
+
+<exercise><title><fromexam>M317 2015A</fromexam></title>
+<statement><p>
+Let <m>E</m> be the solid region between the plane <m>z = 4</m> and the paraboloid
+<m>z = x^2 + y^2</m>. Let
+<me>
+\vF = \Big(-\frac{1}{3}x^3 + e^{z^2}\Big)\hi
+     + \Big(-\frac{1}{3}y^3 + x\root{3}\of{\tan z}\Big)\hj + 4z\hk
+</me>
+<ol marker="a">
+<li>
+Compute the flux of <m>\vF</m> outward through the boundary of <m>E</m>.
+</li>
+<li>
+Let <m>S</m> be the part of the paraboloid <m>z = x^2 + y^2</m> lying below the
+<m>z = 4</m> plane oriented with a normal vector <m>\hN</m> that has a positive <m>\hk</m> component.
+Compute the flux of <m>\vF</m> through <m>S</m>.
+</li>
+</ol>
+</p>
+
+</statement>
+
+<hint><p>
+The divergence of <m>\vF</m> is a lot simpler than <m>\vF</m> itself.
+But beware of the singularity in <m>\tan z</m> at <m>z=\tfrac{\pi}{2}</m>.
+</p></hint>
+
+<answer><p>
+(a) <m>\frac{64}{3}\pi</m> </p><p>
+(b) <m>\frac{128}{3}\pi</m>
+</p></answer>
+
+<solution><p> (a)
+This question is very similar to question <xref ref="prb_flux_surface"/> above. 
+The only difference is that the term <m>x\sin z</m> in the <m>\vF</m> of question <xref ref="prb_flux_surface"/>
+has been replaced with <m>x\root{3}\of{\tan z}</m> in this question. But that is a significant 
+change, because <m>\tan z</m> is singular (i.e. becomes infinite) at <m>z=\tfrac{\pi}{2}</m>
+and <m>E</m> includes many points with <m>z=\tfrac{\pi}{2}</m>. Consequently, we may not
+simply apply the divergence theorem (Theorem <xref ref="thm_divThm"/>) to <m>E</m>. 
+Instead we treat the integrals in this question as improper 
+integrals. To be precise define, for each <m>\epsilon\gt 0</m>,
+<md>
+<mrow>
+E_\epsilon^+ &amp;= \Set{(x,y,z}{x^2+y^2\le z,\ \tfrac{\pi}{2}+\epsilon\le z\le 4} 
+</mrow><mrow>
+E_\epsilon^- &amp;= \Set{(x,y,z}{x^2+y^2\le z,\ 0\le z \le \tfrac{\pi}{2}-\epsilon} 
+</mrow>
+</md>
+Here are sketches of the parts of <m>E_\epsilon^+</m> and <m>E_\epsilon^-</m> that lie in first octant.
+</p>
+
+<sidebyside widths="49% 41%" valign="middle">
+    <image source="pfigs/OE15A_6c"/>
+    <image source="pfigs/OE15A_6d"/>
+</sidebyside>
+
+<p>
+The union of <m>E_\epsilon^+</m> and <m>E_\epsilon^-</m> is exactly <m>E</m> with a thin disk
+(of width <m>2\epsilon</m>) removed. We are allowed to apply the  divergence theorem 
+(Theorem <xref ref="thm_divThm"/>) to both <m>E_\epsilon^+</m> and <m>E_\epsilon^-</m>.
+It gives  
+<md>
+<mrow>
+\dblInt_{\partial E_\epsilon^+}\vF\cdot\hn\,\dee{S}
+&amp;=\tripInt_{E_\epsilon^+} \vnabla\cdot\vF\,\dee{V} 
+ =\tripInt_{E_\epsilon^+} \big(-x^2-y^2+4\big)\,\dee{V} 
+ </mrow><mrow>
+\dblInt_{\partial E_\epsilon^-}\vF\cdot\hn\,\dee{S}
+&amp;=\tripInt_{E_\epsilon^-} \vnabla\cdot\vF\,\dee{V} 
+ =\tripInt_{E_\epsilon^-} \big(-x^2-y^2+4\big)\,\dee{V} 
+</mrow>
+</md>
+The boundary <m>\partial E_\epsilon^+</m> of <m>E_\epsilon^+</m> consists of
+<ul>
+<li>
+a horizontal top disk 
+<me>
+   D =\Set{(x,y,z)}{z=4,\ x^2+y^2\le 4}
+</me>
+(which happens to be independent of <m>\epsilon</m>) with outward normal <m>\hk</m>,
+</li><li>
+a horizontal bottom disk
+<me>
+   D_{\epsilon}^+ =\Set{(x,y,z)}{z=\tfrac{\pi}{2}+\epsilon,\ x^2+y^2\le z}
+</me> 
+with outward normal <m>-\hk</m>, and
+</li><li> 
+the part 
+<me>
+   S_{\epsilon}^+ =\Set{(x,y,z)}{x^2+y^2 = z,\ \tfrac{\pi}{2}+\epsilon\le z\le 4}
+</me>
+of the paraboloid <m>z=x^2+y^2</m>, with outward normal <m>\hn=-\hN</m>,
+          in terms of the <m>\hN</m> specified in part (b) of this question
+</li>
+</ul>
+and the boundary <m>\partial E_\epsilon^-</m> of <m>E_\epsilon^-</m> consists of
+<ul>
+<li>
+a horizontal top disk
+<me>
+   D_{\epsilon}^- =\Set{(x,y,z)}{z=\tfrac{\pi}{2}-\epsilon,\ x^2+y^2\le z}
+</me>
+with outward normal <m>\hk</m>, and
+</li><li>
+the part 
+<me>
+   S_{\epsilon}^- =\Set{(x,y,z)}{x^2+y^2 = z,\ 0\le z\le \tfrac{\pi}{2}-\epsilon}
+</me>
+of the paraboloid <m>z=x^2+y^2</m>,  with outward normal <m>\hn=-\hN</m>,
+          in terms of the <m>\hN</m> specified in part (b) of this question.
+</li>
+</ul>
+</p>
+
+<sidebyside widths="44% 44%" valign="middle">
+    <image source="pfigs/OE15A_6cc"/>
+    <image source="pfigs/OE15A_6dd"/>
+</sidebyside>
+
+<p>
+So the two divergence theorem equations above are
+<md>
+<mrow>
+ \tripInt_{E_\epsilon^+} \big(-x^2-y^2+4\big)\,\dee{V} 
+ &amp;= -\dblInt_{S_\epsilon^+}\vF\cdot\hN\,\dee{S}
+    + \dblInt_{D}\!\!\overbrace{4z}^{\vF\cdot\hk}\,\dee{S}
+    - \dblInt_{D_\epsilon^+}\!\!\!\overbrace{4z}^{\vF\cdot\hk}\,\dee{S}
+</mrow><mrow>
+ \tripInt_{E_\epsilon^-} \big(-x^2-y^2+4\big)\,\dee{V}
+ &amp;= -\dblInt_{S_\epsilon^-}\vF\cdot\hN\,\dee{S}
+          + \dblInt_{D_\epsilon^-}\overbrace{4z}^{\vF\cdot\hk}\,\dee{S}
+</mrow>
+</md>
+Adding these two equations together,
+<md>
+<mrow>
+&amp;\tripInt_{E_\epsilon^+} \big(-x^2-y^2+4\big)\,\dee{V} 
+   +  \tripInt_{E_\epsilon^-} \big(-x^2-y^2+4\big)\,\dee{V}
+</mrow><mrow>
+&amp;\hskip0.5in= -\dblInt_{S_\epsilon^+}\vF\cdot\hN\,\dee{S}
+             -\dblInt_{S_\epsilon^-}\vF\cdot\hN\,\dee{S}
+      + \dblInt_{D}4z\,\dee{S}
+</mrow><mrow>
+&amp;\hskip1.0in
+           - \dblInt_{D_\epsilon^+} 4z\,\dee{S}
+           + \dblInt_{D_\epsilon^-} 4z\,\dee{S}
+\tag{$*$}
+</mrow>
+</md>
+In the limit <m>\epsilon\rightarrow 0</m>,
+<ul>
+<li>
+the union of <m>E_\epsilon^+</m> and <m>E_\epsilon^-</m> becomes exactly <m>E</m>,
+</li><li>
+the union of <m>S_\epsilon^+</m> and <m>S_\epsilon^-</m> becomes exactly 
+<me>
+S=\Set{(x,y,z)}{x^2+y^2 = z,\ 0\le z\le 4}
+</me>
+</li><li>
+both <m>D_\epsilon^+</m> and <m>D_\epsilon^-</m> become
+<me>
+   \Set{(x,y,z)}{z=\tfrac{\pi}{2},\ x^2+y^2\le z}
+</me> 
+</li>
+</ul>
+So
+<me>
+   \lim_{\epsilon\rightarrow  0}\left[- \dblInt_{D_\epsilon^+} 4z\,\dee{S}
+           + \dblInt_{D_\epsilon^-} 4z\,\dee{S}\right] =0
+</me>
+and taking the limit <m>\epsilon\rightarrow 0</m> of <m>(*)</m> gives 
+<md>
+<mrow>
+\tripInt_{E} \big(-x^2-y^2+4\big)\,\dee{V} 
+&amp;= -\dblInt_S\vF\cdot\hN\,\dee{S} + \dblInt_{D}4z\,\dee{S} 
+</mrow><mrow>
+&amp;= \dblInt_{\partial E}\vF\cdot\hn\,\dee{S}
+</mrow>
+</md>
+To evaluate the integral on the left hand side we switch to cylindrical coordinates.
+In cylindrical coordinates
+<me>
+E=\Set{(r\cos\theta\,,\,r\sin\theta\,,\,z)}{0\le z\le 4,\ r^2\le z}
+</me>
+So
+<md>
+<mrow>
+\dblInt_{\partial E}\vF\cdot\hn\,\dee{S}
+&amp;=\int_0^4\dee{z}\int_0^{\sqrt{z}}\dee{r}\,r\int_0^{2\pi}\dee{\theta}\
+         \big(-r^2+4\big)
+</mrow><mrow>
+&amp;=2\pi \int_0^4\dee{z}\int_0^{\sqrt{z}}\dee{r}\ \big(4r-r^3\big)
+</mrow><mrow>
+&amp;=2\pi \int_0^4\dee{z}\ \Big(2z-\frac{z^2}{4}\Big)
+</mrow><mrow>
+&amp;= 2\pi\Big[z^2-\frac{z^3}{12}\Big]_0^4
+=2\pi\Big[16-\frac{16}{3}\Big]
+=\frac{64}{3}\pi
+</mrow>
+</md>
+</p>
+
+<p>(b) The boundary of <m>E</m> consists of two parts <mdash/> <m>S</m>, but with downward
+pointing normal, on the bottom and the disk
+<me>
+D =\Set{(x,y,z)}{z=4,\ x^2+y^2\le 4}
+</me>
+with normal <m>\hk</m>, on top.
+</p>
+
+<sidebyside width="41%">
+<image source="pfigs/OE15A_6"/>
+</sidebyside>
+
+<p>
+So, by part (a),
+<md>
+<mrow>
+\frac{64}{3}\pi =\dblInt_{\partial E}\vF\cdot\hn\,\dee{S}
+&amp;=-\dblInt_S \vF\cdot\hN\,\dee{S}
+  +\dblInt_D \vF\cdot\hk\,\dee{S}
+</mrow><mrow>
+&amp;=-\dblInt_S \vF\cdot\hN\,\dee{S}
+  +\dblInt_D \overbrace{4z}^{\vF\cdot\hk}\,\dee{S}
+</mrow>
+</md>
+Since <m>z=4</m> on <m>D</m>, and <m>D</m> is a disk of radius 2,
+<md>
+<mrow>
+\dblInt_S \vF\cdot\hN\,\dee{S}
+=-\frac{64}{3}\pi +16\dblInt_D \dee{S}
+=-\frac{64}{3}\pi +16(4\pi)
+=\frac{128}{3}\pi
+</mrow>
+</md>
+</p></solution>
+</exercise>
+
+</exercisegroup>
 
 </exercises>

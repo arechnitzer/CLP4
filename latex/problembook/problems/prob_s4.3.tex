@@ -260,8 +260,7 @@ on them $y=0$ and $\dee{y}=0$. So
 \frac{1}{2\pi}\oint_C \frac{x\,\dee{y}-y\,\dee{x}}{x^2+y^2}
 =\frac{1}{2}+0-\frac{1}{2}+0=0
 \end{equation*}
-
-
+An alternate solution, that uses Green's theorem, is given in the solution to the next question.
 \end{solution}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -1909,19 +1908,20 @@ $\cC_3$ be the curve $y=1-x^2$ from $(1,0)$ to $(0,1)$.
 \int_{\cC_1} x\,\dee{s}&=\int_{\cC_1} 0\,\dee{s}=0\\
 \int_{\cC_2} x\,\dee{s}&=\int_0^1 x\,\dee{x}=\frac{1}{2}
 \end{align*}
-On $\cC_3$, $y=1-x^2$ so that $\diff{y}{x}=-2x$ and
-\begin{equation*}
-\dee{s} =\sqrt{\dee{x}^2+\dee{y}^2}
-        =\sqrt{1+\Big(\diff{y}{x}\Big)^2}\,\dee{x}
-        =\sqrt{1+4x^2}\,\dee{x}
-\end{equation*}
-and
+To evaluate the integral along $\cC_3$, we use the parametrization
+\begin{align*}
+\big(x(t),y(t)\big) &= \big(1-t\,,\, 1-(1-t)^2\big)
+\qquad 0\le t\le 1 \\
+\big(x'(t),y'(t)\big) &= \big(-1\,,\, 2(1-t)\big) \\
+\diff{s}{t}(t) &= \sqrt{x'(t)^2 +y'(t)^2} =\sqrt{1 + 4 (1-t)^2}
+\end{align*}
+So
 \begin{align*}
 \int_{\cC_3} x\,\dee{s}
-&%=\int_1^0 x\sqrt{1+\Big(\diff{y}{x}\Big)^2}\,(-\dee{x})
-=\int_0^1 x\sqrt{1+4x^2}\,\dee{x}\\
-&=\Big[\frac{1}{12}(1+4x^2)^{3/2}\Big]_0^1
-=\frac{1}{12}\big[5^{3/2}-1\big]
+&=\int_0^1 x(t) \diff{s}{t}(t)\,\dee{t}
+=\int_0^1 (1-t)\sqrt{1+4(1-t)^2}\,\dee{t}\\
+&=\Big[-\frac{1}{12}{(1+4(1-t)^2)}^{3/2}\Big]_0^1
+=\frac{1}{12}\big[-1+5^{3/2}\big]
 \end{align*}
 All together
 $$

@@ -293,13 +293,20 @@ $2e^3$
 \end{answer}
 
 \begin{solution} 
+You may have noticed that the orientation of (i.e. the direction of motion along) the curve $C$ was not specified in the question. That's because the value of the integral is independent of the orientation of $C$:
+\begin{itemize}\itemsep1pt \parskip0pt \parsep0pt
+\item At each point of $C$, $\vF(x,y) = xy^2 \,\hi + ye^x \,\hj$, independent of the orientation. 
+\item At each point of $C$, $\hn$ is the outward pointing normal, independent of the orientation.
+\item $ds>0$, independent of the orientation.   
+\end{itemize}
 Here is a sketch of the rectangle $R$.
 
 \begin{center}
      \includegraphics[scale=0.90]{OE16D_5.pdf}\
 \end{center}
 
-Its boundary consists of four line segments.
+We have arbitrarily chosen to traverse $C$ in the counterclockwise direction.
+The boundary of $R$ boundary consists of four line segments.
 \begin{itemize}\itemsep1pt \parskip0pt \parsep0pt %\itemindent-15pt
 \item[$\circ$]
 $L_1$ from $(0,-1)$ to $(3,-1)$, with $\hn = -\hj$
@@ -349,6 +356,29 @@ and
 =-e^{3-3t}\Big|_0^1
 =e^3-1
 \end{align*}
+As a check, we'll now verify that we get the same answer for $\int_{L_3} \vF\cdot(\hj)\,\dee{s}$,
+when we parametrize $L_3$ by
+\begin{equation*}
+\vr(t) = (0,1) + t\big\{(3,1)-(0,1)\big\}
+       = \big(3t,1\big)\qquad
+0\le t\le 1
+\end{equation*}
+so that, this time, $\vr(0) = (0,1)$ is the initial point of $L_3$ and
+$\vr(1) = (3,1)$ is the final point of $L_3$. This time
+\begin{equation*}
+\vr'(t) = (3,0)\qquad
+\diff{s}{t}(t) = |\vr'(t)| = 3
+\end{equation*}
+and
+\begin{align*}
+\int_{L_3} \vF\cdot \hj\,\dee{s}
+=\int_0^1 \vF\big(\vr(t)\big)\cdot \hj\,\diff{s}{t}(t)\,\dee{t}
+=\int_0^1\overbrace{e^{3t}}^{y(t)e^{x(t)}}\,
+\overbrace{3}^{\diff{s}{t}(t)}\,\dee{t}
+=e^{3t}\Big|_0^1
+=e^3-1
+\end{align*}
+So both orientations of $L_3$ give the same value of $\int_{L_3} \vF\cdot(\hj)\,\dee{s}$.
 \end{solution}
 
 

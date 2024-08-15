@@ -1287,7 +1287,7 @@ No matter what <m>N</m> and <m>M</m> we pick the left hand side will depend on <
 and <m>y</m> only <mdash/> not on <m>z</m>. But it appears like the right hand side
 depends on <m>z</m> too. Fortunately the screening test (which we have not used
 to this point in the proof) rides to the rescue
-and ensures that the right hand actually does does not depend on <m>z</m>.
+and ensures that the right hand actually does not depend on <m>z</m>.
 By the screening test,
 <me>
 \vnabla\cdot\vB
@@ -1787,7 +1787,7 @@ To specify the integrals involved, let <m>C_\veps</m> be the circle which
 <p>
   We shall show in Lemma <xref ref="lem_curlInterp"/>, below, that
 <me>
-\vnabla\times v(\vr_0)\cdot \hn
+\vnabla\times \vv(\vr_0)\cdot \hn
 =\lim_{\veps\rightarrow 0}\frac{1}{\pi\veps^2}
          \oint_{C_\veps} \vv(\vr)\cdot \dee{\vr}
 </me>

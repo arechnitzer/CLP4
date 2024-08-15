@@ -1,4 +1,4 @@
-                  /*  File:  OE15A_6.java    */
+                  /*  File:  OE15A_6d.java    */
 
 
 import figPac.* ;
@@ -7,9 +7,9 @@ import java.applet.* ;
 import java.awt.* ;
 
 
-public class OE15A_6 extends Template {
+public class OE15A_6d extends Template {
 
-     static {templateClass = new OE15A_6() ; }
+     static {templateClass = new OE15A_6d() ; }
      static double x0 = 100 ;
      static double x1 =   0 ;
 
@@ -32,11 +32,11 @@ public class OE15A_6 extends Template {
 
 
      public void setup() {
-          filePrefix = "OE15A_6" ;  
+          filePrefix = "OE15A_6d" ;  
           outputPsFile = true ;
           outputLblFile = true ;
-          xsize = 1.5 ;    
-          ysize = 2.0 ;  
+          xsize = 1.5*1.2 ;    
+          ysize = 2.0*1.2 ;  
 
           double Xmin= -0.1 ;
           double Xmax= 3.2 ;
@@ -84,6 +84,11 @@ public class OE15A_6 extends Template {
 
           double Y = 3.0 ;
           double Z = 9.0 ; 
+          double YB = 2.0 ; 
+          double ZB = 4.0 ;
+          double eps = 0.3 ;
+          double YC = YB-eps ;
+          double ZC = YC*YC ; 
           double YY = 2.5 ;
           double ZZ = 2.5*2.5 ; 
           double r = 0.1 ;
@@ -97,26 +102,34 @@ public class OE15A_6 extends Template {
           double dphi = 90/nphi ;
 
           fEnv("psFillGray", 0.9) ;
-          fCurve(new circ3d(proj,   0,0,Z, 0,Y,0, Y,0,0),
+//          fCurve(new circ3d(proj,   0,0,Z, 0,Y,0, Y,0,0),
+//                      0,90,FILLED)  ;
+          fCurve(new circ3d(proj,   0,0,ZC, 0,YC,0, YC,0,0),
                       0,90,FILLED)  ;
-          { double[] xlist = {Z*proj[0][2], Y*proj[0][1]+Z*proj[0][2], Y*proj[0][0]+Z*proj[0][2]} ;
-            double[] ylist = {Z*proj[1][2], Y*proj[1][1]+Z*proj[1][2], Y*proj[1][0]+Z*proj[1][2]} ;
+//          { double[] xlist = {Z*proj[0][2], Y*proj[0][1]+Z*proj[0][2], Y*proj[0][0]+Z*proj[0][2]} ;
+//            double[] ylist = {Z*proj[1][2], Y*proj[1][1]+Z*proj[1][2], Y*proj[1][0]+Z*proj[1][2]} ;
+//            fPolygon(xlist, ylist, 3, FILLED) ; }
+          { double[] xlist = {ZC*proj[0][2], YC*proj[0][1]+ZC*proj[0][2], YC*proj[0][0]+ZC*proj[0][2]} ;
+            double[] ylist = {ZC*proj[1][2], YC*proj[1][1]+ZC*proj[1][2], YC*proj[1][0]+ZC*proj[1][2]} ;
             fPolygon(xlist, ylist, 3, FILLED) ; }
 
 
 
           fEnv("lineWidth", 0.5) ;
-          fLine3d(0,0,Z, 0,0,zm) ;
+          fLine3d(0,0,ZC, 0,0,zm) ;
           fLine3d(0,0,0, 0,ym,0) ;
           fLine3d(0,0,0, xm,0,0) ;
           fTeXlabel3d(0,0,zm+0.1, "cb", "$z$") ;
           fTeXlabel3d(0,ym+0.1,0, "cl", "$y$") ;
           fTeXlabel3d(xm+0.05,-0.05,0, "tr", "$x$") ;
-          fTeXlabel3d(0, 0.75*Y,0.5*Z, "cl", "$z=x^2+y^2$") ;
-          fTeXlabel3d(0, 0.5*Y,Z+0.3, "cb", "$z=4$") ;
+          fTeXlabel3d(0, 0.45*Y,0.15*Z, "cl", "$z=x^2+y^2$") ;
+//          fTeXlabel3d(0, 0.5*Y,Z+0.3, "cb", "$z=4$") ;
+          fTeXlabel3d(0, 0.55*YC,ZC+0.22, "cb", "$z=\\tfrac{\\pi}{2}\\!-\\!\\epsilon$") ;
 
-          fLine3d(0,0,Z,  0,Y,Z) ;
-          fLine3d(0,0,Z,  Y,0,Z) ;
+//          fLine3d(0,0,Z,  0,Y,Z) ;
+//          fLine3d(0,0,Z,  Y,0,Z) ;
+          fLine3d(0,0,ZC,  0,YC,ZC) ;
+          fLine3d(0,0,ZC,  YC,0,ZC) ;
           fLine3d(0,0,0, xm,0,0) ;
 
           canvas.append( new fPsWrite("[3 3] 1.5 setdash\n")) ;
@@ -125,12 +138,12 @@ public class OE15A_6 extends Template {
           fLine3d(0,0,0,   0,0,Z) ;
           canvas.append( new fPsWrite("[ ] 0 setdash\n")) ;
 
-          fArrow3d(0.5*Y, 0.3*Y, Z,   0.5*Y, 0.3*Y, Z+2) ;
-          fTeXlabel3d(0.5*Y, 0.3*Y, Z+2, "br", "$\\hk$") ;
+//          fArrow3d(0.5*Y, 0.3*Y, Z,   0.5*Y, 0.3*Y, Z+2) ;
+//          fTeXlabel3d(0.5*Y, 0.3*Y, Z+2, "br", "$\\hk$") ;
           double y1=0.5*Y ;   double z1 = y1*y1 ;
           double L = 0.5; double y2 = y1-L ;  double z2 = z1+2*L ;
-          fArrow3d(0,y1,z1,  0,y2,z2) ;
-          fTeXlabel3d(0, y2+0.1, z2+0.1, "bc", "$\\hN$") ;
+//          fArrow3d(0,y1,z1,  0,y2,z2) ;
+//          fTeXlabel3d(0, y2+0.1, z2+0.1, "bc", "$\\hn$") ;
 
           fEnv("lineWidth", 2.0) ;
           fEnv("useColorPs", "true") ;
@@ -138,13 +151,15 @@ public class OE15A_6 extends Template {
           String Black = "0 0 0 1 setcmykcolor  " ;
           String Blue = "1 1 0 0 setcmykcolor  " ;
           canvas.append( new fPsWrite(Red+"\n")) ;
-          fCurve(new revYZ(proj),  0,3,OPEN)  ;
-          fCurve(new revXZ(proj),  0,3,OPEN)  ;
-          fCurve(new circ3d(proj,   0,0,Z, 0,Y,0, Y,0,0),
+          fCurve(new revYZ(proj),  0,YC,OPEN)  ;
+          fCurve(new revXZ(proj),  0,YC,OPEN)  ;
+//          fCurve(new circ3d(proj,   0,0,Z, 0,Y,0, Y,0,0),
+//                      0,90,OPEN)  ;
+          fCurve(new circ3d(proj,   0,0,ZC, 0,YC,0, YC,0,0),
                       0,90,OPEN)  ;
-//          fTeXlabel3d(0, 0.2*Y,0.6*Z, "cc", "$E$") ;
-          fTeXlabel3d(0.9*Y, 0,0.6*Z, "cr", "$S$") ;
-          fTeXlabel3d(0.4*Y, 0.5*Y,Z, "cr", "$D$") ;
+          fTeXlabel3d(0, 0.17*Y,0.15*Z, "cc", "$E_{\\epsilon}^-$") ;
+//          fTeXlabel3d(0.9*Y, 0,0.6*Z, "cr", "$S$") ;
+//          fTeXlabel3d(0.4*Y, 0.5*Y,Z, "cr", "$D$") ;
 
 
 //          canvas.append( new fPsWrite(Blue+"\n")) ;

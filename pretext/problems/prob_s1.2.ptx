@@ -330,7 +330,7 @@ Remember <m>\sqrt{x^2}=|x|</m>. You will need to consider cases for this one.
 When <m>s\le \frac13(2\sqrt2-1)</m>,
 <me>
 \vR(s)=
-\Big(\frac12\left[ (2\sqrt2-3s)^{2/3}-1)\right],
+\Big(\frac12\left[ (2\sqrt2-3s)^{2/3}-1\right],
              -\frac13\left[(2\sqrt2-3s)^{2/3}-1\right]^{3/2}\Big)
 </me>
 and when <m>s\gt \frac13(2\sqrt2-1)</m>,
@@ -398,7 +398,7 @@ Noting that <m>t=0</m> when <m>s=\tfrac{1}{3}(2\sqrt2-1)</m>, we find our repara
 When <m>s\le \frac13(2\sqrt2-1)</m>,
 <me>
 \vR(s)=
-\Big(\frac12\left[ (2\sqrt2-3s)^{2/3}-1)\right],
+\Big(\frac12\left[ (2\sqrt2-3s)^{2/3}-1\right],
              -\frac13\left[(2\sqrt2-3s)^{2/3}-1\right]^{3/2}\Big)
 </me>
 and when <m>s\gt \frac13(2\sqrt2-1)</m>,
