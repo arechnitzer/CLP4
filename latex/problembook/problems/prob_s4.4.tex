@@ -1149,19 +1149,19 @@ Stokes' theorem (Theorem \eref{CLP317}{thm:Stokes} in the CLP-4 text) gives
 \end{solution}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%
-\begin{question}[M317 2013D] %4
+\begin{question}
 \begin{enumerate}[(a)]
 \item
-Consider the vector field $\vF(x, y, z) = (z^2 , x^2 , y^2)$ in 
+Consider the vector field $\vF(x, y, z) = (x+y^2\,,\, 2y+4z^2\,,\,3z+2x^2)$ in 
 $\bbbr^3$. Compute the line integral $\oint_C \vF\cdot\dee{\vr}$, where 
 $C$ is the curve consisting of the three line segments,
 $L_1$ from $(2, 0, 0)$ to $(0, 2, 0)$, then 
-$L_2$ from $(0, 2, 0)$ to $(0, 0, 2)$, and finally 
-$L_3$ from $(0, 0, 2)$ to $(2, 0, 0)$.
+$L_2$ from $(0, 2, 0)$ to $(0, 0, 1)$, and finally 
+$L_3$ from $(0, 0, 1)$ to $(2, 0, 0)$.
 \item
-A simple closed curve $C$ lies in the plane $x + y + z = 2$. 
-The surface this curve $C$ surrounds inside the plane $x + y + z = 2$ 
-has area $3$. The curve $C$ is oriented in a counterclockwise
+A simple closed curve $C$ lies in the plane $x + y + 2z = 2$. 
+The surface this curve $C$ surrounds inside the plane $x + y + 2z = 2$ 
+has area $6$. The curve $C$ is oriented in a counterclockwise
 direction as observed from the positive x-axis.
 Compute the line integral $\oint_C\vF\cdot \dee{\vr}$ , where $\vF$ 
 is as in (a).
@@ -1173,61 +1173,61 @@ All three vertices of part (a) lie in the plane of part (b).
 \end{hint}
 
 \begin{answer} 
-(a) 8\qquad
-(b) $4\sqrt{3}$
+(a) -8\qquad
+(b) $-8\sqrt{6}$
 \end{answer}
 
 
 \begin{solution}
-(a) Note that all three vertices, $(2,0,0)$, $(0,2,0)$ and $0,0,2)$, lie in the
-plane $x+y+z=2$. So the entire path lies in that plane too. 
+(a) Note that all three vertices, $(2,0,0)$, $(0,2,0)$ and $0,0,1)$, lie in the
+plane $x+y+2z=2$. So the entire path lies in that plane too. 
 \vadjust{
 \begin{center}
-       \includegraphics{OE13D_4.pdf}
+       \includegraphics{OE13DB_4.pdf}
 \end{center}
 }
 In part (b)
 we will need to evaluate a line integral that clearly cannot be computed
 directly --- we will need to use Stokes' theorem. So let's use
-Stokes's theorem in part (a) too. First, we find
+Stokes' theorem in part (a) too. First, we find
 \begin{align*}
 \vnabla\times\vF
 &=\det\left[\begin{matrix}
 \hi &\hj &\hk \\
 \tfrac{\partial\hfill}{\partial x} & \tfrac{\partial\hfill}{\partial y} & 
                 \tfrac{\partial\hfill}{\partial z} \\
-z^2 & x^2 & y^2
+x+y^2 & 2y+4z^2 & 3z+2x^2
 \end{matrix}
 \right]
-=2y\,\hi + 2z\,\hj + 2x\,\hi
+=-8z\,\hi - 4x\,\hj - 2y\,\hk
 \end{align*}
 Let $S$ be the triangular surface that is contained in the plane 
-$x+y+z=2$ and is bounded by $L_1$, $L_2$ and $L_3$. Orient $S$ by the normal vector $\hn = \frac{1}{\sqrt{3}}(\hi+\hj+\hk)$. Then, 
+$x+y+2z=2$ and is bounded by $L_1$, $L_2$ and $L_3$. Orient $S$ by the normal vector $\hn = \frac{1}{\sqrt{6}}(\hi+\hj+2\hk)$. Then, 
 \begin{equation*}
 \vnabla\times\vF\cdot\hn
-=\frac{1}{\sqrt{3}}\big(2y\,\hi + 2z\,\hj + 2x\,\hi\big)\cdot(\hi+\hj+\hk)
-=\frac{2}{\sqrt{3}}(x+y+z)
+=\frac{1}{\sqrt{6}}\big(-8z\,\hi - 4x\,\hj - 2y\,\hk\big)\cdot(\hi+\hj+2\hk)
+=-\frac{4}{\sqrt{6}}(x+y+2z)
 \end{equation*}
 and, by Stokes' theorem,
 \begin{align*}
 \oint_C\vF\cdot \dee{\vr}
 &=\dblInt_S\vnabla\times\vF\cdot\hn\,\dee{S}
-=\frac{2}{\sqrt{3}}\dblInt_S(x+y+z)\,\dee{S}
-=\frac{4}{\sqrt{3}}\dblInt_S\dee{S}
-=\frac{4}{\sqrt{3}}\text{Area}(S)
+=-\frac{4}{\sqrt{6}}\dblInt_S(x+y+2z)\,\dee{S}
+=-\frac{8}{\sqrt{6}}\dblInt_S\dee{S}
+=-\frac{8}{\sqrt{6}}\text{Area}(S)
 \end{align*}
-The triangle $S$ is half of the prallelogram with sides $(0,2,0)-(2,0,0)
-=(-2,2,0)$ and $(0,0,2)-(2,0,0)=(-2,0,2)$. The area of the parallelogram
+The triangle $S$ is half of the parallelogram with sides $(0,2,0)-(2,0,0)
+=(-2,2,0)$ and $(0,0,1)-(2,0,0)=(-2,0,1)$. The area of the parallelogram
 is
 \begin{align*}
-\big|(-2,2,0)\times (-2,0,2)\big|
-=\big|(4,4,4)\big|
-=4\sqrt{3}
+\big|(-2,2,0)\times (-2,0,1)\big|
+=\big|(2,2,4)\big|
+=2\sqrt{6}
 \end{align*}
 So
 \begin{align*}
-\oint_C\vF\cdot \dee{\vr} = \frac{4}{\sqrt{3}} 2\sqrt{3}
-=8
+\oint_C\vF\cdot \dee{\vr} = -\frac{8}{\sqrt{6}} \sqrt{6}
+=-8
 \end{align*}
 
 \noindent (b)
@@ -1235,10 +1235,10 @@ Let $\tilde S$ be the specified surface. Then, as in part (a),
 \begin{align*}
 \oint_C\vF\cdot \dee{\vr}
 &=\dblInt_{\tilde S}\vnabla\times\vF\cdot\hn\,\dee{S}
-=\frac{2}{\sqrt{3}}\dblInt_{\tilde S}(x+y+z)\,\dee{S}
-=\frac{4}{\sqrt{3}}\dblInt_{\tilde S}\dee{S}
-=\frac{4}{\sqrt{3}}\text{Area}(\tilde S) \\
-&=4\sqrt{3}
+=-\frac{4}{\sqrt{6}}\dblInt_{\tilde S}(x+y+2z)\,\dee{S}
+=-\frac{8}{\sqrt{6}}\dblInt_{\tilde S}\dee{S}
+=-\frac{8}{\sqrt{6}}\text{Area}(\tilde S) \\
+&=-8\sqrt{6}
 \end{align*}
 \end{solution}
 
