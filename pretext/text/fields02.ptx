@@ -138,7 +138,7 @@ Thus <m>\vr(t)</m> will obey the system of first order differential equations
 
 <p>Notice that if we reparametrize <m>\vr(t)</m>, say to <m>\vR(u) = \vr\big(t(u)\big)</m>,
 then <m>\vR'(u) =   \vr'\big(t(u)\big)\ t'(u)</m> is parallel to
-(though not necessarily equal to) <m>\vr'\big(t(u)\big)= \vv\big(\vr\big((t(u)\big)\big)
+(though not necessarily equal to) <m>\vr'\big(t(u)\big)= \vv\big(\vr\big(t(u)\big)\big)
                          =\vv\big(\vR(u)\big)</m>.
 So if we only care about the curve traced out by the stick, and not about
 <em>when</em> the stick is at each point of the path, then it suffices to
