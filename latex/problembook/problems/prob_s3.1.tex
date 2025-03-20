@@ -712,7 +712,7 @@ So parametrizations H and L work.
 
 
 \begin{question}
-Parametrize a solid of rotation about a line not parallel to an axis. Maybe first show that the plane you're rotating is normal to that axis.
+This question concerns the parametrization of a solid of rotation about a line that is not a coordinate axis.
 
 \begin{enumerate}[(a)]
 \item Give a parametric equation for the circle of radius 1, centred at $(2,2,4)$, lying in the plane $x=y$.
@@ -735,17 +735,24 @@ Parametrize a solid of rotation about a line not parallel to an axis. Maybe firs
 %\begin{hint}
 %\end{hint}
 \begin{answer}
-(a) $(x,y,z)=(2+\frac1{\sqrt 2}\cos\theta~,~2+\frac1{\sqrt 2}\cos\theta~,~4+\sin\theta)$, $0 \le \theta \le 2\pi$.
+(a) $(x,y,z)=\big(2+\frac1{\sqrt 2}\cos\theta~,~2+\frac1{\sqrt 2}\cos\theta~,~4+\sin\theta\big)$, $\ 0 \le \theta \le 2\pi$.
+
+(b) $x=4+(2\sqrt2-\cos\theta)\cos\phi$, $y=4+(2\sqrt2-\cos\theta)\sin\phi$, $z=4+\sin\theta$, $\ 0 \le \theta,\phi \le 2\pi$.
 \end{answer}
 \begin{solution}
-(a) In the sketch below, the point $(x,y,z)$ deviates from the centre $(2,2,4)$ by $\sin\theta$ units in the $\hk$ direction, and by $\cos\theta$ units in the $\sqrt \frac1{\sqrt 2}(\hi+\hj)$ direction. So, $(x,y,z)=(2+\frac1{\sqrt 2}\cos\theta~,~2+\frac1{\sqrt 2}\cos\theta~,~4+\sin\theta)$.
+(a) The mutually perpendicular unit vectors $\hk$ and $\frac1{\sqrt 2}(\hi+\hj)$ both lie in the plane $x=y$. So
+\begin{align*}
+(x,y,z) &= (2,2,4) +\cos\theta\  \frac1{\sqrt 2}(\hi+\hj) + \sin\theta\ \hk \\
+      &= \Big(2+\frac1{\sqrt 2}\cos\theta~,~2+\frac1{\sqrt 2}\cos\theta~,~4+\sin\theta\Big)
+\end{align*}
+with $0 \le \theta \le 2\pi$, is a parametriztion of a circle of radius 1, centred at $(2,2,4)$, that lies in the plane $x=y$. See the sketch below.
 
 \begin{center}
 \begin{tikzpicture}
 \draw[help lines, ->] (0,0)--(0,6.25) node[above]{$z$};
 \draw[help lines, ->] (0,0)--(6.5,-1) node[right]{$x$};
 \draw[help lines, ->] (0,0)--(6.5,1) node[right]{$y$};
-\fill[opacity=0.2, blue] (0,0)rectangle(6,6);
+\fill[opacity=0.2, blue] (0,0)rectangle(6.5,6.5);
 \YEycoord{4}{4}
 \draw (1.8,-.2)--(1.8,-.4) node[below]{2};
 \draw (1.8,.2)--(1.8,.4) node[above]{2};
@@ -757,7 +764,7 @@ Parametrize a solid of rotation about a line not parallel to an axis. Maybe firs
 \draw (C)+(.4,.2) node{$\theta$};
 \end{tikzpicture}
 \end{center}
-So, we can parametrize the circle as $(x,y,z)=(2+\frac1{\sqrt 2}\cos\theta~,~2+\frac1{\sqrt 2}\cos\theta~,~4+\sin\theta)$, with $0 \le \theta \le 2\pi$.
+
 
 \textbf{Remark}: it's easy to check that this equation satisfies the two properties we desire. Since the $x$- and $y$ coordinates match, it's in the plane $x=y$. To check that it's a circle centred at $(2,2,4)$, we note the distance from $(x,y,z)$ to $(2,2,4)$ is:
 \begin{align*}
@@ -766,7 +773,7 @@ d&=\sqrt{(x-2)^2+(y-2)^2+(z-4)^2}=\sqrt{\left(\frac1{\sqrt 2}\cos\theta\right)^2
 \end{align*}
 So, our points all have distance one from the same point --- that is, they lie on a circle of radius 1.
 
-(b) Consider a point $(x,y,z)=(2+\frac1{\sqrt 2}\cos\theta~,~2+\frac1{\sqrt 2}\cos\theta~,~4+\sin\theta)$, rotating $\phi$ radians about the line $x=y=4$.
+(b) Concentrate on a point $(x,y,z)=(2+\frac1{\sqrt 2}\cos\theta~,~2+\frac1{\sqrt 2}\cos\theta~,~4+\sin\theta)$ of the circle. Rotate it $\phi$ radians about the vertical line $x=y=4$.
 \begin{center}
 \begin{tikzpicture}
 \draw[thick, <->] (0,-3)--(0,3) node[above]{$\vr(t)=(4,4,t)$};
@@ -779,9 +786,18 @@ So, our points all have distance one from the same point --- that is, they lie o
 \draw (-.5,1.2) node{$\phi$};
 \end{tikzpicture}
 \end{center}
-The new position of the point has the same height, $z=4+\sin\theta$. Its distance from the line $x=y=4$ is also preserved: $R=\sqrt{(x-4)^2+(y-4)^2+(z-z)^2}=\sqrt{(\frac1{\sqrt 2}\cos\theta-2)^2+(\frac1{\sqrt 2}\cos\theta-2)^2+0)}=\cos\theta-2\sqrt2$.
+The new position of the point has the same height, $z=4+\sin\theta$, as the original point. Its distance from the line $x=y=4$ is also the same as that of the original point. That distance is 
+\begin{align*}
+ R&=\sqrt{(x-4)^2+(y-4)^2+(z-z)^2} \\
+  &=\sqrt{\Big(\frac1{\sqrt 2}\cos\theta-2\Big)^2+\Big(\frac1{\sqrt 2}\cos\theta-2\Big)^2+0} \\
+  &= \sqrt{2\Big(\frac1{\sqrt 2}\cos\theta-2\Big)^2} \\
+  &= \sqrt{(\cos\theta-2\sqrt{2})^2} \\
+   &=|\cos\theta-2\sqrt2| \\
+   &=2\sqrt2 - \cos\theta
+ \end{align*}
 
-The circle traced out by a point $(x,y,z)=(2+\frac1{\sqrt2}\cos\theta,2+\frac{1}{\sqrt 2} \cos \theta,4+\sin\theta)$ on the circle is centred at $(4,4,z)$ with radius $\sqrt2(4-x)$, so it has equation $x=4+\sqrt2(2-\sqrt2\cos\theta)\cos\phi$, $y=4+\sqrt2(2-\sqrt2\cos\theta)\sin\phi$, $z=4\sin\theta$.
+The circle traced out by a point $(x,y,z)=(2+\frac1{\sqrt2}\cos\theta,2+\frac{1}{\sqrt 2} \cos \theta,4+\sin\theta)$ on the circle of part (a) is centred at $(4,4,z)$ and has radius $2\sqrt2 - \cos\theta$. So it has equation 
+ $x=4+(2\sqrt2-\cos\theta)\cos\phi$, $y=4+(2\sqrt2-\cos\theta)\sin\phi$, $z=4+\sin\theta$.
 \end{solution}
 %%%%%%%%%%%%%%%%%%
 
