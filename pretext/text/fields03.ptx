@@ -772,7 +772,7 @@ by the chain rule, because
 It looks like we have found a potential, namely <m>\arctan\frac{y}{x}</m>.
 But there is a problem. Recall that, by definition, <m>\arctan\frac{y}{x}</m> is
 an angle <m>\theta(x,y)</m> that obeys
-<m>\tan\theta(x,y)= \arctan\frac{y}{x}</m>; but for any
+<m>\tan\theta(x,y)= \frac{y}{x}</m>; but for any
 <m>(x,y)\in\bbbr^2\setminus\{(0,0\}</m> there are infinitely many angles
 having the tangent <m>\frac{y}{x}</m>. To define <m>\varphi(x,y)</m> we have to
 select exactly one such angle. It is impossible to do so in such a way
