@@ -14,7 +14,7 @@ etc., at a point <m>\vr(t)</m> on a curve that lies in the <m>xy</m>-plane. We
 now extend our discussion to curves in <m>\bbbr^3</m>. Fix any <m>t</m>.
 For <m>t'</m> very close to <m>t</m>, <m>\vr(t')</m>, will, by the Taylor expansion
 to second order, be very close to <m>\vr(t) + \vr'(t)\,(t'-t)
-+\frac{1}{2}\vr'(t)\,(t'-t)^2</m>, so that <m>\vr(t')</m> almost lies in the
++\frac{1}{2}\vr''(t)\,(t'-t)^2</m>, so that <m>\vr(t')</m> almost lies in the
 plane through <m>\vr(t)</m> that is determined by the two vectors <m>\vr'(t)</m> and
 <m>\vr'(t)</m>. Thus, if we restrict
 our attention to a very small part of the curve near the point of
@@ -38,7 +38,7 @@ these formulae work in any plane, not just the <m>xy</m>-plane. Just choose
 \vv\times\va &amp;= \ka \Big(\diff{s}{t}\Big)^3\hat\vT\times\hat\vN
 </mrow>
 </md>
-The only <fn>However this can be a significant difference.</fn>
+The only<fn>However this can be a significant difference.</fn>
 difference is that <m>\vv, \va, \hat\vT</m> and <m>\hat\vN</m>
 are now three component vectors rather than two component vectors.
 </p>
