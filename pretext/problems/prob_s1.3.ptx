@@ -371,7 +371,7 @@ We use the formula <m>\ka = \dfrac{|\vv(t) \times \va(t)|}{\left| \left(\diff{s}
 </mrow><mrow>
 \vv(t) \times \va(t)&amp;=\big[(-\sin t + \cos t)^2+(\cos t + \sin t)^2\big]\hk=2\hk
 </mrow><mrow>
-\diff{s}{t}&amp;=\left|\diff{\vv}{t} \right|=\sqrt{(-\sin t + \cos t)^2+(\cos t + \sin t )^2}=\sqrt2
+\diff{s}{t}&amp;=|\vv|=\sqrt{(-\sin t + \cos t)^2+(\cos t + \sin t )^2}=\sqrt2
 </mrow><mrow>
 \ka&amp;=\left|\frac{\vv(t) \times \va(t)}{\left(\diff{s}{t}\right)^3}\right|=\left|\frac{2\hk}{\sqrt{2}^3}\right|=\frac{1}{\sqrt 2}
 </mrow>
