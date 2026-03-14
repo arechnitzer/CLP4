@@ -2771,7 +2771,7 @@ the tangential and normal components of
 	&amp;=\diff{v}{t}\hT\cdot\hT+(v^2\kappa)\hN\cdot\hT
 	</mrow>
 <intertext>Since <m>\hT</m> is a unit vector, <m>\hT \cdot \hT=\|\hT\|^2=1</m>; since <m>\hT</m> and <m>\hN</m> are perpendicular, <m>\hT \cdot \hN =0</m>.</intertext><mrow>
-	&amp;=\diff{v}{t}
+	\va\cdot \hT &amp;=\diff{v}{t}
 	</mrow>
 <intertext>This gives us a nice way to compute <m>\diff{v}{t}</m>, the rate of change of speed.</intertext>
 <mrow>
