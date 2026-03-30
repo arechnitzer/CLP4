@@ -571,13 +571,20 @@ Review Example <xref ref="eg_ptSource"/>.
  In each second <m>2\pi m</m> <m>{\rm cm}^2</m> of fluid crosses each
 circle of radius <m>r</m> (and hence circumference <m>2\pi r</m>) centred on the
 origin. So the speed of flow at radius <m>r</m> is <m>\frac{m}{r}</m>. As the direction
-of flow is radially outward
+of flow is radially outward and
 <md>
 <mrow>
-   \vv=m\frac{x\hi+y\hj}{x^2+y^2}
+   \frac{x\hi+y\hj}{\sqrt{x^2+y^2}}
 </mrow>
 </md>
-<m>\varphi(x,y)</m> is a potential for this <m>\vF</m> if and only if
+is a radially outward unit vector, we have
+<md>
+<mrow>
+   \vv=\frac{m}{r}\ \frac{x\hi+y\hj}{\sqrt{x^2+y^2}}
+     =m\frac{x\hi+y\hj}{x^2+y^2}
+</mrow>
+</md>
+<m>\varphi(x,y)</m> is a potential for this vector field if and only if
 <md>
 <mrow>
 \pdiff{\varphi}{x}(x,y) &amp;= m\frac{x}{x^2+y^2}

@@ -491,11 +491,16 @@ $\varphi=\half m\ln(x^2+y^2)+C$ for any constant $C$
  In each second $2\pi m$ ${\rm cm}^2$ of fluid crosses each
 circle of radius $r$ (and hence circumference $2\pi r$) centred on the
 origin. So the speed of flow at radius $r$ is $\frac{m}{r}$. As the direction
-of flow is radially outward
+of flow is radially outward and
 \begin{align*}
-   \vv=m\frac{x\hi+y\hj}{x^2+y^2}
+   \frac{x\hi+y\hj}{\sqrt{x^2+y^2}}
 \end{align*}
-$\varphi(x,y)$ is a potential for this $\vF$ if and only if
+is a radially outward unit vector, we have
+\begin{align*}
+   \vv=\frac{m}{r}\  \frac{x\hi+y\hj}{\sqrt{x^2+y^2}}
+     =m\frac{x\hi+y\hj}{x^2+y^2}
+\end{align*}
+$\varphi(x,y)$ is a potential for this vector field if and only if
 \begin{align*}
 \pdiff{\varphi}{x}(x,y) &= m\frac{x}{x^2+y^2} \\
 \pdiff{\varphi}{y}(x,y) &= m\frac{y}{x^2+y^2} 
