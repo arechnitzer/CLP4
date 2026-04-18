@@ -529,7 +529,8 @@ $\vF\big(x(t),y(t)\big)=t^3\,\hi-t^2\,\hj$ so
 &=-\frac{1}{4}
 \end{align*}
 
-(b) The path is the union of three line segments.
+(b) \textbf{Solution 1:}\\ 
+The path is the union of three line segments.
 \begin{itemize}\itemsep1pt \parskip0pt \parsep0pt %\itemindent-15pt
 \item
 On the first segment of the path $y=z=0$ so $\vF$ simplifies
@@ -556,6 +557,19 @@ So
 =\frac{1}{2}+\frac{1}{2}-2
 =-1
 \end{equation*}
+
+(b) \textbf{Solution 2:}\\ 
+The vector field $\vF$ is conservative. Indeed $\vF=\vnabla\varphi$ with
+$\varphi =  \frac{x^2}{2}-zx +\frac{y^2}{2} -zy$. The potential $\varphi$ 
+was found by guessing. Alternatively, $\varphi$ can be found 
+by antidifferentiating the three components of $\vF$. In any event
+\begin{equation*}
+\int_\cC\vF\cdot \dee{\vr}=\varphi(1,1,1) -\varphi(0,0,0)
+=\left[\frac{1}{2}-1 +\frac{1}{2} -1\right] - 0
+=-1
+\end{equation*}
+
+
 \end{solution}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -3402,7 +3416,7 @@ The curvature is (see \S\eref{CLP317}{sec:CurveCompendium} of the CLP-4 text)
 		What is the total distance the plane travels on this flight?
 		
 		\item
-		Find the radius of curvature $\ka$ at the apex of the flight, which occurs
+		Find the curvature $\ka$ at the apex of the flight, which occurs
 		at $t=1$.
 		
 		\item

@@ -622,7 +622,9 @@ Then <m>\vv(t)=\diff{\vr}{t}(t)=\hi+2t\,\hj</m> and
 </md>
 </p>
 
-<p>(b) The path is the union of three line segments.
+<p>(b) <alert>Solution 1:</alert>
+	</p><p> 
+	The path is the union of three line segments.
 <ul>
 <li>
 On the first segment of the path <m>y=z=0</m> so <m>\vF</m> simplifies
@@ -652,7 +654,20 @@ So
 =\frac{1}{2}+\frac{1}{2}-2
 =-1
 </me>
-</p></solution>
+</p>
+
+<p>(b) <alert>Solution 2:</alert>
+	</p><p> 
+The vector field <m>\vF</m> is conservative. Indeed <m>\vF=\vnabla\varphi</m> with
+<m>\varphi =  \frac{x^2}{2}-zx +\frac{y^2}{2} -zy</m>. The potential <m>\varphi</m> 
+was found by guessing. Alternatively, <m>\varphi</m> can be found 
+by antidifferentiating the three components of <m>\vF</m>. In any event
+<me>
+\int_\cC\vF\cdot \dee{\vr}=\varphi(1,1,1) -\varphi(0,0,0)
+=\left[\frac{1}{2}-1 +\frac{1}{2} -1\right] - 0
+=-1
+</me>	
+	</p></solution>
 </exercise>
 
 <exercise><title><fromexam>M317 1998D</fromexam></title>
@@ -4012,7 +4027,7 @@ The curvature is (see \S<xref ref="sec_CurveCompendium"/>)
 		What is the total distance the plane travels on this flight?
 </li>
 <li>
-		Find the radius of curvature <m>\ka</m> at the apex of the flight, which occurs
+		Find the curvature <m>\ka</m> at the apex of the flight, which occurs
 		at <m>t=1</m>.
 </li>
 <li>
