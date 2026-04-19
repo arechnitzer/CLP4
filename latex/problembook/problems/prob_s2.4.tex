@@ -2443,75 +2443,51 @@ All together
 \end{solution}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%
-\begin{question}[M317 2009A] %2
-A particle of mass $m = 1$ has position $\vr_0 = \hj$ and velocity 
-$\vv_0 = \hi + \hk$ at time $t = 0$. The particle moves under a force
-$\vF(t) = \hj - \sin t\, \hk$, where $t$ denotes time.
-
-\begin{enumerate}[(a)]
-\item
-Find the position $\vr(t)$ of the particle as a function of $t$.
-\item
-Find the position $\vr_1$ of the particle when it crosses the plane 
-$x = \pi/2$ for the first time after time $t = 0$.
-\item
-Determine the work done by $\vF$ in moving the particle from $\vr_0$ to 
-$\vr_1$.
-\end{enumerate}
+\begin{question}
+Find the mass of a wire formed by the intersection of the
+sphere $x^2+y^2+z^2=1$ and the plane $x+y+z=0$ if the density at $(x,y,z)$
+is given by $\rho(x,y,z)=x^2$ grams per unit length of wire.
 \end{question}
 
 \begin{hint} 
-Force is mass times acceleration, where acceleration is the second derivative of position, $\vr(t)$, with respect to time, $t$. The work done by $\vF$ between time $a$ and time $b$
-is $\int_a^b \vF\cdot\dee{\vr}$.
+See  \S\eref{CLP317}{sec:paramCircles} in the CLP-4 text for a simple way to parametrize the wire.
 \end{hint}
 
 \begin{answer} 
-(a) $\vr(t) = t\,\hi+\big(1+\frac{t^2}{2}\big)\,\hj +\sin t\,\hk$\qquad
-(b) $\vr_1 = \frac{\pi}{2}\,\hi+\big(1+\frac{\pi^2}{8}\big)\,\hj + \hk$
-\qquad
-(c) $\frac{\pi^2}{8}-\frac{1}{2}$
+$\tfrac{2}{3}\pi$
 \end{answer}
 
-\begin{solution} (a) Since $m=1$, Newton's law of motion gives
-\begin{align*}
-\va(t) = \vv'(t) = \vF(t) = \hj - \sin t\, \hk
-\end{align*}
-Integating gives
+\begin{solution} 
+The curve in question is the intersection of a sphere with
+a plane through the centre of the sphere. So the curve is a circle (in
+fact, a great circle on the sphere). A simple way to parametrize such a
+circle is to pick two unit vectors $\hi'$, $\hj'$ that are mutually
+perpendicular and perpendicular to $(1,1,1)$ (so that they both lie in
+the plane $x+y+z=0$). For example $\hi' = \tfrac{1}{\sqrt{2}}(1,-1,0)$
+and $\hj'=\tfrac{1}{\sqrt{6}}(1,1,-2)$. (Check the orthogonality requirements
+by dotting $\hi'$ and $\hj'$ with each other and with $(1,1,1)$.) Then
 \begin{equation*}
-\vv(t) = t\,\hj +\cos t\,\hk +\vc
+\vr(\theta)=\cos\theta\ \hi'+\sin\theta\ \hj'
+=\big(\tfrac{\cos\theta}{\sqrt{2}},-\tfrac{\cos\theta}{\sqrt{2}}, 0\big)
++\big(\tfrac{\sin\theta}{\sqrt{6}},\tfrac{\sin\theta}{\sqrt{6}}, -2\tfrac{\sin\theta}{\sqrt{6}}\big)
 \end{equation*}
-for some constant vector $\vc$. Since $\vv(0)=\hi+\hk$, we have $\vc = \hi$
-so that
+is a parametrization of the circle. As $\hi'$ and $\hj'$ are mutually
+perpendicular unit vectors, ${\vr\,}'(\theta)=-\sin\theta\ \hi'+\cos\theta\ \hj'$
+is a unit vector and $\tfrac{ds}{d\theta}=1$. So
 \begin{align*}
-\vr'(t) = \vv(t) = \hi + t\,\hj +\cos t\,\hk
+{\rm mass}&=\int_C\rho ds
+=\int_0^{2\pi} x(\theta)^2\ \tfrac{ds}{d\theta}\ d\theta
+=\int_0^{2\pi}\big[\tfrac{\cos\theta}{\sqrt{2}}
++\tfrac{\sin\theta}{\sqrt{6}}\big]^2\,d\theta \\
+&=\int_0^{2\pi}\big[\tfrac{\cos^2\theta}{2}
++2\tfrac{\cos\theta}{\sqrt{2}}
+\tfrac{\sin\theta}{\sqrt{6}}
++\tfrac{\sin^2\theta}{6}\big]\,d\theta
 \end{align*}
-Integating again gives
-\begin{equation*}
-\vr(t) = t\,\hi+\frac{t^2}{2}\,\hj +\sin t\,\hk +\vc
-\end{equation*}
-for some (new) constant vector $\vc$. Since $\vr(0)=\hj$, we have 
-$\vc = \hj$
-so that
-\begin{align*}
-\vr(t) = t\,\hi+\left(1+\frac{t^2}{2}\right)\,\hj +\sin t\,\hk
-\end{align*}
-
-\noindent (b) The particle has $x=\pi/2$ when $t=\pi/2$ and then
-\begin{align*}
-\vr_1=\vr(\pi/2) = \frac{\pi}{2}\,\hi+\left(1+\frac{\pi^2}{8}\right)\,\hj + \hk
-\end{align*}
-
-\noindent (c)
-The work done between time $t=0$ and time $t=\pi/2$ is
-\begin{align*}
-\int_0^{\pi/2} \vF(t)\cdot \dee{\vr}
-&=\int_0^{\pi/2} \vF(t)\cdot \diff{\vr}{t}(t)\,\dee{t}
-=\int_0^{\pi/2} [\hj-\sin t\,\hk]\cdot [\hi+t\,\hj+\cos t\,\hk]\,\dee{t} \\
-&= \int_0^{\pi/2} [t -\sin t\cos t]\,\dee{t}
-=\Big[\frac{t^2}{2}+\frac{1}{2}\cos^2 t\Big]_0^{\pi/2}
-=\frac{\pi^2}{8}-\frac{1}{2}
-\end{align*}
-
+As $\int_0^{2\pi}\cos^2\theta\,d\theta=\int_0^{2\pi}\sin^2\theta\,d\theta
+=\half \int_0^{2\pi}[\sin^2\theta+\cos^2\theta]\,d\theta=\pi$
+and $\int_0^{2\pi}\cos\theta\sin\theta\,d\theta=\half\int_0^{2\pi}\sin 2\theta\,d\theta=0$,
+the mass is $\tfrac{\pi}{2}+\tfrac{\pi}{6}=\tfrac{2}{3}\pi$.
 \end{solution}
 
 

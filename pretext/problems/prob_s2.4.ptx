@@ -2896,95 +2896,57 @@ All together
 </solution>
 </exercise>
 
-<exercise><title><fromexam>M317 2009A</fromexam></title>
+<exercise>
 <statement><p>
-A particle of mass <m>m = 1</m> has position <m>\vr_0 = \hj</m> and velocity
-<m>\vv_0 = \hi + \hk</m> at time <m>t = 0</m>. The particle moves under a force
-<m>\vF(t) = \hj - \sin t\, \hk</m>, where <m>t</m> denotes time.
-</p>
-
-<p><ol marker="a">
-<li>
-Find the position <m>\vr(t)</m> of the particle as a function of <m>t</m>.
-</li>
-<li>
-Find the position <m>\vr_1</m> of the particle when it crosses the plane
-<m>x = \pi/2</m> for the first time after time <m>t = 0</m>.
-</li>
-<li>
-Determine the work done by <m>\vF</m> in moving the particle from <m>\vr_0</m> to
-<m>\vr_1</m>.
-</li>
-</ol>
+Find the mass of a wire formed by the intersection of the
+sphere <m>x^2+y^2+z^2=1</m> and the plane <m>x+y+z=0</m> if the density at <m>(x,y,z)</m>
+is given by <m>\rho(x,y,z)=x^2</m> grams per unit length of wire.
 </p></statement>
 
 <hint><p>
-Force is mass times acceleration, where acceleration is the second derivative of position, <m>\vr(t)</m>, with respect to time, <m>t</m>. The work done by <m>\vF</m> between time <m>a</m> and time <m>b</m>
-is <m>\int_a^b \vF\cdot\dee{\vr}</m>.
+See  Section<nbsp/><xref ref="sec_paramCircles"/> in the
+	text for a simple way to parametrize the wire.
 </p></hint>
 
 <answer><p>
-(a) <m>\vr(t) = t\,\hi+\big(1+\frac{t^2}{2}\big)\,\hj +\sin t\,\hk</m></p><p>
-(b) <m>\vr_1 = \frac{\pi}{2}\,\hi+\big(1+\frac{\pi^2}{8}\big)\,\hj + \hk</m>
-</p><p>
-(c) <m>\frac{\pi^2}{8}-\frac{1}{2}</m>
+<m>\frac{2}{3}\pi</m>
 </p></answer>
 
-<solution><p> (a) Since <m>m=1</m>, Newton's law of motion gives
-<md>
-<mrow>
-\va(t) = \vv'(t) = \vF(t) = \hj - \sin t\, \hk
-</mrow>
-</md>
-Integating gives
+<solution><p> 
+The curve in question is the intersection of a sphere with
+a plane through the centre of the sphere. So the curve is a circle (in
+fact, a great circle on the sphere). A simple way to parametrize such a
+circle is to pick two unit vectors <m>\hi'</m>, <m>\hj'</m> that are mutually
+perpendicular and perpendicular to <m>(1,1,1)</m> (so that they both lie in
+the plane <m>x+y+z=0</m>). For example <m>\hi' = \frac{1}{\sqrt{2}}(1,-1,0)</m>
+and <m>\hj'=\frac{1}{\sqrt{6}}(1,1,-2)</m>. (Check the orthogonality requirements
+by dotting <m>\hi'</m> and <m>\hj'</m> with each other and with <m>(1,1,1)</m>.) Then
 <me>
-\vv(t) = t\,\hj +\cos t\,\hk +\vc
+\vr(\theta)=\cos\theta\ \hi'+\sin\theta\ \hj'
+=\left(\frac{\cos\theta}{\sqrt{2}},-\frac{\cos\theta}{\sqrt{2}}, 0\right)
++\left(\frac{\sin\theta}{\sqrt{6}},\frac{\sin\theta}{\sqrt{6}}, -2\frac{\sin\theta}{\sqrt{6}}\right)
 </me>
-for some constant vector <m>\vc</m>. Since <m>\vv(0)=\hi+\hk</m>, we have <m>\vc = \hi</m>
-so that
+is a parametrization of the circle. As <m>\hi'</m> and <m>\hj'</m> are mutually
+perpendicular unit vectors, <m>{\vr\,}'(\theta)=-\sin\theta\ \hi'+\cos\theta\ \hj'</m>
+is a unit vector and <m>\frac{ds}{d\theta}=1</m>. So
 <md>
 <mrow>
-\vr'(t) = \vv(t) = \hi + t\,\hj +\cos t\,\hk
-</mrow>
-</md>
-Integating again gives
-<me>
-\vr(t) = t\,\hi+\frac{t^2}{2}\,\hj +\sin t\,\hk +\vc
-</me>
-for some (new) constant vector <m>\vc</m>. Since <m>\vr(0)=\hj</m>, we have
-<m>\vc = \hj</m>
-so that
-<md>
-<mrow>
-\vr(t) = t\,\hi+\left(1+\frac{t^2}{2}\right)\,\hj +\sin t\,\hk
-</mrow>
-</md>
-</p>
-
-<p> (b) The particle has <m>x=\pi/2</m> when <m>t=\pi/2</m> and then
-<md>
-<mrow>
-\vr_1=\vr(\pi/2) = \frac{\pi}{2}\,\hi+\left(1+\frac{\pi^2}{8}\right)\,\hj + \hk
-</mrow>
-</md>
-</p>
-
-<p> (c)
-The work done between time <m>t=0</m> and time <m>t=\pi/2</m> is
-<md>
-<mrow>
-\int_0^{\pi/2} \vF(t)\cdot \dee{\vr}
-&amp;=\int_0^{\pi/2} \vF(t)\cdot \diff{\vr}{t}(t)\,\dee{t}
+{\rm mass}&amp;=\int_C\rho ds
+=\int_0^{2\pi} x(\theta)^2\ \frac{ds}{d\theta}\ d\theta
+=\int_0^{2\pi}\left[\frac{\cos\theta}{\sqrt{2}}
++\frac{\sin\theta}{\sqrt{6}}\right]^2\,d\theta 
 </mrow><mrow>
-&amp;=\int_0^{\pi/2} [\hj-\sin t\,\hk]\cdot [\hi+t\,\hj+\cos t\,\hk]\,\dee{t}
-</mrow><mrow>
-&amp;= \int_0^{\pi/2} [t -\sin t\cos t]\,\dee{t}
-=\Big[\frac{t^2}{2}+\frac{1}{2}\cos^2 t\Big]_0^{\pi/2}
-=\frac{\pi^2}{8}-\frac{1}{2}
+&amp;=\int_0^{2\pi}\left[\frac{\cos^2\theta}{2}
++2\frac{\cos\theta}{\sqrt{2}}
+\frac{\sin\theta}{\sqrt{6}}
++\frac{\sin^2\theta}{6}\right]\,d\theta
 </mrow>
 </md>
+As <m>\int_0^{2\pi}\cos^2\theta\,d\theta=\int_0^{2\pi}\sin^2\theta\,d\theta
+=\half \int_0^{2\pi}[\sin^2\theta+\cos^2\theta]\,d\theta=\pi</m>
+and <m>\int_0^{2\pi}\cos\theta\sin\theta\,d\theta=\half\int_0^{2\pi}\sin 2\theta\,d\theta=0</m>,
+the mass is <m>\frac{\pi}{2}+\frac{\pi}{6}=\frac{2}{3}\pi</m>. 
 </p>
-
 </solution>
 </exercise>
 
