@@ -1670,7 +1670,7 @@ of the cone. Find the centre of mass of <m>S</m>.
 </p>
 
 <p>Locate the cone in a coordinate system so that its base is in the
-<m>xy</m>-plane, and its vertex on the <m>z</m>-axis. So the vertex will
+<m>xy</m>-plane, and its vertex is on the <m>z</m>-axis. So the vertex will
 be the point <m>(0, 0, a)</m>. The base is a circle of radius <m>a</m> in the
 <m>xy</m>-plane with centre at the origin. The cone surface is characterized
 by the fact that for every point of <m>S</m>, the distance from the <m>z</m>-axis
@@ -2476,7 +2476,7 @@ Write
 <me>
 V=\Set{(x,y,z)}{ 1\le x^2+y^2+z^2\le 4}
 </me>
-The boundary of <m>V</m> consists of two parts <mdash/>
+The boundary of <m>V</m>, which we will denote <m>\partial V</m>, consists of two parts <mdash/>
 the sphere, <m>S_2</m>, of radius <m>2</m>, centred on the origin,
 with (outward) normal <m>\hn=\frac{\vr}{|\vr|}=\frac{\vr}{2}</m>,
 and the sphere  <m>S_1</m> of radius <m>1</m>, centred on the origin,

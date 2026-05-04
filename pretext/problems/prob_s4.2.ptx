@@ -796,7 +796,7 @@ since <m>z</m> is odd.
 The sides of a grain silo are described by the portion of the
 cylinder <m>x^2 + y^2 = 1</m> with <m>0 \le z\le 1</m>. The top of the silo is
 given by the portion of the sphere <m>x^2+ y^2+ z^2 = 2</m> lying within the
-cylinder and above the <m>xy</m>-plane. Find the flux of the vector field
+cylinder <m>x^2 + y^2 = 1</m> and above the <m>xy</m>-plane. Find the flux of the vector field
 <me>
 \vV(x,y,z) = (x^2yz\,,\, yz+e^xz\,,\, x^2+y )
 </me>

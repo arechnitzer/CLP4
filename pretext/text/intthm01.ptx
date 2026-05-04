@@ -1399,7 +1399,12 @@ In conclusion
 <p>
 <md alignment="alignat">
 <mrow>
-\vnabla f(\vr_0)
+&amp;\text{the gradient vector }
+&amp;&amp;\vnabla f(\vr_0)  =
+    \frac{\partial f}{\partial x}(\vr_0)\,\hi
+          +\frac{\partial f}{\partial y}(\vr_0)\,\hj
+          +\frac{\partial f}{\partial z}(\vr_0)\,\hk
+ </mrow><mrow>
 &amp; \text{ has direction }
 &amp;&amp; \left\{
 \begin{array}{l}
@@ -1408,7 +1413,7 @@ In conclusion
 \end{array}\right.
 </mrow><mrow>
 &amp;
-\text{ has magnitude }
+\text{and has magnitude }
 &amp;&amp;
 \left\{
 \begin{array}{l}

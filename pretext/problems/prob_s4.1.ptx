@@ -1061,7 +1061,9 @@ Find the unknown function <m>g(x,y,z)</m>.
 
 <solution><p>
 (a)
-By the vector identity of Theorem <xref ref="thm_degTwoIdentities"/>.a,
+We saw in Theorem  <xref ref="thm_screenVector"/> that 
+in order for it to be possible to express <m>\vF</m> in the form <m>\nabla\times\vG</m>,
+<m>\vF</m> must pass the screening test
 <me>
 \nabla\cdot \vF=\nabla\cdot \nabla\times\vG=0
 </me>
